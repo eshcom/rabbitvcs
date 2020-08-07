@@ -38,12 +38,6 @@ import shutil
 import hashlib
 import threading
 
-if "NAUTILUS_PYTHON_REQUIRE_GTK3" in os.environ and os.environ["NAUTILUS_PYTHON_REQUIRE_GTK3"]:
-	from gi.repository import Gtk as gtk
-else:
-	import gtk
-	gtk.gdk.threads_init()
-
 # A hacky way to get this working with python2 or 3
 try:
 	from urlparse import urlparse, urlunparse
@@ -101,12 +95,23 @@ def run_in_main_thread(func, *args, **kwargs):
 	"""
 	Execute function in main thread's idle loop.
 	"""
+	def dofunc(event, func, args, kwargs):
+		try:
+			event.result = func(*args, **kwargs)
+		except Exception as e:
+			event.exception = e
+		event.set()
+	
 	if isinstance(threading.current_thread(), threading._MainThread):
 		return func(*args, **kwargs)
-	gtk.gdk.threads_enter()
-	result = func(*args, **kwargs)
-	gtk.gdk.threads_leave()
-	return result
+	event = threading.Event()
+	event.result = None
+	event.exception = None
+	gobject.idle_add(dofunc, event, func, args, kwargs)
+	event.wait()
+	if event.exception:
+		raise event.exception
+	return event.result
 
 def get_tmp_path(filename):
 	day = datetime.datetime.now().day
