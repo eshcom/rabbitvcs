@@ -22,7 +22,6 @@ from __future__ import absolute_import
 #
 
 import os
-import six.moves._thread
 from time import sleep
 
 import pygtk
@@ -98,7 +97,6 @@ class Add(InterfaceView, GtkContextMenuCaller):
 	# Helpers
 	#
 	def load(self):
-		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
 		self.items = self.vcs.get_items(self.paths, self.statuses)
 		if self.show_ignored:
@@ -117,7 +115,6 @@ class Add(InterfaceView, GtkContextMenuCaller):
 							self.items.append(Status(os.path.realpath(ignored_path), 'unversioned'))
 		self.populate_files_table()
 		self.get_widget("status").set_text(_("Found %d item(s)") % len(self.items))
-		gtk.gdk.threads_leave()
 	
 	def populate_files_table(self):
 		self.files_table.clear()
@@ -138,12 +135,9 @@ class Add(InterfaceView, GtkContextMenuCaller):
 	
 	def initialize_items(self):
 		"""
-		Initializes the activated cache and loads the file items in a new thread
+		Initializes the activated cache and loads the file items
 		"""
-		try:
-			six.moves._thread.start_new_thread(self.load, ())
-		except Exception as e:
-			log.exception(e)
+		gobject.idle_add(self.load)
 	
 	def delete_items(self, widget, data=None):
 		paths = self.files_table.get_selected_row_items(1)

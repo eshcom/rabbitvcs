@@ -22,7 +22,6 @@ from __future__ import absolute_import
 #
 
 import os.path
-import six.moves._thread
 
 import pygtk
 import gtk
@@ -107,23 +106,13 @@ class GitPush(Push):
 		"""
 		Initializes the git logs
 		"""
-		try:
-			six.moves._thread.start_new_thread(self.load_logs, ())
-		except Exception as e:
-			log.exception(e)
-	
-	def load_logs_exit(self):
-		self.get_widget("status").set_text("")
-		self.update_widgets()
+		gobject.idle_add(self.load_logs)
 	
 	def load_logs(self):
-		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
-		gtk.gdk.threads_leave()
 		self.load_push_log()
-		gtk.gdk.threads_enter()
-		self.load_logs_exit()
-		gtk.gdk.threads_leave()
+		self.get_widget("status").set_text("")
+		self.update_widgets()
 	
 	def load_push_log(self):
 		repository = self.repository_selector.repository_opt.get_active_text()

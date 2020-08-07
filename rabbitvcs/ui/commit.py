@@ -148,7 +148,7 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 
 	def initialize_items(self):
 		"""
-		Initializes the activated cache and loads the file items in a new thread
+		Initializes the activated cache and loads the file items
 		"""
 		gobject.idle_add(self.load)
 

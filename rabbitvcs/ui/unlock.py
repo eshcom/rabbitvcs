@@ -43,6 +43,8 @@ log = Log("rabbitvcs.ui.unlock")
 from rabbitvcs import gettext
 _ = gettext.gettext
 
+helper.gobject_threads_init()
+
 class SVNUnlock(Add):
 	def __init__(self, paths, base_dir):
 		InterfaceView.__init__(self, "add", "Add")
@@ -73,17 +75,15 @@ class SVNUnlock(Add):
 				"key-event":     self.on_files_table_key_event
 			}
 		)
-		self.initialize_items()
+		self.initialize_items() # esh: inside will be called load() func
 	
 	#
 	# Helpers
 	#
 	def load(self):
-		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
 		self.items = self.vcs.get_items(self.paths, self.statuses)
 		self.populate_files_table()
-		gtk.gdk.threads_leave()
 	
 	def populate_files_table(self):
 		self.files_table.clear()

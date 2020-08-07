@@ -59,7 +59,7 @@ class CreatePatch:
 		@param paths:   A list of local paths.
 		"""
 		InterfaceView.__init__(self, "commit", "Commit")
-
+		
 		# Modify the Commit window to what we need for Create Patch
 		window = self.get_widget("Commit")
 		window.set_title(_("Create Patch"))
@@ -100,7 +100,7 @@ class CreatePatch:
 		self.files_table.allow_multiple()
 		self.items = None
 		self.initialize_items()
-
+	
 	#
 	# Helper functions
 	#
@@ -126,7 +126,7 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 	def __init__(self, paths, base_dir=None):
 		CreatePatch.__init__(self, paths, base_dir)
 		self.svn = self.vcs.svn()
-
+	
 	#
 	# Event handlers
 	#
@@ -181,7 +181,7 @@ class GitCreatePatch(CreatePatch, GitCommit):
 	def __init__(self, paths, base_dir=None):
 		CreatePatch.__init__(self, paths, base_dir)
 		self.git = self.vcs.git(paths[0])
-
+	
 	#
 	# Event handlers
 	#
