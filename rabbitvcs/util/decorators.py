@@ -77,7 +77,7 @@ def deprecated(func):
 					  category=DeprecationWarning)
 		return func(*args, **kwargs)
 	return update_func_meta(newfunc, func)
-	
+
 def timeit(func):
 	"""
 	This is a decorator which times a function and prints the time it took in

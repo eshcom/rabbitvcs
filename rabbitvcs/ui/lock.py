@@ -58,7 +58,6 @@ class SVNLock(InterfaceView, GtkContextMenuCaller):
 		@param: paths: A list of paths to search for versioned files
 		"""
 		InterfaceView.__init__(self, "lock", "Lock")
-
 		self.paths = paths
 		self.base_dir = base_dir
 		self.vcs = rabbitvcs.vcs.VCS()
@@ -156,7 +155,7 @@ class SVNLock(InterfaceView, GtkContextMenuCaller):
 		self.action.append(self.action.set_status, _("Completed Lock"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-
+	
 	def on_files_table_mouse_event(self, treeview, data=None):
 		if data is not None and data.button == 3:
 			self.show_files_table_popup_menu(treeview, data)

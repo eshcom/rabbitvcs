@@ -63,29 +63,29 @@ class VCSNotifier(InterfaceView):
 		self.callback_cancel = callback_cancel
 		self.was_canceled_by_user = False
 		self.canceled = False
-
+	
 	def set_canceled_by_user(self, was_canceled_by_user):
 		self.was_canceled_by_user = was_canceled_by_user
-
+	
 	def toggle_ok_button(self, sensitive):
 		pass
-
+	
 	def append(self, entry):
 		pass
-
+	
 	def focus_on_ok_button(self):
 		pass
 
 class DummyNotifier:
 	def __init__(self):
 		pass
-
+	
 	def close(self):
 		pass
-
+	
 	def set_canceled_by_user(self, was_canceled_by_user):
 		pass
-
+	
 	@gtk_unsafe
 	def exception_callback(self, e):
 		log.exception(e)
@@ -97,7 +97,7 @@ class MessageCallbackNotifier(VCSNotifier):
 	"""
 	gtkbuilder_filename = "notification"
 	gtkbuilder_id = "Notification"
-
+	
 	def __init__(self, callback_cancel=None, visible=True):
 		"""
 		@type   callback_cancel: def
@@ -118,66 +118,66 @@ class MessageCallbackNotifier(VCSNotifier):
 		)
 		self.pbar.start_pulsate()
 		self.finished = False
-
+	
 	def on_destroy(self, widget):
 		if self.callback_cancel is not None:
 			self.callback_cancel()
 		self.canceled = True
 		self.close()
-
+	
 	def on_cancel_clicked(self, widget):
 		if self.canceled or self.finished:
 			self.close()
 		if self.callback_cancel is not None:
 			self.callback_cancel()
 		self.canceled = True
-
+	
 	def on_ok_clicked(self, widget):
 		self.close()
-
+	
 	@gtk_unsafe
 	def toggle_ok_button(self, sensitive):
 		self.finished = True
 		self.get_widget("ok").set_sensitive(sensitive)
 		self.get_widget("saveas").set_sensitive(sensitive)
-
+	
 	@gtk_unsafe
 	def append(self, entry):
 		self.table.append(entry)
 		self.table.scroll_to_bottom()
-
+	
 	def get_title(self):
 		return self.get_widget("Notification").get_title()
-
+	
 	@gtk_unsafe
 	def set_title(self, title):
 		self.get_widget("Notification").set_title(title)
-
+	
 	@gtk_unsafe
 	def set_header(self, header):
 		self.get_widget("Notification").set_title(header)
 		self.get_widget("action").set_markup(
 			"<span size=\"xx-large\"><b>%s</b></span>" % header
 		)
-
+	
 	@gtk_unsafe
 	def focus_on_ok_button(self):
 		self.get_widget("ok").grab_focus()
-
+	
 	def exception_callback(self, e):
 		self.append(["", str(e), ""])
-
+	
 	def on_saveas_clicked(self, widget):
 		self.saveas()
-
+	
 	@gtk_unsafe
 	def enable_saveas(self):
 		self.get_widget("saveas").set_sensitive(True)
-
+	
 	@gtk_unsafe
 	def disable_saveas(self):
 		self.get_widget("saveas").set_sensitive(False)
-
+	
 	def saveas(self, path=None):
 		if path is None:
 			from rabbitvcs.ui.dialog import FileSaveAs
@@ -191,33 +191,33 @@ class MessageCallbackNotifier(VCSNotifier):
 class LoadingNotifier(VCSNotifier):
 	gtkbuilder_filename = "dialogs/loading"
 	gtkbuilder_id = "Loading"
-
+	
 	def __init__(self, callback_cancel=None, visible=True):
 		VCSNotifier.__init__(self, callback_cancel, visible)
 		self.pbar = rabbitvcs.ui.widget.ProgressBar(
 			self.get_widget("pbar")
 		)
 		self.pbar.start_pulsate()
-
+	
 	def on_destroy(self, widget):
 		self.close()
-
+	
 	def on_loading_cancel_clicked(self, widget):
 		self.set_canceled_by_user(True)
 		if self.callback_cancel is not None:
 			self.callback_cancel()
 		self.close()
-
+	
 	def get_title(self):
 		return self.get_widget("Loading").get_title()
-
+	
 	@gtk_unsafe
 	def set_title(self, title):
 		self.get_widget("Loading").set_title(title)
-
+	
 	def set_header(self, header):
 		self.set_title(header)
-
+	
 	@gtk_unsafe
 	def exception_callback(self, e):
 		if not self.was_canceled_by_user:
@@ -230,18 +230,18 @@ class VCSAction(threading.Thread):
 	Loads UI elements that require user interaction.
 	"""
 	def __init__(self, client, register_gtk_quit=False, notification=True,
-			run_in_thread=True):
+				 run_in_thread=True):
 		self.run_in_thread = run_in_thread
 		if run_in_thread is True:
 			threading.Thread.__init__(self)
-
+		
 		self.message = None
 		self.queue = rabbitvcs.util.FunctionQueue()
 		self.login_tries = 0
 		self.cancel = False
 		self.has_loader = False
 		self.has_notifier = False
-
+		
 		if notification:
 			self.notification = MessageCallbackNotifier(
 				self.set_cancel,
@@ -254,20 +254,20 @@ class VCSAction(threading.Thread):
 			self.has_loader = True
 		else:
 			self.notification = DummyNotifier()
-
+		
 		self.pbar_ticks = None
 		self.pbar_ticks_current = -1
 		# Tells the notification window to do a gtk.main_quit() when closing
 		# Is used when the script is run from a command line
 		if register_gtk_quit:
 			self.notification.register_gtk_quit()
-
+	
 	def schedule(self):
 		if self.run_in_thread:
 			self.start()
 		else:
 			self.run()
-
+	
 	def set_pbar_ticks(self, num):
 		"""
 		Set the total number of ticks to represent in the progress bar.
@@ -288,10 +288,10 @@ class VCSAction(threading.Thread):
 		"""
 		if self.has_notifier:
 			self.notification.pbar.update(fraction)
-
+	
 	def set_header(self, header):
 		self.notification.set_header(header)
-
+	
 	def cancel(self):
 		"""
 		PySVN calls this callback method frequently to see if the user wants
@@ -299,7 +299,7 @@ class VCSAction(threading.Thread):
 		the action.  If self.cancel is False, it will continue.
 		"""
 		return self.cancel
-
+	
 	def set_cancel(self, cancel=True):
 		"""
 		Used as a callback function by the Notification UI.  When the cancel
@@ -309,11 +309,11 @@ class VCSAction(threading.Thread):
 		self.cancel = cancel
 		self.notification.set_canceled_by_user(True)
 		self.queue.cancel_queue()
-
+	
 	# esh: add hide_cancel_button method
 	def hide_cancel_button(self):
 		self.notification.get_widget("cancel").hide()
-
+	
 	def finish(self, message=None):
 		"""
 		This is called when the final notifcation message has been received,
@@ -336,7 +336,7 @@ class VCSAction(threading.Thread):
 			self.notification.pbar.stop_pulsate()
 			self.notification.pbar.update(1)
 			self.notification.toggle_ok_button(True)
-
+	
 	def get_log_message(self):
 		"""
 		A callback method that retrieves a supplied log message.
@@ -359,7 +359,7 @@ class VCSAction(threading.Thread):
 			return should_continue, result[1].encode("utf-8")
 		else:
 			return True, self.message.encode("utf-8")
-
+	
 	def get_login(self, realm, username, may_save):
 		"""
 		A callback method that requests a username/password to login to a
@@ -386,7 +386,6 @@ class VCSAction(threading.Thread):
 		"""
 		if self.login_tries >= 3:
 			return (False, "", "", False)
-		
 		gtk.gdk.threads_enter()
 		dialog = rabbitvcs.ui.dialog.Authentication(
 			realm,
@@ -394,11 +393,10 @@ class VCSAction(threading.Thread):
 		)
 		result = dialog.run()
 		gtk.gdk.threads_leave()
-		
 		if result is not None:
 			self.login_tries += 1
 		return result
-
+	
 	def get_ssl_trust(self, data):
 		"""
 		A callback method that requires the user to either accept or deny
@@ -428,7 +426,6 @@ class VCSAction(threading.Thread):
 		)
 		result = dialog.run()
 		gtk.gdk.threads_leave()
-
 		if result == 0:
 			#Deny
 			return (False, 0, False)
@@ -438,7 +435,7 @@ class VCSAction(threading.Thread):
 		elif result == 2:
 			#Accept Forever
 			return (True, data["failures"], True)
-
+	
 	def get_ssl_password(self, realm, may_save):
 		"""
 		A callback method that is used to get an ssl certificate passphrase.
@@ -463,7 +460,7 @@ class VCSAction(threading.Thread):
 		result = dialog.run()
 		gtk.gdk.threads_leave()
 		return result
-
+	
 	def get_client_cert(self, realm, may_save):
 		"""
 		A callback method that is used to get an ssl certificate.
@@ -488,7 +485,7 @@ class VCSAction(threading.Thread):
 		result = dialog.run()
 		gtk.gdk.threads_leave()
 		return result
-
+	
 	def set_log_message(self, message):
 		"""
 		Set this action's log message from the UI interface.  self.message
@@ -498,7 +495,7 @@ class VCSAction(threading.Thread):
 		@param  message: Set a log message.
 		"""
 		self.message = message
-
+	
 	@gtk_unsafe
 	def set_status(self, message):
 		"""
@@ -513,13 +510,13 @@ class VCSAction(threading.Thread):
 		"""
 		if message is not None:
 			self.notification.get_widget("status").set_text(message)
-
+	
 	def append(self, func, *args, **kwargs):
 		"""
 		Append a function call to the action queue.
 		"""
 		self.queue.append(func, *args, **kwargs)
-
+	
 	def get_result(self, index):
 		"""
 		Retrieve the result of a single function call by specifying the order
@@ -529,7 +526,7 @@ class VCSAction(threading.Thread):
 		@param  index: The queue index
 		"""
 		return self.queue.get_result(index)
-
+	
 	def __queue_exception_callback(self, e):
 		"""
 		Used internally when an exception is raised within the queue
@@ -542,11 +539,11 @@ class VCSAction(threading.Thread):
 			self.finish()
 		if self.has_loader:
 			self.stop()
-
+	
 	def stop(self):
 		if self.notification:
 			self.notification.close()
-
+	
 	def run(self):
 		"""
 		The central method that drives this class.  It runs the before and
@@ -556,7 +553,7 @@ class VCSAction(threading.Thread):
 			self.queue.append(self.notification.close, threaded=True)
 		self.queue.set_exception_callback(self.__queue_exception_callback)
 		self.queue.start()
-
+	
 	def run_single(self, func, *args, **kwargs):
 		try:
 			try:
@@ -567,7 +564,7 @@ class VCSAction(threading.Thread):
 		finally:
 			self.stop()
 		return returner
-
+	
 	def stop_loader(self):
 		self.stop()
 
@@ -583,8 +580,8 @@ class SVNAction(VCSAction):
 		self.client.set_callback_ssl_client_cert_password_prompt(self.get_ssl_password)
 		self.client.set_callback_ssl_client_cert_prompt(self.get_client_cert)
 		VCSAction.__init__(self, client, register_gtk_quit, notification,
-			run_in_thread)
-
+						   run_in_thread)
+	
 	def notify(self, data):
 		"""
 		This method is called every time the VCS function wants to tell us
@@ -629,12 +626,12 @@ class SVNAction(VCSAction):
 					data["path"],
 					data["mime_type"]
 				])
-
+	
 	def conflict_filter(self, data):
 		if "content_state" in data and str(data["content_state"]) == "conflicted":
 			position = self.queue.get_position()
 			self.queue.insert(position+1, self.edit_conflict, data)
-
+	
 	def edit_conflict(self, data):
 		helper.launch_ui_window("editconflicts", [data["path"]], block=True)
 
@@ -643,12 +640,12 @@ class GitAction(VCSAction):
 				 run_in_thread=True):
 		self.client = client
 		VCSAction.__init__(self, client, register_gtk_quit, notification,
-			run_in_thread)
+						   run_in_thread)
 		self.client.set_callback_notify(self.notify)
 		self.client.set_callback_progress_update(self.set_progress_fraction)
 		self.client.set_callback_get_user(self.get_user)
 		self.client.set_callback_get_cancel(self.cancel)
-
+	
 	def notify(self, data):
 		if self.has_notifier:
 			if data:
@@ -661,14 +658,14 @@ class GitAction(VCSAction):
 					])
 				else:
 					self.notification.append(["", data, ""])
-
+	
 	def get_user(self):
 		gtk.gdk.threads_enter()
 		dialog = rabbitvcs.ui.dialog.NameEmailPrompt()
 		result = dialog.run()
 		gtk.gdk.threads_leave()
 		return result
-
+	
 	def conflict_filter(self, data):
 		if str(data).startswith("ERROR:"):
 			path = data[27:]
@@ -682,8 +679,8 @@ class MercurialAction(VCSAction):
 		self.client.set_callback_get_user(self.get_user)
 		self.client.set_callback_get_cancel(self.cancel)
 		VCSAction.__init__(self, client, register_gtk_quit, notification,
-			run_in_thread)
-
+						   run_in_thread)
+	
 	def notify(self, data):
 		if self.has_notifier:
 			if data:
@@ -696,18 +693,19 @@ class MercurialAction(VCSAction):
 					])
 				else:
 					self.notification.append(["", data, ""])
-
+	
 	def get_user(self):
 		gtk.gdk.threads_enter()
 		dialog = rabbitvcs.ui.dialog.NameEmailPrompt()
 		result = dialog.run()
 		gtk.gdk.threads_leave()
 		return result
-
+	
 	def conflict_filter(self, data):
 		if str(data).startswith("ERROR:"):
 			path = data[27:]
 			helper.launch_ui_window("editconflicts", [path], block=True)
+
 
 def vcs_action_factory(client, register_gtk_quit=False, notification=True,
 					   run_in_thread=True):

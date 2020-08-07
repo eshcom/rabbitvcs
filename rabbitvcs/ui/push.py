@@ -86,7 +86,7 @@ class GitPush(Push):
 		# esh: set focus on ok button
 		self.get_widget("ok").grab_focus()
 		self.initialize_logs()
-
+	
 	def on_ok_clicked(self, widget, data=None):
 		self.hide()
 		repository = self.repository_selector.repository_opt.get_active_text()
@@ -102,7 +102,7 @@ class GitPush(Push):
 		self.action.append(self.action.set_status, _("Completed Push"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-
+	
 	def initialize_logs(self):
 		"""
 		Initializes the git logs
@@ -111,11 +111,11 @@ class GitPush(Push):
 			six.moves._thread.start_new_thread(self.load_logs, ())
 		except Exception as e:
 			log.exception(e)
-
+	
 	def load_logs_exit(self):
 		self.get_widget("status").set_text("")
 		self.update_widgets()
-
+	
 	def load_logs(self):
 		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
@@ -124,17 +124,17 @@ class GitPush(Push):
 		gtk.gdk.threads_enter()
 		self.load_logs_exit()
 		gtk.gdk.threads_leave()
-		
+	
 	def load_push_log(self):
 		repository = self.repository_selector.repository_opt.get_active_text()
 		branch = self.repository_selector.branch_opt.get_active_text()
 		refspec = "refs/remotes/%s/%s" % (repository, branch)
 		self.push_log = self.git.log(revision=self.git.revision(refspec), showtype="push")
-
+	
 	def on_branch_changed(self, repository, branch):
 		self.load_push_log()
 		self.update_widgets()
-
+	
 	def update_widgets(self):
 		self.log_table.clear()
 		repository = self.repository_selector.repository_opt.get_active_text()

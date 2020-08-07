@@ -159,7 +159,6 @@ def format_datetime(dt, format=None):
 			returner = dt.strftime(DT_FORMAT_THISYEAR)
 		else:
 			returner = dt.strftime(DT_FORMAT_ALL)
-
 	enc = locale.getpreferredencoding(False)
 	if enc is None or len(enc) == 0:
 		enc = "UTF8"
@@ -202,7 +201,7 @@ def get_home_folder():
 		# FIXME: what if somebody places a file in there?
 		os.makedirs(config_home, 0o700)
 	return config_home
-	
+
 def get_user_path():
 	"""
 	Returns the location of the user's home directory.
@@ -254,7 +253,6 @@ def get_previous_messages():
 	path = get_previous_messages_path()
 	if not os.path.exists(path):
 		return
-		
 	lines = open(path, "r").readlines()
 	cur_entry = ""
 	returner = []
@@ -271,7 +269,6 @@ def get_previous_messages():
 			date = cur_entry
 		else:
 			msg += line
-
 	if date and msg:
 		returner.append((date, msg.rstrip()))
 	returner.reverse()
@@ -284,7 +281,6 @@ def get_exclude_paths():
 	path = get_exclude_paths_path()
 	if not os.path.exists(path):
 		return []
-	
 	f = open(path, "r")
 	paths = []
 	for l in f:
@@ -333,7 +329,6 @@ def encode_revisions(revision_array):
 	last = revision_array[0]
 	current_position = 0
 	returner = []
-	
 	while True:
 		if current_position + 1 >= len(revision_array):
 			append(start, last, returner)
@@ -393,7 +388,7 @@ def get_merge_tool():
 	"""
 	sm = rabbitvcs.util.settings.SettingsManager()
 	return  sm.get("external", "merge_tool")
-	
+
 def launch_diff_tool(path1, path2=None):
 	"""
 	Launches the diff tool of choice.
@@ -412,7 +407,7 @@ def launch_diff_tool(path1, path2=None):
 		return
 	if not os.path.exists(diff["path"]):
 		return
-
+	
 	# If path2 is set, that means we are comparing one file/folder to another
 	if path2 is not None:
 		(lhs, rhs) = (path1, path2)
@@ -441,10 +436,9 @@ def launch_diff_tool(path1, path2=None):
 		lhs,
 		rhs
 	)
-	
+
 def launch_merge_tool(base="", mine="", theirs="", merged=""):
 	merge_tool = get_merge_tool()
-	
 	if(mine == None or mine == "" or not os.path.exists(mine) or
 	   theirs == None or theirs == "" or not os.path.exists(theirs)):
 		return
@@ -458,7 +452,7 @@ def launch_merge_tool(base="", mine="", theirs="", merged=""):
 		merge_tool = merge_tool.replace("%merged", merged)
 	log.debug("merge_tool: %s"%merge_tool)
 	os.popen(merge_tool)
-	
+
 def get_file_extension(path):
 	"""
 	Wrapper that retrieves a file path's extension.
@@ -470,7 +464,7 @@ def get_file_extension(path):
 	@return:        A file extension.
 	"""
 	return os.path.splitext(path)[1]
-	
+
 def open_item(path):
 	"""
 	Use GNOME default opener to handle file opening.
@@ -494,7 +488,7 @@ def open_item(path):
 			if os.path.exists("%s/%s" % (p, o)):
 				subprocess.Popen([o, os.path.abspath(path)])
 				return
-	
+
 def browse_to_item(path):
 	"""
 	Browse to the specified path in the file manager
@@ -512,7 +506,7 @@ def browse_to_item(path):
 			"nautilus", "--no-desktop", "--browser",
 			os.path.dirname(os.path.abspath(path))
 		])
-	
+
 def delete_item(path):
 	"""
 	Send an item to the trash.
@@ -542,7 +536,7 @@ def delete_item(path):
 			shutil.rmtree(abspath, True)
 		else:
 			os.remove(abspath)
-	
+
 def save_log_message(message):
 	"""
 	Saves a log message to the user's home folder for later usage
@@ -601,7 +595,7 @@ def save_repository_path(path):
 	f = open(get_repository_paths_path(), "w")
 	f.write("\n".join(paths).encode("utf-8"))
 	f.close()
-	
+
 def launch_ui_window(filename, args=[], block=False):
 	"""
 	Launches a UI window in a new process, so that we don't have to worry about
@@ -656,7 +650,6 @@ def get_repository_paths_limit():
 
 def get_common_directory(paths):
 	common = os.path.commonprefix(abspaths(paths))
-	
 	while not os.path.exists(common) or os.path.isfile(common):
 		common = os.path.split(common)[0]
 		if common == "":
@@ -732,7 +725,7 @@ def _commonpath(l1, l2, common=[]):
 	if len(l2) < 1: return (common, l1, l2)
 	if l1[0] != l2[0]: return (common, l1, l2)
 	return _commonpath(l1[1:], l2[1:], common+[l1[0]])
-	
+
 def get_relative_path(from_path, to_path):
 	"""
 	Method that returns the relative path between the specified paths
@@ -772,7 +765,7 @@ def create_path_revision_string(path, revision=None):
 		return path + "@" + str(revision)
 	else:
 		return path
-		
+
 def url_join(path, *args):
 	return "/".join([path.rstrip("/")] + list(args))
 
@@ -783,7 +776,6 @@ def quote_url(url_text):
 	params_quoted = quote(query)
 	query_quoted = quote_plus(query)
 	fragment_quoted = quote(fragment)
-	
 	url_quoted = urlunparse((scheme,
 							 netloc,
 							 path_quoted,
@@ -799,7 +791,6 @@ def unquote_url(url_text):
 	params_unquoted = unquote(query)
 	query_unquoted = unquote_plus(query)
 	fragment_unquoted = unquote(fragment)
-	
 	url_unquoted = urlunparse((scheme,
 							   netloc,
 							   path_unquoted,
@@ -858,9 +849,7 @@ def walk_tree_depth_first(tree, show_levels=False,
 	children. No preprocessing or filtering will be applied to other elements.
 	"""
 	annotated_tree = [(0, element) for element in tree]
-	
 	to_process = deque(annotated_tree)
-	
 	# If we're not given a starting point, the top is the start
 	found_starting_point = not start
 	
@@ -896,7 +885,7 @@ def urlize(path):
 	if path.startswith("/"):
 		return "file://%s" % path
 	return path
-	
+
 def parse_patch_output(patch_file, base_dir, strip=0):
 	""" Runs the GNU 'patch' utility, parsing the output. This is actually a
 	generator which yields values as each section of the patch is applied.
@@ -915,7 +904,7 @@ def parse_patch_output(patch_file, base_dir, strip=0):
 	"""
 	PATCHING_RE = re.compile(r"patching file (.*)")
 	REJECT_RE = re.compile(r".*saving rejects to file (.*)")
-
+	
 	# PATCH flags...
 	# -N: always assume forward diff
 	# -t: batch mode:
@@ -930,11 +919,11 @@ def parse_patch_output(patch_file, base_dir, strip=0):
 								  stdout = subprocess.PIPE,
 								  stderr = subprocess.STDOUT,
 								  env = env)
-
+	
 	# Intialise things...
 	line = patch_proc.stdout.readline()
 	patch_match = PATCHING_RE.match(line)
-
+	
 	current_file = None
 	if patch_match:
 		current_file = patch_match.group(1)
@@ -946,15 +935,13 @@ def parse_patch_output(patch_file, base_dir, strip=0):
 		raise rabbitvcs.vcs.ExternalUtilError("patch", output)
 		# Note the excluded case: empty line. This falls through, skips the loop
 		# and returns.
-
 	any_errors = False
 	reject_file = None
-
+	
 	while current_file:
 		line = patch_proc.stdout.readline().rstrip(" \t\r\n")
 		while not line and patch_proc.poll() is None:
 			line = patch_proc.stdout.readline().rstrip(" \t\r\n")
-
 		# Does patch tell us we're starting a new file?
 		patch_match = PATCHING_RE.match(line)
 		# Starting a new file => that's it for the last one, so return the value

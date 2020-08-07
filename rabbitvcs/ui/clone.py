@@ -49,7 +49,7 @@ class GitClone(Checkout):
 		self.get_widget("Checkout").set_title(_("Clone"))
 		self.get_widget("repo_chooser").hide()
 		self.check_form()
-
+	
 	def on_ok_clicked(self, widget):
 		url = self.repositories.get_active_text().strip()
 		path = self._get_path().strip()
@@ -72,7 +72,7 @@ class GitClone(Checkout):
 		self.action.append(self.action.set_status, _("Completed Clone"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-
+	
 	def on_repositories_changed(self, widget, data=None):
 		url = self.repositories.get_active_text()
 		tmp = url.replace("//", "/").split("/")[1:]
@@ -88,9 +88,9 @@ class GitClone(Checkout):
 				append = append[:-4]
 				break
 		self.get_widget("destination").set_text(
-			os.path.join(self.destination, append))
+				os.path.join(self.destination, append))
 		self.check_form()
-
+	
 	def check_form(self):
 		self.complete = True
 		if self.repositories.get_active_text() == "":
