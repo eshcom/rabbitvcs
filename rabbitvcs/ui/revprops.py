@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 #
-# This is an extension to the Nautilus file manager to allow better 
+# This is an extension to the Nautilus file manager to allow better
 # integration with the Subversion source control system.
 # 
 # Copyright (C) 2006-2008 by Jason Field <jason@jasonfield.com>
@@ -22,8 +22,9 @@ from __future__ import absolute_import
 #
 
 import pygtk
-import gobject
 import gtk
+
+from rabbitvcs.util import helper
 
 from rabbitvcs.ui.properties import PropertiesBase
 import rabbitvcs.ui.widget
@@ -38,78 +39,77 @@ from rabbitvcs import gettext
 _ = gettext.gettext
 
 class SVNRevisionProperties(PropertiesBase):
-    def __init__(self, path, revision=None):
-        PropertiesBase.__init__(self, path)
-        
-        self.svn = self.vcs.svn()
-        
-        if not self.svn.is_path_repository_url(path):
-            self.path = self.svn.get_repo_url(path)
-            self.get_widget("path").set_text(self.path)
-        
-        self.revision = revision
-        self.revision_obj = None
-        if revision is not None:
-            self.revision_obj = self.svn.revision("number", revision)
+	def __init__(self, path, revision=None):
+		PropertiesBase.__init__(self, path)
+		
+		self.svn = self.vcs.svn()
+		
+		if not self.svn.is_path_repository_url(path):
+			self.path = self.svn.get_repo_url(path)
+			self.get_widget("path").set_text(self.path)
+		
+		self.revision = revision
+		self.revision_obj = None
+		if revision is not None:
+			self.revision_obj = self.svn.revision("number", revision)
 
-        self.load()
+		self.load()
 
-    def load(self):
-        self.table.clear()
-        try:
-            self.proplist = self.svn.revproplist(
-                self.get_widget("path").get_text(),
-                self.revision_obj
-            )
-        except Exception as e:
-            log.exception(e)
-            rabbitvcs.ui.dialog.MessageBox(_("Unable to retrieve properties list"))
-            self.proplist = {}
-        
-        if self.proplist:
-            for key,val in list(self.proplist.items()):
-                self.table.append([False, key,val.rstrip()])
+	def load(self):
+		self.table.clear()
+		try:
+			self.proplist = self.svn.revproplist(
+				self.get_widget("path").get_text(),
+				self.revision_obj
+			)
+		except Exception as e:
+			log.exception(e)
+			rabbitvcs.ui.dialog.MessageBox(_("Unable to retrieve properties list"))
+			self.proplist = {}
+		
+		if self.proplist:
+			for key,val in list(self.proplist.items()):
+				self.table.append([False, key,val.rstrip()])
 
-    def save(self):
-        delete_recurse = self.get_widget("delete_recurse").get_active()
-        
-        self.action = SVNAction(
-            self.svn,
-            notification=False,
-            run_in_thread=False
-        )
-        
-        for row in self.delete_stack:
-            self.action.append(
-                self.svn.revpropdel,
-                self.path, 
-                row[1], 
-                self.revision_obj, 
-                force=True
-            )
+	def save(self):
+		delete_recurse = self.get_widget("delete_recurse").get_active()
+		
+		self.action = SVNAction(
+			self.svn,
+			notification=False,
+			run_in_thread=False
+		)
+		
+		for row in self.delete_stack:
+			self.action.append(
+				self.svn.revpropdel,
+				self.path,
+				row[1],
+				self.revision_obj,
+				force=True
+			)
 
-        for row in self.table.get_items():
-            self.action.append(
-                self.svn.revpropset,
-                row[1], 
-                row[2], 
-                self.path,
-                self.revision_obj, 
-                force=True
-            )
-        
-        self.action.run()
-
-        self.close()
+		for row in self.table.get_items():
+			self.action.append(
+				self.svn.revpropset,
+				row[1],
+				row[2],
+				self.path,
+				self.revision_obj,
+				force=True
+			)
+		
+		self.action.schedule()
+		self.close()
 
 if __name__ == "__main__":
-    from rabbitvcs.ui import main, VCS_OPT
-    (options, args) = main(
-        [VCS_OPT],
-        usage="Usage: rabbitvcs revprops [url1@rev1]"
-    )
-    
-    pathrev = rabbitvcs.util.helper.parse_path_revision_string(args.pop(0))
-    window = SVNRevisionProperties(pathrev[0], pathrev[1])
-    window.register_gtk_quit()
-    gtk.main()
+	from rabbitvcs.ui import main, VCS_OPT
+	(options, args) = main(
+		[VCS_OPT],
+		usage="Usage: rabbitvcs revprops [url1@rev1]"
+	)
+	
+	pathrev = helper.parse_path_revision_string(args.pop(0))
+	window = SVNRevisionProperties(pathrev[0], pathrev[1])
+	window.register_gtk_quit()
+	gtk.main()

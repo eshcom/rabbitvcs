@@ -19,24 +19,24 @@ parser.add_option("-c", "--cleanup", action="store_true", default=False)
 DIR = "remote"
 
 if options.cleanup:
-    rmtree(DIR, ignore_errors=True)
+	rmtree(DIR, ignore_errors=True)
 
-    print("remote.py clean")
+	print("remote.py clean")
 else:
-    if os.path.isdir(DIR):
-        raise SystemExit("This test script has already been run.  Please call this script with --cleanup to start again")
+	if os.path.isdir(DIR):
+		raise SystemExit("This test script has already been run.  Please call this script with --cleanup to start again")
 
-    os.mkdir(DIR)
-    g = GittyupClient(DIR, create=True)
-    g.remote_add("origin", "git://github.com/adamplumb/sprout.git")
-    l = g.remote_list()
+	os.mkdir(DIR)
+	g = GittyupClient(DIR, create=True)
+	g.remote_add("origin", "git://github.com/adamplumb/sprout.git")
+	l = g.remote_list()
 
-    assert (len(l) == 1)
-    assert (l[0]["host"] == "git://github.com/adamplumb/sprout.git")
-    
-    g.remote_delete("origin")
-    l = g.remote_list()
-    
-    assert (len(l) == 0)
+	assert (len(l) == 1)
+	assert (l[0]["host"] == "git://github.com/adamplumb/sprout.git")
+	
+	g.remote_delete("origin")
+	l = g.remote_list()
+	
+	assert (len(l) == 0)
 
-    print("remote.py pass")
+	print("remote.py pass")

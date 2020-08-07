@@ -21,52 +21,44 @@ from __future__ import absolute_import
 # along with RabbitVCS;  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import os
+import subprocess
+
 import pygtk
 import gtk
 
-from rabbitvcs.util import helper
-
-from rabbitvcs.ui import InterfaceNonView
-from rabbitvcs.ui.action import SVNAction
+from rabbitvcs.ui.action import GitAction
 import rabbitvcs.vcs
 
 from rabbitvcs import gettext
 _ = gettext.gettext
 
-class SVNCleanup(InterfaceNonView):
-	"""
-	This class provides a handler to the Cleanup window view.
-	The idea is that it displays a large folder icon with a label like
-	"Please Wait...".  Then when it finishes cleaning up, the label will
-	change to "Finished cleaning up /path/to/folder"
-	
-	"""
+from rabbitvcs.util.log import Log
+log = Log("rabbitvcs.ui.cherrypick")
 
-	def __init__(self, path):
-		InterfaceNonView.__init__(self)
-		self.path = path
+class GitCherrypick:
+	def __init__(self, path, commits):
 		self.vcs = rabbitvcs.vcs.VCS()
-		self.svn = self.vcs.svn()
-
-	def start(self):
-		self.action = SVNAction(
-			self.svn,
-			register_gtk_quit=self.gtk_quit_is_set()
-		)
+		self.git = self.vcs.git(path)
+		self.commits = commits
 		
-		self.action.append(self.action.set_header, _("Cleanup"))
-		self.action.append(self.action.set_status, _("Cleaning Up..."))
-		self.action.append(self.svn.cleanup, self.path)
-		self.action.append(self.action.set_status, _("Completed Cleanup"))
+		self.action = GitAction(
+			self.git,
+			register_gtk_quit=True
+		)
+		self.action.hide_cancel_button()
+		self.action.append(self.action.set_header, _("Cherrypick"))
+		self.action.append(self.action.set_status, _("Cherry Pick selected commits..."))
+		self.action.append(self.git.cherrypick, commits)
+		self.action.append(self.action.set_status, _("Completed cherrypick"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
 
-		
 if __name__ == "__main__":
 	from rabbitvcs.ui import main
-	(options, paths) = main(usage="Usage: rabbitvcs cleanup [path]")
-			
-	window = SVNCleanup(paths[0])
-	window.register_gtk_quit()
-	window.start()
+	(options, args) = main(usage="Usage: rabbitvcs cherrypick path [commit]")
+	
+	log.debug("options = %s, args = %s" % (options, args))
+	
+	window = GitCherrypick(args[0], args[1::])
 	gtk.main()

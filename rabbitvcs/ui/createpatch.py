@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 #
-# This is an extension to the Nautilus file manager to allow better 
+# This is an extension to the Nautilus file manager to allow better
 # integration with the Subversion source control system.
 # 
 # Copyright (C) 2006-2008 by Jason Field <jason@jasonfield.com>
@@ -22,22 +22,23 @@ from __future__ import absolute_import
 #
 
 import os
-import six.moves._thread
 
 import pygtk
-import gobject
 import gtk
-import os
 import tempfile
 import shutil
+
+try:
+	from gi.repository import GObject as gobject
+except ImportError:
+	import gobject
 
 from rabbitvcs.ui import InterfaceView
 from rabbitvcs.ui.action import SVNAction, GitAction
 import rabbitvcs.ui.widget
 import rabbitvcs.ui.dialog
 import rabbitvcs.util
-import rabbitvcs.util.helper
-from rabbitvcs.util.helper import get_common_directory
+from rabbitvcs.util import helper
 from rabbitvcs.util.log import Log
 from rabbitvcs.ui.commit import SVNCommit, GitCommit
 
@@ -46,242 +47,242 @@ log = Log("rabbitvcs.ui.createpatch")
 from rabbitvcs import gettext
 _ = gettext.gettext
 
-gobject.threads_init()
+helper.gobject_threads_init()
 
 class CreatePatch:
-    """
-    Provides a user interface for the user to create a Patch file
-    
-    """
+	"""
+	Provides a user interface for the user to create a Patch file
+	
+	"""
 
-    def __init__(self, paths, base_dir):
-        """
-        
-        @type  paths:   list of strings
-        @param paths:   A list of local paths.
-        
-        """
+	def __init__(self, paths, base_dir):
+		"""
+		
+		@type  paths:   list of strings
+		@param paths:   A list of local paths.
+		
+		"""
 
-        InterfaceView.__init__(self, "commit", "Commit")
+		InterfaceView.__init__(self, "commit", "Commit")
 
-        # Modify the Commit window to what we need for Create Patch
-        window = self.get_widget("Commit")
-        window.set_title(_("Create Patch"))
-        window.resize(640, 400)
-        self.get_widget("commit_to_box").hide()
-        self.get_widget("add_message_box").hide()
+		# Modify the Commit window to what we need for Create Patch
+		window = self.get_widget("Commit")
+		window.set_title(_("Create Patch"))
+		window.resize(640, 400)
+		self.get_widget("commit_to_box").hide()
+		self.get_widget("add_message_box").hide()
 
-        self.paths = paths
-        self.base_dir = base_dir
-        self.vcs = rabbitvcs.vcs.VCS()
-        self.activated_cache = {}
-        
-        self.common = rabbitvcs.util.helper.get_common_directory(paths)
+		self.paths = paths
+		self.base_dir = base_dir
+		self.vcs = rabbitvcs.vcs.VCS()
+		self.activated_cache = {}
+		
+		self.common = helper.get_common_directory(paths)
 
-        if not self.vcs.is_versioned(self.common):
-            rabbitvcs.ui.dialog.MessageBox(_("The given path is not a working copy"))
-            raise SystemExit()
+		if not self.vcs.is_versioned(self.common):
+			rabbitvcs.ui.dialog.MessageBox(_("The given path is not a working copy"))
+			raise SystemExit()
 
-        self.files_table = rabbitvcs.ui.widget.Table(
-            self.get_widget("files_table"),
-            [gobject.TYPE_BOOLEAN, rabbitvcs.ui.widget.TYPE_PATH, 
-                gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING], 
-            [rabbitvcs.ui.widget.TOGGLE_BUTTON, _("Path"), _("Extension"), 
-                _("Text Status"), _("Property Status")],
-            filters=[{
-                "callback": rabbitvcs.ui.widget.path_filter,
-                "user_data": {
-                    "base_dir": base_dir,
-                    "column": 1
-                }
-            }],
-            callbacks={
-                "row-activated":  self.on_files_table_row_activated,
-                "mouse-event":   self.on_files_table_mouse_event,
-                "key-event":     self.on_files_table_key_event
-            },
-            flags={
-                "sortable": True, 
-                "sort_on": 1
-            }
-        )
-        self.files_table.allow_multiple()
-        
-        self.items = None
-        self.initialize_items()
+		self.files_table = rabbitvcs.ui.widget.Table(
+			self.get_widget("files_table"),
+			[gobject.TYPE_BOOLEAN, rabbitvcs.ui.widget.TYPE_PATH,
+				gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING],
+			[rabbitvcs.ui.widget.TOGGLE_BUTTON, _("Path"), _("Extension"),
+				_("Text Status"), _("Property Status")],
+			filters=[{
+				"callback": rabbitvcs.ui.widget.path_filter,
+				"user_data": {
+					"base_dir": base_dir,
+					"column": 1
+				}
+			}],
+			callbacks={
+				"row-activated":  self.on_files_table_row_activated,
+				"mouse-event":   self.on_files_table_mouse_event,
+				"key-event":     self.on_files_table_key_event
+			},
+			flags={
+				"sortable": True,
+				"sort_on": 1
+			}
+		)
+		self.files_table.allow_multiple()
+		
+		self.items = None
+		self.initialize_items()
 
-    #
-    # Helper functions
-    # 
+	#
+	# Helper functions
+	#
 
-    def choose_patch_path(self):
-        path = ""
-        
-        dialog = gtk.FileChooserDialog(
-            _("Create Patch"),
-            None,
-            gtk.FILE_CHOOSER_ACTION_SAVE,(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
-                                          gtk.STOCK_SAVE, gtk.RESPONSE_OK))
-        dialog.set_do_overwrite_confirmation(True)
-        dialog.set_default_response(gtk.RESPONSE_OK)
-        dialog.set_current_folder_uri(
-            get_common_directory(self.paths).replace("file://", "")
-        )
-        response = dialog.run()
-        
-        if response == gtk.RESPONSE_OK:
-            path = dialog.get_filename()
-            
-        dialog.destroy()
-        
-        return path
+	def choose_patch_path(self):
+		path = ""
+		
+		dialog = gtk.FileChooserDialog(
+			_("Create Patch"),
+			None,
+			gtk.FILE_CHOOSER_ACTION_SAVE,(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+										  gtk.STOCK_SAVE, gtk.RESPONSE_OK))
+		dialog.set_do_overwrite_confirmation(True)
+		dialog.set_default_response(gtk.RESPONSE_OK)
+		dialog.set_current_folder_uri(
+			helper.get_common_directory(self.paths).replace("file://", "")
+		)
+		response = dialog.run()
+		
+		if response == gtk.RESPONSE_OK:
+			path = dialog.get_filename()
+			
+		dialog.destroy()
+		
+		return path
 
 class SVNCreatePatch(CreatePatch, SVNCommit):
-    def __init__(self, paths, base_dir=None):
-        CreatePatch.__init__(self, paths, base_dir)
+	def __init__(self, paths, base_dir=None):
+		CreatePatch.__init__(self, paths, base_dir)
 
-        self.svn = self.vcs.svn()
+		self.svn = self.vcs.svn()
 
-    #
-    # Event handlers
-    #
-        
-    def on_ok_clicked(self, widget, data=None):
-        items = self.files_table.get_activated_rows(1)
-        self.hide()
-        
-        if len(items) == 0:
-            self.close()
-            return
-        
-        path = self.choose_patch_path()
-        if not path:
-            self.close()
-            return
-      
-        ticks = len(items)*2
-        self.action = rabbitvcs.ui.action.SVNAction(
-            self.svn,
-            register_gtk_quit=self.gtk_quit_is_set()
-        )
-        self.action.set_pbar_ticks(ticks)
-        self.action.append(self.action.set_header, _("Create Patch"))
-        self.action.append(self.action.set_status, _("Creating Patch File..."))
-        
-        def create_patch_action(patch_path, patch_items, base_dir):
-            fileObj = open(patch_path,"w")
-            
-            # PySVN takes a path to create its own temp files...
-            temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
-            
-            os.chdir(base_dir)
-           
-            # Add to the Patch file only the selected items
-            for item in patch_items:
-                rel_path = rabbitvcs.util.helper.get_relative_path(base_dir, item)
-                diff_text = self.svn.diff(
-                    temp_dir, 
-                    rel_path, 
-                    self.svn.revision("base"), 
-                    rel_path, 
-                    self.svn.revision("working")
-                )
-                fileObj.write(diff_text)
-    
-            fileObj.close()            
-        
-            # Note: if we don't want to ignore errors here, we could define a
-            # function that logs failures.
-            shutil.rmtree(temp_dir, ignore_errors = True)
-        
-        self.action.append(create_patch_action, path, items, self.common)
-        
-        self.action.append(self.action.set_status, _("Patch File Created"))
-        self.action.append(self.action.finish)
-        self.action.start()
-        
-        # TODO: Open the diff file (meld is going to add support in a future version :()
-        # rabbitvcs.util.helper.launch_diff_tool(path)
+	#
+	# Event handlers
+	#
+		
+	def on_ok_clicked(self, widget, data=None):
+		items = self.files_table.get_activated_rows(1)
+		self.hide()
+		
+		if len(items) == 0:
+			self.close()
+			return
+		
+		path = self.choose_patch_path()
+		if not path:
+			self.close()
+			return
+	  
+		ticks = len(items)*2
+		self.action = rabbitvcs.ui.action.SVNAction(
+			self.svn,
+			register_gtk_quit=self.gtk_quit_is_set()
+		)
+		self.action.set_pbar_ticks(ticks)
+		self.action.append(self.action.set_header, _("Create Patch"))
+		self.action.append(self.action.set_status, _("Creating Patch File..."))
+		
+		def create_patch_action(patch_path, patch_items, base_dir):
+			fileObj = open(patch_path,"w")
+			
+			# PySVN takes a path to create its own temp files...
+			temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
+			
+			os.chdir(base_dir)
+		   
+			# Add to the Patch file only the selected items
+			for item in patch_items:
+				rel_path = helper.get_relative_path(base_dir, item)
+				diff_text = self.svn.diff(
+					temp_dir,
+					rel_path,
+					self.svn.revision("base"),
+					rel_path,
+					self.svn.revision("working")
+				)
+				fileObj.write(diff_text)
+	
+			fileObj.close()
+		
+			# Note: if we don't want to ignore errors here, we could define a
+			# function that logs failures.
+			shutil.rmtree(temp_dir, ignore_errors = True)
+		
+		self.action.append(create_patch_action, path, items, self.common)
+		
+		self.action.append(self.action.set_status, _("Patch File Created"))
+		self.action.append(self.action.finish)
+		self.action.schedule()
+		
+		# TODO: Open the diff file (meld is going to add support in a future version :()
+		# helper.launch_diff_tool(path)
 
 class GitCreatePatch(CreatePatch, GitCommit):
-    def __init__(self, paths, base_dir=None):
-        CreatePatch.__init__(self, paths, base_dir)
+	def __init__(self, paths, base_dir=None):
+		CreatePatch.__init__(self, paths, base_dir)
 
-        self.git = self.vcs.git(paths[0])
+		self.git = self.vcs.git(paths[0])
 
-    #
-    # Event handlers
-    #
-        
-    def on_ok_clicked(self, widget, data=None):
-        items = self.files_table.get_activated_rows(1)
-        self.hide()
-        
-        if len(items) == 0:
-            self.close()
-            return
-        
-        path = self.choose_patch_path()
-        if not path:
-            self.close()
-            return
-      
-        ticks = len(items)*2
-        self.action = rabbitvcs.ui.action.GitAction(
-            self.git,
-            register_gtk_quit=self.gtk_quit_is_set()
-        )
-        self.action.set_pbar_ticks(ticks)
-        self.action.append(self.action.set_header, _("Create Patch"))
-        self.action.append(self.action.set_status, _("Creating Patch File..."))
-        
-        def create_patch_action(patch_path, patch_items, base_dir):
-            fileObj = open(patch_path,"w")
-            
-            # PySVN takes a path to create its own temp files...
-            temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
-            
-            os.chdir(base_dir)
-           
-            # Add to the Patch file only the selected items
-            for item in patch_items:
-                rel_path = rabbitvcs.util.helper.get_relative_path(base_dir, item)
-                diff_text = self.git.diff(
-                    rel_path, 
-                    self.git.revision("HEAD"), 
-                    rel_path, 
-                    self.git.revision("WORKING")
-                )
-                fileObj.write(diff_text)
-    
-            fileObj.close()            
-        
-            # Note: if we don't want to ignore errors here, we could define a
-            # function that logs failures.
-            shutil.rmtree(temp_dir, ignore_errors = True)
-        
-        self.action.append(create_patch_action, path, items, self.common)
-        
-        self.action.append(self.action.set_status, _("Patch File Created"))
-        self.action.append(self.action.finish)
-        self.action.start()
+	#
+	# Event handlers
+	#
+		
+	def on_ok_clicked(self, widget, data=None):
+		items = self.files_table.get_activated_rows(1)
+		self.hide()
+		
+		if len(items) == 0:
+			self.close()
+			return
+		
+		path = self.choose_patch_path()
+		if not path:
+			self.close()
+			return
+	  
+		ticks = len(items)*2
+		self.action = rabbitvcs.ui.action.GitAction(
+			self.git,
+			register_gtk_quit=self.gtk_quit_is_set()
+		)
+		self.action.set_pbar_ticks(ticks)
+		self.action.append(self.action.set_header, _("Create Patch"))
+		self.action.append(self.action.set_status, _("Creating Patch File..."))
+		
+		def create_patch_action(patch_path, patch_items, base_dir):
+			fileObj = open(patch_path,"w")
+			
+			# PySVN takes a path to create its own temp files...
+			temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
+			
+			os.chdir(base_dir)
+		   
+			# Add to the Patch file only the selected items
+			for item in patch_items:
+				rel_path = helper.get_relative_path(base_dir, item)
+				diff_text = self.git.diff(
+					rel_path,
+					self.git.revision("HEAD"),
+					rel_path,
+					self.git.revision("WORKING")
+				)
+				fileObj.write(diff_text)
+	
+			fileObj.close()
+		
+			# Note: if we don't want to ignore errors here, we could define a
+			# function that logs failures.
+			shutil.rmtree(temp_dir, ignore_errors = True)
+		
+		self.action.append(create_patch_action, path, items, self.common)
+		
+		self.action.append(self.action.set_status, _("Patch File Created"))
+		self.action.append(self.action.finish)
+		self.action.schedule()
 
 classes_map = {
-    rabbitvcs.vcs.VCS_SVN: SVNCreatePatch,
-    rabbitvcs.vcs.VCS_GIT: GitCreatePatch
+	rabbitvcs.vcs.VCS_SVN: SVNCreatePatch,
+	rabbitvcs.vcs.VCS_GIT: GitCreatePatch
 }
 
 def createpatch_factory(paths, base_dir):
-    guess = rabbitvcs.vcs.guess(paths[0])
-    return classes_map[guess["vcs"]](paths, base_dir)
+	guess = rabbitvcs.vcs.guess(paths[0])
+	return classes_map[guess["vcs"]](paths, base_dir)
 
 if __name__ == "__main__":
-    from rabbitvcs.ui import main, BASEDIR_OPT
-    (options, paths) = main(
-        [BASEDIR_OPT],
-        usage="Usage: rabbitvcs createpatch [path1] [path2] ..."
-    )
-        
-    window = createpatch_factory(paths, options.base_dir)
-    window.register_gtk_quit()
-    gtk.main()
+	from rabbitvcs.ui import main, BASEDIR_OPT
+	(options, paths) = main(
+		[BASEDIR_OPT],
+		usage="Usage: rabbitvcs createpatch [path1] [path2] ..."
+	)
+		
+	window = createpatch_factory(paths, options.base_dir)
+	window.register_gtk_quit()
+	gtk.main()

@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 #
-# This is an extension to the Nautilus file manager to allow better 
+# This is an extension to the Nautilus file manager to allow better
 # integration with the Subversion source control system.
 # 
 # Copyright (C) 2006-2008 by Jason Field <jason@jasonfield.com>
@@ -25,12 +25,12 @@ import rabbitvcs.util.helper
 import rabbitvcs.vcs
 
 class BranchEntry:
-    def __init__(self, name, tracking=False, revision="", message=""):
-        self.name = name
-        self.tracking = tracking
-        self.revision = revision
-        self.message = message
-    
-    def __str__(self):
-        tracking = self.tracking and " (tracking)" or ""
-        return "<BranchEntry %s:%s%s>" % (self.name, self.revision, tracking)
+	def __init__(self, name, tracking=False, revision="", message=""):
+		self.name = name
+		self.tracking = tracking
+		self.revision = revision
+		self.message = message
+	
+	def __str__(self):
+		tracking = self.tracking and " (tracking)" or ""
+		return "<BranchEntry %s:%s%s>" % (self.name, self.revision, tracking)

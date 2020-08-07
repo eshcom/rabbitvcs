@@ -3,8 +3,8 @@
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Log">
-    <property name="width_request">775</property>
-    <property name="height_request">560</property>
+    <property name="width_request">1200</property>
+    <property name="height_request">790</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Log</property>
     <property name="window_position">center</property>

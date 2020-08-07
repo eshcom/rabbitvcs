@@ -6,26 +6,26 @@ import os
 import subprocess
 
 def cleanup(modules):
-    for module in modules:
-        subprocess.call(["python", module, "--cleanup"])
+	for module in modules:
+		subprocess.call(["python", module, "--cleanup"])
 
 modules = [
-    "branch.py", 
-    "stage.py",
-    "commit.py",
-    "tag.py",
-    "remove.py",
-    "clone.py",
-    "move.py",
-    "pull.py",
-    "remote.py"
+	"branch.py",
+	"stage.py",
+	"commit.py",
+	"tag.py",
+	"remove.py",
+	"clone.py",
+	"move.py",
+	"pull.py",
+	"remote.py"
 ]
 
 if len(argv) == 2 and  argv[1] == "--cleanup":
-    cleanup(modules)
+	cleanup(modules)
 
 for module in modules:
-    if subprocess.call(["python", module]) == 1:
-        raise SystemExit("Module test failed")
+	if subprocess.call(["python", module]) == 1:
+		raise SystemExit("Module test failed")
 
 cleanup(modules)

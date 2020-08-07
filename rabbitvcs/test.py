@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 #
-# This is an extension to the Nautilus file manager to allow better 
+# This is an extension to the Nautilus file manager to allow better
 # integration with the Subversion source control system.
 # 
 # Copyright (C) 2006-2008 by Jason Field <jason@jasonfield.com>
@@ -27,9 +27,9 @@ import doctest
 import rabbitvcs.util.helper
 
 if __name__ == "__main__":
-    suite = unittest.TestSuite()
-    
-    for module in (rabbitvcs.util.helper,):
-        suite.addTest(doctest.DocTestSuite(module))
-        runner = unittest.TextTestRunner()
-        runner.run(suite)
+	suite = unittest.TestSuite()
+	
+	for module in (rabbitvcs.util.helper,):
+		suite.addTest(doctest.DocTestSuite(module))
+		runner = unittest.TextTestRunner()
+		runner.run(suite)

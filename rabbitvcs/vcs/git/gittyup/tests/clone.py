@@ -19,15 +19,15 @@ parser.add_option("-c", "--cleanup", action="store_true", default=False)
 DIR = "clone"
 
 if options.cleanup:
-    rmtree(DIR, ignore_errors=True)
+	rmtree(DIR, ignore_errors=True)
 
-    print("clone.py clean")
+	print("clone.py clean")
 else:
-    if os.path.isdir(DIR):
-        raise SystemExit("This test script has already been run.  Please call this script with --cleanup to start again")
+	if os.path.isdir(DIR):
+		raise SystemExit("This test script has already been run.  Please call this script with --cleanup to start again")
 
-    g = GittyupClient()
-    g.clone("git://github.com/adamplumb/sprout.git", DIR)
+	g = GittyupClient()
+	g.clone("git://github.com/adamplumb/sprout.git", DIR)
 
 
-    print("clone.py pass")
+	print("clone.py pass")

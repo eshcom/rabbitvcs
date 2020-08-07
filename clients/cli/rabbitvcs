@@ -32,16 +32,16 @@ Available Modules
 ------------------
 
 SVN:
-    about, add, annotate, applypatch, branch, browser, changes, checkmods, 
-    checkout, cleanup, commit, createpatch, create, delete, diff, editconflicts,
-    export, ignore, import, lock, log, merge, properties, open, relocate, rename, 
-    markresolved, revert, settings, switch, unlock, update, updateto
+	about, add, annotate, applypatch, branch, browser, changes, checkmods, 
+	checkout, cleanup, commit, createpatch, create, delete, diff, editconflicts,
+	export, ignore, import, lock, log, merge, properties, open, relocate, rename, 
+	markresolved, revert, settings, switch, unlock, update, updateto
 
 Git:
-    about, add, annotate, applybranch, branches, changes, checkout, clean, 
-    clone, commit, createpatch, create, delete, diff, editconflicts, export, 
-    ignore, log, merge, open, push, rename, remotes, reset, revert, settings, 
-    tags, update
+	about, add, annotate, applybranch, branches, changes, checkout, clean, 
+	clone, commit, createpatch, create, delete, diff, editconflicts, export, 
+	ignore, log, merge, open, push, rename, remotes, reset, revert, settings, 
+	tags, update
 
 For module specific help type: rabbitvcs <module> -h
 """
@@ -49,7 +49,7 @@ For module specific help type: rabbitvcs <module> -h
 args = sys.argv
 
 if len(args) < 2 or args[1] == "-h":
-    raise SystemExit(usage)
+	raise SystemExit(usage)
 
 args.pop(0) # remove this file's path
 module = args.pop(0)
@@ -57,8 +57,8 @@ module = args.pop(0)
 # If a filename/path is given, try to expand it to and absolute path
 i = 0
 for arg in args:
-    if os.path.exists(arg):
-        args[i] = os.path.abspath(arg)
-    i += 1
+	if os.path.exists(arg):
+		args[i] = os.path.abspath(arg)
+	i += 1
 
 launch_ui_window(module, args)

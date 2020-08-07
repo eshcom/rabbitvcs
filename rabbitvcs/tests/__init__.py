@@ -1,5 +1,5 @@
 #
-# This is an extension to the Nautilus file manager to allow better 
+# This is an extension to the Nautilus file manager to allow better
 # integration with the Subversion source control system.
 # 
 # Copyright (C) 2006-2008 by Jason Field <jason@jasonfield.com>

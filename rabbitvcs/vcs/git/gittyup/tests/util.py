@@ -6,10 +6,10 @@ from __future__ import absolute_import
 import os
 
 def touch(fname, times = None):
-    with open(fname, 'a'):
-        os.utime(fname, times)
+	with open(fname, 'a'):
+		os.utime(fname, times)
 
 def change(path):
-    f = open(path, "a")
-    f.write("1")
-    f.close()
+	f = open(path, "a")
+	f.write("1")
+	f.close()

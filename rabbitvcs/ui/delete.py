@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 #
-# This is an extension to the Nautilus file manager to allow better 
+# This is an extension to the Nautilus file manager to allow better
 # integration with the Subversion source control system.
 # 
 # Copyright (C) 2006-2008 by Jason Field <jason@jasonfield.com>
@@ -24,8 +24,9 @@ from __future__ import absolute_import
 import os.path
 
 import pygtk
-import gobject
 import gtk
+
+from rabbitvcs.util import helper
 
 from rabbitvcs.ui import InterfaceNonView
 from rabbitvcs.ui.action import SVNAction
@@ -38,80 +39,80 @@ from rabbitvcs import gettext
 _ = gettext.gettext
 
 class Delete(InterfaceNonView):
-    """
-    This class provides a handler to Delete functionality.
-    
-    """
+	"""
+	This class provides a handler to Delete functionality.
+	
+	"""
 
-    def __init__(self, paths):
-        InterfaceNonView.__init__(self)
-        self.paths = paths
-        self.vcs = rabbitvcs.vcs.VCS()
+	def __init__(self, paths):
+		InterfaceNonView.__init__(self)
+		self.paths = paths
+		self.vcs = rabbitvcs.vcs.VCS()
 
-    def start(self):
-    
-        # From the given paths, determine which are versioned and which are not
-        versioned = []
-        unversioned = []
-        for path in self.paths:
-            if self.vcs.is_versioned(path):
-                versioned.append(path)
-            elif os.path.exists(path):
-                unversioned.append(path)
-        
-        # If there are unversioned files, confirm that the user wants to
-        # delete those.  Default to true.
-        result = True
-        if unversioned:
-            item = None
-            if len(unversioned) == 1:
-                item = unversioned[0]
-            confirm = rabbitvcs.ui.dialog.DeleteConfirmation(item)
-            result = confirm.run()
+	def start(self):
+	
+		# From the given paths, determine which are versioned and which are not
+		versioned = []
+		unversioned = []
+		for path in self.paths:
+			if self.vcs.is_versioned(path):
+				versioned.append(path)
+			elif os.path.exists(path):
+				unversioned.append(path)
+		
+		# If there are unversioned files, confirm that the user wants to
+		# delete those.  Default to true.
+		result = True
+		if unversioned:
+			item = None
+			if len(unversioned) == 1:
+				item = unversioned[0]
+			confirm = rabbitvcs.ui.dialog.DeleteConfirmation(item)
+			result = confirm.run()
 
-        # If the user wants to continue (or there are no unversioned files)
-        # remove or delete the given files
-        if result == gtk.RESPONSE_OK or result == True:
-            if versioned:
-                try:
-                    self.vcs_remove(versioned, force=True)
-                except Exception as e:
-                    log.exception()
-                    return
-            
-            if unversioned:
-                for path in unversioned:
-                    rabbitvcs.util.helper.delete_item(path)
+		# If the user wants to continue (or there are no unversioned files)
+		# remove or delete the given files
+		if result == gtk.RESPONSE_OK or result == True:
+			if versioned:
+				try:
+					self.vcs_remove(versioned, force=True)
+				except Exception as e:
+					log.exception()
+					return
+			
+			if unversioned:
+				for path in unversioned:
+					helper.delete_item(path)
 
 class SVNDelete(Delete):
-    def __init__(self, paths):
-        Delete.__init__(self, paths)
-    
-    def vcs_remove(self, paths, **kwargs):
-        if rabbitvcs.vcs.guess(paths[0])["vcs"] == rabbitvcs.vcs.VCS_SVN:
-            self.vcs.svn().remove(paths, **kwargs)
+	def __init__(self, paths):
+		Delete.__init__(self, paths)
+	
+	def vcs_remove(self, paths, **kwargs):
+		if rabbitvcs.vcs.guess(paths[0])["vcs"] == rabbitvcs.vcs.VCS_SVN:
+			self.vcs.svn().remove(paths, **kwargs)
 
 class GitDelete(Delete):
-    def __init__(self, paths):
-        Delete.__init__(self, paths)
-    
-    def vcs_remove(self, paths, **kwargs):
-        if rabbitvcs.vcs.guess(paths[0])["vcs"] == rabbitvcs.vcs.VCS_GIT:
-            self.vcs.git(paths[0]).remove(paths)
+	def __init__(self, paths):
+		Delete.__init__(self, paths)
+	
+	def vcs_remove(self, paths, **kwargs):
+		if rabbitvcs.vcs.guess(paths[0])["vcs"] == rabbitvcs.vcs.VCS_GIT:
+			self.vcs.git(paths[0]).remove(paths)
 
 classes_map = {
-    rabbitvcs.vcs.VCS_SVN: SVNDelete,
-    rabbitvcs.vcs.VCS_GIT: GitDelete
+	rabbitvcs.vcs.VCS_SVN: SVNDelete,
+	rabbitvcs.vcs.VCS_GIT: GitDelete
 }
 
 def delete_factory(paths):
-    guess = rabbitvcs.vcs.guess(paths[0])
-    return classes_map[guess["vcs"]](paths)
+	guess = rabbitvcs.vcs.guess(paths[0])
+	return classes_map[guess["vcs"]](paths)
 
 if __name__ == "__main__":
-    from rabbitvcs.ui import main
-    (options, paths) = main(usage="Usage: rabbitvcs delete [path1] [path2] ...")
+	from rabbitvcs.ui import main
+	(options, paths) = main(usage="Usage: rabbitvcs delete [path1] [path2] ...")
 
-    window = delete_factory(paths)
-    window.register_gtk_quit()
-    window.start()
+	window = delete_factory(paths)
+	window.register_gtk_quit()
+	window.start()

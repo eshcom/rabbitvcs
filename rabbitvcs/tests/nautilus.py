@@ -5,16 +5,15 @@ to get the RabbitVCS extension to load properly.
 """
 
 class InfoProvider(object):
-    pass
+	pass
 
 class MenuProvider(object):
-    pass
+	pass
 
 class ColumnProvider(object):
-    pass
-
+	pass
 
 class NautilusVFSFile(object):
-    def add_string_attribute(self, key, value):
-        """Pretend to add a string attribute."""
-        pass
+	def add_string_attribute(self, key, value):
+		"""Pretend to add a string attribute."""
+		pass
