@@ -1004,7 +1004,7 @@ class GtkFilesContextMenuCallbacks(ContextMenuCallbacks):
 		if len(self.paths) > 0:
 			proc = helper.launch_ui_window("delete", self.paths)
 			self.caller.rescan_after_process_exit(proc, self.paths)
-  
+
 	def update(self, data1=None, data2=None):
 		proc = helper.launch_ui_window("update", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)

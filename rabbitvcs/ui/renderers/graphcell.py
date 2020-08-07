@@ -36,7 +36,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 	  in_lines          (start, end, colour, style) tuple list to draw inward lines,
 	  out_lines         (start, end, colour, style) tuple list to draw outward lines.
 	"""
-
 	columns_len = 0
 
 	__gproperties__ = {"graph": (gobject.TYPE_PYOBJECT, "graph",
@@ -45,10 +44,8 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 
 	def do_set_property(self, property, value):
 		"""Set properties from GObject properties."""
-
 		if not value:
 			return
-
 		if property.name == "graph":
 			(self.node, self.in_lines, self.out_lines) = value
 		else:
@@ -142,7 +139,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 				self.render_line (ctx, cell_area, box_size,
 							 bg_area.y, bg_area.height,
 							 start, end, lcolour, style)
-
 		# Draw lines out of the cell
 		if self.out_lines:
 			for start, end, lcolour in self.out_lines:
@@ -150,7 +146,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 				self.render_line (ctx, cell_area, box_size,
 							 bg_area.y + bg_area.height, bg_area.height,
 							 start, end, lcolour, style)
-
 		# Draw the revision node in the right column
 		if not self.node:
 			return

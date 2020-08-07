@@ -95,13 +95,11 @@ class Add(InterfaceView, GtkContextMenuCaller):
 				"key-event":     self.on_files_table_key_event
 			}
 		)
-
 		self.initialize_items()
 
 	#
 	# Helpers
 	#
-
 	def load(self):
 		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
@@ -119,12 +117,8 @@ class Add(InterfaceView, GtkContextMenuCaller):
 						for item in self.items:
 							if item.path == os.path.realpath(ignored_path):
 								should_add = False
-
 						if should_add:
 							self.items.append(Status(os.path.realpath(ignored_path), 'unversioned'))
-					 
-
-
 		self.populate_files_table()
 		self.get_widget("status").set_text(_("Found %d item(s)") % len(self.items))
 		gtk.gdk.threads_leave()

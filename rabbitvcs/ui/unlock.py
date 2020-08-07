@@ -114,19 +114,16 @@ class SVNUnlock(Add):
 	#
 	# UI Signal Callbacks
 	#
-			 
 	def on_ok_clicked(self, widget):
 		items = self.files_table.get_activated_rows(1)
 		if not items:
 			self.close()
 			return
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Unlock"))
 		self.action.append(self.action.set_status, _("Running Unlock Command..."))
 		for item in items:

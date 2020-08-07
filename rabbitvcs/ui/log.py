@@ -271,7 +271,7 @@ class Log(InterfaceView):
 			self.refresh()
 		else:
 			self.load()
-		  
+
 	def get_selected_revision_numbers(self):
 		if len(self.revisions_table.get_selected_rows()) == 0:
 			return ""
@@ -286,7 +286,7 @@ class Log(InterfaceView):
 			return self.revisions_table.get_row(self.revisions_table.get_selected_rows()[0])[self.revision_number_column]
 		else:
 			return ""
-	
+
 	@gtk_unsafe
 	def set_start_revision(self, rev):
 		self.get_widget("start").set_text(str(rev))
@@ -549,7 +549,6 @@ class SVNLog(Log):
 	def update_revision_message(self):
 		combined_paths = []
 		subitems = []
-			   
 		for selected_row in self.revisions_table.get_selected_rows():
 			item = self.display_items[selected_row]
 			

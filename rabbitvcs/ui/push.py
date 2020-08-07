@@ -56,18 +56,15 @@ class Push(InterfaceView):
 		InterfaceView.__init__(self, "push", "Push")
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
-
 	#
 	# Event handlers
 	#
 	def on_ok_clicked(self, widget, data=None):
 		pass
 
-			 
 class GitPush(Push):
 	def __init__(self, path):
 		Push.__init__(self, path)
-
 		self.git = self.vcs.git(path)
 		
 		self.repository_selector = rabbitvcs.ui.widget.GitRepositorySelector(

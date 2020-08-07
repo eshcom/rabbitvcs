@@ -54,9 +54,7 @@ STATE_EDIT = 1
 class GitBranchManager(InterfaceView):
 	"""
 	Provides a UI interface to manage items
-	
 	"""
-	
 	state = STATE_ADD
 	
 	def __init__(self, path, revision=""):
@@ -207,7 +205,6 @@ class GitBranchManager(InterfaceView):
 		
 	def load(self):
 		self.items_treeview.clear()
-
 		self.branch_list = self.git.branch_list()
 		for item in self.branch_list:
 			name = saxutils.escape(item.name)
@@ -220,18 +217,17 @@ class GitBranchManager(InterfaceView):
 
 	def on_delete_clicked(self, widget):
 		items = self.items_treeview.get_selected_row_items(0)
-
+		
 		selected = []
 		for branch in items:
 			selected.append(saxutils.unescape(branch).replace("<b>", "").replace("</b>", ""))
-	
+		
 		confirm = rabbitvcs.ui.dialog.Confirmation(_("Are you sure you want to delete %s?" % ", ".join(selected)))
 		result = confirm.run()
-	   
+		
 		if result == gtk.RESPONSE_OK or result == True:
 			for branch in selected:
 				self.git.branch_delete(branch)
-			
 			self.load()
 			self.show_add()
 
@@ -240,22 +236,18 @@ class GitBranchManager(InterfaceView):
 			branch_name = self.branch_entry.get_text()
 			branch_track = self.track_checkbox.get_active()
 			start_point = self.git.revision(self.start_point_entry.get_text())
-
 			self.git.branch(branch_name, revision=start_point)
 		elif self.state == STATE_EDIT:
 			branch_name = self.branch_entry.get_text()
 			branch_track = self.track_checkbox.get_active()
-			
 			if self.selected_branch.name != branch_name:
 				self.git.branch_rename(self.selected_branch.name, branch_name)
-	
 		if self.checkout_checkbox.get_active():
 			# esh: change logic
 			if branch_name.startswith("remotes/"):
 				branch_parts = branch_name.rsplit("/", 1)
 				branch_name = branch_parts[len(branch_parts) - 1]
 			self.git.checkout([], self.git.revision(branch_name))
-
 		self.load()
 		self.show_edit(branch_name)
 
@@ -273,7 +265,6 @@ class GitBranchManager(InterfaceView):
 				branch_name = selected[0]
 				if branch_name.startswith("<b>"):
 					branch_name = branch_name[3:-4]
-			
 				self.show_edit(branch_name)
 			self.get_widget("delete").set_sensitive(True)
 		else:
@@ -312,7 +303,6 @@ class GitBranchManager(InterfaceView):
 			if item.name == branch_name:
 				self.selected_branch = item
 				break
-
 		self.save_button.set_label(_("Save"))
 
 		if self.selected_branch:
@@ -325,7 +315,6 @@ class GitBranchManager(InterfaceView):
 			else:
 				self.checkout_checkbox.set_active(False)
 				self.checkout_checkbox.set_sensitive(True)
-
 		self.show_containers(self.view_containers)
 		self.get_widget("detail_label").set_markup(_("<b>Branch Detail</b>"))
 

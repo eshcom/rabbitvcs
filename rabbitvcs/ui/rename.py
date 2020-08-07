@@ -42,9 +42,7 @@ class Rename(InterfaceNonView):
 	def __init__(self, path):
 		InterfaceNonView.__init__(self)
 		self.register_gtk_quit()
-
 		self.vcs = rabbitvcs.vcs.VCS()
-
 		self.path = path
 		
 		if not os.path.exists(self.path):
@@ -54,11 +52,10 @@ class Rename(InterfaceNonView):
 		
 		dialog = OneLineTextChange(_("Rename"), _("New Name:"), self.path)
 		(result, new_path) = dialog.run()
-
+		
 		if result != gtk.RESPONSE_OK:
 			self.close()
 			return
-	   
 		if not new_path:
 			MessageBox(_("The new name field is required"))
 		

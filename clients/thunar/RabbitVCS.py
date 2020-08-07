@@ -66,7 +66,6 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 	#: Maps statuses to emblems.
 	#: TODO: should probably be possible to create this dynamically
 	EMBLEMS = rabbitvcs.ui.STATUS_EMBLEMS
-	
 	#: A list of statuses which count as modified (for a directory) in
 	#: TortoiseSVN emblem speak.
 	MODIFIED_STATUSES = [
@@ -76,7 +75,6 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 		SVN.STATUS["modified"],
 		SVN.STATUS["missing"]
 	]
-	
 	MODIFIED_TEXT_STATUSES = [
 		"added",
 		"deleted",
@@ -84,40 +82,34 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 		"modified",
 		"missing"
 	]
-	
 	#: This is our lookup table for C{NautilusVFSFile}s which we need for attaching
 	#: emblems. This is mostly a workaround for not being able to turn a path/uri
 	#: into a C{NautilusVFSFile}. It looks like:::
 	#: 
 	#:     nautilusVFSFile_table = {
 	#:        "/foo/bar/baz": <NautilusVFSFile>
-	#:     
 	#:     }
 	#: 
 	#: Keeping track of C{NautilusVFSFile}s is a little bit complicated because
 	#: when an item is moved (renamed) C{update_file_info} doesn't get called. So
 	#: we also add C{NautilusVFSFile}s to this table from C{get_file_items} etc.
 	nautilusVFSFile_table = {}
-	
 	#: Without an actual status monitor it's not possible to just keep
 	#: track of stuff that happens (e.g. a commit happens, files are added,
 	#: such things). So at the moment we just add all interesting items
 	#: to this list.
 	monitored_files = []
-	
 	#: This is in case we want to permanently enable invalidation of the status
 	#: checker info. We put a path here before we invalidate the item, so that
 	#: we don't enter an endless loop when updating the status.
 	#: The callback should acquire this lock when pushing the path to this.
 	always_invalidate = True
-	
 	#: When we get the statuses from the callback, but them here for further
 	#: use. There is a possible memory problem here if we put a lot of data in
 	#: this - even when it's removed, Python may not release the memory. I do
 	#: not know this for sure.
 	#: This is of the form: [("path/to", {...status dict...}), ...]
 	paths_from_callback = []
-	
 	paths_last_lookup = {}
 	paths_lookup_timeout = 30
 	
@@ -129,7 +121,6 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 	#: change in the future? Who knows. This should work for both the current
 	#: situation, and the possibility that they are asynchronous.
 	callback_paths_lock = threading.RLock()
-	
 	#: A list of statuses that we want to keep track of for when a process
 	#: might have done something.
 	STATUSES_TO_MONITOR = copy.copy(MODIFIED_TEXT_STATUSES)
@@ -143,7 +134,6 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 	
 	def __init__(self):
 		threading.currentThread().setName("RabbitVCS extension thread")
-		
 		self.status_checker = StatusChecker()
 	
 	def get_local_path(self, item):
@@ -175,9 +165,7 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 				path = realpath(six.text_type(self.get_local_path(item), "utf-8"))
 				paths.append(path)
 				self.nautilusVFSFile_table[path] = item
-
 		if len(paths) == 0: return []
-		
 		return ThunarxMainContextMenu(self, window.get_data("base_dir"), paths).get_menu()
 	
 	#~ @disable
@@ -218,13 +206,11 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 		x-nautilus-desktop:/// # e.g. mounted devices on the desktop
 		"""
 		if not uri.startswith("file://"): return False
-		
 		return True
 	
 	#
 	# Some methods to help with keeping emblems up-to-date
 	#
-	
 	def rescan_after_process_exit(self, proc, paths):
 		"""
 		Rescans all of the items on our C{monitored_files} list after the
@@ -249,33 +235,24 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 												 recurse=True,
 												 invalidate=True,
 												 summary=True)
-			
 		self.execute_after_process_exit(proc, do_check)
-		
+	
 	def execute_after_process_exit(self, proc, func=None):
-
 		def is_process_still_alive():
 			log.debug("is_process_still_alive() for pid: %i" % proc.pid)
 			# First we need to see if the commit process is still running
-
 			retval = proc.poll()
-			
 			log.debug("%s" % retval)
-			
 			still_going = (retval is None)
-
 			if not still_going and callable(func):
 				func()
-			
 			return still_going
-
 		# Add our callback function on a 1 second timeout
 		gobject.timeout_add_seconds(1, is_process_still_alive)
-		
+
 	# 
 	# Some other methods
 	# 
-	
 	def reload_settings(self, proc):
 		"""
 		Used to re-load settings after the settings dialog has been closed.
@@ -298,12 +275,9 @@ class RabbitVCS(thunarx.MenuProvider, thunarx.PropertyPageProvider):
 				path = realpath(six.text_type(self.get_local_path(item), "utf-8"))
 				paths.append(path)
 				self.nautilusVFSFile_table[path] = item
-
 		if len(paths) == 0: return []
-
 		label = rabbitvcs.ui.property_page.PropertyPageLabel().get_widget()
 		page = rabbitvcs.ui.property_page.PropertyPage(paths).get_widget()
-		
 		ppage = thunarx.PropertyPage("")
 		ppage.set_label_widget(label)
 		ppage.add(page)
@@ -317,7 +291,7 @@ class ThunarxContextMenu(rabbitvcs.util.contextmenu.MenuBuilder):
 	in gtk dialogs/windows.
 	"""
 	signal = "activate"
-		
+	
 	def make_menu_item(self, item, id_magic):
 		return item.make_thunar_action(id_magic)
 	

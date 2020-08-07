@@ -80,94 +80,75 @@ class PropertyPage(rabbitvcs.ui.GtkBuilderWidgetWrapper):
 			except Exception as ex:
 				log.exception(ex)
 				raise
-				   
-class FileInfoPane(rabbitvcs.ui.GtkBuilderWidgetWrapper):
 
+class FileInfoPane(rabbitvcs.ui.GtkBuilderWidgetWrapper):
 	gtkbuilder_filename = "property_page"
 	gtkbuilder_id = "file_info_table"
 	
 	def __init__(self, path, vcs=None, claim_domain=True):
 		rabbitvcs.ui.GtkBuilderWidgetWrapper.__init__(self,
 												 claim_domain=claim_domain)
-		
 		self.path = path
 		self.vcs = vcs or rabbitvcs.vcs.VCS()
 		self.checker = StatusChecker()
-			   
+		
 		self.get_widget("file_name").set_text(os.path.basename(path))
 		
 		self.status = self.checker.check_status(path,
 												recurse = False,
 												invalidate = False,
 												summary = False)
-
-		self.get_widget("vcs_type").set_text(self.status.vcs_type)
 		
+		self.get_widget("vcs_type").set_text(self.status.vcs_type)
 		self.get_widget("content_status").set_text(six.text_type(self.status.simple_content_status()))
 		self.get_widget("prop_status").set_text(six.text_type(self.status.simple_metadata_status()))
 		
-
 		self.set_icon_from_status(self.get_widget("content_status_icon"),
 												  self.status.simple_content_status())
-
 		self.set_icon_from_status(self.get_widget("prop_status_icon"),
 												  self.status.simple_metadata_status())
-
-		
-
 		self.set_icon_from_status(self.get_widget("vcs_icon"),
 								  self.status.single, ICON_SIZE_DIALOG)
 		
 		additional_props_table = rabbitvcs.ui.widget.KeyValueTable(
 									self.get_additional_info())
-
 		additional_props_table.show()
 
 		self.get_widget("file_info_table").pack_start(additional_props_table,
 														expand=False,
 														fill=False,
 														padding=0)
-						
+
 	def set_icon_from_status(self, icon, status, size=ICON_SIZE_BUTTON):
 		if status in rabbitvcs.ui.STATUS_EMBLEMS:
 			icon.set_from_icon_name("emblem-" + STATUS_EMBLEMS[status], size)
 
 	def get_additional_info(self):
 		vcs_type = rabbitvcs.vcs.guess_vcs(self.path)['vcs']
-				
 		if(vcs_type == rabbitvcs.vcs.VCS_SVN):
 			return self.get_additional_info_svn()
 		else:
 			return []
 				
 	def get_additional_info_svn(self):
-		
 		repo_url = self.vcs.svn().get_repo_url(self.path)
-		
 		return [
 			(_("Repository URL"), repo_url)]
-		
 
 class FileInfoExpander(rabbitvcs.ui.GtkBuilderWidgetWrapper):
-
 	gtkbuilder_filename = "property_page"
 	gtkbuilder_id = "file_info_expander"
 
 	def __init__(self, path, vcs=None, claim_domain=True):
-		
 		# Might be None, but that's okay, only subclasses use it
 		self.vcs = vcs
-		
 		rabbitvcs.ui.GtkBuilderWidgetWrapper.__init__(self,
 												 claim_domain=claim_domain)
 		self.path = path
 		self.get_widget("file_expander_path").set_label(path)
-		
 		# Do a lazy evaluate for this
 		self.file_info = None
-		
 		self.expander = self.get_widget()
-		
 		# There seems to be no easy way to connect to this in gtkbuilder
 		self.expander.connect("notify::expanded", self.on_expand)
 

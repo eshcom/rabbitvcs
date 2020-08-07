@@ -226,17 +226,14 @@ class SVNMerge(InterfaceView):
 				"recurse": recursive,
 				"dry_run": test
 			}
-		
 		if len(args) > 0:
 			action.append(*args, **kwargs)
-					   
 		action.append(action.set_status, endcmd)
 		action.append(action.finish)
 		action.schedule()
 
 	def on_prepare(self, widget, page):
 		self.page = page
-		
 		current = self.assistant.get_current_page()
 		if current == 1:
 			self.on_mergerange_prepare()
@@ -246,7 +243,6 @@ class SVNMerge(InterfaceView):
 			self.on_mergetree_prepare()
 		elif current == 4:
 			self.on_mergeoptions_prepare()
-
 		self.last_page = current
 
 	def on_forward_clicked(self, widget):
@@ -445,8 +441,6 @@ class BranchMerge(InterfaceView):
 	def on_cancel_clicked(self, widget, data=None):
 		self.close()
 
-		   
-
 class GitMerge(BranchMerge):
 	def __init__(self, path, branch=None):
 		BranchMerge.__init__(self, path, branch)
@@ -576,17 +570,13 @@ class GitMerge(BranchMerge):
 	def __revision_changed(self, widget):
 		self.update_branch_info()
 
-		   
-
 if __name__ == "__main__":
 	from rabbitvcs.ui import main, VCS_OPT
 	(options, args) = main(
 		[VCS_OPT],
 		usage="Usage: rabbitvcs merge path [revision/revision_range]"
 	)
-
 	path = args[0]
-
 	vcs_name = options.vcs
 	if not vcs_name:
 		vcs_name = rabbitvcs.vcs.guess(path)["vcs"]

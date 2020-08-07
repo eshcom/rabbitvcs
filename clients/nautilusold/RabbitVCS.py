@@ -61,7 +61,6 @@ ENABLE_EMBLEMS = True
 class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnProvider):
 	""" This is the main class that implements all of our awesome features.
 	"""
-	
 	#: Maps statuses to emblems.
 	#: TODO: should probably be possible to create this dynamically
 	EMBLEMS = {
@@ -78,11 +77,9 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 	def __init__(self):
 		""" Constructor - initialise our required storage
 		"""
-
 		# This list keeps track of any files we have come across that will
 		# need to be re-scanned if there is a commit/revert.
 		self.monitoredFiles = []
-
 		# This list keeps a record of all of the files we're planning to scan
 		# when we get some idle time
 		self.scanStack = []
@@ -119,7 +116,6 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 		"""
 		if file.get_uri_scheme() != 'file':
 			return
-
 		path = gnomevfs.get_local_path_from_uri(file.get_uri())
 		c = pysvn.Client()
 		try:
@@ -161,33 +157,27 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 			if os.path.isdir(path):
 				# We're a folder
 				st = c.status(path, recurse=RECURSIVE_STATUS)
-
 				# Check if this folder had been added
 				for x in st:
 					if x.path == path and x.text_status == pysvn.wc_status_kind.added:
 						file.add_emblem(self.EMBLEMS[pysvn.wc_status_kind.added])
 						return
-
 				# Check if any of the contents of the folder have been modified
 				t = set([    pysvn.wc_status_kind.modified,
 							pysvn.wc_status_kind.added,
 							pysvn.wc_status_kind.deleted])
 				statuses = set([s.text_status for s in st])
-
 				if len( t & statuses ):
 					file.add_emblem(self.EMBLEMS[pysvn.wc_status_kind.modified])
 				else:
 					file.add_emblem(self.EMBLEMS[pysvn.wc_status_kind.normal])
 			else:
 				# We're a file
-
 				# Get our status
 				st = c.status(path, recurse=False)[0]
-
 				# Display an emblem if we have a match for the status
 				if st.text_status in self.EMBLEMS:
 					file.add_emblem(self.EMBLEMS[st.text_status])
-
 				# Keep a note of this file object in case we have commits etc.
 				t = [ pysvn.wc_status_kind.modified,
 					  pysvn.wc_status_kind.added,
@@ -208,22 +198,20 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 		# At the moment we're only handling single files or folders
 		if len(files) < 1:
 			return
-
 		file = files[0]
 		if file is None:
 			return
-
 		path = gnomevfs.get_local_path_from_uri(file.get_uri())
 
 		items = [('NautilusPython::svndelete_file_item', 'Delete' , 'Remove files from the repository.', self.OnDelete, "rabbitvcs-delete"),
 				 ('NautilusPython::svnrename_file_item', 'Rename' , 'Rename a file in the repository', self.OnRename, "rabbitvcs-rename"),
 				 ('NautilusPython::svnrefreshstatus_file_item', 'Refresh Status', 'Refresh the display status of the selected files.', self.OnRefreshStatus, "rabbitvcs-refresh"),
 				 ('NautilusPython::svnrepo_file_item', 'Repository Browser' , 'View Repository Sources', self.OnRepoBrowser, gtk.STOCK_FIND)]
-
+		
 		if len( files ) == 1:
 			items += [('NautilusPython::svnlog_file_item', 'Log' , 'Log of %s' % file.get_name(), self.OnShowLog, "rabbitvcs-show_log"),
 					  ('NautilusPython::svnupdate_file_item', 'Update' , 'Get the latest code from the repository.', self.OnUpdate, "rabbitvcs-update")]
-
+		
 		# Check if this is a folder, and if so if it's under source control
 		if os.path.isdir(path):
 			# Check if this folder is versioned
@@ -256,7 +244,7 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 				if not st.is_versioned:
 					# If not, we can only offer to add the file.
 					items = [('NautilusPython::svnadd_file_item', 'Add' , 'Add %s to the repository.'%file.get_name(), self.OnAdd, "rabbitvcs-add")]
-
+				
 				# Add the revert and diff items if we've changed from the repos version
 				if st.text_status in [pysvn.wc_status_kind.added, pysvn.wc_status_kind.modified]:
 					items += [('NautilusPython::svnrevert_file_item', 'Revert' , 'Revert %s back to the repository version.'%file.get_name(), self.OnRevert, "rabbitvcs-revert")]
@@ -264,7 +252,7 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 						items += [('NautilusPython::svncommit_file_item', 'Commit' , 'Commit %s to the repository.' % file.get_name(), self.OnCommit, "rabbitvcs-commit"),
 								  ('NautilusPython::svndiff_file_item', 'Diff' , 'Diff %s against the repository version' % file.get_name(), self.OnShowDiff, "rabbitvcs-diff"),
 								  ('NautilusPython::svnmkdiff_file_item', 'Patch', 'Create a patch of %s from the repository version'%file.get_name(), self.OnMkDiff, "rabbitvcs-createpatch")]
-
+				
 				# Add the conflict resolution menu items
 				if st.text_status in [pysvn.wc_status_kind.conflicted]:
 					items += [('NautilusPython::svnrevert_file_item', 'Revert' , 'Revert %s back to the repository version.'%file.get_name(), self.OnRevert, "rabbitvcs-revert"), ]
@@ -282,9 +270,7 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 		"""
 		if file.get_uri() == "x-nautilus-desktop:///":
 			return
-
 		path = gnomevfs.get_local_path_from_uri(file.get_uri())
-
 		window.set_data("base_dir", os.path.realpath(six.text_type(path)))
 
 		if not os.path.isdir(os.path.join(path,".svn")):
@@ -354,7 +340,6 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider, nautilus.ColumnPro
 		""" Edit Conflicts menu handler.
 		"""
 		file = files[0]
-
 		path = gnomevfs.get_local_path_from_uri(file.get_uri())
 		rabbitvcs.util.helper.launch_diff_tool(path + ".mine", path)
 

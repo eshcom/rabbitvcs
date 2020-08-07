@@ -137,7 +137,6 @@ class SVNAnnotate(Annotate):
 	#
 	# Helper methods
 	#
-	
 	def load(self):
 		from_rev_num = self.get_widget("from").get_text().lower()
 		to_rev_num = self.get_widget("to").get_text().lower()
@@ -145,9 +144,8 @@ class SVNAnnotate(Annotate):
 		if not from_rev_num.isdigit():
 			MessageBox(_("The from revision field must be an integer"))
 			return
-			 
-		from_rev = self.svn.revision("number", number=int(from_rev_num))
 		
+		from_rev = self.svn.revision("number", number=int(from_rev_num))
 		to_rev = self.svn.revision("head")
 		if to_rev_num.isdigit():
 			to_rev = self.svn.revision("number", number=int(to_rev_num))

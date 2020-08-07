@@ -164,15 +164,12 @@ class MenuItem(object):
 	
 	def _get_function(self, object, name):
 		function = None
-		
 		if hasattr(object, name):
-			
 			attr = getattr(object, name)
 			if callable(attr):
 				function = attr
-		
 		return function
-	  
+	
 	def make_magic_id(self, id_magic = None):
 		identifier = self.identifier
 		
@@ -180,7 +177,7 @@ class MenuItem(object):
 			identifier = identifier + "-" + str(id_magic)
 			
 		return identifier
-	  
+	
 	def make_action(self, id_magic = None):
 		"""
 		Creates the GTK Action for the menu item. To avoid GTK "helpfully"
@@ -252,10 +249,10 @@ class MenuItem(object):
 class MenuSeparator(MenuItem):
 	identifier = "RabbitVCS::Separator"
 	label = SEPARATOR
-	   
+
 	def make_insensitive(self, menuitem):
 		menuitem.set_property("sensitive", False)
-			   
+
 	def make_thunar_action(self, id_magic = None):
 		menuitem = super(MenuSeparator, self).make_thunar_action(id_magic)
 		self.make_insensitive(menuitem)
@@ -273,7 +270,7 @@ class MenuSeparator(MenuItem):
 			#~ self.icon,
 		#~ )
 		#~ return action
-			   
+			
 	# Make separators insensitive
 	def make_gtk_menu_item(self, id_magic = None):
 		menuitem = gtk.SeparatorMenuItem()

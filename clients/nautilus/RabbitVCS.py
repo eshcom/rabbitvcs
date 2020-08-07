@@ -21,9 +21,7 @@
 #
 
 """
-
 Our module for everything related to the Nautilus extension.
-
 """
 from __future__ import with_statement
 from __future__ import absolute_import
@@ -36,10 +34,8 @@ def log_all_exceptions(type, value, tb):
 	log = Log("rabbitvcs.util.extensions.nautilus.RabbitVCS")
 	log.exception_info("Error caught by master exception hook!",
 					   (type, value, tb))
-
 	text = ''.join(traceback.format_exception(type, value,
 											  tb, limit=None))
-
 	try:
 		import rabbitvcs.ui.dialog
 		rabbitvcs.ui.dialog.ErrorNotification(text)
@@ -48,7 +44,6 @@ def log_all_exceptions(type, value, tb):
 					  " to display error dialog.")
 		log.exception(ex)
 		raise
-
 	sys.__excepthook__(type, value, tb)
 
 # import sys
@@ -92,12 +87,10 @@ import rabbitvcs.services.service
 from rabbitvcs.services.checkerservice import StatusCheckerStub as StatusChecker
 
 class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
-				 nautilus.ColumnProvider, nautilus.PropertyPageProvider):
+				nautilus.ColumnProvider, nautilus.PropertyPageProvider):
 	"""
 	This is the main class that implements all of our awesome features.
-
 	"""
-
 	#: This is our lookup table for C{NautilusVFSFile}s which we need for attaching
 	#: emblems. This is mostly a workaround for not being able to turn a path/uri
 	#: into a C{NautilusVFSFile}. It looks like:::
@@ -113,11 +106,9 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 	# FIXME: this may be the source of the memory hogging seen in the extension
 	# script itself.
 	nautilusVFSFile_table = {}
-
 	#: This is in case we want to permanently enable invalidation of the status
 	#: checker info.
 	always_invalidate = True
-
 	#: When we get the statuses from the callback, put them here for further
 	#: use. This is of the form: [("path/to", {...status dict...}), ...]
 	statuses_from_callback = []
@@ -125,19 +116,14 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 	def __init__(self):
 		# Create a global client we can use to do VCS related stuff
 		self.vcs_client = VCS()
-
 		self.status_checker = StatusChecker()
-		
 		self.status_checker.assert_version(EXT_VERSION)
-		
 		self.items_cache = {}
-		
+	
 	def get_columns(self):
 		"""
 		Return all the columns we support.
-
 		"""
-
 		return (
 			nautilus.Column(
 				"RabbitVCS::status_column",
@@ -167,7 +153,6 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 
 	def update_file_info(self, item):
 		"""
-
 		C{update_file_info} is called only when:
 
 		  - When you enter a directory (once for each item but only when the
@@ -182,19 +167,15 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 
 		@type   item: NautilusVFSFile
 		@param  item:
-
 		"""
 		enable_emblems = bool(int(settings.get("general", "enable_emblems")))
 		enable_attrs = bool(int(settings.get("general", "enable_attributes")))
 		
 		if not (enable_emblems or enable_attrs): return nautilus.OPERATION_COMPLETE
-				
 		if not self.valid_uri(item.get_uri()): return nautilus.OPERATION_FAILED
 		
 		path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()), "utf-8")
-
 		# log.debug("update_file_info() called for %s" % path)
-
 		invalidate = False
 		if path in self.nautilusVFSFile_table:
 			invalidate = True
@@ -224,11 +205,9 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 		for idx in range(len(self.statuses_from_callback)):
 			found = (self.statuses_from_callback[idx].path) == path
 			if found: break
-
 		if found: # We're here because we were triggered by a callback
 			status = self.statuses_from_callback[idx]
 			del self.statuses_from_callback[idx]
-
 		# Don't bother the checker if we already have the info from a callback
 		if not found:
 			status = \
@@ -237,11 +216,9 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 												 summary=True,
 												 callback=self.cb_status,
 												 invalidate=invalidate)
-
 		# FIXME: when did this get disabled?
 		if enable_attrs: self.update_columns(item, path, status)
 		if enable_emblems: self.update_status(item, path, status)
-		
 		return nautilus.OPERATION_COMPLETE
 
 	def update_columns(self, item, path, status):
@@ -249,31 +226,25 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 		Update the columns (attributes) for a given Nautilus item,
 		filling them in with information from the version control
 		server.
-
 		"""
-
 		revision = ""
 		if status.revision:
 			revision = str(status.revision)
-
 		age = ""
 		if status.date:
 			age = pretty_timedelta(
 				datetime.datetime.fromtimestamp(status.date),
 				datetime.datetime.now()
 			)
-
 		author = ""
 		if status.author:
 			author = str(status.author)
-
 		values = {
 			"status": status.simple_content_status(),
 			"revision": revision,
 			"author": author,
 			"age": age
 		}
-
 		for key, value in list(values.items()):
 			item.add_string_attribute(key, value)
 
@@ -303,22 +274,16 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 
 		@rtype:         list of MenuItems
 		@return:        The context menu entries to add to the menu.
-
 		"""
-
 		paths = []
 		for item in items:
 			if self.valid_uri(item.get_uri()):
 				path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()), "utf-8")
 				paths.append(path)
 				self.nautilusVFSFile_table[path] = item
-
 		if len(paths) == 0: return []
-		
 		# log.debug("get_file_items_full() called")
-
 		paths_str = "-".join(paths)
-		
 		conditions_dict = None
 		if paths_str in self.items_cache:
 			conditions_dict = self.items_cache[paths_str]
@@ -326,11 +291,9 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 				conditions = NautilusMenuConditions(conditions_dict)
 				menu = NautilusMainContextMenu(self, window.get_data("base_dir"), paths, conditions).get_menu()
 				return menu
-		
 		if conditions_dict != "in-progress":
 			self.status_checker.generate_menu_conditions_async(provider, window.get_data("base_dir"), paths, self.update_file_items)
 			self.items_cache[path] = "in-progress"
-			
 		return ()
 
 	def get_file_items(self, window, items):
@@ -340,11 +303,8 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 				path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()), "utf-8")
 				paths.append(path)
 				self.nautilusVFSFile_table[path] = item
-
 		if len(paths) == 0: return []
-		
 		# log.debug("get_file_items() called")
-		
 		return NautilusMainContextMenu(self, window.get_data("base_dir"), paths).get_menu()
 
 	def update_file_items(self, provider, base_dir, paths, conditions_dict):
@@ -358,20 +318,17 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 	def get_background_items_profile(self, window, item):
 		import cProfile
 		import rabbitvcs.util.helper
-		
 		path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()),
 					   "utf-8").replace("/", ":")
-		
 		profile_data_file = os.path.join(
 							   rabbitvcs.util.helper.get_home_folder(),
 							   "checkerservice_%s.stats" % path)
-		
 		prof = cProfile.Profile()
 		retval = prof.runcall(self.get_background_items_real, window, item)
 		prof.dump_stats(profile_data_file)
 		log.debug("Dumped: %s" % profile_data_file)
 		return retval
-	   
+
 	def get_background_items_full(self, provider, window, item):
 		"""
 		Menu activated on entering a directory. Builds context menu for File
@@ -385,15 +342,11 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 
 		@rtype:         list of MenuItems
 		@return:        The context menu entries to add to the menu.
-
 		"""
-
 		if not self.valid_uri(item.get_uri()): return
 		path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()), "utf-8")
 		self.nautilusVFSFile_table[path] = item
-
 		# log.debug("get_background_items_full() called")
-
 		conditions_dict = None
 		if path in self.items_cache:
 			conditions_dict = self.items_cache[path]
@@ -401,24 +354,18 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 				conditions = NautilusMenuConditions(conditions_dict)
 				menu = NautilusMainContextMenu(self, path, [path], conditions).get_menu()
 				return menu
-
 		window.set_data("base_dir", path)
-
 		if conditions_dict != "in-progress":
 			self.status_checker.generate_menu_conditions_async(provider, path, [path], self.update_background_items)
 			self.items_cache[path] = "in-progress"
-					
 		return ()
 
 	def get_background_items(self, window, item):
 		if not self.valid_uri(item.get_uri()): return
 		path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()), "utf-8")
 		self.nautilusVFSFile_table[path] = item
-
 		# log.debug("get_background_items() called")
-		
 		window.set_data("base_dir", path)
-		
 		return NautilusMainContextMenu(self, path, [path]).get_menu()
 
 	def update_background_items(self, provider, base_dir, paths, conditions_dict):
@@ -430,26 +377,20 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 	#
 	# Helper functions
 	#
-
 	def valid_uri(self, uri):
 		"""
 		Check whether or not it's a good idea to have RabbitVCS do
 		its magic for this URI. Some examples of URI schemes:
 
 		x-nautilus-desktop:/// # e.g. mounted devices on the desktop
-
 		"""
-
 		if not uri.startswith("file://"): return False
-
 		return True
 
 	#
 	# Some methods to help with keeping emblems up-to-date
 	#
-
 	def rescan_after_process_exit(self, proc, paths):
-
 		def do_check():
 			# We'll check the paths first (these were the paths that
 			# were originally passed along to the context menu).
@@ -465,33 +406,24 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 												 invalidate=True,
 												 callback=self.cb_status,
 												 summary=True)
-
 		self.execute_after_process_exit(proc, do_check)
 
 	def execute_after_process_exit(self, proc, func=None):
-
 		def is_process_still_alive():
 			log.debug("is_process_still_alive() for pid: %i" % proc.pid)
 			# First we need to see if the commit process is still running
-
 			retval = proc.poll()
-
 			log.debug("%s" % retval)
-
 			still_going = (retval is None)
-
 			if not still_going and callable(func):
 				func()
-
 			return still_going
-
 		# Add our callback function on a 1 second timeout
 		gobject.timeout_add_seconds(1, is_process_still_alive)
 
 	#
 	# Some other methods
 	#
-
 	def reload_settings(self, proc):
 		"""
 		Used to re-load settings after the settings dialog has been closed.
@@ -500,7 +432,6 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 		does this itself and make sure everything is reloaded properly
 		after the settings dialogs saves.
 		"""
-
 		def do_reload_settings():
 			globals()["settings"] = SettingsManager()
 			globals()["log"] = reload_log_settings()("rabbitvcs.util.extensions.nautilus")
@@ -508,11 +439,9 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 
 		self.execute_after_process_exit(proc, do_reload_settings)
 
-
 	#
 	# Callbacks
 	#
-
 	def cb_status(self, status):
 		"""
 		This is the callback that C{StatusMonitor} calls.
@@ -544,9 +473,7 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 			log.debug("Path [%s] not found in file table" % status.path)
 
 	def get_property_pages(self, items):
-
 		paths = []
-
 		for item in items:
 			if self.valid_uri(item.get_uri()):
 				path = six.text_type(gnomevfs.get_local_path_from_uri(item.get_uri()), "utf-8")
@@ -554,18 +481,14 @@ class RabbitVCS(nautilus.InfoProvider, nautilus.MenuProvider,
 				if self.vcs_client.is_in_a_or_a_working_copy(path):
 					paths.append(path)
 					self.nautilusVFSFile_table[path] = item
-
 		if len(paths) == 0: return []
-
+		
 		label = rabbitvcs.ui.property_page.PropertyPageLabel(claim_domain=False).get_widget()
 		page = rabbitvcs.ui.property_page.PropertyPage(paths, claim_domain=False).get_widget()
-
 		ppage = nautilus.PropertyPage('RabbitVCS::PropertyPage',
-			label,
-			page)
-
+					label,
+					page)
 		return [ppage]
-
 
 from rabbitvcs.util.contextmenuitems import *
 
@@ -574,7 +497,6 @@ class NautilusContextMenu(MenuBuilder):
 	Provides a standard Nautilus context menu (ie. a list of
 	"nautilus.MenuItem"s).
 	"""
-
 	signal = "activate"
 
 	def make_menu_item(self, item, id_magic):

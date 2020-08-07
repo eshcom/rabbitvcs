@@ -109,7 +109,6 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 			return
 		
 		self.get_widget("remote_uri_text").set_text(self.svn.get_repo_url(path))
-			   
 		self.table = rabbitvcs.ui.widget.Table(
 			self.get_widget("table"),
 			[gobject.TYPE_STRING, rabbitvcs.ui.widget.TYPE_ELLIPSIZED,
@@ -150,21 +149,16 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 	
 	def refresh(self):
 		self.table.clear()
-		
 		propdets = {}
-				
 		try:
 			propdets = self.svn.propdetails(self.path)
-					   
 		except Exception as e:
 			log.exception(e)
 			rabbitvcs.ui.dialog.MessageBox(_("Unable to retrieve properties list"))
 		
 		for propname, details in list(propdets.items()):
 			
-			self.table.append(
-				[propname, details["value"], "N/A", details["status"]]
-							  )
+			self.table.append([propname, details["value"], "N/A", details["status"]])
 
 	def on_refresh_clicked(self, widget):
 		self.refresh()
@@ -173,7 +167,6 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 		self.edit_property()
 
 	def edit_property(self, name=""):
-		
 		value = self.svn.propget(self.path, name)
 		
 		dialog = rabbitvcs.ui.dialog.Property(name, value)

@@ -146,7 +146,6 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 	#
 	# Event handlers
 	#
-		
 	def on_ok_clicked(self, widget, data=None):
 		items = self.files_table.get_activated_rows(1)
 		self.hide()
@@ -159,7 +158,7 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 		if not path:
 			self.close()
 			return
-	  
+		
 		ticks = len(items)*2
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
@@ -176,7 +175,7 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 			temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
 			
 			os.chdir(base_dir)
-		   
+			
 			# Add to the Patch file only the selected items
 			for item in patch_items:
 				rel_path = helper.get_relative_path(base_dir, item)
@@ -226,7 +225,7 @@ class GitCreatePatch(CreatePatch, GitCommit):
 		if not path:
 			self.close()
 			return
-	  
+		
 		ticks = len(items)*2
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
@@ -243,7 +242,7 @@ class GitCreatePatch(CreatePatch, GitCommit):
 			temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
 			
 			os.chdir(base_dir)
-		   
+			
 			# Add to the Patch file only the selected items
 			for item in patch_items:
 				rel_path = helper.get_relative_path(base_dir, item)

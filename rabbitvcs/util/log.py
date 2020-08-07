@@ -254,9 +254,7 @@ class DualLog(BaseLog):
 class NullHandler(logging.Handler):
 	"""
 	Handles log messages and doesn't do anything with them
-	
 	"""
-
 	def emit(self, record):
 		pass
 
