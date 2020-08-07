@@ -36,17 +36,14 @@ _ = gettext.gettext
 class SVNSwitch(InterfaceView):
 	def __init__(self, path, revision=None):
 		InterfaceView.__init__(self, "switch", "Switch")
-
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-		
 		self.get_widget("path").set_text(self.path)
 		self.repositories = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("repositories"),
 			helper.get_repository_paths()
 		)
-
 		self.revision_selector = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("revision_container"),
 			self.svn,
@@ -54,23 +51,19 @@ class SVNSwitch(InterfaceView):
 			url_combobox=self.repositories,
 			expand=True
 		)
-		
 		self.repositories.set_child_text(helper.unquote_url(self.svn.get_repo_url(self.path)))
-
+	
 	def on_ok_clicked(self, widget):
 		url = self.repositories.get_active_text()
-		
 		if not url or not self.path:
 			rabbitvcs.ui.dialog.MessageBox(_("The repository location is a required field."))
 			return
-
 		revision = self.revision_selector.get_revision_object()
 		self.hide()
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Switch"))
 		self.action.append(self.action.set_status, _("Running Switch Command..."))
 		self.action.append(helper.save_repository_path, url)
@@ -98,7 +91,7 @@ if __name__ == "__main__":
 		[REVISION_OPT],
 		usage="Usage: rabbitvcs switch [url]"
 	)
-			
+	
 	window = switch_factory(args[0], revision=options.revision)
 	window.register_gtk_quit()
 	gtk.main()

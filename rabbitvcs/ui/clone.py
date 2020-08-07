@@ -45,22 +45,17 @@ log = Log("rabbitvcs.ui.clone")
 class GitClone(Checkout):
 	def __init__(self, path=None, url=None):
 		Checkout.__init__(self, path, url)
-		
 		self.git = self.vcs.git()
-		
 		self.get_widget("Checkout").set_title(_("Clone"))
 		self.get_widget("repo_chooser").hide()
-
 		self.check_form()
 
 	def on_ok_clicked(self, widget):
 		url = self.repositories.get_active_text().strip()
 		path = self._get_path().strip()
-		
 		if not url or not path:
 			rabbitvcs.ui.dialog.MessageBox(_("The repository URL and destination path are both required fields."))
 			return
-	
 		self.hide()
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
@@ -86,15 +81,12 @@ class GitClone(Checkout):
 		while len(tmp):
 			prev = append
 			append = tmp.pop()
-				
 			if append in ("http:", "https:", "file:", "git:"):
 				append = ""
 				break
-
 			if append.endswith(".git"):
 				append = append[:-4]
 				break
-
 		self.get_widget("destination").set_text(
 			os.path.join(self.destination, append))
 		self.check_form()
@@ -105,7 +97,6 @@ class GitClone(Checkout):
 			self.complete = False
 		if self.get_widget("destination").get_text() == "":
 			self.complete = False
-		
 		self.get_widget("ok").set_sensitive(self.complete)
 
 classes_map = {

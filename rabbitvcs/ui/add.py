@@ -56,9 +56,7 @@ class Add(InterfaceView, GtkContextMenuCaller):
 	repository.  Also, provides a context menu with some extra functionality.
 
 	Send a list of paths to be added
-
 	"""
-
 	TOGGLE_ALL = True
 
 	def __init__(self, paths, base_dir=None):
@@ -144,7 +142,6 @@ class Add(InterfaceView, GtkContextMenuCaller):
 		"""
 		Initializes the activated cache and loads the file items in a new thread
 		"""
-
 		try:
 			six.moves._thread.start_new_thread(self.load, ())
 		except Exception as e:
@@ -159,7 +156,6 @@ class Add(InterfaceView, GtkContextMenuCaller):
 	#
 	# UI Signal Callbacks
 	#
-
 	def on_select_all_toggled(self, widget):
 		self.TOGGLE_ALL = not self.TOGGLE_ALL
 		for row in self.files_table.get_items():
@@ -188,7 +184,6 @@ class Add(InterfaceView, GtkContextMenuCaller):
 class SVNAdd(Add):
 	def __init__(self, paths, base_dir=None):
 		Add.__init__(self, paths, base_dir)
-		
 		self.svn = self.vcs.svn()
 
 	def on_ok_clicked(self, widget):
@@ -196,9 +191,7 @@ class SVNAdd(Add):
 		if not items:
 			self.close()
 			return
-
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
@@ -213,7 +206,6 @@ class SVNAdd(Add):
 class GitAdd(Add):
 	def __init__(self, paths, base_dir=None):
 		Add.__init__(self, paths, base_dir)
-		
 		self.git = self.vcs.git(paths[0])
 	
 	def on_ok_clicked(self, widget):
@@ -221,9 +213,7 @@ class GitAdd(Add):
 		if not items:
 			self.close()
 			return
-
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
@@ -262,7 +252,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT, QUIET_OPT],
 		usage="Usage: rabbitvcs add [path1] [path2] ..."
 	)
-
+	
 	if options.quiet:
 		AddQuiet(paths)
 	else:

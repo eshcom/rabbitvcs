@@ -46,10 +46,8 @@ _ = gettext.gettext
 class SVNUnlock(Add):
 	def __init__(self, paths, base_dir):
 		InterfaceView.__init__(self, "add", "Add")
-
 		self.window = self.get_widget("Add")
 		self.window.set_title(_("Unlock"))
-
 		self.paths = paths
 		self.base_dir = base_dir
 		self.last_row_clicked = None
@@ -75,14 +73,11 @@ class SVNUnlock(Add):
 				"key-event":     self.on_files_table_key_event
 			}
 		)
-
 		self.initialize_items()
-		
-		
+	
 	#
 	# Helpers
 	#
-
 	def load(self):
 		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
@@ -92,23 +87,19 @@ class SVNUnlock(Add):
 	
 	def populate_files_table(self):
 		self.files_table.clear()
-
 		found = 0
 		for item in self.items:
 			# FIXME: ...
 			if item.simple_content_status() in (rabbitvcs.vcs.status.status_unversioned, rabbitvcs.vcs.status.status_ignored):
 				continue
-				
 			if not self.svn.is_locked(item.path):
 				continue
-		
 			self.files_table.append([
 				True,
 				item.path,
 				helper.get_file_extension(item.path)
 			])
 			found += 1
-			
 		self.get_widget("status").set_text(_("Found %d item(s)") % found)
 	
 	#
@@ -135,14 +126,11 @@ class SVNUnlock(Add):
 class SVNUnlockQuiet:
 	"""
 	This class provides a handler to unlock functionality.
-	
 	"""
-
 	def __init__(self, paths, base_dir=None):
 		self.paths = paths
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-
 		for path in self.paths:
 			self.svn.unlock(path, force=True)
 
@@ -164,7 +152,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT, QUIET_OPT],
 		usage="Usage: rabbitvcs unlock [path1] [path2] ..."
 	)
-		
+	
 	if options.quiet:
 		unlock_factory(quiet_classes_map, paths)
 	else:

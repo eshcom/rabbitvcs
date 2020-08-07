@@ -49,7 +49,6 @@ class SVNMarkResolved(Add):
 
 		self.window = self.get_widget("Add")
 		self.window.set_title(_("Mark as Resolved"))
-
 		self.paths = paths
 		self.base_dir = base_dir
 		self.last_row_clicked = None
@@ -76,7 +75,6 @@ class SVNMarkResolved(Add):
 				"key-event":     self.on_files_table_key_event
 			}
 		)
-
 		self.initialize_items()
 
 	def populate_files_table(self):
@@ -89,7 +87,7 @@ class SVNMarkResolved(Add):
 				item.simple_content_status(),
 				item.simple_metadata_status()
 			])
-					
+
 	def on_ok_clicked(self, widget):
 		items = self.files_table.get_activated_rows(1)
 		if not items:
@@ -101,7 +99,6 @@ class SVNMarkResolved(Add):
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Mark as Resolved"))
 		self.action.append(self.action.set_status, _("Running Resolved Command..."))
 		for item in items:
@@ -117,14 +114,14 @@ classes_map = {
 def markresolved_factory(paths, base_dir=None):
 	guess = rabbitvcs.vcs.guess(paths[0])
 	return classes_map[guess["vcs"]](paths, base_dir)
-		
+
 if __name__ == "__main__":
 	from rabbitvcs.ui import main, BASEDIR_OPT
 	(options, paths) = main(
 		[BASEDIR_OPT],
 		usage="Usage: rabbitvcs markresolved [path1] [path2] ..."
 	)
-
+	
 	window = markresolved_factory(paths, options.base_dir)
 	window.register_gtk_quit()
 	gtk.main()

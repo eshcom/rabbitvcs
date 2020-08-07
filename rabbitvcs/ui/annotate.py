@@ -55,17 +55,13 @@ class Annotate(InterfaceView):
 	working copy.
 	
 	Pass a single path to the class when initializing
-	
 	"""
-	
 	def __init__(self, path, revision=None):
 		if os.path.isdir(path):
 			MessageBox(_("Cannot annotate a directory"))
 			raise SystemExit()
 			return
-			
 		InterfaceView.__init__(self, "annotate", "Annotate")
-
 		self.get_widget("Annotate").set_title(_("Annotate - %s") % path)
 		self.vcs = rabbitvcs.vcs.VCS()
 		
@@ -104,7 +100,6 @@ class Annotate(InterfaceView):
 			from rabbitvcs.ui.dialog import FileSaveAs
 			dialog = FileSaveAs()
 			path = dialog.run()
-
 		if path is not None:
 			fh = open(path, "w")
 			fh.write(self.generate_string_from_result())
@@ -113,12 +108,9 @@ class Annotate(InterfaceView):
 class SVNAnnotate(Annotate):
 	def __init__(self, path, revision=None):
 		Annotate.__init__(self, path, revision)
-
 		self.svn = self.vcs.svn()
-
 		if revision is None:
 			revision = "HEAD"
-		
 		self.path = path
 		self.get_widget("from").set_text(str(1))
 		self.get_widget("to").set_text(str(revision))
@@ -131,7 +123,6 @@ class SVNAnnotate(Annotate):
 				_("Date"), _("Text")]
 		)
 		self.table.allow_multiple()
-		
 		self.load()
 
 	#
@@ -144,7 +135,6 @@ class SVNAnnotate(Annotate):
 		if not from_rev_num.isdigit():
 			MessageBox(_("The from revision field must be an integer"))
 			return
-		
 		from_rev = self.svn.revision("number", number=int(from_rev_num))
 		to_rev = self.svn.revision("head")
 		if to_rev_num.isdigit():
@@ -154,7 +144,6 @@ class SVNAnnotate(Annotate):
 			self.svn,
 			notification=False
 		)
-
 		self.action.append(
 			self.svn.annotate,
 			self.path,
@@ -168,7 +157,6 @@ class SVNAnnotate(Annotate):
 	@gtk_unsafe
 	def populate_table(self):
 		blamedict = self.action.get_result(0)
-
 		self.table.clear()
 		for item in blamedict:
 			# remove fractional seconds and timezone information from
@@ -192,12 +180,10 @@ class SVNAnnotate(Annotate):
 			
 	def generate_string_from_result(self):
 		blamedict = self.action.get_result(0)
-		
 		text = ""
 		for item in blamedict:
 			datestr = item["date"][0:-8]
 			date = datetime(*time.strptime(datestr,"%Y-%m-%dT%H:%M:%S")[:-2])
-			
 			text += "%s\t%s\t%s\t%s\t%s\n" % (
 				item["number"],
 				item["revision"].number,
@@ -211,9 +197,7 @@ class SVNAnnotate(Annotate):
 class GitAnnotate(Annotate):
 	def __init__(self, path, revision=None):
 		Annotate.__init__(self, path, revision)
-
 		self.git = self.vcs.git(path)
-
 		if revision is None:
 			revision = "HEAD"
 		
@@ -230,21 +214,17 @@ class GitAnnotate(Annotate):
 				_("Date"), _("Text")]
 		)
 		self.table.allow_multiple()
-		
 		self.load()
 
 	#
 	# Helper methods
 	#
-	
 	def load(self):
 		to_rev = self.git.revision(self.get_widget("to").get_text())
-		
 		self.action = GitAction(
 			self.git,
 			notification=False
 		)
-
 		self.action.append(
 			self.git.annotate,
 			self.path,
@@ -257,7 +237,6 @@ class GitAnnotate(Annotate):
 	@gtk_unsafe
 	def populate_table(self):
 		blamedict = self.action.get_result(0)
-
 		self.table.clear()
 		for item in blamedict:
 			self.table.append([
@@ -270,7 +249,6 @@ class GitAnnotate(Annotate):
 			
 	def generate_string_from_result(self):
 		blamedict = self.action.get_result(0)
-		
 		text = ""
 		for item in blamedict:
 			text += "%s\t%s\t%s\t%s\t%s\n" % (
@@ -280,7 +258,6 @@ class GitAnnotate(Annotate):
 				helper.format_datetime(item["date"]),
 				item["line"]
 			)
-		
 		return text
 
 classes_map = {
@@ -292,7 +269,6 @@ def annotate_factory(vcs, path, revision=None):
 	if not vcs:
 		guess = rabbitvcs.vcs.guess(path)
 		vcs = guess["vcs"]
-		
 	return classes_map[vcs](path, revision)
 
 if __name__ == "__main__":
@@ -301,7 +277,7 @@ if __name__ == "__main__":
 		[REVISION_OPT, VCS_OPT],
 		usage="Usage: rabbitvcs annotate url [-r REVISION]"
 	)
-
+	
 	window = annotate_factory(options.vcs, paths[0], options.revision)
 	window.register_gtk_quit()
 	gtk.main()

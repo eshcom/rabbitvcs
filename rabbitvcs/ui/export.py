@@ -40,11 +40,8 @@ _ = gettext.gettext
 class SVNExport(SVNCheckout):
 	def __init__(self, path=None, revision=None):
 		SVNCheckout.__init__(self, path, url=None, revision=revision)
-		
 		self.svn = self.vcs.svn()
-		
 		self.get_widget("Checkout").set_title(_("Export - %s") % path)
-		
 		# Determine behavior based on the given path
 		if self.svn.is_in_a_or_a_working_copy(path):
 			# If path is from a working copy, export FROM path and set revision
@@ -68,11 +65,9 @@ class SVNExport(SVNCheckout):
 		path = self._get_path()
 		omit_externals = self.get_widget("omit_externals").get_active()
 		recursive = self.get_widget("recursive").get_active()
-
 		if not url or not path:
 			MessageBox(_("The repository URL and destination path are both required fields."))
 			return
-		
 		if url.startswith("file://"):
 			url = self._parse_path(url)
 		
@@ -80,7 +75,6 @@ class SVNExport(SVNCheckout):
 		# url = os.path.normpath(url)
 		# ...in general, since it might be eg. an http URL. Doesn't seem to
 		# affect pySvn though.
-		
 		path = os.path.normpath(path)
 		revision = self.revision_selector.get_revision_object()
 
@@ -89,7 +83,6 @@ class SVNExport(SVNCheckout):
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Export"))
 		self.action.append(self.action.set_status, _("Running Export Command..."))
 		self.action.append(helper.save_repository_path, url)
@@ -108,7 +101,6 @@ class SVNExport(SVNCheckout):
 
 class GitExport(GitClone):
 	def __init__(self, path=None, revision=None):
-
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.git = None
 		guess = rabbitvcs.vcs.guess(path)
@@ -119,11 +111,8 @@ class GitExport(GitClone):
 		else:
 			export_to = path
 			export_from = ""
-
 		GitClone.__init__(self, export_to, export_from)
-
 		self.get_widget("Checkout").set_title(_("Export - %s") % path)
-
 		self.revision_selector = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("revision_container"),
 			self.git,
@@ -131,17 +120,14 @@ class GitExport(GitClone):
 			url_combobox=self.repositories,
 			expand=True
 		)
-
 		self.get_widget("revision_selector_box").show()
 
 	def on_ok_clicked(self, widget):
 		url = self.repositories.get_active_text()
 		path = self._get_path()
-
 		if not url or not path:
 			MessageBox(_("The repository URL and destination path are both required fields."))
 			return
-		
 		if url.startswith("file://"):
 			url = self._parse_path(url)
 		
@@ -149,16 +135,13 @@ class GitExport(GitClone):
 		# url = os.path.normpath(url)
 		# ...in general, since it might be eg. an http URL. Doesn't seem to
 		# affect pySvn though.
-		
 		path = os.path.normpath(path)
 		revision = self.revision_selector.get_revision_object()
-
 		self.hide()
 		self.action = GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Export"))
 		self.action.append(self.action.set_status, _("Running Export Command..."))
 		self.action.append(helper.save_repository_path, url)
@@ -183,15 +166,12 @@ class GitExport(GitClone):
 			append = tmp.pop()
 			if append not in ("trunk", "branches", "tags"):
 				break
-				
 			if append in ("http:", "https:", "file:", "svn:", "svn+ssh:"):
 				append = ""
 				break
-		
 		self.get_widget("destination").set_text(
 			os.path.join(self.destination, append)
 		)
-		
 		self.check_form()
 
 classes_map = {
@@ -203,10 +183,8 @@ def export_factory(vcs, path, revision=None):
 	if not vcs:
 		guess = rabbitvcs.vcs.guess(path)
 		vcs = guess["vcs"]
-	
 	if vcs == rabbitvcs.vcs.VCS_DUMMY:
 		vcs = rabbitvcs.vcs.VCS_SVN
-		
 	return classes_map[vcs](path, revision)
 
 if __name__ == "__main__":
@@ -215,7 +193,7 @@ if __name__ == "__main__":
 		[REVISION_OPT, VCS_OPT],
 		usage="Usage: rabbitvcs export --vcs=[git|svn] [url_or_path]"
 	)
-			
+	
 	window = export_factory(options.vcs, paths[0], revision=options.revision)
 	window.register_gtk_quit()
 	gtk.main()

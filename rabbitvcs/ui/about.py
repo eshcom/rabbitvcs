@@ -43,22 +43,19 @@ _ = gettext.gettext
 class About:
 	"""
 	This class provides an interface to the About window.
-	
 	"""
-
 	def __init__(self):
-	
 		def url_hook(dialog, url):
 			helper.launch_url_in_webbrowser(url)
-	
+		
 		gtk.about_dialog_set_url_hook(url_hook)
 		self.about = gtk.AboutDialog()
 		self.about.set_name(rabbitvcs.APP_NAME)
-
+		
 		# The set_program_name method was not added until PyGTK 2.12
 		if hasattr(self.about, "set_program_name"):
 			self.about.set_program_name(rabbitvcs.APP_NAME)
-
+		
 		self.about.set_version(rabbitvcs.version)
 		self.about.set_website("http://www.rabbitvcs.org")
 		self.about.set_website_label("http://www.rabbitvcs.org")
@@ -78,16 +75,13 @@ class About:
 			doc_path = os.path.dirname(os.path.realpath(__file__)).split('/')
 			doc_path = '/'.join(doc_path[:-2])
 			authors_path = os.path.join(doc_path, "AUTHORS")
-
-		authors = open(authors_path, "r").read()
-
-		self.about.set_authors(authors.split("\n"))
 		
+		authors = open(authors_path, "r").read()
+		self.about.set_authors(authors.split("\n"))
 		versions = []
 		versions.append("Subversion - %s" % string.join(list(map(str,pysvn.svn_version)), "."))
 		versions.append("Pysvn - %s" % string.join(list(map(str,pysvn.version)), "."))
 		versions.append("ConfigObj - %s" % str(configobj.__version__))
-		
 		self.about.set_comments("\n".join(versions))
 	
 	def run(self):

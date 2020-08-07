@@ -48,10 +48,8 @@ _ = gettext.gettext
 class GitUnstage(Add):
 	def __init__(self, paths, base_dir=None):
 		InterfaceView.__init__(self, "add", "Add")
-
 		self.window = self.get_widget("Add")
 		self.window.set_title(_("Unstage"))
-
 		self.paths = paths
 		self.base_dir = base_dir
 		self.last_row_clicked = None
@@ -77,9 +75,8 @@ class GitUnstage(Add):
 				"key-event":     self.on_files_table_key_event
 			}
 		)
-
 		self.initialize_items()
-
+	
 	def populate_files_table(self):
 		self.files_table.clear()
 		for item in self.items:
@@ -88,19 +85,17 @@ class GitUnstage(Add):
 				item.path,
 				helper.get_file_extension(item.path)
 			])
-					
+	
 	def on_ok_clicked(self, widget):
 		items = self.files_table.get_activated_rows(1)
 		if not items:
 			self.close()
 			return
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Unstage"))
 		self.action.append(self.action.set_status, _("Running Unstage Command..."))
 		for item in items:
@@ -117,7 +112,6 @@ class GitUnstageQuiet:
 			self.git,
 			run_in_thread=False
 		)
-		
 		for path in paths:
 			self.action.append(self.git.unstage, path)
 		self.action.schedule()
@@ -140,7 +134,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT, QUIET_OPT],
 		usage="Usage: rabbitvcs unstage [path1] [path2] ..."
 	)
-
+	
 	if options.quiet:
 		unstage_factory(quiet_classes_map, paths)
 	else:

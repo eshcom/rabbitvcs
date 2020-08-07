@@ -45,9 +45,7 @@ log = Log("rabbitvcs.ui.reset")
 class GitReset(InterfaceView):
 	"""
 	Provides a UI to reset your repository to some specified state
-	
 	"""
-	
 	def __init__(self, path, revision=None):
 		InterfaceView.__init__(self, "reset", "Reset")
 		self.vcs = rabbitvcs.vcs.VCS()
@@ -56,9 +54,7 @@ class GitReset(InterfaceView):
 		self.revision_obj = None
 		if revision:
 			self.revision_obj = self.git.revision(revision)
-
 		self.get_widget("path").set_text(path)
-
 		self.revision_selector = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("revision_container"),
 			self.git,
@@ -66,13 +62,11 @@ class GitReset(InterfaceView):
 			url=self.path,
 			expand=True
 		)
-		
 		self.get_widget("none_opt").set_active(True)
 		self.check_path()
 
 	def on_ok_clicked(self, widget):
 		path = self.get_widget("path").get_text()
-		
 		mixed = self.get_widget("mixed_opt").get_active()
 		soft = self.get_widget("soft_opt").get_active()
 		hard = self.get_widget("hard_opt").get_active()
@@ -90,7 +84,6 @@ class GitReset(InterfaceView):
 			type = "merge"
 
 		revision = self.revision_selector.get_revision_object()
-
 		self.hide()
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,

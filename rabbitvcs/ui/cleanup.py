@@ -39,9 +39,7 @@ class SVNCleanup(InterfaceNonView):
 	The idea is that it displays a large folder icon with a label like
 	"Please Wait...".  Then when it finishes cleaning up, the label will
 	change to "Finished cleaning up /path/to/folder"
-	
 	"""
-
 	def __init__(self, path):
 		InterfaceNonView.__init__(self)
 		self.path = path
@@ -53,7 +51,6 @@ class SVNCleanup(InterfaceNonView):
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Cleanup"))
 		self.action.append(self.action.set_status, _("Cleaning Up..."))
 		self.action.append(self.svn.cleanup, self.path)
@@ -61,11 +58,10 @@ class SVNCleanup(InterfaceNonView):
 		self.action.append(self.action.finish)
 		self.action.schedule()
 
-		
 if __name__ == "__main__":
 	from rabbitvcs.ui import main
 	(options, paths) = main(usage="Usage: rabbitvcs cleanup [path]")
-			
+	
 	window = SVNCleanup(paths[0])
 	window.register_gtk_quit()
 	window.start()

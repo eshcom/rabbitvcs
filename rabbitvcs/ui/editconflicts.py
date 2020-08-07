@@ -57,7 +57,6 @@ class SVNEditConflicts(InterfaceNonView):
 			return
 		
 		filename = os.path.basename(path)
-		
 		dialog = rabbitvcs.ui.dialog.ConflictDecision(filename)
 		action = dialog.run()
 		dialog.destroy()
@@ -65,35 +64,27 @@ class SVNEditConflicts(InterfaceNonView):
 		if action == -1:
 			#Cancel
 			pass
-			
 		elif action == 0:
 			#Accept Mine
 			working = self.get_working_path(path)
 			shutil.copyfile(working, path)
 			self.svn.resolve(path)
-				
 		elif action == 1:
 			#Accept Theirs
 			ancestor, theirs = self.get_revisioned_paths(path)
 			shutil.copyfile(theirs, path)
 			self.svn.resolve(path)
-				
 		elif action == 2:
 			#Merge Manually
-			
 			working = self.get_working_path(path)
 			ancestor, theirs = self.get_revisioned_paths(path)
-			
 			log.debug("launching merge tool with base: %s, mine: %s, theirs: %s, merged: %s"%(ancestor, working, theirs, path))
 			helper.launch_merge_tool(base=ancestor, mine=working, theirs=theirs, merged=path)
-
 			dialog = rabbitvcs.ui.dialog.MarkResolvedPrompt()
 			mark_resolved = dialog.run()
 			dialog.destroy()
-
 			if mark_resolved == 1:
 				self.svn.resolve(path)
-
 		self.close()
 
 	def get_working_path(self, path):
@@ -101,11 +92,9 @@ class SVNEditConflicts(InterfaceNonView):
 			"%s.mine" % path,
 			"%s.working" % path
 		]
-		
 		for working in paths:
 			if os.path.exists(working):
 				return working
-
 		return path
 
 	def get_revisioned_paths(self, path):
@@ -140,13 +129,10 @@ class SVNEditConflicts(InterfaceNonView):
 class GitEditConflicts(InterfaceNonView):
 	def __init__(self, path):
 		InterfaceNonView.__init__(self)
-
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.git = self.vcs.git(path)
-
 		helper.launch_merge_tool(self.path)
-		
 		self.close()
 
 classes_map = {
@@ -157,14 +143,14 @@ classes_map = {
 def editconflicts_factory(path):
 	guess = rabbitvcs.vcs.guess(path)
 	return classes_map[guess["vcs"]](path)
-		
+
 if __name__ == "__main__":
 	from rabbitvcs.ui import main, BASEDIR_OPT
 	(options, paths) = main(
 		[BASEDIR_OPT],
 		usage="Usage: rabbitvcs edit-conflicts [path1] [path2] ..."
 	)
-
+	
 	window = editconflicts_factory(paths[0])
 	window.register_gtk_quit()
 	gtk.main()

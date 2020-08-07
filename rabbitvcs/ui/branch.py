@@ -41,20 +41,16 @@ class SVNBranch(InterfaceView):
 	working copy.
 	
 	Pass a single path to the class when initializing
-	
 	"""
-	
 	def __init__(self, path, revision=None):
 		InterfaceView.__init__(self, "branch", "Branch")
 		
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-		
 		self.path = path
 		self.revision = revision
 		
 		status = self.vcs.status(self.path)
-		
 		repo_paths = helper.get_repository_paths()
 		self.from_urls = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("from_urls"),
@@ -68,11 +64,9 @@ class SVNBranch(InterfaceView):
 		repository_url = self.svn.get_repo_url(path)
 		self.from_urls.set_child_text(repository_url)
 		self.to_urls.set_child_text(repository_url)
-				
 		self.message = rabbitvcs.ui.widget.TextView(
 			self.get_widget("message")
 		)
-
 		self.revision_selector = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("revision_container"),
 			self.svn,
@@ -80,18 +74,15 @@ class SVNBranch(InterfaceView):
 			url_combobox=self.from_urls,
 			expand=True
 		)
-		
 		if (self.revision is None and status.has_modified()):
 			self.revision_selector.set_kind_working()
 
 	def on_ok_clicked(self, widget):
 		src = self.from_urls.get_active_text()
 		dest = self.to_urls.get_active_text()
-		
 		if dest == "":
 			rabbitvcs.ui.dialog.MessageBox(_("You must supply a destination path."))
 			return
-		
 		revision = self.revision_selector.get_revision_object()
 		self.hide()
 		self.action = rabbitvcs.ui.action.SVNAction(
@@ -104,7 +95,6 @@ class SVNBranch(InterfaceView):
 			helper.save_log_message,
 			self.message.get_text()
 		)
-		
 		self.action.append(self.action.set_header, _("Branch/tag"))
 		self.action.append(self.action.set_status, _("Running Branch/tag Command..."))
 		self.action.append(self.svn.copy, src, dest, revision)
@@ -134,7 +124,6 @@ def branch_factory(vcs, path, revision=None):
 	if not vcs:
 		guess = rabbitvcs.vcs.guess(path)
 		vcs = guess["vcs"]
-		
 	return classes_map[vcs](path, revision)
 
 if __name__ == "__main__":
@@ -143,7 +132,7 @@ if __name__ == "__main__":
 		[REVISION_OPT, VCS_OPT],
 		usage="Usage: rabbitvcs branch [url_or_path]"
 	)
-
+	
 	window = branch_factory(options.vcs, args[0], options.revision)
 	window.register_gtk_quit()
 	gtk.main()

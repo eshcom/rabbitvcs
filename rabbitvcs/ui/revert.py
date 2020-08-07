@@ -51,18 +51,15 @@ _ = gettext.gettext
 helper.gobject_threads_init()
 
 class Revert(InterfaceView, GtkContextMenuCaller):
-
 	TOGGLE_ALL = True
 
 	def __init__(self, paths, base_dir=None):
 		InterfaceView.__init__(self, "revert", "Revert")
-
 		self.paths = paths
 		self.base_dir = base_dir
 		self.last_row_clicked = None
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.items = []
-
 		self.statuses = self.vcs.statuses_for_revert(paths)
 		self.files_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("files_table"),
@@ -91,7 +88,6 @@ class Revert(InterfaceView, GtkContextMenuCaller):
 		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
 		self.items = self.vcs.get_items(self.paths, self.statuses)
-
 		self.populate_files_table()
 		self.get_widget("status").set_text(_("Found %d item(s)") % len(self.items))
 		gtk.gdk.threads_leave()
@@ -113,7 +109,6 @@ class Revert(InterfaceView, GtkContextMenuCaller):
 		"""
 		Initializes the activated cache and loads the file items in a new thread
 		"""
-
 		try:
 			six.moves._thread.start_new_thread(self.load, ())
 		except Exception as e:
@@ -140,25 +135,21 @@ class Revert(InterfaceView, GtkContextMenuCaller):
 		paths = self.files_table.get_selected_row_items(1)
 		GtkFilesContextMenu(self, data, self.base_dir, paths).show()
 
-
 class SVNRevert(Revert):
 	def __init__(self, paths, base_dir=None):
 		Revert.__init__(self, paths, base_dir)
-		
 		self.svn = self.vcs.svn()
-
+	
 	def on_ok_clicked(self, widget):
 		items = self.files_table.get_activated_rows(1)
 		if not items:
 			self.close()
 			return
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.vcs.svn(),
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Revert"))
 		self.action.append(self.action.set_status, _("Running Revert Command..."))
 		self.action.append(self.vcs.svn().revert, items, recurse=True)
@@ -169,21 +160,18 @@ class SVNRevert(Revert):
 class GitRevert(Revert):
 	def __init__(self, paths, base_dir=None):
 		Revert.__init__(self, paths, base_dir)
-		
 		self.git = self.vcs.git(self.paths[0])
-
+	
 	def on_ok_clicked(self, widget):
 		items = self.files_table.get_activated_rows(1)
 		if not items:
 			self.close()
 			return
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Revert"))
 		self.action.append(self.action.set_status, _("Running Revert Command..."))
 		self.action.append(self.git.checkout, items)
@@ -198,7 +186,6 @@ class SVNRevertQuiet:
 			self.vcs.svn(),
 			run_in_thread=False
 		)
-		
 		self.action.append(self.vcs.svn().revert, paths)
 		self.action.schedule()
 
@@ -210,7 +197,6 @@ class GitRevertQuiet:
 			self.git,
 			run_in_thread=False
 		)
-		
 		self.action.append(self.git.checkout, paths)
 		self.action.schedule()
 
@@ -234,7 +220,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT, QUIET_OPT],
 		usage="Usage: rabbitvcs revert [path1] [path2] ..."
 	)
-
+	
 	if options.quiet:
 		revert_factory(quiet_classes_map, paths)
 	else:

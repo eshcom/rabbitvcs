@@ -60,12 +60,10 @@ class Changes(InterfaceView):
 		InterfaceView.__init__(self, "changes", "Changes")
 		
 		self.vcs = rabbitvcs.vcs.VCS()
-
 		self.MORE_ACTIONS_CALLBACKS = [
 			None,
 			self.on_more_actions_view_unified_diff
 		]
-
 		self.more_actions = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("more_actions"),
 			self.MORE_ACTIONS_ITEMS
@@ -78,17 +76,15 @@ class Changes(InterfaceView):
 			repo_paths
 		)
 		self.first_urls_browse = self.get_widget("first_urls_browse")
-
 		self.second_urls = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("second_urls"),
 			repo_paths
 		)
 		self.second_urls_browse = self.get_widget("second_urls_browse")
-		
+
 	#
 	# UI Signal Callback Methods
 	#
-
 	def on_close_clicked(self, widget):
 		self.close()
 
@@ -128,11 +124,9 @@ class Changes(InterfaceView):
 	def on_changes_table_event(self, treeview, data=None):
 		selection = treeview.get_selection()
 		(liststore, indexes) = selection.get_selected_rows()
-
 		self.selected_rows = []
 		for tup in indexes:
 			self.selected_rows.append(tup[0])
-
 		if data is not None and data.button == 3:
 			self.show_changes_table_popup_menu(treeview, data)
 
@@ -140,26 +134,21 @@ class Changes(InterfaceView):
 		index = self.more_actions.get_active()
 		if index < 0:
 			return
-			
 		callback = self.MORE_ACTIONS_CALLBACKS[index]
-		
 		if callback is not None:
 			callback()
 
 	def on_changes_table_row_doubleclicked(self, treeview, data=None, col=None):
 		selection = treeview.get_selection()
 		(liststore, indexes) = selection.get_selected_rows()
-
 		self.selected_rows = []
 		for tup in indexes:
 			self.selected_rows.append(tup[0])
-
 		self.view_selected_diff(sidebyside=True)
 
 	#
 	# Helper methods
 	#
-	
 	def get_first_revision(self):
 		return self.first_revision_selector.get_revision_object()
 	
@@ -185,21 +174,19 @@ class Changes(InterfaceView):
 			self.can_first_browse_urls()
 			and self.can_second_browse_urls()
 		)
-		
 		self.get_widget("refresh").set_sensitive(can_click_refresh)
 	
 	def check_first_urls(self):
 		can_browse_urls = self.can_first_browse_urls()
 		self.first_urls_browse.set_sensitive(can_browse_urls)
-		
+	
 	def check_second_urls(self):
 		can_browse_urls = self.can_second_browse_urls()
 		self.second_urls_browse.set_sensitive(can_browse_urls)
-
-
+	
 	def enable_more_actions(self):
 		self.more_actions.set_sensitive(True)
-
+	
 	def disable_more_actions(self):
 		self.more_actions.set_sensitive(False)
 	
@@ -210,7 +197,6 @@ class Changes(InterfaceView):
 			if url1 == ".":
 				url1 = ""
 				url2 = ""
-
 			url1 = helper.url_join(self.first_urls.get_active_text(), url1)
 			url2 = helper.url_join(self.second_urls.get_active_text(), url2)
 			rev1 = self.get_first_revision()
@@ -222,18 +208,15 @@ class Changes(InterfaceView):
 				"%s" % (sidebyside and "-s" or ""),
 				"--vcs=%s" % self.get_vcs_name()
 			])
-		
-		
+
 	#
 	# More Actions callbacks
 	#
-
 	def on_more_actions_view_unified_diff(self):
 		url1 = self.first_urls.get_active_text()
 		rev1 = self.get_first_revision()
 		rev2 = self.get_second_revision()
 		url2 = self.second_urls.get_active_text()
-
 		helper.launch_ui_window("diff", [
 			"%s@%s" % (url1, six.text_type(rev1)),
 			"%s@%s" % (url2, six.text_type(rev2)),
@@ -246,7 +229,6 @@ class Changes(InterfaceView):
 			vcs = rabbitvcs.vcs.VCS_SVN
 		elif hasattr(self, "git"):
 			vcs = rabbitvcs.vcs.VCS_GIT
-
 		return vcs
 
 class SVNChanges(Changes):
@@ -254,10 +236,8 @@ class SVNChanges(Changes):
 		Changes.__init__(self, path1, revision1, path2, revision2)
 
 		self.svn = self.vcs.svn()
-
 		if path1 is not None:
 			self.first_urls.set_child_text(self.svn.get_repo_url(path1))
-			
 		if path2 is not None:
 			self.second_urls.set_child_text(self.svn.get_repo_url(path2))
 		elif path1 is not None:
@@ -270,7 +250,6 @@ class SVNChanges(Changes):
 			url_combobox=self.first_urls,
 			expand=True
 		)
-
 		self.second_revision_selector = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("second_revision_container"),
 			self.svn,
@@ -278,7 +257,6 @@ class SVNChanges(Changes):
 			url_combobox=self.second_urls,
 			expand=True
 		)
-
 		self.changes_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("changes_table"),
 			[gobject.TYPE_STRING, gobject.TYPE_STRING,
@@ -292,9 +270,7 @@ class SVNChanges(Changes):
 				"mouse-event":   self.on_changes_table_button_released
 			}
 		)
-
 		self.check_ui()
-		
 		if path1 and revision1 and path2 and revision2:
 			self.load()
 
@@ -329,11 +305,9 @@ class SVNChanges(Changes):
 		self.changes_table.clear()
 		for item in summary:
 			prop_changed = (item["prop_changed"] == 1 and _("Yes") or _("No"))
-			
 			path = item["path"]
 			if path == "":
 				path = "."
-				
 			self.changes_table.append([
 				path,
 				item["summarize_kind"],
@@ -355,13 +329,11 @@ class GitChanges(Changes):
 		Changes.__init__(self, path1, revision1, path2, revision2)
 
 		self.git = self.vcs.git(path1)
-		
 		self.first_urls_browse.hide()
 		self.second_urls_browse.hide()
 
 		if path1 is not None:
 			self.first_urls.set_child_text(path1)
-			
 		if path2 is not None:
 			self.second_urls.set_child_text(path2)
 		elif path1 is not None:
@@ -374,7 +346,6 @@ class GitChanges(Changes):
 			url_combobox=self.first_urls,
 			expand=True
 		)
-
 		self.second_revision_selector = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("second_revision_container"),
 			self.git,
@@ -382,15 +353,12 @@ class GitChanges(Changes):
 			url_combobox=self.second_urls,
 			expand=True
 		)
-
 		self.changes_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("changes_table"),
 			[gobject.TYPE_STRING, gobject.TYPE_STRING],
 			[_("Path"), _("Change")]
 		)
-
 		self.check_ui()
-		
 		if path1 and revision1 and path2 and revision2:
 			self.load()
 
@@ -421,7 +389,6 @@ class GitChanges(Changes):
 	def populate_table(self):
 		# returns a list of dicts(path, summarize_kind, node_kind, prop_changed)
 		summary = self.action.get_result(1)
-
 		self.changes_table.clear()
 		for item in summary:
 			self.changes_table.append([
@@ -488,10 +455,8 @@ class ChangesContextMenuCallbacks:
 		path = self.caller.changes_table.get_row(self.caller.selected_rows[0])[0]
 		if path == ".":
 			path = ""
-
 		url = helper.url_join(self.caller.first_urls.get_active_text(), path)
 		rev = self.caller.get_first_revision()
-
 		helper.launch_ui_window("open", [
 			"--vcs=%s" % self.caller.get_vcs_name(),
 			url,
@@ -502,7 +467,6 @@ class ChangesContextMenuCallbacks:
 		path = self.caller.changes_table.get_row(self.caller.selected_rows[0])[0]
 		if path == ".":
 			path = ""
-
 		url = helper.url_join(self.caller.second_urls.get_active_text(), path)
 		rev = self.caller.get_second_revision()
 		helper.launch_ui_window("open", [
@@ -521,12 +485,10 @@ class ChangesContextMenuCallbacks:
 			if url1 == ".":
 				url1 = ""
 				url2 = ""
-
 			url1 = helper.url_join(self.caller.first_urls.get_active_text(), url1)
 			url2 = helper.url_join(self.caller.second_urls.get_active_text(), url2)
 			rev1 = self.caller.get_first_revision()
 			rev2 = self.caller.get_second_revision()
-			
 			helper.launch_ui_window("diff", [
 				"%s@%s" % (url1, six.text_type(rev1)),
 				"%s@%s" % (url2, six.text_type(rev2)),
@@ -537,13 +499,11 @@ class ChangesContextMenuCallbacks:
 class ChangesContextMenu:
 	"""
 	Defines context menu items for a table with files
-	
 	"""
 	def __init__(self, caller, event):
 		"""
 		@param  caller: The calling object
 		@type   caller: object
-		
 		"""
 		self.caller = caller
 		self.event = event
@@ -554,12 +514,10 @@ class ChangesContextMenu:
 			self.caller,
 			self.vcs
 		)
-		
 		self.callbacks = ChangesContextMenuCallbacks(
 			self.caller,
 			self.vcs
 		)
-
 		# The first element of each tuple is a key that matches a
 		# ContextMenuItems item.  The second element is either None when there
 		# is no submenu, or a recursive list of tuples for desired submenus.
@@ -569,11 +527,10 @@ class ChangesContextMenu:
 			(MenuViewDiff, None),
 			(MenuCompare, None)
 		]
-		
+	
 	def show(self):
 		if len(self.caller.selected_rows) == 0:
 			return
-			
 		context_menu = GtkContextMenu(self.structure, self.conditions, self.callbacks)
 		context_menu.show(self.event)
 
@@ -586,7 +543,6 @@ def changes_factory(vcs, path1=None, revision1=None, path2=None, revision2=None)
 	if not vcs:
 		guess = rabbitvcs.vcs.guess(path1)
 		vcs = guess["vcs"]
-		
 	return classes_map[vcs](path1, revision1, path2, revision2)
 
 if __name__ == "__main__":
@@ -600,7 +556,7 @@ if __name__ == "__main__":
 	pathrev2 = (None, None)
 	if len(args) > 0:
 		pathrev2 = helper.parse_path_revision_string(args.pop(0))
-
+	
 	window = changes_factory(options.vcs, pathrev1[0], pathrev1[1], pathrev2[0], pathrev2[1])
 	window.register_gtk_quit()
 	gtk.main()

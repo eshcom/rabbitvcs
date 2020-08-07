@@ -46,41 +46,32 @@ class PropertiesBase(InterfaceView):
 	"""
 	Provides an interface to add/edit/delete properties on versioned
 	items in the working copy.
-	
 	"""
-
 	selected_row = None
 	selected_rows = []
 
 	def __init__(self, path):
 		InterfaceView.__init__(self, "properties", "Properties")
-
 		self.path = path
 		self.delete_stack = []
-		
 		self.get_widget("Properties").set_title(
 			_("Properties - %s") % path
 		)
-		
 		self.get_widget("path").set_text(path)
-		
 		self.table = rabbitvcs.ui.widget.Table(
 			self.get_widget("table"),
 			[gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, gobject.TYPE_STRING],
 			[rabbitvcs.ui.widget.TOGGLE_BUTTON, _("Name"), _("Value")]
 		)
 		self.table.allow_multiple()
-		
 		self.vcs = rabbitvcs.vcs.VCS()
-
+	
 	#
 	# UI Signal Callbacks
 	#
-
-
 	def on_ok_clicked(self, widget):
 		self.save()
-		
+	
 	def on_new_clicked(self, widget):
 		dialog = rabbitvcs.ui.dialog.Property()
 		name,value,recurse = dialog.run()
@@ -93,17 +84,15 @@ class PropertiesBase(InterfaceView):
 		name,value,recurse = dialog.run()
 		if name:
 			self.set_selected_name_value(name, value, recurse)
-
+	
 	def on_delete_clicked(self, widget, data=None):
 		if not self.selected_rows:
 			return
-			
 		for i in self.selected_rows:
 			row = self.table.get_row(i)
 			self.delete_stack.append([row[0],row[1]])
-			
 		self.table.remove_multiple(self.selected_rows)
-
+	
 	def on_table_cursor_changed(self, treeview, data=None):
 		self.on_table_event(treeview)
 	
@@ -116,7 +105,6 @@ class PropertiesBase(InterfaceView):
 		self.selected_rows = []
 		for tup in indexes:
 			self.selected_rows.append(tup[0])
-
 		length = len(self.selected_rows)
 		if length == 0:
 			self.get_widget("edit").set_sensitive(False)
@@ -127,17 +115,16 @@ class PropertiesBase(InterfaceView):
 		else:
 			self.get_widget("edit").set_sensitive(False)
 			self.get_widget("delete").set_sensitive(True)
-
+	
 	def on_refresh_activate(self, widget):
 		self.load()
-
+	
 	#
 	# Helper methods
 	#
-	
 	def set_selected_name_value(self, name, value, recurse):
 		self.table.set_row(self.selected_rows[0], [recurse,name,value])
-		
+	
 	def get_selected_name_value(self):
 		returner = None
 		if self.selected_rows is not None:
@@ -158,27 +145,22 @@ class SVNProperties(PropertiesBase):
 			log.exception(e)
 			rabbitvcs.ui.dialog.MessageBox(_("Unable to retrieve properties list"))
 			self.proplist = []
-		
 		if self.proplist:
 			for key,val in list(self.proplist.items()):
 				self.table.append([False, key,val.rstrip()])
 
 	def save(self):
 		delete_recurse = self.get_widget("delete_recurse").get_active()
-		
 		for row in self.delete_stack:
 			self.svn.propdel(self.path, row[1], recurse=delete_recurse)
-
 		failure = False
 		for row in self.table.get_items():
 			if (not self.svn.propset(self.path, row[1], row[2],
 							 overwrite=True, recurse=row[0])):
 				failure = True
 				break
-		
 		if failure:
 			rabbitvcs.ui.dialog.MessageBox(_("There was a problem saving your properties."))
-
 		self.close()
 
 if __name__ == "__main__":

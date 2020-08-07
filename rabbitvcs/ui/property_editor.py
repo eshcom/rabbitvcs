@@ -82,8 +82,6 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 	property in the dialog, it is actually added in the WC. Each row has a
 	context menu available to perform other actions.
 	'''
-
-
 	def __init__(self, path):
 		'''
 		Initialises the UI.
@@ -95,14 +93,10 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 		
 		self.get_widget("note_box").pack_start(note)
 		self.get_widget("note_box").show_all()
-				
 		self.path = path
-		
 		self.get_widget("wc_text").set_text(self.get_local_path(os.path.realpath(path)))
-				
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-				
 		if not self.svn.is_versioned(self.path):
 			rabbitvcs.ui.dialog.MessageBox(_("File is not under version control."))
 			self.close()
@@ -123,14 +117,12 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 						"column": 1
 					}
 				},
-				
 				{
 					"callback": rabbitvcs.ui.widget.translate_filter,
 					"user_data": {
 						"column": 3
 					}
 				}],
-				
 			callbacks={
 				"row-activated":  self.on_table_row_activated,
 				"mouse-event":   self.on_table_mouse_event,
@@ -138,12 +130,11 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 			}
 		)
 		self.table.allow_multiple()
-		
 		self.refresh()
-
+	
 	def get_local_path(self, path):
 		return path.replace("file://", "")
-
+	
 	def on_note_box_add(self, *args, **kwargs):
 		print("Added!")
 	
@@ -155,52 +146,43 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 		except Exception as e:
 			log.exception(e)
 			rabbitvcs.ui.dialog.MessageBox(_("Unable to retrieve properties list"))
-		
 		for propname, details in list(propdets.items()):
-			
 			self.table.append([propname, details["value"], "N/A", details["status"]])
-
+	
 	def on_refresh_clicked(self, widget):
 		self.refresh()
-
+	
 	def on_new_clicked(self, widget):
 		self.edit_property()
-
+	
 	def edit_property(self, name=""):
 		value = self.svn.propget(self.path, name)
-		
 		dialog = rabbitvcs.ui.dialog.Property(name, value)
-		
 		name,value,recurse = dialog.run()
 		if name:
 			success = self.svn.propset(self.path, name, value, overwrite=True, recurse=False)
 			if not success:
 				rabbitvcs.ui.dialog.MessageBox(_("Unable to set new value for property."))
-			
 		self.refresh()
-
+	
 	def delete_properties(self, names):
-		
 		recursive = False
-
 		if(os.path.isdir(self.path)):
 			dialog = rabbitvcs.ui.dialog.Confirmation(RECURSIVE_DELETE_MSG)
 			recursive = dialog.run()
-		
 		for name in names:
 			self.svn.propdel(self.path, name, recurse=recursive)
-
 		self.refresh()
-
+	
 	def on_table_row_activated(self, treeview, event, col):
 		for name in self.table.get_selected_row_items(0):
 			self.edit_property(name)
-
+	
 	def on_table_key_event(self, treeview, data=None):
 		if gtk.gdk.keyval_name(data.keyval) == "Delete":
 			names = self.table.get_selected_row_items(0)
 			self.delete_properties(names)
-
+	
 	def on_table_mouse_event(self, treeview, data=None):
 		if data and data.button == 3:
 			self.show_menu(data)
@@ -209,32 +191,28 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 		# self.show_files_table_popup_menu(treeview, data)
 		selected_propnames = self.table.get_selected_row_items(0)
 		propdetails = self.svn.propdetails(self.path)
-		
 		filtered_details = {}
 		for propname, detail in list(propdetails.items()):
 			if propname in selected_propnames:
 				filtered_details[propname] = detail
-		
 		conditions = PropMenuConditions(self.path, filtered_details)
 		callbacks = PropMenuCallbacks(self, self.path, filtered_details,
 									  self.vcs)
-		
 		GtkContextMenu(PROP_MENU_STRUCTURE, conditions, callbacks).show(data)
 
 class PropMenuCallbacks:
-
 	def __init__(self, caller, path, propdetails, vcs):
 		self.path = path
 		self.caller = caller
 		self.propdetails = propdetails
 		self.vcs = vcs
 		self.svn = self.vcs.svn()
-
+	
 	def property_edit(self, widget, *args):
 		if list(self.propdetails.keys()):
 			propname  = list(self.propdetails.keys())[0]
 			self.caller.edit_property(propname)
-			
+	
 	def property_delete(self, widget, *args):
 		for propname in list(self.propdetails.keys()):
 			self.svn.propdel(self.path, propname, recurse=False)
@@ -247,24 +225,22 @@ class PropMenuCallbacks:
 	
 	def property_revert(self, widget, *args):
 		pass
-
+	
 	def property_revert_recursive(self, widget, *args):
 		pass
 
-		
 class PropMenuConditions:
-	
 	def __init__(self, path, propdetails):
 		self.path = path
 		self.propdetails = propdetails
 	
 	def all_modified(self):
 		return all([detail["status"] != "unchanged"
-					   for (propname, detail) in list(self.propdetails.items())])
+					for (propname, detail) in list(self.propdetails.items())])
 	
 	def all_not_deleted(self):
 		return all([detail["status"] != "deleted"
-					   for (propname, detail) in list(self.propdetails.items())])
+					for (propname, detail) in list(self.propdetails.items())])
 	
 	def property_revert(self):
 		return False

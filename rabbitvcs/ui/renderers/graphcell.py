@@ -37,7 +37,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 	  out_lines         (start, end, colour, style) tuple list to draw outward lines.
 	"""
 	columns_len = 0
-
 	__gproperties__ = {"graph": (gobject.TYPE_PYOBJECT, "graph",
 								 "revision node instruction",
 								 gobject.PARAM_WRITABLE)}
@@ -84,7 +83,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 				colour_rgb = gtklib.MAINLINE_COLOR
 			else:
 				colour_rgb = gtklib.LINE_COLORS[colour % len(gtklib.LINE_COLORS)]
-
 		red   = (colour_rgb[0] * fg) or bg
 		green = (colour_rgb[1] * fg) or bg
 		blue  = (colour_rgb[2] * fg) or bg
@@ -120,7 +118,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 		ctx = window.cairo_create()
 		ctx.rectangle(bg_area.x, bg_area.y, bg_area.width, bg_area.height)
 		ctx.clip()
-
 		box_size = self.box_size(widget)
 
 		# Maybe draw branch head highlight under revision node
@@ -149,7 +146,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 		# Draw the revision node in the right column
 		if not self.node:
 			return
-
 		ctx.arc(arc_start_position_x, arc_start_position_y,
 					box_size / 5, 0, 2 * math.pi)
 		self.set_colour(ctx, colour, 0.0, 0.5)
@@ -174,7 +170,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 		else:
 			startx = cell_area.x + box_size * start + box_size / 2
 			endx = cell_area.x + box_size * end + box_size / 2
-
 			ctx.move_to(startx, mid - height / 2)
 
 			if start - end == 0 :
@@ -186,7 +181,6 @@ class CellRendererGraph(gtk.GenericCellRenderer):
 				ctx.curve_to(endx, mid + height / 5,
 							 endx, mid + height / 5 ,
 							 endx, mid + height / 2)
-
 		self.set_colour(ctx, colour, 0.0, 0.65)
 		if style == style_DASHED:
 			dashes = [1, 2]

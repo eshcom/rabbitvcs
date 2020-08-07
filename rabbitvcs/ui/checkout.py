@@ -46,32 +46,26 @@ class Checkout(InterfaceView):
 	Provides an interface to check out a working copy.
 	
 	Pass it the destination path.
-	
 	"""
-
 	def __init__(self, path=None, url=None, revision=None):
 		InterfaceView.__init__(self, "checkout", "Checkout")
 		
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
-
 		self.repositories = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("repositories"),
 			helper.get_repository_paths()
 		)
-		
 		# We must set a signal handler for the gtk.Entry inside the combobox
 		# Because glade will not retain that information
 		self.repositories.set_child_signal(
 			"key-release-event",
 			self.on_repositories_key_released
 		)
-
 		self.destination = helper.get_user_path()
 		if path is not None:
 			self.destination = path
 			self.get_widget("destination").set_text(path)
-
 		if url is not None:
 			self.repositories.set_child_text(url)
 		
@@ -80,7 +74,6 @@ class Checkout(InterfaceView):
 	#
 	# UI Signal Callback Methods
 	#
-
 	def _parse_path(self, path):
 		if path.startswith("file://"):
 			path = urllib.unquote(path)
@@ -125,7 +118,6 @@ class Checkout(InterfaceView):
 			self.complete = False
 		if self.get_widget("destination").get_text() == "":
 			self.complete = False
-		
 		self.get_widget("ok").set_sensitive(self.complete)
 
 
@@ -143,10 +135,8 @@ class SVNCheckout(Checkout):
 			url_combobox=self.repositories,
 			expand=True
 		)
-
 		self.get_widget("options_box").show()
 		self.get_widget("revision_selector_box").show()
-
 		self.check_form()
 
 	def on_ok_clicked(self, widget):
@@ -158,7 +148,6 @@ class SVNCheckout(Checkout):
 		if not url or not path:
 			rabbitvcs.ui.dialog.MessageBox(_("The repository URL and destination path are both required fields."))
 			return
-		
 		revision = self.revision_selector.get_revision_object()
 	
 		self.hide()
@@ -196,11 +185,9 @@ class SVNCheckout(Checkout):
 			if append in ("http:", "https:", "file:", "svn:", "svn+ssh:"):
 				append = ""
 				break
-		
 		self.get_widget("destination").set_text(
 			os.path.join(self.destination, append)
 		)
-		
 		self.check_form()
 
 class GitCheckout(GitUpdateToRevision):
@@ -218,7 +205,6 @@ class GitCheckoutQuiet:
 			self.git,
 			run_in_thread=False
 		)
-
 		self.action.append(self.git.checkout, paths) # esh: [pass] -> paths
 		self.action.schedule()
 
@@ -232,7 +218,6 @@ def checkout_factory(vcs, paths=[None], url=None, revision=None, quiet=False):
 	if not vcs:
 		guess = rabbitvcs.vcs.guess(paths[0]) # esh: define type vcs by first item paths
 		vcs = guess["vcs"]
-
 	if vcs == rabbitvcs.vcs.VCS_DUMMY:
 		return SVNCheckout(paths[0], url, revision)
 	elif vcs == rabbitvcs.vcs.VCS_GIT:
@@ -241,7 +226,6 @@ def checkout_factory(vcs, paths=[None], url=None, revision=None, quiet=False):
 			return GitCheckoutQuiet(paths)
 		else:
 			return GitCheckout(paths[0], url, revision)
-	
 	return classes_map[vcs](paths[0], url, revision)
 
 if __name__ == "__main__":
@@ -250,7 +234,6 @@ if __name__ == "__main__":
 		[REVISION_OPT, VCS_OPT, QUIET_OPT],
 		usage="Usage: rabbitvcs checkout --vcs=[git|svn] [url] [path]"
 	)
-	
 	# esh: example call from terminal:
 	# rabbitvcs checkout --vcs=git --quiet /home/esh/src/adptransfer/adp1.config
 	

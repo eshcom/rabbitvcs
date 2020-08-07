@@ -36,48 +36,35 @@ _ = gettext.gettext
 class Relocate(InterfaceView):
 	"""
 	Interface to relocate your working copy's repository location.
-	
 	"""
-
 	def __init__(self, path):
 		"""
 		@type   path: string
 		@param  path: A path to a local working copy
-		
 		"""
-		
 		InterfaceView.__init__(self, "relocate", "Relocate")
-		
-
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-		
 		repo = self.svn.get_repo_url(self.path)
 		self.get_widget("from_url").set_text(repo)
 		self.get_widget("to_url").set_text(repo)
-		
 		self.repositories = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("to_urls"),
 			helper.get_repository_paths()
 		)
-
-	def on_ok_clicked(self, widget):
 	
+	def on_ok_clicked(self, widget):
 		from_url = self.get_widget("from_url").get_text()
 		to_url = self.get_widget("to_url").get_text()
-	
 		if not from_url or not to_url:
 			MessageBox(_("The from and to url fields are both required."))
 			return
-	
 		self.hide()
-
 		self.action = SVNAction(
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Relocate"))
 		self.action.append(self.action.set_status, _("Running Relocate Command..."))
 		self.action.append(
@@ -93,7 +80,7 @@ class Relocate(InterfaceView):
 if __name__ == "__main__":
 	from rabbitvcs.ui import main
 	(options, paths) = main(usage="Usage: rabbitvcs relocate [path]")
-			
+	
 	window = Relocate(paths[0])
 	window.register_gtk_quit()
 	gtk.main()

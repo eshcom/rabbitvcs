@@ -42,14 +42,10 @@ class SVNMerge(InterfaceView):
 		InterfaceView.__init__(self, "merge", "Merge")
 		
 		self.revision_range = revision_range
-		
 		self.assistant = self.get_widget("Merge")
-		
 		self.path = path
-		
 		self.page = self.assistant.get_nth_page(0)
 		self.last_page = None
-		
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
 		
@@ -58,18 +54,14 @@ class SVNMerge(InterfaceView):
 			self.get_widget("mergetype_tree_opt").set_active(True)
 			self.get_widget("mergetype_reintegrate_opt").set_active(False)
 			self.get_widget("mergeoptions_only_record").set_active(False)
-
 		if not self.svn.has_merge_reintegrate():
 			self.get_widget("mergetype_reintegrate_opt").set_sensitive(False)
 
 		self.assistant.set_page_complete(self.page, True)
 		self.assistant.set_forward_page_func(self.on_forward_clicked)
-		
 		self.repo_paths = helper.get_repository_paths()
-
 		# Keeps track of which stages should be marked as complete
 		self.type = None
-
 		self.initialize_root_url()
 
 	def initialize_root_url(self):
@@ -78,7 +70,6 @@ class SVNMerge(InterfaceView):
 			notification=False,
 			run_in_thread=False
 		)
-		
 		self.root_url = action.run_single(
 			self.svn.get_repo_url,
 			self.path
@@ -87,7 +78,6 @@ class SVNMerge(InterfaceView):
 	#
 	# Assistant UI Signal Callbacks
 	#
-	
 	def on_apply_clicked(self, widget):
 		self.merge()
 	
@@ -97,7 +87,6 @@ class SVNMerge(InterfaceView):
 	def merge(self, test=False):
 		if self.type is None:
 			return
-		
 		if test:
 			startcmd = _("Running Merge Test")
 			endcmd = _("Completed Merge Test")
@@ -105,18 +94,16 @@ class SVNMerge(InterfaceView):
 			startcmd = _("Running Merge Command")
 			endcmd = _("Completed Merge")
 			self.hide()
-
+		
 		recursive = self.get_widget("mergeoptions_recursive").get_active()
 		ignore_ancestry = self.get_widget("mergeoptions_ignore_ancestry").get_active()
-		
 		record_only = False
 		if self.svn.has_merge2():
 			record_only = self.get_widget("mergeoptions_only_record").get_active()
-
+		
 		action = SVNAction(self.svn, register_gtk_quit=(not test))
 		action.append(action.set_header, _("Merge"))
 		action.append(action.set_status, startcmd)
-		
 		args = ()
 		kwargs = {}
 		
@@ -127,7 +114,6 @@ class SVNMerge(InterfaceView):
 			if revisions == "":
 				revisions = "head"
 			revisions = revisions.lower().replace("head", str(head_revision))
-
 			ranges = []
 			for r in revisions.split(","):
 				if r.find("-") != -1:
@@ -141,7 +127,6 @@ class SVNMerge(InterfaceView):
 				else:
 					high = int(r)
 					low = high - 1
-
 				# Before pysvn v1.6.3, there was a bug that required the ranges
 				# tuple to have three elements, even though only two were used
 				# Fixed in Pysvn Revision 1114
@@ -156,9 +141,7 @@ class SVNMerge(InterfaceView):
 						self.svn.revision("number", number=low).primitive(),
 						self.svn.revision("number", number=high).primitive(),
 					))
-
 			action.append(helper.save_repository_path, url)
-			
 			# Build up args and kwargs because some args are not supported
 			# with older versions of pysvn/svn
 			args = (
@@ -174,7 +157,7 @@ class SVNMerge(InterfaceView):
 			}
 			if record_only:
 				kwargs["record_only"] = record_only
-
+			
 		elif self.type == "reintegrate":
 			url = self.merge_reintegrate_repos.get_active_text()
 			revision = self.merge_reintegrate_revision.get_revision_object()
@@ -190,9 +173,9 @@ class SVNMerge(InterfaceView):
 				self.path
 			)
 			kwargs = {
-				"dry_run":          test
+				"dry_run": test
 			}
-
+			
 		elif self.type == "tree":
 			from_url = self.get_widget("mergetree_from_urls").get_active_text()
 			from_revision = self.svn.revision("head")
@@ -208,10 +191,8 @@ class SVNMerge(InterfaceView):
 					"number",
 					number=int(self.get_widget("mergetree_to_revision_number").get_text())
 				)
-
 			action.append(helper.save_repository_path, from_url)
 			action.append(helper.save_repository_path, to_url)
-
 			# Build up args and kwargs because some args are not supported
 			# with older versions of pysvn/svn
 			args = (
@@ -261,13 +242,11 @@ class SVNMerge(InterfaceView):
 				self.type = "tree"
 		else:
 			next = 4
-		
 		return next
 
 	#
 	# Step 2a: Merge a Range of Revisions
 	#
-	
 	def on_mergerange_prepare(self):
 		if not hasattr(self, "mergerange_repos"):
 			self.mergerange_repos = rabbitvcs.ui.widget.ComboBox(
@@ -276,7 +255,6 @@ class SVNMerge(InterfaceView):
 			)
 			self.mergerange_repos.set_child_text(self.root_url)
 			self.get_widget("mergerange_working_copy").set_text(self.path)
-		
 		self.mergerange_check_ready()
 		
 	def on_mergerange_show_log1_clicked(self, widget):
@@ -304,9 +282,7 @@ class SVNMerge(InterfaceView):
 		ready = True
 		if self.get_widget("mergerange_from_urls").get_active_text() == "":
 			ready = False
-
 		self.assistant.set_page_complete(self.page, ready)
-
 		allow_log = False
 		if self.get_widget("mergerange_from_urls").get_active_text():
 			allow_log = True
@@ -315,7 +291,6 @@ class SVNMerge(InterfaceView):
 	#
 	# Step 2b: Reintegrate a Branch
 	#
-
 	def on_merge_reintegrate_prepare(self):
 		if not hasattr(self, "merge_reintegrate_repos"):
 			self.merge_reintegrate_repos = rabbitvcs.ui.widget.ComboBox(
@@ -324,7 +299,6 @@ class SVNMerge(InterfaceView):
 			)
 			self.merge_reintegrate_repos.cb.connect("changed", self.on_merge_reintegrate_from_urls_changed)
 			self.get_widget("merge_reintegrate_working_copy").set_text(self.path)
-
 		if not hasattr(self, "merge_reintegrate_revision"):
 			self.merge_reintegrate_revision = rabbitvcs.ui.widget.RevisionSelector(
 				self.get_widget("revision_container"),
@@ -348,13 +322,11 @@ class SVNMerge(InterfaceView):
 		ready = True
 		if self.get_widget("merge_reintegrate_repos").get_active_text() == "":
 			ready = False
-
 		self.assistant.set_page_complete(self.page, ready)
 
 	#
 	# Step 2c: Merge two different trees
 	#
-	
 	def on_mergetree_prepare(self):
 		if not hasattr(self, "mergetree_from_repos"):
 			self.mergetree_from_repos = rabbitvcs.ui.widget.ComboBox(
@@ -410,13 +382,11 @@ class SVNMerge(InterfaceView):
 			ready = False
 		if self.get_widget("mergetree_to_urls").get_active_text() == "":
 			ready = False
-
 		self.assistant.set_page_complete(self.page, ready)
  
 	#
 	# Step 3: Merge Options
 	#
-	
 	def on_mergeoptions_prepare(self):
 		if self.last_page == 2:
 			self.get_widget("mergeoptions_recursive").hide()
@@ -426,18 +396,15 @@ class SVNMerge(InterfaceView):
 			self.get_widget("mergeoptions_recursive").show()
 			self.get_widget("mergeoptions_ignore_ancestry").show()
 			self.get_widget("mergeoptions_only_record").show()
-			
 		self.assistant.set_page_complete(self.page, True)
 
 class BranchMerge(InterfaceView):
 	def __init__(self, path, branch=None):
 		InterfaceView.__init__(self, "branch-merge", "Merge")
-
 		self.path = path
 		self.branch = branch
 		self.vcs = rabbitvcs.vcs.VCS()
-
-		
+	
 	def on_cancel_clicked(self, widget, data=None):
 		self.close()
 
@@ -445,9 +412,7 @@ class GitMerge(BranchMerge):
 	def __init__(self, path, branch=None):
 		BranchMerge.__init__(self, path, branch)
 		self.git = self.vcs.git(path)
-
 		self.init_branch_widgets()
-
 		self.from_branches = rabbitvcs.ui.widget.RevisionSelector(
 			self.get_widget("from_branch_container"),
 			self.git,
@@ -456,9 +421,7 @@ class GitMerge(BranchMerge):
 			expand=True,
 			revision_changed_callback=self.__revision_changed
 		)
-		
 		self.update_branch_info()
-
 		self.active_branch = self.git.get_active_branch()
 		if self.active_branch:
 			self.get_widget("to_branch").set_text(self.active_branch.name + " (" + self.active_branch.revision[0:7] + ")")
@@ -528,12 +491,10 @@ class GitMerge(BranchMerge):
 		message_container.pack_start(self.info['from']['message'], True, True, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		from_container.pack_start(message_container, True, True, 0)
-		
 		from_container.show_all()
 
 	def update_branch_info(self):
 		from_branch = self.from_branches.get_revision_object()
-
 		if from_branch.value:
 			log = self.git.log(self.path, limit=1, revision=from_branch, showtype="branch")
 			if log:
@@ -548,21 +509,17 @@ class GitMerge(BranchMerge):
 
 	def on_ok_clicked(self, widget, data=None):
 		self.hide()
-		
 		from_branch = self.from_branches.get_revision_object()
-		
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Merge"))
 		self.action.append(self.action.set_status, _("Running Merge Command..."))
 		self.action.append(
 			self.git.merge,
 			from_branch
 		)
-
 		self.action.append(self.action.set_status, _("Completed Merge"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
@@ -585,7 +542,7 @@ if __name__ == "__main__":
 	revision_text = None
 	if len(args) >= 2:
 		revision_text = args[1]
-
+	
 	if vcs_name == rabbitvcs.vcs.VCS_SVN:
 		window = SVNMerge(path, revision_text)
 		window.register_gtk_quit()

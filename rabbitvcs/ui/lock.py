@@ -51,23 +51,18 @@ helper.gobject_threads_init()
 class SVNLock(InterfaceView, GtkContextMenuCaller):
 	"""
 	Provides an interface to lock any number of files in a working copy.
-	
 	"""
-
 	def __init__(self, paths, base_dir):
 		"""
 		@type:  paths: list
 		@param: paths: A list of paths to search for versioned files
-		
 		"""
-		
 		InterfaceView.__init__(self, "lock", "Lock")
 
 		self.paths = paths
 		self.base_dir = base_dir
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-
 		self.files_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("files_table"),
 			[gobject.TYPE_BOOLEAN, rabbitvcs.ui.widget.TYPE_PATH, gobject.TYPE_STRING,
@@ -85,32 +80,28 @@ class SVNLock(InterfaceView, GtkContextMenuCaller):
 				"mouse-event":   self.on_files_table_mouse_event
 			}
 		)
-
 		self.message = rabbitvcs.ui.widget.TextView(
 			self.get_widget("message")
 		)
-
 		self.items = None
 		self.initialize_items()
-
+	
 	#
 	# Helper functions
 	#
-	
 	# Overrides the GtkContextMenuCaller method
 	def on_context_menu_command_finished(self):
 		self.initialize_items()
-
+	
 	def initialize_items(self):
 		"""
 		Initializes the activated cache and loads the file items in a new thread
 		"""
-		
 		try:
 			six.moves._thread.start_new_thread(self.load, ())
 		except Exception as e:
 			log.exception(e)
-
+	
 	def load(self):
 		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
@@ -118,47 +109,40 @@ class SVNLock(InterfaceView, GtkContextMenuCaller):
 		self.populate_files_table()
 		self.get_widget("status").set_text(_("Found %d item(s)") % len(self.items))
 		gtk.gdk.threads_leave()
-
+	
 	def populate_files_table(self):
 		for item in self.items:
-		
 			locked = ""
 			if self.svn.is_locked(item.path):
 				locked = _("Yes")
 			if not self.svn.is_versioned(item.path):
 				continue
-		
 			self.files_table.append([
 				True,
 				item.path,
 				helper.get_file_extension(item.path),
 				locked
 			])
-
+	
 	def show_files_table_popup_menu(self, treeview, data):
 		paths = self.files_table.get_selected_row_items(1)
 		GtkFilesContextMenu(self, data, self.base_dir, paths).show()
-			
+	
 	#
 	# UI Signal Callbacks
 	#
-	
 	def on_ok_clicked(self, widget, data=None):
 		steal_locks = self.get_widget("steal_locks").get_active()
 		items = self.files_table.get_activated_rows(1)
 		if not items:
 			self.close()
 			return
-
 		message = self.message.get_text()
-		
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Get Lock"))
 		self.action.append(self.action.set_status, _("Running Lock Command..."))
 		self.action.append(helper.save_log_message, message)
@@ -180,14 +164,12 @@ class SVNLock(InterfaceView, GtkContextMenuCaller):
 	def on_select_all_toggled(self, widget, data=None):
 		for row in self.files_table.get_items():
 			row[0] = self.get_widget("select_all").get_active()
-
+	
 	def on_previous_messages_clicked(self, widget, data=None):
 		dialog = rabbitvcs.ui.dialog.PreviousMessages()
 		message = dialog.run()
 		if message is not None:
 			self.message.set_text(message)
-
-
 
 classes_map = {
 	rabbitvcs.vcs.VCS_SVN: SVNLock
@@ -203,7 +185,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT],
 		usage="Usage: rabbitvcs lock [path1] [path2] ..."
 	)
-
+	
 	window = lock_factory(paths, options.base_dir)
 	window.register_gtk_quit()
 	gtk.main()

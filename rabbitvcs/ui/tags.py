@@ -58,27 +58,20 @@ STATE_EDIT = 1
 class GitTagManager(InterfaceView):
 	"""
 	Provides a UI interface to manage items
-	
 	"""
-	
 	state = STATE_ADD
 	
 	def __init__(self, path, revision=None):
 		InterfaceView.__init__(self, "manager", "Manager")
-		
 		self.path = path
-		
 		self.get_widget("right_side").show()
 		# esh: set from rabbitvcs/ui/xml/manager.xml
 		# ~ self.get_widget("Manager").set_size_request(695, -1)
 		self.get_widget("Manager").set_title(_("Tag Manager"))
 		self.get_widget("items_label").set_markup(_("<b>Tags</b>"))
-				
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.git = self.vcs.git(path)
-
 		self.revision_obj = self.git.revision(revision)
-		
 		self.selected_tag = None
 		self.items_treeview = rabbitvcs.ui.widget.Table(
 			self.get_widget("items_treeview"),
@@ -95,11 +88,9 @@ class GitTagManager(InterfaceView):
 		)
 		self.initialize_detail()
 		self.load(self.show_add)
-		
-
+	
 	def initialize_detail(self):
 		self.detail_container = self.get_widget("detail_container")
-
 		vbox = gtk.VBox(False, 6)
 		
 		# esh:
@@ -115,7 +106,7 @@ class GitTagManager(InterfaceView):
 		# esh: set pack_start params: expand=True, fill=True
 		self.tag_name_container.pack_start(self.tag_entry, True, True, 0)
 		vbox.pack_start(self.tag_name_container, False, False, 0)
-
+		
 		# Set up the Commit-sha line
 		label = gtk.Label(_("Revision:"))
 		label.set_size_request(label_width, -1)
@@ -136,7 +127,7 @@ class GitTagManager(InterfaceView):
 		self.start_point_container.pack_start(self.start_point_entry, True, True, 0)
 		self.start_point_container.pack_start(self.log_dialog_button, False, False, 0)
 		vbox.pack_start(self.start_point_container, False, False, 0)
-
+		
 		# Set up the Log Message Entry line
 		label = gtk.Label(_("Message:"))
 		label.set_size_request(label_width, -1)
@@ -154,7 +145,7 @@ class GitTagManager(InterfaceView):
 		self.message_entry_container.pack_start(swin, True, True, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		vbox.pack_start(self.message_entry_container, True, True, 0)
-
+		
 		# Set up Save button
 		label = gtk.Label("")
 		label.set_size_request(label_width, -1)
@@ -164,7 +155,7 @@ class GitTagManager(InterfaceView):
 		self.save_container.pack_start(label, False, False, 0)
 		self.save_container.pack_start(self.save_button, False, False, 0)
 		vbox.pack_start(self.save_container, False, False, 0)
-
+		
 		# Set up the tagger line
 		label = gtk.Label(_("Tagger:"))
 		label.set_size_request(label_width, -1)
@@ -177,7 +168,7 @@ class GitTagManager(InterfaceView):
 		# esh: set pack_start params: expand=True, fill=True
 		self.tagger_container.pack_start(self.tagger_label, True, True, 0)
 		vbox.pack_start(self.tagger_container, False, False, 0)
-
+		
 		# Set up the Date line
 		label = gtk.Label(_("Date:"))
 		label.set_size_request(label_width, -1)
@@ -189,7 +180,7 @@ class GitTagManager(InterfaceView):
 		# esh: set pack_start params: expand=True, fill=True
 		self.date_container.pack_start(self.date_label, True, True, 0)
 		vbox.pack_start(self.date_container, False, False, 0)
-
+		
 		# Set up the Revision line
 		label = gtk.Label(_("Revision:"))
 		label.set_size_request(label_width, -1)
@@ -202,7 +193,7 @@ class GitTagManager(InterfaceView):
 		# esh: set pack_start params: expand=True, fill=True
 		self.revision_container.pack_start(self.revision_label, True, True, 0)
 		vbox.pack_start(self.revision_container, False, False, 0)
-
+		
 		# Set up the Log Message line
 		label = gtk.Label(_("Message:"))
 		label.set_size_request(label_width, -1)
@@ -221,58 +212,48 @@ class GitTagManager(InterfaceView):
 		
 		self.add_containers = [self.tag_name_container, self.message_entry_container,
 			self.start_point_container, self.save_container]
-			
 		self.view_containers = [self.tag_name_container, self.tagger_container,
 			self.date_container, self.revision_container, self.message_container]
-
 		self.all_containers = [self.tag_name_container,  self.tagger_container,
 			self.date_container, self.revision_container, self.message_container,
 			self.message_entry_container, self.save_container, self.start_point_container]
-
 		vbox.show()
 		self.detail_container.add(vbox)
-		
+	
 	def load(self, callback, *args, **kwargs):
 		self.items_treeview.clear()
-
 		self.tag_list = self.git.tag_list()
-
 		for item in self.tag_list:
 			self.items_treeview.append([item.name])
-
 		if callback:
 			callback(*args, **kwargs)
-
+	
 	def on_add_clicked(self, widget):
 		self.show_add()
-
+	
 	def on_delete_clicked(self, widget):
 		selected = self.items_treeview.get_selected_row_items(0)
-	
 		confirm = rabbitvcs.ui.dialog.Confirmation(_("Are you sure you want to delete %s?" % ", ".join(selected)))
 		result = confirm.run()
-		
 		if result == gtk.RESPONSE_OK or result == True:
 			for tag in selected:
 				self.git.tag_delete(tag)
-			
 			self.load(self.show_add)
-
+	
 	def on_save_clicked(self, widget):
 		tag_name = self.tag_entry.get_text()
 		tag_message = self.message_entry.get_text()
 		tag_revision = self.git.revision(self.start_point_entry.get_text())
-
 		self.git.tag(tag_name, tag_message, tag_revision)
 		self.load(self.show_detail, tag_name)
-
+	
 	def on_treeview_key_event(self, treeview, data=None):
 		if gtk.gdk.keyval_name(data.keyval) in ("Up", "Down", "Return"):
 			self.on_treeview_event(treeview, data)
-
+	
 	def on_treeview_mouse_event(self, treeview, data=None):
 		self.on_treeview_event(treeview, data)
-
+	
 	def on_treeview_event(self, treeview, data):
 		selected = self.items_treeview.get_selected_row_items(0)
 		if len(selected) > 0:
@@ -281,13 +262,13 @@ class GitTagManager(InterfaceView):
 			self.get_widget("delete").set_sensitive(True)
 		else:
 			self.show_add()
-
+	
 	def show_containers(self, containers):
 		for container in self.all_containers:
 			container.hide()
 		for container in containers:
 			container.show_all()
-
+	
 	def show_add(self):
 		self.items_treeview.unselect_all()
 		self.tag_entry.set_text("")
@@ -302,7 +283,6 @@ class GitTagManager(InterfaceView):
 			if item.name == tag_name:
 				self.selected_tag = item
 				break
-
 		self.save_button.set_label(_("Save"))
 		if self.selected_tag:
 			self.tag_entry.set_text(self.selected_tag.name)
@@ -310,11 +290,9 @@ class GitTagManager(InterfaceView):
 			self.message_label.set_text(self.selected_tag.message.rstrip("\n"))
 			self.tagger_label.set_text(self.selected_tag.tagger)
 			self.date_label.set_text(helper.format_datetime(datetime.fromtimestamp(self.selected_tag.tag_time)))
-
 			self.show_containers(self.view_containers)
 			self.get_widget("detail_label").set_markup(_("<b>Tag Detail</b>"))
-
-
+	
 	def on_log_dialog_button_clicked(self, widget):
 		log_dialog_factory(
 			self.path,

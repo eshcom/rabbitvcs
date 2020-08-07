@@ -41,16 +41,13 @@ _ = gettext.gettext
 class Delete(InterfaceNonView):
 	"""
 	This class provides a handler to Delete functionality.
-	
 	"""
-
 	def __init__(self, paths):
 		InterfaceNonView.__init__(self)
 		self.paths = paths
 		self.vcs = rabbitvcs.vcs.VCS()
 
 	def start(self):
-	
 		# From the given paths, determine which are versioned and which are not
 		versioned = []
 		unversioned = []
@@ -59,7 +56,6 @@ class Delete(InterfaceNonView):
 				versioned.append(path)
 			elif os.path.exists(path):
 				unversioned.append(path)
-		
 		# If there are unversioned files, confirm that the user wants to
 		# delete those.  Default to true.
 		result = True
@@ -69,7 +65,6 @@ class Delete(InterfaceNonView):
 				item = unversioned[0]
 			confirm = rabbitvcs.ui.dialog.DeleteConfirmation(item)
 			result = confirm.run()
-
 		# If the user wants to continue (or there are no unversioned files)
 		# remove or delete the given files
 		if result == gtk.RESPONSE_OK or result == True:
@@ -79,7 +74,6 @@ class Delete(InterfaceNonView):
 				except Exception as e:
 					log.exception()
 					return
-			
 			if unversioned:
 				for path in unversioned:
 					helper.delete_item(path)
@@ -112,7 +106,7 @@ def delete_factory(paths):
 if __name__ == "__main__":
 	from rabbitvcs.ui import main
 	(options, paths) = main(usage="Usage: rabbitvcs delete [path1] [path2] ...")
-
+	
 	window = delete_factory(paths)
 	window.register_gtk_quit()
 	window.start()

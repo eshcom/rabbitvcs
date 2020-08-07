@@ -52,17 +52,12 @@ helper.gobject_threads_init()
 class CreatePatch:
 	"""
 	Provides a user interface for the user to create a Patch file
-	
 	"""
-
 	def __init__(self, paths, base_dir):
 		"""
-		
 		@type  paths:   list of strings
 		@param paths:   A list of local paths.
-		
 		"""
-
 		InterfaceView.__init__(self, "commit", "Commit")
 
 		# Modify the Commit window to what we need for Create Patch
@@ -71,18 +66,14 @@ class CreatePatch:
 		window.resize(640, 400)
 		self.get_widget("commit_to_box").hide()
 		self.get_widget("add_message_box").hide()
-
 		self.paths = paths
 		self.base_dir = base_dir
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.activated_cache = {}
-		
 		self.common = helper.get_common_directory(paths)
-
 		if not self.vcs.is_versioned(self.common):
 			rabbitvcs.ui.dialog.MessageBox(_("The given path is not a working copy"))
 			raise SystemExit()
-
 		self.files_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("files_table"),
 			[gobject.TYPE_BOOLEAN, rabbitvcs.ui.widget.TYPE_PATH,
@@ -107,17 +98,14 @@ class CreatePatch:
 			}
 		)
 		self.files_table.allow_multiple()
-		
 		self.items = None
 		self.initialize_items()
 
 	#
 	# Helper functions
 	#
-
 	def choose_patch_path(self):
 		path = ""
-		
 		dialog = gtk.FileChooserDialog(
 			_("Create Patch"),
 			None,
@@ -129,18 +117,14 @@ class CreatePatch:
 			helper.get_common_directory(self.paths).replace("file://", "")
 		)
 		response = dialog.run()
-		
 		if response == gtk.RESPONSE_OK:
 			path = dialog.get_filename()
-			
 		dialog.destroy()
-		
 		return path
 
 class SVNCreatePatch(CreatePatch, SVNCommit):
 	def __init__(self, paths, base_dir=None):
 		CreatePatch.__init__(self, paths, base_dir)
-
 		self.svn = self.vcs.svn()
 
 	#
@@ -149,16 +133,13 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 	def on_ok_clicked(self, widget, data=None):
 		items = self.files_table.get_activated_rows(1)
 		self.hide()
-		
 		if len(items) == 0:
 			self.close()
 			return
-		
 		path = self.choose_patch_path()
 		if not path:
 			self.close()
 			return
-		
 		ticks = len(items)*2
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
@@ -170,12 +151,9 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 		
 		def create_patch_action(patch_path, patch_items, base_dir):
 			fileObj = open(patch_path,"w")
-			
 			# PySVN takes a path to create its own temp files...
 			temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
-			
 			os.chdir(base_dir)
-			
 			# Add to the Patch file only the selected items
 			for item in patch_items:
 				rel_path = helper.get_relative_path(base_dir, item)
@@ -187,32 +165,26 @@ class SVNCreatePatch(CreatePatch, SVNCommit):
 					self.svn.revision("working")
 				)
 				fileObj.write(diff_text)
-	
 			fileObj.close()
-		
 			# Note: if we don't want to ignore errors here, we could define a
 			# function that logs failures.
 			shutil.rmtree(temp_dir, ignore_errors = True)
 		
 		self.action.append(create_patch_action, path, items, self.common)
-		
 		self.action.append(self.action.set_status, _("Patch File Created"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-		
 		# TODO: Open the diff file (meld is going to add support in a future version :()
 		# helper.launch_diff_tool(path)
 
 class GitCreatePatch(CreatePatch, GitCommit):
 	def __init__(self, paths, base_dir=None):
 		CreatePatch.__init__(self, paths, base_dir)
-
 		self.git = self.vcs.git(paths[0])
 
 	#
 	# Event handlers
 	#
-		
 	def on_ok_clicked(self, widget, data=None):
 		items = self.files_table.get_activated_rows(1)
 		self.hide()
@@ -220,12 +192,10 @@ class GitCreatePatch(CreatePatch, GitCommit):
 		if len(items) == 0:
 			self.close()
 			return
-		
 		path = self.choose_patch_path()
 		if not path:
 			self.close()
 			return
-		
 		ticks = len(items)*2
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
@@ -237,12 +207,9 @@ class GitCreatePatch(CreatePatch, GitCommit):
 		
 		def create_patch_action(patch_path, patch_items, base_dir):
 			fileObj = open(patch_path,"w")
-			
 			# PySVN takes a path to create its own temp files...
 			temp_dir = tempfile.mkdtemp(prefix=rabbitvcs.TEMP_DIR_PREFIX)
-			
 			os.chdir(base_dir)
-			
 			# Add to the Patch file only the selected items
 			for item in patch_items:
 				rel_path = helper.get_relative_path(base_dir, item)
@@ -253,15 +220,12 @@ class GitCreatePatch(CreatePatch, GitCommit):
 					self.git.revision("WORKING")
 				)
 				fileObj.write(diff_text)
-	
 			fileObj.close()
-		
 			# Note: if we don't want to ignore errors here, we could define a
 			# function that logs failures.
 			shutil.rmtree(temp_dir, ignore_errors = True)
 		
 		self.action.append(create_patch_action, path, items, self.common)
-		
 		self.action.append(self.action.set_status, _("Patch File Created"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
@@ -281,7 +245,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT],
 		usage="Usage: rabbitvcs createpatch [path1] [path2] ..."
 	)
-		
+	
 	window = createpatch_factory(paths, options.base_dir)
 	window.register_gtk_quit()
 	gtk.main()

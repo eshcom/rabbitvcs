@@ -41,20 +41,16 @@ _ = gettext.gettext
 class SVNRevisionProperties(PropertiesBase):
 	def __init__(self, path, revision=None):
 		PropertiesBase.__init__(self, path)
-		
 		self.svn = self.vcs.svn()
-		
 		if not self.svn.is_path_repository_url(path):
 			self.path = self.svn.get_repo_url(path)
 			self.get_widget("path").set_text(self.path)
-		
 		self.revision = revision
 		self.revision_obj = None
 		if revision is not None:
 			self.revision_obj = self.svn.revision("number", revision)
-
 		self.load()
-
+	
 	def load(self):
 		self.table.clear()
 		try:
@@ -66,20 +62,17 @@ class SVNRevisionProperties(PropertiesBase):
 			log.exception(e)
 			rabbitvcs.ui.dialog.MessageBox(_("Unable to retrieve properties list"))
 			self.proplist = {}
-		
 		if self.proplist:
 			for key,val in list(self.proplist.items()):
 				self.table.append([False, key,val.rstrip()])
-
+	
 	def save(self):
 		delete_recurse = self.get_widget("delete_recurse").get_active()
-		
 		self.action = SVNAction(
 			self.svn,
 			notification=False,
 			run_in_thread=False
 		)
-		
 		for row in self.delete_stack:
 			self.action.append(
 				self.svn.revpropdel,
@@ -88,7 +81,6 @@ class SVNRevisionProperties(PropertiesBase):
 				self.revision_obj,
 				force=True
 			)
-
 		for row in self.table.get_items():
 			self.action.append(
 				self.svn.revpropset,
@@ -98,7 +90,6 @@ class SVNRevisionProperties(PropertiesBase):
 				self.revision_obj,
 				force=True
 			)
-		
 		self.action.schedule()
 		self.close()
 

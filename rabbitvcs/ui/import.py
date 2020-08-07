@@ -36,41 +36,31 @@ _ = gettext.gettext
 class SVNImport(InterfaceView):
 	def __init__(self, path):
 		InterfaceView.__init__(self, "import", "Import")
-		
 		self.get_widget("Import").set_title(_("Import - %s") % path)
-		
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-		
 		if self.svn.is_in_a_or_a_working_copy(path):
 			self.get_widget("repository").set_text(self.svn.get_repo_url(path))
-		
 		self.repositories = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("repositories"),
 			helper.get_repository_paths()
 		)
-		
 		self.message = rabbitvcs.ui.widget.TextView(
 			self.get_widget("message")
 		)
 
 	def on_ok_clicked(self, widget):
-		
 		url = self.get_widget("repository").get_text()
 		if not url:
 			rabbitvcs.ui.dialog.MessageBox(_("The repository URL field is required."))
 			return
-			
 		ignore = not self.get_widget("include_ignored").get_active()
-		
 		self.hide()
-
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
-		
 		self.action.append(self.action.set_header, _("Import"))
 		self.action.append(self.action.set_status, _("Running Import Command..."))
 		self.action.append(
@@ -90,8 +80,6 @@ class SVNImport(InterfaceView):
 		if message is not None:
 			self.message.set_text(message)
 
-
-
 classes_map = {
 	rabbitvcs.vcs.VCS_SVN: SVNImport
 }
@@ -103,7 +91,7 @@ def import_factory(path):
 if __name__ == "__main__":
 	from rabbitvcs.ui import main
 	(options, paths) = main(usage="Usage: rabbitvcs import [path]")
-			
+	
 	window = import_factory(paths[0])
 	window.register_gtk_quit()
 	gtk.main()

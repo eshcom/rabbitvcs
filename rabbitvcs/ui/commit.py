@@ -56,10 +56,8 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 	changes to a repository.  Pass it a list of local paths to commit.
 	"""
 	SETTINGS = rabbitvcs.util.settings.SettingsManager()
-
 	TOGGLE_ALL = False
 	SHOW_UNVERSIONED = SETTINGS.get("general", "show_unversioned_files")
-
 	# This keeps track of any changes that the user has made to the row
 	# selections
 	changes = {}
@@ -107,12 +105,10 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 			self.get_widget("message"),
 			(message and message or "")
 		)
-
 		self.paths = []
 		for path in paths:
 			if self.vcs.is_in_a_or_a_working_copy(path):
 				self.paths.append(path)
-
 		self.isInitDone = True
 
 	#
@@ -126,9 +122,7 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		  - Updates the status area
 		"""
 		self.get_widget("status").set_text(_("Loading..."))
-
 		self.items = self.vcs.get_items(self.paths, self.vcs.statuses_for_commit(self.paths))
-
 		self.populate_files_table()
 
 	# Overrides the GtkContextMenuCaller method
@@ -147,7 +141,6 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 
 	def should_item_be_visible(self, item):
 		show_unversioned = self.SHOW_UNVERSIONED
-		
 		if not show_unversioned:
 			if not item.is_versioned():
 			   return False
@@ -178,7 +171,6 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 	def on_key_pressed(self, widget, data):
 		if InterfaceView.on_key_pressed(self, widget, data):
 			return True
-
 		if (data.state & (gtk.gdk.CONTROL_MASK) and
 				gtk.gdk.keyval_name(data.keyval) == "Return"):
 			self.on_ok_clicked(widget)
@@ -195,7 +187,6 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		if self.isInitDone:
 			self.SHOW_UNVERSIONED = not self.SHOW_UNVERSIONED
 		self.populate_files_table()
-
 		# Save this preference for future commits.
 		if self.SETTINGS.get("general", "show_unversioned_files") != self.SHOW_UNVERSIONED:
 			self.SETTINGS.set(
@@ -230,9 +221,8 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		First clears and then populates the files table based on the items
 		retrieved in self.load()
 		"""
-		# esh:
+		# esh: get_selected_rows
 		sel_rows = self.files_table.get_selected_rows()
-		
 		self.files_table.clear()
 		n = 0
 		m = 0
@@ -257,10 +247,8 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 				item.simple_content_status(),
 				item.simple_metadata_status()
 			])
-		
-		# esh:
+		# esh: set_selected_rows
 		self.files_table.set_selected_rows(sel_rows)
-		
 		self.get_widget("status").set_text(_("Found %(changed)d changed and %(unversioned)d unversioned item(s)") % {
 				"changed": n,
 				"unversioned": m
@@ -270,13 +258,10 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 class SVNCommit(Commit):
 	def __init__(self, paths, base_dir=None, message=None):
 		Commit.__init__(self, paths, base_dir, message)
-
 		self.get_widget("commit_to_box").show()
-		
 		self.get_widget("to").set_text(
 			self.vcs.svn().get_repo_url(self.base_dir)
 		)
-
 		self.items = None
 		if len(self.paths):
 			self.initialize_items()
@@ -284,11 +269,9 @@ class SVNCommit(Commit):
 	def on_ok_clicked(self, widget, data=None):
 		items = self.files_table.get_activated_rows(1)
 		self.hide()
-
 		if len(items) == 0:
 			self.close()
 			return
-
 		added = 0
 		recurse = False
 		for item in items:
@@ -304,9 +287,7 @@ class SVNCommit(Commit):
 					self.vcs.svn().remove(item)
 			except Exception as e:
 				log.exception(e)
-
 		ticks = added + len(items)*2
-
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.vcs.svn(),
 			register_gtk_quit=self.gtk_quit_is_set()
@@ -325,7 +306,6 @@ class SVNCommit(Commit):
 	def do_commit(self, items, recurse):
 		# pysvn.Revision
 		revision = self.vcs.svn().commit(items, self.message.get_text(), recurse=recurse)
-		
 		self.action.set_status(_("Completed Commit") + " at Revision: " + str(revision.number))
 
 	def on_files_table_toggle_event(self, row, col):
@@ -335,11 +315,8 @@ class SVNCommit(Commit):
 class GitCommit(Commit):
 	def __init__(self, paths, base_dir=None, message=None):
 		Commit.__init__(self, paths, base_dir, message)
-
 		self.git = self.vcs.git(paths[0])
-
 		self.get_widget("commit_to_box").show()
-		
 		active_branch = self.git.get_active_branch()
 		if active_branch:
 			self.get_widget("to").set_text(
@@ -347,7 +324,6 @@ class GitCommit(Commit):
 			)
 		else:
 			self.get_widget("to").set_text("No active branch")
-
 		self.items = None
 		if len(self.paths):
 			self.initialize_items()
@@ -355,11 +331,9 @@ class GitCommit(Commit):
 	def on_ok_clicked(self, widget, data=None):
 		items = self.files_table.get_activated_rows(1)
 		self.hide()
-
 		if len(items) == 0:
 			self.close()
 			return
-
 		staged = 0
 		for item in items:
 			try:
@@ -372,7 +346,6 @@ class GitCommit(Commit):
 					staged += 1
 			except Exception as e:
 				log.exception(e)
-
 		ticks = staged + len(items)*2
 
 		self.action = rabbitvcs.ui.action.GitAction(
@@ -398,19 +371,14 @@ class GitCommit(Commit):
 		# Adds path: True/False to the dict
 		self.changes[row[1]] = row[col]
 
-
 class MercurialCommit(Commit):
 	def __init__(self, paths, base_dir=None, message=None):
 		Commit.__init__(self, paths, base_dir, message)
-
 		self.mercurial = self.vcs.mercurial(paths[0])
-
 		options_box = self.get_widget("options_box")
-		
 		self.close_branch = gtk.CheckButton(_("Close Branch"))
 		options_box.pack_start(self.close_branch, False, False, 0)
 		self.close_branch.show()
-
 		self.items = None
 		if len(self.paths):
 			self.initialize_items()
@@ -418,11 +386,9 @@ class MercurialCommit(Commit):
 	def on_ok_clicked(self, widget, data=None):
 		items = self.files_table.get_activated_rows(1)
 		self.hide()
-
 		if len(items) == 0:
 			self.close()
 			return
-
 		staged = 0
 		for item in items:
 			try:
@@ -435,9 +401,7 @@ class MercurialCommit(Commit):
 					staged += 1
 			except Exception as e:
 				log.exception(e)
-
 		ticks = staged + len(items)*2
-
 		self.action = rabbitvcs.ui.action.MercurialAction(
 			self.mercurial,
 			register_gtk_quit=self.gtk_quit_is_set()

@@ -39,32 +39,27 @@ class SVNCreate:
 	"""
 	Provides an interface to create a svn repository
 	"""
-	
 	# Also, might want to just launch a terminal window instead of this
 	def __init__(self, path):
-	
 		if not os.path.isdir(path):
 			os.makedirs(path)
-		
 		# Let svnadmin return a bad value if a repo already exists there
 		ret = subprocess.call(["/usr/bin/svnadmin", "create", path])
 		if ret == 0:
 			rabbitvcs.ui.dialog.MessageBox(_("Repository successfully created"))
 		else:
 			rabbitvcs.ui.dialog.MessageBox(_("There was an error creating the repository.  Make sure the given folder is empty."))
-		
+
 class GitCreate:
 	# Also, might want to just launch a terminal window instead of this
 	def __init__(self, path):
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.git = self.vcs.git()
 		self.path = path
-		
 		self.action = GitAction(
 			self.git,
 			register_gtk_quit=True
 		)
-		
 		self.action.append(self.action.set_header, _("Initialize Repository"))
 		self.action.append(self.action.set_status, _("Setting up repository..."))
 		self.action.append(self.git.initialize_repository, self.path)

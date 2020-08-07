@@ -50,16 +50,12 @@ class Settings(InterfaceView):
 		"""
 		Provides an interface to the settings library.
 		"""
-	
 		InterfaceView.__init__(self, "settings", "Settings")
-
 		self.settings = rabbitvcs.util.settings.SettingsManager()
-		
 		langs = []
 		language = os.environ.get('LANGUAGE', None)
 		if language:
 			langs += language.split(":")
-
 		self.language = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("language"),
 			langs
@@ -100,7 +96,6 @@ class Settings(InterfaceView):
 		self.get_widget("cache_number_messages").set_text(
 			str(self.settings.get("cache", "number_messages"))
 		)
-		
 		self.logging_type = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("logging_type"),
 			["None", "Console", "File", "Both"]
@@ -109,7 +104,6 @@ class Settings(InterfaceView):
 		if not val:
 			val = "Console"
 		self.logging_type.set_active_from_value(val)
-
 		self.logging_level = rabbitvcs.ui.widget.ComboBox(
 			self.get_widget("logging_level"),
 			["Debug", "Info", "Warning", "Error", "Critical"]
@@ -137,14 +131,12 @@ class Settings(InterfaceView):
 					show_add_line=False
 				)
 				show_git = True
-
 		if show_git:
 			self.get_widget("pages").get_nth_page(5).show()
 		else:
 			self.get_widget("pages").get_nth_page(5).hide()
-
 		self._populate_checker_tab()
-
+	
 	def _get_checker_service(self, report_failure=True):
 		checker_service = None
 		try:
@@ -155,66 +147,52 @@ class Settings(InterfaceView):
 		except dbus.DBusException as ex:
 			if report_failure:
 				rabbitvcs.ui.dialog.MessageBox(CHECKER_SERVICE_ERROR)
-		
 		return checker_service
-
+	
 	def _populate_checker_tab(self, report_failure=True):
 		# This is a limitation of GLADE, and can be removed when we migrate to
 		# GTK2 Builder
-
 		checker_service = self._get_checker_service(report_failure)
-		
 		self.get_widget("restart_checker").set_image(
 										gtk.image_new_from_stock(
 											gtk.STOCK_EXECUTE,
 											gtk.ICON_SIZE_BUTTON))
-
 		self.get_widget("refresh_info").set_image(
 										gtk.image_new_from_stock(
 											gtk.STOCK_REFRESH,
 											gtk.ICON_SIZE_BUTTON))
-
 		self.get_widget("stop_checker").set_image(
 										gtk.image_new_from_stock(
 											gtk.STOCK_STOP,
 											gtk.ICON_SIZE_BUTTON))
-
 		self.get_widget("stop_checker").set_sensitive(bool(checker_service))
 
 		if(checker_service):
 			self.get_widget("checker_type").set_text(checker_service.CheckerType())
 			self.get_widget("pid").set_text(str(checker_service.PID()))
-			
 			memory = checker_service.MemoryUsage()
-						
 			if memory:
 				self.get_widget("memory_usage").set_text("%s KB" % memory)
 			else:
 				self.get_widget("memory_usage").set_text(CHECKER_UNKNOWN_INFO)
-			
 			self._populate_info_table(checker_service.ExtraInformation())
-			
 		else:
 			self.get_widget("checker_type").set_text(CHECKER_UNKNOWN_INFO)
 			self.get_widget("pid").set_text(CHECKER_UNKNOWN_INFO)
 			self.get_widget("memory_usage").set_text(CHECKER_UNKNOWN_INFO)
 			self._clear_info_table()
-
+	
 	def _clear_info_table(self):
 		info_table = self.get_widget("info_table_area").get_child()
-		
 		if info_table:
 			info_table.destroy()
-
+	
 	def _populate_info_table(self, info):
 		self._clear_info_table()
-		
 		table_place = self.get_widget("info_table_area")
-		
 		table = rabbitvcs.ui.widget.KeyValueTable(info)
 		table_place.add(table)
 		table.show()
-		
 	
 	def on_refresh_info_clicked(self, widget):
 		self._populate_checker_tab()
@@ -243,20 +221,20 @@ class Settings(InterfaceView):
 	def on_stop_checker_clicked(self, widget):
 		self._stop_checker()
 		self._populate_checker_tab(report_failure=False)
-
+	
 	def on_destroy(self, widget):
 		gtk.main_quit()
-
+	
 	def on_cancel_clicked(self, widget):
 		gtk.main_quit()
-
+	
 	def on_ok_clicked(self, widget):
 		self.save()
 		gtk.main_quit()
 	
 	def on_apply_clicked(self, widget):
 		self.save()
-
+	
 	def save(self):
 		self.settings.set(
 			"general", "language",
@@ -315,10 +293,9 @@ class Settings(InterfaceView):
 			self.logging_level.get_active_text()
 		)
 		self.settings.write()
-		
 		if self.file_editor:
 			self.file_editor.save()
-
+	
 	def on_external_diff_tool_browse_clicked(self, widget):
 		chooser = rabbitvcs.ui.dialog.FileChooser(
 			_("Select a program"), "/usr/bin"
@@ -327,7 +304,7 @@ class Settings(InterfaceView):
 		path = path.replace("file://", "")
 		if path is not None:
 			self.get_widget("diff_tool").set_text(path)
-
+	
 	def on_cache_clear_repositories_clicked(self, widget):
 		confirmation = rabbitvcs.ui.dialog.Confirmation(
 			_("Are you sure you want to clear your repository paths?")
@@ -338,7 +315,7 @@ class Settings(InterfaceView):
 			fh.write("")
 			fh.close()
 			rabbitvcs.ui.dialog.MessageBox(_("Repository paths cleared"))
-
+	
 	def on_cache_clear_messages_clicked(self, widget):
 		confirmation = rabbitvcs.ui.dialog.Confirmation(
 			_("Are you sure you want to clear your previous messages?")
@@ -349,7 +326,7 @@ class Settings(InterfaceView):
 			fh.write("")
 			fh.close()
 			rabbitvcs.ui.dialog.MessageBox(_("Previous messages cleared"))
-
+	
 	def on_cache_clear_authentication_clicked(self, widget):
 		confirmation = rabbitvcs.ui.dialog.Confirmation(
 			_("Are you sure you want to clear your authentication information?")
@@ -368,9 +345,7 @@ class Settings(InterfaceView):
 					for filename in files:
 						filepath = "%s/%s" % (path, filename)
 						os.remove(filepath)
-
 			rabbitvcs.ui.dialog.MessageBox(_("Authentication information cleared"))
-			
 
 if __name__ == "__main__":
 	from rabbitvcs.ui import main, BASEDIR_OPT
@@ -378,7 +353,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT],
 		usage="Usage: rabbitvcs settings"
 	)
-
+	
 	window = Settings(options.base_dir)
 	window.register_gtk_quit()
 	gtk.main()

@@ -54,9 +54,7 @@ class SVNCheckForModifications(InterfaceView):
 	"""
 	Provides a way for the user to see what files have been changed on the
 	repository.
-	
 	"""
-	
 	def __init__(self, paths, base_dir=None):
 		InterfaceView.__init__(self, "checkmods", "CheckMods")
 
@@ -74,9 +72,7 @@ class SVNCheckForModifications(InterfaceView):
 														   self.vcs, \
 														   self.paths, \
 														   self.base_dir)
-
 		self.remote_refreshed = False
-
 		self.load()
 
 	def on_refresh_clicked(self, widget):
@@ -93,7 +89,6 @@ class SVNCheckForModifications(InterfaceView):
 	#
 	# Helper methods
 	#
-	
 	def load(self):
 		self.local_mods.refresh()
 
@@ -213,12 +208,10 @@ class SVNCheckRemoteModifications(GtkContextMenuCaller):
 		for item in self.items:
 			revision = -1
 			author = ""
-
 			if item.revision is not None:
 				revision = item.revision
 			if item.author is not None:
 				author = item.author
-
 			self.files_table.append([
 				item.path,
 				helper.get_file_extension(item.path),
@@ -230,10 +223,8 @@ class SVNCheckRemoteModifications(GtkContextMenuCaller):
 
 	def diff_remote(self, path):
 		from rabbitvcs.ui.diff import SVNDiff
-		
 		path_local = path
 		path_remote = self.svn.get_repo_url(path_local)
-		
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			notification=False
@@ -295,10 +286,8 @@ class CheckRemoteModsContextMenuCallbacks:
 
 	def compare(self, data1=None, data2=None):
 		from rabbitvcs.ui.diff import SVNDiff
-		
 		path_local = self.paths[0]
 		path_remote = self.svn.get_repo_url(path_local)
-		
 		self.action = rabbitvcs.ui.action.SVNAction(
 			self.svn,
 			notification=False
@@ -315,7 +304,6 @@ class CheckRemoteModsContextMenuCallbacks:
 
 class CheckRemoteModsContextMenu:
 	def __init__(self, caller, event, base_dir, vcs, paths=[]):
-		
 		self.caller = caller
 		self.event = event
 		self.paths = paths
@@ -329,7 +317,6 @@ class CheckRemoteModsContextMenu:
 			self.vcs,
 			paths
 		)
-		
 		self.structure = [
 			(MenuViewDiff, None),
 			(MenuCompare, None),
@@ -340,7 +327,6 @@ class CheckRemoteModsContextMenu:
 	def show(self):
 		if len(self.paths) == 0:
 			return
-
 		context_menu = GtkContextMenu(self.structure, self.conditions, self.callbacks)
 		context_menu.show(self.event)
 
@@ -358,7 +344,7 @@ if __name__ == "__main__":
 		[BASEDIR_OPT],
 		usage="Usage: rabbitvcs checkmods [url_or_path]"
 	)
-
+	
 	window = checkmods_factory(paths, options.base_dir)
 	window.register_gtk_quit()
 	gtk.main()

@@ -41,9 +41,7 @@ _ = gettext.gettext
 class SVNOpen(InterfaceNonView):
 	"""
 	This class provides a handler to open tracked files.
-	
 	"""
-
 	def __init__(self, path, revision):
 		"""
 		@type   path: string
@@ -51,9 +49,7 @@ class SVNOpen(InterfaceNonView):
 		
 		@type   revision: string
 		@param  revision: The revision of the file to open
-		
 		"""
-		
 		InterfaceNonView.__init__(self)
 
 		self.vcs = rabbitvcs.vcs.VCS()
@@ -75,17 +71,13 @@ class SVNOpen(InterfaceNonView):
 			revision=revision_obj,
 			force=True
 		)
-		
 		helper.open_item(dest)
-
 		raise SystemExit()
 
 class GitOpen(InterfaceNonView):
 	"""
 	This class provides a handler to open tracked files.
-	
 	"""
-
 	def __init__(self, path, revision):
 		"""
 		@type   path: string
@@ -93,9 +85,7 @@ class GitOpen(InterfaceNonView):
 		
 		@type   revision: string
 		@param  revision: The revision of the file to open
-		
 		"""
-		
 		InterfaceNonView.__init__(self)
 
 		self.vcs = rabbitvcs.vcs.VCS()
@@ -113,16 +103,12 @@ class GitOpen(InterfaceNonView):
 			dest_dir,
 			revision=revision_obj
 		)
-		
 		repo_path = self.git.find_repository_path(path)
 		relative_path = path
 		if path.startswith(repo_path):
 			relative_path = path[len(repo_path)+1:]
-		
 		dest_path = "%s/%s" % (dest_dir, relative_path)
-		
 		helper.open_item(dest_path)
-
 		raise SystemExit()
 
 classes_map = {
@@ -134,7 +120,6 @@ def open_factory(vcs, path, revision):
 	if not vcs:
 		guess = rabbitvcs.vcs.guess(path)
 		vcs = guess["vcs"]
-		
 	return classes_map[vcs](path, revision)
 
 if __name__ == "__main__":

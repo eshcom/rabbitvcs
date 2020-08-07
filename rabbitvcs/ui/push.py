@@ -72,7 +72,6 @@ class GitPush(Push):
 			self.git,
 			self.on_branch_changed
 		)
-
 		self.log_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("log"),
 			[gobject.TYPE_STRING, gobject.TYPE_STRING],
@@ -90,11 +89,9 @@ class GitPush(Push):
 
 	def on_ok_clicked(self, widget, data=None):
 		self.hide()
-	
 		repository = self.repository_selector.repository_opt.get_active_text()
 		branch = self.repository_selector.branch_opt.get_active_text()
 		tags = self.get_widget("tags").get_active()
-		
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
@@ -123,9 +120,7 @@ class GitPush(Push):
 		gtk.gdk.threads_enter()
 		self.get_widget("status").set_text(_("Loading..."))
 		gtk.gdk.threads_leave()
-		
 		self.load_push_log()
-		
 		gtk.gdk.threads_enter()
 		self.load_logs_exit()
 		gtk.gdk.threads_leave()
@@ -142,14 +137,11 @@ class GitPush(Push):
 
 	def update_widgets(self):
 		self.log_table.clear()
-		
 		repository = self.repository_selector.repository_opt.get_active_text()
 		branch = self.repository_selector.branch_opt.get_active_text()
-
 		if not repository or not branch:
 			self.get_widget("ok").set_sensitive(False)
 			return
-
 		has_commits = False
 		for item in self.push_log:
 			self.log_table.append([
@@ -157,7 +149,6 @@ class GitPush(Push):
 				helper.format_long_text(item.message.rstrip("\n"))
 			])
 			has_commits = True
-
 		self.get_widget("ok").set_sensitive(True)
 		if not has_commits:
 			self.get_widget("status").set_text(_("No commits found"))
@@ -169,7 +160,7 @@ classes_map = {
 def push_factory(path):
 	guess = rabbitvcs.vcs.guess(path)
 	return classes_map[guess["vcs"]](path)
-	
+
 if __name__ == "__main__":
 	from rabbitvcs.ui import main
 	(options, paths) = main(

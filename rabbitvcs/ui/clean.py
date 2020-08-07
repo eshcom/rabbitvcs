@@ -42,9 +42,7 @@ _ = gettext.gettext
 class GitClean(InterfaceView):
 	"""
 	Provides a UI to clean your repository of untracked files
-	
 	"""
-	
 	def __init__(self, path):
 		InterfaceView.__init__(self, "clean", "Clean")
 		self.vcs = rabbitvcs.vcs.VCS()
@@ -81,14 +79,12 @@ class GitClean(InterfaceView):
 	def on_remove_ignored_too_toggled(self, widget):
 		remove_ignored_too = self.get_widget("remove_ignored_too")
 		remove_only_ignored = self.get_widget("remove_only_ignored")
-		
 		if remove_ignored_too.get_active():
 			remove_only_ignored.set_active(False)
 
 	def on_remove_only_ignored_toggled(self, widget):
 		remove_ignored_too = self.get_widget("remove_ignored_too")
 		remove_only_ignored = self.get_widget("remove_only_ignored")
-		
 		if remove_only_ignored.get_active():
 			remove_ignored_too.set_active(False)
 

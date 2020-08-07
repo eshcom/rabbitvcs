@@ -40,9 +40,7 @@ _ = gettext.gettext
 class SVNIgnore(InterfaceNonView):
 	"""
 	This class provides a handler to Ignore functionality.
-	
 	"""
-
 	def __init__(self, path, pattern, glob=False):
 		"""
 		@type   path: string
@@ -53,20 +51,15 @@ class SVNIgnore(InterfaceNonView):
 		
 		@type   glob: boolean
 		@param  glob: True if the path to ignore is a wildcard "glob"
-		
 		"""
-		
 		InterfaceNonView.__init__(self)
 		self.path = path
 		self.pattern = pattern
 		self.glob = glob
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
-
 		prop = self.svn.PROPERTIES["ignore"]
-
 		self.svn.propset(self.path, prop, self.pattern, recurse=self.glob)
-		
 		raise SystemExit()
 
 class GitIgnore(InterfaceView):
@@ -75,24 +68,19 @@ class GitIgnore(InterfaceView):
 		
 		self.path = path
 		self.pattern = pattern
-
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.git = self.vcs.git(path)
-
 		ignore_files = self.git.get_ignore_files(path)
 		ignore_file_labels = []
-		
 		path_dir = os.path.abspath(self.path)
 		if os.path.isfile(path_dir):
 			path_dir = os.path.dirname(path_dir)
-
+		
 		for ignore_file in ignore_files:
 			label = path
 			if ignore_file.startswith(path_dir):
 			   label = ignore_file[len(path_dir)+1:]
-			
 			ignore_file_labels.append(label)
-		
 		text = ""
 		if pattern != path:
 			text = pattern
@@ -105,12 +93,10 @@ class GitIgnore(InterfaceView):
 			show_add_line=True,
 			line_content=text
 		)
-		
+	
 	def on_ok_clicked(self, widget, data=None):
 		self.file_editor.save()
 		self.close()
-		
-
 
 classes_map = {
 	rabbitvcs.vcs.VCS_SVN: SVNIgnore,
@@ -134,7 +120,7 @@ if __name__ == "__main__":
 			if args[0] != ".":
 				path = args[0]
 			pattern = args[1]
-
+	
 	window = ignore_factory(path, pattern)
 	window.register_gtk_quit()
 	gtk.main()
