@@ -41,6 +41,7 @@ else:
 from rabbitvcs import APP_NAME, LOCALE_DIR, gettext
 _ = gettext.gettext
 
+from rabbitvcs.util import helper
 import rabbitvcs.vcs.status
 
 REVISION_OPT = (["-r", "--revision"], {"help":"specify the revision number"})
@@ -141,10 +142,9 @@ class InterfaceView(GtkBuilderWidgetWrapper):
 		window = self.get_widget(self.gtkbuilder_id)
 		if window is not None:
 			if threaded:
-				gtk.gdk.threads_enter()
-			window.destroy()
-			if threaded:
-				gtk.gdk.threads_leave()
+				helper.run_in_main_thread(window.destroy)
+			else:
+				window.destroy()
 		if self.do_gtk_quit:
 			gtk.main_quit()
 	

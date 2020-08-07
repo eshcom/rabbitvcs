@@ -38,6 +38,12 @@ import shutil
 import hashlib
 import threading
 
+if "NAUTILUS_PYTHON_REQUIRE_GTK3" in os.environ and os.environ["NAUTILUS_PYTHON_REQUIRE_GTK3"]:
+	from gi.repository import Gtk as gtk
+else:
+	import gtk
+	gtk.gdk.threads_init()
+
 # A hacky way to get this working with python2 or 3
 try:
 	from urlparse import urlparse, urlunparse
@@ -45,7 +51,6 @@ try:
 except ImportError:
 	from urllib.parse import urlparse, urlunparse, quote, quote_plus, unquote, unquote_plus
 
-	
 from six.moves import filter
 from six.moves import range
 
@@ -91,6 +96,17 @@ def gobject_threads_init():
 	"""
 	if compare_version(gobject.pygobject_version, [3, 10, 2]) < 0:
 		gobject.threads_init()
+
+def run_in_main_thread(func, *args, **kwargs):
+	"""
+	Execute function in main thread's idle loop.
+	"""
+	if isinstance(threading.current_thread(), threading._MainThread):
+		return func(*args, **kwargs)
+	gtk.gdk.threads_enter()
+	result = func(*args, **kwargs)
+	gtk.gdk.threads_leave()
+	return result
 
 def get_tmp_path(filename):
 	day = datetime.datetime.now().day

@@ -34,12 +34,6 @@ from __future__ import absolute_import
 
 import os
 
-if "NAUTILUS_PYTHON_REQUIRE_GTK3" in os.environ and os.environ["NAUTILUS_PYTHON_REQUIRE_GTK3"]:
-	from gi.repository import Gtk as gtk
-else:
-	import gtk
-	gtk.gdk.threads_init()
-
 import time
 import warnings
 import threading
@@ -111,18 +105,12 @@ def disable(func):
 def gtk_unsafe(func):
 	"""
 	Used to wrap a function that makes calls to GTK from a thread in
-	gtk.gdk.threads_enter() and gtk.gdk.threads_leave().
+	the main thread's idle loop.
 	"""
-	import gtk
+	from rabbitvcs.util import helper
+	
 	def newfunc(*args, **kwargs):
-		# esh: added check thread
-		if isinstance(threading.current_thread(), threading._MainThread):
-			return func(*args, **kwargs)
-		
-		gtk.gdk.threads_enter()
-		result = func(*args, **kwargs)
-		gtk.gdk.threads_leave()
-		return result
+		return helper.run_in_main_thread(func, *args, **kwargs)
 	return update_func_meta(newfunc, func)
 
 def debug_calls(caller_log, show_caller=False):

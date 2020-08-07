@@ -87,8 +87,8 @@ class GitClone(Checkout):
 			if append.endswith(".git"):
 				append = append[:-4]
 				break
-		self.get_widget("destination").set_text(
-				os.path.join(self.destination, append))
+		helper.run_in_main_thread(self.get_widget("destination").set_text,
+								  os.path.join(self.destination, append))
 		self.check_form()
 	
 	def check_form(self):

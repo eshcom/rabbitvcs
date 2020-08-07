@@ -802,9 +802,11 @@ class TextView:
 			self.buffer.get_end_iter()
 		)
 	
+	@gtk_unsafe
 	def set_text(self, text):
 		self.buffer.set_text(text)
 	
+	@gtk_unsafe
 	def append_text(self, text):
 		self.buffer.set_text(self.get_text() + text)
 
