@@ -463,9 +463,11 @@ class TableBase:
 					self.callbacks["row-toggled"](model[selPath], column)
 			self._reassert_selection = True
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def append(self, row):
 		self.data.append(row)
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def remove(self, index):
 		model = self.data
 		del model[index]
@@ -482,6 +484,7 @@ class TableBase:
 	def get_items(self):
 		return self.data
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def clear(self):
 		self.data.clear()
 		self.reset_selection()
@@ -490,10 +493,12 @@ class TableBase:
 		model = self.data
 		return model[index]
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def set_row(self, index, row):
 		model = self.data
 		model[index] = row
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def set_row_item(self, row, column, val):
 		model = self.data
 		model[row][column] = val
@@ -585,6 +590,7 @@ class TableBase:
 			lines.append("\t".join(line))
 		return "\n".join(lines)
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def unselect_all(self):
 		self.treeview.get_selection().unselect_all()
 	
@@ -843,6 +849,7 @@ class ProgressBar:
 			gobject.source_remove(self.timer)
 		self.timer = None
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def update(self, fraction=None):
 		if fraction:
 			if self.timer is not None:
@@ -855,6 +862,7 @@ class ProgressBar:
 			self.view.pulse()
 			return True
 	
+	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
 	def set_text(self, text):
 		self.view.set_text(text)
 
