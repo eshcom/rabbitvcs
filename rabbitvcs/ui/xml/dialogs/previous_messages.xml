@@ -3,10 +3,9 @@
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
 
-
-
   <object class="GtkDialog" id="PreviousMessages">
-    <property name="width_request">500</property>
+    <property name="width_request">800</property>
+    <property name="height_request">560</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Previous Messages</property>
     <property name="window_position">center</property>
