@@ -122,7 +122,7 @@ class SVNBrowser(InterfaceView, GtkContextMenuCaller):
 			}
 		)
 		self.clipboard = None
-		self.url_clipboard = gtk.Clipboard()
+		self.text_clipboard = gtk.Clipboard()
 		self.repo_root_url = None
 		if self.url:
 			helper.save_repository_path(url)
@@ -270,8 +270,8 @@ class SVNBrowser(InterfaceView, GtkContextMenuCaller):
 	def empty_clipboard(self):
 		self.clipboard = None
 	
-	def set_url_clipboard(self, url):
-		self.url_clipboard.set_text(url)
+	def set_text_clipboard(self, url):
+		self.text_clipboard.set_text(url)
 	
 	def get_repo_root_url(self):
 		return self.repo_root_url
@@ -517,7 +517,7 @@ class BrowserContextMenuCallbacks:
 		self.caller.action.schedule()
 
 	def browser_copy_url_to_clipboard(self, data=None, user_data=None):
-		self.caller.set_url_clipboard(self.paths[0])
+		self.caller.set_text_clipboard(self.paths[0])
 
 	def browser_move_to(self, data=None, user_data=None):
 		from rabbitvcs.ui.dialog import OneLineTextChange
