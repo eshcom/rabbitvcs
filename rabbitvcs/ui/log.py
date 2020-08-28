@@ -136,7 +136,7 @@ class Log(InterfaceView):
 			self.get_widget("message")
 		)
 		self.stop_on_copy = False
-		self.revision_clipboard = gtk.Clipboard()
+		self.text_clipboard = gtk.Clipboard()
 	
 	#
 	# UI Signal Callback Methods
@@ -328,6 +328,9 @@ class Log(InterfaceView):
 		elif hasattr(self, "git"):
 			vcs = rabbitvcs.vcs.VCS_GIT
 		return vcs
+	
+	def set_text_clipboard(self, filename):
+		self.text_clipboard.set_text(filename)
 
 class SVNLog(Log):
 	def __init__(self, path, merge_candidate_revisions=None):
@@ -520,7 +523,7 @@ class SVNLog(Log):
 						text += " (Copied from %s %s)" % (subitem.copy_from_path, subitem.copy_from_revision)
 					text += "\n"
 			text += "\n\n\n"
-		self.revision_clipboard.set_text(text)
+		self.text_clipboard.set_text(text)
 	
 	def update_revision_message(self):
 		combined_paths = []
@@ -758,7 +761,7 @@ class GitLog(Log):
 			text += "%s: %s\n" % (AUTHOR_LABEL, six.text_type(item.author))
 			text += "%s: %s\n" % (DATE_LABEL, six.text_type(item.date))
 			text += "%s\n\n" % item.message
-		self.revision_clipboard.set_text(text)
+		self.text_clipboard.set_text(text)
 	
 	def update_revision_message(self):
 		combined_paths = []
@@ -1357,6 +1360,9 @@ class LogBottomContextMenuConditions:
 	def _open(self, data=None):
 		return True
 	
+	def copy_filename(self, data=None):
+		return (len(self.paths) == 1)
+	
 	def annotate(self, data=None):
 		return (len(self.paths) == 1)
 	
@@ -1448,6 +1454,9 @@ class LogBottomContextMenuCallbacks:
 				"-r", six.text_type(self.revisions[0]["revision"])
 			])
 	
+	def copy_filename(self, widget, data=None):
+		self.caller.set_text_clipboard(helper.get_file_name(self.paths[0]))
+	
 	def annotate(self, widget, data=None):
 		url = self.paths[0]
 		if self.vcs_name == rabbitvcs.vcs.VCS_SVN:
@@ -1507,7 +1516,8 @@ class LogBottomContextMenu:
 			(MenuShowChangesRevisions, None),
 			(MenuSeparator, None),
 			(MenuOpen, None),
-			(MenuAnnotate, None)
+			(MenuAnnotate, None),
+			(MenuCopyFileName, None) # esh
 		]
 	
 	def show(self):
