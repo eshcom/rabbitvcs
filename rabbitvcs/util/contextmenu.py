@@ -997,10 +997,10 @@ class GtkFilesContextMenuCallbacks(ContextMenuCallbacks):
 			helper.open_item(path)
 	
 	def copy_filename(self, widget, data1=None, data2=None):
-		self.caller.set_filename_clipboard(helper.get_file_name(self.paths[0]))
+		self.caller.set_text_clipboard(helper.get_file_name(self.paths[0]))
 	
 	def copy_full_filename(self, widget, data1=None, data2=None):
-		self.caller.set_filename_clipboard(self.paths[0])
+		self.caller.set_text_clipboard(self.paths[0])
 	
 	def add(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("add", ["-q"] + self.paths)

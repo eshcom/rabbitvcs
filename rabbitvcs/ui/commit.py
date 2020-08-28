@@ -105,8 +105,8 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 			self.get_widget("message"),
 			(message and message or "")
 		)
-		# esh: file_clipboard for set_filename_clipboard func
-		self.file_clipboard = gtk.Clipboard()
+		# esh: text_clipboard for set_text_clipboard func
+		self.text_clipboard = gtk.Clipboard()
 		
 		self.paths = []
 		for path in paths:
@@ -165,8 +165,8 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 			proc = helper.launch_ui_window("delete", paths)
 			self.rescan_after_process_exit(proc, paths)
 	
-	def set_filename_clipboard(self, filename):
-		self.file_clipboard.set_text(filename)
+	def set_text_clipboard(self, filename):
+		self.text_clipboard.set_text(filename)
 	
 	#
 	# Event handlers
