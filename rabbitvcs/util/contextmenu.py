@@ -83,7 +83,7 @@ class MenuBuilder(object):
 		"""
 		@param  structure: Menu structure
 		@type   structure: list
-				
+		
 		Note on "structure". The menu structure is defined in a list of tuples
 		of two elements each.  The first element is a class - the MenuItem
 		subclass that defines the menu interface (see below).
@@ -107,7 +107,7 @@ class MenuBuilder(object):
 		index = 0
 		last_level = -1
 		last_item = last_menuitem = None
-
+		
 		stack = [] # ([items], last_item, last_menuitem)
 		flat_structure = helper.walk_tree_depth_first(
 								structure,
@@ -131,37 +131,35 @@ class MenuBuilder(object):
 					# Remove separators at the end of menus
 					if type(last_item) == MenuSeparator:
 						stack[-1][0].remove(last_menuitem)
-									
+					
 					(items, last_item, last_menuitem) = stack.pop()
 					
 					# Every time we back out of a level, we attach the list of
 					# items as a submenu, however the subclass wants to do it.
 					self.attach_submenu(last_menuitem, items)
-
+			
 			# Have we gone up a level? Save the context and create a submenu
 			if level > last_level:
 				# Skip separators at the start of a menu
 				if type(item) == MenuSeparator: continue
-								
 				stack.append(([], last_item, last_menuitem))
-				
 				last_item = last_menuitem = None
-		
+			
 			# Skip duplicate separators
 			if (type(last_item) == type(item) == MenuSeparator and
 				level == last_level):
 				continue
 			
 			menuitem = self.make_menu_item(item, index)
-
+			
 			self.connect_signal(menuitem, item.callback, item.callback_args)
-		
+			
 			stack[-1][0].append(menuitem)
-
+			
 			last_item = item
 			last_menuitem = menuitem
 			last_level = level
-
+		
 		# Hey, we're out of the loop. Go back up any remaining levels (in case
 		# there were submenus at the end) and finish the job.
 		for (items, last_item2, last_menuitem2) in stack[:0:-1]:
@@ -170,13 +168,13 @@ class MenuBuilder(object):
 			self.attach_submenu(last_menuitem2, items)
 			last_item = last_item2
 			last_menuitem = last_menuitem2
-
+		
 		if stack:
 			self.menu = self.top_level_menu(stack[0][0])
 		else:
 			log.debug("Empty top level menu!")
 			self.menu = self.top_level_menu([])
-			
+	
 	def connect_signal(self, menuitem, callback, callback_args):
 		if callback:
 			if callback_args:
@@ -224,10 +222,10 @@ class GtkContextMenuCaller:
 	
 	def on_context_menu_command_finished(self):
 		pass
-
+	
 	def rescan_after_process_exit(self, proc, paths=None):
 		self.execute_after_process_exit(proc, self.on_context_menu_command_finished)
-		
+	
 	def execute_after_process_exit(self, proc, callback=None):
 		if callback is None:
 			callback = self.on_context_menu_command_finished
@@ -242,11 +240,12 @@ class GtkContextMenuCaller:
 			return still_going
 		# Add our callback function on a 1 second timeout
 		gobject.timeout_add_seconds(1, is_process_still_alive)
-		
+
 class ContextMenuCallbacks:
 	"""
 	The base class for context menu callbacks. This is inherited by sub-classes.
 	"""
+	
 	def __init__(self, caller, base_dir, vcs_client, paths=[]):
 		"""
 		@param  caller: The calling object
@@ -254,7 +253,7 @@ class ContextMenuCallbacks:
 		
 		@param  base_dir: The curent working directory
 		@type   base_dir: string
-
+		
 		@param  vcs_client: The vcs client to be used
 		@type   vcs_client: rabbitvcs.vcs.create_vcs_instance()
 		
@@ -266,7 +265,7 @@ class ContextMenuCallbacks:
 		self.base_dir = base_dir
 		self.vcs_client = vcs_client
 		self.paths = paths
-		
+	
 	def debug_shell(self, widget, data1=None, data2=None):
 		"""
 		Open up an IPython shell which shares the context of the extension.
@@ -301,7 +300,7 @@ class ContextMenuCallbacks:
 		client = pysvn.Client()
 		for path in self.paths:
 			client.revert(path, recurse=True)
-		
+	
 	def debug_invalidate(self, widget, data1=None, data2=None):
 		rabbitvcs_extension = self.caller
 		nautilusVFSFile_table = rabbitvcs_extension.nautilusVFSFile_table
@@ -332,40 +331,40 @@ class ContextMenuCallbacks:
 	def update(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("update", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def commit(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("commit", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def add(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("add", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def check_for_modifications(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("checkmods", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def delete(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("delete", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def revert(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("revert", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def diff(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("diff", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def diff_multiple(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("diff", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def diff_previous_revision(self, widget, data1=None, data2=None):
 		guess = self.vcs_client.guess(self.paths[0])
 		if guess["vcs"] == rabbitvcs.vcs.VCS_SVN:
 			previous_revision_number = self.vcs_client.svn().get_revision(self.paths[0]) - 1
-		
+			
 			pathrev1 = helper.create_path_revision_string(self.vcs_client.svn().get_repo_url(self.paths[0]), previous_revision_number)
 			pathrev2 = helper.create_path_revision_string(self.paths[0], "working")
 			
@@ -376,30 +375,30 @@ class ContextMenuCallbacks:
 				"--vcs=%s" % rabbitvcs.vcs.VCS_SVN
 			])
 			self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def compare_tool(self, widget, data1=None, data2=None):
 		pathrev1 = helper.create_path_revision_string(self.paths[0], "base")
 		pathrev2 = helper.create_path_revision_string(self.paths[0], "working")
-
+		
 		proc = helper.launch_ui_window("diff", [
 			"-s",
 			pathrev1,
 			pathrev2
 		])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def compare_tool_multiple(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("diff", ["-s"] + self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def compare_tool_previous_revision(self, widget, data1=None, data2=None):
 		guess = self.vcs_client.guess(self.paths[0])
 		if guess["vcs"] == rabbitvcs.vcs.VCS_SVN:
 			previous_revision_number = self.vcs_client.svn().get_revision(self.paths[0]) - 1
-
+			
 			pathrev1 = helper.create_path_revision_string(self.vcs_client.svn().get_repo_url(self.paths[0]), previous_revision_number)
 			pathrev2 = helper.create_path_revision_string(self.paths[0], "working")
-
+			
 			proc = helper.launch_ui_window("diff", [
 				"-s",
 				pathrev1,
@@ -407,7 +406,7 @@ class ContextMenuCallbacks:
 				"--vcs=%s" % rabbitvcs.vcs.VCS_SVN
 			])
 			self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def show_changes(self, widget, data1=None, data2=None):
 		pathrev1 = helper.create_path_revision_string(self.paths[0])
 		pathrev2 = pathrev1
@@ -419,11 +418,11 @@ class ContextMenuCallbacks:
 	def show_log(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("log", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def rename(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("rename", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def create_patch(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("createpatch", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
@@ -435,59 +434,59 @@ class ContextMenuCallbacks:
 	def properties(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("property_editor", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def about(self, widget, data1=None, data2=None):
 		helper.launch_ui_window("about")
-		
+	
 	def settings(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("settings", [self.base_dir])
 		self.caller.reload_settings(proc)
-
+	
 	def ignore_by_filename(self, widget, data1=None, data2=None):
 		path = self.paths[0]
 		base_dir = os.path.join(self.base_dir, os.path.dirname(path))
 		proc = helper.launch_ui_window("ignore", [base_dir, os.path.basename(path)])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def ignore_by_file_extension(self, widget, data1=None, data2=None):
 		path = self.paths[0]
 		pattern = "*%s" % helper.get_file_extension(path)
 		base_dir = os.path.join(self.base_dir, os.path.dirname(path))
 		proc = helper.launch_ui_window("ignore", [base_dir, pattern])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def get_lock(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("lock", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def branch_tag(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("branch", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def switch(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("switch", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def merge(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("merge", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def _import(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("import", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def export(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("export", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def svn_export(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("export", ["--vcs=svn", self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def git_export(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("export", ["--vcs=git", self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def update_to_revision(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("updateto", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
@@ -511,11 +510,11 @@ class ContextMenuCallbacks:
 	def relocate(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("relocate", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def cleanup(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("cleanup", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def restore(self, widget, data1=None, data2=None):
 		guess = self.vcs_client.guess(self.paths[0])
 		if guess["vcs"] == rabbitvcs.vcs.VCS_SVN:
@@ -523,56 +522,62 @@ class ContextMenuCallbacks:
 		elif guess["vcs"] == rabbitvcs.vcs.VCS_GIT:
 			proc = helper.launch_ui_window("checkout", ["-q", "--vcs", "git"] + self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def _open(self, widget, data1=None, data2=None):
+		pass
+	
+	def copy_filename(self, widget, data1=None, data2=None):
+		pass
+	
+	def copy_full_filename(self, widget, data1=None, data2=None):
 		pass
 	
 	def browse_to(self, widget, data1=None, data2=None):
 		pass
-
+	
 	def repo_browser(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("browser", [self.paths[0]])
-
+	
 	def initialize_repository(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("create", ["--vcs", "git", self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def clone(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("clone", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def push(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("push", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def branches(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("branches", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def tags(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("tags", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def remotes(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("remotes", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def clean(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("clean", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def reset(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("reset", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def stage(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("stage", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def unstage(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("unstage", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def edit_conflicts(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("editconflicts", [self.paths[0]])
 		self.caller.rescan_after_process_exit(proc, [self.paths[0]])
@@ -587,7 +592,7 @@ class ContextMenuConditions:
 	"""
 	def __init__(self):
 		pass
-
+	
 	def generate_path_dict(self, paths):
 		self.path_dict = {
 			"length": len(paths)
@@ -630,12 +635,12 @@ class ContextMenuConditions:
 					self.path_dict[key] = func(path)
 				except KeyError as e:
 					self.path_dict[key] = False
-
+	
 	def checkout(self, data=None):
 		if self.path_dict["length"] == 1:
 			if self.path_dict["is_git"]:
 				return (self.path_dict["is_in_a_or_a_working_copy"] and
-					self.path_dict["is_versioned"])
+						self.path_dict["is_versioned"])
 			else:
 				return (self.path_dict["is_dir"] and
 						not self.path_dict["is_working_copy"])
@@ -657,7 +662,7 @@ class ContextMenuConditions:
 				elif (self.path_dict["is_dir"]):
 					return True
 		return False
-
+	
 	def diff_menu(self, data=None):
 		return self.path_dict["is_in_a_or_a_working_copy"]
 	
@@ -667,59 +672,59 @@ class ContextMenuConditions:
 				self.path_dict["is_in_a_or_a_working_copy"]):
 			return True
 		return False
-
+	
 	def compare_tool_multiple(self, data=None):
 		if (self.path_dict["length"] == 2 and
 				self.path_dict["is_versioned"] and
 				self.path_dict["is_in_a_or_a_working_copy"]):
 			return True
 		return False
-		
+	
 	def diff(self, data=None):
 		if (self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"] and
 				(self.path_dict["is_modified"] or self.path_dict["has_modified"] or
-				self.path_dict["is_conflicted"] or self.path_dict["has_conflicted"])):
+				 self.path_dict["is_conflicted"] or self.path_dict["has_conflicted"])):
 			return True
 		return False
-
+	
 	def diff_previous_revision(self, data=None):
 		if (self.path_dict["is_svn"] and
 				self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"]):
 			return True
 		return False
-
+	
 	def compare_tool(self, data=None):
 		if (self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"] and
 				(self.path_dict["is_modified"] or self.path_dict["has_modified"] or
-				self.path_dict["is_conflicted"] or self.path_dict["has_conflicted"])):
+				 self.path_dict["is_conflicted"] or self.path_dict["has_conflicted"])):
 			return True
 		return False
-
+	
 	def compare_tool_previous_revision(self, data=None):
 		if (self.path_dict["is_svn"] and
 				self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"]):
 			return True
 		return False
-
+	
 	def show_changes(self, data=None):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
-			self.path_dict["is_versioned"] and
-			self.path_dict["length"] in (1,2))
-		
+				self.path_dict["is_versioned"] and
+				self.path_dict["length"] in (1,2))
+	
 	def show_log(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"] and
 				not self.path_dict["is_added"])
-		
+	
 	def add(self, data=None):
 		if not self.path_dict["is_svn"]:
 			return False
-			
+		
 		if (self.path_dict["is_dir"] and
 				self.path_dict["is_in_a_or_a_working_copy"]):
 			return True
@@ -728,21 +733,21 @@ class ContextMenuConditions:
 				not self.path_dict["is_versioned"]):
 			return True
 		return False
-
+	
 	def check_for_modifications(self, data=None):
 		return (self.path_dict["is_working_copy"] or
-			self.path_dict["is_versioned"])
-
+				self.path_dict["is_versioned"])
+	
 	def rename(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"] and
 				not self.path_dict["is_working_copy"] and
 				self.path_dict["is_versioned"])
-		
+	
 	def delete(self, data=None):
 		return (self.path_dict["exists"] or self.path_dict["is_versioned"]) and \
-			not self.path_dict["is_deleted"]
-		
+				not self.path_dict["is_deleted"]
+	
 	def revert(self, data=None):
 		if self.path_dict["is_in_a_or_a_working_copy"]:
 			if (self.path_dict["is_added"] or
@@ -752,24 +757,24 @@ class ContextMenuConditions:
 			else:
 				if (self.path_dict["is_dir"] and
 						(self.path_dict["has_added"] or
-						self.path_dict["has_modified"] or
-						self.path_dict["has_deleted"] or
-						self.path_dict["has_missing"])):
+						 self.path_dict["has_modified"] or
+						 self.path_dict["has_deleted"] or
+						 self.path_dict["has_missing"])):
 					return True
 		return False
-		
+	
 	def annotate(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				not self.path_dict["is_dir"] and
 				self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"] and
 				not self.path_dict["is_added"])
-		
+	
 	def properties(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"])
-
+	
 	def create_patch(self, data=None):
 		if self.path_dict["is_in_a_or_a_working_copy"]:
 			if (self.path_dict["is_added"] or
@@ -779,10 +784,10 @@ class ContextMenuConditions:
 				return True
 			elif (self.path_dict["is_dir"] and
 					(self.path_dict["has_added"] or
-					self.path_dict["has_modified"] or
-					self.path_dict["has_deleted"] or
-					self.path_dict["has_unversioned"] or
-					self.path_dict["has_missing"])):
+					 self.path_dict["has_modified"] or
+					 self.path_dict["has_deleted"] or
+					 self.path_dict["has_unversioned"] or
+					 self.path_dict["has_missing"])):
 				return True
 		return False
 	
@@ -794,7 +799,7 @@ class ContextMenuConditions:
 	def add_to_ignore_list(self, data=None):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				not self.path_dict["is_versioned"])
-
+	
 	def ignore_by_filename(self, *args):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				not self.path_dict["is_versioned"])
@@ -802,38 +807,38 @@ class ContextMenuConditions:
 	def ignore_by_file_extension(self, *args):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				not self.path_dict["is_versioned"])
-
+	
 	def refresh_status(self, data=None):
 		return True
-
+	
 	def get_lock(self, data=None):
 		return self.path_dict["is_versioned"]
-
+	
 	def branch_tag(self, data=None):
 		return self.path_dict["is_versioned"]
-
+	
 	def relocate(self, data=None):
 		return self.path_dict["is_versioned"]
-
+	
 	def switch(self, data=None):
 		return self.path_dict["is_versioned"]
-
+	
 	def merge(self, data=None):
 		return self.path_dict["is_versioned"]
-
+	
 	def _import(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				not self.path_dict["is_in_a_or_a_working_copy"])
-
+	
 	def export(self, data=None):
 		return (self.path_dict["length"] == 1)
-
+	
 	def svn_export(self, data=None):
 		return self.export(data)
-
+	
 	def git_export(self, data=None):
 		return self.export(data)
-
+	
 	def update_to_revision(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				self.path_dict["is_versioned"] and
@@ -843,50 +848,56 @@ class ContextMenuConditions:
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"] and
 				self.path_dict["is_conflicted"])
-			
+	
 	def create_repository(self, data=None):
 		return (self.path_dict["length"] == 1 and
 				not self.path_dict["is_in_a_or_a_working_copy"])
-
+	
 	def unlock(self, data=None):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"] and
 				(self.path_dict["is_dir"] or self.path_dict["is_locked"]))
-
+	
 	def cleanup(self, data=None):
 		return self.path_dict["is_versioned"]
-
+	
 	def browse_to(self, data=None):
 		return self.path_dict["exists"]
 	
 	def _open(self, data=None):
 		return self.path_dict["is_file"]
 	
+	def copy_filename(self, data=None):
+		return (self.path_dict["length"] == 1)
+	
+	def copy_full_filename(self, data=None):
+		return (self.path_dict["length"] == 1)
+	
 	def restore(self, data=None):
 		return self.path_dict["has_missing"]
-
+	
 	def update(self, data=None):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"] and
 				not self.path_dict["is_added"])
-
+	
 	def repo_browser(self, data=None):
 		return True
-
+	
 	def rabbitvcs(self, data=None):
 		return False
-
+	
 	def rabbitvcs_svn(self, data=None):
 		return (self.path_dict["is_svn"] or
-			not self.path_dict["is_in_a_or_a_working_copy"])
-
+				not self.path_dict["is_in_a_or_a_working_copy"])
+	
 	def rabbitvcs_git(self, data=None):
 		return (self.path_dict["is_git"] or
-			not self.path_dict["is_in_a_or_a_working_copy"])
-
+				not self.path_dict["is_in_a_or_a_working_copy"])
+	
 	def rabbitvcs_mercurial(self, data=None):
 		return (self.path_dict["is_mercurial"] or
-			not self.path_dict["is_in_a_or_a_working_copy"])
+				not self.path_dict["is_in_a_or_a_working_copy"])
 	
 	def debug(self, data=None):
 		return settings.get("general", "show_debug")
@@ -905,33 +916,33 @@ class ContextMenuConditions:
 	
 	def bugs(self, data=None):
 		return True
-
+	
 	def initialize_repository(self, data=None):
 		return (self.path_dict["is_dir"] and
-			not self.path_dict["is_in_a_or_a_working_copy"])
-
+				not self.path_dict["is_in_a_or_a_working_copy"])
+	
 	def clone(self, data=None):
 		return (self.path_dict["is_dir"] and
-			not self.path_dict["is_in_a_or_a_working_copy"])
-			
+				not self.path_dict["is_in_a_or_a_working_copy"])
+	
 	def push(self, data=None):
 		return (self.path_dict["is_git"] or self.path_dict["is_mercurial"])
-
+	
 	def branches(self, data=None):
 		return (self.path_dict["is_git"])
-
+	
 	def tags(self, data=None):
 		return (self.path_dict["is_git"])
-		
+	
 	def remotes(self, data=None):
 		return (self.path_dict["is_git"])
-
+	
 	def clean(self, data=None):
 		return (self.path_dict["is_git"])
-
+	
 	def reset(self, data=None):
 		return (self.path_dict["is_git"])
-
+	
 	def stage(self, data=None):
 		if self.path_dict["is_git"]:
 			if (self.path_dict["is_dir"] and
@@ -942,7 +953,7 @@ class ContextMenuConditions:
 					not self.path_dict["is_versioned"]):
 				return True
 		return False
-
+	
 	def unstage(self, data=None):
 		if self.path_dict["is_git"]:
 			if (self.path_dict["is_dir"] and
@@ -953,7 +964,7 @@ class ContextMenuConditions:
 					self.path_dict["is_added"]):
 				return True
 		return False
-
+	
 	def edit_conflicts(self, data=None):
 		return (self.path_dict["is_in_a_or_a_working_copy"] and
 				self.path_dict["is_versioned"] and
@@ -980,15 +991,21 @@ class GtkFilesContextMenuCallbacks(ContextMenuCallbacks):
 		
 		"""
 		ContextMenuCallbacks.__init__(self, caller, base_dir, vcs_client, paths)
-
+	
 	def _open(self, widget, data1=None, data2=None):
 		for path in self.paths:
 			helper.open_item(path)
-
+	
+	def copy_filename(self, widget, data1=None, data2=None):
+		self.caller.set_filename_clipboard(helper.get_file_name(self.paths[0]))
+	
+	def copy_full_filename(self, widget, data1=None, data2=None):
+		self.caller.set_filename_clipboard(self.paths[0])
+	
 	def add(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("add", ["-q"] + self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def revert(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("revert", ["-q"] + self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
@@ -999,12 +1016,12 @@ class GtkFilesContextMenuCallbacks(ContextMenuCallbacks):
 	
 	def browse_to(self, widget, data1=None, data2=None):
 		helper.browse_to_item(self.paths[0])
-
+	
 	def delete(self, widget, data1=None, data2=None):
 		if len(self.paths) > 0:
 			proc = helper.launch_ui_window("delete", self.paths)
 			self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def update(self, data1=None, data2=None):
 		proc = helper.launch_ui_window("update", self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
@@ -1016,11 +1033,11 @@ class GtkFilesContextMenuCallbacks(ContextMenuCallbacks):
 	def show_log(self, data1=None, data2=None):
 		proc = helper.launch_ui_window("log", self.paths)
 		self.caller.rescan_after_process_exit(proc, [self.paths[0]])
-
+	
 	def stage(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("stage", ["-q"] + self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
-
+	
 	def unstage(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("unstage", ["-q"] + self.paths)
 		self.caller.rescan_after_process_exit(proc, self.paths)
@@ -1042,10 +1059,10 @@ class GtkFilesContextMenuConditions(ContextMenuConditions):
 		self.vcs_client = vcs_client
 		self.paths = paths
 		self.statuses = {}
-
+		
 		self.generate_statuses(self.paths)
 		self.generate_path_dict(self.paths)
-
+	
 	def generate_statuses(self, paths):
 		self.statuses = {}
 		for path in paths:
@@ -1056,7 +1073,7 @@ class GtkFilesContextMenuConditions(ContextMenuConditions):
 				self.statuses[status.path] = status
 		self.text_statuses = [self.statuses[key].simple_content_status() for key in list(self.statuses.keys())]
 		self.prop_statuses = [self.statuses[key].simple_metadata_status() for key in list(self.statuses.keys())]
-		
+
 class GtkFilesContextMenu:
 	"""
 	Defines context menu items for a table with files
@@ -1085,7 +1102,7 @@ class GtkFilesContextMenu:
 		self.paths = paths
 		self.base_dir = base_dir
 		self.vcs_client = create_vcs_instance()
-
+		
 		self.conditions = conditions
 		if self.conditions is None:
 			self.conditions = GtkFilesContextMenuConditions(self.vcs_client, paths)
@@ -1098,7 +1115,7 @@ class GtkFilesContextMenu:
 				paths
 			)
 		ignore_items = get_ignore_list_items(paths)
-
+		
 		# The first element of each tuple is a key that matches a
 		# ContextMenuItems item.  The second element is either None when there
 		# is no submenu, or a recursive list of tuples for desired submenus.
@@ -1118,15 +1135,17 @@ class GtkFilesContextMenu:
 			(MenuAdd, None),
 			(MenuStage, None),
 			(MenuUnstage, None),
-			(MenuAddToIgnoreList, ignore_items)
+			(MenuAddToIgnoreList, ignore_items),
+			(MenuCopyFileName, None),		# esh
+			(MenuCopyFullFileName, None)	# esh
 		]
-		
+	
 	def show(self):
 		if len(self.paths) == 0:
 			return
 		context_menu = GtkContextMenu(self.structure, self.conditions, self.callbacks)
 		context_menu.show(self.event)
-
+	
 	def get_menu(self):
 		context_menu = GtkContextMenu(self.structure, self.conditions, self.callbacks)
 		return context_menu.menu
@@ -1171,7 +1190,7 @@ class MainContextMenuConditions(ContextMenuConditions):
 		self.statuses = {}
 		self.generate_statuses(paths)
 		self.generate_path_dict(paths)
-		
+	
 	# FIXME: major bottleneck
 	def generate_statuses(self, paths):
 		self.statuses = {}
@@ -1210,11 +1229,11 @@ class MainContextMenu:
 		self.paths = paths
 		self.base_dir = base_dir
 		self.vcs_client = create_vcs_instance()
-
+		
 		self.conditions = conditions
 		if self.conditions is None:
 			self.conditions = MainContextMenuConditions(self.vcs_client, paths)
-
+		
 		self.callbacks = callbacks
 		if self.callbacks is None:
 			self.callbacks = MainContextMenuCallbacks(
@@ -1223,9 +1242,9 @@ class MainContextMenu:
 				self.vcs_client,
 				paths
 			)
-			
+		
 		ignore_items = get_ignore_list_items(paths)
-
+		
 		# The first element of each tuple is a key that matches a
 		# ContextMenuItems item.  The second element is either None when there
 		# is no submenu, or a recursive list of tuples for desired submenus.

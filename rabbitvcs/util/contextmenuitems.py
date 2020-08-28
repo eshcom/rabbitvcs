@@ -597,6 +597,16 @@ class MenuOpen(MenuItem):
 	condition_name = "_open"
 	callback_name = "_open"
 
+class MenuCopyFileName(MenuItem):
+	identifier = "RabbitVCS::Copy_FileName"
+	label = _("Copy file name")
+	icon = "rabbitvcs-asynchronous"
+
+class MenuCopyFullFileName(MenuItem):
+	identifier = "RabbitVCS::Copy_Full_FileName"
+	label = _("Copy full file name")
+	icon = "rabbitvcs-asynchronous"
+
 class MenuBrowseTo(MenuItem):
 	identifier = "RabbitVCS::Browse_To"
 	label = _("Browse to")

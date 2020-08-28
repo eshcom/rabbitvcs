@@ -486,6 +486,19 @@ def get_file_extension(path):
 	"""
 	return os.path.splitext(path)[1]
 
+ # esh: added new func
+def get_file_name(path):
+	"""
+	Wrapper that retrieves a file path's name.
+	
+	@type   path:   string
+	@param  path:   A filename or path.
+	
+	@rtype:         string
+	@return:        A file name.
+	"""
+	return os.path.basename(path)
+
 def open_item(path):
 	"""
 	Use GNOME default opener to handle file opening.
