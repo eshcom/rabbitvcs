@@ -849,7 +849,7 @@ class ProgressBar:
 			gobject.source_remove(self.timer)
 		self.timer = None
 	
-	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
+	@gtk_unsafe
 	def update(self, fraction=None):
 		if fraction:
 			if self.timer is not None:
@@ -862,7 +862,7 @@ class ProgressBar:
 			self.view.pulse()
 			return True
 	
-	# ~ @gtk_unsafe # from 0.18, but comment by esh (slows down log.py)
+	@gtk_unsafe
 	def set_text(self, text):
 		self.view.set_text(text)
 

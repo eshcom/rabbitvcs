@@ -333,7 +333,6 @@ class VCSAction(threading.Thread):
 			title = self.notification.get_title()
 			self.notification.set_title(_("%s - Finished") % title)
 			self.set_status(message)
-			self.notification.pbar.stop_pulsate()
 			self.notification.pbar.update(1)
 			self.notification.toggle_ok_button(True)
 	
