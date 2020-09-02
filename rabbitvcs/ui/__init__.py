@@ -73,7 +73,6 @@ STATUS_EMBLEMS = {
 }
 
 class GtkBuilderWidgetWrapper:
-		
 	def __init__(self, gtkbuilder_filename = None,
 				 gtkbuilder_id = None, claim_domain=True):
 		if gtkbuilder_filename:
@@ -83,7 +82,7 @@ class GtkBuilderWidgetWrapper:
 		self.claim_domain = claim_domain
 		self.tree = self.get_tree()
 		self.tree.connect_signals(self)
- 
+	
 	def get_tree(self):
 		path = "%s/xml/%s.xml" % (
 			os.path.dirname(os.path.realpath(__file__)),

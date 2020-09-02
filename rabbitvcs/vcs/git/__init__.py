@@ -50,32 +50,31 @@ class Revision:
 	Implements a simple revision object as a wrapper around the gittyup revision
 	object.  This allows us to provide a standard interface to the object data.
 	"""
-
 	def __init__(self, kind, value=None):
 		self.kind = kind.upper()
 		self.value = value
 		if self.kind == "HEAD":
 			self.value = "HEAD"
 		self.is_revision_object = True
-
+	
 	def __unicode__(self):
 		if self.value:
 			return six.text_type(self.value)
 		else:
 			return self.kind
-			
+	
 	def short(self):
 		if self.value:
 			return six.text_type(self.value)[0:7]
 		else:
 			return self.kind
-
+	
 	def __str__(self):
 		return self.__unicode__()
-
+	
 	def __repr__(self):
 		return self.__unicode__()
-
+	
 	def primitive(self):
 		return self.value
 
@@ -101,18 +100,18 @@ class Git:
 		gittyup.objects.UntrackedStatus:    "untracked",
 		gittyup.objects.MissingStatus:      "missing"
 	}
-
+	
 	STATUSES_FOR_REVERT = [
 		"missing",
 		"renamed",
 		"modified",
 		"removed"
 	]
-
+	
 	STATUSES_FOR_ADD = [
 		"untracked"
 	]
-
+	
 	STATUSES_FOR_COMMIT = [
 		"untracked",
 		"missing",
@@ -125,11 +124,11 @@ class Git:
 	STATUSES_FOR_STAGE = [
 		"untracked"
 	]
-
+	
 	STATUSES_FOR_UNSTAGE = [
 		"added"
 	]
-
+	
 	def __init__(self, repo=None):
 		self.vcs = rabbitvcs.vcs.VCS_GIT
 		self.interface = "gittyup"
@@ -138,15 +137,15 @@ class Git:
 		else:
 			self.client = GittyupClient()
 		self.cache = rabbitvcs.vcs.status.StatusCache()
-
+	
 	def set_repository(self, path):
 		# ~ log.debug("Git.set_repository.path = %s" % path) # esh
 		self.client.set_repository(path)
 		self.config = self.client.config
-
+	
 	def get_repository(self):
 		return self.client.get_repository()
-
+	
 	def find_repository_path(self, path):
 		return self.client.find_repository_path(path)
 	
@@ -167,7 +166,7 @@ class Git:
 			else:
 				return self.cache.find_path_statuses(path)
 		gittyup_statuses = self.client.status(path)
-
+		
 		if not len(gittyup_statuses):
 			return [rabbitvcs.vcs.status.Status.status_unknown(path)]
 		else:
@@ -176,13 +175,13 @@ class Git:
 				# gittyup returns status paths relative to the repository root
 				# so we need to convert the path to an absolute path
 				st.path = self.client.get_absolute_path(st.path)
-
+				
 				# If not recursing, only return the item in question (if a file)
 				# or items directly under the path (if a directory)
 				cmp_path = os.path.join(path, os.path.basename(st.path))
 				if not recurse and cmp_path != st.path and st.path != path:
 					continue
-
+				
 				rabbitvcs_status = rabbitvcs.vcs.status.GitStatus(st)
 				self.cache[st.path] = rabbitvcs_status
 				statuses.append(rabbitvcs_status)
@@ -219,12 +218,12 @@ class Git:
 				os.path.isdir(os.path.join(path, ".git"))):
 			return True
 		return False
-
+	
 	def is_in_a_or_a_working_copy(self, path):
 		if self.is_working_copy(path):
 			return True
 		return (self.find_repository_path(os.path.split(path)[0]) != "")
-
+	
 	def is_versioned(self, path):
 		if self.is_working_copy(path):
 			return True
@@ -235,10 +234,10 @@ class Git:
 			log.error(e)
 			return False
 		return False
-
+	
 	def is_locked(self, path):
 		return False
-
+	
 	def get_items(self, paths, statuses=[]):
 		"""
 		Retrieves a list of files that have one of a set of statuses
@@ -263,17 +262,17 @@ class Git:
 				if st_item.content in statuses or len(statuses) == 0:
 					items.append(st_item)
 		return items
-
+	
 	def revision(self, value):
 		"""
 		Create a revision object usable by pysvn
-
+		
 		@type   kind:   string
 		@param  kind:   HEAD or a sha1 hash
-
+		
 		@type   value: integer
 		@param  value: Used for kind=number, specifies the revision hash.
-
+		
 		@rtype:         Revision object
 		@return:        A Revision object.
 		"""
@@ -286,22 +285,22 @@ class Git:
 			return Revision("WORKING")
 		else:
 			return Revision("hash", value)
-
+	
 	def add(self, paths, recurse=True):
 		"""
 		Add files to a git repository.
-
+		
 		@type   paths:      list
 		@param  paths:      A list of paths or files.
-
+		
 		@type   recurse: boolean
 		@param  recurse: Recursively add a directory's children
 		"""
 		return self.stage(paths)
-
+	
 	def is_tracking(self, name):
 		return self.client.is_tracking("refs/heads/%s" % name)
-
+	
 	#
 	# Action Methods
 	#
@@ -311,7 +310,7 @@ class Git:
 		
 		@type   path: string
 		@param  path: The folder to initialize as a repository
-
+		
 		@type   bare: boolean
 		@param  bare: Whether the repository should be "bare" or not
 		"""
@@ -373,19 +372,19 @@ class Git:
 		@param  name: The name of the branch
 		"""
 		return self.client.branch_delete(name)
-		
+	
 	def branch_rename(self, old_name, new_name):
 		"""
 		Rename a branch
-
+		
 		@type   old_name: string
 		@param  old_name: The name of the branch to be renamed
-
+		
 		@type   new_name: string
 		@param  new_name: The name of the new branch
 		"""
 		return self.client.branch_rename(old_name, new_name)
-		
+	
 	def branch_list(self, revision=None):
 		"""
 		List all branches
@@ -452,7 +451,7 @@ class Git:
 		@param  origin: Specify the origin of the repository
 		"""
 		return self.client.clone(host, path, bare, origin)
-		
+	
 	def commit(self, message, parents=None, committer=None, commit_time=None,
 			   commit_timezone=None, author=None, author_time=None,
 			   author_timezone=None, encoding=None, commit_all=False):
@@ -496,7 +495,7 @@ class Git:
 		return self.client.commit(message, parents, committer, commit_time,
 								  commit_timezone, author, author_time,
 								  author_timezone, encoding, commit_all)
-
+	
 	def remove(self, paths):
 		"""
 		Remove path from the repository.  Also deletes the local file.
@@ -519,12 +518,12 @@ class Git:
 			dest.
 		"""
 		return self.client.move(source, dest)
-		
+	
 	def pull(self, repository="origin", refspec="master", options=None):
 		"""
 		Fetch objects from a remote repository and merge with the local
 			repository
-			
+		
 		@type   repository: string
 		@param  repository: The name of the repository
 		
@@ -532,7 +531,7 @@ class Git:
 		@param  refspec: The branch name to pull from
 		"""
 		return self.client.pull(repository, refspec, options)
-
+	
 	def push(self, repository="origin", refspec="master", tags=True):
 		"""
 		Push objects from the local repository into the remote repository
@@ -548,32 +547,32 @@ class Git:
 		@param  tags: True to include tags in push, False to omit
 		"""
 		return self.client.push(repository, refspec, tags)
-
+	
 	def fetch_all(self):
 		"""
 		Fetch objects from all remote repositories.  This will not merge the files
 		into the local working copy, use pull for that.
 		"""
 		return self.client.fetch_all()
-
+	
 	def fetch(self, repository, branch=None):
 		"""
 		Fetch objects from a remote repository.  This will not merge the files
 		into the local working copy, use pull for that.
-
+		
 		If branch if provided, fetch only for that branch.
 		
 		@type   repository: string
 		@param  repository: The git remote from which to fetch
-
+		
 		@type   branch: string
 		@param  branch: The branch from which to fetch
 		"""
 		return self.client.fetch(repository, branch)
-		
+	
 	def merge(self, branch):
 		return self.client.merge(branch.primitive())
-
+	
 	def remote_add(self, name, host):
 		"""
 		Add a remote repository
@@ -585,7 +584,7 @@ class Git:
 		@param  host: The git url to add
 		"""
 		return self.client.remote_add(name, host)
-		
+	
 	def remote_delete(self, name):
 		"""
 		Remove a remote repository
@@ -594,7 +593,7 @@ class Git:
 		@param  name: The name of the remote repository to remove
 		"""
 		return self.client.remote_delete(name)
-		
+	
 	def remote_rename(self, current_name, new_name):
 		"""
 		Rename a remote repository
@@ -606,7 +605,7 @@ class Git:
 		@param  new_name: The name to give to the remote repository
 		"""
 		return self.client.remote_rename(current_name, new_name)
-		
+	
 	def remote_set_url(self, name, url):
 		"""
 		Change a remote repository's url
@@ -618,7 +617,7 @@ class Git:
 		@param  url: The url for the repository
 		"""
 		return self.client.remote_set_url(name, url)
-		
+	
 	def remote_list(self):
 		"""
 		Return a list of the remote repositories
@@ -627,7 +626,7 @@ class Git:
 		@return A list of dicts with keys: remote, url, fetch
 		"""
 		return self.client.remote_list()
-		
+	
 	def tag(self, name, message, revision):
 		"""
 		Create a tag object
@@ -642,7 +641,7 @@ class Git:
 		@param  revision: The revision to tag.  Defaults to HEAD
 		"""
 		return self.client.tag(name, message, revision.primitive())
-
+	
 	def tag_delete(self, name):
 		"""
 		Delete a tag
@@ -651,13 +650,13 @@ class Git:
 		@param  name: The name of the tag to delete
 		"""
 		return self.client.tag_delete(name)
-
+	
 	def tag_list(self):
 		"""
 		Return a list of Tag objects
 		"""
 		return self.client.tag_list()
-
+	
 	def log(self, path=None, skip=0, limit=None, revision=Revision("HEAD"), showtype="all"):
 		"""
 		Returns a revision history list
@@ -691,7 +690,7 @@ class Git:
 		current_locale = locale.getlocale()
 		if current_locale[0] is not None:
 			locale.setlocale(locale.LC_ALL, "C")
-
+		
 		items = self.client.log(path, skip, limit, revision.primitive(), showtype)
 		returner = []
 		for item in items:
@@ -736,20 +735,20 @@ class Git:
 			))
 		locale.setlocale(locale.LC_ALL, current_locale)
 		return returner
-
+	
 	def diff_summarize(self, path1, revision_obj1, path2=None, revision_obj2=None):
 		"""
 		Returns a diff summary between the path(s)/revision(s)
 		
 		@type   path1: string
 		@param  path1: The absolute path to a file
-
+		
 		@type   revision_obj1: git.Revision()
 		@param  revision_obj1: The revision object for path1
-
+		
 		@type   path2: string
 		@param  path2: The absolute path to a file
-
+		
 		@type   revision_obj2: git.Revision()
 		@param  revision_obj2: The revision object for path2
 		"""
@@ -763,7 +762,7 @@ class Git:
 	def annotate(self, path, revision_obj=Revision("head")):
 		"""
 		Returns an annotation for a specified file
-			
+		
 		@type   path: string
 		@param  path: The absolute path to a tracked file
 		
@@ -771,64 +770,64 @@ class Git:
 		@param  revision: HEAD or a sha1 hash
 		"""
 		return self.client.annotate(path, revision_obj.primitive())
-
+	
 	def show(self, path, revision_obj):
 		"""
 		Returns a particular file at a given revision object.
 		
 		@type   path: string
 		@param  path: The absolute path to a file
-
+		
 		@type   revision_obj: git.Revision()
 		@param  revision_obj: The revision object for path
 		"""
 		return self.client.show(path, revision_obj.primitive())
-
+	
 	def diff(self, path1, revision_obj1, path2=None, revision_obj2=None):
 		"""
 		Returns the diff between the path(s)/revision(s)
 		
 		@type   path1: string
 		@param  path1: The absolute path to a file
-
+		
 		@type   revision_obj1: git.Revision()
 		@param  revision_obj1: The revision object for path1
-
+		
 		@type   path2: string
 		@param  path2: The absolute path to a file
-
+		
 		@type   revision_obj2: git.Revision()
 		@param  revision_obj2: The revision object for path2
 		"""
-		return self.client.diff(path1, revision_obj1.primitive(), path2,
-			revision_obj2.primitive())
-
+		return self.client.diff(path1, revision_obj1.primitive(),
+								path2, revision_obj2.primitive())
+	
 	def apply_patch(self, patch_file, base_dir):
 		"""
 		Applies a patch created for this WC.
-
+		
 		@type patch_file: string
 		@param patch_file: the path to the patch file
-
+		
 		@type base_dir: string
 		@param base_dir: the base directory from which to interpret the paths in
 						 the patch file
 		"""
 		any_failures = False
-
+		
 		for file, success, rej_file in helper.parse_patch_output(patch_file, base_dir, 1):
 			fullpath = os.path.join(base_dir, file)
 			event_dict = dict()
 			event_dict["path"] = file
 			event_dict["mime_type"] = "" # meh
-
+			
 			if success:
 				event_dict["action"] = _("Patched") # not in pysvn, but
 													# we have a fallback
 			else:
 				any_failures = True
 				event_dict["action"] = _("Patch Failed") # better wording needed?
-
+			
 			if rej_file:
 				rej_info = {
 					"path" : rej_file,
@@ -839,7 +838,7 @@ class Git:
 				self.client.callback_notify(event_dict)
 				if rej_file:
 					self.client.callback_notify(rej_info)
-
+	
 	def export(self, path, dest_path, revision):
 		"""
 		Exports a file or directory from a given revision
@@ -854,12 +853,12 @@ class Git:
 		@param  revision: The revision/tree/commit of the source file being exported
 		"""
 		return self.client.export(path, dest_path, revision.primitive())
-
+	
 	def clean(self, path, remove_dir=True, remove_ignored_too=False,
 			  remove_only_ignored=False, dry_run=False, force=True):
 		return self.client.clean(path, remove_dir, remove_ignored_too,
 								 remove_only_ignored, dry_run, force)
-
+	
 	def reset(self, path, revision, type=None):
 		"""
 		Reset repository to a specified state
@@ -874,7 +873,7 @@ class Git:
 		@param  type: The type of reset to do.  Can be mixed, soft, hard, merge
 		"""
 		return self.client.reset(path, revision.primitive(), type)
-
+	
 	def get_ignore_files(self, path):
 		paths = []
 		paths.append(self.client.get_local_ignore_file(path))
@@ -884,10 +883,10 @@ class Git:
 	def get_config_files(self, path):
 		paths = [self.client.get_local_config_file()]
 		return paths
-
+	
 	def set_callback_notify(self, func):
 		self.client.set_callback_notify(func)
-
+	
 	def set_callback_progress_update(self, func):
 		self.client.set_callback_progress_update (func)
 	

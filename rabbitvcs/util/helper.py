@@ -403,7 +403,7 @@ def get_diff_tool():
 def get_merge_tool():
 	"""
 	Gets the path to the merge_tool.
-
+	
 	@rtype:     string
 	@return:    A string with the path and arguments to launch the merge tool.
 	"""
@@ -593,7 +593,7 @@ def save_log_message(message):
 		# Don't allow the number of messages to pile up past the limit
 		while len(messages) > limit:
 			messages.pop()
-
+	
 	t = time.strftime(LOG_DATETIME_FORMAT)
 	messages.insert(0, (t, message))
 	f = open(get_previous_messages_path(), "w")
@@ -604,7 +604,7 @@ def save_log_message(message):
 %s
 %s
 """%(m[0], m[1], s)
-
+	
 	f.write(s.encode("utf-8"))
 	f.close()
 
@@ -657,7 +657,7 @@ def launch_ui_window(filename, args=[], block=False):
 	
 	if not head == "util":
 		log.warning("Helper module (%s) not in \"util\" dir" % __file__)
-
+	
 	# Puts the whole path together.
 	# path = "%s/ui/%s.py" % (basedir, filename)
 	path = os.path.join(basedir, "ui", filename + ".py")
@@ -923,13 +923,13 @@ def urlize(path):
 def parse_patch_output(patch_file, base_dir, strip=0):
 	""" Runs the GNU 'patch' utility, parsing the output. This is actually a
 	generator which yields values as each section of the patch is applied.
-
+	
 	@param patch_file: the location of the patch file
 	@type patch_file: string
-
+	
 	@param base_dir: the directory in which to apply the patch
 	@type base_dir: string
-
+	
 	@return: a generator yielding tuples (filename, success, reject_file).
 			 "filename" is never None, and should always exist. "success" is
 			 True iff the patch executed without any error messages.
@@ -999,4 +999,3 @@ def parse_patch_output(patch_file, base_dir, strip=0):
 			# else: we have an unknown error
 	patch_proc.wait() # Don't leave process running...
 	return
-

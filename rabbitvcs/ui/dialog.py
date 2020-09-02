@@ -46,7 +46,7 @@ An error has occurred in the RabbitVCS Nautilus extension. Please contact the \
 class PreviousMessages(InterfaceView):
 	def __init__(self):
 		InterfaceView.__init__(self, "dialogs/previous_messages", "PreviousMessages")
-
+		
 		self.message = rabbitvcs.ui.widget.TextView(
 			self.get_widget("prevmes_message")
 		)
@@ -120,9 +120,8 @@ class Certificate(InterfaceView):
 	"""
 	Provides a dialog to accept/accept_once/deny an ssl certificate
 	"""
-	def __init__(self, realm="", host="",
-			issuer="", valid_from="", valid_until="", fingerprint=""):
-			
+	def __init__(self, realm="", host="", issuer="",
+				 valid_from="", valid_until="", fingerprint=""):
 		InterfaceView.__init__(self, "dialogs/certificate", "Certificate")
 		self.get_widget("cert_realm").set_label(realm)
 		self.get_widget("cert_host").set_label(host)
@@ -132,11 +131,10 @@ class Certificate(InterfaceView):
 			"%s %s %s" % (valid_from, to_str, valid_until)
 		)
 		self.get_widget("cert_fingerprint").set_label(fingerprint)
-		
+	
 	def run(self):
 		"""
 		Returns three possible values:
-		
 			- 0   Deny
 			- 1   Accept Once
 			- 2   Accept Forever
@@ -145,13 +143,13 @@ class Certificate(InterfaceView):
 		result = self.dialog.run()
 		self.dialog.destroy()
 		return result
-		
+
 class Authentication(InterfaceView):
 	def __init__(self, realm="", may_save=True):
 		InterfaceView.__init__(self, "dialogs/authentication", "Authentication")
 		self.get_widget("auth_realm").set_label(realm)
 		self.get_widget("auth_save").set_sensitive(may_save)
-		
+	
 	def run(self):
 		returner = None
 		self.dialog = self.get_widget("Authentication")
@@ -170,7 +168,7 @@ class CertAuthentication(InterfaceView):
 		InterfaceView.__init__(self, "dialogs/cert_authentication", "CertAuthentication")
 		self.get_widget("certauth_realm").set_label(realm)
 		self.get_widget("certauth_save").set_sensitive(may_save)
-		
+	
 	def run(self):
 		self.dialog = self.get_widget("CertAuthentication")
 		result = self.dialog.run()
@@ -193,7 +191,7 @@ class SSLClientCertPrompt(InterfaceView):
 		cert = filechooser.run()
 		if cert is not None:
 			self.get_widget("sslclientcert_path").set_text(cert)
- 
+	
 	def run(self):
 		self.dialog = self.get_widget("SSLClientCertPrompt")
 		result = self.dialog.run()
@@ -208,7 +206,6 @@ class SSLClientCertPrompt(InterfaceView):
 class Property(InterfaceView):
 	def __init__(self, name="", value="", recurse=True):
 		InterfaceView.__init__(self, "dialogs/property", "Property")
-		
 		self.save_name = name
 		self.save_value = value
 		self.name = rabbitvcs.ui.widget.ComboBox(
@@ -236,13 +233,12 @@ class Property(InterfaceView):
 		)
 		self.recurse = self.get_widget("property_recurse")
 		self.recurse.set_active(recurse)
-		
+	
 	def run(self):
 		self.dialog = self.get_widget("Property")
 		result = self.dialog.run()
 		if result == gtk.RESPONSE_OK:
 			self.save()
-		
 		self.dialog.destroy()
 		return (self.save_name, self.save_value, self.recurse.get_active())
 	
@@ -293,13 +289,13 @@ class Confirmation(InterfaceView):
 	def __init__(self, message=_("Are you sure you want to continue?")):
 		InterfaceView.__init__(self, "dialogs/confirmation", "Confirmation")
 		self.get_widget("confirm_message").set_text(message)
-		
+	
 	def run(self):
 		dialog = self.get_widget("Confirmation")
 		result = dialog.run()
 		dialog.destroy()
 		return result
-		
+
 class MessageBox(InterfaceView):
 	def __init__(self, message):
 		InterfaceView.__init__(self, "dialogs/message_box", "MessageBox")
@@ -333,7 +329,7 @@ class TextChange(InterfaceView):
 			self.get_widget("textchange_message"),
 			message
 		)
-		
+	
 	def run(self):
 		dialog = self.get_widget("TextChange")
 		result = dialog.run()
@@ -374,11 +370,11 @@ class NewFolder(InterfaceView):
 			self.get_widget("log_message"),
 			_("Added a folder to the repository")
 		)
-
+	
 	def on_folder_name_changed(self, widget):
 		complete = (widget.get_text() != "")
 		self.get_widget("ok").set_sensitive(complete)
-
+	
 	def run(self):
 		dialog = self.get_widget("CreateFolder")
 		dialog.set_default_response(gtk.RESPONSE_OK)
@@ -389,11 +385,10 @@ class NewFolder(InterfaceView):
 			return fields_text
 		else:
 			return None
-		
+
 class ErrorNotification(InterfaceView):
 	def __init__(self, text):
 		InterfaceView.__init__(self, "dialogs/error_notification", "ErrorNotification")
-		
 		notice = rabbitvcs.ui.wraplabel.WrapLabel(ERROR_NOTICE)
 		notice.set_use_markup(True)
 		self.get_widget("notice_box").pack_start(notice)
@@ -429,7 +424,7 @@ class NameEmailPrompt(InterfaceView):
 			return (name, email)
 		else:
 			return (None, None)
-			
+
 class MarkResolvedPrompt(InterfaceView):
 	def __init__(self):
 		InterfaceView.__init__(self, "dialogs/mark_resolved_prompt", "MarkResolvedPrompt")
@@ -452,7 +447,6 @@ class ConflictDecision(InterfaceView):
 	def run(self):
 		"""
 		The first has three possible values about how to resolve the conflict.
-		
 			- -1  Cancel
 			- 0   Accept Mine
 			- 1   Accept Theirs

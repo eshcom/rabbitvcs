@@ -44,7 +44,6 @@ class SVNBranch(InterfaceView):
 	"""
 	def __init__(self, path, revision=None):
 		InterfaceView.__init__(self, "branch", "Branch")
-		
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
 		self.path = path
@@ -76,7 +75,7 @@ class SVNBranch(InterfaceView):
 		)
 		if (self.revision is None and status.has_modified()):
 			self.revision_selector.set_kind_working()
-
+	
 	def on_ok_clicked(self, widget):
 		src = self.from_urls.get_active_text()
 		dest = self.to_urls.get_active_text()
@@ -101,18 +100,18 @@ class SVNBranch(InterfaceView):
 		self.action.append(self.action.set_status, _("Completed Branch/tag"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-
+	
 	def on_previous_messages_clicked(self, widget, data=None):
 		dialog = rabbitvcs.ui.dialog.PreviousMessages()
 		message = dialog.run()
 		if message is not None:
 			self.message.set_text(message)
-
+	
 	def on_repo_browser_clicked(self, widget, data=None):
 		from rabbitvcs.ui.browser import BrowserDialog
 		BrowserDialog(self.from_urls.get_active_text(),
 			callback=self.on_repo_browser_closed)
-
+	
 	def on_repo_browser_closed(self, new_url):
 		self.from_urls.set_child_text(new_url)
 

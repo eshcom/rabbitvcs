@@ -102,12 +102,12 @@ class MessageCallbackNotifier(VCSNotifier):
 		"""
 		@type   callback_cancel: def
 		@param  callback_cancel: A method to call when cancel button is clicked.
-
+		
 		@type   visible: boolean
 		@param  visible: Show the notification window.  Defaults to True.
 		"""
 		VCSNotifier.__init__(self, callback_cancel, visible)
-
+		
 		self.table = rabbitvcs.ui.widget.Table(
 			self.get_widget("table"),
 			[gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING],
@@ -273,12 +273,12 @@ class VCSAction(threading.Thread):
 		Set the total number of ticks to represent in the progress bar.
 		Each time the notify method is called, update the pbar fraction.
 		If this function isn't called, the progress bar just pulsates.
-
+		
 		@type   num: integer
 		@param  num: The number of ticks in the progress bar.
 		"""
 		self.pbar_ticks = num
-
+	
 	def set_progress_fraction(self, fraction):
 		"""
 		An alternative method to access the progress bar directly.
@@ -318,10 +318,10 @@ class VCSAction(threading.Thread):
 		"""
 		This is called when the final notifcation message has been received,
 		or it is called manually when no final notification message is expected.
-
+		
 		It sets the current "status", and enables the OK button to allow
 		the user to leave the window.
-
+		
 		@type   message: string
 		@param  message: A message to show the user.
 		"""
@@ -339,13 +339,13 @@ class VCSAction(threading.Thread):
 	def get_log_message(self):
 		"""
 		A callback method that retrieves a supplied log message.
-
+		
 		Returns a list where the first element is True/False.  Returning true
 		tells the action to continue, false tells it to cancel.  The second
 		element is the log message, which is specified by self.message.
 		self.message is set by calling the self.set_log_message() method from
 		the UI interface class.
-
+		
 		@rtype:  (boolean, string)
 		@return: (True=continue/False=cancel, log message)
 		"""
@@ -362,21 +362,21 @@ class VCSAction(threading.Thread):
 		password-protected repository.  This method runs the Authentication
 		dialog, which provides a username, password, and saving widget.  The
 		dialog returns a tuple, which is returned directly to the VCS caller.
-
+		
 		If the login fails greater than three times, cancel the action.
-
+		
 		The dialog must be called from within a threaded block, otherwise it
 		will not be responsive.
-
+		
 		@type   realm:      string
 		@param  realm:      The realm of the repository.
-
+		
 		@type   username:   string
 		@param  username:   Username passed by the vcs caller.
-
+		
 		@type   may_save:   boolean
 		@param  may_save:   Whether or not the authentication can be saved.
-
+		
 		@rtype:             (boolean, string, string, boolean)
 		@return:            (True=continue/False=cancel, username,password, may_save)
 		"""
@@ -396,13 +396,13 @@ class VCSAction(threading.Thread):
 		a certificate from an ssl secured repository.  It opens a dialog that
 		shows the user information about the ssl certificate and then gives
 		them the option of denying, accepting, or accepting once.
-
+		
 		The dialog must be called from within a threaded block, otherwise it
 		will not be responsive.
-
+		
 		@type   data:   dictionary
 		@param  data:   A dictionary with SSL certificate info.
-
+		
 		@rtype:         (boolean, int, boolean)
 		@return:        (True=Accept/False=Deny, number of accepted failures, remember)
 		"""
@@ -429,16 +429,16 @@ class VCSAction(threading.Thread):
 	def get_ssl_password(self, realm, may_save):
 		"""
 		A callback method that is used to get an ssl certificate passphrase.
-
+		
 		The dialog must be called from within a threaded block, otherwise it
 		will not be responsive.
-
+		
 		@type   realm:      string
 		@param  realm:      The certificate realm.
-
+		
 		@type   may_save:   boolean
 		@param  may_save:   Whether or not the passphrase can be saved.
-
+		
 		@rtype:             (boolean, string, boolean)
 		@return:            (True=continue/False=cancel, password, may save)
 		"""
@@ -450,16 +450,16 @@ class VCSAction(threading.Thread):
 	def get_client_cert(self, realm, may_save):
 		"""
 		A callback method that is used to get an ssl certificate.
-
+		
 		The dialog must be called from within a threaded block, otherwise it
 		will not be responsive.
-
+		
 		@type   realm:      string
 		@param  realm:      The certificate realm.
-
+		
 		@type   may_save:   boolean
 		@param  may_save:   Whether or not the passphrase can be saved.
-
+		
 		@rtype:             (boolean, string, boolean)
 		@return:            (True=continue/False=cancel, password, may save)
 		"""
@@ -472,7 +472,7 @@ class VCSAction(threading.Thread):
 		"""
 		Set this action's log message from the UI interface.  self.message
 		is referred to when the VCS does the get_log_message callback.
-
+		
 		@type   message: string
 		@param  message: Set a log message.
 		"""
@@ -486,7 +486,7 @@ class VCSAction(threading.Thread):
 		going on.  Currently, it just appends the status message to the
 		notification window.  In the future, I may set up a progress bar
 		and put the status message there.
-
+		
 		@type   message: string
 		@param  message: A status message.
 		"""
@@ -503,7 +503,7 @@ class VCSAction(threading.Thread):
 		"""
 		Retrieve the result of a single function call by specifying the order
 		in which the function was in the queue.
-
+		
 		@type   index: int
 		@param  index: The queue index
 		"""
@@ -512,7 +512,7 @@ class VCSAction(threading.Thread):
 	def __queue_exception_callback(self, e):
 		"""
 		Used internally when an exception is raised within the queue
-
+		
 		@type   e: Exception
 		@param  e: The exception object passed by the FunctionQueue
 		"""
@@ -570,7 +570,7 @@ class SVNAction(VCSAction):
 		something.  It passes us a dictionary of useful information.  When
 		this method is called, it appends some useful data to the notifcation
 		window.
-
+		
 		TODO: We need to implement this in a more VCS-agnostic way, since the
 		supplied data dictionary is pysvn-dependent.  I'm going to implement
 		something in lib/vcs/svn.py soon.

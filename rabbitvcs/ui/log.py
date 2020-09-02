@@ -1153,7 +1153,8 @@ class LogTopContextMenuCallbacks:
 	def revert_changes_from_this_revision(self, widget, data=None):
 		helper.launch_ui_window("merge", [
 			self.path,
-			six.text_type(self.revisions[0]["revision"]) + "-" + str(int(six.text_type(self.revisions[0]["revision"])) - 1),
+			six.text_type(self.revisions[0]["revision"]) + "-" +
+				str(int(six.text_type(self.revisions[0]["revision"])) - 1),
 			"--vcs=%s" % self.caller.get_vcs_name()
 		])
 	

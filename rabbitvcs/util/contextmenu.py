@@ -78,7 +78,6 @@ class MenuBuilder(object):
 	a list of menu items returned by make_menu_item(...) to create the overall
 	menu.
 	"""
-	
 	def __init__(self, structure, conditions, callbacks):
 		"""
 		@param  structure: Menu structure
@@ -216,7 +215,6 @@ class GtkContextMenuCaller:
 	a GtkContextMenu.  Allows us to have a standard common set of methods we can
 	call from the callback object.
 	"""
-	
 	def __init__(self):
 		pass
 	
@@ -245,7 +243,6 @@ class ContextMenuCallbacks:
 	"""
 	The base class for context menu callbacks. This is inherited by sub-classes.
 	"""
-	
 	def __init__(self, caller, base_dir, vcs_client, paths=[]):
 		"""
 		@param  caller: The calling object
@@ -365,7 +362,8 @@ class ContextMenuCallbacks:
 		if guess["vcs"] == rabbitvcs.vcs.VCS_SVN:
 			previous_revision_number = self.vcs_client.svn().get_revision(self.paths[0]) - 1
 			
-			pathrev1 = helper.create_path_revision_string(self.vcs_client.svn().get_repo_url(self.paths[0]), previous_revision_number)
+			pathrev1 = helper.create_path_revision_string(self.vcs_client.svn().get_repo_url(self.paths[0]),
+														  previous_revision_number)
 			pathrev2 = helper.create_path_revision_string(self.paths[0], "working")
 			
 			proc = helper.launch_ui_window("diff", [
@@ -396,7 +394,8 @@ class ContextMenuCallbacks:
 		if guess["vcs"] == rabbitvcs.vcs.VCS_SVN:
 			previous_revision_number = self.vcs_client.svn().get_revision(self.paths[0]) - 1
 			
-			pathrev1 = helper.create_path_revision_string(self.vcs_client.svn().get_repo_url(self.paths[0]), previous_revision_number)
+			pathrev1 = helper.create_path_revision_string(self.vcs_client.svn().get_repo_url(self.paths[0]),
+														  previous_revision_number)
 			pathrev2 = helper.create_path_revision_string(self.paths[0], "working")
 			
 			proc = helper.launch_ui_window("diff", [
@@ -1162,7 +1161,7 @@ class MainContextMenuCallbacks(ContextMenuCallbacks):
 		
 		@param  base_dir: The curent working directory
 		@type   base_dir: string
-
+		
 		@param  vcs_client: The vcs client to be used
 		@type   vcs_client: rabbitvcs.vcs.create_vcs_instance()
 		

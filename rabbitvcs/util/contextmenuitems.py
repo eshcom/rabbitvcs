@@ -27,7 +27,7 @@ if "NAUTILUS_PYTHON_REQUIRE_GTK3" in os.environ and os.environ["NAUTILUS_PYTHON_
 	from gi.repository import Gtk as gtk
 else:
 	import gtk
-	
+
 from rabbitvcs.util import helper
 
 from rabbitvcs import gettext
@@ -66,7 +66,6 @@ class MenuItem(object):
 	There a few ways to organise this (and maybe it would be better to have the
 	GtkContextMenu class do it), but this is it for the moment.
 	"""
-	
 	@staticmethod
 	def default_condition(*args, **kwargs):
 		return False
@@ -96,7 +95,7 @@ class MenuItem(object):
 	# The icon that will appear on the menu item. This can be, say,
 	# "rabbitvcs-something" or gtk.STOCK_SOMETHING
 	icon = None
-
+	
 	# This is a string that holds the name of the function that is called when
 	# the menu item is activated (it is assigned to
 	# self.signals["activate"]["callback"])
@@ -107,8 +106,7 @@ class MenuItem(object):
 	# then no callback will be assigned to the "activate" signal.
 	callback_name = None
 	callback_args = ()
-
-
+	
 	# This is a string that holds the name of the function that is called to
 	# determine whether to show the item.
 	#
@@ -136,21 +134,21 @@ class MenuItem(object):
 		if self.callback_name is None:
 			# log.debug("Using default callback name: %s" % default_name)
 			self.callback_name = default_name
-
+		
 		# Try to get the callback function for this item
 		self.callback = self._get_function(callbacks, self.callback_name)
-
+		
 #        else:
 #            log.debug("Could not find callback for %s" % self.identifier)
-
+		
 		self.condition = {
 			"callback": MenuItem.default_condition,
 			"args": self.condition_args
 			}
-
+		
 		if self.condition_name is None:
 			self.condition_name = default_name
-			
+		
 		condition = self._get_function(conditions, self.condition_name)
 		
 		if condition:
@@ -186,7 +184,7 @@ class MenuItem(object):
 		"""
 		identifier = self.make_magic_id(id_magic)
 		return gtk.Action(identifier, self.make_label(), None, None)
-
+	
 	def make_thunar_action(self, id_magic = None):
 		identifier = self.make_magic_id(id_magic)
 		action = RabbitVCSAction(
@@ -196,7 +194,7 @@ class MenuItem(object):
 			self.icon
 		)
 		return action
-
+	
 	def make_gtk_menu_item(self, id_magic = None):
 		action = self.make_action(id_magic)
 		if self.icon:
@@ -208,7 +206,7 @@ class MenuItem(object):
 		else:
 			menuitem = action.create_menu_item()
 		return menuitem
-		
+	
 	def make_gtk3_menu_item(self, id_magic = None):
 		action = self.make_action(id_magic)
 		if self.icon:
@@ -241,7 +239,7 @@ class MenuItem(object):
 				icon=self.icon
 			)
 		return menuitem
-
+	
 	def make_label(self):
 		label = self.label.replace('_', '__')
 		return label
@@ -249,10 +247,10 @@ class MenuItem(object):
 class MenuSeparator(MenuItem):
 	identifier = "RabbitVCS::Separator"
 	label = SEPARATOR
-
+	
 	def make_insensitive(self, menuitem):
 		menuitem.set_property("sensitive", False)
-
+	
 	def make_thunar_action(self, id_magic = None):
 		menuitem = super(MenuSeparator, self).make_thunar_action(id_magic)
 		self.make_insensitive(menuitem)
@@ -270,7 +268,7 @@ class MenuSeparator(MenuItem):
 			#~ self.icon,
 		#~ )
 		#~ return action
-			
+	
 	# Make separators insensitive
 	def make_gtk_menu_item(self, id_magic = None):
 		menuitem = gtk.SeparatorMenuItem()
@@ -281,7 +279,7 @@ class MenuSeparator(MenuItem):
 		menuitem = super(MenuSeparator, self).make_nautilus_menu_item(id_magic)
 		self.make_insensitive(menuitem)
 		return menuitem
-	
+
 class MenuDebug(MenuItem):
 	identifier = "RabbitVCS::Debug"
 	label = _("Debug")
@@ -329,7 +327,7 @@ class MenuCheckout(MenuItem):
 	label = _("Checkout...")
 	tooltip = _("Check out a working copy")
 	icon = "rabbitvcs-checkout"
-	
+
 class MenuUpdate(MenuItem):
 	identifier = "RabbitVCS::Update"
 	label = _("Update")
@@ -527,7 +525,6 @@ class MenuImport(MenuItem):
 	condition_name = "_import"
 	callback_name = "_import"
 
-
 class MenuBranchTag(MenuItem):
 	identifier = "RabbitVCS::Branch_Tag"
 	label = _("Branch/tag...")
@@ -618,27 +615,27 @@ class PropMenuRevert(MenuItem):
 	label = _("Revert property")
 	icon =  "rabbitvcs-revert"
 	tooltip = _("Revert this property to its original state")
-	
+
 class PropMenuRevertRecursive(MenuItem):
 	identifier = "RabbitVCS::Property_Revert_Recursive"
 	label = _("Revert property (recursive)")
 	icon =  "rabbitvcs-revert"
 	tooltip = _("Revert this property to its original state (recursive)")
 	condition_name = "property_revert"
-	
+
 class PropMenuDelete(MenuItem):
 	identifier = "RabbitVCS::Property_Delete"
 	label = _("Delete property")
 	icon =  "rabbitvcs-delete"
 	tooltip = _("Delete this property")
-	
+
 class PropMenuDeleteRecursive(MenuItem):
 	identifier = "RabbitVCS::Property_Delete_Recursive"
 	label = _("Delete property (recursive)")
 	icon =  "rabbitvcs-delete"
 	tooltip = _("Delete this property (recursive)")
 	condition_name = "property_delete"
-	
+
 class PropMenuEdit(MenuItem):
 	identifier = "RabbitVCS::Property_Edit"
 	label = _("Edit details")
@@ -693,7 +690,7 @@ class MenuStage(MenuItem):
 	identifier = "RabbitVCS::Stage"
 	label = _("Stage")
 	icon = "rabbitvcs-add"
-	
+
 class MenuUnstage(MenuItem):
 	identifier = "RabbitVCS::Unstage"
 	label = _("Unstage")
@@ -707,7 +704,7 @@ class MenuEditConflicts(MenuItem):
 def get_ignore_list_items(paths):
 	"""
 	Build up a list of items to ignore based on the selected paths
-
+	
 	@param  paths: The selected paths
 	@type   paths: list
 	"""
@@ -729,7 +726,7 @@ def get_ignore_list_items(paths):
 				condition_name = "ignore_by_filename"
 				condition_args = (path)
 			ignore_items.append((MenuIgnoreFilenameClass, None))
-
+	
 	# These are ignore-by-extension items
 	ignorebyfileext_index = 0
 	for path in paths:
@@ -752,18 +749,18 @@ class RabbitVCSAction(gtk.Action):
 	Sub-classes gtk.Action so that we can have submenus
 	"""
 	__gtype_name__ = "RabbitVCSAction"
-
+	
 	def __init__(self, name, label, tooltip, stock_id):
 		gtk.Action.__init__(self, name, label, tooltip, stock_id)
 		self.sub_actions = None
 		self.stock_id = stock_id
-
+	
 	def __repr__(self):
 		return self.get_name()
-
+	
 	def set_sub_actions(self, sub_actions):
 		self.sub_actions = sub_actions
-
+	
 	def do_create_menu_item(self):
 		menu_item = gtk.ImageMenuItem()
 		if self.stock_id:
@@ -771,7 +768,7 @@ class RabbitVCSAction(gtk.Action):
 				self.set_icon_name(self.stock_id)
 			except AttributeError as e:
 				menu_item.set_image(gtk.image_new_from_icon_name(self.stock_id, gtk.ICON_SIZE_MENU))
-
+		
 		if self.sub_actions is not None:
 			menu = gtk.Menu()
 			menu_item.set_submenu(menu)
@@ -784,6 +781,5 @@ class RabbitVCSAction(gtk.Action):
 # FIXME: apparently it's possible to get real GtkSeparators in a Thunar
 # menu, but this doesn't seem to work.
 class ThunarSeparator(RabbitVCSAction):
-		
 	def do_create_menu_item(self):
 		return gtk.SeparatorMenuItem()

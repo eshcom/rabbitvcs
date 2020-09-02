@@ -251,7 +251,7 @@ class TableBase:
 		@type   callbacks: dict
 		@param  callbacks: A dict of callbacks to be used.  Some are for signal
 			handling while others are useful for other things.
-			
+		
 		@type   flags: dict
 		@param  flags: A dict of flags
 		
@@ -693,7 +693,7 @@ class TableBase:
 class Table(TableBase):
 	"""
 	Generate a flat tree view.
-		
+	
 	See the TableBase documentation for parameter information
 	"""
 	def __init__(self, treeview, coltypes, colnames, values=[], filters=None,
@@ -711,7 +711,7 @@ class Table(TableBase):
 class Tree(TableBase):
 	"""
 	Generate a hierarchal tree view.  The structure of "values" should be like:
-
+		
 		values = [
 			(["A"], [
 				(["C"], None)
@@ -870,9 +870,9 @@ class RevisionSelector:
 	"""
 	Provides a standard way to generate a revision object from the UI.
 	"""
-	def __init__(self, container, client, revision=None,
-			url_combobox=None, url_entry=None, url=None, expand=False,
-			revision_changed_callback=None):
+	def __init__(self, container, client, revision=None, url_combobox=None,
+				 url_entry=None, url=None, expand=False,
+				 revision_changed_callback=None):
 		"""
 		@type   container: A gtk container object (i.e. HBox, VBox, Box)
 		@param  container: The container that to add this widget
@@ -885,7 +885,7 @@ class RevisionSelector:
 		
 		@type   url_combobox: rabbitvcs.ui.widget.ComboBox
 		@param  url_combobox: A repository url combobox
-
+		
 		@type   url_entry: gtk.Entry
 		@param  url_entry: A repository url entry
 		
@@ -1081,7 +1081,7 @@ class KeyValueTable(gtk.Table):
 	"""
 	default_col_spacing = 12
 	default_row_spacing = 6
-		
+	
 	def __init__(self, stuff):
 		"""
 		@param stuff: a list of two-element tuples - the first element of the
@@ -1254,7 +1254,6 @@ class MultiFileTextEditor:
 	"""
 	Edit a set of text/config/ignore files
 	"""
-	
 	def __init__(self, container, label, combobox_labels, combobox_paths, show_add_line=True, line_content=""):
 		self.container = container
 		self.label = label
@@ -1262,7 +1261,7 @@ class MultiFileTextEditor:
 		self.combobox_paths = combobox_paths
 		self.cache = {}
 		self.last_path = None
-				
+		
 		self.combobox = ComboBox(gtk.ComboBox(), self.combobox_labels)
 		self.combobox.cb.connect("changed", self.__combobox_changed)
 		self.combobox.cb.set_size_request(175, -1)
