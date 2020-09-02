@@ -1,6 +1,10 @@
 How to create a translation
 --------------------------
 
+Generate RabbitVCS.pot:
+$ make RabbitVCS.pot
+
+
 Here is a brief set of commands to generate a new translation.  Replace
 en_CA with your language and locale of choice.
 
