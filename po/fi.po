@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 19:58+0300\n"
+"POT-Creation-Date: 2020-09-03 13:29+0300\n"
 "PO-Revision-Date: 2010-09-02 20:14+0000\n"
 "Last-Translator: Jani Välimaa <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -364,15 +364,15 @@ msgid "Completed Checkout"
 msgstr ""
 
 #: ../rabbitvcs/ui/cherrypick.py:50
-msgid "Cherrypick"
+msgid "Cherry Pick"
 msgstr ""
 
-#: ../rabbitvcs/ui/cherrypick.py:51 ../rabbitvcs/ui/log.py:957
+#: ../rabbitvcs/ui/cherrypick.py:51
 msgid "Cherry Pick selected commits..."
 msgstr ""
 
 #: ../rabbitvcs/ui/cherrypick.py:53
-msgid "Completed cherrypick"
+msgid "Completed Cherry Pick"
 msgstr ""
 
 #: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/util/contextmenuitems.py:682
@@ -669,6 +669,10 @@ msgstr ""
 
 #: ../rabbitvcs/ui/log.py:948
 msgid "Edit revision properties..."
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:957
+msgid "Cherry Pick this commits..."
 msgstr ""
 
 #: ../rabbitvcs/ui/log.py:958

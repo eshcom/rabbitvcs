@@ -40,11 +40,8 @@ USE_LINGUAS=$(shell if test -n "$(USER_LINGUAS)" -o -n "$(LINGUAS)"; then LLINGU
 $(GETTEXT_PACKAGE).pot:
 	$(GENPOT)
 
-clean:
-	rm -f *.pox $(GETTEXT_PACKAGE).pot *.old.po cat-id-tbl.tmp
-	rm -f .intltool-merge-cache
-
 update-po: Makefile
+	rm -f $(GETTEXT_PACKAGE).pot
 	$(MAKE) $(GETTEXT_PACKAGE).pot
 	tmpdir=`pwd`; \
 	linguas="$(USE_LINGUAS)"; \
@@ -82,6 +79,10 @@ update-mo: Makefile
 	    echo "msgfmt for $$file_mo failed!"; \
 	  fi; \
 	done
+
+update: Makefile
+	$(MAKE) update-po
+	$(MAKE) update-mo
 
 # Tell versions [3.59,3.63) of GNU make not to export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

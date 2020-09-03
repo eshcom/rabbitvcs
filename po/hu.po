@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbit-vcs 0.13.3 v01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 19:58+0300\n"
+"POT-Creation-Date: 2020-09-03 13:29+0300\n"
 "PO-Revision-Date: 2010-06-22 09:46+0000\n"
 "Last-Translator: csola48 <Unknown>\n"
 "Language-Team: hungarian <csola48@gmail.hu>\n"
@@ -368,16 +368,16 @@ msgid "Completed Checkout"
 msgstr "Ellenőrzés befejezve"
 
 #: ../rabbitvcs/ui/cherrypick.py:50
-msgid "Cherrypick"
+msgid "Cherry Pick"
 msgstr ""
 
-#: ../rabbitvcs/ui/cherrypick.py:51 ../rabbitvcs/ui/log.py:957
+#: ../rabbitvcs/ui/cherrypick.py:51
 msgid "Cherry Pick selected commits..."
 msgstr ""
 
 #: ../rabbitvcs/ui/cherrypick.py:53
 #, fuzzy
-msgid "Completed cherrypick"
+msgid "Completed Cherry Pick"
 msgstr "Ellenőrzés befejezve"
 
 #: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/util/contextmenuitems.py:682
@@ -684,6 +684,10 @@ msgstr "Napló üzenet szerkesztése..."
 #: ../rabbitvcs/ui/log.py:948
 msgid "Edit revision properties..."
 msgstr "Revízió tulajdonságok szerkesztése..."
+
+#: ../rabbitvcs/ui/log.py:957
+msgid "Cherry Pick this commits..."
+msgstr ""
 
 #: ../rabbitvcs/ui/log.py:958
 msgid "Apply the changes introduced by some existing commits"
