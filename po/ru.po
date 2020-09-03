@@ -860,15 +860,13 @@ msgstr "Переименовано"
 #. esh
 #: ../rabbitvcs/ui/reset.py:93 ../rabbitvcs/util/contextmenuitems.py:686
 msgid "Reset"
-msgstr ""
+msgstr "Сбросить"
 
 #: ../rabbitvcs/ui/reset.py:94
-#, fuzzy
 msgid "Running Reset Command..."
 msgstr "Восстановление исходного состояния..."
 
 #: ../rabbitvcs/ui/reset.py:101
-#, fuzzy
 msgid "Completed Reset"
 msgstr "Исходное состояние восстановлено"
 
@@ -1028,24 +1026,23 @@ msgstr "Обновление завершено"
 
 #: ../rabbitvcs/ui/updateto.py:75
 msgid "Rollback To Revision"
-msgstr ""
+msgstr "Откат к ревизии"
 
 #: ../rabbitvcs/ui/updateto.py:76
 msgid "Rolling Back..."
-msgstr ""
+msgstr "Откат..."
 
 #: ../rabbitvcs/ui/updateto.py:84
 msgid "Completed Rollback"
-msgstr ""
+msgstr "Откат завершен"
 
 #: ../rabbitvcs/ui/updateto.py:86
 msgid "Update To Revision"
 msgstr "Обновить до ревизии"
 
 #: ../rabbitvcs/ui/updateto.py:110
-#, fuzzy
 msgid "What revision/branch do you want to checkout?"
-msgstr "Куда вы хотите скопировать выделенное?"
+msgstr "Какую ревизию/ветку вы хотите извлечь?"
 
 #: ../rabbitvcs/ui/updateto.py:128
 #, python-format
@@ -1152,9 +1149,8 @@ msgid "RabbitVCS Git"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:360
-#, fuzzy
 msgid "RabbitVCS Hg"
-msgstr "О RabbitVCS"
+msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:365
 msgid "Repository Browser"
@@ -1222,11 +1218,11 @@ msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
 msgid "Show Changes..."
-msgstr ""
+msgstr "Показать изменения"
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
 msgid "Show changes between paths and revisions"
-msgstr ""
+msgstr "Показать изменения между путями и ревизиями"
 
 #: ../rabbitvcs/util/contextmenuitems.py:425
 msgid "Show Log"
@@ -1422,13 +1418,12 @@ msgid "Open a file"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:599
-#, fuzzy
 msgid "Copy file name"
-msgstr "Переименовано"
+msgstr "Копировать имя файла"
 
 #: ../rabbitvcs/util/contextmenuitems.py:604
 msgid "Copy full file name"
-msgstr ""
+msgstr "Копировать путь и имя файла"
 
 #: ../rabbitvcs/util/contextmenuitems.py:609
 msgid "Browse to"
@@ -1507,9 +1502,8 @@ msgid "Ignore item by file extension"
 msgstr ""
 
 #: ../rabbitvcs/util/helper.py:165
-#, fuzzy
 msgid "(no date)"
-msgstr "(без автора)"
+msgstr "(нет даты)"
 
 #: ../rabbitvcs/util/helper.py:169
 msgid "just now"
@@ -1585,17 +1579,15 @@ msgstr "(без автора)"
 
 #: ../rabbitvcs/vcs/git/__init__.py:825 ../rabbitvcs/vcs/svn/__init__.py:1564
 msgid "Patched"
-msgstr ""
-
-#: ../rabbitvcs/vcs/git/__init__.py:829 ../rabbitvcs/vcs/svn/__init__.py:1568
-#, fuzzy
-msgid "Patch Failed"
 msgstr "Патч применен"
 
+#: ../rabbitvcs/vcs/git/__init__.py:829 ../rabbitvcs/vcs/svn/__init__.py:1568
+msgid "Patch Failed"
+msgstr "Ошибка применения патча"
+
 #: ../rabbitvcs/vcs/git/__init__.py:834 ../rabbitvcs/vcs/svn/__init__.py:1576
-#, fuzzy
 msgid "Rejected Patch"
-msgstr "Создать патч"
+msgstr "Патч отклонен"
 
 #: ../rabbitvcs/vcs/status.py:263
 msgid "RabbitVCS status for"

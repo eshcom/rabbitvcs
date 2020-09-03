@@ -515,7 +515,7 @@ class GitMerge(BranchMerge):
 			register_gtk_quit=self.gtk_quit_is_set()
 		)
 		self.action.append(self.action.set_header, _("Merge"))
-		self.action.append(self.action.set_status, _("Running Merge Command..."))
+		self.action.append(self.action.set_status, _("Running Merge Command"))
 		self.action.append(
 			self.git.merge,
 			from_branch
