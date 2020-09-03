@@ -63,7 +63,7 @@ msgstr "%s - Завершено"
 
 #: ../rabbitvcs/ui/action.py:353
 msgid "Log Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: ../rabbitvcs/ui/add.py:80 ../rabbitvcs/ui/checkmods.py:107
 #: ../rabbitvcs/ui/checkmods.py:170 ../rabbitvcs/ui/commit.py:82
@@ -179,39 +179,39 @@ msgstr "Ветка/тэг создана"
 #. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/branches.py:66
 msgid "Branch Manager"
-msgstr ""
+msgstr "Менеджер веток"
 
 #: ../rabbitvcs/ui/branches.py:67
 msgid "<b>Branches</b>"
-msgstr ""
+msgstr "<b>Ветки</b>"
 
 #: ../rabbitvcs/ui/branches.py:75 ../rabbitvcs/ui/widget.py:913
 msgid "Branch"
-msgstr ""
+msgstr "Ветка"
 
 #. Set up the Branch line
 #. Set up the Tag line
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
 msgid "Name:"
-msgstr ""
+msgstr "Имя:"
 
 #. Set up the Commit-sha line
 #: ../rabbitvcs/ui/branches.py:111
 msgid "Start Point:"
-msgstr ""
+msgstr "Начать с:"
 
 #: ../rabbitvcs/ui/branches.py:132
 msgid "Keep old branch's history"
-msgstr ""
+msgstr "Сохранить историю старой ветки"
 
 #: ../rabbitvcs/ui/branches.py:141
 msgid "Set as active branch"
-msgstr ""
+msgstr "Сделать активной веткой"
 
 #: ../rabbitvcs/ui/branches.py:150 ../rabbitvcs/ui/branches.py:294
 #: ../rabbitvcs/ui/tags.py:152 ../rabbitvcs/ui/tags.py:286
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #. Set up the Revision line
 #. Set up the Commit-sha line
@@ -219,7 +219,7 @@ msgstr ""
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
 msgid "Revision:"
-msgstr ""
+msgstr "Ревизия:"
 
 #. Set up the Log Message line
 #. Set up the Log Message Entry line
@@ -227,21 +227,21 @@ msgstr ""
 #: ../rabbitvcs/ui/branches.py:171 ../rabbitvcs/ui/merge.py:480
 #: ../rabbitvcs/ui/tags.py:132 ../rabbitvcs/ui/tags.py:198
 msgid "Message:"
-msgstr ""
+msgstr "Сообщение:"
 
 #: ../rabbitvcs/ui/branches.py:216 ../rabbitvcs/ui/remotes.py:114
 #: ../rabbitvcs/ui/tags.py:236
 #, python-format
 msgid "Are you sure you want to delete %s?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить %s?"
 
 #: ../rabbitvcs/ui/branches.py:284
 msgid "<b>Add Branch</b>"
-msgstr ""
+msgstr "<b>Новая ветка</b>"
 
 #: ../rabbitvcs/ui/branches.py:306
 msgid "<b>Branch Detail</b>"
-msgstr ""
+msgstr "<b>Информация</b>"
 
 #: ../rabbitvcs/ui/browser.py:91
 msgid "Size"
@@ -249,7 +249,7 @@ msgstr "Размер"
 
 #: ../rabbitvcs/ui/browser.py:305
 msgid "Select"
-msgstr ""
+msgstr "Выбрать"
 
 #: ../rabbitvcs/ui/browser.py:322
 msgid "Create folder..."
@@ -294,7 +294,7 @@ msgstr "Дополнительные действия ..."
 
 #: ../rabbitvcs/ui/changes.py:56 ../rabbitvcs/ui/checkmods.py:246
 msgid "View unified diff"
-msgstr "Просмотреть diff-файл"
+msgstr "Просмотреть файл различий"
 
 #: ../rabbitvcs/ui/changes.py:264 ../rabbitvcs/ui/changes.py:359
 msgid "Change"
@@ -314,11 +314,11 @@ msgstr "Нет"
 
 #: ../rabbitvcs/ui/changes.py:402
 msgid "Open from first revision"
-msgstr "открыть с первой ревизии"
+msgstr "Открыть с первой ревизии"
 
 #: ../rabbitvcs/ui/changes.py:407
 msgid "Open from second revision"
-msgstr "открыть со второй ревизии"
+msgstr "Открыть со второй ревизии"
 
 #: ../rabbitvcs/ui/changes.py:412
 msgid "View unified diff(s)"
@@ -403,20 +403,20 @@ msgstr "Очистка завершена"
 #: ../rabbitvcs/ui/clone.py:49 ../rabbitvcs/ui/clone.py:64
 #: ../rabbitvcs/util/contextmenuitems.py:652
 msgid "Clone"
-msgstr ""
+msgstr "Клонировать"
 
 #: ../rabbitvcs/ui/clone.py:65
 msgid "Running Clone Command..."
-msgstr ""
+msgstr "Клонирование..."
 
 #: ../rabbitvcs/ui/clone.py:72
 msgid "Completed Clone"
-msgstr ""
+msgstr "Клонирование завершено"
 
 #: ../rabbitvcs/ui/commit.py:258
 #, python-format
 msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
-msgstr ""
+msgstr "Найдено %(changed)d измененных и %(unversioned)d неверсированных элементов"
 
 #: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
 #: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/util/contextmenuitems.py:339
@@ -591,7 +591,7 @@ msgstr "Н/Д"
 
 #: ../rabbitvcs/ui/log.py:348
 msgid "Color"
-msgstr ""
+msgstr "Цвет"
 
 #: ../rabbitvcs/ui/log.py:363
 msgid "Copy From Path"
@@ -603,23 +603,23 @@ msgstr "Копия из ревизии"
 
 #: ../rabbitvcs/ui/log.py:596
 msgid "Graph"
-msgstr ""
+msgstr "Граф"
 
 #: ../rabbitvcs/ui/log.py:878
 msgid "View diff against working copy"
-msgstr ""
+msgstr "Просмотреть файл различий с рабочей копией"
 
 #: ../rabbitvcs/ui/log.py:883 ../rabbitvcs/util/contextmenuitems.py:395
 msgid "View diff against previous revision"
-msgstr ""
+msgstr "Просмотреть файл различий с предыдущей ревизией"
 
 #: ../rabbitvcs/ui/log.py:888
 msgid "View diff between revisions"
-msgstr "Просмотреть diff-файл между ревизиями"
+msgstr "Просмотреть файл различий между ревизиями"
 
 #: ../rabbitvcs/ui/log.py:893
 msgid "Compare with working copy"
-msgstr ""
+msgstr "Сравнить с рабочей копией"
 
 #: ../rabbitvcs/ui/log.py:898 ../rabbitvcs/util/contextmenuitems.py:413
 msgid "Compare with previous revision"
@@ -631,7 +631,7 @@ msgstr "Сравнить ревизии"
 
 #: ../rabbitvcs/ui/log.py:909
 msgid "Show changes against previous revision"
-msgstr ""
+msgstr "Показать отличия с предыдущей ревизией"
 
 #: ../rabbitvcs/ui/log.py:915
 msgid "Show changes between revisions"
@@ -639,20 +639,19 @@ msgstr "Показать отличия между ревизиями"
 
 #: ../rabbitvcs/ui/log.py:920
 msgid "Update to this revision"
-msgstr ""
+msgstr "Обновить до этой ревизии"
 
 #: ../rabbitvcs/ui/log.py:921
 msgid "Update the selected path to this revision"
-msgstr ""
+msgstr "Обновить выбранный путь до этой ревизии"
 
 #: ../rabbitvcs/ui/log.py:926
-#, fuzzy
 msgid "Revert changes from this revision"
-msgstr "открыть с первой ревизии"
+msgstr "Отменить изменения из этой ревизии"
 
 #: ../rabbitvcs/ui/log.py:927
 msgid "Update the selected path by reverse merging the changes"
-msgstr ""
+msgstr "Обновить выбранный путь путем обратного объединения изменений"
 
 #: ../rabbitvcs/ui/log.py:932
 msgid "Copy to clipboard"
@@ -1358,7 +1357,7 @@ msgstr "Комментировать файл"
 
 #: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch..."
-msgstr ""
+msgstr "Создать патч..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
@@ -1366,7 +1365,7 @@ msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch..."
-msgstr ""
+msgstr "Применить патч..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
 msgid "Applies a unified diff file to the working copy"
