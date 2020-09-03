@@ -1,8 +1,18 @@
 How to create a translation
 --------------------------
 
+--esh: begin---------------------------------------------
+
 Generate RabbitVCS.pot:
 $ make RabbitVCS.pot
+
+Generate RabbitVCS.pot and update <lang>.po files:
+$ make update-po
+
+Update locale/<lang>/LC_MESSAGES/RabbitVCS.mo files:
+$ make update-mo
+
+--esh: end-----------------------------------------------
 
 
 Here is a brief set of commands to generate a new translation.  Replace

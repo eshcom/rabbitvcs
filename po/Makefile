@@ -26,8 +26,9 @@ INTLTOOL_UPDATE = /usr/bin/intltool-update
 INTLTOOL_EXTRACT = /usr/bin/intltool-extract
 MSGMERGE = INTLTOOL_EXTRACT="$(INTLTOOL_EXTRACT)" XGETTEXT="$(XGETTEXT)" srcdir=$(srcdir) $(INTLTOOL_UPDATE) --gettext-package $(GETTEXT_PACKAGE) --dist
 GENPOT   = INTLTOOL_EXTRACT="$(INTLTOOL_EXTRACT)" XGETTEXT="$(XGETTEXT)" srcdir=$(srcdir) $(INTLTOOL_UPDATE) --gettext-package $(GETTEXT_PACKAGE) --pot
+MSGFMT   = msgfmt
 
-ALL_LINGUAS = ar ast be bg ca cs da de el en_GB es et eu fa fi fr gl he hi hu id it ja kk ko ku lb lt lv mn nl nn pl pt pt_BR ro ru sk sl sr sv tr uk vi zh_CN zh_TW 
+ALL_LINGUAS = cs de es es_CL fa fi fr he hr hu it ja nb nl oc pl pt_BR ro ru sk sl sr sv th zh_CN zh_TW 
 
 PO_LINGUAS=$(shell if test -r $(srcdir)/LINGUAS; then grep -v "^\#" $(srcdir)/LINGUAS; else echo "$(ALL_LINGUAS)"; fi)
 
@@ -65,6 +66,20 @@ update-po: Makefile
 	  else \
 	    echo "msgmerge for $$lang.gmo failed!"; \
 	    rm -f $$tmpdir/$$lang.new.po; \
+	  fi; \
+	done
+
+update-mo: Makefile
+	tmpdir=`pwd`; \
+	linguas="$(USE_LINGUAS)"; \
+	for lang in $$linguas; do \
+	  file_mo="../locale/$$lang/LC_MESSAGES/RabbitVCS.mo"; \
+	  echo "$$file_mo:"; \
+	  result="`$(MSGFMT) --output-file=$$file_mo $$lang.po`"; \
+	  if $$result; then \
+	    :; \
+	  else \
+	    echo "msgfmt for $$file_mo failed!"; \
 	  fi; \
 	done
 

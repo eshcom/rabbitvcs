@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-04 14:35-0500\n"
+"POT-Creation-Date: 2020-09-02 19:58+0300\n"
 "PO-Revision-Date: 2009-03-19 09:59+0000\n"
 "Last-Translator: Steve Markgraf <steve@steve-m.de>\n"
 "Language-Team: German <>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,514 +19,452 @@ msgstr ""
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Basepath: ../\n"
 
-#: ui/branch.py:71
-msgid ""
-"There have been modifications to your working copy.  If you copy from the "
-"HEAD revision you will lose your changes."
+#. All subclasses should override this! This is to be displayed in the
+#. settings dialog
+#: ../rabbitvcs/services/statuschecker.py:38
+msgid "Simple status checker"
 msgstr ""
-"Ihre Arbeitskopie wurde verändert. Wenn Sie von der HEAD-Revision kopieren, "
-"gehen diese Änderungen verloren."
 
-#: ui/branch.py:89
-msgid "You must supply a destination path."
-msgstr "Sie müssen einen Zielpfad angeben."
+#: ../rabbitvcs/ui/__init__.py:55
+msgid ""
+"You must specify a version control system using the --vcs [svn|git] option"
+msgstr ""
 
-#: ui/branch.py:99
-msgid "The from revision field is required."
-msgstr "Sie müssen die Ausgangsrevision angeben."
-
-#: ui/branch.py:108
-msgid "Invalid revision information"
-msgstr "Ungültige Revisionsinformation"
-
-#: ui/branch.py:123 ui/glade/branch.glade.h:4
-msgid "Branch/tag"
-msgstr "Zweig/Tag"
-
-#: ui/branch.py:124
-msgid "Running Branch/tag Command..."
-msgstr "Erstelle Zweig/Tag..."
-
-#: ui/branch.py:126
-msgid "Completed Branch/tag"
-msgstr "Zweig/Tag-Erstellung abgeschlossen"
-
-#: ui/updateto.py:70
-msgid "Update To Revision"
-msgstr "Aktualisiere auf Revision"
-
-#: ui/updateto.py:71 ui/update.py:54
-msgid "Updating..."
-msgstr "Aktualisiere..."
-
-#: ui/updateto.py:79 ui/update.py:57
-msgid "Completed Update"
-msgstr "Aktualisierung abgeschlossen."
-
-#: ui/rename.py:59
-msgid "The new name field is required"
-msgstr "Der neue Name muss angegeben werden"
-
-#: ui/rename.py:70 ui/glade/rename.glade.h:2
-msgid "Rename"
-msgstr "Umbenennen"
-
-#: ui/rename.py:71
-msgid "Running Rename Command..."
-msgstr "Benenne um..."
-
-#: ui/rename.py:78
-msgid "Completed Rename"
-msgstr "Umbenennen abgeschlossen"
-
-#: ui/annotate.py:51
-msgid "Cannot annotate a directory"
-msgstr "Kann kein Verzeichnis annotieren"
-
-#: ui/annotate.py:58
-#, python-format
-msgid "Annotate - %s"
-msgstr "Annotiere - %s"
-
-#: ui/annotate.py:71
-msgid "Line"
-msgstr "Zeile"
-
-#: ui/annotate.py:71 ui/log.py:80 ui/glade/switch.glade.h:5
-#: ui/glade/merge.glade.h:17 ui/glade/checkout.glade.h:10
-#: ui/glade/update.glade.h:6
-msgid "Revision"
-msgstr "Revision"
-
-#: ui/annotate.py:71 ui/log.py:80
-msgid "Author"
-msgstr "Autor"
-
-#: ui/annotate.py:72 ui/dialog.py:47 ui/log.py:81
-msgid "Date"
-msgstr "Datum"
-
-#: ui/annotate.py:72
-msgid "Text"
-msgstr "Text"
-
-#: ui/annotate.py:112
-msgid "The from revision field must be an integer"
-msgstr "Die Ausgangsrevision muss eine ganze Zahl sein."
-
-#: ui/annotate.py:122
-msgid "Generating Annotation..."
-msgstr "Erzeuge Annotationen..."
-
-#: ui/annotate.py:138 lib/vcs/svn/__init__.py:122 lib/vcs/svn/__init__.py:124
-msgid "Completed"
-msgstr "Abgeschlossen"
-
-#: ui/settings.py:50
-msgid "English"
-msgstr "englisch"
-
-#: ui/settings.py:156 ui/settings.py:165
-msgid "Select a program"
-msgstr "Ein Programm auswählen"
-
-#: ui/settings.py:174
-msgid "Are you sure you want to clear your repository paths?"
-msgstr "Wollen Sie wirklich die Projektarchivpfade löschen?"
-
-#: ui/settings.py:181
-msgid "Repository paths cleared"
-msgstr "Projektarchivpfade gelöscht"
-
-#: ui/settings.py:185
-msgid "Are you sure you want to clear your previous messages?"
-msgstr "Wollen Sie wirklich die früheren Nachrichten löschen?"
-
-#: ui/settings.py:192
-msgid "Previous messages cleared"
-msgstr "Frühere Logmeldungen gelöscht"
-
-#: ui/settings.py:196
-msgid "Are you sure you want to clear your authentication information?"
-msgstr "Wollen Sie wirklich Ihre Authentifizierungsinformationen löschen?"
-
-#: ui/settings.py:213
-msgid "Authentication information cleared"
-msgstr "Authentifizierungsinformationen gelöscht"
-
-#: ui/cleanup.py:54 lib/extensions/nautilus/RabbitVCS.py:831
-msgid "Cleanup"
-msgstr "Aufräumen"
-
-#: ui/cleanup.py:55 ui/glade/cleanup.glade.h:1
-msgid "Cleaning Up..."
-msgstr "Räume auf..."
-
-#: ui/cleanup.py:57
-msgid "Completed Cleanup"
-msgstr "Aufräumen abgeschlossen"
-
-#: ui/relocate.py:76
-msgid "The from and to url fields are both required."
-msgstr "Die Ursprungs- und Ziel-URL müssen angegeben werden."
-
-#: ui/relocate.py:86 ui/glade/relocate.glade.h:3
-msgid "Relocate"
-msgstr "Zweig/Tag wechseln"
-
-#: ui/relocate.py:87
-msgid "Running Relocate Command..."
-msgstr "Stelle URL um..."
-
-#: ui/relocate.py:94
-msgid "Completed Relocate"
-msgstr "Umstellen der URL abgeschlossen"
-
-#: ui/add.py:64 ui/lock.py:66 ui/resolve.py:55 ui/action.py:66 ui/commit.py:73
-#: ui/unlock.py:55 ui/log.py:89 ui/revert.py:55
-msgid "Path"
-msgstr "Pfad"
-
-#: ui/add.py:64 ui/lock.py:66 ui/resolve.py:55 ui/commit.py:73 ui/unlock.py:55
-#: ui/revert.py:55
-msgid "Extension"
-msgstr "Erweiterung"
-
-#: ui/add.py:78 ui/lock.py:96 ui/commit.py:97 ui/unlock.py:70 ui/log.py:253
-#: ui/glade/log.glade.h:6
-msgid "Loading..."
-msgstr "Lade..."
-
-#: ui/add.py:81 ui/lock.py:99 ui/commit.py:100 ui/unlock.py:91
-#, python-format
-msgid "Found %d item(s)"
-msgstr "%d Objekt(e) gefunden"
-
-#: ui/add.py:115 ui/commit.py:269 ui/glade/add.glade.h:1
-#: lib/extensions/nautilus/RabbitVCS.py:638
-msgid "Add"
-msgstr "Hinzufügen"
-
-#: ui/add.py:116
-msgid "Running Add Command..."
-msgstr "Füge hinzu..."
-
-#: ui/add.py:118
-msgid "Completed Add"
-msgstr "Hinzufügen abgeschlossen"
-
-#: ui/add.py:141 ui/lock.py:206 ui/commit.py:239
-msgid "Open"
-msgstr "Öffnen"
-
-#: ui/add.py:150 ui/lock.py:216 ui/commit.py:249
-msgid "Browse to"
-msgstr "Dursuchen"
-
-#: ui/add.py:159 ui/commit.py:259 ui/glade/properties.glade.h:2
-#: lib/extensions/nautilus/RabbitVCS.py:735
-msgid "Delete"
-msgstr "Löschen"
-
-#: ui/add.py:168 ui/commit.py:299 lib/extensions/nautilus/RabbitVCS.py:654
-msgid "Add to ignore list"
-msgstr "Zur Liste der ignorierten Dateien hinzufügen"
-
-#: ui/import.py:41
-#, python-format
-msgid "Import - %s"
-msgstr "Import - %s"
-
-#: ui/import.py:68
-msgid "The repository URL field is required."
-msgstr "Die Projektarchiv-URL muss angegeben werden."
-
-#: ui/import.py:80 ui/glade/import.glade.h:3
-#: lib/extensions/nautilus/RabbitVCS.py:888
-msgid "Import"
-msgstr "Import"
-
-#: ui/import.py:81
-msgid "Running Import Command..."
-msgstr "Importiere..."
-
-#: ui/import.py:89
-msgid "Completed Import"
-msgstr "Import abgescholssen"
-
-#: ui/lock.py:67 lib/vcs/svn/__init__.py:132
-msgid "Locked"
-msgstr "Gesperrt"
-
-#: ui/lock.py:90 ui/lock.py:107
-msgid "Yes"
-msgstr "Ja"
-
-#: ui/lock.py:144
-msgid "Get Lock"
-msgstr "Sperren"
-
-#: ui/lock.py:145
-msgid "Running Lock Command..."
-msgstr "Sperre..."
-
-#: ui/lock.py:154
-msgid "Completed Lock"
-msgstr "Sperren abgeschlossen"
-
-#: ui/lock.py:176
-msgid "Remove Lock"
-msgstr "Sperre aufheben"
-
-#: ui/lock.py:186 ui/commit.py:229 lib/extensions/nautilus/RabbitVCS.py:597
-msgid "View Diff"
-msgstr "Unterschiede anzeigen"
-
-#: ui/lock.py:196 ui/glade/switch.glade.h:6 ui/glade/branch.glade.h:10
-#: ui/glade/merge.glade.h:18 ui/glade/checkout.glade.h:11
-#: ui/glade/update.glade.h:7
-msgid "Show log"
-msgstr "Log anzeigen"
-
-#: ui/export.py:40
-#, python-format
-msgid "Export - %s"
-msgstr "Exportieren - %s"
-
-#: ui/export.py:58 ui/checkout.py:82
-msgid "The repository URL and destination path are both required fields."
-msgstr "Die Projektarchiv-URL und der Zielpfad müssen angegeben werden."
-
-#: ui/export.py:79 lib/extensions/nautilus/RabbitVCS.py:856
-msgid "Export"
-msgstr "Exportieren"
-
-#: ui/export.py:80
-msgid "Running Export Command..."
-msgstr "Exportiere"
-
-#: ui/export.py:91
-msgid "Completed Export"
-msgstr "Export abgeschlossen"
-
-#: ui/resolve.py:45 ui/resolve.py:76
-#: lib/extensions/nautilus/RabbitVCS.py:767
-msgid "Resolve"
-msgstr "Auflösen"
-
-#: ui/resolve.py:77
-msgid "Running Resolve Command..."
-msgstr "Löse Konflikte auf..."
-
-#: ui/resolve.py:80
-msgid "Completed Resolve"
-msgstr "Auflösen abgeschlossen"
-
-#: ui/action.py:66 ui/log.py:89
+#: ../rabbitvcs/ui/action.py:114 ../rabbitvcs/ui/log.py:362
+#: ../rabbitvcs/ui/log.py:611
 msgid "Action"
 msgstr "Aktion"
 
-#: ui/action.py:66
+#: ../rabbitvcs/ui/action.py:114 ../rabbitvcs/ui/add.py:80
+#: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/changes.py:264
+#: ../rabbitvcs/ui/changes.py:359 ../rabbitvcs/ui/checkmods.py:107
+#: ../rabbitvcs/ui/checkmods.py:170 ../rabbitvcs/ui/commit.py:82
+#: ../rabbitvcs/ui/createpatch.py:81 ../rabbitvcs/ui/lock.py:68
+#: ../rabbitvcs/ui/log.py:362 ../rabbitvcs/ui/log.py:611
+#: ../rabbitvcs/ui/markresolved.py:63 ../rabbitvcs/ui/revert.py:67
+#: ../rabbitvcs/ui/stage.py:65 ../rabbitvcs/ui/unlock.py:64
+#: ../rabbitvcs/ui/unstage.py:64
+msgid "Path"
+msgstr "Pfad"
+
+#: ../rabbitvcs/ui/action.py:114
 msgid "Mime Type"
 msgstr "MIME-Typ"
 
-#: ui/action.py:135
-msgid "Empty Message"
-msgstr "Leere Logmeldung"
-
-#: ui/action.py:249 ui/log.py:309
+#: ../rabbitvcs/ui/action.py:330
 msgid "Finished"
 msgstr "Abgeschlossen"
 
-#: ui/action.py:253
+#: ../rabbitvcs/ui/action.py:334
 #, python-format
 msgid "%s - Finished"
 msgstr "%s - abgeschlossen"
 
-#: ui/commit.py:66
-msgid "The given path is not a working copy"
-msgstr "Der angegebene Pfad ist keine Arbeitskopie"
+#: ../rabbitvcs/ui/action.py:353
+#, fuzzy
+msgid "Log Message"
+msgstr "Logmeldung"
 
-#: ui/commit.py:74
+#: ../rabbitvcs/ui/add.py:80 ../rabbitvcs/ui/checkmods.py:107
+#: ../rabbitvcs/ui/checkmods.py:170 ../rabbitvcs/ui/commit.py:82
+#: ../rabbitvcs/ui/createpatch.py:81 ../rabbitvcs/ui/lock.py:68
+#: ../rabbitvcs/ui/markresolved.py:63 ../rabbitvcs/ui/revert.py:67
+#: ../rabbitvcs/ui/stage.py:65 ../rabbitvcs/ui/unlock.py:64
+#: ../rabbitvcs/ui/unstage.py:64
+msgid "Extension"
+msgstr "Erweiterung"
+
+#: ../rabbitvcs/ui/add.py:100 ../rabbitvcs/ui/commit.py:127
+#: ../rabbitvcs/ui/lock.py:101 ../rabbitvcs/ui/push.py:112
+#: ../rabbitvcs/ui/revert.py:87 ../rabbitvcs/ui/unlock.py:84
+msgid "Loading..."
+msgstr "Lade..."
+
+#: ../rabbitvcs/ui/add.py:117 ../rabbitvcs/ui/lock.py:104
+#: ../rabbitvcs/ui/revert.py:90 ../rabbitvcs/ui/unlock.py:103
+#, python-format
+msgid "Found %d item(s)"
+msgstr "%d Objekt(e) gefunden"
+
+#: ../rabbitvcs/ui/add.py:190 ../rabbitvcs/ui/add.py:212
+#: ../rabbitvcs/ui/branches.py:278 ../rabbitvcs/ui/tags.py:276
+#: ../rabbitvcs/ui/widget.py:1294 ../rabbitvcs/util/contextmenuitems.py:431
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: ../rabbitvcs/ui/add.py:191 ../rabbitvcs/ui/add.py:213
+msgid "Running Add Command..."
+msgstr "Füge hinzu..."
+
+#: ../rabbitvcs/ui/add.py:193 ../rabbitvcs/ui/add.py:215
+msgid "Completed Add"
+msgstr "Hinzufügen abgeschlossen"
+
+#: ../rabbitvcs/ui/annotate.py:61
+msgid "Cannot annotate a directory"
+msgstr "Kann kein Verzeichnis annotieren"
+
+#: ../rabbitvcs/ui/annotate.py:65
+#, python-format
+msgid "Annotate - %s"
+msgstr "Annotiere - %s"
+
+#: ../rabbitvcs/ui/annotate.py:122 ../rabbitvcs/ui/annotate.py:213
+msgid "Line"
+msgstr "Zeile"
+
+#: ../rabbitvcs/ui/annotate.py:122 ../rabbitvcs/ui/annotate.py:213
+#: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/checkmods.py:172
+#: ../rabbitvcs/ui/log.py:58 ../rabbitvcs/ui/log.py:346
+#: ../rabbitvcs/ui/log.py:596 ../rabbitvcs/ui/widget.py:912
+msgid "Revision"
+msgstr "Revision"
+
+#: ../rabbitvcs/ui/annotate.py:122 ../rabbitvcs/ui/annotate.py:213
+#: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/checkmods.py:172
+#: ../rabbitvcs/ui/log.py:60 ../rabbitvcs/ui/log.py:346
+#: ../rabbitvcs/ui/log.py:596
+msgid "Author"
+msgstr "Autor"
+
+#: ../rabbitvcs/ui/annotate.py:123 ../rabbitvcs/ui/annotate.py:214
+#: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/dialog.py:56
+#: ../rabbitvcs/ui/log.py:59 ../rabbitvcs/ui/log.py:347
+#: ../rabbitvcs/ui/log.py:597 ../rabbitvcs/ui/push.py:77
+msgid "Date"
+msgstr "Datum"
+
+#: ../rabbitvcs/ui/annotate.py:123 ../rabbitvcs/ui/annotate.py:214
+msgid "Text"
+msgstr "Text"
+
+#: ../rabbitvcs/ui/annotate.py:136
+msgid "The from revision field must be an integer"
+msgstr "Die Ausgangsrevision muss eine ganze Zahl sein."
+
+#: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
+#: ../rabbitvcs/ui/applypatch.py:129
+msgid "Apply Patch"
+msgstr ""
+
+#: ../rabbitvcs/ui/applypatch.py:72
+msgid "Apply Patch To Directory..."
+msgstr ""
+
+#: ../rabbitvcs/ui/applypatch.py:104 ../rabbitvcs/ui/applypatch.py:130
+msgid "Applying Patch File..."
+msgstr ""
+
+#: ../rabbitvcs/ui/applypatch.py:106 ../rabbitvcs/ui/applypatch.py:132
+msgid "Patch File Applied"
+msgstr ""
+
+#: ../rabbitvcs/ui/branch.py:83
+msgid "You must supply a destination path."
+msgstr "Sie müssen einen Zielpfad angeben."
+
+#: ../rabbitvcs/ui/branch.py:97
+msgid "Branch/tag"
+msgstr "Zweig/Tag"
+
+#: ../rabbitvcs/ui/branch.py:98
+msgid "Running Branch/tag Command..."
+msgstr "Erstelle Zweig/Tag..."
+
+#: ../rabbitvcs/ui/branch.py:100
+msgid "Completed Branch/tag"
+msgstr "Zweig/Tag-Erstellung abgeschlossen"
+
+#. esh: set from rabbitvcs/ui/xml/manager.xml
+#. ~ self.get_widget("Manager").set_size_request(695, -1)
+#: ../rabbitvcs/ui/branches.py:66
+#, fuzzy
+msgid "Branch Manager"
+msgstr "Zweig/Tag"
+
+#: ../rabbitvcs/ui/branches.py:67
+#, fuzzy
+msgid "<b>Branches</b>"
+msgstr "<b>Links</b>"
+
+#: ../rabbitvcs/ui/branches.py:75 ../rabbitvcs/ui/widget.py:913
+#, fuzzy
+msgid "Branch"
+msgstr "Zweig/Tag"
+
+#. Set up the Branch line
+#. Set up the Tag line
+#: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
+#, fuzzy
+msgid "Name:"
+msgstr "Name"
+
+#. Set up the Commit-sha line
+#: ../rabbitvcs/ui/branches.py:111
+msgid "Start Point:"
+msgstr ""
+
+#: ../rabbitvcs/ui/branches.py:132
+msgid "Keep old branch's history"
+msgstr ""
+
+#: ../rabbitvcs/ui/branches.py:141
+msgid "Set as active branch"
+msgstr ""
+
+#: ../rabbitvcs/ui/branches.py:150 ../rabbitvcs/ui/branches.py:294
+#: ../rabbitvcs/ui/tags.py:152 ../rabbitvcs/ui/tags.py:286
+msgid "Save"
+msgstr ""
+
+#. Set up the Revision line
+#. Set up the Commit-sha line
+#. Set up the Revision line
+#: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
+#: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
+#, fuzzy
+msgid "Revision:"
+msgstr "Revision"
+
+#. Set up the Log Message line
+#. Set up the Log Message Entry line
+#. Set up the Log Message line
+#: ../rabbitvcs/ui/branches.py:171 ../rabbitvcs/ui/merge.py:480
+#: ../rabbitvcs/ui/tags.py:132 ../rabbitvcs/ui/tags.py:198
+#, fuzzy
+msgid "Message:"
+msgstr "Logmeldung"
+
+#: ../rabbitvcs/ui/branches.py:216 ../rabbitvcs/ui/remotes.py:114
+#: ../rabbitvcs/ui/tags.py:236
+#, fuzzy, python-format
+msgid "Are you sure you want to delete %s?"
+msgstr "Wollen Sie wirklich fortfahren?"
+
+#: ../rabbitvcs/ui/branches.py:284
+#, fuzzy
+msgid "<b>Add Branch</b>"
+msgstr "<b>Logmeldung hinzufügen</b>"
+
+#: ../rabbitvcs/ui/branches.py:306
+#, fuzzy
+msgid "<b>Branch Detail</b>"
+msgstr "<b>Umstelldetails</b>"
+
+#: ../rabbitvcs/ui/browser.py:91
+msgid "Size"
+msgstr ""
+
+#: ../rabbitvcs/ui/browser.py:305
+#, fuzzy
+msgid "Select"
+msgstr "Datei wählen"
+
+#: ../rabbitvcs/ui/browser.py:322
+msgid "Create folder..."
+msgstr ""
+
+#: ../rabbitvcs/ui/browser.py:327
+msgid "Copy to..."
+msgstr ""
+
+#: ../rabbitvcs/ui/browser.py:332
+msgid "Copy URL to clipboard"
+msgstr ""
+
+#: ../rabbitvcs/ui/browser.py:337
+msgid "Move to..."
+msgstr ""
+
+#: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
+#: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
+msgid "New Name:"
+msgstr "Neuer Name:"
+
+#: ../rabbitvcs/ui/browser.py:498
+#, fuzzy
+msgid "Where do you want to copy the selection?"
+msgstr "Wollen Sie wirklich fortfahren?"
+
+#: ../rabbitvcs/ui/browser.py:499 ../rabbitvcs/ui/browser.py:526
+msgid "New Location:"
+msgstr ""
+
+#: ../rabbitvcs/ui/browser.py:525
+msgid "Where do you want to move the selection?"
+msgstr ""
+
+#: ../rabbitvcs/ui/changes.py:55
+msgid "More Actions..."
+msgstr ""
+
+#: ../rabbitvcs/ui/changes.py:56 ../rabbitvcs/ui/checkmods.py:246
+#, fuzzy
+msgid "View unified diff"
+msgstr "Unterschiede anzeigen"
+
+#: ../rabbitvcs/ui/changes.py:264 ../rabbitvcs/ui/changes.py:359
+#, fuzzy
+msgid "Change"
+msgstr "Geändert"
+
+#: ../rabbitvcs/ui/changes.py:264
+#, fuzzy
+msgid "Property Change"
+msgstr "Eigenschaft"
+
+#: ../rabbitvcs/ui/changes.py:307 ../rabbitvcs/ui/lock.py:110
+msgid "Yes"
+msgstr "Ja"
+
+#: ../rabbitvcs/ui/changes.py:307
+msgid "No"
+msgstr ""
+
+#: ../rabbitvcs/ui/changes.py:402
+#, fuzzy
+msgid "Open from first revision"
+msgstr "Kopie von Revision"
+
+#: ../rabbitvcs/ui/changes.py:407
+#, fuzzy
+msgid "Open from second revision"
+msgstr "Kopie von Revision"
+
+#: ../rabbitvcs/ui/changes.py:412
+msgid "View unified diff(s)"
+msgstr ""
+
+#: ../rabbitvcs/ui/changes.py:417 ../rabbitvcs/ui/checkmods.py:251
+msgid "Compare side by side"
+msgstr ""
+
+#: ../rabbitvcs/ui/checkmods.py:107 ../rabbitvcs/ui/property_editor.py:110
+#, fuzzy
+msgid "Status"
+msgstr "Textstatus"
+
+#: ../rabbitvcs/ui/checkmods.py:171 ../rabbitvcs/ui/commit.py:83
+#: ../rabbitvcs/ui/createpatch.py:82 ../rabbitvcs/ui/markresolved.py:64
 msgid "Text Status"
 msgstr "Textstatus"
 
-#: ui/commit.py:74
+#: ../rabbitvcs/ui/checkmods.py:171 ../rabbitvcs/ui/commit.py:83
+#: ../rabbitvcs/ui/createpatch.py:82 ../rabbitvcs/ui/markresolved.py:64
 msgid "Property Status"
 msgstr "Eigenschaftenstatus"
 
-#: ui/commit.py:188 ui/glade/commit.glade.h:4
-#: lib/extensions/nautilus/RabbitVCS.py:568
-msgid "Commit"
-msgstr "Übernehmen"
-
-#: ui/commit.py:189
-msgid "Running Commit Command..."
-msgstr "Übernehme ins Projektarchiv..."
-
-#: ui/commit.py:195
-msgid "Completed Commit"
-msgstr "Übernehmen abgeschlossen"
-
-#: ui/commit.py:279 ui/revert.py:45 ui/revert.py:75
-#: lib/extensions/nautilus/RabbitVCS.py:751
-msgid "Revert"
-msgstr "Rückgängig machen"
-
-#: ui/commit.py:289
-msgid "Restore"
-msgstr "Wiederherstellen"
-
-#: ui/dialog.py:47 ui/log.py:81 ui/glade/dialogs.glade.h:20
-msgid "Message"
-msgstr "Logmeldung"
-
-#: ui/dialog.py:88
-msgid "Select a Folder"
-msgstr "Ordner wählen"
-
-#: ui/dialog.py:117 ui/glade/log.glade.h:12
-msgid "to"
-msgstr "bis"
-
-#: ui/dialog.py:210
-msgid "Select a File"
-msgstr "Datei wählen"
-
-#: ui/dialog.py:229 ui/glade/dialogs.glade.h:10
-msgid "Are you sure you want to continue?"
-msgstr "Wollen Sie wirklich fortfahren?"
-
-#: ui/dialog.py:257
-msgid "the selected item(s)"
-msgstr "die ausgewählten Objekte"
-
-#: ui/switch.py:65
-msgid "The repository location is a required field."
-msgstr "Der Ort des Projektarchivs muss angegeben werden."
-
-#: ui/switch.py:81 ui/glade/switch.glade.h:7
-msgid "Switch"
-msgstr "Zweig/Tag wechseln"
-
-#: ui/switch.py:82
-msgid "Running Switch Command..."
-msgstr "Wechsele Zweig/Tag..."
-
-#: ui/switch.py:90
-msgid "Completed Switch"
-msgstr "Zweig/Tag gewechselt"
-
-#: ui/unlock.py:45 ui/unlock.py:109
-msgid "Unlock"
-msgstr "Entsperren"
-
-#: ui/unlock.py:110
-msgid "Running Unlock Command..."
-msgstr "Entsperre..."
-
-#: ui/unlock.py:113
-msgid "Completed Unlock"
-msgstr "Entsperren abgeschlossen"
-
-#: ui/merge.py:81
-msgid "Running Merge Test"
-msgstr "Zusammenführen testen"
-
-#: ui/merge.py:82
-msgid "Completed Merge Test"
-msgstr "Zusammenfü"
-
-#: ui/merge.py:84
-msgid "Running Merge Command"
-msgstr "Führe zusammen..."
-
-#: ui/merge.py:85
-msgid "Completed Merge"
-msgstr "Zusammenführen abgeschlossen"
-
-#: ui/merge.py:93
-msgid "Merge"
-msgstr "Zusammenführen"
-
-#: ui/checkout.py:52
+#: ../rabbitvcs/ui/checkout.py:127 ../rabbitvcs/ui/checkout.py:196
 #, python-format
 msgid "Checkout - %s"
 msgstr "Auschecken - %s"
 
-#: ui/checkout.py:100 ui/glade/checkout.glade.h:5
-#: lib/extensions/nautilus/RabbitVCS.py:536
+#: ../rabbitvcs/ui/checkout.py:149 ../rabbitvcs/ui/clone.py:57
+#: ../rabbitvcs/ui/export.py:69 ../rabbitvcs/ui/export.py:129
+msgid "The repository URL and destination path are both required fields."
+msgstr "Die Projektarchiv-URL und der Zielpfad müssen angegeben werden."
+
+#: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
 msgid "Checkout"
 msgstr "Auschecken"
 
-#: ui/checkout.py:101
+#: ../rabbitvcs/ui/checkout.py:159
 msgid "Running Checkout Command..."
 msgstr "Checke aus..."
 
-#: ui/checkout.py:111
+#: ../rabbitvcs/ui/checkout.py:169 ../rabbitvcs/ui/updateto.py:134
 msgid "Completed Checkout"
 msgstr "Auschecken beendet"
 
-#: ui/log.py:63
+#: ../rabbitvcs/ui/cherrypick.py:50
+msgid "Cherrypick"
+msgstr ""
+
+#: ../rabbitvcs/ui/cherrypick.py:51 ../rabbitvcs/ui/log.py:957
+msgid "Cherry Pick selected commits..."
+msgstr ""
+
+#: ../rabbitvcs/ui/cherrypick.py:53
+#, fuzzy
+msgid "Completed cherrypick"
+msgstr "Auschecken beendet"
+
+#: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/util/contextmenuitems.py:682
+#, fuzzy
+msgid "Clean"
+msgstr "Aufräumen"
+
+#: ../rabbitvcs/ui/clean.py:65
+#, fuzzy
+msgid "Running Clean Command..."
+msgstr "Benenne um..."
+
+#: ../rabbitvcs/ui/clean.py:75
+#, fuzzy
+msgid "Completed Clean"
+msgstr "Aufräumen abgeschlossen"
+
+#: ../rabbitvcs/ui/cleanup.py:54 ../rabbitvcs/util/contextmenuitems.py:495
+msgid "Cleanup"
+msgstr "Aufräumen"
+
+#: ../rabbitvcs/ui/cleanup.py:55
+msgid "Cleaning Up..."
+msgstr "Räume auf..."
+
+#: ../rabbitvcs/ui/cleanup.py:57
+msgid "Completed Cleanup"
+msgstr "Aufräumen abgeschlossen"
+
+#: ../rabbitvcs/ui/clone.py:49 ../rabbitvcs/ui/clone.py:64
+#: ../rabbitvcs/util/contextmenuitems.py:652
+msgid "Clone"
+msgstr ""
+
+#: ../rabbitvcs/ui/clone.py:65
+#, fuzzy
+msgid "Running Clone Command..."
+msgstr "Stelle URL um..."
+
+#: ../rabbitvcs/ui/clone.py:72
+#, fuzzy
+msgid "Completed Clone"
+msgstr "Aufräumen abgeschlossen"
+
+#: ../rabbitvcs/ui/commit.py:258
 #, python-format
-msgid "Log - %s"
-msgstr "Log - %s"
+msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
+msgstr ""
 
-#: ui/log.py:90
-msgid "Copy From Path"
-msgstr "Kopiert von Pfad"
+#: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
+#: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/util/contextmenuitems.py:339
+msgid "Commit"
+msgstr "Übernehmen"
 
-#: ui/log.py:90
-msgid "Copy From Revision"
-msgstr "Kopiert von Revision"
+#: ../rabbitvcs/ui/commit.py:303 ../rabbitvcs/ui/commit.py:363
+#: ../rabbitvcs/ui/commit.py:417
+msgid "Running Commit Command..."
+msgstr "Übernehme ins Projektarchiv..."
 
-#: ui/log.py:112
-msgid "Cancelled"
-msgstr "Abgebrochen"
+#: ../rabbitvcs/ui/commit.py:315 ../rabbitvcs/ui/commit.py:372
+#: ../rabbitvcs/ui/commit.py:426
+msgid "Completed Commit"
+msgstr "Übernehmen abgeschlossen"
 
-#: ui/log.py:236 ui/log.py:237 ui/glade/log.glade.h:8
-msgid "N/A"
-msgstr "n/v"
+#: ../rabbitvcs/ui/commit.py:385
+#, fuzzy
+msgid "Close Branch"
+msgstr "Zweig/Tag-Erstellung abgeschlossen"
 
-#: ui/log.py:284
-msgid "(no author)"
-msgstr "(kein Autor)"
-
-#: ui/log.py:313
-msgid "Retrieving Log Information..."
-msgstr "Ermittle Logmeldungen..."
-
-#: ui/properties.py:53
-#, python-format
-msgid "Properties - %s"
-msgstr "Eigenschaften - %s"
-
-#: ui/properties.py:61
-msgid "Name"
-msgstr "Name"
-
-#: ui/properties.py:61
-msgid "Value"
-msgstr "Wert"
-
-#: ui/revert.py:76
-msgid "Running Revert Command..."
-msgstr "Mache rückgängig..."
-
-#: ui/revert.py:78
-msgid "Completed Revert"
-msgstr "Rückgängigmachen abgeschlossen"
-
-#: ui/update.py:53 ui/glade/update.glade.h:8
-#: lib/extensions/nautilus/RabbitVCS.py:552
-msgid "Update"
-msgstr "Aktualisieren"
-
-#: ui/create.py:49
+#: ../rabbitvcs/ui/create.py:49
 msgid "Repository successfully created"
 msgstr "Projektarchiv erfolgreich erstellt"
 
-#: ui/create.py:51
+#: ../rabbitvcs/ui/create.py:51
 msgid ""
 "There was an error creating the repository.  Make sure the given folder is "
 "empty."
@@ -533,826 +472,1665 @@ msgstr ""
 "Beim Erstellen des Projektarchivs ist ein Fehler aufgetreten. Stellen Sie "
 "sicher, dass der angegebene Ordner leer ist."
 
-#: ui/glade/switch.glade.h:1 ui/glade/checkout.glade.h:3
-#: ui/glade/update.glade.h:1
-msgid "<b>Revision</b>"
-msgstr "<b>Revision</b>"
+#: ../rabbitvcs/ui/create.py:63 ../rabbitvcs/util/contextmenuitems.py:647
+#, fuzzy
+msgid "Initialize Repository"
+msgstr "Projektarchiv hier erstellen"
 
-#: ui/glade/switch.glade.h:2
-msgid "<b>Switch Details</b>"
+#: ../rabbitvcs/ui/create.py:64
+msgid "Setting up repository..."
+msgstr ""
+
+#: ../rabbitvcs/ui/create.py:66
+#, fuzzy
+msgid "Completed repository setup"
+msgstr "Import abgescholssen"
+
+#: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
+#: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+msgid "Create Patch"
+msgstr ""
+
+#: ../rabbitvcs/ui/createpatch.py:75
+msgid "The given path is not a working copy"
+msgstr "Der angegebene Pfad ist keine Arbeitskopie"
+
+#: ../rabbitvcs/ui/createpatch.py:150 ../rabbitvcs/ui/createpatch.py:206
+msgid "Creating Patch File..."
+msgstr ""
+
+#: ../rabbitvcs/ui/createpatch.py:174 ../rabbitvcs/ui/createpatch.py:229
+msgid "Patch File Created"
+msgstr ""
+
+#: ../rabbitvcs/ui/dialog.py:41
+#, python-format
+msgid ""
+"An error has occurred in the RabbitVCS Nautilus extension. Please contact "
+"the <a href=\"%s\">RabbitVCS team</a> with the error details listed below:"
+msgstr ""
+
+#: ../rabbitvcs/ui/dialog.py:56 ../rabbitvcs/ui/log.py:347
+#: ../rabbitvcs/ui/log.py:597 ../rabbitvcs/ui/push.py:77
+msgid "Message"
+msgstr "Logmeldung"
+
+#: ../rabbitvcs/ui/dialog.py:103
+msgid "Select a Folder"
+msgstr "Ordner wählen"
+
+#: ../rabbitvcs/ui/dialog.py:129
+msgid "to"
+msgstr "bis"
+
+#: ../rabbitvcs/ui/dialog.py:251
+msgid "Select a File"
+msgstr "Datei wählen"
+
+#: ../rabbitvcs/ui/dialog.py:270
+msgid "Save As..."
+msgstr ""
+
+#: ../rabbitvcs/ui/dialog.py:289
+msgid "Are you sure you want to continue?"
+msgstr "Wollen Sie wirklich fortfahren?"
+
+#: ../rabbitvcs/ui/dialog.py:313
+msgid "the selected item(s)"
+msgstr "die ausgewählten Objekte"
+
+#: ../rabbitvcs/ui/dialog.py:371
+#, fuzzy
+msgid "Added a folder to the repository"
+msgstr "Ein Objekt zum Hinzufügen zum Projektarchiv vormerken"
+
+#: ../rabbitvcs/ui/diff.py:279
+msgid "View diff as side-by-side comparison"
+msgstr ""
+
+#: ../rabbitvcs/ui/export.py:44 ../rabbitvcs/ui/export.py:115
+#, python-format
+msgid "Export - %s"
+msgstr "Exportieren - %s"
+
+#: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+msgid "Export"
+msgstr "Exportieren"
+
+#: ../rabbitvcs/ui/export.py:87 ../rabbitvcs/ui/export.py:146
+msgid "Running Export Command..."
+msgstr "Exportiere"
+
+#: ../rabbitvcs/ui/export.py:98 ../rabbitvcs/ui/export.py:154
+msgid "Completed Export"
+msgstr "Export abgeschlossen"
+
+#: ../rabbitvcs/ui/ignore.py:90
+#, fuzzy
+msgid "Ignore file:"
+msgstr "Ein Objekt ignorieren"
+
+#: ../rabbitvcs/ui/import.py:39
+#, python-format
+msgid "Import - %s"
+msgstr "Import - %s"
+
+#: ../rabbitvcs/ui/import.py:56
+msgid "The repository URL field is required."
+msgstr "Die Projektarchiv-URL muss angegeben werden."
+
+#: ../rabbitvcs/ui/import.py:64 ../rabbitvcs/util/contextmenuitems.py:521
+msgid "Import"
+msgstr "Import"
+
+#: ../rabbitvcs/ui/import.py:65
+msgid "Running Import Command..."
+msgstr "Importiere..."
+
+#: ../rabbitvcs/ui/import.py:73
+msgid "Completed Import"
+msgstr "Import abgescholssen"
+
+#: ../rabbitvcs/ui/lock.py:69 ../rabbitvcs/vcs/svn/__init__.py:205
+msgid "Locked"
+msgstr "Gesperrt"
+
+#: ../rabbitvcs/ui/lock.py:139
+msgid "Get Lock"
+msgstr "Sperren"
+
+#: ../rabbitvcs/ui/lock.py:140
+msgid "Running Lock Command..."
+msgstr "Sperre..."
+
+#: ../rabbitvcs/ui/lock.py:149
+msgid "Completed Lock"
+msgstr "Sperren abgeschlossen"
+
+#: ../rabbitvcs/ui/log.py:119
+#, python-format
+msgid "Log - %s"
+msgstr "Log - %s"
+
+#: ../rabbitvcs/ui/log.py:284 ../rabbitvcs/ui/log.py:285
+msgid "N/A"
+msgstr "n/v"
+
+#: ../rabbitvcs/ui/log.py:348
+msgid "Color"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:363
+msgid "Copy From Path"
+msgstr "Kopiert von Pfad"
+
+#: ../rabbitvcs/ui/log.py:363
+msgid "Copy From Revision"
+msgstr "Kopiert von Revision"
+
+#: ../rabbitvcs/ui/log.py:596
+msgid "Graph"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:878
+#, fuzzy
+msgid "View diff against working copy"
+msgstr "Der angegebene Pfad ist keine Arbeitskopie"
+
+#: ../rabbitvcs/ui/log.py:883 ../rabbitvcs/util/contextmenuitems.py:395
+msgid "View diff against previous revision"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:888
+msgid "View diff between revisions"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:893
+#, fuzzy
+msgid "Compare with working copy"
+msgstr "Eine Arbeitskopie aktualisieren"
+
+#: ../rabbitvcs/ui/log.py:898 ../rabbitvcs/util/contextmenuitems.py:413
+#, fuzzy
+msgid "Compare with previous revision"
+msgstr "Kopie von Revision"
+
+#: ../rabbitvcs/ui/log.py:903
+#, fuzzy
+msgid "Compare revisions"
+msgstr "Kopie von Revision"
+
+#: ../rabbitvcs/ui/log.py:909
+msgid "Show changes against previous revision"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:915
+#, fuzzy
+msgid "Show changes between revisions"
+msgstr "Zeige Revisionen:"
+
+#: ../rabbitvcs/ui/log.py:920
+#, fuzzy
+msgid "Update to this revision"
+msgstr "Aktualisieren auf..."
+
+#: ../rabbitvcs/ui/log.py:921
+#, fuzzy
+msgid "Update the selected path to this revision"
+msgstr "Eine Datei auf eine bestimmte Revision aktualisieren"
+
+#: ../rabbitvcs/ui/log.py:926
+#, fuzzy
+msgid "Revert changes from this revision"
+msgstr "Einen Revisionsbereich zusammenführen"
+
+#: ../rabbitvcs/ui/log.py:927
+msgid "Update the selected path by reverse merging the changes"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:932
+msgid "Copy to clipboard"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:933
+msgid "Copy to clipboard the full data of these revisions"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:938
+#, fuzzy
+msgid "Edit author..."
+msgstr "Bearbeiten..."
+
+#: ../rabbitvcs/ui/log.py:943
+msgid "Edit log message..."
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:948
+msgid "Edit revision properties..."
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:958
+msgid "Apply the changes introduced by some existing commits"
+msgstr ""
+
+#: ../rabbitvcs/ui/log.py:1224
+#, fuzzy
+msgid "Edit author"
+msgstr "(kein Autor)"
+
+#: ../rabbitvcs/ui/log.py:1234
+#, fuzzy
+msgid "Edit log message"
+msgstr "Leere Logmeldung"
+
+#: ../rabbitvcs/ui/markresolved.py:51 ../rabbitvcs/ui/markresolved.py:102
+#: ../rabbitvcs/util/contextmenuitems.py:466
+#, fuzzy
+msgid "Mark as Resolved"
+msgstr "Aufgelöst"
+
+#: ../rabbitvcs/ui/markresolved.py:103
+#, fuzzy
+msgid "Running Resolved Command..."
+msgstr "Löse Konflikte auf..."
+
+#: ../rabbitvcs/ui/markresolved.py:106
+#, fuzzy
+msgid "Completed Mark as Resolved"
+msgstr "Auflösen abgeschlossen"
+
+#: ../rabbitvcs/ui/merge.py:91
+msgid "Running Merge Test"
+msgstr "Zusammenführen testen"
+
+#: ../rabbitvcs/ui/merge.py:92
+msgid "Completed Merge Test"
+msgstr "Zusammenfü"
+
+#: ../rabbitvcs/ui/merge.py:94
+msgid "Running Merge Command"
+msgstr "Führe zusammen..."
+
+#: ../rabbitvcs/ui/merge.py:95 ../rabbitvcs/ui/merge.py:523
+msgid "Completed Merge"
+msgstr "Zusammenführen abgeschlossen"
+
+#: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+msgid "Merge"
+msgstr "Zusammenführen"
+
+#: ../rabbitvcs/ui/merge.py:429
+msgid "No active branch"
+msgstr ""
+
+#. Set up the Author line
+#: ../rabbitvcs/ui/merge.py:442
+#, fuzzy
+msgid "Author:"
+msgstr "Autoren:"
+
+#. Set up the Date line
+#: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
+#, fuzzy
+msgid "Date:"
+msgstr "Datum"
+
+#: ../rabbitvcs/ui/merge.py:518
+#, fuzzy
+msgid "Running Merge Command..."
+msgstr "Führe zusammen..."
+
+#: ../rabbitvcs/ui/properties.py:58
+#, python-format
+msgid "Properties - %s"
+msgstr "Eigenschaften - %s"
+
+#: ../rabbitvcs/ui/properties.py:64 ../rabbitvcs/ui/property_editor.py:110
+#: ../rabbitvcs/ui/remotes.py:68
+msgid "Name"
+msgstr "Name"
+
+#: ../rabbitvcs/ui/properties.py:64 ../rabbitvcs/ui/property_editor.py:110
+msgid "Value"
+msgstr "Wert"
+
+#: ../rabbitvcs/ui/properties.py:146 ../rabbitvcs/ui/property_editor.py:148
+#: ../rabbitvcs/ui/revprops.py:63
+msgid "Unable to retrieve properties list"
+msgstr ""
+
+#: ../rabbitvcs/ui/properties.py:163
+msgid "There was a problem saving your properties."
+msgstr ""
+
+#: ../rabbitvcs/ui/property_editor.py:61
+msgid ""
+"<b>Note:</b> changes to properties are applied instantly. You may review and "
+"undo changes using the context menu for each item.\n"
+msgstr ""
+
+#: ../rabbitvcs/ui/property_editor.py:66
+msgid ""
+"Do you want to delete the selected properties from all files and "
+"subdirectories\n"
+"beneath this directory?"
+msgstr ""
+
+#: ../rabbitvcs/ui/property_editor.py:101
+msgid "File is not under version control."
+msgstr ""
+
+#: ../rabbitvcs/ui/property_editor.py:110
+msgid "Reserved"
+msgstr ""
+
+#: ../rabbitvcs/ui/property_editor.py:165
+msgid "Unable to set new value for property."
+msgstr ""
+
+#: ../rabbitvcs/ui/property_page.py:130
+#, fuzzy
+msgid "Repository URL"
+msgstr "<b>Projektarchiv</b>"
+
+#: ../rabbitvcs/ui/push.py:98 ../rabbitvcs/util/contextmenuitems.py:662
+msgid "Push"
+msgstr ""
+
+#: ../rabbitvcs/ui/push.py:99
+#, fuzzy
+msgid "Running Push Command..."
+msgstr "Füge hinzu..."
+
+#: ../rabbitvcs/ui/push.py:101
+#, fuzzy
+msgid "Completed Push"
+msgstr "Abgeschlossen"
+
+#: ../rabbitvcs/ui/push.py:143
+msgid "No commits found"
+msgstr ""
+
+#: ../rabbitvcs/ui/relocate.py:61
+msgid "The from and to url fields are both required."
+msgstr "Die Ursprungs- und Ziel-URL müssen angegeben werden."
+
+#: ../rabbitvcs/ui/relocate.py:68
+msgid "Relocate"
+msgstr "Zweig/Tag wechseln"
+
+#: ../rabbitvcs/ui/relocate.py:69
+msgid "Running Relocate Command..."
+msgstr "Stelle URL um..."
+
+#: ../rabbitvcs/ui/relocate.py:76
+msgid "Completed Relocate"
+msgstr "Umstellen der URL abgeschlossen"
+
+#: ../rabbitvcs/ui/remotes.py:62
+#, fuzzy
+msgid "Remote Repository Manager"
+msgstr "Projektarchiv hier erstellen"
+
+#: ../rabbitvcs/ui/remotes.py:63
+#, fuzzy
+msgid "<b>Remote Repositories</b>"
+msgstr "<b>Projektarchiv</b>"
+
+#: ../rabbitvcs/ui/remotes.py:68
+#, fuzzy
+msgid "Host"
+msgstr "Server:"
+
+#: ../rabbitvcs/ui/rename.py:49
+msgid "The requested file or folder does not exist."
+msgstr ""
+
+#: ../rabbitvcs/ui/rename.py:58
+msgid "The new name field is required"
+msgstr "Der neue Name muss angegeben werden"
+
+#: ../rabbitvcs/ui/rename.py:77 ../rabbitvcs/ui/rename.py:102
+msgid "Running Rename Command..."
+msgstr "Benenne um..."
+
+#: ../rabbitvcs/ui/rename.py:83 ../rabbitvcs/ui/rename.py:108
+msgid "Completed Rename"
+msgstr "Umbenennen abgeschlossen"
+
+#. esh
+#: ../rabbitvcs/ui/reset.py:93 ../rabbitvcs/util/contextmenuitems.py:686
+msgid "Reset"
+msgstr ""
+
+#: ../rabbitvcs/ui/reset.py:94
+#, fuzzy
+msgid "Running Reset Command..."
+msgstr "Mache rückgängig..."
+
+#: ../rabbitvcs/ui/reset.py:101
+#, fuzzy
+msgid "Completed Reset"
+msgstr "Rückgängigmachen abgeschlossen"
+
+#: ../rabbitvcs/ui/revert.py:147 ../rabbitvcs/ui/revert.py:169
+#: ../rabbitvcs/util/contextmenuitems.py:460
+msgid "Revert"
+msgstr "Rückgängig machen"
+
+#: ../rabbitvcs/ui/revert.py:148 ../rabbitvcs/ui/revert.py:170
+msgid "Running Revert Command..."
+msgstr "Mache rückgängig..."
+
+#: ../rabbitvcs/ui/revert.py:150 ../rabbitvcs/ui/revert.py:172
+msgid "Completed Revert"
+msgstr "Rückgängigmachen abgeschlossen"
+
+#: ../rabbitvcs/ui/settings.py:44 ../rabbitvcs/vcs/svn/__init__.py:219
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: ../rabbitvcs/ui/settings.py:46
+#, fuzzy
+msgid "There was an error communicating with the status checker service."
+msgstr ""
+"Beim Erstellen des Projektarchivs ist ein Fehler aufgetreten. Stellen Sie "
+"sicher, dass der angegebene Ordner leer ist."
+
+#: ../rabbitvcs/ui/settings.py:128
+msgid "Config file:"
+msgstr ""
+
+#: ../rabbitvcs/ui/settings.py:301
+msgid "Select a program"
+msgstr "Ein Programm auswählen"
+
+#: ../rabbitvcs/ui/settings.py:310
+msgid "Are you sure you want to clear your repository paths?"
+msgstr "Wollen Sie wirklich die Projektarchivpfade löschen?"
+
+#: ../rabbitvcs/ui/settings.py:317
+msgid "Repository paths cleared"
+msgstr "Projektarchivpfade gelöscht"
+
+#: ../rabbitvcs/ui/settings.py:321
+msgid "Are you sure you want to clear your previous messages?"
+msgstr "Wollen Sie wirklich die früheren Nachrichten löschen?"
+
+#: ../rabbitvcs/ui/settings.py:328
+msgid "Previous messages cleared"
+msgstr "Frühere Logmeldungen gelöscht"
+
+#: ../rabbitvcs/ui/settings.py:332
+msgid "Are you sure you want to clear your authentication information?"
+msgstr "Wollen Sie wirklich Ihre Authentifizierungsinformationen löschen?"
+
+#: ../rabbitvcs/ui/settings.py:348
+msgid "Authentication information cleared"
+msgstr "Authentifizierungsinformationen gelöscht"
+
+#: ../rabbitvcs/ui/stage.py:52 ../rabbitvcs/ui/stage.py:100
+#: ../rabbitvcs/util/contextmenuitems.py:691
+msgid "Stage"
+msgstr ""
+
+#: ../rabbitvcs/ui/stage.py:101
+#, fuzzy
+msgid "Running Stage Command..."
+msgstr "Benenne um..."
+
+#: ../rabbitvcs/ui/stage.py:104
+#, fuzzy
+msgid "Completed Stage"
+msgstr "Zusammenführen abgeschlossen"
+
+#: ../rabbitvcs/ui/switch.py:59
+msgid "The repository location is a required field."
+msgstr "Der Ort des Projektarchivs muss angegeben werden."
+
+#: ../rabbitvcs/ui/switch.py:67
+msgid "Switch"
+msgstr "Zweig/Tag wechseln"
+
+#: ../rabbitvcs/ui/switch.py:68
+msgid "Running Switch Command..."
+msgstr "Wechsele Zweig/Tag..."
+
+#: ../rabbitvcs/ui/switch.py:76
+msgid "Completed Switch"
+msgstr "Zweig/Tag gewechselt"
+
+#. esh: set from rabbitvcs/ui/xml/manager.xml
+#. ~ self.get_widget("Manager").set_size_request(695, -1)
+#: ../rabbitvcs/ui/tags.py:70
+msgid "Tag Manager"
+msgstr ""
+
+#: ../rabbitvcs/ui/tags.py:71
+#, fuzzy
+msgid "<b>Tags</b>"
+msgstr "<b>Logmeldung</b>"
+
+#: ../rabbitvcs/ui/tags.py:79
+msgid "Tag"
+msgstr ""
+
+#. Set up the tagger line
+#: ../rabbitvcs/ui/tags.py:160
+msgid "Tagger:"
+msgstr ""
+
+#: ../rabbitvcs/ui/tags.py:278
+#, fuzzy
+msgid "<b>Add Tag</b>"
+msgstr "<b>Logmeldung hinzufügen</b>"
+
+#: ../rabbitvcs/ui/tags.py:294
+#, fuzzy
+msgid "<b>Tag Detail</b>"
 msgstr "<b>Umstelldetails</b>"
 
-#: ui/glade/switch.glade.h:3 ui/glade/branch.glade.h:8
-#: ui/glade/relocate.glade.h:2
-msgid "From:"
-msgstr "Von:"
+#: ../rabbitvcs/ui/unlock.py:52 ../rabbitvcs/ui/unlock.py:118
+msgid "Unlock"
+msgstr "Entsperren"
 
-#: ui/glade/switch.glade.h:4 ui/glade/merge.glade.h:10
-#: ui/glade/checkout.glade.h:7 ui/glade/update.glade.h:3
+#: ../rabbitvcs/ui/unlock.py:119
+msgid "Running Unlock Command..."
+msgstr "Entsperre..."
+
+#: ../rabbitvcs/ui/unlock.py:122
+msgid "Completed Unlock"
+msgstr "Entsperren abgeschlossen"
+
+#: ../rabbitvcs/ui/unstage.py:52 ../rabbitvcs/ui/unstage.py:99
+#: ../rabbitvcs/util/contextmenuitems.py:696
+msgid "Unstage"
+msgstr ""
+
+#: ../rabbitvcs/ui/unstage.py:100
+#, fuzzy
+msgid "Running Unstage Command..."
+msgstr "Benenne um..."
+
+#: ../rabbitvcs/ui/unstage.py:103
+#, fuzzy
+msgid "Completed Unstage"
+msgstr "Aktualisierung abgeschlossen."
+
+#. esh
+#: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
+#: ../rabbitvcs/util/contextmenuitems.py:333
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: ../rabbitvcs/ui/update.py:57 ../rabbitvcs/ui/update.py:99
+#: ../rabbitvcs/ui/updateto.py:87
+msgid "Updating..."
+msgstr "Aktualisiere..."
+
+#: ../rabbitvcs/ui/update.py:59 ../rabbitvcs/ui/update.py:113
+#: ../rabbitvcs/ui/updateto.py:95
+msgid "Completed Update"
+msgstr "Aktualisierung abgeschlossen."
+
+#: ../rabbitvcs/ui/updateto.py:75
+#, fuzzy
+msgid "Rollback To Revision"
+msgstr "Aktualisiere auf Revision"
+
+#: ../rabbitvcs/ui/updateto.py:76
+msgid "Rolling Back..."
+msgstr ""
+
+#: ../rabbitvcs/ui/updateto.py:84
+#, fuzzy
+msgid "Completed Rollback"
+msgstr "Sperren abgeschlossen"
+
+#: ../rabbitvcs/ui/updateto.py:86
+msgid "Update To Revision"
+msgstr "Aktualisiere auf Revision"
+
+#: ../rabbitvcs/ui/updateto.py:110
+msgid "What revision/branch do you want to checkout?"
+msgstr ""
+
+#: ../rabbitvcs/ui/updateto.py:128
+#, fuzzy, python-format
+msgid "Checking out %s..."
+msgstr "Auschecken - %s"
+
+#: ../rabbitvcs/ui/widget.py:911 ../rabbitvcs/ui/widget.py:917
 msgid "HEAD"
 msgstr "HEAD"
 
-#: ui/glade/switch.glade.h:8 ui/glade/branch.glade.h:11
-#: ui/glade/relocate.glade.h:4
-msgid "To:"
-msgstr "Auf:"
+#: ../rabbitvcs/ui/widget.py:918
+msgid "Number"
+msgstr ""
 
-#: ui/glade/notification.glade.h:1
-msgid "Notification Messages"
-msgstr "Nachrichten"
-
-#: ui/glade/commit.glade.h:1 ui/glade/branch.glade.h:1
-msgid "<b>Add Message</b>"
-msgstr "<b>Logmeldung hinzufügen</b>"
-
-#: ui/glade/commit.glade.h:2
-msgid "<b>Changed Files</b> (double-click to see diff)"
-msgstr "<b>Geänderte Dateien</b> (Doppelklick um Unterschiede anzuzeigen)"
-
-#: ui/glade/commit.glade.h:3
-msgid "<b>Commit to:</b>"
-msgstr "<b>Übernehmen nach:</b>"
-
-#: ui/glade/commit.glade.h:5 ui/glade/lock.glade.h:4 ui/glade/branch.glade.h:9
-#: ui/glade/dialogs.glade.h:22 ui/glade/import.glade.h:5
-msgid "Previous Messages"
-msgstr "Frühere Logmeldungen"
-
-#: ui/glade/commit.glade.h:6 ui/glade/lock.glade.h:5 ui/glade/add.glade.h:2
-msgid "Select / Deselect all"
-msgstr "Alle aus-/abwählen"
-
-#: ui/glade/commit.glade.h:7
-msgid "Show unversioned files"
-msgstr "Nicht versionierte Dateien anzeigen"
-
-#: ui/glade/lock.glade.h:1
-msgid "<b>Files to lock</b>"
-msgstr "<b>Zu sperrende Dateien</b>"
-
-#: ui/glade/lock.glade.h:2
-msgid "<b>Please describe why you are locking these files</b>"
-msgstr "<b>Bitte beschreiben Sie, warum Sie diese Dateien sperren</b>"
-
-#: ui/glade/lock.glade.h:3
-msgid "Lock Files"
-msgstr "Dateien sperren"
-
-#: ui/glade/lock.glade.h:6
-msgid "Steal the locks"
-msgstr "Existierende Sperren brechen"
-
-#: ui/glade/properties.glade.h:1
-msgid "<b>Properties for:</b>"
-msgstr "<b>Eigenschaften für:</b>"
-
-#: ui/glade/properties.glade.h:3
-msgid "Edit..."
-msgstr "Bearbeiten..."
-
-#: ui/glade/properties.glade.h:4
-msgid "New..."
-msgstr "Neu..."
-
-#: ui/glade/properties.glade.h:5 lib/extensions/nautilus/RabbitVCS.py:995
-msgid "Properties"
-msgstr "Eigenschaften"
-
-#: ui/glade/properties.glade.h:6
-msgid "URL/Path:"
-msgstr "URL/Pfad:"
-
-#: ui/glade/annotate.glade.h:1
-msgid "<b>From Revision</b>"
-msgstr "<b>Von Revision</b>"
-
-#: ui/glade/annotate.glade.h:2
-msgid "<b>To Revision</b>"
-msgstr "<b>Bis Revision</b>"
-
-#: ui/glade/annotate.glade.h:3
-msgid "Annotate"
-msgstr "Annotieren"
-
-#: ui/glade/about.glade.h:1
-msgid "<b>Links</b>"
-msgstr "<b>Links</b>"
-
-#: ui/glade/about.glade.h:2
-msgid "<b>Version Information</b>"
-msgstr "<b>Versionsinformationen</b>"
-
-#: ui/glade/about.glade.h:3
-msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#: ui/glade/about.glade.h:4 lib/extensions/nautilus/RabbitVCS.py:1059
-msgid "About"
-msgstr "Über"
-
-#: ui/glade/about.glade.h:5
-msgid "Authors:"
-msgstr "Autoren:"
-
-#: ui/glade/about.glade.h:6
-msgid "Thanks:"
-msgstr "Danksagungen:"
-
-#: ui/glade/rename.glade.h:1
-msgid "New Name:"
-msgstr "Neuer Name:"
-
-#: ui/glade/branch.glade.h:2
-msgid "<b>Create copy from</b>"
-msgstr "<b>Kopie erstellen von</b>"
-
-#: ui/glade/branch.glade.h:3 ui/glade/checkout.glade.h:2
-#: ui/glade/import.glade.h:2
-msgid "<b>Repository</b>"
-msgstr "<b>Projektarchiv</b>"
-
-#: ui/glade/branch.glade.h:5
-msgid "Copy from HEAD"
-msgstr "Kopie von HEAD"
-
-#: ui/glade/branch.glade.h:6
-msgid "Copy from revision"
-msgstr "Kopie von Revision"
-
-#: ui/glade/branch.glade.h:7
-msgid "Copy from working copy"
-msgstr "Kopie von Arbeitskopie"
-
-#: ui/glade/log.glade.h:1
-msgid "100"
-msgstr "100"
-
-#: ui/glade/log.glade.h:2
-msgid "<b>Affected File(s)</b>"
-msgstr "<b>Betroffene Datei(en)</b>"
-
-#: ui/glade/log.glade.h:3 ui/glade/dialogs.glade.h:3
-msgid "<b>Message</b>"
-msgstr "<b>Logmeldung</b>"
-
-#: ui/glade/log.glade.h:4
-msgid "<b>Revisions Table</b>"
-msgstr "<b>Revisionen</b>"
-
-#: ui/glade/log.glade.h:5
-msgid "Limit:"
-msgstr "Limit:"
-
-#: ui/glade/log.glade.h:7
-msgid "Log"
-msgstr "Log"
-
-#: ui/glade/log.glade.h:9
-msgid "Refresh"
-msgstr "Aktualisieren"
-
-#: ui/glade/log.glade.h:10
-msgid "Showing Revisions:"
-msgstr "Zeige Revisionen:"
-
-#: ui/glade/log.glade.h:11
-msgid "Stop on copy"
-msgstr "Bei Kopie anhalten"
-
-#: ui/glade/merge.glade.h:1
-msgid "<b>From URL</b>"
-msgstr "<b>Quell-URL</b>"
-
-#: ui/glade/merge.glade.h:2
-msgid "<b>From: (URL and revision to merge)</b>"
-msgstr "<b>Von: (URL und zusammenzuführende Revision)</b>"
-
-#: ui/glade/merge.glade.h:3 ui/glade/checkout.glade.h:1
-msgid "<b>Options</b>"
-msgstr "<b>Optionen</b>"
-
-#: ui/glade/merge.glade.h:4
-msgid "<b>Revision Range</b>"
-msgstr "<b>Revisionsbereich</b>"
-
-#: ui/glade/merge.glade.h:5
-msgid "<b>To: (URL and revision to merge)</b>"
-msgstr "<b>Nach: (URL und zusammenzuführende Revision)</b>"
-
-#: ui/glade/merge.glade.h:6
-msgid "<b>URL to merge from</b>"
-msgstr "<b>URL von der zusammengeführt werden soll</b>"
-
-#: ui/glade/merge.glade.h:7
-msgid "<b>Working Copy</b>"
+#: ../rabbitvcs/ui/widget.py:921
+#, fuzzy
+msgid "Working Copy"
 msgstr "<b>Arbeitskopie</b>"
 
-#: ui/glade/merge.glade.h:8
-msgid ""
-"Choose this method if you have made some changes to a branch and wish to "
-"merge your changes with another branch."
-msgstr ""
-"Wählen Sie diese Methode, wenn Sie Änderungen an einem Zweig vorgenommen "
-"haben und Ihre Änderungen mit einem anderen Zweig zusammenführen möchten."
+#. Set up the Repository Line
+#: ../rabbitvcs/ui/widget.py:1132
+#, fuzzy
+msgid "Repository:"
+msgstr "<b>Projektarchiv</b>"
 
-#: ui/glade/merge.glade.h:9
-msgid ""
-"Choose this method if you wish to merge two different branches into your "
-"working copy."
-msgstr ""
-"Wählen Sie diese Methode, wenn Sie zwei verschiedene Zweige in Ihre "
-"Arbeitskopie zusammenführen möchten."
+#. Set up the Branch line
+#: ../rabbitvcs/ui/widget.py:1154
+#, fuzzy
+msgid "Branch:"
+msgstr "Zweig/Tag"
 
-#: ui/glade/merge.glade.h:11
-msgid "Ignore ancestry"
-msgstr "Abstammung ignorieren"
-
-#: ui/glade/merge.glade.h:12
-msgid "Merge Assistant"
-msgstr "Zusammenführassistent"
-
-#: ui/glade/merge.glade.h:13
-msgid "Merge a range of revisions"
-msgstr "Einen Revisionsbereich zusammenführen"
-
-#: ui/glade/merge.glade.h:14
-msgid "Merge two different trees"
-msgstr "Zwei verschiedene Bäume zusammenführen"
-
-#: ui/glade/merge.glade.h:15
-msgid "Only record the merge"
-msgstr "Nur als zusammengeführt markieren"
-
-#: ui/glade/merge.glade.h:16 ui/glade/checkout.glade.h:9
-#: ui/glade/update.glade.h:5
-msgid "Recursive"
-msgstr "Rekursiv"
-
-#: ui/glade/merge.glade.h:19
-msgid "Test Merge"
-msgstr "Zusammenführen testen"
-
-#: ui/glade/merge.glade.h:20
-msgid ""
-"Use the log dialog to select the revisions that you wish to merge.  Or write "
-"out the revisions manually, each separated by a comma.  You can specify a "
-"revision range by a dash. \n"
-"\n"
-"Example: 4-7,9,11,15-HEAD\n"
-"\n"
-"To merge all revisions, leave the box empty."
-msgstr ""
-"Benutzen Sie den Log-Dialog, um die Revisionen zum Zusammenführen "
-"auszuwählen. Oder geben Sie die Revisionen per Hand an, durch Komma "
-"getrennt. Sie können einen Revisionsbereich mit dem Bindestrich angeben.\n"
-"\n"
-"Beispiel: 4-7, 9,11,15-HEAD\n"
-"\n"
-"Lassen Sie das Feld leer, um alle Revisionen zusammenzuführen."
-
-#: ui/glade/settings.glade.h:1
-msgid "<b>Authentication</b>"
-msgstr "<b>Authentifizierung</b>"
-
-#: ui/glade/settings.glade.h:2
-msgid "<b>Log Messages</b>"
-msgstr "<b>Logmeldungen</b>"
-
-#: ui/glade/settings.glade.h:3
-msgid "<b>Logging Options</b>"
-msgstr "<b>Logging-Optionen</b>"
-
-#: ui/glade/settings.glade.h:4
-msgid "<b>RabbitVCS</b>"
-msgstr "<b>RabbitVCS</b>"
-
-#: ui/glade/settings.glade.h:5
-msgid "<b>Program used to browse repositories</b>"
-msgstr "<b>Programm zum Durchsuchen von Projektarchiven</b>"
-
-#: ui/glade/settings.glade.h:6
-msgid "<b>Program used to compare files</b>"
-msgstr "<b>Programm zum Dateivergleich</b>"
-
-#: ui/glade/settings.glade.h:7
-msgid "<b>URL History</b>"
-msgstr "<b>URL-Historie</b>"
-
-#: ui/glade/settings.glade.h:8 ui/glade/checkout.glade.h:4
-msgid "Browse..."
-msgstr "Durchsuchen..."
-
-#: ui/glade/settings.glade.h:9
-msgid "Clear your authentication information"
-msgstr "Ihre Anmeldeinformationen löschen"
-
-#: ui/glade/settings.glade.h:10
-msgid "Enable emblems"
-msgstr "Embleme einschalten"
-
-#: ui/glade/settings.glade.h:11
-msgid "Enable file attributes"
-msgstr "Dateiattribute einschalten"
-
-#: ui/glade/settings.glade.h:12
-msgid "Enable recursive status checks"
-msgstr "Rekursive Statusüberprüfungen aktivieren"
-
-#: ui/glade/settings.glade.h:13
-msgid "External Programs"
-msgstr "Externe Programme"
-
-#: ui/glade/settings.glade.h:14
-msgid "General"
-msgstr "Allgemein"
-
-#: ui/glade/settings.glade.h:15
-msgid "Language:"
-msgstr "Sprache:"
-
-#: ui/glade/settings.glade.h:16
-msgid "Logging"
-msgstr "Logging"
-
-#: ui/glade/settings.glade.h:17
-msgid "Minimum level to log"
-msgstr "Minimaler Loglevel"
-
-#: ui/glade/settings.glade.h:18
-msgid "Number of URLs to remember"
-msgstr "Zahl der zu merkenden URLs"
-
-#: ui/glade/settings.glade.h:19
-msgid "Number of messages to remember"
-msgstr "Zahl der zu merkenden Logmeldungen"
-
-#: ui/glade/settings.glade.h:20
-msgid "Saved Data"
-msgstr "Gespeicherte Daten"
-
-#: ui/glade/settings.glade.h:21 lib/extensions/nautilus/RabbitVCS.py:1043
-msgid "Settings"
-msgstr "Einstellungen"
-
-#: ui/glade/settings.glade.h:22
-msgid "Show new version on the right side"
-msgstr "Neue Version auf der rechten Seite zeigen"
-
-#: ui/glade/settings.glade.h:23
-msgid "Type:"
-msgstr "Typ:"
-
-#: ui/glade/cleanup.glade.h:2
-msgid ""
-"Cleanup Requested....\n"
-"\n"
-"Begin working copy cleanup?"
-msgstr ""
-"Aufräumen angefragt...\n"
-"\n"
-"Aufräumen der Arbeitskopie beginnen?"
-
-#: ui/glade/dialogs.glade.h:1
-msgid "<b>Certificate Details</b>"
-msgstr "<b>Zertifikatsdetails</b>"
-
-#: ui/glade/dialogs.glade.h:2
-msgid "<b>Edit Property Details</b>"
-msgstr "<b>Eigenschaftsdetails bearbeiten</b>"
-
-#: ui/glade/dialogs.glade.h:4
-msgid "<b>Please add your authentication details</b>"
-msgstr "<b>Bitte geben Sie Ihre Authentifizierungsinformationen an</b>"
-
-#: ui/glade/dialogs.glade.h:5
-msgid "<b>Previous Messages</b>"
-msgstr "<b>Frühere Logmeldungen</b>"
-
-#: ui/glade/dialogs.glade.h:7
-msgid ""
-"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-msgstr ""
-"<span size=\"large\"><b>Wollen Sie wirklich %item% löschen?</b></span>"
-
-#: ui/glade/dialogs.glade.h:8
-msgid "Accept Forever"
-msgstr "Dauerhaft akzeptieren"
-
-#: ui/glade/dialogs.glade.h:9
-msgid "Accept Once"
-msgstr "Einmal akzeptieren"
-
-#: ui/glade/dialogs.glade.h:11
-msgid "Authentication"
-msgstr "Anmeldung"
-
-#: ui/glade/dialogs.glade.h:12
-msgid "Check Certificate"
-msgstr "Zertifikat prüfen"
-
-#: ui/glade/dialogs.glade.h:13
-msgid "Confirmation"
-msgstr "Bestätigung"
-
-#: ui/glade/dialogs.glade.h:14
-msgid "Delete Confirmation"
-msgstr "Bestätigung zum Löschen"
-
-#: ui/glade/dialogs.glade.h:15
-msgid "Deny"
-msgstr "Verweigern"
-
-#: ui/glade/dialogs.glade.h:16
-msgid "Fingerprint:"
-msgstr "Fingerabdruck:"
-
-#: ui/glade/dialogs.glade.h:17
+#. Set up the Host line
+#: ../rabbitvcs/ui/widget.py:1182
 msgid "Host:"
 msgstr "Server:"
 
-#: ui/glade/dialogs.glade.h:18
-msgid "Issuer:"
-msgstr "Aussteller:"
+#: ../rabbitvcs/ui/widget.py:1289
+#, fuzzy
+msgid "Add line:"
+msgstr "Emblem hinzufügen"
 
-#: ui/glade/dialogs.glade.h:19
-msgid "Login:"
-msgstr "Benutzername:"
-
-#: ui/glade/dialogs.glade.h:21
-msgid "Password:"
-msgstr "Passwort:"
-
-#: ui/glade/dialogs.glade.h:23
-msgid "Property"
-msgstr "Eigenschaft"
-
-#: ui/glade/dialogs.glade.h:24
-msgid "Property:"
-msgstr "Eigenschaft:"
-
-#: ui/glade/dialogs.glade.h:25
-msgid "Realm:"
-msgstr "Bereich:"
-
-#: ui/glade/dialogs.glade.h:26
-msgid "Save Authentication"
-msgstr "Anmeldeinformationen speichern"
-
-#: ui/glade/dialogs.glade.h:27
-msgid "The item(s) will be sent to the trash can."
-msgstr "Das Objekt/Die Objekte werden in den Mülleimer verschoben."
-
-#: ui/glade/dialogs.glade.h:28
-msgid "Valid:"
-msgstr "Gültig:"
-
-#: ui/glade/dialogs.glade.h:29
-msgid "Value:"
-msgstr "Wert:"
-
-#: ui/glade/checkout.glade.h:6
-msgid "Destination:"
-msgstr "Zielort:"
-
-#: ui/glade/checkout.glade.h:8 ui/glade/update.glade.h:4
-msgid "Omit Externals"
-msgstr "Ignoriere Externe Links"
-
-#: ui/glade/checkout.glade.h:12
-msgid "URL:"
-msgstr "URL:"
-
-#: ui/glade/import.glade.h:1
-msgid "<b>Import Message</b>"
-msgstr "<b>Import-Logmeldung</b>"
-
-#: ui/glade/import.glade.h:4
-msgid "Include ignored files"
-msgstr "Ignorierte Dateien einbeziehen"
-
-#: ui/glade/update.glade.h:2
-msgid "<b>Update Depth</b>"
-msgstr "<b>Aktualisierungstiefe</b>"
-
-#: ui/glade/relocate.glade.h:1
-msgid "<b>Change the repository of your working copy</b>"
-msgstr "<b>Das Projektarchiv der Arbeitskopie ändern</b>"
-
-#: lib/extensions/nautilus/RabbitVCS.py:362
+#: ../rabbitvcs/util/contextmenuitems.py:285
 msgid "Debug"
 msgstr "Debug"
 
-#: lib/extensions/nautilus/RabbitVCS.py:375
-msgid "DBus"
-msgstr "DBus"
-
-#: lib/extensions/nautilus/RabbitVCS.py:388
-msgid "Start/Restart Service"
-msgstr "Start/Restart Service"
-
-#: lib/extensions/nautilus/RabbitVCS.py:404
-msgid "Exit Service"
-msgstr "Exit Service"
-
-#: lib/extensions/nautilus/RabbitVCS.py:422
+#: ../rabbitvcs/util/contextmenuitems.py:290
 msgid "Bugs"
 msgstr "Bugs"
 
-#: lib/extensions/nautilus/RabbitVCS.py:435
-msgid "Test Asynchronicity"
-msgstr "Test Asynchronicity"
-
-#: lib/extensions/nautilus/RabbitVCS.py:453
+#: ../rabbitvcs/util/contextmenuitems.py:295
 msgid "Open Shell"
 msgstr "Open Shell"
 
-#: lib/extensions/nautilus/RabbitVCS.py:469
+#: ../rabbitvcs/util/contextmenuitems.py:301
 msgid "Refresh Status"
 msgstr "Refresh Status"
 
-#: lib/extensions/nautilus/RabbitVCS.py:486
+#: ../rabbitvcs/util/contextmenuitems.py:306
 msgid "Debug Revert"
 msgstr "Debug Revert"
 
-#: lib/extensions/nautilus/RabbitVCS.py:487
+#: ../rabbitvcs/util/contextmenuitems.py:307
 msgid "Reverts everything it sees"
 msgstr "Reverts everything it sees"
 
-#: lib/extensions/nautilus/RabbitVCS.py:502
+#: ../rabbitvcs/util/contextmenuitems.py:313
 msgid "Invalidate"
 msgstr "Ungültig machen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:503
+#: ../rabbitvcs/util/contextmenuitems.py:314
 msgid "Force an invalidate_extension_info() call"
 msgstr "Einen Aufruf von invalidate_extension_info() forcieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:518
+#: ../rabbitvcs/util/contextmenuitems.py:320
 msgid "Add Emblem"
 msgstr "Emblem hinzufügen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:519
+#: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Ein Emblem hinzufügen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:537
+#: ../rabbitvcs/util/contextmenuitems.py:327
+#, fuzzy
+msgid "Checkout..."
+msgstr "Auschecken"
+
+#: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
 msgstr "Eine Arbeitskopie auschecken"
 
-#: lib/extensions/nautilus/RabbitVCS.py:553
+#: ../rabbitvcs/util/contextmenuitems.py:334
 msgid "Update a working copy"
 msgstr "Eine Arbeitskopie aktualisieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:569
+#: ../rabbitvcs/util/contextmenuitems.py:340
 msgid "Commit modifications to the repository"
 msgstr "Änderungen in das Projektarchiv übertragen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:584
+#: ../rabbitvcs/util/contextmenuitems.py:345
 msgid "RabbitVCS"
 msgstr "RabbitVCS"
 
-#: lib/extensions/nautilus/RabbitVCS.py:598
+#: ../rabbitvcs/util/contextmenuitems.py:350
+#, fuzzy
+msgid "RabbitVCS SVN"
+msgstr "RabbitVCS"
+
+#: ../rabbitvcs/util/contextmenuitems.py:355
+#, fuzzy
+msgid "RabbitVCS Git"
+msgstr "RabbitVCS"
+
+#: ../rabbitvcs/util/contextmenuitems.py:360
+#, fuzzy
+msgid "RabbitVCS Hg"
+msgstr "RabbitVCS"
+
+#: ../rabbitvcs/util/contextmenuitems.py:365
+#, fuzzy
+msgid "Repository Browser"
+msgstr "Projektarchivpfade gelöscht"
+
+#: ../rabbitvcs/util/contextmenuitems.py:366
+#, fuzzy
+msgid "Browse a repository tree"
+msgstr "Projektarchiv hier erstellen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:371
+#, fuzzy
+msgid "Check for Modifications..."
+msgstr "Zertifikat prüfen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:372
+#, fuzzy
+msgid "Check for modifications made to the repository"
+msgstr "Änderungen in das Projektarchiv übertragen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:377
+msgid "Diff Menu..."
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:378
+msgid "List of comparison options"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:383
+msgid "View diff against base"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:384
 msgid "View the modifications made to a file"
 msgstr "Die an einer Datei vorgenommen Änderung ansehen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:613
+#: ../rabbitvcs/util/contextmenuitems.py:389
+msgid "View diff between files/folders"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:390
+#, fuzzy
+msgid "View the differences between two files"
+msgstr "Die an einer Datei vorgenommen Änderung ansehen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:396
+#, fuzzy
+msgid "View the modifications made to a file since its last change"
+msgstr "Die an einer Datei vorgenommen Änderung ansehen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:401
+#, fuzzy
+msgid "Compare with base"
+msgstr "Zweig/Tag gewechselt"
+
+#: ../rabbitvcs/util/contextmenuitems.py:402
+msgid "Compare with base using side-by-side comparison tool"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:407
+msgid "Compare files/folders"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:408
+msgid "Compare the differences between two items"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:414
+msgid "Compare with previous revision using side-by-side comparison tool"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:419
+msgid "Show Changes..."
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:420
+msgid "Show changes between paths and revisions"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:425
 msgid "Show Log"
 msgstr "Log anzeigen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:614
+#: ../rabbitvcs/util/contextmenuitems.py:426
 msgid "Show a file's log information"
 msgstr "Logmeldungen einer Datei zeigen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:639
-msgid "Schedule an item to be added to the repository"
+#: ../rabbitvcs/util/contextmenuitems.py:432
+#, fuzzy
+msgid "Schedule items to be added to the repository"
 msgstr "Ein Objekt zum Hinzufügen zum Projektarchiv vormerken"
 
-#: lib/extensions/nautilus/RabbitVCS.py:663
-msgid "Ignore an item"
-msgstr "Ein Objekt ignorieren"
+#: ../rabbitvcs/util/contextmenuitems.py:437
+msgid "Add to ignore list"
+msgstr "Zur Liste der ignorierten Dateien hinzufügen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:678
-msgid "Ignore all files with this extension"
-msgstr "Alle Dateien mit dieser Erweiterung ignorieren"
-
-#: lib/extensions/nautilus/RabbitVCS.py:703
+#: ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update to revision..."
 msgstr "Aktualisieren auf..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:704
+#: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Eine Datei auf eine bestimmte Revision aktualisieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:719
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename..."
 msgstr "Umbenennen..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:720
+#: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
 msgstr "Ein Objekt zum Umbenennen im Projektarchiv vormerken"
 
-#: lib/extensions/nautilus/RabbitVCS.py:736
+#: ../rabbitvcs/util/contextmenuitems.py:454
+msgid "Delete"
+msgstr "Löschen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:455
 msgid "Schedule an item to be deleted from the repository"
 msgstr "Ein Objekt zum Löschen aus dem Projektarchiv vomerken"
 
-#: lib/extensions/nautilus/RabbitVCS.py:752
+#: ../rabbitvcs/util/contextmenuitems.py:461
 msgid "Revert an item to its unmodified state"
 msgstr "Ein Objekt in seinen unveränderten Zustand rückversetzen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:768
+#: ../rabbitvcs/util/contextmenuitems.py:467
 msgid "Mark a conflicted item as resolved"
 msgstr "Ein in Konflikt stehendes Objekt als gelöst markieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:783
+#: ../rabbitvcs/util/contextmenuitems.py:472
+msgid "Restore"
+msgstr "Wiederherstellen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:473
+#, fuzzy
+msgid "Restore a missing item"
+msgstr "Ein Objekt ignorieren"
+
+#: ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate..."
 msgstr "URL umstellen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:784
+#: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "URL des Projektarchivs umstellen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:799
+#: ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock..."
 msgstr "Sperren..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:800
+#: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Objekte lokal sperren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:815
+#: ../rabbitvcs/util/contextmenuitems.py:489
 msgid "Release Lock..."
 msgstr "Sperre aufheben..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:816
+#: ../rabbitvcs/util/contextmenuitems.py:490
 msgid "Release lock on an item"
 msgstr "Sperre für Objekte aufheben"
 
-#: lib/extensions/nautilus/RabbitVCS.py:832
+#: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Arbeitskopie aufräumen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:857
+#: ../rabbitvcs/util/contextmenuitems.py:501
+#, fuzzy
+msgid "Export..."
+msgstr "Exportieren"
+
+#: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
 msgstr ""
 "Eine Arbeitskopie oder ein Projektarchiv ohne Versionsinformationen "
 "exportieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:872
+#: ../rabbitvcs/util/contextmenuitems.py:515
 msgid "Create Repository here"
 msgstr "Projektarchiv hier erstellen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:873
+#: ../rabbitvcs/util/contextmenuitems.py:516
 msgid "Create a repository in a folder"
 msgstr "Ein Projektarchiv in einem Ordner erstellen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:889
+#: ../rabbitvcs/util/contextmenuitems.py:522
 msgid "Import an item into a repository"
 msgstr "Ein Objekt in ein Projektarchiv importieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:913
+#: ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag..."
 msgstr "Zweig/Tag..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:914
+#: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Ein Objekt zu einem anderen Ort im Projektarchiv kopieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:929
+#: ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch..."
 msgstr "Zweig/Tag wechseln..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:930
+#: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "Den Ort des Projektarchivs für eine Arbeitskopie umstellen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:945
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge..."
 msgstr "Zusammenführen..."
 
-#: lib/extensions/nautilus/RabbitVCS.py:946
+#: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "Ein Assistent zum Zusammenführen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:970
+#: ../rabbitvcs/util/contextmenuitems.py:548
 msgid "Annotate..."
 msgstr "Annotieren"
 
-#: lib/extensions/nautilus/RabbitVCS.py:971
+#: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Autoren- und Revisionsinformationen zu einer Datei anzeigen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:996
+#: ../rabbitvcs/util/contextmenuitems.py:554
+msgid "Create Patch..."
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:555
+msgid "Creates a unified diff file with all changes you made"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:560
+msgid "Apply Patch..."
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:561
+msgid "Applies a unified diff file to the working copy"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:566
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: ../rabbitvcs/util/contextmenuitems.py:567
 msgid "View the properties of an item"
 msgstr "Die Eigenschaften eines Objekts ansehen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:1027
+#: ../rabbitvcs/util/contextmenuitems.py:572
 msgid "Help"
 msgstr "Hilfe"
 
-#: lib/extensions/nautilus/RabbitVCS.py:1028
+#: ../rabbitvcs/util/contextmenuitems.py:573
 msgid "View help"
 msgstr "Hilfe ansehen"
 
-#: lib/extensions/nautilus/RabbitVCS.py:1044
+#: ../rabbitvcs/util/contextmenuitems.py:578
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:579
 msgid "View or change RabbitVCS settings"
 msgstr "Einstellungen von RabbitVCS sehen oder bearbeiten"
 
-#: lib/extensions/nautilus/RabbitVCS.py:1060
+#: ../rabbitvcs/util/contextmenuitems.py:584
+msgid "About"
+msgstr "Über"
+
+#: ../rabbitvcs/util/contextmenuitems.py:585
 msgid "About RabbitVCS"
 msgstr "Über RabbitVCS"
 
-#: lib/vcs/svn/__init__.py:111 lib/vcs/svn/__init__.py:120
-#: lib/vcs/svn/__init__.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:590
+msgid "Open"
+msgstr "Öffnen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:591
+#, fuzzy
+msgid "Open a file"
+msgstr "Autoren- und Revisionsinformationen zu einer Datei anzeigen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:599
+#, fuzzy
+msgid "Copy file name"
+msgstr "Umbenennen abgeschlossen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:604
+msgid "Copy full file name"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:609
+msgid "Browse to"
+msgstr "Dursuchen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:610
+msgid "Browse to a file or folder"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:615
+#, fuzzy
+msgid "Revert property"
+msgstr "Eigenschaft"
+
+#: ../rabbitvcs/util/contextmenuitems.py:617
+#, fuzzy
+msgid "Revert this property to its original state"
+msgstr "Ein Objekt in seinen unveränderten Zustand rückversetzen"
+
+#: ../rabbitvcs/util/contextmenuitems.py:621
+msgid "Revert property (recursive)"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:623
+msgid "Revert this property to its original state (recursive)"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:628
+#, fuzzy
+msgid "Delete property"
+msgstr "Eigenschaft"
+
+#: ../rabbitvcs/util/contextmenuitems.py:630
+msgid "Delete this property"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:634
+msgid "Delete property (recursive)"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:636
+msgid "Delete this property (recursive)"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:641
+msgid "Edit details"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:643
+#, fuzzy
+msgid "Show and edit property details"
+msgstr "<b>Eigenschaftsdetails bearbeiten</b>"
+
+#: ../rabbitvcs/util/contextmenuitems.py:657
+msgid "Fetch/Pull"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:667
+#, fuzzy
+msgid "Branches"
+msgstr "Zweig/Tag"
+
+#: ../rabbitvcs/util/contextmenuitems.py:672
+msgid "Tags"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:677
+msgid "Remotes"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:701
+msgid "Edit conflicts"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:723
+msgid "Ignore item by filename"
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:739
+#, fuzzy
+msgid "Ignore item by file extension"
+msgstr "Alle Dateien mit dieser Erweiterung ignorieren"
+
+#: ../rabbitvcs/util/helper.py:165
+#, fuzzy
+msgid "(no date)"
+msgstr "(kein Autor)"
+
+#: ../rabbitvcs/util/helper.py:169
+msgid "just now"
+msgstr ""
+
+#: ../rabbitvcs/util/helper.py:171
+#, python-format
+msgid "%d minute(s) ago"
+msgstr ""
+
+#: ../rabbitvcs/util/helper.py:720
+#, python-format
+msgid "%i second"
+msgid_plural "%i seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/util/helper.py:723
+#, python-format
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/util/helper.py:726
+#, python-format
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/util/helper.py:729
+#, python-format
+msgid "%i day"
+msgid_plural "%i days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/util/helper.py:732
+#, python-format
+msgid "%i week"
+msgid_plural "%i weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/util/helper.py:735
+#, python-format
+msgid "%i month"
+msgid_plural "%i months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/util/helper.py:738
+#, python-format
+msgid "%i year"
+msgid_plural "%i years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../rabbitvcs/vcs/__init__.py:36
+#, python-format
+msgid ""
+"The output from '%s' was not able to be processed.\n"
+"%s"
+msgstr ""
+
+#: ../rabbitvcs/vcs/git/__init__.py:700 ../rabbitvcs/vcs/svn/__init__.py:1092
+msgid "(no author)"
+msgstr "(kein Autor)"
+
+#: ../rabbitvcs/vcs/git/__init__.py:825 ../rabbitvcs/vcs/svn/__init__.py:1564
+msgid "Patched"
+msgstr ""
+
+#: ../rabbitvcs/vcs/git/__init__.py:829 ../rabbitvcs/vcs/svn/__init__.py:1568
+msgid "Patch Failed"
+msgstr ""
+
+#: ../rabbitvcs/vcs/git/__init__.py:834 ../rabbitvcs/vcs/svn/__init__.py:1576
+msgid "Rejected Patch"
+msgstr ""
+
+#: ../rabbitvcs/vcs/status.py:263
+#, fuzzy
+msgid "RabbitVCS status for"
+msgstr "RabbitVCS"
+
+#: ../rabbitvcs/vcs/svn/__init__.py:184 ../rabbitvcs/vcs/svn/__init__.py:193
+#: ../rabbitvcs/vcs/svn/__init__.py:200
 msgid "Added"
 msgstr "Hinzugefügt"
 
-#: lib/vcs/svn/__init__.py:112 lib/vcs/svn/__init__.py:128
+#: ../rabbitvcs/vcs/svn/__init__.py:185
 msgid "Copied"
 msgstr "Kopiert"
 
-#: lib/vcs/svn/__init__.py:113 lib/vcs/svn/__init__.py:119
+#: ../rabbitvcs/vcs/svn/__init__.py:186 ../rabbitvcs/vcs/svn/__init__.py:192
+#: ../rabbitvcs/vcs/svn/__init__.py:201
 msgid "Deleted"
 msgstr "Gelöscht"
 
-#: lib/vcs/svn/__init__.py:114
+#: ../rabbitvcs/vcs/svn/__init__.py:187
 msgid "Restored"
 msgstr "Wiederhergestellt"
 
-#: lib/vcs/svn/__init__.py:115
+#: ../rabbitvcs/vcs/svn/__init__.py:188
 msgid "Reverted"
 msgstr "Rückgängig gemacht"
 
-#: lib/vcs/svn/__init__.py:116
+#: ../rabbitvcs/vcs/svn/__init__.py:189
 msgid "Failed Revert"
 msgstr "Rückgängig machen fehlgeschlagen"
 
-#: lib/vcs/svn/__init__.py:117
+#: ../rabbitvcs/vcs/svn/__init__.py:190
 msgid "Resolved"
 msgstr "Aufgelöst"
 
-#: lib/vcs/svn/__init__.py:118
+#: ../rabbitvcs/vcs/svn/__init__.py:191
 msgid "Skipped"
 msgstr "Übersprungen"
 
-#: lib/vcs/svn/__init__.py:121
+#: ../rabbitvcs/vcs/svn/__init__.py:194
 msgid "Updated"
 msgstr "Aktualisiert"
 
-#: lib/vcs/svn/__init__.py:123 lib/vcs/svn/__init__.py:125
+#: ../rabbitvcs/vcs/svn/__init__.py:195 ../rabbitvcs/vcs/svn/__init__.py:197
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+#: ../rabbitvcs/vcs/svn/__init__.py:196 ../rabbitvcs/vcs/svn/__init__.py:198
 msgid "External"
 msgstr "Extern"
 
-#: lib/vcs/svn/__init__.py:126
+#: ../rabbitvcs/vcs/svn/__init__.py:199
 msgid "Modified"
 msgstr "Geändert"
 
-#: lib/vcs/svn/__init__.py:129
+#: ../rabbitvcs/vcs/svn/__init__.py:202
 msgid "Replaced"
 msgstr "Ersetzt"
 
-#: lib/vcs/svn/__init__.py:130 lib/vcs/svn/__init__.py:149
+#: ../rabbitvcs/vcs/svn/__init__.py:203 ../rabbitvcs/vcs/svn/__init__.py:223
 msgid "Changed"
 msgstr "Geändert"
 
-#: lib/vcs/svn/__init__.py:131
+#: ../rabbitvcs/vcs/svn/__init__.py:204
 msgid "Annotated"
 msgstr "Annotiert"
 
-#: lib/vcs/svn/__init__.py:133
+#: ../rabbitvcs/vcs/svn/__init__.py:206
 msgid "Unlocked"
 msgstr "Entsperrt"
 
-#: lib/vcs/svn/__init__.py:134
+#: ../rabbitvcs/vcs/svn/__init__.py:207
 msgid "Failed Lock"
 msgstr "Sperren fehlgeschlagen"
 
-#: lib/vcs/svn/__init__.py:135
+#: ../rabbitvcs/vcs/svn/__init__.py:208
 msgid "Failed Unlock"
 msgstr "Entsperren fehlgeschlagen"
 
-#: lib/vcs/svn/__init__.py:144
+#: ../rabbitvcs/vcs/svn/__init__.py:218
 msgid "Inapplicable"
 msgstr "Nicht anwendbar"
 
-#: lib/vcs/svn/__init__.py:145
-msgid "Unknown"
-msgstr "Unbekannt"
-
-#: lib/vcs/svn/__init__.py:146
+#: ../rabbitvcs/vcs/svn/__init__.py:220
 msgid "Unchanged"
 msgstr "Unverändert"
 
-#: lib/vcs/svn/__init__.py:147
+#: ../rabbitvcs/vcs/svn/__init__.py:221
 msgid "Missing"
 msgstr "Fehlend"
 
-#: lib/vcs/svn/__init__.py:148
+#: ../rabbitvcs/vcs/svn/__init__.py:222
 msgid "Obstructed"
 msgstr "Verhindert"
 
-#: lib/vcs/svn/__init__.py:150
+#: ../rabbitvcs/vcs/svn/__init__.py:224
 msgid "Merged"
 msgstr "Zusammengeführt"
 
-#: lib/vcs/svn/__init__.py:151
+#: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr "Im Konflikt"
+
+#~ msgid ""
+#~ "There have been modifications to your working copy.  If you copy from the "
+#~ "HEAD revision you will lose your changes."
+#~ msgstr ""
+#~ "Ihre Arbeitskopie wurde verändert. Wenn Sie von der HEAD-Revision "
+#~ "kopieren, gehen diese Änderungen verloren."
+
+#~ msgid "The from revision field is required."
+#~ msgstr "Sie müssen die Ausgangsrevision angeben."
+
+#~ msgid "Invalid revision information"
+#~ msgstr "Ungültige Revisionsinformation"
+
+#~ msgid "Generating Annotation..."
+#~ msgstr "Erzeuge Annotationen..."
+
+#~ msgid "English"
+#~ msgstr "englisch"
+
+#~ msgid "Remove Lock"
+#~ msgstr "Sperre aufheben"
+
+#~ msgid "Show log"
+#~ msgstr "Log anzeigen"
+
+#~ msgid "Resolve"
+#~ msgstr "Auflösen"
+
+#~ msgid "Cancelled"
+#~ msgstr "Abgebrochen"
+
+#~ msgid "Retrieving Log Information..."
+#~ msgstr "Ermittle Logmeldungen..."
+
+#~ msgid "<b>Revision</b>"
+#~ msgstr "<b>Revision</b>"
+
+#~ msgid "From:"
+#~ msgstr "Von:"
+
+#~ msgid "To:"
+#~ msgstr "Auf:"
+
+#~ msgid "Notification Messages"
+#~ msgstr "Nachrichten"
+
+#~ msgid "<b>Changed Files</b> (double-click to see diff)"
+#~ msgstr "<b>Geänderte Dateien</b> (Doppelklick um Unterschiede anzuzeigen)"
+
+#~ msgid "<b>Commit to:</b>"
+#~ msgstr "<b>Übernehmen nach:</b>"
+
+#~ msgid "Previous Messages"
+#~ msgstr "Frühere Logmeldungen"
+
+#~ msgid "Select / Deselect all"
+#~ msgstr "Alle aus-/abwählen"
+
+#~ msgid "Show unversioned files"
+#~ msgstr "Nicht versionierte Dateien anzeigen"
+
+#~ msgid "<b>Files to lock</b>"
+#~ msgstr "<b>Zu sperrende Dateien</b>"
+
+#~ msgid "<b>Please describe why you are locking these files</b>"
+#~ msgstr "<b>Bitte beschreiben Sie, warum Sie diese Dateien sperren</b>"
+
+#~ msgid "Lock Files"
+#~ msgstr "Dateien sperren"
+
+#~ msgid "Steal the locks"
+#~ msgstr "Existierende Sperren brechen"
+
+#~ msgid "<b>Properties for:</b>"
+#~ msgstr "<b>Eigenschaften für:</b>"
+
+#~ msgid "New..."
+#~ msgstr "Neu..."
+
+#~ msgid "URL/Path:"
+#~ msgstr "URL/Pfad:"
+
+#~ msgid "<b>From Revision</b>"
+#~ msgstr "<b>Von Revision</b>"
+
+#~ msgid "<b>To Revision</b>"
+#~ msgstr "<b>Bis Revision</b>"
+
+#~ msgid "Annotate"
+#~ msgstr "Annotieren"
+
+#~ msgid "<b>Version Information</b>"
+#~ msgstr "<b>Versionsinformationen</b>"
+
+#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+#~ msgid "Thanks:"
+#~ msgstr "Danksagungen:"
+
+#~ msgid "<b>Create copy from</b>"
+#~ msgstr "<b>Kopie erstellen von</b>"
+
+#~ msgid "Copy from HEAD"
+#~ msgstr "Kopie von HEAD"
+
+#~ msgid "Copy from working copy"
+#~ msgstr "Kopie von Arbeitskopie"
+
+#~ msgid "100"
+#~ msgstr "100"
+
+#~ msgid "<b>Affected File(s)</b>"
+#~ msgstr "<b>Betroffene Datei(en)</b>"
+
+#~ msgid "<b>Revisions Table</b>"
+#~ msgstr "<b>Revisionen</b>"
+
+#~ msgid "Limit:"
+#~ msgstr "Limit:"
+
+#~ msgid "Log"
+#~ msgstr "Log"
+
+#~ msgid "Refresh"
+#~ msgstr "Aktualisieren"
+
+#~ msgid "Stop on copy"
+#~ msgstr "Bei Kopie anhalten"
+
+#~ msgid "<b>From URL</b>"
+#~ msgstr "<b>Quell-URL</b>"
+
+#~ msgid "<b>From: (URL and revision to merge)</b>"
+#~ msgstr "<b>Von: (URL und zusammenzuführende Revision)</b>"
+
+#~ msgid "<b>Options</b>"
+#~ msgstr "<b>Optionen</b>"
+
+#~ msgid "<b>Revision Range</b>"
+#~ msgstr "<b>Revisionsbereich</b>"
+
+#~ msgid "<b>To: (URL and revision to merge)</b>"
+#~ msgstr "<b>Nach: (URL und zusammenzuführende Revision)</b>"
+
+#~ msgid "<b>URL to merge from</b>"
+#~ msgstr "<b>URL von der zusammengeführt werden soll</b>"
+
+#~ msgid ""
+#~ "Choose this method if you have made some changes to a branch and wish to "
+#~ "merge your changes with another branch."
+#~ msgstr ""
+#~ "Wählen Sie diese Methode, wenn Sie Änderungen an einem Zweig vorgenommen "
+#~ "haben und Ihre Änderungen mit einem anderen Zweig zusammenführen möchten."
+
+#~ msgid ""
+#~ "Choose this method if you wish to merge two different branches into your "
+#~ "working copy."
+#~ msgstr ""
+#~ "Wählen Sie diese Methode, wenn Sie zwei verschiedene Zweige in Ihre "
+#~ "Arbeitskopie zusammenführen möchten."
+
+#~ msgid "Ignore ancestry"
+#~ msgstr "Abstammung ignorieren"
+
+#~ msgid "Merge Assistant"
+#~ msgstr "Zusammenführassistent"
+
+#~ msgid "Merge two different trees"
+#~ msgstr "Zwei verschiedene Bäume zusammenführen"
+
+#~ msgid "Only record the merge"
+#~ msgstr "Nur als zusammengeführt markieren"
+
+#~ msgid "Recursive"
+#~ msgstr "Rekursiv"
+
+#~ msgid "Test Merge"
+#~ msgstr "Zusammenführen testen"
+
+#~ msgid ""
+#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
+#~ "write out the revisions manually, each separated by a comma.  You can "
+#~ "specify a revision range by a dash. \n"
+#~ "\n"
+#~ "Example: 4-7,9,11,15-HEAD\n"
+#~ "\n"
+#~ "To merge all revisions, leave the box empty."
+#~ msgstr ""
+#~ "Benutzen Sie den Log-Dialog, um die Revisionen zum Zusammenführen "
+#~ "auszuwählen. Oder geben Sie die Revisionen per Hand an, durch Komma "
+#~ "getrennt. Sie können einen Revisionsbereich mit dem Bindestrich angeben.\n"
+#~ "\n"
+#~ "Beispiel: 4-7, 9,11,15-HEAD\n"
+#~ "\n"
+#~ "Lassen Sie das Feld leer, um alle Revisionen zusammenzuführen."
+
+#~ msgid "<b>Authentication</b>"
+#~ msgstr "<b>Authentifizierung</b>"
+
+#~ msgid "<b>Log Messages</b>"
+#~ msgstr "<b>Logmeldungen</b>"
+
+#~ msgid "<b>Logging Options</b>"
+#~ msgstr "<b>Logging-Optionen</b>"
+
+#~ msgid "<b>RabbitVCS</b>"
+#~ msgstr "<b>RabbitVCS</b>"
+
+#~ msgid "<b>Program used to browse repositories</b>"
+#~ msgstr "<b>Programm zum Durchsuchen von Projektarchiven</b>"
+
+#~ msgid "<b>Program used to compare files</b>"
+#~ msgstr "<b>Programm zum Dateivergleich</b>"
+
+#~ msgid "<b>URL History</b>"
+#~ msgstr "<b>URL-Historie</b>"
+
+#~ msgid "Browse..."
+#~ msgstr "Durchsuchen..."
+
+#~ msgid "Clear your authentication information"
+#~ msgstr "Ihre Anmeldeinformationen löschen"
+
+#~ msgid "Enable emblems"
+#~ msgstr "Embleme einschalten"
+
+#~ msgid "Enable file attributes"
+#~ msgstr "Dateiattribute einschalten"
+
+#~ msgid "Enable recursive status checks"
+#~ msgstr "Rekursive Statusüberprüfungen aktivieren"
+
+#~ msgid "External Programs"
+#~ msgstr "Externe Programme"
+
+#~ msgid "General"
+#~ msgstr "Allgemein"
+
+#~ msgid "Language:"
+#~ msgstr "Sprache:"
+
+#~ msgid "Logging"
+#~ msgstr "Logging"
+
+#~ msgid "Minimum level to log"
+#~ msgstr "Minimaler Loglevel"
+
+#~ msgid "Number of URLs to remember"
+#~ msgstr "Zahl der zu merkenden URLs"
+
+#~ msgid "Number of messages to remember"
+#~ msgstr "Zahl der zu merkenden Logmeldungen"
+
+#~ msgid "Saved Data"
+#~ msgstr "Gespeicherte Daten"
+
+#~ msgid "Show new version on the right side"
+#~ msgstr "Neue Version auf der rechten Seite zeigen"
+
+#~ msgid "Type:"
+#~ msgstr "Typ:"
+
+#~ msgid ""
+#~ "Cleanup Requested....\n"
+#~ "\n"
+#~ "Begin working copy cleanup?"
+#~ msgstr ""
+#~ "Aufräumen angefragt...\n"
+#~ "\n"
+#~ "Aufräumen der Arbeitskopie beginnen?"
+
+#~ msgid "<b>Certificate Details</b>"
+#~ msgstr "<b>Zertifikatsdetails</b>"
+
+#~ msgid "<b>Please add your authentication details</b>"
+#~ msgstr "<b>Bitte geben Sie Ihre Authentifizierungsinformationen an</b>"
+
+#~ msgid "<b>Previous Messages</b>"
+#~ msgstr "<b>Frühere Logmeldungen</b>"
+
+#~ msgid ""
+#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+#~ msgstr ""
+#~ "<span size=\"large\"><b>Wollen Sie wirklich %item% löschen?</b></span>"
+
+#~ msgid "Accept Forever"
+#~ msgstr "Dauerhaft akzeptieren"
+
+#~ msgid "Accept Once"
+#~ msgstr "Einmal akzeptieren"
+
+#~ msgid "Authentication"
+#~ msgstr "Anmeldung"
+
+#~ msgid "Confirmation"
+#~ msgstr "Bestätigung"
+
+#~ msgid "Delete Confirmation"
+#~ msgstr "Bestätigung zum Löschen"
+
+#~ msgid "Deny"
+#~ msgstr "Verweigern"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Fingerabdruck:"
+
+#~ msgid "Issuer:"
+#~ msgstr "Aussteller:"
+
+#~ msgid "Login:"
+#~ msgstr "Benutzername:"
+
+#~ msgid "Password:"
+#~ msgstr "Passwort:"
+
+#~ msgid "Property:"
+#~ msgstr "Eigenschaft:"
+
+#~ msgid "Realm:"
+#~ msgstr "Bereich:"
+
+#~ msgid "Save Authentication"
+#~ msgstr "Anmeldeinformationen speichern"
+
+#~ msgid "The item(s) will be sent to the trash can."
+#~ msgstr "Das Objekt/Die Objekte werden in den Mülleimer verschoben."
+
+#~ msgid "Valid:"
+#~ msgstr "Gültig:"
+
+#~ msgid "Value:"
+#~ msgstr "Wert:"
+
+#~ msgid "Destination:"
+#~ msgstr "Zielort:"
+
+#~ msgid "Omit Externals"
+#~ msgstr "Ignoriere Externe Links"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "<b>Import Message</b>"
+#~ msgstr "<b>Import-Logmeldung</b>"
+
+#~ msgid "Include ignored files"
+#~ msgstr "Ignorierte Dateien einbeziehen"
+
+#~ msgid "<b>Update Depth</b>"
+#~ msgstr "<b>Aktualisierungstiefe</b>"
+
+#~ msgid "<b>Change the repository of your working copy</b>"
+#~ msgstr "<b>Das Projektarchiv der Arbeitskopie ändern</b>"
+
+#~ msgid "DBus"
+#~ msgstr "DBus"
+
+#~ msgid "Start/Restart Service"
+#~ msgstr "Start/Restart Service"
+
+#~ msgid "Exit Service"
+#~ msgstr "Exit Service"
+
+#~ msgid "Test Asynchronicity"
+#~ msgstr "Test Asynchronicity"
