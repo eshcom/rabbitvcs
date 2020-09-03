@@ -954,7 +954,7 @@ class MenuSeparatorLast(MenuSeparator):
 # esh: add MenuCherryPickCommits class
 class MenuCherryPickCommits(MenuItem):
 	identifier = "RabbitVCS::CherryPick_Commits"
-	label = _("Cherry Pick selected commits...")
+	label = _("Cherry Pick this commits...")
 	tooltip = _("Apply the changes introduced by some existing commits")
 	icon = "rabbitvcs-commit"
 

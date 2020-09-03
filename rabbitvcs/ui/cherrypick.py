@@ -47,10 +47,10 @@ class GitCherrypick:
 			register_gtk_quit=True
 		)
 		self.action.hide_cancel_button()
-		self.action.append(self.action.set_header, _("Cherrypick"))
+		self.action.append(self.action.set_header, _("Cherry Pick"))
 		self.action.append(self.action.set_status, _("Cherry Pick selected commits..."))
 		self.action.append(self.git.cherrypick, commits)
-		self.action.append(self.action.set_status, _("Completed cherrypick"))
+		self.action.append(self.action.set_status, _("Completed Cherry Pick"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
 
