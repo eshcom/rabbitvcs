@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-04-10 08:37+0000\n"
 "Last-Translator: Vedran Miletić <rivanvx@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -724,7 +724,7 @@ msgstr "Testiranje stapanja"
 msgid "Completed Merge Test"
 msgstr "Završen test stapanja"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Izvršavanje stapanja"
 
@@ -749,11 +749,6 @@ msgstr ""
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Izvršavanje stapanja"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1732,6 +1727,10 @@ msgstr "Stopi"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Izvršavanje stapanja"
 
 #~ msgid "English"
 #~ msgstr "Engleski"

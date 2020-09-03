@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2009-03-19 09:59+0000\n"
 "Last-Translator: Steve Markgraf <steve@steve-m.de>\n"
 "Language-Team: German <>\n"
@@ -751,7 +751,7 @@ msgstr "Zusammenführen testen"
 msgid "Completed Merge Test"
 msgstr "Zusammenfü"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Führe zusammen..."
 
@@ -778,11 +778,6 @@ msgstr "Autoren:"
 #, fuzzy
 msgid "Date:"
 msgstr "Datum"
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Führe zusammen..."
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1771,6 +1766,10 @@ msgstr "Zusammengeführt"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr "Im Konflikt"
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Führe zusammen..."
 
 #~ msgid ""
 #~ "There have been modifications to your working copy.  If you copy from the "

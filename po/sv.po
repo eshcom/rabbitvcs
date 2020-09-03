@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-04-13 19:52+0000\n"
 "Last-Translator: Andreas Dahlberg <andreasdahlberg@live.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -720,7 +720,7 @@ msgstr "Kör Sammanfogningstest..."
 msgid "Completed Merge Test"
 msgstr "Färdig Sammanfogningstest"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Kör Sammanfoga..."
 
@@ -745,11 +745,6 @@ msgstr ""
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Kör Sammanfoga..."
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1699,6 +1694,10 @@ msgstr "Sammanfogad"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr "Tvistande"
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Kör Sammanfoga..."
 
 #~ msgid "Resolve"
 #~ msgstr "Lös"

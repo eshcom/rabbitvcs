@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-02-09 10:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -717,7 +717,7 @@ msgstr ""
 msgid "Completed Merge Test"
 msgstr ""
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr ""
 
@@ -742,11 +742,6 @@ msgstr ""
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Rulează Comanda Redenumire"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1709,6 +1704,10 @@ msgstr "Test Îmbinare"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Rulează Comanda Redenumire"
 
 #~ msgid "English"
 #~ msgstr "Engleză"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2009-03-27 10:34+0000\n"
 "Last-Translator: Ladislav Prskavec <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -738,7 +738,7 @@ msgstr ""
 msgid "Completed Merge Test"
 msgstr ""
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr ""
 
@@ -765,11 +765,6 @@ msgstr "Autoři:"
 #, fuzzy
 msgid "Date:"
 msgstr "Datum"
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Spouštím příkaz Přejmenovat"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1741,6 +1736,10 @@ msgstr "Spojeno"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Spouštím příkaz Přejmenovat"
 
 #~ msgid "The from revision field is required."
 #~ msgstr "Políčko z revize je povinné."

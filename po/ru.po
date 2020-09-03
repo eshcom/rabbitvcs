@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-12-03 19:19+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -714,7 +714,7 @@ msgstr "Запуск теста на слияние"
 msgid "Completed Merge Test"
 msgstr "Тест слияния завершен"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Запуск слияния"
 
@@ -739,11 +739,6 @@ msgstr "Автор:"
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr "Дата:"
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Запуск слияния"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1695,6 +1690,10 @@ msgstr "Слито"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Запуск слияния"
 
 #~ msgid "Resolve"
 #~ msgstr "Разрешить конфликт"

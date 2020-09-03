@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2009-04-01 00:36-0300\n"
 "Last-Translator: Camilo Flores <camilo.ignacio@gmail.com>\n"
 "Language-Team: Spanish\n"
@@ -748,7 +748,7 @@ msgstr "Ejecutando "
 msgid "Completed Merge Test"
 msgstr "Prueba de factibilidad de fusión completado"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Fusionando..."
 
@@ -775,11 +775,6 @@ msgstr "Autores:"
 #, fuzzy
 msgid "Date:"
 msgstr "Fecha"
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Fusionando..."
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1763,6 +1758,10 @@ msgstr "Fusionado"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr "En conflicto"
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Fusionando..."
 
 #~ msgid ""
 #~ "There have been modifications to your working copy.  If you copy from the "

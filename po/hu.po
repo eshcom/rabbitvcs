@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbit-vcs 0.13.3 v01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-06-22 09:46+0000\n"
 "Last-Translator: csola48 <Unknown>\n"
 "Language-Team: hungarian <csola48@gmail.hu>\n"
@@ -725,7 +725,7 @@ msgstr "Egyesítés teszt fut"
 msgid "Completed Merge Test"
 msgstr "Egyesítés teszt befejezve"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Egyesítés parancs fut"
 
@@ -750,11 +750,6 @@ msgstr ""
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Egyesítés parancs fut"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1729,6 +1724,10 @@ msgstr "Egyesítés"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Egyesítés parancs fut"
 
 #~ msgid "English"
 #~ msgstr "angol"

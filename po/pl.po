@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-11-18 22:00+0000\n"
 "Last-Translator: Mateusz Boś <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -723,7 +723,7 @@ msgstr ""
 msgid "Completed Merge Test"
 msgstr ""
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Wykonywanie 'Złącz'"
 
@@ -748,11 +748,6 @@ msgstr ""
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Wykonywanie 'Złącz'"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1730,6 +1725,10 @@ msgstr "Scal"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Wykonywanie 'Złącz'"
 
 #~ msgid "English"
 #~ msgstr "angielski"

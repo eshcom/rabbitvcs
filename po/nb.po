@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-03-14 08:38+0000\n"
 "Last-Translator: Arne <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -723,7 +723,7 @@ msgstr "Kjører flettetest"
 msgid "Completed Merge Test"
 msgstr "Fullført flettingstest"
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr "Kjører flettekommando"
 
@@ -748,11 +748,6 @@ msgstr ""
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-#, fuzzy
-msgid "Running Merge Command..."
-msgstr "Kjører flettekommando"
 
 #: ../rabbitvcs/ui/properties.py:58
 #, python-format
@@ -1727,6 +1722,10 @@ msgstr "Flett"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Running Merge Command..."
+#~ msgstr "Kjører flettekommando"
 
 #~ msgid "English"
 #~ msgstr "Engelsk"

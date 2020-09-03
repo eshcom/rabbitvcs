@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 13:29+0300\n"
+"POT-Creation-Date: 2020-09-03 15:01+0300\n"
 "PO-Revision-Date: 2010-06-24 21:05+0000\n"
 "Last-Translator: Игор Миловановић <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -708,7 +708,7 @@ msgstr ""
 msgid "Completed Merge Test"
 msgstr ""
 
-#: ../rabbitvcs/ui/merge.py:94
+#: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command"
 msgstr ""
 
@@ -732,10 +732,6 @@ msgstr ""
 #. Set up the Date line
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
-msgstr ""
-
-#: ../rabbitvcs/ui/merge.py:518
-msgid "Running Merge Command..."
 msgstr ""
 
 #: ../rabbitvcs/ui/properties.py:58
