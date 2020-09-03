@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:01+0300\n"
+"POT-Creation-Date: 2020-09-03 15:16+0300\n"
 "PO-Revision-Date: 2010-12-03 19:19+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -294,7 +294,7 @@ msgstr "Дополнительные действия ..."
 
 #: ../rabbitvcs/ui/changes.py:56 ../rabbitvcs/ui/checkmods.py:246
 msgid "View unified diff"
-msgstr "Просмотреть diff"
+msgstr "Просмотреть diff-файл"
 
 #: ../rabbitvcs/ui/changes.py:264 ../rabbitvcs/ui/changes.py:359
 msgid "Change"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/log.py:888
 msgid "View diff between revisions"
-msgstr "Показать отличия между ревизиями"
+msgstr "Просмотреть diff-файл между ревизиями"
 
 #: ../rabbitvcs/ui/log.py:893
 msgid "Compare with working copy"
