@@ -321,9 +321,8 @@ msgid "Open from second revision"
 msgstr "открыть со второй ревизии"
 
 #: ../rabbitvcs/ui/changes.py:412
-#, fuzzy
 msgid "View unified diff(s)"
-msgstr "Просмотреть diff"
+msgstr "Просмотреть различия"
 
 #: ../rabbitvcs/ui/changes.py:417 ../rabbitvcs/ui/checkmods.py:251
 msgid "Compare side by side"
@@ -367,43 +366,39 @@ msgstr "Извлечение завершено"
 
 #: ../rabbitvcs/ui/cherrypick.py:50
 msgid "Cherry Pick"
-msgstr ""
+msgstr "Применить коммиты"
 
 #: ../rabbitvcs/ui/cherrypick.py:51
 msgid "Cherry Pick selected commits..."
-msgstr ""
+msgstr "Применение выбранных коммитов..."
 
 #: ../rabbitvcs/ui/cherrypick.py:53
-#, fuzzy
 msgid "Completed Cherry Pick"
-msgstr "Извлечение завершено"
+msgstr "Применение завершено"
 
 #: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/util/contextmenuitems.py:682
-#, fuzzy
 msgid "Clean"
-msgstr "Зачистить"
+msgstr "Очистить"
 
 #: ../rabbitvcs/ui/clean.py:65
-#, fuzzy
 msgid "Running Clean Command..."
-msgstr "Переименовывание..."
+msgstr "Выполнение очистки..."
 
 #: ../rabbitvcs/ui/clean.py:75
-#, fuzzy
 msgid "Completed Clean"
-msgstr "Зачистка завершена"
+msgstr "Очистка завершена"
 
 #: ../rabbitvcs/ui/cleanup.py:54 ../rabbitvcs/util/contextmenuitems.py:495
 msgid "Cleanup"
-msgstr "Зачистить"
+msgstr "Очистить"
 
 #: ../rabbitvcs/ui/cleanup.py:55
 msgid "Cleaning Up..."
-msgstr "Зачистка..."
+msgstr "Выполнение очистки..."
 
 #: ../rabbitvcs/ui/cleanup.py:57
 msgid "Completed Cleanup"
-msgstr "Зачистка завершена"
+msgstr "Очистка завершена"
 
 #: ../rabbitvcs/ui/clone.py:49 ../rabbitvcs/ui/clone.py:64
 #: ../rabbitvcs/util/contextmenuitems.py:652
@@ -439,9 +434,8 @@ msgid "Completed Commit"
 msgstr "Фиксация завершена"
 
 #: ../rabbitvcs/ui/commit.py:385
-#, fuzzy
 msgid "Close Branch"
-msgstr "Ветка/тэг создана"
+msgstr "Закрыть ветку"
 
 #: ../rabbitvcs/ui/create.py:49
 msgid "Repository successfully created"
@@ -455,16 +449,15 @@ msgstr "Ошибка при создании репозитория. Убеди�
 
 #: ../rabbitvcs/ui/create.py:63 ../rabbitvcs/util/contextmenuitems.py:647
 msgid "Initialize Repository"
-msgstr ""
+msgstr "Создать репозиторий"
 
 #: ../rabbitvcs/ui/create.py:64
 msgid "Setting up repository..."
-msgstr ""
+msgstr "Создание репозитория..."
 
 #: ../rabbitvcs/ui/create.py:66
-#, fuzzy
 msgid "Completed repository setup"
-msgstr "Создать репозиторий здесь"
+msgstr "Создание репозитория завершено"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
@@ -662,41 +655,40 @@ msgid "Update the selected path by reverse merging the changes"
 msgstr ""
 
 #: ../rabbitvcs/ui/log.py:932
-#, fuzzy
 msgid "Copy to clipboard"
-msgstr "Скопировать адрес в буфер"
+msgstr "Скопировать в буфер обмена"
 
 #: ../rabbitvcs/ui/log.py:933
 msgid "Copy to clipboard the full data of these revisions"
-msgstr ""
+msgstr "Скопировать в буфер обмена полные данные этих ревизий"
 
 #: ../rabbitvcs/ui/log.py:938
 msgid "Edit author..."
-msgstr ""
+msgstr "Изменить автора..."
 
 #: ../rabbitvcs/ui/log.py:943
 msgid "Edit log message..."
-msgstr ""
+msgstr "Изменить сообщение ревизии..."
 
 #: ../rabbitvcs/ui/log.py:948
 msgid "Edit revision properties..."
-msgstr ""
+msgstr "Изменить свойства ревизии..."
 
 #: ../rabbitvcs/ui/log.py:957
 msgid "Cherry Pick this commits..."
-msgstr ""
+msgstr "Применить эти коммиты..."
 
 #: ../rabbitvcs/ui/log.py:958
 msgid "Apply the changes introduced by some existing commits"
-msgstr ""
+msgstr "Применить изменения существующих коммитов"
 
 #: ../rabbitvcs/ui/log.py:1224
 msgid "Edit author"
-msgstr ""
+msgstr "Изменение автора"
 
 #: ../rabbitvcs/ui/log.py:1234
 msgid "Edit log message"
-msgstr ""
+msgstr "Изменение сообщения ревизии"
 
 #: ../rabbitvcs/ui/markresolved.py:51 ../rabbitvcs/ui/markresolved.py:102
 #: ../rabbitvcs/util/contextmenuitems.py:466
@@ -736,17 +728,17 @@ msgstr "Слить"
 
 #: ../rabbitvcs/ui/merge.py:429
 msgid "No active branch"
-msgstr ""
+msgstr "Нет активной ветки"
 
 #. Set up the Author line
 #: ../rabbitvcs/ui/merge.py:442
 msgid "Author:"
-msgstr ""
+msgstr "Автор:"
 
 #. Set up the Date line
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 #: ../rabbitvcs/ui/merge.py:518
 #, fuzzy
@@ -1318,7 +1310,7 @@ msgstr "Разблокировать элемент"
 
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
-msgstr "Зачистить рабочую копию"
+msgstr "Очистить рабочую копию"
 
 #: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export..."
