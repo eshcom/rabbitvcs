@@ -53,7 +53,7 @@ update-po: Makefile
 	  if $$result; then \
 	    if cmp $(srcdir)/$$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
 	      rm -f $$tmpdir/$$lang.new.po; \
-            else \
+	    else \
 	      if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
 	        :; \
 	      else \
