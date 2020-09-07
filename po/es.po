@@ -1673,6 +1673,354 @@ msgstr "Mezclado"
 msgid "Conflicted"
 msgstr "Con conflictos"
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Propiedades de:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Las propiedades seleccionadas serán aplicadas recursivamente.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Eliminar propiedades recursivamente"
+
+msgid "Edit..."
+msgstr "Editar..."
+
+msgid "New..."
+msgstr "Nuevo..."
+
+msgid "URL/Path"
+msgstr "URL/ruta"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Añadir mensaje</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Detalles de certificación</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Editar detalles de propiedad</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Mensaje</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Por favor, añada sus detalles de autenticación</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Mensajes anteriores</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>¿Está seguro de que quiere eliminar %item%?</b></"
+"span>"
+
+msgid "Accept Forever"
+msgstr "Aceptar siempre"
+
+msgid "Accept Once"
+msgstr "Aceptar una vez"
+
+msgid "Apply property recursively"
+msgstr "Aplicar propiedad recursivamente"
+
+msgid "Authentication"
+msgstr "Autenticación"
+
+msgid "Check Certificate"
+msgstr "Comprobar certificado"
+
+msgid "Confirmation"
+msgstr "Confirmación"
+
+msgid "Delete Confirmation"
+msgstr "Eliminar confirmación"
+
+msgid "Deny"
+msgstr "Denegar"
+
+msgid "Fingerprint:"
+msgstr "Huella:"
+
+msgid "Login:"
+msgstr "Usuario:"
+
+msgid "Password:"
+msgstr "Contraseña:"
+
+msgid "Previous Messages"
+msgstr "Mensajes anteriores"
+
+msgid "Property"
+msgstr "Propiedad"
+
+msgid "Property:"
+msgstr "Propiedad:"
+
+msgid "Realm:"
+msgstr "Reino:"
+
+msgid "Save Authentication"
+msgstr "Guardar autenticación"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "El/los elemento(s) se enviarán a la papelera de reciclaje."
+
+msgid "Valid:"
+msgstr "Válido:"
+
+msgid "Value:"
+msgstr "Valor:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Enlaces</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Información de versión</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Autores:"
+
+msgid "Thanks:"
+msgstr "Agradecimientos:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Tabla de revisiones</b>"
+
+msgid "Limit:"
+msgstr "Límite:"
+
+msgid "Log"
+msgstr "Registro"
+
+msgid "Refresh"
+msgstr "Actualizar"
+
+msgid "Showing Revisions:"
+msgstr "Mostrando revisiones:"
+
+msgid "Stop on copy"
+msgstr "Parar al copiar"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Petición de limpieza realizada...\n"
+"\n"
+"¿Empezar limpieza de copia local?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Autenticación</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Mensajes de registro</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Opciones de registro</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Programa usado para comparar archivos</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>Histórico de URLs</b>"
+
+msgid "Browse..."
+msgstr "Navegar..."
+
+msgid "Clear your authentication information"
+msgstr "Limpiar su información de autenticación"
+
+msgid "Enable emblems"
+msgstr "Activar emblemas"
+
+msgid "Enable file attributes"
+msgstr "Activar atributos de archivo"
+
+msgid "Enable recursive status checks"
+msgstr "Activar comprobaciones recursivas de estado"
+
+msgid "External Programs"
+msgstr "Programas externos"
+
+msgid "General"
+msgstr "General"
+
+msgid "<b>Language</b>"
+msgstr "<b>Idioma</b>"
+
+msgid "Logging"
+msgstr "Registro"
+
+msgid "Minimum level to log"
+msgstr "Nivel mínimo de registro"
+
+msgid "Number of URLs to remember"
+msgstr "Número de URLs a recordar"
+
+msgid "Number of messages to remember"
+msgstr "Número de mensajes a recordar"
+
+msgid "Saved Data"
+msgstr "Datos guardados"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "Mostrar las herramientas de depuración de RabbitVCS"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+"El menú de depuración es usado para diagnosticar problemas en RabbitVCS"
+
+msgid "Type:"
+msgstr "Tipo:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Archivos a cerrar</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr ""
+"<b>Por favor, describa el motivo por el que está cerrando estos archivos</b>"
+
+msgid "Lock Files"
+msgstr "Archivos cerrados"
+
+msgid "Select / Deselect all"
+msgstr "Seleccionar/Deseleccionar todos"
+
+msgid "Steal the locks"
+msgstr "Robar los cerrojos"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>De revisión</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Confirmar a:</b>"
+
+msgid "Show unversioned files"
+msgstr "Mostrar archivos no versionados"
+
+msgid "Notification Messages"
+msgstr "Mensajes de notificación"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Cambiar el repositorio de su copia de trabajo</b>"
+
+msgid "From:"
+msgstr "Desde:"
+
+msgid "To:"
+msgstr "A:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Opciones</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revisión</b>"
+
+msgid "Omit Externals"
+msgstr "Omitir externos"
+
+msgid "Recursive"
+msgstr "Recursivo"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Importar mensaje</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Repositorio</b>"
+
+msgid "Include ignored files"
+msgstr "Incluir archivos ignorados"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Desde URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Desde: (URL y revisión a mezclar)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Intervalo de revisión</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>A: (URL y revisión a mezclar)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL a la que mezclar</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Copia de trabajo</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Elija este método si ha hecho algunos cambios a la rama y desea mezclar sus "
+"cambios con otra rama."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Elija este método si desea mezclar dos ramas diferentes en su copia de "
+"trabajo."
+
+msgid "Ignore ancestry"
+msgstr "Ignorar ancestros"
+
+msgid "Merge Assistant"
+msgstr "Asistente de mezclado"
+
+msgid "Merge a range of revisions"
+msgstr "Mezclar un intervalo de revisiones"
+
+msgid "Merge two different trees"
+msgstr "Mezclar dos árboles diferentes"
+
+msgid "Only record the merge"
+msgstr "Registrar sólo la mezcla"
+
+msgid "Show log"
+msgstr "Mostrar registro"
+
+msgid "Test Merge"
+msgstr "Comprobar mezcla"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"Use el diálogo de registro para seleccionar las revisiones que desea "
+"mezclar. O escriba las revisiones manualmente, cada una separada por una "
+"coma. Puede especificar un intervalo de revisiones con un guión. \n"
+"\n"
+"Ejemplo: 4-7,9,11,15-HEAD\n"
+"\n"
+"Para mezclar todas las revisiones, deje el campo vacío."
+
+msgid "<b>Create copy from</b>"
+msgstr "<b>Crear copia de</b>"
+
+msgid "Destination:"
+msgstr "Destino:"
+
 #~ msgid "Checkout..."
 #~ msgstr "Comprobar..."
 
@@ -1719,271 +2067,36 @@ msgstr "Con conflictos"
 #~ msgid "English"
 #~ msgstr "Inglés"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Propiedades de:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr ""
-#~ "<i>Las propiedades seleccionadas serán aplicadas recursivamente.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Eliminar propiedades recursivamente"
-
-#~ msgid "Edit..."
-#~ msgstr "Editar..."
-
-#~ msgid "New..."
-#~ msgstr "Nuevo..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/ruta:"
-
 #~ msgid "Load/Refresh"
 #~ msgstr "Cargar/actualizar"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Añadir mensaje</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Detalles de certificación</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Editar detalles de propiedad</b>"
 
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>Nombre de carpeta</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Mensaje</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Por favor, añada sus detalles de autenticación</b>"
-
 #~ msgid "<b>Please provide your ssl certification file</b>"
 #~ msgstr "<b>Introduzca su archivo certificación SSL</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Mensajes anteriores</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>¿Está seguro de que quiere eliminar %item%?</b></"
-#~ "span>"
 
 #~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 #~ msgstr "<span weight=\"bold\" size=\"xx-large\">Error de RabbitVCS</span>"
 
-#~ msgid "Accept Forever"
-#~ msgstr "Aceptar siempre"
-
-#~ msgid "Accept Once"
-#~ msgstr "Aceptar una vez"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "Aplicar propiedad recursivamente"
-
-#~ msgid "Authentication"
-#~ msgstr "Autenticación"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Comprobar certificado"
-
-#~ msgid "Confirmation"
-#~ msgstr "Confirmación"
-
 #~ msgid "Create Folder..."
 #~ msgstr "Crear carpeta..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Eliminar confirmación"
-
-#~ msgid "Deny"
-#~ msgstr "Denegar"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Huella:"
 
 #~ msgid "Issuer:"
 #~ msgstr "Emisor:"
 
-#~ msgid "Login:"
-#~ msgstr "Usuario:"
-
-#~ msgid "Password:"
-#~ msgstr "Contraseña:"
-
 #~ msgid "Path:"
 #~ msgstr "Ruta:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Mensajes anteriores"
-
-#~ msgid "Property"
-#~ msgstr "Propiedad"
-
-#~ msgid "Property:"
-#~ msgstr "Propiedad:"
-
-#~ msgid "Realm:"
-#~ msgstr "Reino:"
 
 #~ msgid "SSL Client Certification"
 #~ msgstr "Certificación de cliente SSL"
 
-#~ msgid "Save Authentication"
-#~ msgstr "Guardar autenticación"
-
 #~ msgid "Text Change"
 #~ msgstr "Cambio de texto"
-
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "El/los elemento(s) se enviarán a la papelera de reciclaje."
-
-#~ msgid "Valid:"
-#~ msgstr "Válido:"
-
-#~ msgid "Value:"
-#~ msgstr "Valor:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Enlaces</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Información de versión</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Autores:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Agradecimientos:"
-
-#~ msgid "100"
-#~ msgstr "100"
 
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr ""
 #~ "<b>Archivos afectados</b> (pulse dos veces para comparar con la base)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Tabla de revisiones</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Límite:"
-
-#~ msgid "Log"
-#~ msgstr "Registro"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualizar"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Mostrando revisiones:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Parar al copiar"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Petición de limpieza realizada...\n"
-#~ "\n"
-#~ "¿Empezar limpieza de copia local?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Autenticación</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Mensajes de registro</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Opciones de registro</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Programa usado para comparar archivos</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>Histórico de URLs</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Navegar..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Limpiar su información de autenticación"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Activar emblemas"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Activar atributos de archivo"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Activar comprobaciones recursivas de estado"
-
-#~ msgid "External Programs"
-#~ msgstr "Programas externos"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Language:"
-#~ msgstr "Idioma:"
-
-#~ msgid "Logging"
-#~ msgstr "Registro"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Nivel mínimo de registro"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Número de URLs a recordar"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Número de mensajes a recordar"
-
-#~ msgid "Saved Data"
-#~ msgstr "Datos guardados"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "Mostrar las herramientas de depuración de RabbitVCS"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr ""
-#~ "El menú de depuración es usado para diagnosticar problemas en RabbitVCS"
-
-#~ msgid "Type:"
-#~ msgstr "Tipo:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Archivos a cerrar</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr ""
-#~ "<b>Por favor, describa el motivo por el que está cerrando estos archivos</"
-#~ "b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Archivos cerrados"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Seleccionar/Deseleccionar todos"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Robar los cerrojos"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>De revisión</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>A revisión</b>"
@@ -1991,15 +2104,6 @@ msgstr "Con conflictos"
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr ""
 #~ "<b>Archivos cambiados</b> (pulse dos veces para comparar con el base)"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Confirmar a:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Mostrar archivos no versionados"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Mensajes de notificación"
 
 #~ msgid "<b>Remote URI:</b>"
 #~ msgstr "<b>URI remota:</b>"
@@ -2019,120 +2123,14 @@ msgstr "Con conflictos"
 #~ msgid "Refresh the list of properties."
 #~ msgstr "Actualizar lista de propiedades."
 
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Cambiar el repositorio de su copia de trabajo</b>"
-
-#~ msgid "From:"
-#~ msgstr "Desde:"
-
-#~ msgid "To:"
-#~ msgstr "A:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Opciones</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revisión</b>"
-
-#~ msgid "Omit Externals"
-#~ msgstr "Omitir externos"
-
-#~ msgid "Recursive"
-#~ msgstr "Recursivo"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Importar mensaje</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Repositorio</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Incluir archivos ignorados"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Desde URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Desde: (URL y revisión a mezclar)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Intervalo de revisión</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>A: (URL y revisión a mezclar)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL a la que mezclar</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Copia de trabajo</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Elija este método si ha hecho algunos cambios a la rama y desea mezclar "
-#~ "sus cambios con otra rama."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Elija este método si desea mezclar dos ramas diferentes en su copia de "
-#~ "trabajo."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Ignorar ancestros"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Asistente de mezclado"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "Mezclar un intervalo de revisiones"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Mezclar dos árboles diferentes"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Registrar sólo la mezcla"
-
-#~ msgid "Show log"
-#~ msgstr "Mostrar registro"
-
-#~ msgid "Test Merge"
-#~ msgstr "Comprobar mezcla"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "Use el diálogo de registro para seleccionar las revisiones que desea "
-#~ "mezclar. O escriba las revisiones manualmente, cada una separada por una "
-#~ "coma. Puede especificar un intervalo de revisiones con un guión. \n"
-#~ "\n"
-#~ "Ejemplo: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "Para mezclar todas las revisiones, deje el campo vacío."
-
 #~ msgid "<b>Switch Details</b>"
 #~ msgstr "<b>Cambiar detalles</b>"
-
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Crear copia de</b>"
 
 #~ msgid "<b>Program used to browse repositories</b>"
 #~ msgstr "<b>Programa usado para navegar en repositorios</b>"
 
 #~ msgid "Show new version on the right side"
 #~ msgstr "Mostrar nueva versión a la derecha"
-
-#~ msgid "Destination:"
-#~ msgstr "Destino:"
 
 #~ msgid "<b>Update Depth</b>"
 #~ msgstr "<b>Actualizar profundidad</b>"

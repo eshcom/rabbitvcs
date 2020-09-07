@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-07 15:27+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-12-03 19:19+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -1651,6 +1651,350 @@ msgstr "Слито"
 msgid "Conflicted"
 msgstr "Конфликтный"
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Свойства для:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Выбранные свойства будут применены рекурсивно.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Удалять свойства рекурсивно"
+
+msgid "Edit..."
+msgstr "Редактирование..."
+
+msgid "New..."
+msgstr "Новый..."
+
+msgid "URL/Path"
+msgstr "URL/Путь"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Добавить сообщение</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Свойства сертификата</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Редактирование свойства</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Сообщение</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Пожалуйста, добавьте информацию об аутентификации</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Предыдущие сообщения</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Вы действительно хотите удалить %item%?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Принять навсегда"
+
+msgid "Accept Once"
+msgstr "Принять единожды"
+
+msgid "Apply property recursively"
+msgstr "Применять свойства рекурсивно"
+
+msgid "Authentication"
+msgstr "Аутентификация"
+
+msgid "Check Certificate"
+msgstr "Проверить сертификат"
+
+msgid "Confirmation"
+msgstr "Подтверждение"
+
+msgid "Delete Confirmation"
+msgstr "Удалить подтверждение"
+
+msgid "Deny"
+msgstr "Запретить"
+
+msgid "Fingerprint:"
+msgstr "Fingerprint:"
+
+msgid "Login:"
+msgstr "Имя пользователя:"
+
+msgid "Password:"
+msgstr "Пароль:"
+
+msgid "Previous Messages"
+msgstr "Предыдущие сообщения"
+
+msgid "Property"
+msgstr "Свойство"
+
+msgid "Property:"
+msgstr "Свойство:"
+
+msgid "Realm:"
+msgstr "Область:"
+
+msgid "Save Authentication"
+msgstr "Сохранить аутентификацию"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "Элементы будут отправлены в корзину"
+
+msgid "Valid:"
+msgstr "Действителен:"
+
+msgid "Value:"
+msgstr "Значение:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Ссылки</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Информация о версии</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Авторы:"
+
+msgid "Thanks:"
+msgstr "Спасибо:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Таблица ревизий</b>"
+
+msgid "Limit:"
+msgstr "Ограничение"
+
+msgid "Log"
+msgstr "Лог"
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Showing Revisions:"
+msgstr "Отображенные ревизии:"
+
+msgid "Stop on copy"
+msgstr "Остановиться на копировании"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Вызвана зачистка...\n"
+"\n"
+"Начать зачистку рабочей копии?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Аутентификация</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Сообщения лога</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Настройки журнала</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Программа используемая для сравнения файлов</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>История URL</b>"
+
+msgid "Browse..."
+msgstr "Обзор..."
+
+msgid "Clear your authentication information"
+msgstr "Удалить информацию об аутентификации"
+
+msgid "Enable emblems"
+msgstr "Разрешить иконки"
+
+msgid "Enable file attributes"
+msgstr "Разрешить атрибуты файлов"
+
+msgid "Enable recursive status checks"
+msgstr "Разрешить рекурсивную проверку статуса"
+
+msgid "External Programs"
+msgstr "Внешние Программы"
+
+msgid "General"
+msgstr "Общие"
+
+msgid "<b>Language</b>"
+msgstr "<b>Язык</b>"
+
+msgid "Logging"
+msgstr "Журнал"
+
+msgid "Minimum level to log"
+msgstr "Максимальный уровень журнала"
+
+msgid "Number of URLs to remember"
+msgstr "Сколько URL'ов запоминать"
+
+msgid "Number of messages to remember"
+msgstr "Сколько сообщений запоминать"
+
+msgid "Saved Data"
+msgstr "Сохраненные данные"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "Показать утилиты отладки RabbitVCS"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr "Меню отладки используется для диагностики неполадок RabbitVCS"
+
+msgid "Type:"
+msgstr "Тип:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Файлы на блокировки</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Пожалуйста, опишите причину блокировки этих файлов</b>"
+
+msgid "Lock Files"
+msgstr "Заблокировать файлы"
+
+msgid "Select / Deselect all"
+msgstr "Выбрать / Снять выбор для всего"
+
+msgid "Steal the locks"
+msgstr "Скрыть блокировки"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Из ревизии</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Зафиксировать в:</b>"
+
+msgid "Show unversioned files"
+msgstr "Показать файлы без версии"
+
+msgid "Notification Messages"
+msgstr "Сообщения оповещений"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Изменить репозиторий вашей рабочей копии</b>"
+
+msgid "From:"
+msgstr "Из:"
+
+msgid "To:"
+msgstr "В:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Настройки</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Ревизия</b>"
+
+msgid "Omit Externals"
+msgstr "Без внешних включений"
+
+msgid "Recursive"
+msgstr "Рекурсивно"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Сообщение Импортирования</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Репозиторий</b>"
+
+msgid "Include ignored files"
+msgstr "Включить игнорируемые файлы"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Из URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Из: (URL и ревизия для слития)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Диапозон ревизий</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>В: (URL и ревизия для слияния)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL для слияния из</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Рабочая копия</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Выберите этот метод если вы вносили изменения в ветку и желаете слить свои "
+"изменения с другой веткой."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Выберите этот метод если вы хотите слить две разных ветки в свою рабочую "
+"копию."
+
+msgid "Ignore ancestry"
+msgstr "Игнорировать предков"
+
+msgid "Merge Assistant"
+msgstr "Помощник Слияния"
+
+msgid "Merge a range of revisions"
+msgstr "Слить диапазон ревизий"
+
+msgid "Merge two different trees"
+msgstr "Слить два различных дерева"
+
+msgid "Only record the merge"
+msgstr "Только зарегистрировать слияние"
+
+msgid "Show log"
+msgstr "Показать лог"
+
+msgid "Test Merge"
+msgstr "Пробное слияние"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"Используйте диалог лога для выбора ревизий для слияния. Или впишите ревизии "
+"вручную через запятую. Вы можете указать диапазон через тире \n"
+"\n"
+"Пример: 4-7,9,11,15-HEAD\n"
+"\n"
+"Оставьте пустым для слияния всех ревизий."
+
+msgid "<b>Create copy from</b>"
+msgstr "<b>Создать копию из</b>"
+
+msgid "Destination:"
+msgstr "Назначение:"
+
 #~ msgid "Checkout..."
 #~ msgstr "Извлечь..."
 
@@ -1696,344 +2040,6 @@ msgstr "Конфликтный"
 #~ msgid "English"
 #~ msgstr "Английский"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Свойства для:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Выбранные свойства будут применены рекурсивно.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Удалять свойства рекурсивно"
-
-#~ msgid "Edit..."
-#~ msgstr "Редактирование..."
-
-#~ msgid "New..."
-#~ msgstr "Новый..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/Путь:"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Добавить сообщение</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Свойства сертификата</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Редактирование свойства</b>"
-
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Сообщение</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Пожалуйста добавьте информацию об аутентификации</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Предыдущие сообщения</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Вы действительно хотите удалить %item%?</b></span>"
-
-#~ msgid "Accept Forever"
-#~ msgstr "Принять навсегда"
-
-#~ msgid "Accept Once"
-#~ msgstr "Принять единожды"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "Применять свойства рекурсивно"
-
-#~ msgid "Authentication"
-#~ msgstr "Аутентификация"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Проверить сертификат"
-
-#~ msgid "Confirmation"
-#~ msgstr "Подтверждение"
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Удалить подтверждение"
-
-#~ msgid "Deny"
-#~ msgstr "Запретить"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Fingerprint:"
-
-#~ msgid "Login:"
-#~ msgstr "Имя пользоввателя:"
-
-#~ msgid "Password:"
-#~ msgstr "Пароль:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Предыдущие сообщения"
-
-#~ msgid "Property"
-#~ msgstr "Свойство"
-
-#~ msgid "Property:"
-#~ msgstr "Свойство:"
-
-#~ msgid "Realm:"
-#~ msgstr "Область:"
-
-#~ msgid "Save Authentication"
-#~ msgstr "Сохранить аутентификацию"
-
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "Элементы будут отправлены в корзину"
-
-#~ msgid "Valid:"
-#~ msgstr "Действителен:"
-
-#~ msgid "Value:"
-#~ msgstr "Значение:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Ссылки</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Информация о версии</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Авторы:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Спасибо:"
-
-#~ msgid "100"
-#~ msgstr "100"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Таблица ревизий</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Огрничение"
-
-#~ msgid "Log"
-#~ msgstr "Лог"
-
-#~ msgid "Refresh"
-#~ msgstr "Обновить"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Отображенные ревизии:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Остановиться на копировании"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Вызвана зачистка...\n"
-#~ "\n"
-#~ "Начать зачистку рабочей копии?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Аутентификация</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Сообщения лога</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Настройки журнала</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Программа используемая для сравнения файлов</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>История URL</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Обзор..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Удалить информацию об аутентификации"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Разрешить иконки"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Разрешить атрибуты файлов"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Разрешить рекурсивную проверку статуса"
-
-#~ msgid "External Programs"
-#~ msgstr "Внешние Программы"
-
-#~ msgid "General"
-#~ msgstr "Общие"
-
-#~ msgid "Language:"
-#~ msgstr "Язык:"
-
-#~ msgid "Logging"
-#~ msgstr "Журнал"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Максимальный уровень журнала"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Сколько URL'ов запоминать"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Сколько сообщений запоминать"
-
-#~ msgid "Saved Data"
-#~ msgstr "Сохраненные даныне"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "Показать утилиты отладки RabbitVCS"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr "Меню отладки используется для диагностики неполадок RabbitVCS"
-
-#~ msgid "Type:"
-#~ msgstr "Тип:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Файлы на блокировки</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Пожалуйста опишите причину блокировки этих файлов</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Блокировать файлы"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Выбрать / Снять выбор для всего"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Скрыть блокировки"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Из ревизии</b>"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Зафиксировать в:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Показать файлы без версии"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Сообщения оповещений"
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Изменить репозиторий вашей рабочей копии</b>"
-
-#~ msgid "From:"
-#~ msgstr "Из:"
-
-#~ msgid "To:"
-#~ msgstr "В:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Настройки</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Ревизия</b>"
-
-#~ msgid "Omit Externals"
-#~ msgstr "Без внешних включений"
-
-#~ msgid "Recursive"
-#~ msgstr "Рекурсивно"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Сообщение Импортирования</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Репозиторий</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Включить игнорируемые файлы"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Из URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Из: (URL и ревизия для слития)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Диапозон ревизий</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>В: (URL и ревизия для слияния)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL для слияния из</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Рабочая копия</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Выберите этот метод если вы вносили изменения в ветку и желаете слить "
-#~ "свои изменения с другой веткой."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Выберите этот метод если вы хотите слить две разных ветки в свою рабочую "
-#~ "копию."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Игнорировать предков"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Помощник Слияния"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "Слить диапозон ревизий"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Слить два различных дерева"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Только зарегистрировать слияние"
-
-#~ msgid "Show log"
-#~ msgstr "Показать лог"
-
-#~ msgid "Test Merge"
-#~ msgstr "Пробное слияние"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "Используйте диалог лога для выбора ревизий для слияния. Или впишите "
-#~ "ревизии вручную через запятую. Вы можете указать диапазон через тире \n"
-#~ "\n"
-#~ "Пример: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "Оставьте пустым для слияния всех ревизий."
-
 #~ msgid "<b>Program used to browse repositories</b>"
 #~ msgstr "<b>Программа для просмотра репозиториев</b>"
 
@@ -2042,9 +2048,3 @@ msgstr "Конфликтный"
 
 #~ msgid "<b>Update Depth</b>"
 #~ msgstr "<b>Глубина обновления</b>"
-
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Создать копию из</b>"
-
-#~ msgid "Destination:"
-#~ msgstr "Назначение:"

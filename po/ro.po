@@ -1667,6 +1667,361 @@ msgstr "Test Îmbinare"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Proprietăți pentru:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Proprietățile selectate vor fi aplicate recursiv.</i>"
+
+#, fuzzy
+msgid "Delete properties recursively"
+msgstr "<i>Proprietățile selectate vor fi aplicate recursiv.</i>"
+
+msgid "Edit..."
+msgstr "Editează..."
+
+msgid "New..."
+msgstr "Nou..."
+
+#, fuzzy
+msgid "URL/Path"
+msgstr "Cale"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Adaugă Mesaj</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Detalii Certificat</b>"
+
+#, fuzzy
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Detalii Certificat</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Mesaj</b>"
+
+#, fuzzy
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Autentificare</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Mesaje Anterioare</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Ești sigur că vrei să ștergi %articol%?</b></span>"
+
+#, fuzzy
+msgid "Accept Forever"
+msgstr "Acceptă O data"
+
+msgid "Accept Once"
+msgstr "Acceptă O data"
+
+msgid "Apply property recursively"
+msgstr ""
+
+msgid "Authentication"
+msgstr "Autentificare"
+
+msgid "Check Certificate"
+msgstr "Verifică Certificat"
+
+msgid "Confirmation"
+msgstr "Confirmare"
+
+msgid "Delete Confirmation"
+msgstr "Confirmare ștergere"
+
+msgid "Deny"
+msgstr "Interzice"
+
+msgid "Fingerprint:"
+msgstr "Amprentă:"
+
+msgid "Login:"
+msgstr "Logare:"
+
+msgid "Password:"
+msgstr "Parolă:"
+
+msgid "Previous Messages"
+msgstr "Mesaje Anterioare"
+
+msgid "Property"
+msgstr "Proprietate"
+
+msgid "Property:"
+msgstr "Proprietate:"
+
+msgid "Realm:"
+msgstr "Domeniu:"
+
+#, fuzzy
+msgid "Save Authentication"
+msgstr "Autentificare"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr ""
+
+msgid "Valid:"
+msgstr "Valid:"
+
+msgid "Value:"
+msgstr "Valoare:"
+
+#, fuzzy
+msgid "<b>Links</b>"
+msgstr "<b>Opțiuni</b>"
+
+msgid "<b>Version Information</b>"
+msgstr ""
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Autori:"
+
+msgid "Thanks:"
+msgstr "Mulțumiri"
+
+msgid "100"
+msgstr "100"
+
+#, fuzzy
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Mesaj</b>"
+
+msgid "Limit:"
+msgstr "Limită:"
+
+msgid "Log"
+msgstr "Jurnal"
+
+msgid "Refresh"
+msgstr "Reîmprospătare"
+
+#, fuzzy
+msgid "Showing Revisions:"
+msgstr "Revizia"
+
+msgid "Stop on copy"
+msgstr ""
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentificare</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Mesaje Jurnal</b>"
+
+#, fuzzy
+msgid "<b>Logging Options</b>"
+msgstr "<b>Opțiuni</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr ""
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>Istorie URL</b>"
+
+msgid "Browse..."
+msgstr "Răsfoiește..."
+
+#, fuzzy
+msgid "Clear your authentication information"
+msgstr "Vrei să îți ștergi informațiile de autentificare?"
+
+msgid "Enable emblems"
+msgstr "Activează embleme"
+
+msgid "Enable file attributes"
+msgstr "Activează atribute fișier"
+
+msgid "Enable recursive status checks"
+msgstr ""
+
+#, fuzzy
+msgid "External Programs"
+msgstr "Programe Externe"
+
+msgid "General"
+msgstr "General"
+
+msgid "<b>Language</b>"
+msgstr "<b>Limbă</b>"
+
+msgid "Logging"
+msgstr "Logare"
+
+msgid "Minimum level to log"
+msgstr ""
+
+#, fuzzy
+msgid "Number of URLs to remember"
+msgstr "Număr mesaje de reținut"
+
+msgid "Number of messages to remember"
+msgstr "Număr mesaje de reținut"
+
+msgid "Saved Data"
+msgstr "Date Salvate"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "Arată uneltele de depanare RabitVCS"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr "Tip:"
+
+msgid "<b>Files to lock</b>"
+msgstr ""
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr ""
+
+#, fuzzy
+msgid "Lock Files"
+msgstr "Blocat"
+
+msgid "Select / Deselect all"
+msgstr "Selecteză/Deselecteză tot"
+
+msgid "Steal the locks"
+msgstr ""
+
+#, fuzzy
+msgid "<b>From Revision</b>"
+msgstr "<b>Din URL</b>"
+
+#, fuzzy
+msgid "<b>Commit to:</b>"
+msgstr "<b>Din URL</b>"
+
+msgid "Show unversioned files"
+msgstr ""
+
+msgid "Notification Messages"
+msgstr "Mesaje de notifcare"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr ""
+
+msgid "From:"
+msgstr "Din:"
+
+msgid "To:"
+msgstr ""
+
+msgid "<b>Options</b>"
+msgstr "<b>Opțiuni</b>"
+
+#, fuzzy
+msgid "<b>Revision</b>"
+msgstr "Revizia"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Programe Externe"
+
+msgid "Recursive"
+msgstr "Recursiv"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Importă Mesaj</b>"
+
+#, fuzzy
+msgid "<b>Repository</b>"
+msgstr "<b>Istorie URL</b>"
+
+msgid "Include ignored files"
+msgstr "Include fișiere ignorate"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Din URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Revision Range</b>"
+msgstr "<b>Mesaj</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>URL to merge from</b>"
+msgstr "<b>Istorie URL</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr ""
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+
+msgid "Ignore ancestry"
+msgstr "Ignoră antecedent"
+
+msgid "Merge Assistant"
+msgstr "Asistent Ămbinare"
+
+msgid "Merge a range of revisions"
+msgstr ""
+
+msgid "Merge two different trees"
+msgstr ""
+
+msgid "Only record the merge"
+msgstr "Înregistrează doar îmbinarea"
+
+msgid "Show log"
+msgstr "Arată jurnal"
+
+#, fuzzy
+msgid "Test Merge"
+msgstr "Test Îmbinare"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Proprietăți pentru:</b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Autentificare"
+
 #~ msgid "Rename..."
 #~ msgstr "Redenumește..."
 
@@ -1683,181 +2038,5 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "Engleză"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Proprietăți pentru:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Proprietățile selectate vor fi aplicate recursiv.</i>"
-
-#~ msgid "Edit..."
-#~ msgstr "Editează..."
-
-#~ msgid "New..."
-#~ msgstr "Nou..."
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Adaugă Mesaj</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Detalii Certificat</b>"
-
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Mesaj</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Mesaje Anterioare</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Ești sigur că vrei să ștergi %articol%?</b></span>"
-
-#~ msgid "Accept Once"
-#~ msgstr "Acceptă O data"
-
-#~ msgid "Authentication"
-#~ msgstr "Autentificare"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Verifică Certificat"
-
-#~ msgid "Confirmation"
-#~ msgstr "Confirmare"
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Confirmare ștergere"
-
-#~ msgid "Deny"
-#~ msgstr "Interzice"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Amprentă:"
-
 #~ msgid "Issuer:"
 #~ msgstr "Emitent:"
-
-#~ msgid "Login:"
-#~ msgstr "Logare:"
-
-#~ msgid "Password:"
-#~ msgstr "Parolă:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Mesaje Anterioare"
-
-#~ msgid "Property"
-#~ msgstr "Proprietate"
-
-#~ msgid "Property:"
-#~ msgstr "Proprietate:"
-
-#~ msgid "Realm:"
-#~ msgstr "Domeniu:"
-
-#~ msgid "Valid:"
-#~ msgstr "Valid:"
-
-#~ msgid "Value:"
-#~ msgstr "Valoare:"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Autori:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Mulțumiri"
-
-#~ msgid "100"
-#~ msgstr "100"
-
-#~ msgid "Limit:"
-#~ msgstr "Limită:"
-
-#~ msgid "Log"
-#~ msgstr "Jurnal"
-
-#~ msgid "Refresh"
-#~ msgstr "Reîmprospătare"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Autentificare</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Mesaje Jurnal</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>Istorie URL</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Răsfoiește..."
-
-#~ msgid "Enable emblems"
-#~ msgstr "Activează embleme"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Activează atribute fișier"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Language:"
-#~ msgstr "Limbă:"
-
-#~ msgid "Logging"
-#~ msgstr "Logare"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Număr mesaje de reținut"
-
-#~ msgid "Saved Data"
-#~ msgstr "Date Salvate"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "Arată uneltele de depanare RabitVCS"
-
-#~ msgid "Type:"
-#~ msgstr "Tip:"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Selecteză/Deselecteză tot"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Mesaje de notifcare"
-
-#~ msgid "From:"
-#~ msgstr "Din:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Opțiuni</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Recursiv"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Importă Mesaj</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Include fișiere ignorate"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Din URL</b>"
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Ignoră antecedent"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Asistent Ămbinare"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Înregistrează doar îmbinarea"
-
-#~ msgid "Show log"
-#~ msgstr "Arată jurnal"

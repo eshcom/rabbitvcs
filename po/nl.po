@@ -1694,6 +1694,349 @@ msgstr "Samenvoegen"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Eigenschappen voor:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Geselecteerde eigenschappen worden recursief toegepast.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Eigenschappen recursief verwijderen"
+
+msgid "Edit..."
+msgstr "Bewerken..."
+
+msgid "New..."
+msgstr "Nieuw…"
+
+msgid "URL/Path"
+msgstr "URL/Pad"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Boodschap Toevoegen</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Certificaatdetails</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Eigenschapdetails bewerken</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Bericht</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Gelieve uw authenticatiedetails toe te voegen</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Eerdere berichten</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Weet u zeker dat u %item% wilt verwijderen?</b></"
+"span>"
+
+msgid "Accept Forever"
+msgstr "Voor altijd accepteren"
+
+msgid "Accept Once"
+msgstr "Eenmalig accpeteren"
+
+msgid "Apply property recursively"
+msgstr "Eigenschap recursief toepassen"
+
+msgid "Authentication"
+msgstr "Authenticatie"
+
+msgid "Check Certificate"
+msgstr "Certificaat controleren"
+
+msgid "Confirmation"
+msgstr "Bevestiging"
+
+msgid "Delete Confirmation"
+msgstr "Verwijderen bevestigen"
+
+msgid "Deny"
+msgstr "Weigeren"
+
+msgid "Fingerprint:"
+msgstr "Vingerafdruk:"
+
+msgid "Login:"
+msgstr "Aanmeldnaam:"
+
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+msgid "Previous Messages"
+msgstr "Vorige boodschappen"
+
+msgid "Property"
+msgstr "Eigenschap"
+
+msgid "Property:"
+msgstr "Eigenschap:"
+
+msgid "Realm:"
+msgstr "Omgeving:"
+
+msgid "Save Authentication"
+msgstr "Authenticatie opslaan"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "De item(s) worden in de prullenbak gegooid."
+
+msgid "Valid:"
+msgstr "Geldig:"
+
+msgid "Value:"
+msgstr "Waarde:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Koppelingen</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Versie Informatie</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Auteurs:"
+
+msgid "Thanks:"
+msgstr "Met dank aan:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revisietabel</b>"
+
+msgid "Limit:"
+msgstr "Limiet:"
+
+msgid "Log"
+msgstr "Logboek"
+
+msgid "Refresh"
+msgstr "Verversen"
+
+msgid "Showing Revisions:"
+msgstr "Getoonde revisies:"
+
+msgid "Stop on copy"
+msgstr "Op kopie stoppen"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Opschonen aangevraagd…\n"
+"\n"
+"Beginnen met opschonen van werkversie?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Authenticatie</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Logboekberichten</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Logboek-opties</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Programma voor bestandsvergelijking</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL-geschiedenis</b>"
+
+msgid "Browse..."
+msgstr "Bladeren…"
+
+msgid "Clear your authentication information"
+msgstr "Uw authenticatie-informatie wissen"
+
+msgid "Enable emblems"
+msgstr "Emblemen inschakelen…"
+
+msgid "Enable file attributes"
+msgstr "Bestandskenmerken inschakelen"
+
+msgid "Enable recursive status checks"
+msgstr "Recursieve statuscontroles inschakelen"
+
+msgid "External Programs"
+msgstr "Externe programma's"
+
+msgid "General"
+msgstr "Algemeen"
+
+msgid "<b>Language</b>"
+msgstr "<b>Taal</b>"
+
+msgid "Logging"
+msgstr "Logboek"
+
+msgid "Minimum level to log"
+msgstr "Minimumniveau voor loggen"
+
+msgid "Number of URLs to remember"
+msgstr "Het aantal te onthouden URLs"
+
+msgid "Number of messages to remember"
+msgstr "Het aantal te onthouden berichten"
+
+msgid "Saved Data"
+msgstr "Opgeslagen data"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "RabbitVCS-debughulpprogramma's tonen"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+"Het debugmenu is bedoeld om problemen met RabbitVCS zelf te diagnosticeren"
+
+msgid "Type:"
+msgstr "Type:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Te vergrendelen bestanden</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Beschrijf waarom u deze bestanden vergrendelt</b>"
+
+msgid "Lock Files"
+msgstr "Bestanden vergrendelen"
+
+msgid "Select / Deselect all"
+msgstr "Alles (de)selecteren"
+
+msgid "Steal the locks"
+msgstr "De blokkeringen stelen"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Van Revisie</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Committen naar:</b>"
+
+msgid "Show unversioned files"
+msgstr "Bestanden buiten versiebeheer tonen"
+
+msgid "Notification Messages"
+msgstr "Meldingen"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Het repository van uw werkversie veranderen</b>"
+
+msgid "From:"
+msgstr "Van:"
+
+msgid "To:"
+msgstr "Naar:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Opties</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revisie</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Externen overslaan"
+
+msgid "Recursive"
+msgstr "Recursief"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Bericht importeren</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Repository</b>"
+
+msgid "Include ignored files"
+msgstr "Genegeerde bestanden meenemen"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Van URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Van: (Samen te voegen URL en revisie)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revisiebereik</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Naar: (samen te voegen URL en revisie)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL waarvandaan samen te voegen</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Werkversie</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Gebruik deze methode als u wijzigingen hebt gemaakt aan een branch en uw "
+"wijzigingen wilt samenvoegen met een andere branch."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Gebruik deze methode als u twee verschillende branches wilt samenvoegen naar "
+"uw werkversie."
+
+msgid "Ignore ancestry"
+msgstr "Voorgeschiedenis negeren"
+
+msgid "Merge Assistant"
+msgstr "Samenvoeg-assistent"
+
+msgid "Merge a range of revisions"
+msgstr "Een reeks revisies samenvoegen"
+
+msgid "Merge two different trees"
+msgstr "Twee verschillende bomen samenvoegen"
+
+msgid "Only record the merge"
+msgstr "Alleen het samvoegen opnemen"
+
+msgid "Show log"
+msgstr "Toon log"
+
+msgid "Test Merge"
+msgstr "Test-samenvoegen"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Eigenschappen voor:</b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Authenticatie"
+
 #~ msgid "Checkout..."
 #~ msgstr "Uitchecken…"
 
@@ -1737,41 +2080,11 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "Engels"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Eigenschappen voor:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Geselecteerde eigenschappen worden recursief toegepast.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Eigenschappen recursief verwijderen"
-
-#~ msgid "Edit..."
-#~ msgstr "Bewerken..."
-
-#~ msgid "New..."
-#~ msgstr "Nieuw…"
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/Pad:"
-
 #~ msgid "Load/Refresh"
 #~ msgstr "Laden/verversen"
 
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
 #~ msgid "<b>A conflict was found in the following file:</b>"
 #~ msgstr "<b>Er is een conflict gevonden in het volgende bestand:</b>"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Boodschap Toevoegen</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Certificaatdetails</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Eigenschapdetails bewerken</b>"
 
 #~ msgid "<b>Enter Name and Email Details</b>"
 #~ msgstr "<b>Voer naam- en e-maildetails in</b>"
@@ -1779,53 +2092,20 @@ msgstr ""
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>Mapnaam</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Bericht</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Gelieve uw authenticatiedetails toe te voegen</b>"
-
 #~ msgid "<b>Please provide your ssl certification file</b>"
 #~ msgstr "<b>Geef alstublieft uw ssl certification-bestand</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Eerdere berichten</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Weet u zeker dat u %item% wilt verwijderen?</b></"
-#~ "span>"
 
 #~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 #~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS-fout</span>"
 
-#~ msgid "Accept Forever"
-#~ msgstr "Voor altijd accepteren"
-
 #~ msgid "Accept Mine"
 #~ msgstr "Van mij accepteren"
-
-#~ msgid "Accept Once"
-#~ msgstr "Eenmalig accpeteren"
 
 #~ msgid "Accept Theirs"
 #~ msgstr "Van hen accepteren"
 
-#~ msgid "Apply property recursively"
-#~ msgstr "Eigenschap recursief toepassen"
-
-#~ msgid "Authentication"
-#~ msgstr "Authenticatie"
-
 #~ msgid "Cancel"
 #~ msgstr "Annuleren"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Certificaat controleren"
-
-#~ msgid "Confirmation"
-#~ msgstr "Bevestiging"
 
 #~ msgid "Conflict Resolution Decision"
 #~ msgstr "Beslissing op conflictoplossing"
@@ -1833,17 +2113,8 @@ msgstr ""
 #~ msgid "Create Folder..."
 #~ msgstr "Map aanmaken…"
 
-#~ msgid "Delete Confirmation"
-#~ msgstr "Verwijderen bevestigen"
-
-#~ msgid "Deny"
-#~ msgstr "Weigeren"
-
 #~ msgid "Email:"
 #~ msgstr "E-mail:"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Vingerafdruk:"
 
 #~ msgid "How do you want to handle this?"
 #~ msgstr "Hoe wilt u dit afhandelen?"
@@ -1851,50 +2122,20 @@ msgstr ""
 #~ msgid "Issuer:"
 #~ msgstr "Uitgever:"
 
-#~ msgid "Login:"
-#~ msgstr "Aanmeldnaam:"
-
 #~ msgid "Merge Manually"
 #~ msgstr "Handmatig samenvoegen"
 
 #~ msgid "Name and Email"
 #~ msgstr "Naam en e-mail"
 
-#~ msgid "Password:"
-#~ msgstr "Wachtwoord:"
-
 #~ msgid "Path:"
 #~ msgstr "Pad:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Vorige boodschappen"
-
-#~ msgid "Property"
-#~ msgstr "Eigenschap"
-
-#~ msgid "Property:"
-#~ msgstr "Eigenschap:"
-
-#~ msgid "Realm:"
-#~ msgstr "Omgeving:"
 
 #~ msgid "SSL Client Certification"
 #~ msgstr "SSL-gebruikerscertificaat"
 
-#~ msgid "Save Authentication"
-#~ msgstr "Authenticatie opslaan"
-
 #~ msgid "Text Change"
 #~ msgstr "Tekstwijziging"
-
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "De item(s) worden in de prullenbak gegooid."
-
-#~ msgid "Valid:"
-#~ msgstr "Geldig:"
-
-#~ msgid "Value:"
-#~ msgstr "Waarde:"
 
 #~ msgid "<b>Pull Information</b>"
 #~ msgstr "<b>Informatie over pull</b>"
@@ -1908,21 +2149,6 @@ msgstr ""
 #~ msgid "label"
 #~ msgstr "label"
 
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Koppelingen</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Versie Informatie</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Auteurs:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Met dank aan:"
-
 #~ msgid "Content status:"
 #~ msgstr "Inhoudstatus:"
 
@@ -1932,54 +2158,15 @@ msgstr ""
 #~ msgid "VCS:"
 #~ msgstr "VCS:"
 
-#~ msgid "100"
-#~ msgstr "100"
-
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr ""
 #~ "<b>Betrokken bestand(en)</b> (dubbelklik om te vergelijken met basis)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Revisietabel</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Limiet:"
-
-#~ msgid "Log"
-#~ msgstr "Logboek"
-
-#~ msgid "Refresh"
-#~ msgstr "Verversen"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Getoonde revisies:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Op kopie stoppen"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Opschonen aangevraagd…\n"
-#~ "\n"
-#~ "Beginnen met opschonen van werkversie?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Authenticatie</b>"
 
 #~ msgid "<b>Checker type:</b>"
 #~ msgstr "<b>Checkertype:</b>"
 
 #~ msgid "<b>Configuration Editor</b>"
 #~ msgstr "<b>Configuratie-editor</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Logboekberichten</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Logboek-opties</b>"
 
 #~ msgid "<b>Memory usage:</b> "
 #~ msgstr "<b>Geheugengebruik:</b> "
@@ -1990,53 +2177,8 @@ msgstr ""
 #~ msgid "<b>Process ID:</b>"
 #~ msgstr "<b>Proces-ID:</b>"
 
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Programma voor bestandsvergelijking</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL-geschiedenis</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Bladeren…"
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Uw authenticatie-informatie wissen"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Emblemen inschakelen…"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Bestandskenmerken inschakelen"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Recursieve statuscontroles inschakelen"
-
-#~ msgid "External Programs"
-#~ msgstr "Externe programma's"
-
-#~ msgid "General"
-#~ msgstr "Algemeen"
-
 #~ msgid "Git"
 #~ msgstr "Git"
-
-#~ msgid "Language:"
-#~ msgstr "Taal:"
-
-#~ msgid "Logging"
-#~ msgstr "Logboek"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Minimumniveau voor loggen"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Het aantal te onthouden URLs"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Het aantal te onthouden berichten"
 
 #~ msgid "Refresh Information"
 #~ msgstr "Informatie verversen"
@@ -2044,42 +2186,11 @@ msgstr ""
 #~ msgid "Restart Checker"
 #~ msgstr "Checker herstarten"
 
-#~ msgid "Saved Data"
-#~ msgstr "Opgeslagen data"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "RabbitVCS-debughulpprogramma's tonen"
-
 #~ msgid "Show new version on the left side"
 #~ msgstr "Nieuwe versie tonen aan de linkerkant"
 
 #~ msgid "Stop Checker"
 #~ msgstr "Stopchecker"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr ""
-#~ "Het debugmenu is bedoeld om problemen met RabbitVCS zelf te diagnosticeren"
-
-#~ msgid "Type:"
-#~ msgstr "Type:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Te vergrendelen bestanden</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Beschrijf waarom u deze bestanden vergrendelt</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Bestanden vergrendelen"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Alles (de)selecteren"
-
-#~ msgid "Steal the locks"
-#~ msgstr "De blokkeringen stelen"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Van Revisie</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Naar Revisie</b>"
@@ -2093,15 +2204,6 @@ msgstr ""
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr ""
 #~ "<b>Gewijzigde bestanden</b> (dubbelklik om met basis te vergelijken)"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Committen naar:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Bestanden buiten versiebeheer tonen"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Meldingen"
 
 #~ msgid "<b>Remote URI:</b>"
 #~ msgstr "<b>URI op afstand:</b>"
@@ -2121,88 +2223,8 @@ msgstr ""
 #~ msgid "Refresh the list of properties."
 #~ msgstr "De eigenschappenlijst verversen"
 
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Het repository van uw werkversie veranderen</b>"
-
-#~ msgid "From:"
-#~ msgstr "Van:"
-
-#~ msgid "To:"
-#~ msgstr "Naar:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Opties</b>"
-
 #~ msgid "Update Local Repository"
 #~ msgstr "Lokale repository updaten"
 
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revisie</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Recursief"
-
 #~ msgid "Rollback to specified revision number"
 #~ msgstr "Terugdraaien naar opgegeven revisienummer"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Bericht importeren</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Repository</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Genegeerde bestanden meenemen"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Van URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Van: (Samen te voegen URL en revisie)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Revisiebereik</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>Naar: (samen te voegen URL en revisie)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL waarvandaan samen te voegen</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Werkversie</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Gebruik deze methode als u wijzigingen hebt gemaakt aan een branch en uw "
-#~ "wijzigingen wilt samenvoegen met een andere branch."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Gebruik deze methode als u twee verschillende branches wilt samenvoegen "
-#~ "naar uw werkversie."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Voorgeschiedenis negeren"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Samenvoeg-assistent"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "Een reeks revisies samenvoegen"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Twee verschillende bomen samenvoegen"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Alleen het samvoegen opnemen"
-
-#~ msgid "Show log"
-#~ msgstr "Toon log"
-
-#~ msgid "Test Merge"
-#~ msgstr "Test-samenvoegen"

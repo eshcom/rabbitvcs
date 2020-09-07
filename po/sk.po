@@ -1653,6 +1653,346 @@ msgstr "Zlúčené"
 msgid "Conflicted"
 msgstr "V rozpore"
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Vlastnosti pre:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Vybrané vlastnosti budú použité rekurzívne.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Odstrániť vlastnosti rekurzívne"
+
+msgid "Edit..."
+msgstr "Editovať..."
+
+msgid "New..."
+msgstr "Nový..."
+
+msgid "URL/Path"
+msgstr "URL/Cesta"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Pridať správu</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Podrobnosti certifikátu</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Upraviť vlastnosť podrobností</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Správa</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Prosím pridajte vaše podrobnosti o overení</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Predchádzajúce správy</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>Naozaj chcete zmazať %položku%?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Prijať navždy"
+
+msgid "Accept Once"
+msgstr "Prijať iba teraz"
+
+#, fuzzy
+msgid "Apply property recursively"
+msgstr "Odstrániť vlastnosti rekurzívne"
+
+msgid "Authentication"
+msgstr "Autentizácia"
+
+msgid "Check Certificate"
+msgstr "Skontrolujte Certifikát"
+
+msgid "Confirmation"
+msgstr "Potvrdenie"
+
+msgid "Delete Confirmation"
+msgstr "Odstráň potvrdenie"
+
+msgid "Deny"
+msgstr "Odmietnuť"
+
+msgid "Fingerprint:"
+msgstr "Odtlačok prsta:"
+
+msgid "Login:"
+msgstr "Prihlasovacie meno:"
+
+msgid "Password:"
+msgstr "Heslo:"
+
+msgid "Previous Messages"
+msgstr "Predchádzajúca správa"
+
+msgid "Property"
+msgstr "Vlastnosť"
+
+msgid "Property:"
+msgstr "Vlastnosť:"
+
+msgid "Realm:"
+msgstr "Oblasť:"
+
+msgid "Save Authentication"
+msgstr "Uložiť overenie"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "Položka(y) bude zaslaná do koša."
+
+msgid "Valid:"
+msgstr "Platné:"
+
+msgid "Value:"
+msgstr "Hodnota:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Linky</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Informácie o verzii</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Autori:"
+
+msgid "Thanks:"
+msgstr "Poďakovanie"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revízna tabuľka</b>"
+
+msgid "Limit:"
+msgstr "Limit:"
+
+msgid "Log"
+msgstr "Záznam"
+
+msgid "Refresh"
+msgstr "Obnoviť"
+
+msgid "Showing Revisions:"
+msgstr "Zobraziť revízie:"
+
+msgid "Stop on copy"
+msgstr "Stop na kópiu"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Požadované čistenie....\n"
+"\n"
+"Otvorenie pracovnej kópie čistenia?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentizácia</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Záznam správ</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Možnosti zaznamenávania</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program používaný na porovnávanie súborov</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL História</b>"
+
+msgid "Browse..."
+msgstr "Prehľadávať..."
+
+msgid "Clear your authentication information"
+msgstr "Vymazať vaše overovacie informácie"
+
+msgid "Enable emblems"
+msgstr "Povoliť emblémy"
+
+msgid "Enable file attributes"
+msgstr "Povoliť atribúty súborov"
+
+msgid "Enable recursive status checks"
+msgstr "Povoliť kontrolu rekurzívneho stavu"
+
+msgid "External Programs"
+msgstr "Externé programy"
+
+msgid "General"
+msgstr "Všeobecné"
+
+msgid "<b>Language</b>"
+msgstr "<b>Jazyk</b>"
+
+msgid "Logging"
+msgstr "Prihlásenie"
+
+msgid "Minimum level to log"
+msgstr ""
+
+msgid "Number of URLs to remember"
+msgstr "Počet adries URL k zapamätaniu"
+
+msgid "Number of messages to remember"
+msgstr "Počet správ k zapamätaniu"
+
+msgid "Saved Data"
+msgstr "Uložené údaje"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr "Typ"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Súbory na zamknutie</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Opíšte prosím, prečo tieto súbory zamykáte</b>"
+
+msgid "Lock Files"
+msgstr "Zamknúť súbory"
+
+msgid "Select / Deselect all"
+msgstr "Vybrať / Zrušiť všetko"
+
+msgid "Steal the locks"
+msgstr "Prevziať zámky"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Z Revízie</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Odovzdať do:</b>"
+
+msgid "Show unversioned files"
+msgstr "Zobraziť neverziované súbory"
+
+msgid "Notification Messages"
+msgstr "Oznamovacie Správy"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Zmeniť repozitár vašej pracovnej kópie</b>"
+
+msgid "From:"
+msgstr "Z..."
+
+msgid "To:"
+msgstr "Do:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Voľby</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revízia</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Vonkajšie"
+
+msgid "Recursive"
+msgstr "Rekurzívny"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Import správy</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Repozitáre</b>"
+
+msgid "Include ignored files"
+msgstr "Zahrnúť ignorované súbory"
+
+msgid "<b>From URL</b>"
+msgstr "<b>z URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Od: (URL a revíziu zlúčiť)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Rozsah revízie</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Do: (URL a revíziu zlúčiť)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL zlúčiť od</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Pracovná kopia</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Vyberte túto možnosť, ak ste urobili nejaké zmeny vo vetvách a chcete zlúčiť "
+"vaše zmeny s inou vetvou."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Vyberte túto možnosť, ak chcete zlúčiť dve rôzne vetvy do vašej pracovnej "
+"kópie."
+
+msgid "Ignore ancestry"
+msgstr "Ignorovať rod"
+
+msgid "Merge Assistant"
+msgstr "Zlúčiť pomocníka"
+
+#, fuzzy
+msgid "Merge a range of revisions"
+msgstr "Zlúčiť niekoľko revízií"
+
+msgid "Merge two different trees"
+msgstr "Zlúčenie dvoch rôznych stromov"
+
+msgid "Only record the merge"
+msgstr "Iba záznam zlúčenia"
+
+msgid "Show log"
+msgstr "Ukázať záznam"
+
+msgid "Test Merge"
+msgstr "Test zlúčenia"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+msgid "<b>Create copy from</b>"
+msgstr "<b>Vytvoriť kópiu z</b>"
+
+msgid "Destination:"
+msgstr "Destinácia:"
+
 #~ msgid "Update to revision..."
 #~ msgstr "Aktualizácia revízie"
 
@@ -1684,326 +2024,17 @@ msgstr "V rozpore"
 #~ msgid "English"
 #~ msgstr "Anglicky"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Vlastnosti pre:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Vybrané vlastnosti budú použité rekurzívne.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Odstrániť vlastnosti rekurzívne"
-
-#~ msgid "Edit..."
-#~ msgstr "Editovať..."
-
-#~ msgid "New..."
-#~ msgstr "Nový..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/Cesta:"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Pridať správu</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Podrobnosti certifikátu</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Upraviť vlastnosť podrobností</b>"
-
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Správa</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Prosím pridajte vaše podrobnosti o overení</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Predchádzajúce správy</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr "<span size=\"large\"><b>Naozaj chcete zmazať %položku%?</b></span>"
-
-#~ msgid "Accept Forever"
-#~ msgstr "Prijať navždy"
-
-#~ msgid "Accept Once"
-#~ msgstr "Prijať iba teraz"
-
-#~ msgid "Authentication"
-#~ msgstr "Autentizácia"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Skontrolujte Certifikát"
-
-#~ msgid "Confirmation"
-#~ msgstr "Potvrdenie"
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Odstráň potvrdenie"
-
-#~ msgid "Deny"
-#~ msgstr "Odmietnuť"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Odtlačok prsta:"
-
 #~ msgid "Issuer:"
 #~ msgstr "Emitent:"
-
-#~ msgid "Login:"
-#~ msgstr "Prihlasovacie meno:"
-
-#~ msgid "Password:"
-#~ msgstr "Heslo:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Predchádzajúca správa"
-
-#~ msgid "Property"
-#~ msgstr "Vlastnosť"
-
-#~ msgid "Property:"
-#~ msgstr "Vlastnosť:"
-
-#~ msgid "Realm:"
-#~ msgstr "Oblasť:"
-
-#~ msgid "Save Authentication"
-#~ msgstr "Uložiť overenie"
-
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "Položka(y) bude zaslaná do koša."
-
-#~ msgid "Valid:"
-#~ msgstr "Platné:"
-
-#~ msgid "Value:"
-#~ msgstr "Hodnota:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Linky</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Informácie o verzii</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Autori:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Poďakovanie"
-
-#~ msgid "100"
-#~ msgstr "100"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Revízna tabuľka</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Limit:"
-
-#~ msgid "Log"
-#~ msgstr "Záznam"
-
-#~ msgid "Refresh"
-#~ msgstr "Obnoviť"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Zobraziť revízie:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Stop na kópiu"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Požadované čistenie....\n"
-#~ "\n"
-#~ "Otvorenie pracovnej kópie čistenia?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Autentizácia</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Záznam správ</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Možnosti zaznamenávania</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Program používaný na porovnávanie súborov</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL História</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Prehľadávať..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Vymazať vaše overovacie informácie"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Povoliť emblémy"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Povoliť atribúty súborov"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Povoliť kontrolu rekurzívneho stavu"
-
-#~ msgid "External Programs"
-#~ msgstr "Externé programy"
-
-#~ msgid "General"
-#~ msgstr "Všeobecné"
-
-#~ msgid "Language:"
-#~ msgstr "Jazyk:"
-
-#~ msgid "Logging"
-#~ msgstr "Prihlásenie"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Počet adries URL k zapamätaniu"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Počet správ k zapamätaniu"
-
-#~ msgid "Saved Data"
-#~ msgstr "Uložené údaje"
-
-#~ msgid "Type:"
-#~ msgstr "Typ"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Súbory na zamknutie</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Opíšte prosím, prečo tieto súbory zamykáte</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Zamknúť súbory"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Vybrať / Zrušiť všetko"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Prevziať zámky"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Z Revízie</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Do Revízie</b>"
 
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Odovzdať do:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Zobraziť neverziované súbory"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Oznamovacie Správy"
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Zmeniť repozitár vašej pracovnej kópie</b>"
-
-#~ msgid "From:"
-#~ msgstr "Z..."
-
-#~ msgid "To:"
-#~ msgstr "Do:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Voľby</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revízia</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Rekurzívny"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Import správy</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Repozitáre</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Zahrnúť ignorované súbory"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>z URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Od: (URL a revíziu zlúčiť)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Rozsah revízie</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>Do: (URL a revíziu zlúčiť)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL zlúčiť od</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Pracovná kopia</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Vyberte túto možnosť, ak ste urobili nejaké zmeny vo vetvách a chcete "
-#~ "zlúčiť vaše zmeny s inou vetvou."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Vyberte túto možnosť, ak chcete zlúčiť dve rôzne vetvy do vašej pracovnej "
-#~ "kópie."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Ignorovať rod"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Zlúčiť pomocníka"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Zlúčenie dvoch rôznych stromov"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Iba záznam zlúčenia"
-
-#~ msgid "Show log"
-#~ msgstr "Ukázať záznam"
-
-#~ msgid "Test Merge"
-#~ msgstr "Test zlúčenia"
-
 #~ msgid "<b>Switch Details</b>"
 #~ msgstr "<b>Prepnúť detaily</b>"
 
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Vytvoriť kópiu z</b>"
-
 #~ msgid "Show new version on the right side"
 #~ msgstr "Zobraziť novú verziu na pravej strane"
-
-#~ msgid "Destination:"
-#~ msgstr "Destinácia:"
 
 #~ msgid "<b>Program used to browse repositories</b>"
 #~ msgstr "<b>Program používaný na prezeranie repozitára</b>"

@@ -1631,3 +1631,336 @@ msgstr ""
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+# ----------------------------
+# esh: msgid/label from rabbitvcs/ui/xml/*.xml files
+# ----------------------------
+msgid "<b>Properties for:</b>"
+msgstr ""
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr ""
+
+msgid "Delete properties recursively"
+msgstr ""
+
+msgid "Edit..."
+msgstr ""
+
+msgid "New..."
+msgstr ""
+
+msgid "URL/Path"
+msgstr ""
+
+msgid "URL:"
+msgstr ""
+
+msgid "<b>Add Message</b>"
+msgstr ""
+
+msgid "<b>Certificate Details</b>"
+msgstr ""
+
+msgid "<b>Edit Property Details</b>"
+msgstr ""
+
+msgid "<b>Message</b>"
+msgstr ""
+
+msgid "<b>Please add your authentication details</b>"
+msgstr ""
+
+msgid "<b>Previous Messages</b>"
+msgstr ""
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+
+msgid "Accept Forever"
+msgstr ""
+
+msgid "Accept Once"
+msgstr ""
+
+msgid "Apply property recursively"
+msgstr ""
+
+msgid "Authentication"
+msgstr ""
+
+msgid "Check Certificate"
+msgstr ""
+
+msgid "Confirmation"
+msgstr ""
+
+msgid "Delete Confirmation"
+msgstr ""
+
+msgid "Deny"
+msgstr ""
+
+msgid "Fingerprint:"
+msgstr ""
+
+msgid "Login:"
+msgstr ""
+
+msgid "Password:"
+msgstr ""
+
+msgid "Previous Messages"
+msgstr ""
+
+msgid "Property"
+msgstr ""
+
+msgid "Property:"
+msgstr ""
+
+msgid "Realm:"
+msgstr ""
+
+msgid "Save Authentication"
+msgstr ""
+
+msgid "The item(s) will be sent to the trash can."
+msgstr ""
+
+msgid "Valid:"
+msgstr ""
+
+msgid "Value:"
+msgstr ""
+
+msgid "<b>Links</b>"
+msgstr ""
+
+msgid "<b>Version Information</b>"
+msgstr ""
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr ""
+
+msgid "Authors:"
+msgstr ""
+
+msgid "Thanks:"
+msgstr ""
+
+msgid "100"
+msgstr ""
+
+msgid "<b>Revisions Table</b>"
+msgstr ""
+
+msgid "Limit:"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Showing Revisions:"
+msgstr ""
+
+msgid "Stop on copy"
+msgstr ""
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+
+msgid "<b>Authentication</b>"
+msgstr ""
+
+msgid "<b>Log Messages</b>"
+msgstr ""
+
+msgid "<b>Logging Options</b>"
+msgstr ""
+
+msgid "<b>Program used to compare files</b>"
+msgstr ""
+
+msgid "<b>RabbitVCS</b>"
+msgstr ""
+
+msgid "<b>URL History</b>"
+msgstr ""
+
+msgid "Browse..."
+msgstr ""
+
+msgid "Clear your authentication information"
+msgstr ""
+
+msgid "Enable emblems"
+msgstr ""
+
+msgid "Enable file attributes"
+msgstr ""
+
+msgid "Enable recursive status checks"
+msgstr ""
+
+msgid "External Programs"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "<b>Language</b>"
+msgstr ""
+
+msgid "Logging"
+msgstr ""
+
+msgid "Minimum level to log"
+msgstr ""
+
+msgid "Number of URLs to remember"
+msgstr ""
+
+msgid "Number of messages to remember"
+msgstr ""
+
+msgid "Saved Data"
+msgstr ""
+
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr ""
+
+msgid "<b>Files to lock</b>"
+msgstr ""
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr ""
+
+msgid "Lock Files"
+msgstr ""
+
+msgid "Select / Deselect all"
+msgstr ""
+
+msgid "Steal the locks"
+msgstr ""
+
+msgid "<b>From Revision</b>"
+msgstr ""
+
+msgid "<b>Commit to:</b>"
+msgstr ""
+
+msgid "Show unversioned files"
+msgstr ""
+
+msgid "Notification Messages"
+msgstr ""
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+msgid "<b>Options</b>"
+msgstr ""
+
+msgid "<b>Revision</b>"
+msgstr ""
+
+msgid "Omit Externals"
+msgstr ""
+
+msgid "Recursive"
+msgstr ""
+
+msgid "<b>Import Message</b>"
+msgstr ""
+
+msgid "<b>Repository</b>"
+msgstr ""
+
+msgid "Include ignored files"
+msgstr ""
+
+msgid "<b>From URL</b>"
+msgstr ""
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr ""
+
+msgid "<b>Revision Range</b>"
+msgstr ""
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr ""
+
+msgid "<b>URL to merge from</b>"
+msgstr ""
+
+msgid "<b>Working Copy</b>"
+msgstr ""
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+
+msgid "Ignore ancestry"
+msgstr ""
+
+msgid "Merge Assistant"
+msgstr ""
+
+msgid "Merge a range of revisions"
+msgstr ""
+
+msgid "Merge two different trees"
+msgstr ""
+
+msgid "Only record the merge"
+msgstr ""
+
+msgid "Show log"
+msgstr ""
+
+msgid "Test Merge"
+msgstr ""
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+msgid "<b>Create copy from</b>"
+msgstr ""
+
+msgid "Destination:"
+msgstr ""

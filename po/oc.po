@@ -1651,6 +1651,359 @@ msgstr "Fusionar"
 msgid "Conflicted"
 msgstr ""
 
+#, fuzzy
+msgid "<b>Properties for:</b>"
+msgstr "Proprietats"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr ""
+
+msgid "Delete properties recursively"
+msgstr ""
+
+msgid "Edit..."
+msgstr "Modificar..."
+
+msgid "New..."
+msgstr "Novèl..."
+
+#, fuzzy
+msgid "URL/Path"
+msgstr "Camin"
+
+msgid "URL:"
+msgstr "URL :"
+
+#, fuzzy
+msgid "<b>Add Message</b>"
+msgstr "<b>Messatge</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr ""
+
+msgid "<b>Edit Property Details</b>"
+msgstr ""
+
+msgid "<b>Message</b>"
+msgstr "<b>Messatge</b>"
+
+#, fuzzy
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Autentificacion</b>"
+
+#, fuzzy
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Messatge</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+
+msgid "Accept Forever"
+msgstr ""
+
+msgid "Accept Once"
+msgstr ""
+
+msgid "Apply property recursively"
+msgstr ""
+
+msgid "Authentication"
+msgstr "Autentificacion"
+
+msgid "Check Certificate"
+msgstr ""
+
+msgid "Confirmation"
+msgstr "Confirmacion"
+
+#, fuzzy
+msgid "Delete Confirmation"
+msgstr "Confirmacion"
+
+msgid "Deny"
+msgstr "Refusar"
+
+msgid "Fingerprint:"
+msgstr ""
+
+msgid "Login:"
+msgstr "Nom d'utilizaire :"
+
+msgid "Password:"
+msgstr "Senhal :"
+
+#, fuzzy
+msgid "Previous Messages"
+msgstr "Messatge del jornal"
+
+msgid "Property"
+msgstr "Proprietat"
+
+msgid "Property:"
+msgstr "Proprietat :"
+
+msgid "Realm:"
+msgstr "Domeni :"
+
+#, fuzzy
+msgid "Save Authentication"
+msgstr "Autentificacion"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr ""
+
+msgid "Valid:"
+msgstr ""
+
+msgid "Value:"
+msgstr "Valor :"
+
+#, fuzzy
+msgid "<b>Links</b>"
+msgstr "<b>Opcions</b>"
+
+msgid "<b>Version Information</b>"
+msgstr ""
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr ""
+
+msgid "Authors:"
+msgstr "Autors :"
+
+msgid "Thanks:"
+msgstr ""
+
+msgid "100"
+msgstr "100"
+
+#, fuzzy
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revision</b>"
+
+msgid "Limit:"
+msgstr "Limit :"
+
+msgid "Log"
+msgstr "Jornal"
+
+msgid "Refresh"
+msgstr "Refrescar"
+
+#, fuzzy
+msgid "Showing Revisions:"
+msgstr "Revision :"
+
+msgid "Stop on copy"
+msgstr ""
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentificacion</b>"
+
+#, fuzzy
+msgid "<b>Log Messages</b>"
+msgstr "<b>Messatge</b>"
+
+#, fuzzy
+msgid "<b>Logging Options</b>"
+msgstr "<b>Opcions</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr ""
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#, fuzzy
+msgid "<b>URL History</b>"
+msgstr "<b>Revision</b>"
+
+msgid "Browse..."
+msgstr "Percórrer..."
+
+msgid "Clear your authentication information"
+msgstr ""
+
+msgid "Enable emblems"
+msgstr ""
+
+msgid "Enable file attributes"
+msgstr ""
+
+msgid "Enable recursive status checks"
+msgstr ""
+
+#, fuzzy
+msgid "External Programs"
+msgstr "Programas extèrnes"
+
+msgid "General"
+msgstr "General"
+
+msgid "<b>Language</b>"
+msgstr "<b>Lenga</b>"
+
+msgid "Logging"
+msgstr "Archivatge"
+
+msgid "Minimum level to log"
+msgstr ""
+
+msgid "Number of URLs to remember"
+msgstr ""
+
+msgid "Number of messages to remember"
+msgstr ""
+
+msgid "Saved Data"
+msgstr ""
+
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr "Tipe :"
+
+msgid "<b>Files to lock</b>"
+msgstr ""
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr ""
+
+#, fuzzy
+msgid "Lock Files"
+msgstr "Varrolhat"
+
+msgid "Select / Deselect all"
+msgstr ""
+
+msgid "Steal the locks"
+msgstr ""
+
+#, fuzzy
+msgid "<b>From Revision</b>"
+msgstr "<b>Revision</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr ""
+
+msgid "Show unversioned files"
+msgstr ""
+
+msgid "Notification Messages"
+msgstr "Messatges de notificacion"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr ""
+
+msgid "From:"
+msgstr "De :"
+
+msgid "To:"
+msgstr "Cap a :"
+
+msgid "<b>Options</b>"
+msgstr "<b>Opcions</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revision</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Programas extèrnes"
+
+msgid "Recursive"
+msgstr "Recursiu"
+
+#, fuzzy
+msgid "<b>Import Message</b>"
+msgstr "<b>Messatge</b>"
+
+#, fuzzy
+msgid "<b>Repository</b>"
+msgstr "<b>Revision</b>"
+
+msgid "Include ignored files"
+msgstr ""
+
+msgid "<b>From URL</b>"
+msgstr ""
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revision</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr ""
+
+msgid "<b>URL to merge from</b>"
+msgstr ""
+
+msgid "<b>Working Copy</b>"
+msgstr ""
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+
+msgid "Ignore ancestry"
+msgstr ""
+
+msgid "Merge Assistant"
+msgstr ""
+
+msgid "Merge a range of revisions"
+msgstr ""
+
+msgid "Merge two different trees"
+msgstr ""
+
+msgid "Only record the merge"
+msgstr ""
+
+msgid "Show log"
+msgstr ""
+
+#, fuzzy
+msgid "Test Merge"
+msgstr "Fusionar"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+msgid "<b>Create copy from</b>"
+msgstr ""
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Autentificacion"
+
 #~ msgid "Rename..."
 #~ msgstr "Tornar nomenar..."
 
@@ -1672,101 +2025,8 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "Anglés"
 
-#~ msgid "Edit..."
-#~ msgstr "Modificar..."
-
-#~ msgid "New..."
-#~ msgstr "Novèl..."
-
-#~ msgid "URL:"
-#~ msgstr "URL :"
-
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Messatge</b>"
-
-#~ msgid "Authentication"
-#~ msgstr "Autentificacion"
-
-#~ msgid "Confirmation"
-#~ msgstr "Confirmacion"
-
 #~ msgid "Create Folder..."
 #~ msgstr "Crear un dorsièr..."
 
-#~ msgid "Deny"
-#~ msgstr "Refusar"
-
-#~ msgid "Login:"
-#~ msgstr "Nom d'utilizaire :"
-
-#~ msgid "Password:"
-#~ msgstr "Senhal :"
-
 #~ msgid "Path:"
 #~ msgstr "Camin :"
-
-#~ msgid "Property"
-#~ msgstr "Proprietat"
-
-#~ msgid "Property:"
-#~ msgstr "Proprietat :"
-
-#~ msgid "Realm:"
-#~ msgstr "Domeni :"
-
-#~ msgid "Value:"
-#~ msgstr "Valor :"
-
-#~ msgid "Authors:"
-#~ msgstr "Autors :"
-
-#~ msgid "100"
-#~ msgstr "100"
-
-#~ msgid "Limit:"
-#~ msgstr "Limit :"
-
-#~ msgid "Log"
-#~ msgstr "Jornal"
-
-#~ msgid "Refresh"
-#~ msgstr "Refrescar"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Autentificacion</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Percórrer..."
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Language:"
-#~ msgstr "Lenga :"
-
-#~ msgid "Logging"
-#~ msgstr "Archivatge"
-
-#~ msgid "Type:"
-#~ msgstr "Tipe :"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Messatges de notificacion"
-
-#~ msgid "From:"
-#~ msgstr "De :"
-
-#~ msgid "To:"
-#~ msgstr "Cap a :"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Opcions</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revision</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Recursiu"

@@ -1685,6 +1685,356 @@ msgstr "Flett"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Egenskaper for:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Valgte egenskaper vil bli anvendt rekursivt.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Slett egenskaper rekursivt"
+
+msgid "Edit..."
+msgstr "Rediger..."
+
+msgid "New..."
+msgstr "Ny..."
+
+msgid "URL/Path"
+msgstr "URL/Sti"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Legg til melding</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Sertifikatdetaljer</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Rediger egenskapsdetaljer</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Melding</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Vennligst legg til dine autentiseringsdetaljer (identifikasjon)</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Forrige melding</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Er du sikker på at du vil slette %item%?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Aksepter for alltid"
+
+msgid "Accept Once"
+msgstr "Aksepter en gang"
+
+msgid "Apply property recursively"
+msgstr "Anvend egenskap rekursivt"
+
+msgid "Authentication"
+msgstr "Autentisering"
+
+msgid "Check Certificate"
+msgstr "Sjekk sertifikat"
+
+msgid "Confirmation"
+msgstr "Bekreftelse"
+
+msgid "Delete Confirmation"
+msgstr "Slettebekreftelse"
+
+msgid "Deny"
+msgstr "Avvis"
+
+msgid "Fingerprint:"
+msgstr "Fingeravtrykk:"
+
+msgid "Login:"
+msgstr "Logg inn:"
+
+msgid "Password:"
+msgstr "Passord:"
+
+msgid "Previous Messages"
+msgstr "Tidligere meldinger"
+
+msgid "Property"
+msgstr "Egenskap"
+
+msgid "Property:"
+msgstr "Egenskap:"
+
+msgid "Realm:"
+msgstr "Område:"
+
+msgid "Save Authentication"
+msgstr "Lagre autentisering"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "Elementene vil bli sendt til søppeldunken."
+
+msgid "Valid:"
+msgstr "Gyldig:"
+
+msgid "Value:"
+msgstr "Verdi:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Lenker</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Versjonsinformasjon</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Forfattere:"
+
+msgid "Thanks:"
+msgstr "Takk:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revisjonstabell</b>"
+
+msgid "Limit:"
+msgstr "Grense:"
+
+msgid "Log"
+msgstr "Logg"
+
+msgid "Refresh"
+msgstr "Oppdater"
+
+msgid "Showing Revisions:"
+msgstr "Viser revisjoner:"
+
+msgid "Stop on copy"
+msgstr "Stopp ved kopi"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Opprensking forespurt...\n"
+"\n"
+"Start arbeidskopiopprensking?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentisering</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Loggmeldinger</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Loggeopsjoner</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program benyttet for å sammenlikne filer</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL historikk</b>"
+
+msgid "Browse..."
+msgstr "Bla gjennom..."
+
+msgid "Clear your authentication information"
+msgstr "Fjern all autentiseringsinformasjonen"
+
+msgid "Enable emblems"
+msgstr "Muliggjør emblemer"
+
+msgid "Enable file attributes"
+msgstr "Muliggjør filattributter"
+
+msgid "Enable recursive status checks"
+msgstr "Muliggjør rekkursiv statussjekk"
+
+msgid "External Programs"
+msgstr "Eksterne programmer"
+
+msgid "General"
+msgstr "Generelt"
+
+msgid "<b>Language</b>"
+msgstr "<b>Språk</b>"
+
+msgid "Logging"
+msgstr "Logging"
+
+msgid "Minimum level to log"
+msgstr "Minimumsnivå for logging"
+
+msgid "Number of URLs to remember"
+msgstr "Antall URLer som huskes"
+
+msgid "Number of messages to remember"
+msgstr "Antall meldinger som huskes"
+
+msgid "Saved Data"
+msgstr "Lagrede data"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "Vis RabbitVCS sine avlusingsverktøy"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+"Avlusingsmenyen benyttes for å diangostisere problemer med RabbitVCS selv"
+
+msgid "Type:"
+msgstr "Type:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Filer til låsing</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Vennligst beskriv hvorfor du låser disse filene</b>"
+
+msgid "Lock Files"
+msgstr "Lås filer"
+
+msgid "Select / Deselect all"
+msgstr "Velg/avvelg alt"
+
+msgid "Steal the locks"
+msgstr "Stjel låser"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Fra revisjon</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Send inn til:</b>"
+
+msgid "Show unversioned files"
+msgstr "Vis ikke-versjonerte filer"
+
+msgid "Notification Messages"
+msgstr "Varslingsmeldinger"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Endre arkiv for arbeidskopien</b>"
+
+msgid "From:"
+msgstr "Fra:"
+
+msgid "To:"
+msgstr "Til:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Alternativer</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revisjon</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Utelat eksterne"
+
+msgid "Recursive"
+msgstr "Rekursiv"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Importmelding</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
+msgid "Include ignored files"
+msgstr "Inkluder ignorerte filer"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Fra URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Fra: (URL og revisjon som skal flettes)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revisjonsutvalg</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Til: (URL og revisjon som skal flettes)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL det skal flettes fra</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Arbeidskopi</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Velg denne metoden hvis du har gjort endringer i grenen og ønsker å flette "
+"dine endringer med en annen gren."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Velg denne metoden hvis du ønsker å flette to forskjellige grener inn i din "
+"arbeidskopi."
+
+msgid "Ignore ancestry"
+msgstr "Ignorer stamfedre"
+
+msgid "Merge Assistant"
+msgstr "Fletteassistent"
+
+msgid "Merge a range of revisions"
+msgstr "Flett et utvalg av revisjoner"
+
+msgid "Merge two different trees"
+msgstr "Flett to forskjellige trær"
+
+msgid "Only record the merge"
+msgstr "Kun marker fletting (ikke utfør)"
+
+msgid "Show log"
+msgstr "Vis logg"
+
+msgid "Test Merge"
+msgstr "Testflett"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"Bruk loggknappen (til høyre for revisjonsutvalgsfeltet) til å velge "
+"revisjonen du ønsker å flette. Eller skriv revisjonene manuelt, hver "
+"separert med komma. Du kan spesifisere et revisjonsutvalg med en "
+"bindestrek. \n"
+"\n"
+"Eksempel: 4-7,9,11,15-HEAD\n"
+"\n"
+"La boksen være tom for å flette alle revisjoner."
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Egenskaper for:</b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Autentisering"
+
 #~ msgid "Checkout..."
 #~ msgstr "Sjekk ut..."
 
@@ -1728,283 +2078,41 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "Engelsk"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Egenskaper for:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Valgte egenskaper vil bli anvendt rekursivt.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Slett egenskaper rekursivt"
-
-#~ msgid "Edit..."
-#~ msgstr "Rediger..."
-
-#~ msgid "New..."
-#~ msgstr "Ny..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/Sti:"
-
 #~ msgid "Load/Refresh"
 #~ msgstr "Last/oppdater"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Legg til melding</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Sertifikatdetaljer</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Rediger egenskapsdetaljer</b>"
 
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>Mappenavn</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Melding</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr ""
-#~ "<b>Vennligst legg til dine autentiseringsdetaljer (identifikasjon)</b>"
-
 #~ msgid "<b>Please provide your ssl certification file</b>"
 #~ msgstr "<b>Vennligst oppgi din ssl sertifikatfil</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Forrige melding</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Er du sikker på at du vil slette %item%?</b></"
-#~ "span>"
 
 #~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 #~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS feil</span>"
 
-#~ msgid "Accept Forever"
-#~ msgstr "Aksepter for alltid"
-
-#~ msgid "Accept Once"
-#~ msgstr "Aksepter en gang"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "Anvend egenskap rekursivt"
-
-#~ msgid "Authentication"
-#~ msgstr "Autentisering"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Sjekk sertifikat"
-
-#~ msgid "Confirmation"
-#~ msgstr "Bekreftelse"
-
 #~ msgid "Create Folder..."
 #~ msgstr "Opprett mappe..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Slettebekreftelse"
-
-#~ msgid "Deny"
-#~ msgstr "Avvis"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Fingeravtrykk:"
 
 #~ msgid "Issuer:"
 #~ msgstr "Utsteder:"
 
-#~ msgid "Login:"
-#~ msgstr "Logg inn:"
-
-#~ msgid "Password:"
-#~ msgstr "Passord:"
-
 #~ msgid "Path:"
 #~ msgstr "Sti:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Tidligere meldinger"
-
-#~ msgid "Property"
-#~ msgstr "Egenskap"
-
-#~ msgid "Property:"
-#~ msgstr "Egenskap:"
-
-#~ msgid "Realm:"
-#~ msgstr "Område:"
 
 #~ msgid "SSL Client Certification"
 #~ msgstr "SSL klientsertifikat"
 
-#~ msgid "Save Authentication"
-#~ msgstr "Lagre autentisering"
-
 #~ msgid "Text Change"
 #~ msgstr "Tekstendring"
 
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "Elementene vil bli sendt til søppeldunken."
-
-#~ msgid "Valid:"
-#~ msgstr "Gyldig:"
-
-#~ msgid "Value:"
-#~ msgstr "Verdi:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Lenker</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Versjonsinformasjon</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Forfattere:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Takk:"
-
-#~ msgid "100"
-#~ msgstr "100"
-
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr "<b>Berørte fil(er)</b> (dobbeltklikk for å sammenlikne med basen)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Revisjonstabell</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Grense:"
-
-#~ msgid "Log"
-#~ msgstr "Logg"
-
-#~ msgid "Refresh"
-#~ msgstr "Oppdater"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Viser revisjoner:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Stopp ved kopi"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Opprensking forespurt...\n"
-#~ "\n"
-#~ "Start arbeidskopiopprensking?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Autentisering</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Loggmeldinger</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Loggeopsjoner</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Program benyttet for å sammenlikne filer</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL historikk</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Bla gjennom..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Fjern all autentiseringsinformasjonen"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Muliggjør emblemer"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Muliggjør filattributter"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Muliggjør rekkursiv statussjekk"
-
-#~ msgid "External Programs"
-#~ msgstr "Eksterne programmer"
-
-#~ msgid "General"
-#~ msgstr "Generelt"
-
-#~ msgid "Language:"
-#~ msgstr "Språk:"
-
-#~ msgid "Logging"
-#~ msgstr "Logging"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Minimumsnivå for logging"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Antall URLer som huskes"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Antall meldinger som huskes"
-
-#~ msgid "Saved Data"
-#~ msgstr "Lagrede data"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "Vis RabbitVCS sine avlusingsverktøy"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr ""
-#~ "Avlusingsmenyen benyttes for å diangostisere problemer med RabbitVCS selv"
-
-#~ msgid "Type:"
-#~ msgstr "Type:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Filer til låsing</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Vennligst beskriv hvorfor du låser disse filene</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Lås filer"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Velg/avvelg alt"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Stjel låser"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Fra revisjon</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Til revisjon</b>"
 
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr "<b>Endrede filer</b> (dobbeltklikk for å sammenlikne med basen)"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Send inn til:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Vis ikke-versjonerte filer"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Varslingsmeldinger"
 
 #~ msgid "<b>Remote URI:</b>"
 #~ msgstr "<b>Fjerntliggende URI:</b>"
@@ -2023,101 +2131,3 @@ msgstr ""
 
 #~ msgid "Refresh the list of properties."
 #~ msgstr "Oppdatert egenskapslisten"
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Endre arkiv for arbeidskopien</b>"
-
-#~ msgid "From:"
-#~ msgstr "Fra:"
-
-#~ msgid "To:"
-#~ msgstr "Til:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Alternativer</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revisjon</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Rekursiv"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Importmelding</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Arkiv</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Inkluder ignorerte filer"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Fra URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Fra: (URL og revisjon som skal flettes)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Revisjonsutvalg</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>Til: (URL og revisjon som skal flettes)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL det skal flettes fra</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Arbeidskopi</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Velg denne metoden hvis du har gjort endringer i grenen og ønsker å "
-#~ "flette dine endringer med en annen gren."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Velg denne metoden hvis du ønsker å flette to forskjellige grener inn i "
-#~ "din arbeidskopi."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Ignorer stamfedre"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Fletteassistent"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "Flett et utvalg av revisjoner"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Flett to forskjellige trær"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Kun marker fletting (ikke utfør)"
-
-#~ msgid "Show log"
-#~ msgstr "Vis logg"
-
-#~ msgid "Test Merge"
-#~ msgstr "Testflett"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "Bruk loggknappen (til høyre for revisjonsutvalgsfeltet) til å velge "
-#~ "revisjonen du ønsker å flette. Eller skriv revisjonene manuelt, hver "
-#~ "separert med komma. Du kan spesifisere et revisjonsutvalg med en "
-#~ "bindestrek. \n"
-#~ "\n"
-#~ "Eksempel: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "La boksen være tom for å flette alle revisjoner."

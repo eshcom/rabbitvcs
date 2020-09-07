@@ -1661,6 +1661,362 @@ msgstr "合併"
 msgid "Conflicted"
 msgstr ""
 
+#, fuzzy
+msgid "<b>Properties for:</b>"
+msgstr "屬性"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr ""
+
+msgid "Delete properties recursively"
+msgstr ""
+
+msgid "Edit..."
+msgstr "編輯..."
+
+msgid "New..."
+msgstr "新增..."
+
+#, fuzzy
+msgid "URL/Path"
+msgstr "路徑"
+
+msgid "URL:"
+msgstr "URL:"
+
+#, fuzzy
+msgid "<b>Add Message</b>"
+msgstr "<b>日誌訊息</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr ""
+
+msgid "<b>Edit Property Details</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Message</b>"
+msgstr "<b>日誌訊息</b>"
+
+#, fuzzy
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>驗證</b>"
+
+#, fuzzy
+msgid "<b>Previous Messages</b>"
+msgstr "之前的訊息"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+
+msgid "Accept Forever"
+msgstr ""
+
+msgid "Accept Once"
+msgstr ""
+
+msgid "Apply property recursively"
+msgstr ""
+
+msgid "Authentication"
+msgstr "驗證"
+
+msgid "Check Certificate"
+msgstr ""
+
+msgid "Confirmation"
+msgstr "確認"
+
+msgid "Delete Confirmation"
+msgstr "確認刪除"
+
+msgid "Deny"
+msgstr "取消"
+
+msgid "Fingerprint:"
+msgstr "指紋:"
+
+msgid "Login:"
+msgstr "帳號："
+
+msgid "Password:"
+msgstr "密碼："
+
+msgid "Previous Messages"
+msgstr "之前的訊息"
+
+msgid "Property"
+msgstr "屬性"
+
+msgid "Property:"
+msgstr "属性:"
+
+msgid "Realm:"
+msgstr "領域："
+
+#, fuzzy
+msgid "Save Authentication"
+msgstr "驗證"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr ""
+
+msgid "Valid:"
+msgstr ""
+
+msgid "Value:"
+msgstr "數值："
+
+#, fuzzy
+msgid "<b>Links</b>"
+msgstr "<b>選項</b>"
+
+msgid "<b>Version Information</b>"
+msgstr ""
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr ""
+
+msgid "Authors:"
+msgstr "作者："
+
+msgid "Thanks:"
+msgstr "鳴謝:"
+
+msgid "100"
+msgstr "100"
+
+#, fuzzy
+msgid "<b>Revisions Table</b>"
+msgstr "<b>選項</b>"
+
+msgid "Limit:"
+msgstr "限制:"
+
+msgid "Log"
+msgstr "紀錄"
+
+msgid "Refresh"
+msgstr "重新整理"
+
+#, fuzzy
+msgid "Showing Revisions:"
+msgstr "修訂版："
+
+msgid "Stop on copy"
+msgstr ""
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+
+msgid "<b>Authentication</b>"
+msgstr "<b>驗證</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>日誌訊息</b>"
+
+#, fuzzy
+msgid "<b>Logging Options</b>"
+msgstr "<b>選項</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr ""
+
+msgid "<b>RabbitVCS</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>URL History</b>"
+msgstr "<b>從 URL 新增</b>"
+
+msgid "Browse..."
+msgstr "瀏覽..."
+
+msgid "Clear your authentication information"
+msgstr ""
+
+msgid "Enable emblems"
+msgstr ""
+
+msgid "Enable file attributes"
+msgstr ""
+
+msgid "Enable recursive status checks"
+msgstr ""
+
+#, fuzzy
+msgid "External Programs"
+msgstr "外部程式"
+
+msgid "General"
+msgstr "一般"
+
+msgid "<b>Language</b>"
+msgstr "<b>語言</b>"
+
+msgid "Logging"
+msgstr "紀錄"
+
+msgid "Minimum level to log"
+msgstr ""
+
+msgid "Number of URLs to remember"
+msgstr ""
+
+msgid "Number of messages to remember"
+msgstr ""
+
+msgid "Saved Data"
+msgstr ""
+
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr "類型："
+
+msgid "<b>Files to lock</b>"
+msgstr ""
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr ""
+
+#, fuzzy
+msgid "Lock Files"
+msgstr "已鎖定"
+
+msgid "Select / Deselect all"
+msgstr ""
+
+msgid "Steal the locks"
+msgstr ""
+
+#, fuzzy
+msgid "<b>From Revision</b>"
+msgstr "<b>從 URL 新增</b>"
+
+#, fuzzy
+msgid "<b>Commit to:</b>"
+msgstr "<b>從 URL 新增</b>"
+
+msgid "Show unversioned files"
+msgstr ""
+
+msgid "Notification Messages"
+msgstr "通知訊息"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr ""
+
+msgid "From:"
+msgstr "從:"
+
+msgid "To:"
+msgstr "到："
+
+msgid "<b>Options</b>"
+msgstr "<b>選項</b>"
+
+#, fuzzy
+msgid "<b>Revision</b>"
+msgstr "修訂版本"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "外部程式"
+
+msgid "Recursive"
+msgstr "遞迴進入子目錄"
+
+#, fuzzy
+msgid "<b>Import Message</b>"
+msgstr "<b>日誌訊息</b>"
+
+#, fuzzy
+msgid "<b>Repository</b>"
+msgstr "<b>選項</b>"
+
+msgid "Include ignored files"
+msgstr ""
+
+msgid "<b>From URL</b>"
+msgstr "<b>從 URL 新增</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Revision Range</b>"
+msgstr "<b>語言</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>URL to merge from</b>"
+msgstr "<b>日誌訊息</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr ""
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+
+msgid "Ignore ancestry"
+msgstr ""
+
+msgid "Merge Assistant"
+msgstr ""
+
+#, fuzzy
+msgid "Merge a range of revisions"
+msgstr "比較修訂版間差異"
+
+msgid "Merge two different trees"
+msgstr ""
+
+msgid "Only record the merge"
+msgstr ""
+
+#, fuzzy
+msgid "Show log"
+msgstr "顯示日誌"
+
+#, fuzzy
+msgid "Test Merge"
+msgstr "合併"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+msgid "<b>Create copy from</b>"
+msgstr ""
+
+#, fuzzy
+msgid "Destination:"
+msgstr "驗證"
+
 #~ msgid "Rename..."
 #~ msgstr "重新命名..."
 
@@ -1671,113 +2027,11 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "英文"
 
-#~ msgid "Edit..."
-#~ msgstr "編輯..."
-
-#~ msgid "New..."
-#~ msgstr "新增..."
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "Authentication"
-#~ msgstr "驗證"
-
-#~ msgid "Confirmation"
-#~ msgstr "確認"
-
 #~ msgid "Create Folder..."
 #~ msgstr "建立資料夾..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "確認刪除"
-
-#~ msgid "Deny"
-#~ msgstr "取消"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "指紋:"
-
-#~ msgid "Login:"
-#~ msgstr "帳號："
-
-#~ msgid "Password:"
-#~ msgstr "密碼："
 
 #~ msgid "Path:"
 #~ msgstr "路徑:"
 
-#~ msgid "Previous Messages"
-#~ msgstr "之前的訊息"
-
-#~ msgid "Property"
-#~ msgstr "屬性"
-
-#~ msgid "Property:"
-#~ msgstr "属性:"
-
-#~ msgid "Realm:"
-#~ msgstr "領域："
-
-#~ msgid "Value:"
-#~ msgstr "數值："
-
-#~ msgid "Authors:"
-#~ msgstr "作者："
-
-#~ msgid "Thanks:"
-#~ msgstr "鳴謝:"
-
-#~ msgid "100"
-#~ msgstr "100"
-
-#~ msgid "Limit:"
-#~ msgstr "限制:"
-
-#~ msgid "Log"
-#~ msgstr "紀錄"
-
-#~ msgid "Refresh"
-#~ msgstr "重新整理"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>驗證</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>日誌訊息</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "瀏覽..."
-
-#~ msgid "General"
-#~ msgstr "一般"
-
-#~ msgid "Language:"
-#~ msgstr "語言:"
-
-#~ msgid "Logging"
-#~ msgstr "紀錄"
-
-#~ msgid "Type:"
-#~ msgstr "類型："
-
-#~ msgid "Notification Messages"
-#~ msgstr "通知訊息"
-
 #~ msgid "Property Editor"
 #~ msgstr "屬性編輯器"
-
-#~ msgid "From:"
-#~ msgstr "從:"
-
-#~ msgid "To:"
-#~ msgstr "到："
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>選項</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "遞迴進入子目錄"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>從 URL 新增</b>"

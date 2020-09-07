@@ -1687,6 +1687,353 @@ msgstr "Egyesítés"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Tulajdonságok ehhez:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Kiválasztott tulajdonságok rekurzívan lesznek használva.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Rekurzív tulajdonságok törlése"
+
+msgid "Edit..."
+msgstr "Szerkesztés..."
+
+msgid "New..."
+msgstr "Új..."
+
+msgid "URL/Path"
+msgstr "URL/Útvonal"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Üzenet hozzáadása</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Tanúsítvány részletei</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Tulajdonság részleteinek szerkesztése</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Üzenet</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Adja meg az Ön azonosítóit</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Korábbi üzenetek</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>Akarja törölni a/z/ %item% tételt?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Mindig elfogad"
+
+msgid "Accept Once"
+msgstr "Egyszer elfogad"
+
+msgid "Apply property recursively"
+msgstr "Tulajdonság megadása rekurzívan"
+
+msgid "Authentication"
+msgstr "Hitelesítés"
+
+msgid "Check Certificate"
+msgstr "Tanúsítvány ellenőrzése"
+
+msgid "Confirmation"
+msgstr "Megerősítés"
+
+msgid "Delete Confirmation"
+msgstr "Megerősítés törlése..."
+
+msgid "Deny"
+msgstr "Visszautasít"
+
+msgid "Fingerprint:"
+msgstr "Ujjlenyomat:"
+
+msgid "Login:"
+msgstr "Felhasználó név:"
+
+msgid "Password:"
+msgstr "Jelszó:"
+
+msgid "Previous Messages"
+msgstr "Előző üzenet"
+
+msgid "Property"
+msgstr "Tulajdonság"
+
+msgid "Property:"
+msgstr "Tulajdonság:"
+
+msgid "Realm:"
+msgstr "Övezet:"
+
+msgid "Save Authentication"
+msgstr "Hitelesítés mentése"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "A tétel a kukába kerül."
+
+msgid "Valid:"
+msgstr "Érvényeség:"
+
+msgid "Value:"
+msgstr "Érték:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Link</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Verzió információ</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Szerzők:"
+
+msgid "Thanks:"
+msgstr "Köszönet:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revíziós tábla</b>"
+
+msgid "Limit:"
+msgstr "Határ:"
+
+msgid "Log"
+msgstr "Napló"
+
+msgid "Refresh"
+msgstr "Frissítés"
+
+msgid "Showing Revisions:"
+msgstr "Revíziók mutatása:"
+
+msgid "Stop on copy"
+msgstr "Másolás megállítása"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Tisztítást igényelt....\n"
+"\n"
+"Kezdődhet a munkapéldány tisztítása?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Azonosítás</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Napló üzenetek</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Naplózási beállítások</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program a fájlok összehasonlításához</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL előzmények</b>"
+
+msgid "Browse..."
+msgstr "Böngészés..."
+
+msgid "Clear your authentication information"
+msgstr "Az Ön azonosítási információinak törlése"
+
+msgid "Enable emblems"
+msgstr "Jelképek engedélyezve"
+
+msgid "Enable file attributes"
+msgstr "Fájl attributomok engedélyezve"
+
+msgid "Enable recursive status checks"
+msgstr "Rekurzív állapotellenőrzés engedélyezve"
+
+msgid "External Programs"
+msgstr "Külső programok"
+
+msgid "General"
+msgstr "Általános"
+
+msgid "<b>Language</b>"
+msgstr "<b>Nyelv</b>"
+
+msgid "Logging"
+msgstr "Naplózás"
+
+msgid "Minimum level to log"
+msgstr "Minimális naplóbejegyzés"
+
+msgid "Number of URLs to remember"
+msgstr "Megjegyzett URL-ek száma"
+
+msgid "Number of messages to remember"
+msgstr "Megjegyzett üzenetek száma"
+
+msgid "Saved Data"
+msgstr "Mentett adat"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "RabbitVCS nyomkövető eszköz mutatása"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr "A nyomkövetés menü a problémák diagnózisára a RabbitVCS-t használja"
+
+msgid "Type:"
+msgstr "Típus:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Zárolt fájlok</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Írja le, miért akarja zárolni ezeket a fájlokat?</b>"
+
+msgid "Lock Files"
+msgstr "Zárolt fájlok"
+
+msgid "Select / Deselect all"
+msgstr "Kiválasztás / Összes kiválasztás"
+
+msgid "Steal the locks"
+msgstr "Zárolások ellopása"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Revíziótól</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Beküldés</b>"
+
+msgid "Show unversioned files"
+msgstr "Verziókezelésen kívüli fájlok mutatása"
+
+msgid "Notification Messages"
+msgstr "Értesítés"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Tároló cseréje az Ön munkapéldányhoz</b>"
+
+msgid "From:"
+msgstr "Innen:"
+
+msgid "To:"
+msgstr "Eddig:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Opciók</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revízió</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Külső tárolók kihagyása"
+
+msgid "Recursive"
+msgstr "Rekurzív"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Import üzenet</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Tároló</b>"
+
+msgid "Include ignored files"
+msgstr "Mellőzött fájlokat tartalmaz"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Ettől az URL-től</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Innen: (URL és revízió egyesítve)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revíziós terület</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Eddig: (URL és revízió egyesítve)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL egyesítve innen</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Munkapéldány</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Válassza ezt a módszert, ha Önnek sok változása van a branchban és "
+"egyesíteni kívánja a módosításokat egy másik branchcsal."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Válassza ezt a módszert, ha két különböző branchot kíván egyesíteni a "
+"munkapéldányában."
+
+msgid "Ignore ancestry"
+msgstr "Eredet mellőzése"
+
+msgid "Merge Assistant"
+msgstr "Egyesítés segéd"
+
+msgid "Merge a range of revisions"
+msgstr "Egy revíziós terület egyesítése"
+
+msgid "Merge two different trees"
+msgstr "Két különböző fa egyesítése"
+
+msgid "Only record the merge"
+msgstr "Csak rögzítése az egyesítésnek"
+
+msgid "Show log"
+msgstr "Napló mutatása"
+
+msgid "Test Merge"
+msgstr "Egyesítés teszt"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"A kiválasztott revíziók egyesítéséhez használja a napló bejegyzést vagy írja "
+"ki a revíziókat kézzel azokat vesszővel elválasztva.  Egy tartomány "
+"megadásához kötőjelet használhat.\n"
+"\n"
+"Például: 4-7,9,11,15-HEAD\n"
+"\n"
+"Az összes revízió egyesítéséhez hagyja üresen a szövegdobozt."
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Tulajdonságok ehhez:</b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Hitelesítés"
+
 #~ msgid "Checkout..."
 #~ msgstr "Ellenőrzés..."
 
@@ -1730,266 +2077,36 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "angol"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Tulajdonságok ehhez:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Kiválasztott tulajdonságok rekurzívan lesznek használva.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Rekurzív tulajdonságok törlése"
-
-#~ msgid "Edit..."
-#~ msgstr "Szerkesztés..."
-
-#~ msgid "New..."
-#~ msgstr "Új..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/Útvonal"
-
 #~ msgid "Load/Refresh"
 #~ msgstr "Betöltés/Frissítés"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Üzenet hozzáadása</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Tanúsítvány részletei</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Tulajdonság részleteinek szerkesztése</b>"
 
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>Dosszié neve</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Üzenet</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Adja meg az Ön azonosítóit</b>"
-
 #~ msgid "<b>Please provide your ssl certification file</b>"
 #~ msgstr "<b>Kérjük adja meg az Ön SSL igazoló fájlját</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Korábbi üzenetek</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Akarja törölni a/z/ %item% tételt?</b></span>"
 
 #~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 #~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 
-#~ msgid "Accept Forever"
-#~ msgstr "Mindig elfogad"
-
-#~ msgid "Accept Once"
-#~ msgstr "Egyszer elfogad"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "Tulajdonság megadása rekurzívan"
-
-#~ msgid "Authentication"
-#~ msgstr "Hitelesítés"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Tanúsítvány ellenőrzése"
-
-#~ msgid "Confirmation"
-#~ msgstr "Megerősítés"
-
 #~ msgid "Create Folder..."
 #~ msgstr "Dosszié készítése..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Megerősítés törlése..."
-
-#~ msgid "Deny"
-#~ msgstr "Visszautasít"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Ujjlenyomat:"
 
 #~ msgid "Issuer:"
 #~ msgstr "Kibocsájtó:"
 
-#~ msgid "Login:"
-#~ msgstr "Felhasználó név:"
-
-#~ msgid "Password:"
-#~ msgstr "Jelszó:"
-
 #~ msgid "Path:"
 #~ msgstr "Útvonal:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Előző üzenet"
-
-#~ msgid "Property"
-#~ msgstr "Tulajdonság"
-
-#~ msgid "Property:"
-#~ msgstr "Tulajdonság:"
-
-#~ msgid "Realm:"
-#~ msgstr "Övezet:"
 
 #~ msgid "SSL Client Certification"
 #~ msgstr "SSL kliens igazolás"
 
-#~ msgid "Save Authentication"
-#~ msgstr "Hitelesítés mentése"
-
 #~ msgid "Text Change"
 #~ msgstr "Szöveg változás"
-
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "A tétel a kukába kerül."
-
-#~ msgid "Valid:"
-#~ msgstr "Érvényeség:"
-
-#~ msgid "Value:"
-#~ msgstr "Érték:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Link</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Verzió információ</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Szerzők:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Köszönet:"
-
-#~ msgid "100"
-#~ msgstr "100"
 
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr ""
 #~ "<b>Érintett fájl/ok/</b> (kettős klikkantással összehasonlítás a bázissal)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Revíziós tábla</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Határ:"
-
-#~ msgid "Log"
-#~ msgstr "Napló"
-
-#~ msgid "Refresh"
-#~ msgstr "Frissítés"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Revíziók mutatása:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Másolás megállítása"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Tisztítást igényelt....\n"
-#~ "\n"
-#~ "Kezdődhet a munkapéldány tisztítása?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Azonosítás</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Napló üzenetek</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Naplózási beállítások</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Program a fájlok összehasonlításához</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL előzmények</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Böngészés..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Az Ön azonosítási információinak törlése"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Jelképek engedélyezve"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Fájl attributomok engedélyezve"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Rekurzív állapotellenőrzés engedélyezve"
-
-#~ msgid "External Programs"
-#~ msgstr "Külső programok"
-
-#~ msgid "General"
-#~ msgstr "Általános"
-
-#~ msgid "Language:"
-#~ msgstr "Nyelv:"
-
-#~ msgid "Logging"
-#~ msgstr "Naplózás"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Minimális naplóbejegyzés"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Megjegyzett URL-ek száma"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Megjegyzett üzenetek száma"
-
-#~ msgid "Saved Data"
-#~ msgstr "Mentett adat"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "RabbitVCS nyomkövető eszköz mutatása"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr "A nyomkövetés menü a problémák diagnózisára a RabbitVCS-t használja"
-
-#~ msgid "Type:"
-#~ msgstr "Típus:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Zárolt fájlok</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Írja le, miért akarja zárolni ezeket a fájlokat?</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Zárolt fájlok"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Kiválasztás / Összes kiválasztás"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Zárolások ellopása"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Revíziótól</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Revízióig</b>"
@@ -1997,15 +2114,6 @@ msgstr ""
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr ""
 #~ "<b>Változott fájlok</b> (kettős klikkantással összehasonlítás a bázissal)"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Beküldés</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Verziókezelésen kívüli fájlok mutatása"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Értesítés"
 
 #~ msgid "<b>Remote URI:</b>"
 #~ msgstr "<b>Távoli URI:</b>"
@@ -2024,100 +2132,3 @@ msgstr ""
 
 #~ msgid "Refresh the list of properties."
 #~ msgstr "Tulajdonságok listájának frissítése."
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Tároló cseréje az Ön munkapéldányhoz</b>"
-
-#~ msgid "From:"
-#~ msgstr "Innen:"
-
-#~ msgid "To:"
-#~ msgstr "Eddig:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Opciók</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revízió</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Rekurzív"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Import üzenet</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Tároló</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Mellőzött fájlokat tartalmaz"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Ettől az URL-től</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Innen: (URL és revízió egyesítve)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Revíziós terület</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>Eddig: (URL és revízió egyesítve)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL egyesítve innen</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Munkapéldány</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Válassza ezt a módszert, ha Önnek sok változása van a branchban és "
-#~ "egyesíteni kívánja a módosításokat egy másik branchcsal."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Válassza ezt a módszert, ha két különböző branchot kíván egyesíteni a "
-#~ "munkapéldányában."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Eredet mellőzése"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Egyesítés segéd"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "Egy revíziós terület egyesítése"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Két különböző fa egyesítése"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Csak rögzítése az egyesítésnek"
-
-#~ msgid "Show log"
-#~ msgstr "Napló mutatása"
-
-#~ msgid "Test Merge"
-#~ msgstr "Egyesítés teszt"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "A kiválasztott revíziók egyesítéséhez használja a napló bejegyzést vagy "
-#~ "írja ki a revíziókat kézzel azokat vesszővel elválasztva.  Egy tartomány "
-#~ "megadásához kötőjelet használhat.\n"
-#~ "\n"
-#~ "Például: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "Az összes revízió egyesítéséhez hagyja üresen a szövegdobozt."

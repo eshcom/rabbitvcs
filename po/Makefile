@@ -82,7 +82,11 @@ update-mo: Makefile
 	  fi; \
 	done
 
-update: Makefile
+update-po-mo: Makefile
+	$(MAKE) update-po
+	$(MAKE) update-mo
+
+update-all: Makefile
 	$(MAKE) update-pot
 	$(MAKE) update-po
 	$(MAKE) update-mo

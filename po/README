@@ -12,8 +12,11 @@ $ make update-po
 Update locale/<lang>/LC_MESSAGES/RabbitVCS.mo files:
 $ make update-mo
 
+Update <lang>.po and locale/<lang>/LC_MESSAGES/RabbitVCS.mo files:
+$ make update-po-mo
+
 Update all (pot-, po-, mo-files):
-$ make update
+$ make update-all
 
 --esh: end-----------------------------------------------
 

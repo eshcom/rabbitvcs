@@ -1671,6 +1671,349 @@ msgstr "合并"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>属性属于：<b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>选中的属性将会被递归应用。</i>"
+
+msgid "Delete properties recursively"
+msgstr "递归删除属性"
+
+msgid "Edit..."
+msgstr "编辑..."
+
+msgid "New..."
+msgstr "新建..."
+
+msgid "URL/Path"
+msgstr "URL/路径"
+
+msgid "URL:"
+msgstr "URL："
+
+msgid "<b>Add Message</b>"
+msgstr "<b>添加消息</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>认证细节</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>编辑属性细节</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>消息</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>请添加您的认证细节</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>前一个消息</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>您确实要删除 %item% 吗？</b></span>"
+
+msgid "Accept Forever"
+msgstr "总是接受"
+
+msgid "Accept Once"
+msgstr "接受一次"
+
+msgid "Apply property recursively"
+msgstr "递归应用属性"
+
+msgid "Authentication"
+msgstr "认证"
+
+msgid "Check Certificate"
+msgstr "检查证书"
+
+msgid "Confirmation"
+msgstr "确认"
+
+msgid "Delete Confirmation"
+msgstr "删除确认"
+
+msgid "Deny"
+msgstr "拒绝"
+
+msgid "Fingerprint:"
+msgstr "指纹："
+
+msgid "Login:"
+msgstr "登录："
+
+msgid "Password:"
+msgstr "密码："
+
+msgid "Previous Messages"
+msgstr "前一个消息"
+
+msgid "Property"
+msgstr "属性"
+
+msgid "Property:"
+msgstr "属性："
+
+msgid "Realm:"
+msgstr "域："
+
+msgid "Save Authentication"
+msgstr "保存认证"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "这些会被发送到回收站"
+
+msgid "Valid:"
+msgstr "有效："
+
+msgid "Value:"
+msgstr "值："
+
+msgid "<b>Links</b>"
+msgstr "<b>链接</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>版本信息</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "作者："
+
+msgid "Thanks:"
+msgstr "感谢："
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>版本表</b>"
+
+msgid "Limit:"
+msgstr "限制："
+
+msgid "Log"
+msgstr "日志"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Showing Revisions:"
+msgstr "正在显示版本："
+
+msgid "Stop on copy"
+msgstr "终止于复制"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"清理请求....\n"
+"\n"
+"开始工作副本清理么？"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>身份验证</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>日志信息</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>日志选项</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>用于比较文件的程序</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL 历史</b>"
+
+msgid "Browse..."
+msgstr "浏览..."
+
+msgid "Clear your authentication information"
+msgstr "清除你的认证信息"
+
+msgid "Enable emblems"
+msgstr "启用徽章"
+
+msgid "Enable file attributes"
+msgstr "启用文件属性"
+
+msgid "Enable recursive status checks"
+msgstr "启用递归状态检查"
+
+msgid "External Programs"
+msgstr "外部程序"
+
+msgid "General"
+msgstr "常规"
+
+msgid "<b>Language</b>"
+msgstr "<b>语言</b>"
+
+msgid "Logging"
+msgstr "日志"
+
+msgid "Minimum level to log"
+msgstr "最小日志级别"
+
+msgid "Number of URLs to remember"
+msgstr "记住的 URL 数目"
+
+msgid "Number of messages to remember"
+msgstr "记住的信息数量"
+
+msgid "Saved Data"
+msgstr "已保存的数据"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "显示 RabbitVCS 调试工具"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr "调试菜单用于诊断 RabbitVCS 自身的问题"
+
+msgid "Type:"
+msgstr "类型："
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>要锁定的文件</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>请描述您锁定这些文件的原因</b>"
+
+msgid "Lock Files"
+msgstr "锁定文件"
+
+msgid "Select / Deselect all"
+msgstr "选择 / 取消选择 全部"
+
+msgid "Steal the locks"
+msgstr "偷锁"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>从版本</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>提交给：</b>"
+
+msgid "Show unversioned files"
+msgstr "显示非版本控制的文件"
+
+msgid "Notification Messages"
+msgstr "通知信息"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>改变您工作副本的属性</b>"
+
+msgid "From:"
+msgstr "从："
+
+msgid "To:"
+msgstr "至："
+
+msgid "<b>Options</b>"
+msgstr "<b>选项</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>版本</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "省略外部"
+
+msgid "Recursive"
+msgstr "递归"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>导入消息</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>版本库</b>"
+
+msgid "Include ignored files"
+msgstr "包括已忽略的文件"
+
+msgid "<b>From URL</b>"
+msgstr "<b>来自URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>来自：(URL 和要合并的版本)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>版本范围</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>至：(URL 和要合并的版本)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>要合并自 URL</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>工作副本</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"如果您对某个分支进行了修改，并且想将这些修改与另一分支合并，选择这种方法。"
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr "如果您想合并两个不同的分支到您的工作副本的话，请选择这个方法。"
+
+msgid "Ignore ancestry"
+msgstr "忽略早期的"
+
+msgid "Merge Assistant"
+msgstr "合并助手"
+
+msgid "Merge a range of revisions"
+msgstr "合并一个范围的版本"
+
+msgid "Merge two different trees"
+msgstr "合并两个不同的源码树"
+
+msgid "Only record the merge"
+msgstr "仅记录合并"
+
+msgid "Show log"
+msgstr "显示日志"
+
+msgid "Test Merge"
+msgstr "测试合并"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"使用日志对话框来选择您想合并的版本。或者手动指定版本，用逗号分割。您可以通过"
+"减号\"-\"来指定一个版本范围。\n"
+"\n"
+"例如：4-7,9,11,15-HEAD\n"
+"\n"
+"要合并所有分支请保持空白。"
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>属性属于：<b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "认证"
+
 #~ msgid "Checkout..."
 #~ msgstr "检出(Checkout)..."
 
@@ -1714,279 +2057,41 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "英语"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>属性属于：<b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>选中的属性将会被递归应用。</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "递归删除属性"
-
-#~ msgid "Edit..."
-#~ msgstr "编辑..."
-
-#~ msgid "New..."
-#~ msgstr "新建..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/路径："
-
 #~ msgid "Load/Refresh"
 #~ msgstr "加载/刷新"
-
-#~ msgid "URL:"
-#~ msgstr "URL："
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>添加消息</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>认证细节</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>编辑属性细节</b>"
 
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>文件夹名称</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>消息</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>请添加您的认证细节</b>"
-
 #~ msgid "<b>Please provide your ssl certification file</b>"
 #~ msgstr "<b>请提供您的 SSL 证书文件</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>前一个消息</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr "<span size=\"large\"><b>您确实要删除 %item% 吗？</b></span>"
 
 #~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 #~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS 错误</span>"
 
-#~ msgid "Accept Forever"
-#~ msgstr "总是接受"
-
-#~ msgid "Accept Once"
-#~ msgstr "接受一次"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "递归应用属性"
-
-#~ msgid "Authentication"
-#~ msgstr "认证"
-
-#~ msgid "Check Certificate"
-#~ msgstr "检查证书"
-
-#~ msgid "Confirmation"
-#~ msgstr "确认"
-
 #~ msgid "Create Folder..."
 #~ msgstr "创建文件夹..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "删除确认"
-
-#~ msgid "Deny"
-#~ msgstr "拒绝"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "指纹："
 
 #~ msgid "Issuer:"
 #~ msgstr "颁发者："
 
-#~ msgid "Login:"
-#~ msgstr "登录："
-
-#~ msgid "Password:"
-#~ msgstr "密码："
-
 #~ msgid "Path:"
 #~ msgstr "路径:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "前一个消息"
-
-#~ msgid "Property"
-#~ msgstr "属性"
-
-#~ msgid "Property:"
-#~ msgstr "属性："
-
-#~ msgid "Realm:"
-#~ msgstr "域："
 
 #~ msgid "SSL Client Certification"
 #~ msgstr "SSL 客户端证书"
 
-#~ msgid "Save Authentication"
-#~ msgstr "保存认证"
-
 #~ msgid "Text Change"
 #~ msgstr "文本更改"
 
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "这些会被发送到回收站"
-
-#~ msgid "Valid:"
-#~ msgstr "有效："
-
-#~ msgid "Value:"
-#~ msgstr "值："
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>链接</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>版本信息</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "作者："
-
-#~ msgid "Thanks:"
-#~ msgstr "感谢："
-
-#~ msgid "100"
-#~ msgstr "100"
-
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr "<b>受影响的文件</b> (双击会比较 Base)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>版本表</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "限制："
-
-#~ msgid "Log"
-#~ msgstr "日志"
-
-#~ msgid "Refresh"
-#~ msgstr "刷新"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "正在显示版本："
-
-#~ msgid "Stop on copy"
-#~ msgstr "终止于复制"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "清理请求....\n"
-#~ "\n"
-#~ "开始工作副本清理么？"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>身份验证</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>日志信息</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>日志选项</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>用于比较文件的程序</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL 历史</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "浏览..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "清除你的认证信息"
-
-#~ msgid "Enable emblems"
-#~ msgstr "启用徽章"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "启用文件属性"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "启用递归状态检查"
-
-#~ msgid "External Programs"
-#~ msgstr "外部程序"
-
-#~ msgid "General"
-#~ msgstr "常规"
-
-#~ msgid "Language:"
-#~ msgstr "语言："
-
-#~ msgid "Logging"
-#~ msgstr "日志"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "最小日志级别"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "记住的 URL 数目"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "记住的信息数量"
-
-#~ msgid "Saved Data"
-#~ msgstr "已保存的数据"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "显示 RabbitVCS 调试工具"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr "调试菜单用于诊断 RabbitVCS 自身的问题"
-
-#~ msgid "Type:"
-#~ msgstr "类型："
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>要锁定的文件</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>请描述您锁定这些文件的原因</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "锁定文件"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "选择 / 取消选择 全部"
-
-#~ msgid "Steal the locks"
-#~ msgstr "偷锁"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>从版本</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>至版本</b>"
 
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr "<b>更改的文件</b> (双击会比较 Base)"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>提交给：</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "显示非版本控制的文件"
-
-#~ msgid "Notification Messages"
-#~ msgstr "通知信息"
 
 #~ msgid "<b>Remote URI:</b>"
 #~ msgstr "<b>远程 URI：</b>"
@@ -2005,96 +2110,3 @@ msgstr ""
 
 #~ msgid "Refresh the list of properties."
 #~ msgstr "刷新属性列表"
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>改变您工作副本的属性</b>"
-
-#~ msgid "From:"
-#~ msgstr "从："
-
-#~ msgid "To:"
-#~ msgstr "至："
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>选项</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>版本</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "递归"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>导入消息</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>版本库</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "包括已忽略的文件"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>来自URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>来自：(URL 和要合并的版本)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>版本范围</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>至：(URL 和要合并的版本)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>要合并自 URL</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>工作副本</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "如果您对某个分支进行了修改，并且想将这些修改与另一分支合并，选择这种方法。"
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr "如果您想合并两个不同的分支到您的工作副本的话，请选择这个方法。"
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "忽略早期的"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "合并助手"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "合并一个范围的版本"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "合并两个不同的源码树"
-
-#~ msgid "Only record the merge"
-#~ msgstr "仅记录合并"
-
-#~ msgid "Show log"
-#~ msgstr "显示日志"
-
-#~ msgid "Test Merge"
-#~ msgstr "测试合并"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "使用日志对话框来选择您想合并的版本。或者手动指定版本，用逗号分割。您可以通"
-#~ "过减号\"-\"来指定一个版本范围。\n"
-#~ "\n"
-#~ "例如：4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "要合并所有分支请保持空白。"

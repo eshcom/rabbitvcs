@@ -1690,6 +1690,354 @@ msgstr "Stopi"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Svojstva za:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Odabrana svojstva biti će primijenjena ponirući.</i>"
+
+msgid "Delete properties recursively"
+msgstr "Obriši svojstva ponirući"
+
+msgid "Edit..."
+msgstr "Uredi..."
+
+msgid "New..."
+msgstr "Novo..."
+
+msgid "URL/Path"
+msgstr "URL staza"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "<b>Dodaj poruku</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Detalji o certifikatu</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Uredi vrijednost svojstva</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Poruka</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Molim dopunite svojim autentikacijskim podacima</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Prethodne poruke</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Da li sigurno želite obrisati %item%?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Prihvati za stalno"
+
+msgid "Accept Once"
+msgstr "Prihvati za ovaj put"
+
+msgid "Apply property recursively"
+msgstr "Primijeni svojstvo ponirući"
+
+msgid "Authentication"
+msgstr "Prijava"
+
+msgid "Check Certificate"
+msgstr "Provjeri certifikat"
+
+msgid "Confirmation"
+msgstr "Potvrda"
+
+msgid "Delete Confirmation"
+msgstr "Potvrda brisanja"
+
+msgid "Deny"
+msgstr "Uskrati"
+
+msgid "Fingerprint:"
+msgstr "Otisak prsta:"
+
+msgid "Login:"
+msgstr "Login:"
+
+msgid "Password:"
+msgstr "Zaporka:"
+
+msgid "Previous Messages"
+msgstr "Prethodne poruke"
+
+msgid "Property"
+msgstr "Svojstvo"
+
+msgid "Property:"
+msgstr "Svojstvo:"
+
+msgid "Realm:"
+msgstr "Područje:"
+
+msgid "Save Authentication"
+msgstr "Spremi autentikaciju"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "Stavke će biti biti prebačeni u smeće"
+
+msgid "Valid:"
+msgstr "Ispravno:"
+
+msgid "Value:"
+msgstr "Vrijednost:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Poveznice</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Informacija o verziji</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Autori:"
+
+msgid "Thanks:"
+msgstr "Zahvale:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Tablica inačica</b>"
+
+msgid "Limit:"
+msgstr "Ograničenje:"
+
+msgid "Log"
+msgstr "Dnevnik"
+
+msgid "Refresh"
+msgstr "Osvježi"
+
+msgid "Showing Revisions:"
+msgstr "Prikazuje inačice:"
+
+msgid "Stop on copy"
+msgstr "Zaustavi se na kopiranju"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Potrebno je čišćenje...\n"
+"\n"
+"Da li želite pokrenuti čišćenje?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Prijava korisnika</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Poruke dnevnika</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Mogućnosti dnevnika</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program za usporedbu datoteka</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL Povijest</b>"
+
+msgid "Browse..."
+msgstr "Pregledaj..."
+
+msgid "Clear your authentication information"
+msgstr "Izbriši podatke za prijavu korisnika"
+
+msgid "Enable emblems"
+msgstr "Omogući oznake"
+
+msgid "Enable file attributes"
+msgstr "Omogući svojstva datoteka"
+
+msgid "Enable recursive status checks"
+msgstr "Omogući poniruću provjeru statusa"
+
+msgid "External Programs"
+msgstr "Vanjski programi"
+
+msgid "General"
+msgstr "Općenito"
+
+msgid "<b>Language</b>"
+msgstr "<b>Jezik</b>"
+
+msgid "Logging"
+msgstr "Pisanje dnevnika"
+
+msgid "Minimum level to log"
+msgstr "Najmanja razina logiranja"
+
+msgid "Number of URLs to remember"
+msgstr "Broj zapamćenih URL-ova"
+
+msgid "Number of messages to remember"
+msgstr "Broj spremljenih poruka"
+
+msgid "Saved Data"
+msgstr "Spremljeni podaci"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "Prikaži RabbitVCS alate za traženje grešaka (debugging)"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr "Debug izbornik se koristi za traženje grešaka unutar RabbitVCSa"
+
+msgid "Type:"
+msgstr "Tip:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Datoteke za zaključavanje</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Molim opišite zašto zaključavate ove datoteke</b>"
+
+msgid "Lock Files"
+msgstr "Zaključaj datoteke"
+
+msgid "Select / Deselect all"
+msgstr "Označi  sve / Makni sve oznake"
+
+msgid "Steal the locks"
+msgstr "Preuzmi lokote"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Od inančice</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Pohrani u:</b>"
+
+msgid "Show unversioned files"
+msgstr "Prikaži datoteke bez verzije"
+
+msgid "Notification Messages"
+msgstr "Obavijesne poruke"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Promijeni skladište za radnu kopiju</b>"
+
+msgid "From:"
+msgstr "Od:"
+
+msgid "To:"
+msgstr "Do:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Mogućnosti</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Inačica</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Preskoči vanjska skladišta"
+
+msgid "Recursive"
+msgstr "Ponirući"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Uvoz poruke</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Skladište</b>"
+
+msgid "Include ignored files"
+msgstr "Uključi zanemarene datoteke"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Od URL-a</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Do: (URL i inačica za stapanje)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Raspon inačica</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Do: (URL i inačica za stapanje)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL od kojeg stapamo</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Radna kopija</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Odaberite ovu metodu ako imate neke promjene u grani i želite stopiti svoje "
+"promjene s drugom granom."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Odaberite ovu metodu ako želite stopiti dvije različite grane u vašu radnu "
+"kopiju."
+
+msgid "Ignore ancestry"
+msgstr "Zanemari porijeklo"
+
+msgid "Merge Assistant"
+msgstr "Pomoćnik stapanja"
+
+msgid "Merge a range of revisions"
+msgstr "Stopi raspon inačica"
+
+msgid "Merge two different trees"
+msgstr "Stopi dva različita stabla"
+
+msgid "Only record the merge"
+msgstr "Samo zabilježi stapanje"
+
+msgid "Show log"
+msgstr "Prikaži dnevnik"
+
+msgid "Test Merge"
+msgstr "Test stapanja"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"Koristite dnevnik za odabir revizija koje želite stopiti. Možete i upisati "
+"revizije odvojene zarezima, a raspon revizija je moguće upisati koristeći "
+"crticu '-'. \n"
+"\n"
+"Primjer: 4-7,9,11,15-HEAD\n"
+"\n"
+"Za stapanje svih revizija, polje ostavite nepopunjeno."
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Svojstva za:</b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Prijava"
+
 #~ msgid "Checkout..."
 #~ msgstr "Preuzmi..-"
 
@@ -1733,280 +2081,41 @@ msgstr ""
 #~ msgid "English"
 #~ msgstr "Engleski"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Svojstva za:</b>"
-
-#~ msgid "<i>Selected properties will be applied recursively.</i>"
-#~ msgstr "<i>Odabrana svojstva biti će primijenjena ponirući.</i>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Obriši svojstva ponirući"
-
-#~ msgid "Edit..."
-#~ msgstr "Uredi..."
-
-#~ msgid "New..."
-#~ msgstr "Novo..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL staza:"
-
 #~ msgid "Load/Refresh"
 #~ msgstr "Osvježi"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "<b>Dodaj poruku</b>"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Detalji o certifikatu</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Uredi vrijednost svojstva</b>"
 
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>Ime mape</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Poruka</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Molim dopunite svojim autentikacijskim podacima</b>"
-
 #~ msgid "<b>Please provide your ssl certification file</b>"
 #~ msgstr "<b>Molimo, postavite dateteku s ssl certifikatom</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Prethodne poruke</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Da li sigurno želite obrisati %item%?</b></span>"
 
 #~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
 #~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS greška</span>"
 
-#~ msgid "Accept Forever"
-#~ msgstr "Prihvati za stalno"
-
-#~ msgid "Accept Once"
-#~ msgstr "Prihvati za ovaj put"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "Primijeni svojstvo ponirući"
-
-#~ msgid "Authentication"
-#~ msgstr "Prijava"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Provjeri certifikat"
-
-#~ msgid "Confirmation"
-#~ msgstr "Potvrda"
-
 #~ msgid "Create Folder..."
 #~ msgstr "Izradi mapu..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Potvrda brisanja"
-
-#~ msgid "Deny"
-#~ msgstr "Uskrati"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Otisak prsta:"
 
 #~ msgid "Issuer:"
 #~ msgstr "Izdavač:"
 
-#~ msgid "Login:"
-#~ msgstr "Login:"
-
-#~ msgid "Password:"
-#~ msgstr "Zaporka:"
-
 #~ msgid "Path:"
 #~ msgstr "Putanja:"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Prethodne poruke"
-
-#~ msgid "Property"
-#~ msgstr "Svojstvo"
-
-#~ msgid "Property:"
-#~ msgstr "Svojstvo:"
-
-#~ msgid "Realm:"
-#~ msgstr "Područje:"
 
 #~ msgid "SSL Client Certification"
 #~ msgstr "SSL Client Certification"
 
-#~ msgid "Save Authentication"
-#~ msgstr "Spremi autentikaciju"
-
 #~ msgid "Text Change"
 #~ msgstr "Promjena teksta"
 
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "Stavke će biti biti prebačeni u smeće"
-
-#~ msgid "Valid:"
-#~ msgstr "Ispravno:"
-
-#~ msgid "Value:"
-#~ msgstr "Vrijednost:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Poveznice</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Informacija o verziji</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Autori:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Zahvale:"
-
-#~ msgid "100"
-#~ msgstr "100"
-
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr "<b>Datoteka(e) promjene</b> (dvoklik za usporedbu s osnovom)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Tablica inačica</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Ograničenje:"
-
-#~ msgid "Log"
-#~ msgstr "Dnevnik"
-
-#~ msgid "Refresh"
-#~ msgstr "Osvježi"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Prikazuje inačice:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Zaustavi se na kopiranju"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Potrebno je čišćenje...\n"
-#~ "\n"
-#~ "Da li želite pokrenuti čišćenje?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Prijava korisnika</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Poruke dnevnika</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Mogućnosti dnevnika</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Program za usporedbu datoteka</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL Povijest</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Pregledaj..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Izbriši podatke za prijavu korisnika"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Omogući oznake"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Omogući svojstva datoteka"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Omogući poniruću provjeru statusa"
-
-#~ msgid "External Programs"
-#~ msgstr "Vanjski programi"
-
-#~ msgid "General"
-#~ msgstr "Općenito"
-
-#~ msgid "Language:"
-#~ msgstr "Jezik:"
-
-#~ msgid "Logging"
-#~ msgstr "Pisanje dnevnika"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Najmanja razina logiranja"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Broj zapamćenih URL-ova"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Broj spremljenih poruka"
-
-#~ msgid "Saved Data"
-#~ msgstr "Spremljeni podaci"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "Prikaži RabbitVCS alate za traženje grešaka (debugging)"
-
-#~ msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-#~ msgstr "Debug izbornik se koristi za traženje grešaka unutar RabbitVCSa"
-
-#~ msgid "Type:"
-#~ msgstr "Tip:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Datoteke za zaključavanje</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Molim opišite zašto zaključavate ove datoteke</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Zaključaj datoteke"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Označi  sve / Makni sve oznake"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Preuzmi lokote"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Od inančice</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Do inačice</b>"
 
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr "<b>Promijenjene datoteke</b> (dvoklik za usporedbu s osnovom)"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Pohrani u:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Prikaži datoteke bez verzije"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Obavijesne poruke"
 
 #~ msgid "<b>Remote URI:</b>"
 #~ msgstr "<b>Udaljeni URI:</b>"
@@ -2025,100 +2134,3 @@ msgstr ""
 
 #~ msgid "Refresh the list of properties."
 #~ msgstr "Osvježi popis svojstava."
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Promijeni skladište za radnu kopiju</b>"
-
-#~ msgid "From:"
-#~ msgstr "Od:"
-
-#~ msgid "To:"
-#~ msgstr "Do:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Mogućnosti</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Inačica</b>"
-
-#~ msgid "Recursive"
-#~ msgstr "Ponirući"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Uvoz poruke</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Skladište</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Uključi zanemarene datoteke"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Od URL-a</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Do: (URL i inačica za stapanje)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Raspon inačica</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>Do: (URL i inačica za stapanje)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL od kojeg stapamo</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Radna kopija</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Odaberite ovu metodu ako imate neke promjene u grani i želite stopiti "
-#~ "svoje promjene s drugom granom."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Odaberite ovu metodu ako želite stopiti dvije različite grane u vašu "
-#~ "radnu kopiju."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Zanemari porijeklo"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Pomoćnik stapanja"
-
-#~ msgid "Merge a range of revisions"
-#~ msgstr "Stopi raspon inačica"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Stopi dva različita stabla"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Samo zabilježi stapanje"
-
-#~ msgid "Show log"
-#~ msgstr "Prikaži dnevnik"
-
-#~ msgid "Test Merge"
-#~ msgstr "Test stapanja"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "Koristite dnevnik za odabir revizija koje želite stopiti. Možete i "
-#~ "upisati revizije odvojene zarezima, a raspon revizija je moguće upisati "
-#~ "koristeći crticu '-'. \n"
-#~ "\n"
-#~ "Primjer: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "Za stapanje svih revizija, polje ostavite nepopunjeno."

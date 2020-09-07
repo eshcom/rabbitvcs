@@ -1698,6 +1698,366 @@ msgstr "Spojeno"
 msgid "Conflicted"
 msgstr ""
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Vlastnosti pro:</b>"
+
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr ""
+
+#, fuzzy
+msgid "Delete properties recursively"
+msgstr "Vlastnost"
+
+#, fuzzy
+msgid "Edit..."
+msgstr "Upravit..."
+
+msgid "New..."
+msgstr "Nový..."
+
+msgid "URL/Path"
+msgstr "URL/cesta"
+
+msgid "URL:"
+msgstr "URL:"
+
+#, fuzzy
+msgid "<b>Add Message</b>"
+msgstr "<b>Přidat zprávu</b>"
+
+msgid "<b>Certificate Details</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Vlastnosti pro:</b>"
+
+#, fuzzy
+msgid "<b>Message</b>"
+msgstr "<b>Předchozí zprávy</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr ""
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Předchozí zprávy</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>Opravdu chcete smazat %item%?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Přijmout natrvalo"
+
+msgid "Accept Once"
+msgstr "Přijmout jednou"
+
+msgid "Apply property recursively"
+msgstr ""
+
+msgid "Authentication"
+msgstr "Authentikace"
+
+#, fuzzy
+msgid "Check Certificate"
+msgstr "Kontrola certifikátu"
+
+msgid "Confirmation"
+msgstr "Potvrzení"
+
+msgid "Delete Confirmation"
+msgstr "Smazat potvrzení"
+
+msgid "Deny"
+msgstr "Zakázané"
+
+msgid "Fingerprint:"
+msgstr "Fingerprint:"
+
+msgid "Login:"
+msgstr "Jméno:"
+
+msgid "Password:"
+msgstr "Heslo:"
+
+msgid "Previous Messages"
+msgstr "Předchozí zprávy"
+
+#, fuzzy
+msgid "Property"
+msgstr "Vlastnost:"
+
+msgid "Property:"
+msgstr "Vlastnost:"
+
+msgid "Realm:"
+msgstr "Realm"
+
+msgid "Save Authentication"
+msgstr "Uložit autentikaci"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr ""
+
+msgid "Valid:"
+msgstr "Platné:"
+
+msgid "Value:"
+msgstr "Hodnota:"
+
+#, fuzzy
+msgid "<b>Links</b>"
+msgstr "<b>Volby</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Informace o verzi</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+#, fuzzy
+msgid "Authors:"
+msgstr "Autoři:"
+
+msgid "Thanks:"
+msgstr "Děkujeme:"
+
+msgid "100"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revize</b>"
+
+msgid "Limit:"
+msgstr "Limit:"
+
+msgid "Log"
+msgstr "Log"
+
+msgid "Refresh"
+msgstr "Obnovit"
+
+#, fuzzy
+msgid "Showing Revisions:"
+msgstr "Revize"
+
+msgid "Stop on copy"
+msgstr ""
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Authentication</b>"
+msgstr "Authentikace"
+
+#, fuzzy
+msgid "<b>Log Messages</b>"
+msgstr "<b>Předchozí zprávy</b>"
+
+#, fuzzy
+msgid "<b>Logging Options</b>"
+msgstr "<b>Volby</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>RabbitVCS</b>"
+msgstr "RabbitVCS"
+
+#, fuzzy
+msgid "<b>URL History</b>"
+msgstr "<b>Revize</b>"
+
+msgid "Browse..."
+msgstr "Procházet..."
+
+#, fuzzy
+msgid "Clear your authentication information"
+msgstr "Opravdu chcete vymazat vaše autentikační údaje?"
+
+msgid "Enable emblems"
+msgstr ""
+
+msgid "Enable file attributes"
+msgstr ""
+
+msgid "Enable recursive status checks"
+msgstr ""
+
+#, fuzzy
+msgid "External Programs"
+msgstr "Externí"
+
+msgid "General"
+msgstr "Obecné"
+
+msgid "<b>Language</b>"
+msgstr "<b>Jazyk</b>"
+
+msgid "Logging"
+msgstr "Logování"
+
+msgid "Minimum level to log"
+msgstr "Minimální úroveň pro logování"
+
+msgid "Number of URLs to remember"
+msgstr ""
+
+msgid "Number of messages to remember"
+msgstr ""
+
+msgid "Saved Data"
+msgstr "Uložená data"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr "Typ"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Soubory k uzamknutí</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr ""
+
+#, fuzzy
+msgid "Lock Files"
+msgstr "Zamčeno"
+
+msgid "Select / Deselect all"
+msgstr "Vybrat / zrušit vše"
+
+msgid "Steal the locks"
+msgstr ""
+
+#, fuzzy
+msgid "<b>From Revision</b>"
+msgstr "<b>Revize</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Commit do:</b>"
+
+msgid "Show unversioned files"
+msgstr ""
+
+msgid "Notification Messages"
+msgstr ""
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr ""
+
+msgid "From:"
+msgstr "Od:"
+
+msgid "To:"
+msgstr "Do:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Volby</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revize</b>"
+
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Externí"
+
+msgid "Recursive"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Import Message</b>"
+msgstr "<b>Předchozí zprávy</b>"
+
+#, fuzzy
+msgid "<b>Repository</b>"
+msgstr "<b>Revize</b>"
+
+msgid "Include ignored files"
+msgstr ""
+
+msgid "<b>From URL</b>"
+msgstr "<b>Z URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revize</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr ""
+
+#, fuzzy
+msgid "<b>URL to merge from</b>"
+msgstr "<b>Vlastnosti pro:</b>"
+
+#, fuzzy
+msgid "<b>Working Copy</b>"
+msgstr "Update pracovní kopie"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+
+msgid "Ignore ancestry"
+msgstr ""
+
+msgid "Merge Assistant"
+msgstr ""
+
+#, fuzzy
+msgid "Merge a range of revisions"
+msgstr "Update na revizi..."
+
+msgid "Merge two different trees"
+msgstr ""
+
+msgid "Only record the merge"
+msgstr ""
+
+msgid "Show log"
+msgstr "Zobrazit log"
+
+#, fuzzy
+msgid "Test Merge"
+msgstr "Spojeno"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Vlastnosti pro:</b>"
+
+#, fuzzy
+msgid "Destination:"
+msgstr "Authentikace"
+
 #~ msgid "Update to revision..."
 #~ msgstr "Update na revizi..."
 
@@ -1739,141 +2099,11 @@ msgstr ""
 #~ msgid "Remove Lock"
 #~ msgstr "Odstranit zámek"
 
-#~ msgid "Show log"
-#~ msgstr "Zobrazit log"
-
 #~ msgid "Cancelled"
 #~ msgstr "Zrušeno"
 
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revize</b>"
-
-#~ msgid "From:"
-#~ msgstr "Od:"
-
-#~ msgid "To:"
-#~ msgstr "Do:"
-
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Commit do:</b>"
-
-#~ msgid "Previous Messages"
-#~ msgstr "Předchozí zprávy"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Vybrat / zrušit vše"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Soubory k uzamknutí</b>"
-
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Vlastnosti pro:</b>"
-
-#~ msgid "New..."
-#~ msgstr "Nový..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/cesta:"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Informace o verzi</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Thanks:"
-#~ msgstr "Děkujeme:"
-
-#~ msgid "Limit:"
-#~ msgstr "Limit:"
-
-#~ msgid "Log"
-#~ msgstr "Log"
-
-#~ msgid "Refresh"
-#~ msgstr "Obnovit"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Z URL</b>"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Volby</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Procházet..."
-
-#~ msgid "General"
-#~ msgstr "Obecné"
-
-#~ msgid "Language:"
-#~ msgstr "Jazyk:"
-
-#~ msgid "Logging"
-#~ msgstr "Logování"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Minimální úroveň pro logování"
-
-#~ msgid "Saved Data"
-#~ msgstr "Uložená data"
-
-#~ msgid "Type:"
-#~ msgstr "Typ"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Předchozí zprávy</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr "<span size=\"large\"><b>Opravdu chcete smazat %item%?</b></span>"
-
-#~ msgid "Accept Forever"
-#~ msgstr "Přijmout natrvalo"
-
-#~ msgid "Accept Once"
-#~ msgstr "Přijmout jednou"
-
-#~ msgid "Authentication"
-#~ msgstr "Authentikace"
-
-#~ msgid "Confirmation"
-#~ msgstr "Potvrzení"
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Smazat potvrzení"
-
-#~ msgid "Deny"
-#~ msgstr "Zakázané"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Fingerprint:"
-
 #~ msgid "Issuer:"
 #~ msgstr "Vydavatel:"
-
-#~ msgid "Login:"
-#~ msgstr "Jméno:"
-
-#~ msgid "Password:"
-#~ msgstr "Heslo:"
-
-#~ msgid "Property:"
-#~ msgstr "Vlastnost:"
-
-#~ msgid "Realm:"
-#~ msgstr "Realm"
-
-#~ msgid "Save Authentication"
-#~ msgstr "Uložit autentikaci"
-
-#~ msgid "Valid:"
-#~ msgstr "Platné:"
-
-#~ msgid "Value:"
-#~ msgstr "Hodnota:"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
 
 #~ msgid "DBus"
 #~ msgstr "DBus:"

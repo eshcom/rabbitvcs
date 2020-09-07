@@ -1656,6 +1656,353 @@ msgstr "Sammanfogad"
 msgid "Conflicted"
 msgstr "Tvistande"
 
+msgid "<b>Properties for:</b>"
+msgstr "<b>Egenskaper för:</b>"
+
+#, fuzzy
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "Radera inställningar rekursivt"
+
+msgid "Delete properties recursively"
+msgstr "Radera inställningar rekursivt"
+
+msgid "Edit..."
+msgstr "Redigera..."
+
+msgid "New..."
+msgstr "Ny..."
+
+msgid "URL/Path"
+msgstr "URL/Sökväg"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "<b>Add Message</b>"
+msgstr "Lägg till Meddelande"
+
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Certifikatdetaljer</b>"
+
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Redigera egenskapsdetaljer</b>"
+
+msgid "<b>Message</b>"
+msgstr "<b>Meddelande</b>"
+
+msgid "<b>Please add your authentication details</b>"
+msgstr "<b>Lägg till autentiseringsdetaljer</b>"
+
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Föregående Meddelanden</b>"
+
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Är du säker på att du vill ta bort %item%?</b></span>"
+
+msgid "Accept Forever"
+msgstr "Acceptera för alltid"
+
+msgid "Accept Once"
+msgstr "Acceptera en gång"
+
+msgid "Apply property recursively"
+msgstr "Verkställ inställningar rekursivt"
+
+msgid "Authentication"
+msgstr "Autentisering"
+
+msgid "Check Certificate"
+msgstr "Kontrollera certifikat"
+
+msgid "Confirmation"
+msgstr "Bekräftelse"
+
+msgid "Delete Confirmation"
+msgstr "Radera Bekräftelse"
+
+msgid "Deny"
+msgstr "Neka"
+
+msgid "Fingerprint:"
+msgstr "Fingeravtryck:"
+
+msgid "Login:"
+msgstr "Användarnamn:"
+
+msgid "Password:"
+msgstr "Lösenord:"
+
+msgid "Previous Messages"
+msgstr "Föregående meddelande"
+
+msgid "Property"
+msgstr "Egenskap"
+
+msgid "Property:"
+msgstr "Egenskap:"
+
+msgid "Realm:"
+msgstr "Rike:"
+
+msgid "Save Authentication"
+msgstr "Spara autentisering"
+
+msgid "The item(s) will be sent to the trash can."
+msgstr "Dessa objekt kommer att skickas till papperskorgen."
+
+msgid "Valid:"
+msgstr "Giltig:"
+
+msgid "Value:"
+msgstr "Värde:"
+
+msgid "<b>Links</b>"
+msgstr "<b>Länkar</b>"
+
+msgid "<b>Version Information</b>"
+msgstr "<b>Versionsinformation</b>"
+
+msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+msgid "Authors:"
+msgstr "Upphovsmän:"
+
+msgid "Thanks:"
+msgstr "Tack:"
+
+msgid "100"
+msgstr "100"
+
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revisionstabell</b>"
+
+msgid "Limit:"
+msgstr "Gräns:"
+
+msgid "Log"
+msgstr "Logg"
+
+msgid "Refresh"
+msgstr "Uppdatera"
+
+msgid "Showing Revisions:"
+msgstr "Visar revisioner:"
+
+msgid "Stop on copy"
+msgstr "Stopp vid kopia"
+
+msgid ""
+"Cleanup Requested....\n"
+"\n"
+"Begin working copy cleanup?"
+msgstr ""
+"Rensning begärd ....\n"
+"\n"
+"Börja rensa i arbets kopian?"
+
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentisering</b>"
+
+msgid "<b>Log Messages</b>"
+msgstr "<b>Loggmeddelanden</b>"
+
+msgid "<b>Logging Options</b>"
+msgstr "<b>Logg alternativ</b>"
+
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program som används för att jämföra filer</b>"
+
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+msgid "<b>URL History</b>"
+msgstr "<b>URL Historik</b>"
+
+msgid "Browse..."
+msgstr "Bläddra..."
+
+msgid "Clear your authentication information"
+msgstr "Rensa autentiseringsinformation"
+
+msgid "Enable emblems"
+msgstr "Aktivera emblem"
+
+msgid "Enable file attributes"
+msgstr "Aktivera filattribut"
+
+msgid "Enable recursive status checks"
+msgstr "Aktivera rekursiva statuskontroller"
+
+msgid "External Programs"
+msgstr "Externa program"
+
+msgid "General"
+msgstr "Allmänt"
+
+msgid "<b>Language</b>"
+msgstr "<b>Språk</b>"
+
+msgid "Logging"
+msgstr "Loggning"
+
+msgid "Minimum level to log"
+msgstr "Lägsta nivå att logga"
+
+msgid "Number of URLs to remember"
+msgstr "Antal URLer att minnas"
+
+msgid "Number of messages to remember"
+msgstr "Antal meddelande att minnas"
+
+msgid "Saved Data"
+msgstr "Sparad data"
+
+msgid "Show RabbitVCS debugging tools"
+msgstr "Visa RabbitsVCS felsökningsverktyg"
+
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+msgid "Type:"
+msgstr "Typ:"
+
+msgid "<b>Files to lock</b>"
+msgstr "<b>Filer att låsa</b>"
+
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Beskriv varför du låser dessa filer</b>"
+
+msgid "Lock Files"
+msgstr "Lås filer"
+
+msgid "Select / Deselect all"
+msgstr "Markera / Avmarkera alla"
+
+msgid "Steal the locks"
+msgstr "Stjäl låsen"
+
+msgid "<b>From Revision</b>"
+msgstr "<b>Från revision</b>"
+
+msgid "<b>Commit to:</b>"
+msgstr "<b>Skicka till:</b>"
+
+msgid "Show unversioned files"
+msgstr "Visa oversionerade filer"
+
+msgid "Notification Messages"
+msgstr "Notifieringsmeddelanden"
+
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Ändra arkiv till din arbetskopia</b>"
+
+msgid "From:"
+msgstr "Från:"
+
+msgid "To:"
+msgstr "Till:"
+
+msgid "<b>Options</b>"
+msgstr "<b>Alternativ</b>"
+
+msgid "<b>Revision</b>"
+msgstr "<b>Revision</b>"
+
+msgid "Omit Externals"
+msgstr "Uteslut externa"
+
+msgid "Recursive"
+msgstr "Rekursiv"
+
+msgid "<b>Import Message</b>"
+msgstr "<b>Importera meddelande</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
+msgid "Include ignored files"
+msgstr "Inkludera ignorerade filer"
+
+msgid "<b>From URL</b>"
+msgstr "<b>Från URL</b>"
+
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Från: (URL och revision sammanfogning)</b>"
+
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revisionsspan</b>"
+
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Till: (URL och revision att sammanfoga)</b>"
+
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL att sammanfoga från</b>"
+
+msgid "<b>Working Copy</b>"
+msgstr "<b>Arbetskopia</b>"
+
+msgid ""
+"Choose this method if you have made some changes to a branch and wish to "
+"merge your changes with another branch."
+msgstr ""
+"Välj denna metod om du har gjort ändringar i en gren och vill sammanfoga "
+"dina ändringar med en annan gren."
+
+msgid ""
+"Choose this method if you wish to merge two different branches into your "
+"working copy."
+msgstr ""
+"Välj den här metoden om du vill sammanfoga två olika grenar i din "
+"arbetskopia."
+
+msgid "Ignore ancestry"
+msgstr "Ignorera anor"
+
+msgid "Merge Assistant"
+msgstr "Sammanfogningsassistent"
+
+#, fuzzy
+msgid "Merge a range of revisions"
+msgstr "Sammanfoga ett span av revisioner"
+
+msgid "Merge two different trees"
+msgstr "Sammanfoga två olika träd"
+
+msgid "Only record the merge"
+msgstr "Registrera endast sammanfogningen"
+
+msgid "Show log"
+msgstr "Visa logg"
+
+msgid "Test Merge"
+msgstr "Test sammanfoga"
+
+msgid ""
+"Use the log dialog to select the revisions that you wish to merge.  Or write "
+"out the revisions manually, each separated by a comma.  You can specify a "
+"revision range by a dash. \n"
+"\n"
+"Example: 4-7,9,11,15-HEAD\n"
+"\n"
+"To merge all revisions, leave the box empty."
+msgstr ""
+"Använd logg dialogrutan för att välja de revisioner som du vill sammanfoga. "
+"Eller skriv ut revisionerna manuellt, separerade med ett kommatecken. Du kan "
+"ange ett revisionsspan med ett bindestreck.\n"
+"\n"
+"Exempel: 4-7,9,11,15-HEAD\n"
+"\n"
+"För att sammanfoga alla revisioner, lämna rutan tom."
+
+msgid "<b>Create copy from</b>"
+msgstr "<b>Skapa kopia från</b>"
+
+msgid "Destination:"
+msgstr "Mål:"
+
 #~ msgid "Update to revision..."
 #~ msgstr "Uppdatera till revision..."
 
@@ -1693,248 +2040,23 @@ msgstr "Tvistande"
 #~ msgid "English"
 #~ msgstr "Engelska"
 
-#~ msgid "<b>Properties for:</b>"
-#~ msgstr "<b>Egenskaper för:</b>"
-
-#~ msgid "Delete properties recursively"
-#~ msgstr "Radera inställningar rekursivt"
-
-#~ msgid "Edit..."
-#~ msgstr "Redigera..."
-
-#~ msgid "New..."
-#~ msgstr "Ny..."
-
-#~ msgid "URL/Path:"
-#~ msgstr "URL/Sökväg:"
-
 #~ msgid "Load/Refresh"
 #~ msgstr "Ladda/Uppdatera"
-
-#~ msgid "URL:"
-#~ msgstr "URL:"
-
-#~ msgid "<b>Add Message</b>"
-#~ msgstr "Lägg till Meddelande"
-
-#~ msgid "<b>Certificate Details</b>"
-#~ msgstr "<b>Certifikatdetaljer</b>"
-
-#~ msgid "<b>Edit Property Details</b>"
-#~ msgstr "<b>Redigera egenskapsdetaljer</b>"
 
 #~ msgid "<b>Folder Name</b>"
 #~ msgstr "<b>Mappnamn</b>"
 
-#~ msgid "<b>Message</b>"
-#~ msgstr "<b>Meddelande</b>"
-
-#~ msgid "<b>Please add your authentication details</b>"
-#~ msgstr "<b>Lägg till autentiseringsdetaljer</b>"
-
-#~ msgid "<b>Previous Messages</b>"
-#~ msgstr "<b>Föregående Meddelanden</b>"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Är du säker på att du vill ta bort %item%?</b></"
-#~ "span>"
-
-#~ msgid "Accept Forever"
-#~ msgstr "Acceptera för alltid"
-
-#~ msgid "Accept Once"
-#~ msgstr "Acceptera en gång"
-
-#~ msgid "Apply property recursively"
-#~ msgstr "Verkställ inställningar rekursivt"
-
-#~ msgid "Authentication"
-#~ msgstr "Autentisering"
-
-#~ msgid "Check Certificate"
-#~ msgstr "Kontrollera certifikat"
-
-#~ msgid "Confirmation"
-#~ msgstr "Bekräftelse"
-
 #~ msgid "Create Folder..."
 #~ msgstr "Skapa mapp..."
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "Radera Bekräftelse"
-
-#~ msgid "Deny"
-#~ msgstr "Neka"
-
-#~ msgid "Fingerprint:"
-#~ msgstr "Fingeravtryck:"
 
 #~ msgid "Issuer:"
 #~ msgstr "Utgivare:"
 
-#~ msgid "Login:"
-#~ msgstr "Användarnamn:"
-
-#~ msgid "Password:"
-#~ msgstr "Lösenord:"
-
 #~ msgid "Path:"
 #~ msgstr "Sökväg:"
 
-#~ msgid "Previous Messages"
-#~ msgstr "Föregående meddelande"
-
-#~ msgid "Property"
-#~ msgstr "Egenskap"
-
-#~ msgid "Property:"
-#~ msgstr "Egenskap:"
-
-#~ msgid "Realm:"
-#~ msgstr "Rike:"
-
-#~ msgid "Save Authentication"
-#~ msgstr "Spara autentisering"
-
-#~ msgid "The item(s) will be sent to the trash can."
-#~ msgstr "Dessa objekt kommer att skickas till papperskorgen."
-
-#~ msgid "Valid:"
-#~ msgstr "Giltig:"
-
-#~ msgid "Value:"
-#~ msgstr "Värde:"
-
-#~ msgid "<b>Links</b>"
-#~ msgstr "<b>Länkar</b>"
-
-#~ msgid "<b>Version Information</b>"
-#~ msgstr "<b>Versionsinformation</b>"
-
-#~ msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-#~ msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
-
-#~ msgid "Authors:"
-#~ msgstr "Upphovsmän:"
-
-#~ msgid "Thanks:"
-#~ msgstr "Tack:"
-
-#~ msgid "100"
-#~ msgstr "100"
-
 #~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 #~ msgstr "<b>Påverkade filer</b> (dubbelklicka för att jämföra med grunden)"
-
-#~ msgid "<b>Revisions Table</b>"
-#~ msgstr "<b>Revisionstabell</b>"
-
-#~ msgid "Limit:"
-#~ msgstr "Gräns:"
-
-#~ msgid "Log"
-#~ msgstr "Logg"
-
-#~ msgid "Refresh"
-#~ msgstr "Uppdatera"
-
-#~ msgid "Showing Revisions:"
-#~ msgstr "Visar revisioner:"
-
-#~ msgid "Stop on copy"
-#~ msgstr "Stopp vid kopia"
-
-#~ msgid ""
-#~ "Cleanup Requested....\n"
-#~ "\n"
-#~ "Begin working copy cleanup?"
-#~ msgstr ""
-#~ "Rensning begärd ....\n"
-#~ "\n"
-#~ "Börja rensa i arbets kopian?"
-
-#~ msgid "<b>Authentication</b>"
-#~ msgstr "<b>Autentisering</b>"
-
-#~ msgid "<b>Log Messages</b>"
-#~ msgstr "<b>Loggmeddelanden</b>"
-
-#~ msgid "<b>Logging Options</b>"
-#~ msgstr "<b>Logg alternativ</b>"
-
-#~ msgid "<b>Program used to compare files</b>"
-#~ msgstr "<b>Program som används för att jämföra filer</b>"
-
-#~ msgid "<b>RabbitVCS</b>"
-#~ msgstr "<b>RabbitVCS</b>"
-
-#~ msgid "<b>URL History</b>"
-#~ msgstr "<b>URL Historik</b>"
-
-#~ msgid "Browse..."
-#~ msgstr "Bläddra..."
-
-#~ msgid "Clear your authentication information"
-#~ msgstr "Rensa autentiseringsinformation"
-
-#~ msgid "Enable emblems"
-#~ msgstr "Aktivera emblem"
-
-#~ msgid "Enable file attributes"
-#~ msgstr "Aktivera filattribut"
-
-#~ msgid "Enable recursive status checks"
-#~ msgstr "Aktivera rekursiva statuskontroller"
-
-#~ msgid "External Programs"
-#~ msgstr "Externa program"
-
-#~ msgid "General"
-#~ msgstr "Allmänt"
-
-#~ msgid "Language:"
-#~ msgstr "Språk:"
-
-#~ msgid "Logging"
-#~ msgstr "Loggning"
-
-#~ msgid "Minimum level to log"
-#~ msgstr "Lägsta nivå att logga"
-
-#~ msgid "Number of URLs to remember"
-#~ msgstr "Antal URLer att minnas"
-
-#~ msgid "Number of messages to remember"
-#~ msgstr "Antal meddelande att minnas"
-
-#~ msgid "Saved Data"
-#~ msgstr "Sparad data"
-
-#~ msgid "Show RabbitVCS debugging tools"
-#~ msgstr "Visa RabbitsVCS felsökningsverktyg"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "<b>Files to lock</b>"
-#~ msgstr "<b>Filer att låsa</b>"
-
-#~ msgid "<b>Please describe why you are locking these files</b>"
-#~ msgstr "<b>Beskriv varför du låser dessa filer</b>"
-
-#~ msgid "Lock Files"
-#~ msgstr "Lås filer"
-
-#~ msgid "Select / Deselect all"
-#~ msgstr "Markera / Avmarkera alla"
-
-#~ msgid "Steal the locks"
-#~ msgstr "Stjäl låsen"
-
-#~ msgid "<b>From Revision</b>"
-#~ msgstr "<b>Från revision</b>"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Till revision</b>"
@@ -1942,120 +2064,11 @@ msgstr "Tvistande"
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr "<b>Ändrade filer</b>"
 
-#~ msgid "<b>Commit to:</b>"
-#~ msgstr "<b>Skicka till:</b>"
-
-#~ msgid "Show unversioned files"
-#~ msgstr "Visa oversionerade filer"
-
-#~ msgid "Notification Messages"
-#~ msgstr "Notifieringsmeddelanden"
-
 #~ msgid "<b>Working Copy:</b>"
 #~ msgstr "<b>Arbetskopia:</b>"
 
 #~ msgid "Property Editor"
 #~ msgstr "Egenskapseditor"
-
-#~ msgid "<b>Change the repository of your working copy</b>"
-#~ msgstr "<b>Ändra arkiv till din arbetskopia</b>"
-
-#~ msgid "From:"
-#~ msgstr "Från:"
-
-#~ msgid "To:"
-#~ msgstr "Till:"
-
-#~ msgid "<b>Options</b>"
-#~ msgstr "<b>Alternativ</b>"
-
-#~ msgid "<b>Revision</b>"
-#~ msgstr "<b>Revision</b>"
-
-#~ msgid "Omit Externals"
-#~ msgstr "Uteslut externa"
-
-#~ msgid "Recursive"
-#~ msgstr "Rekursiv"
-
-#~ msgid "<b>Import Message</b>"
-#~ msgstr "<b>Importera meddelande</b>"
-
-#~ msgid "<b>Repository</b>"
-#~ msgstr "<b>Arkiv</b>"
-
-#~ msgid "Include ignored files"
-#~ msgstr "Inkludera ignorerade filer"
-
-#~ msgid "<b>From URL</b>"
-#~ msgstr "<b>Från URL</b>"
-
-#~ msgid "<b>From: (URL and revision to merge)</b>"
-#~ msgstr "<b>Från: (URL och revision sammanfogning)</b>"
-
-#~ msgid "<b>Revision Range</b>"
-#~ msgstr "<b>Revisionsspan</b>"
-
-#~ msgid "<b>To: (URL and revision to merge)</b>"
-#~ msgstr "<b>Till: (URL och revision att sammanfoga)</b>"
-
-#~ msgid "<b>URL to merge from</b>"
-#~ msgstr "<b>URL att sammanfoga från</b>"
-
-#~ msgid "<b>Working Copy</b>"
-#~ msgstr "<b>Arbetskopia</b>"
-
-#~ msgid ""
-#~ "Choose this method if you have made some changes to a branch and wish to "
-#~ "merge your changes with another branch."
-#~ msgstr ""
-#~ "Välj denna metod om du har gjort ändringar i en gren och vill sammanfoga "
-#~ "dina ändringar med en annan gren."
-
-#~ msgid ""
-#~ "Choose this method if you wish to merge two different branches into your "
-#~ "working copy."
-#~ msgstr ""
-#~ "Välj den här metoden om du vill sammanfoga två olika grenar i din "
-#~ "arbetskopia."
-
-#~ msgid "Ignore ancestry"
-#~ msgstr "Ignorera anor"
-
-#~ msgid "Merge Assistant"
-#~ msgstr "Sammanfogningsassistent"
-
-#~ msgid "Merge two different trees"
-#~ msgstr "Sammanfoga två olika träd"
-
-#~ msgid "Only record the merge"
-#~ msgstr "Registrera endast sammanfogningen"
-
-#~ msgid "Show log"
-#~ msgstr "Visa logg"
-
-#~ msgid "Test Merge"
-#~ msgstr "Test sammanfoga"
-
-#~ msgid ""
-#~ "Use the log dialog to select the revisions that you wish to merge.  Or "
-#~ "write out the revisions manually, each separated by a comma.  You can "
-#~ "specify a revision range by a dash. \n"
-#~ "\n"
-#~ "Example: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "To merge all revisions, leave the box empty."
-#~ msgstr ""
-#~ "Använd logg dialogrutan för att välja de revisioner som du vill "
-#~ "sammanfoga. Eller skriv ut revisionerna manuellt, separerade med ett "
-#~ "kommatecken. Du kan ange ett revisionsspan med ett bindestreck.\n"
-#~ "\n"
-#~ "Exempel: 4-7,9,11,15-HEAD\n"
-#~ "\n"
-#~ "För att sammanfoga alla revisioner, lämna rutan tom."
-
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Skapa kopia från</b>"
 
 #~ msgid "<b>Switch Details</b>"
 #~ msgstr "<b>Växlings detaljer</b>"
@@ -2068,6 +2081,3 @@ msgstr "Tvistande"
 
 #~ msgid "<b>Update Depth</b>"
 #~ msgstr "<b>Uppdateringsdjup</b>"
-
-#~ msgid "Destination:"
-#~ msgstr "Mål:"
