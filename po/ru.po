@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-07 15:19+0300\n"
+"POT-Creation-Date: 2020-09-07 15:27+0300\n"
 "PO-Revision-Date: 2010-12-03 19:19+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -241,7 +241,7 @@ msgstr "<b>Новая ветка</b>"
 
 #: ../rabbitvcs/ui/branches.py:306
 msgid "<b>Branch Detail</b>"
-msgstr "<b>Информация</b>"
+msgstr "<b>Информация по ветке</b>"
 
 #: ../rabbitvcs/ui/browser.py:91
 msgid "Size"
@@ -979,7 +979,7 @@ msgstr "<b>Новый тэг</b>"
 
 #: ../rabbitvcs/ui/tags.py:294
 msgid "<b>Tag Detail</b>"
-msgstr "<b>Информация</b>"
+msgstr "<b>Информация по тэгу</b>"
 
 #: ../rabbitvcs/ui/unlock.py:52 ../rabbitvcs/ui/unlock.py:118
 msgid "Unlock"
