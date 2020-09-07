@@ -324,7 +324,7 @@ class MenuDebugAddEmblem(MenuItem):
 
 class MenuCheckout(MenuItem):
 	identifier = "RabbitVCS::Checkout"
-	label = _("Checkout...")
+	label = _("Checkout")
 	tooltip = _("Check out a working copy")
 	icon = "rabbitvcs-checkout"
 
@@ -439,13 +439,13 @@ class MenuAddToIgnoreList(MenuItem):
 
 class MenuUpdateToRevision(MenuItem):
 	identifier = "RabbitVCS::Update_To_Revision"
-	label = _("Update to revision...")
+	label = _("Update To Revision")
 	tooltip = _("Update a file to a specific revision")
 	icon = "rabbitvcs-update"
 
 class MenuRename(MenuItem):
 	identifier = "RabbitVCS::Rename"
-	label = _("Rename...")
+	label = _("Rename")
 	tooltip = _("Schedule an item to be renamed on the repository")
 	icon = "rabbitvcs-rename"
 
@@ -498,7 +498,7 @@ class MenuCleanup(MenuItem):
 
 class MenuExport(MenuItem):
 	identifier = "RabbitVCS::Export"
-	label = _("Export...")
+	label = _("Export")
 	tooltip = _("Export a working copy or repository with no versioning information")
 	icon = "rabbitvcs-export"
 
