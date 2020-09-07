@@ -23,6 +23,7 @@ from __future__ import absolute_import
 	
 import os
 import gettext as _gettext
+import locale
 from locale import getdefaultlocale
 
 # Hack to make RabbitVCS win in the battle against TortoiseHg
@@ -48,8 +49,8 @@ if language:
 if getdefaultlocale()[0] != None:
 	langs += [getdefaultlocale()[0]]
 
-_gettext.bindtextdomain(APP_NAME, LOCALE_DIR)
-_gettext.textdomain(APP_NAME)
+locale.bindtextdomain(APP_NAME, LOCALE_DIR)
+locale.textdomain(APP_NAME)
 
 gettext = _gettext.translation(APP_NAME, LOCALE_DIR, languages=langs, fallback=True)
 
