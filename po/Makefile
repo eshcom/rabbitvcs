@@ -40,9 +40,11 @@ USE_LINGUAS=$(shell if test -n "$(USER_LINGUAS)" -o -n "$(LINGUAS)"; then LLINGU
 $(GETTEXT_PACKAGE).pot:
 	$(GENPOT)
 
-update-po: Makefile
+update-pot: Makefile
 	rm -f $(GETTEXT_PACKAGE).pot
 	$(MAKE) $(GETTEXT_PACKAGE).pot
+
+update-po: Makefile
 	tmpdir=`pwd`; \
 	linguas="$(USE_LINGUAS)"; \
 	for lang in $$linguas; do \
@@ -81,6 +83,7 @@ update-mo: Makefile
 	done
 
 update: Makefile
+	$(MAKE) update-pot
 	$(MAKE) update-po
 	$(MAKE) update-mo
 

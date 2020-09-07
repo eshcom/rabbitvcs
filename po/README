@@ -3,17 +3,16 @@ How to create a translation
 
 --esh: begin---------------------------------------------
 
-Generate RabbitVCS.pot:
-$ make RabbitVCS.pot
+Update RabbitVCS.pot:
+$ make update-pot
 
-Generate RabbitVCS.pot and update <lang>.po files:
+Update <lang>.po files:
 $ make update-po
 
 Update locale/<lang>/LC_MESSAGES/RabbitVCS.mo files:
 $ make update-mo
 
-Generate RabbitVCS.pot, update <lang>.po files,
-	update locale/<lang>/LC_MESSAGES/RabbitVCS.mo files:
+Update all (pot-, po-, mo-files):
 $ make update
 
 --esh: end-----------------------------------------------
