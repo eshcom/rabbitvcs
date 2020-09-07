@@ -416,7 +416,7 @@ class MenuCompareToolPrevRev(MenuItem):
 
 class MenuShowChanges(MenuItem):
 	identifier = "RabbitVCS::Show_Changes"
-	label = _("Show Changes...")
+	label = _("Show Changes")
 	tooltip = _("Show changes between paths and revisions")
 	icon = "rabbitvcs-changes"
 
@@ -474,19 +474,19 @@ class MenuRestore(MenuItem):
 
 class MenuRelocate(MenuItem):
 	identifier = "RabbitVCS::Relocate"
-	label = _("Relocate...")
+	label = _("Relocate")
 	tooltip = _("Relocate your working copy")
 	icon = "rabbitvcs-relocate"
 
 class MenuGetLock(MenuItem):
 	identifier = "RabbitVCS::Get_Lock"
-	label = _("Get Lock...")
+	label = _("Get Lock")
 	tooltip = _("Locally lock items")
 	icon = "rabbitvcs-lock"
 
 class MenuUnlock(MenuItem):
 	identifier = "RabbitVCS::Unlock"
-	label = _("Release Lock...")
+	label = _("Release Lock")
 	tooltip = _("Release lock on an item")
 	icon = "rabbitvcs-unlock"
 
@@ -527,37 +527,37 @@ class MenuImport(MenuItem):
 
 class MenuBranchTag(MenuItem):
 	identifier = "RabbitVCS::Branch_Tag"
-	label = _("Branch/tag...")
+	label = _("Branch/tag")
 	tooltip = _("Copy an item to another location in the repository")
 	icon = "rabbitvcs-branch"
 
 class MenuSwitch(MenuItem):
 	identifier = "RabbitVCS::Switch"
-	label = _("Switch...")
+	label = _("Switch")
 	tooltip = _("Change the repository location of a working copy")
 	icon = "rabbitvcs-switch"
 
 class MenuMerge(MenuItem):
 	identifier = "RabbitVCS::Merge"
-	label = _("Merge...")
+	label = _("Merge")
 	tooltip = _("A wizard with steps for merging")
 	icon = "rabbitvcs-merge"
 
 class MenuAnnotate(MenuItem):
 	identifier = "RabbitVCS::Annotate"
-	label = _("Annotate...")
+	label = _("Annotate")
 	tooltip = _("Annotate a file")
 	icon = "rabbitvcs-annotate"
 
 class MenuCreatePatch(MenuItem):
 	identifier = "RabbitVCS::Create_Patch"
-	label = _("Create Patch...")
+	label = _("Create Patch")
 	tooltip = _("Creates a unified diff file with all changes you made")
 	icon = "rabbitvcs-createpatch"
 
 class MenuApplyPatch(MenuItem):
 	identifier = "RabbitVCS::Apply_Patch"
-	label = _("Apply Patch...")
+	label = _("Apply Patch")
 	tooltip = _("Applies a unified diff file to the working copy")
 	icon = "rabbitvcs-applypatch"
 

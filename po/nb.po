@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-03-14 08:38+0000\n"
 "Last-Translator: Arne <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -142,7 +142,7 @@ msgid "The from revision field must be an integer"
 msgstr "\"Fra revisjon\" -feltet må være et heltall"
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr "Anvend lapp (patch)"
 
@@ -162,7 +162,7 @@ msgstr "Lappefil anvendt"
 msgid "You must supply a destination path."
 msgstr "Du må oppgi en målsti."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "Gren/merke"
 
@@ -268,6 +268,7 @@ msgstr "Flytt til..."
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Endre navn"
 
@@ -353,6 +354,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "ArkivURL og målsti er begge påkrevde felt."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "Sjekk ut"
 
@@ -469,6 +471,7 @@ msgstr "Lag et arkiv her"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr "Lag lapp (patch)"
 
@@ -536,6 +539,7 @@ msgid "Export - %s"
 msgstr "Eksportert - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Eksporter"
 
@@ -576,7 +580,7 @@ msgstr "Import fullført"
 msgid "Locked"
 msgstr "Låst"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "Lås"
 
@@ -732,6 +736,7 @@ msgid "Completed Merge"
 msgstr "Fullført fletting"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "Flett"
 
@@ -825,7 +830,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "Fra og til -URLfeltene er begge påkrevet."
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "Omplasser"
 
@@ -953,7 +958,7 @@ msgstr "Fullført fletting"
 msgid "The repository location is a required field."
 msgstr "Arkivplasseringen er et påkrevet felt."
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "Flytt"
 
@@ -1047,7 +1052,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "Oppdater til revisjon"
 
@@ -1131,10 +1136,6 @@ msgstr "Legg til emblem"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Legg til et emblem"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr "Sjekk ut..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1234,7 +1235,7 @@ msgstr ""
 "siden av hverandre"
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr "Vis endringer..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1257,17 +1258,9 @@ msgstr "Tidsplanlegg elementer som skal legges til i arkivet"
 msgid "Add to ignore list"
 msgstr "Legg til ignoreringsliste"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "Oppdater til revisjon..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Oppdatert en fil til en spesifikk revisjon"
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "Endre navn..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1297,24 +1290,16 @@ msgstr "Gjenopprett"
 msgid "Restore a missing item"
 msgstr "Gjenopprett et manglende element"
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "Omplasser..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "Omplasser din arbeidskopi"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr "Ta lås..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Lås elementer lokalt"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "Frigi lås..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1324,10 +1309,6 @@ msgstr "Frigi lås på et element"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Rensk opp en arbeidskopi"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr "Eksporter..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1345,49 +1326,30 @@ msgstr "Lag et arkiv i en mappe"
 msgid "Import an item into a repository"
 msgstr "Importer et element til et arkiv"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "Gren/merke..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Kopier et element til en annen plassering i arkivet"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "Flytt..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "Flytt plasseringen av en arbeidskopi i arkivet"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "Flett..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "En hjelper for fletting"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "Kommenter..."
+#, fuzzy
+msgid "Annotate"
+msgstr "Kommenter"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Kommenter en fil"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr "Lag lapp (patch)..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
 msgstr "Lager en forent differansefil med alle endringene du har gjort"
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
-msgstr "Anvend lapp (patch)..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
 msgid "Applies a unified diff file to the working copy"
@@ -1722,6 +1684,42 @@ msgstr "Flett"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#~ msgid "Checkout..."
+#~ msgstr "Sjekk ut..."
+
+#~ msgid "Update to revision..."
+#~ msgstr "Oppdater til revisjon..."
+
+#~ msgid "Rename..."
+#~ msgstr "Endre navn..."
+
+#~ msgid "Relocate..."
+#~ msgstr "Omplasser..."
+
+#~ msgid "Get Lock..."
+#~ msgstr "Ta lås..."
+
+#~ msgid "Export..."
+#~ msgstr "Eksporter..."
+
+#~ msgid "Branch/tag..."
+#~ msgstr "Gren/merke..."
+
+#~ msgid "Switch..."
+#~ msgstr "Flytt..."
+
+#~ msgid "Merge..."
+#~ msgstr "Flett..."
+
+#~ msgid "Annotate..."
+#~ msgstr "Kommenter..."
+
+#~ msgid "Create Patch..."
+#~ msgstr "Lag lapp (patch)..."
+
+#~ msgid "Apply Patch..."
+#~ msgstr "Anvend lapp (patch)..."
 
 #, fuzzy
 #~ msgid "Running Merge Command..."

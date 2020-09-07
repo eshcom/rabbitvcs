@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-04-13 19:52+0000\n"
 "Last-Translator: Andreas Dahlberg <andreasdahlberg@live.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -142,7 +142,7 @@ msgid "The from revision field must be an integer"
 msgstr "Från version fältet måste vara ett heltal"
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 msgid "You must supply a destination path."
 msgstr "Du måste ange en destinationssökväg."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "Gren/tagg"
 
@@ -268,6 +268,7 @@ msgstr "Flytta till..."
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Byt namn"
 
@@ -352,6 +353,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "Arkivets URL och destination sökvägen är obligatoriska fält."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "Hämta"
 
@@ -468,6 +470,7 @@ msgstr "Skapa arkiv här"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr ""
 
@@ -533,6 +536,7 @@ msgid "Export - %s"
 msgstr "Exportera - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Exportera"
 
@@ -573,7 +577,7 @@ msgstr "Färdig Importera"
 msgid "Locked"
 msgstr "Låst"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "Hämta lås"
 
@@ -729,6 +733,7 @@ msgid "Completed Merge"
 msgstr "Färdig Sammanfoga"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "Sammanfoga"
 
@@ -818,7 +823,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "Både från och till url-fälten krävs."
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "Omlokalisera"
 
@@ -946,7 +951,7 @@ msgstr "Färdig Sammanfoga"
 msgid "The repository location is a required field."
 msgstr "Arkivets plats är ett obligatoriskt fält."
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "Växla"
 
@@ -1040,7 +1045,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "Uppdatera till revision"
 
@@ -1123,10 +1128,6 @@ msgstr "Lägg till emblem"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Lägg till ett emblem"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1222,7 +1223,7 @@ msgid "Compare with previous revision using side-by-side comparison tool"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr "Visa ändringar..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1245,17 +1246,9 @@ msgstr ""
 msgid "Add to ignore list"
 msgstr "Lägg till ignoreringslista"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "Uppdatera till revision..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Uppdatera till angiven version"
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "Byt namn..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1285,24 +1278,16 @@ msgstr "Återställ"
 msgid "Restore a missing item"
 msgstr "Återställ ett saknat objekt"
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "Flytta..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "Flytta din arbetskopia"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr "Hämta Lås..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Lås objekt lokalt"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "Släpp lås..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1312,10 +1297,6 @@ msgstr "Släpp lås på ett objekt"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Rensa upp arbetskopia"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr "Exportera..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1333,48 +1314,28 @@ msgstr "Skapa ett arkiv i en mapp"
 msgid "Import an item into a repository"
 msgstr "Importera ett objekt till ett arkiv"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "Gren/tagg..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Kopiera et objekt till en annan plats i arkivet"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "Växla..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "Ändra arkivets plats för en arbets kopia"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "Sammanfoga..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "En guide med åtgärder för sammanfogning"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "Kommentera..."
+msgid "Annotate"
+msgstr "Kommentar"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Kommentera en fil"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
@@ -1695,6 +1656,33 @@ msgstr "Sammanfogad"
 msgid "Conflicted"
 msgstr "Tvistande"
 
+#~ msgid "Update to revision..."
+#~ msgstr "Uppdatera till revision..."
+
+#~ msgid "Rename..."
+#~ msgstr "Byt namn..."
+
+#~ msgid "Relocate..."
+#~ msgstr "Flytta..."
+
+#~ msgid "Get Lock..."
+#~ msgstr "Hämta Lås..."
+
+#~ msgid "Export..."
+#~ msgstr "Exportera..."
+
+#~ msgid "Branch/tag..."
+#~ msgstr "Gren/tagg..."
+
+#~ msgid "Switch..."
+#~ msgstr "Växla..."
+
+#~ msgid "Merge..."
+#~ msgstr "Sammanfoga..."
+
+#~ msgid "Annotate..."
+#~ msgstr "Kommentera..."
+
 #, fuzzy
 #~ msgid "Running Merge Command..."
 #~ msgstr "Kör Sammanfoga..."
@@ -1950,9 +1938,6 @@ msgstr "Tvistande"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Till revision</b>"
-
-#~ msgid "Annotate"
-#~ msgstr "Kommentar"
 
 #~ msgid "<b>Changed Files</b> (double-click to compare with base)"
 #~ msgstr "<b>Ändrade filer</b>"

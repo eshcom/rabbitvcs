@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-12-09 15:20+0000\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -145,7 +145,7 @@ msgid "The from revision field must be an integer"
 msgstr "De 'vanaf' revisie moet een integer zijn."
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr "Patch toepassen"
 
@@ -165,7 +165,7 @@ msgstr "Patchbestand toegepast"
 msgid "You must supply a destination path."
 msgstr "Een doel pad is verplicht."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "Branch/tag"
 
@@ -271,6 +271,7 @@ msgstr "Verplaatsen naar..."
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Hernoemen"
 
@@ -356,6 +357,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "De repository URL en doel pad velden zijn beide verplicht."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "Uitchecken"
 
@@ -472,6 +474,7 @@ msgstr "Hier een repository aanmaken"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr "Patch aanmaken"
 
@@ -540,6 +543,7 @@ msgid "Export - %s"
 msgstr "Exporteren — %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Exporteren"
 
@@ -580,7 +584,7 @@ msgstr "Importeren klaar"
 msgid "Locked"
 msgstr "Vergrendeld"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "Vergrendelen"
 
@@ -737,6 +741,7 @@ msgid "Completed Merge"
 msgstr "Samenvoegen voltooid"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "Samenvoegen"
 
@@ -832,7 +837,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "De 'vanaf' en 'tot' url velden zijn beide verplicht."
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "Verhuizen"
 
@@ -961,7 +966,7 @@ msgstr "Samenvoegen voltooid"
 msgid "The repository location is a required field."
 msgstr "De repository-locatie is een vereist veld."
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "Wisselen"
 
@@ -1055,7 +1060,7 @@ msgstr "Terugdraaien…"
 msgid "Completed Rollback"
 msgstr "Terugdraaien voltooid"
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "Updaten naar revisie"
 
@@ -1139,10 +1144,6 @@ msgstr "Embleem toevoegen"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Een embleem toevoegen…"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr "Uitchecken…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1241,7 +1242,7 @@ msgstr ""
 "vergelijkprogramma"
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr "Wijzigingen weergeven…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1264,17 +1265,9 @@ msgstr "Items klaarzetten om toegevoegd te worden aan het repository"
 msgid "Add to ignore list"
 msgstr "Voeg toe aan negeer lijst"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "Updaten naar revisie…"
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Updaten naar een specifieke revisie"
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "Hernoemen…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1304,24 +1297,16 @@ msgstr "Terugzetten"
 msgid "Restore a missing item"
 msgstr "Een ontbrekend item herstellen"
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "Verhuizen…"
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "Uw werkversie verhuizen"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr "Blokkering verkrijgen…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Items lokaal blokkeren"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "Blokkering vrijgeven…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1331,10 +1316,6 @@ msgstr "Blokkering op een item vrijgeven"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Werkversie opschonen"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr "Exporteren…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1352,50 +1333,31 @@ msgstr "Repository in een map aanmaken"
 msgid "Import an item into a repository"
 msgstr "Item importeren in een repository"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "Branch/tag…"
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Een item kopiëren naar een andere locatie in het repository"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "Wisselen…"
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "De repository-locatie van een werkversie wijzigen"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "Samenvoegen…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "Een wizard met samenvoegstappen"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "Annoteren…"
+#, fuzzy
+msgid "Annotate"
+msgstr "Annoteren"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Een bestand annoteren"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr "Patch aanmaken…"
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
 msgstr ""
 "Maakt een geünificeerd diff-bestand met al de wijzigingen die u gemaakt heeft"
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
-msgstr "Patch toepassen…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
 msgid "Applies a unified diff file to the working copy"
@@ -1731,6 +1693,42 @@ msgstr "Samenvoegen"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#~ msgid "Checkout..."
+#~ msgstr "Uitchecken…"
+
+#~ msgid "Update to revision..."
+#~ msgstr "Updaten naar revisie…"
+
+#~ msgid "Rename..."
+#~ msgstr "Hernoemen…"
+
+#~ msgid "Relocate..."
+#~ msgstr "Verhuizen…"
+
+#~ msgid "Get Lock..."
+#~ msgstr "Blokkering verkrijgen…"
+
+#~ msgid "Export..."
+#~ msgstr "Exporteren…"
+
+#~ msgid "Branch/tag..."
+#~ msgstr "Branch/tag…"
+
+#~ msgid "Switch..."
+#~ msgstr "Wisselen…"
+
+#~ msgid "Merge..."
+#~ msgstr "Samenvoegen…"
+
+#~ msgid "Annotate..."
+#~ msgstr "Annoteren…"
+
+#~ msgid "Create Patch..."
+#~ msgstr "Patch aanmaken…"
+
+#~ msgid "Apply Patch..."
+#~ msgstr "Patch toepassen…"
 
 #, fuzzy
 #~ msgid "Running Merge Command..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-08-14 14:07+0000\n"
 "Last-Translator: Jiehan Zheng <zheng@jiehan.org>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -142,7 +142,7 @@ msgid "The from revision field must be an integer"
 msgstr "来自修订版一栏必须为整数"
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr "应用补丁"
 
@@ -162,7 +162,7 @@ msgstr "已应用补丁文件"
 msgid "You must supply a destination path."
 msgstr "必须提供目标路径。"
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "分支/tag"
 
@@ -268,6 +268,7 @@ msgstr "移动到..."
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "重命名"
 
@@ -353,6 +354,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "“仓库 URL”和“目的地路径”均必填。"
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "检出"
 
@@ -467,6 +469,7 @@ msgstr "在这里创建源码库"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr "生成补丁"
 
@@ -534,6 +537,7 @@ msgid "Export - %s"
 msgstr "导出 - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "导出"
 
@@ -574,7 +578,7 @@ msgstr "Import 完成"
 msgid "Locked"
 msgstr "已锁定"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "获得 Lock"
 
@@ -730,6 +734,7 @@ msgid "Completed Merge"
 msgstr "合并完成"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "合并"
 
@@ -821,7 +826,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "来自和到 URL 栏均为必填"
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "重新分配"
 
@@ -949,7 +954,7 @@ msgstr "合并完成"
 msgid "The repository location is a required field."
 msgstr "仓库地址栏必填。"
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "切换"
 
@@ -1043,7 +1048,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "更新到修订版"
 
@@ -1127,10 +1132,6 @@ msgstr "添加徽章"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "添加一个徽章"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr "检出(Checkout)..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1226,7 +1227,7 @@ msgid "Compare with previous revision using side-by-side comparison tool"
 msgstr "使用并排比较工具与前一个版本进行比较"
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr "显示修改..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1249,17 +1250,9 @@ msgstr "计划要添加至仓库的项"
 msgid "Add to ignore list"
 msgstr "添加至忽略列表"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "更新到版本..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "更新文件至指定版本"
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "重命名..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1289,24 +1282,16 @@ msgstr "恢复"
 msgid "Restore a missing item"
 msgstr "恢复丢失项目"
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "重定位..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "重定位您的工作副本"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr "获得锁..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "本地锁定项目"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "释放锁..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1316,10 +1301,6 @@ msgstr "释放项目的锁"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "清理工作副本"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr "导出..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1337,49 +1318,30 @@ msgstr "在文件夹中创建一个源码库"
 msgid "Import an item into a repository"
 msgstr "导入一个项目至源码库"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "分支/标签..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "复制一个项目到源码库中其它位置"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "切换..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "改变工作副本源码库的位置"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "合并..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "一个由几个步骤组成的合并向导"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "批注..."
+#, fuzzy
+msgid "Annotate"
+msgstr "注释"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "批注一个文件"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr "生成补丁..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
 msgstr "对您所有的修改创建一个 unified diff 文件"
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
-msgstr "应用补丁..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
 msgid "Applies a unified diff file to the working copy"
@@ -1708,6 +1670,42 @@ msgstr "合并"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#~ msgid "Checkout..."
+#~ msgstr "检出(Checkout)..."
+
+#~ msgid "Update to revision..."
+#~ msgstr "更新到版本..."
+
+#~ msgid "Rename..."
+#~ msgstr "重命名..."
+
+#~ msgid "Relocate..."
+#~ msgstr "重定位..."
+
+#~ msgid "Get Lock..."
+#~ msgstr "获得锁..."
+
+#~ msgid "Export..."
+#~ msgstr "导出..."
+
+#~ msgid "Branch/tag..."
+#~ msgstr "分支/标签..."
+
+#~ msgid "Switch..."
+#~ msgstr "切换..."
+
+#~ msgid "Merge..."
+#~ msgstr "合并..."
+
+#~ msgid "Annotate..."
+#~ msgstr "批注..."
+
+#~ msgid "Create Patch..."
+#~ msgstr "生成补丁..."
+
+#~ msgid "Apply Patch..."
+#~ msgstr "应用补丁..."
 
 #, fuzzy
 #~ msgid "Running Merge Command..."

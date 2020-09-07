@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-12-02 16:25+0000\n"
 "Last-Translator: yamafuji mitsugu <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -142,7 +142,7 @@ msgid "The from revision field must be an integer"
 msgstr "元リビジョン番号は整数でなければなりません"
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 msgid "You must supply a destination path."
 msgstr "送り先パスを設定してください．"
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "ブランチ/タグ"
 
@@ -268,6 +268,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "リネーム"
 
@@ -352,6 +353,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "レポジトリのURLとチェックアウト先の両方の入力が必要です．"
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "チェックアウト"
 
@@ -468,6 +470,7 @@ msgstr "ここにレポジトリを作成"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr ""
 
@@ -533,6 +536,7 @@ msgid "Export - %s"
 msgstr "エクスポート - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "エクスポート"
 
@@ -573,7 +577,7 @@ msgstr "インポート完了"
 msgid "Locked"
 msgstr "ロック"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "ロックを取得"
 
@@ -728,6 +732,7 @@ msgid "Completed Merge"
 msgstr "マージ完了"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "マージ"
 
@@ -817,7 +822,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "FROMフィールドとURLフィールドの両方に入力してください"
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "再配置"
 
@@ -944,7 +949,7 @@ msgstr "マージ完了"
 msgid "The repository location is a required field."
 msgstr "レポジトリの場所を入力してください"
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "切り替え"
 
@@ -1038,7 +1043,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "特定のリビジョンへ更新"
 
@@ -1121,10 +1126,6 @@ msgstr "エンブレムを追加"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "エンブレムを追加"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1220,7 +1221,7 @@ msgid "Compare with previous revision using side-by-side comparison tool"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1243,17 +1244,9 @@ msgstr ""
 msgid "Add to ignore list"
 msgstr "無視リストに追加"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "特定のリビジョンへ更新..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "特定のリビジョンへ更新..."
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "リネーム..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1283,24 +1276,16 @@ msgstr "復元"
 msgid "Restore a missing item"
 msgstr ""
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "再配置..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "作業コピーを再配置"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr "ロックを取得..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "ローカルでアイテムをロック"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "ロックを開放..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1310,10 +1295,6 @@ msgstr "アイテム上でロックを開放"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "作業コピーをクリーンアップ"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1331,48 +1312,28 @@ msgstr "フォルダ内にレポジトリを作成"
 msgid "Import an item into a repository"
 msgstr "レポジトリにアイテムをインポート"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "ブランチ/タグ..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "レポジトリ内の別の場所にアイテムをコピーする"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "切り替え..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "作業コピーのレポジトリの場所を変更する"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "マージ..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "マージウィザード"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "注釈..."
+msgid "Annotate"
+msgstr "注釈"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "ファイルに注釈"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
@@ -1687,6 +1648,30 @@ msgstr "マージ"
 msgid "Conflicted"
 msgstr "競合"
 
+#~ msgid "Update to revision..."
+#~ msgstr "特定のリビジョンへ更新..."
+
+#~ msgid "Rename..."
+#~ msgstr "リネーム..."
+
+#~ msgid "Relocate..."
+#~ msgstr "再配置..."
+
+#~ msgid "Get Lock..."
+#~ msgstr "ロックを取得..."
+
+#~ msgid "Branch/tag..."
+#~ msgstr "ブランチ/タグ..."
+
+#~ msgid "Switch..."
+#~ msgstr "切り替え..."
+
+#~ msgid "Merge..."
+#~ msgstr "マージ..."
+
+#~ msgid "Annotate..."
+#~ msgstr "注釈..."
+
 #, fuzzy
 #~ msgid "Running Merge Command..."
 #~ msgstr "マージ中"
@@ -1917,9 +1902,6 @@ msgstr "競合"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>先リビジョン</b>"
-
-#~ msgid "Annotate"
-#~ msgstr "注釈"
 
 #~ msgid "<b>Commit to:</b>"
 #~ msgstr "<b>コミット先:</b>"

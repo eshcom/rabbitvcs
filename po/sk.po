@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-02-09 10:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -142,7 +142,7 @@ msgid "The from revision field must be an integer"
 msgstr ""
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 msgid "You must supply a destination path."
 msgstr "Musíte zadať cieľ umiestnenia."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr ""
 
@@ -268,6 +268,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Premenovať"
 
@@ -352,6 +353,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr ""
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "Vyskúšanie"
 
@@ -467,6 +469,7 @@ msgstr "Vytvoriť repozitáre tu"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr ""
 
@@ -532,6 +535,7 @@ msgid "Export - %s"
 msgstr "Export - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Export"
 
@@ -572,7 +576,7 @@ msgstr "Import ukončený"
 msgid "Locked"
 msgstr "Zamknutý"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "Zamknite"
 
@@ -727,6 +731,7 @@ msgid "Completed Merge"
 msgstr "Zlúčenie ukončené"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "Zlúčenie"
 
@@ -816,7 +821,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr ""
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "Premiestniť"
 
@@ -943,7 +948,7 @@ msgstr "Zlúčenie ukončené"
 msgid "The repository location is a required field."
 msgstr ""
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "Prepnúť"
 
@@ -1037,7 +1042,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "Aktualizovať revíziu"
 
@@ -1120,10 +1125,6 @@ msgstr "Pridať znak"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Pridať nejaký znak"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1219,7 +1220,7 @@ msgid "Compare with previous revision using side-by-side comparison tool"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1242,17 +1243,9 @@ msgstr ""
 msgid "Add to ignore list"
 msgstr "Pridať do zoznamu ignorovaných"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "Aktualizácia revízie"
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Aktualizácia súboru do určenej revízie"
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "Premenovať"
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1282,24 +1275,16 @@ msgstr "Obnoviť"
 msgid "Restore a missing item"
 msgstr ""
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "Premiestniť..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "Premiestniť vašu pracovnú kópiu"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Lokálny zámok položky"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "Vydanie zámku ..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1309,10 +1294,6 @@ msgstr "Vydanie zámku na položku"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Vyčistiť pracovnú kópiu"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1330,48 +1311,28 @@ msgstr "Vytvoriť repozitáre v priečinku"
 msgid "Import an item into a repository"
 msgstr "Importovať položky do repozitára"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "Branch/tag..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Kopírovať položku na iné miesto v repozitári"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "Prepni..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "Zmeniť umiestnenie repozitára pracovnej kópie"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "Zlúčiť..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "A sprievodca s krokmi pre zlúčenie"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "Komentovať..."
+msgid "Annotate"
+msgstr "Komentovať"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Komentovať súbor"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
@@ -1692,6 +1653,27 @@ msgstr "Zlúčené"
 msgid "Conflicted"
 msgstr "V rozpore"
 
+#~ msgid "Update to revision..."
+#~ msgstr "Aktualizácia revízie"
+
+#~ msgid "Rename..."
+#~ msgstr "Premenovať"
+
+#~ msgid "Relocate..."
+#~ msgstr "Premiestniť..."
+
+#~ msgid "Branch/tag..."
+#~ msgstr "Branch/tag..."
+
+#~ msgid "Switch..."
+#~ msgstr "Prepni..."
+
+#~ msgid "Merge..."
+#~ msgstr "Zlúčiť..."
+
+#~ msgid "Annotate..."
+#~ msgstr "Komentovať..."
+
 #, fuzzy
 #~ msgid "Running Merge Command..."
 #~ msgstr "Spúšťam príkaz na zlúčenie"
@@ -1924,9 +1906,6 @@ msgstr "V rozpore"
 
 #~ msgid "<b>To Revision</b>"
 #~ msgstr "<b>Do Revízie</b>"
-
-#~ msgid "Annotate"
-#~ msgstr "Komentovať"
 
 #~ msgid "<b>Commit to:</b>"
 #~ msgstr "<b>Odovzdať do:</b>"

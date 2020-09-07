@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-02-09 10:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -143,7 +143,7 @@ msgid "The from revision field must be an integer"
 msgstr ""
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 msgid "You must supply a destination path."
 msgstr "Trebuie să furnizați o cale pentru destinație."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "Domeniu/etichetă"
 
@@ -269,6 +269,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Redenumire"
 
@@ -353,6 +354,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr ""
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr ""
 
@@ -467,6 +469,7 @@ msgstr "Export Terminat"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr ""
 
@@ -532,6 +535,7 @@ msgid "Export - %s"
 msgstr "Exportă- %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Exportă"
 
@@ -572,7 +576,7 @@ msgstr "Import Terminat"
 msgid "Locked"
 msgstr "Blocat"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr ""
 
@@ -726,6 +730,7 @@ msgid "Completed Merge"
 msgstr ""
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr ""
 
@@ -815,7 +820,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "Câmpurile url de la și la sunt amândouă necesare"
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "Mută"
 
@@ -942,7 +947,7 @@ msgstr "Actualizare completă"
 msgid "The repository location is a required field."
 msgstr ""
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "Comută"
 
@@ -1036,7 +1041,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "Actualizați la revizia"
 
@@ -1119,10 +1124,6 @@ msgstr "Adaugă Emblemă"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Adauga o emblemă"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1218,7 +1219,7 @@ msgid "Compare with previous revision using side-by-side comparison tool"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1241,17 +1242,9 @@ msgstr ""
 msgid "Add to ignore list"
 msgstr "Adaugă la lista de ignorat"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "Redenumește..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1281,16 +1274,8 @@ msgstr "Restaurează"
 msgid "Restore a missing item"
 msgstr ""
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
@@ -1298,7 +1283,7 @@ msgid "Locally lock items"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1307,10 +1292,6 @@ msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
@@ -1329,24 +1310,12 @@ msgstr ""
 msgid "Import an item into a repository"
 msgstr ""
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr ""
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "Comutare..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
@@ -1354,23 +1323,16 @@ msgid "A wizard with steps for merging"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "Adnotează..."
+#, fuzzy
+msgid "Annotate"
+msgstr "Adnotează"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Adnotează un fișier"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr ""
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
-msgstr ""
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
@@ -1704,6 +1666,15 @@ msgstr "Test Îmbinare"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#~ msgid "Rename..."
+#~ msgstr "Redenumește..."
+
+#~ msgid "Switch..."
+#~ msgstr "Comutare..."
+
+#~ msgid "Annotate..."
+#~ msgstr "Adnotează..."
 
 #, fuzzy
 #~ msgid "Running Merge Command..."

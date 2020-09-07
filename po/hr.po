@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 15:16+0300\n"
+"POT-Creation-Date: 2020-09-07 15:19+0300\n"
 "PO-Revision-Date: 2010-04-10 08:37+0000\n"
 "Last-Translator: Vedran Miletić <rivanvx@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -143,7 +143,7 @@ msgid "The from revision field must be an integer"
 msgstr "Polje inačice treba sadržavati broj"
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129
+#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
 msgid "Apply Patch"
 msgstr "Primijeni zakrpu"
 
@@ -163,7 +163,7 @@ msgstr "Zakrpa primijenjena"
 msgid "You must supply a destination path."
 msgstr "Trebate odabrati odredišnu stazu."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/tag"
 msgstr "Grana/oznaka"
 
@@ -269,6 +269,7 @@ msgstr "Premjesti..."
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
+#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Promijeni naziv"
 
@@ -354,6 +355,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "URL skladišta i odredišna staza su obavezna polja."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "Preuzmi"
 
@@ -470,6 +472,7 @@ msgstr "Ovdje napravi skladište"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
+#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr "Izradi zakrpu"
 
@@ -537,6 +540,7 @@ msgid "Export - %s"
 msgstr "Izvoz - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
+#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Izvoz"
 
@@ -577,7 +581,7 @@ msgstr "Završen uvoz"
 msgid "Locked"
 msgstr "Zaključano"
 
-#: ../rabbitvcs/ui/lock.py:139
+#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
 msgid "Get Lock"
 msgstr "Zaključaj"
 
@@ -733,6 +737,7 @@ msgid "Completed Merge"
 msgstr "Stapanje završeno"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "Stopi"
 
@@ -826,7 +831,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "Polja url-ova su obavezna."
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
 msgid "Relocate"
 msgstr "Premjesti"
 
@@ -954,7 +959,7 @@ msgstr "Stapanje završeno"
 msgid "The repository location is a required field."
 msgstr "Lokacija skladišta je obavezno polje."
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
 msgid "Switch"
 msgstr "Zamijeni"
 
@@ -1048,7 +1053,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86
+#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
 msgid "Update To Revision"
 msgstr "Ažuriraj na inačicu"
 
@@ -1132,10 +1137,6 @@ msgstr "Dodaj oznaku"
 #: ../rabbitvcs/util/contextmenuitems.py:321
 msgid "Add an emblem"
 msgstr "Dodaje oznaku ikone"
-
-#: ../rabbitvcs/util/contextmenuitems.py:327
-msgid "Checkout..."
-msgstr "Preuzmi..-"
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1231,7 +1232,7 @@ msgid "Compare with previous revision using side-by-side comparison tool"
 msgstr "Usporedi s prošlom revizijom"
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes..."
+msgid "Show Changes"
 msgstr "Pokaži promjene..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1254,17 +1255,9 @@ msgstr "Rasporedi stavke za dodavanje u skladište"
 msgid "Add to ignore list"
 msgstr "Dodaj na listu zanemarenih"
 
-#: ../rabbitvcs/util/contextmenuitems.py:442
-msgid "Update to revision..."
-msgstr "Obnovi na reviziju..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Obnavlja datoteku na određenu reviziju"
-
-#: ../rabbitvcs/util/contextmenuitems.py:448
-msgid "Rename..."
-msgstr "Promijeni ime..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1294,24 +1287,16 @@ msgstr "Vrati"
 msgid "Restore a missing item"
 msgstr "Vrati nedostajeće"
 
-#: ../rabbitvcs/util/contextmenuitems.py:477
-msgid "Relocate..."
-msgstr "Premjesti..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "Premjesti radnu kopiju na drugi poslužitelj"
-
-#: ../rabbitvcs/util/contextmenuitems.py:483
-msgid "Get Lock..."
-msgstr "Zaključaj..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Lokalno zaključava stavke"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock..."
+msgid "Release Lock"
 msgstr "Oslobodi..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
@@ -1321,10 +1306,6 @@ msgstr "Otključaj stavku"
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Očisti radnu kopiju"
-
-#: ../rabbitvcs/util/contextmenuitems.py:501
-msgid "Export..."
-msgstr "Izvoz…"
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1342,49 +1323,30 @@ msgstr "Napravi skladište u mapi"
 msgid "Import an item into a repository"
 msgstr "Uvezi stavku u skladište"
 
-#: ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag..."
-msgstr "Grana/oznaka..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Kopiraj stavku na drugo mjesto unutar skladišta"
 
-#: ../rabbitvcs/util/contextmenuitems.py:536
-msgid "Switch..."
-msgstr "Zamijeni..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "Zamijeni sidrište radne kopije u skladištu"
-
-#: ../rabbitvcs/util/contextmenuitems.py:542
-msgid "Merge..."
-msgstr "Stopi..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "Čarobnjak s koracima za stapanje"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate..."
-msgstr "Označi..."
+#, fuzzy
+msgid "Annotate"
+msgstr "Pribilježi"
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Dodaj bilješke datoteci"
 
-#: ../rabbitvcs/util/contextmenuitems.py:554
-msgid "Create Patch..."
-msgstr "Napravi zakrpu..."
-
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
 msgstr "Napravi objedinjenu datoteku razlika sa svim vašim promjenama"
-
-#: ../rabbitvcs/util/contextmenuitems.py:560
-msgid "Apply Patch..."
-msgstr "Primjeni zakrpu..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
 msgid "Applies a unified diff file to the working copy"
@@ -1727,6 +1689,42 @@ msgstr "Stopi"
 #: ../rabbitvcs/vcs/svn/__init__.py:225
 msgid "Conflicted"
 msgstr ""
+
+#~ msgid "Checkout..."
+#~ msgstr "Preuzmi..-"
+
+#~ msgid "Update to revision..."
+#~ msgstr "Obnovi na reviziju..."
+
+#~ msgid "Rename..."
+#~ msgstr "Promijeni ime..."
+
+#~ msgid "Relocate..."
+#~ msgstr "Premjesti..."
+
+#~ msgid "Get Lock..."
+#~ msgstr "Zaključaj..."
+
+#~ msgid "Export..."
+#~ msgstr "Izvoz…"
+
+#~ msgid "Branch/tag..."
+#~ msgstr "Grana/oznaka..."
+
+#~ msgid "Switch..."
+#~ msgstr "Zamijeni..."
+
+#~ msgid "Merge..."
+#~ msgstr "Stopi..."
+
+#~ msgid "Annotate..."
+#~ msgstr "Označi..."
+
+#~ msgid "Create Patch..."
+#~ msgstr "Napravi zakrpu..."
+
+#~ msgid "Apply Patch..."
+#~ msgstr "Primjeni zakrpu..."
 
 #, fuzzy
 #~ msgid "Running Merge Command..."
