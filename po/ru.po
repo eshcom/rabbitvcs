@@ -356,7 +356,7 @@ msgstr "Поля URL репозитория и путь назначения - �
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
 #: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
-msgstr "Извлечь (Checkout)"
+msgstr "Извлечь"
 
 #: ../rabbitvcs/ui/checkout.py:159
 msgid "Running Checkout Command..."
@@ -424,7 +424,7 @@ msgstr ""
 #: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
 #: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/util/contextmenuitems.py:339
 msgid "Commit"
-msgstr "Зафиксировать (Commit)"
+msgstr "Зафиксировать"
 
 #: ../rabbitvcs/ui/commit.py:303 ../rabbitvcs/ui/commit.py:363
 #: ../rabbitvcs/ui/commit.py:417
@@ -726,7 +726,7 @@ msgstr "Слияние завершено"
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
 #: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
-msgstr "Слить (Merge)"
+msgstr "Слить"
 
 #: ../rabbitvcs/ui/merge.py:429
 msgid "No active branch"
@@ -801,7 +801,7 @@ msgstr "URL репозитория"
 
 #: ../rabbitvcs/ui/push.py:98 ../rabbitvcs/util/contextmenuitems.py:662
 msgid "Push"
-msgstr "Залить (Push)"
+msgstr "Залить"
 
 #: ../rabbitvcs/ui/push.py:99
 msgid "Running Push Command..."
@@ -1010,7 +1010,7 @@ msgstr ""
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
 #: ../rabbitvcs/util/contextmenuitems.py:333
 msgid "Update"
-msgstr "Обновить (Update)"
+msgstr "Обновить"
 
 #: ../rabbitvcs/ui/update.py:57 ../rabbitvcs/ui/update.py:99
 #: ../rabbitvcs/ui/updateto.py:87
@@ -1429,7 +1429,7 @@ msgstr "Показать и изменить свойства"
 
 #: ../rabbitvcs/util/contextmenuitems.py:657
 msgid "Fetch/Pull"
-msgstr "Получить (Fetch/Pull)"
+msgstr "Получить"
 
 #: ../rabbitvcs/util/contextmenuitems.py:667
 msgid "Branches"
@@ -1652,7 +1652,7 @@ msgid "Conflicted"
 msgstr "Конфликтный"
 
 #~ msgid "Checkout..."
-#~ msgstr "Извлечь (Checkout)..."
+#~ msgstr "Извлечь..."
 
 #~ msgid "Update to revision..."
 #~ msgstr "Обновить до ревизии..."
