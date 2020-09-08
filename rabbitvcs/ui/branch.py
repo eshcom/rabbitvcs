@@ -94,10 +94,10 @@ class SVNBranch(InterfaceView):
 			helper.save_log_message,
 			self.message.get_text()
 		)
-		self.action.append(self.action.set_header, _("Branch/tag"))
-		self.action.append(self.action.set_status, _("Running Branch/tag Command..."))
+		self.action.append(self.action.set_header, _("Branch/Tag"))
+		self.action.append(self.action.set_status, _("Running Branch/Tag Command..."))
 		self.action.append(self.svn.copy, src, dest, revision)
-		self.action.append(self.action.set_status, _("Completed Branch/tag"))
+		self.action.append(self.action.set_status, _("Completed Branch/Tag"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
 	

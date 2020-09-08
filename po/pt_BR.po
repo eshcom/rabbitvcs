@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-07 15:19+0300\n"
+"POT-Creation-Date: 2020-09-08 15:30+0300\n"
 "PO-Revision-Date: 2010-12-06 05:15+0000\n"
 "Last-Translator: Fernando P Silveira <fernandopsilveira@yahoo.com.br>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
@@ -87,7 +87,7 @@ msgstr "Encontrado(s) %d item(ns)"
 
 #: ../rabbitvcs/ui/add.py:190 ../rabbitvcs/ui/add.py:212
 #: ../rabbitvcs/ui/branches.py:278 ../rabbitvcs/ui/tags.py:276
-#: ../rabbitvcs/ui/widget.py:1294 ../rabbitvcs/util/contextmenuitems.py:431
+#: ../rabbitvcs/ui/widget.py:1294
 msgid "Add"
 msgstr "Adicionar"
 
@@ -142,7 +142,7 @@ msgid "The from revision field must be an integer"
 msgstr "O campo revisão de origem deve um inteiro"
 
 #: ../rabbitvcs/ui/applypatch.py:56 ../rabbitvcs/ui/applypatch.py:103
-#: ../rabbitvcs/ui/applypatch.py:129 ../rabbitvcs/util/contextmenuitems.py:560
+#: ../rabbitvcs/ui/applypatch.py:129
 msgid "Apply Patch"
 msgstr "Aplicar remendo"
 
@@ -162,16 +162,16 @@ msgstr "Linha de remendo aplicada"
 msgid "You must supply a destination path."
 msgstr "Você deve informar uma pasta de destino."
 
-#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/util/contextmenuitems.py:530
-msgid "Branch/tag"
+#: ../rabbitvcs/ui/branch.py:97
+msgid "Branch/Tag"
 msgstr "Branch/tag"
 
 #: ../rabbitvcs/ui/branch.py:98
-msgid "Running Branch/tag Command..."
+msgid "Running Branch/Tag Command..."
 msgstr "Rodando comando Branch/tag..."
 
 #: ../rabbitvcs/ui/branch.py:100
-msgid "Completed Branch/tag"
+msgid "Completed Branch/Tag"
 msgstr "Branch/tag Completada"
 
 #. esh: set from rabbitvcs/ui/xml/manager.xml
@@ -268,7 +268,6 @@ msgstr "Mover para..."
 
 #: ../rabbitvcs/ui/browser.py:442 ../rabbitvcs/ui/rename.py:52
 #: ../rabbitvcs/ui/rename.py:76 ../rabbitvcs/ui/rename.py:101
-#: ../rabbitvcs/util/contextmenuitems.py:448
 msgid "Rename"
 msgstr "Renomear"
 
@@ -354,7 +353,6 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "Os campos URL do repositório e caminho de destino são necessários."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
-#: ../rabbitvcs/util/contextmenuitems.py:327
 msgid "Checkout"
 msgstr "Obter"
 
@@ -379,7 +377,7 @@ msgstr ""
 msgid "Completed Cherry Pick"
 msgstr "Obter Concluído"
 
-#: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/util/contextmenuitems.py:682
+#: ../rabbitvcs/ui/clean.py:64
 #, fuzzy
 msgid "Clean"
 msgstr "Limpeza"
@@ -394,7 +392,7 @@ msgstr "Rodando Comando Renomear.."
 msgid "Completed Clean"
 msgstr "Limpeza Concluída"
 
-#: ../rabbitvcs/ui/cleanup.py:54 ../rabbitvcs/util/contextmenuitems.py:495
+#: ../rabbitvcs/ui/cleanup.py:54
 msgid "Cleanup"
 msgstr "Limpeza"
 
@@ -407,7 +405,6 @@ msgid "Completed Cleanup"
 msgstr "Limpeza Concluída"
 
 #: ../rabbitvcs/ui/clone.py:49 ../rabbitvcs/ui/clone.py:64
-#: ../rabbitvcs/util/contextmenuitems.py:652
 msgid "Clone"
 msgstr "Clonar"
 
@@ -425,7 +422,7 @@ msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
 msgstr ""
 
 #: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
-#: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/util/contextmenuitems.py:339
+#: ../rabbitvcs/ui/commit.py:416
 msgid "Commit"
 msgstr "Enviar"
 
@@ -471,7 +468,6 @@ msgstr "Criar Repositório aqui"
 
 #: ../rabbitvcs/ui/createpatch.py:65 ../rabbitvcs/ui/createpatch.py:110
 #: ../rabbitvcs/ui/createpatch.py:149 ../rabbitvcs/ui/createpatch.py:205
-#: ../rabbitvcs/util/contextmenuitems.py:554
 msgid "Create Patch"
 msgstr "Criar Patch"
 
@@ -539,7 +535,6 @@ msgid "Export - %s"
 msgstr "Exportado - %s"
 
 #: ../rabbitvcs/ui/export.py:86 ../rabbitvcs/ui/export.py:145
-#: ../rabbitvcs/util/contextmenuitems.py:501
 msgid "Export"
 msgstr "Exportar"
 
@@ -564,7 +559,7 @@ msgstr "Importado - %s"
 msgid "The repository URL field is required."
 msgstr "O campo URL do repositório  é  necessário."
 
-#: ../rabbitvcs/ui/import.py:64 ../rabbitvcs/util/contextmenuitems.py:521
+#: ../rabbitvcs/ui/import.py:64
 msgid "Import"
 msgstr "Importar"
 
@@ -580,7 +575,7 @@ msgstr "Importar Concluído"
 msgid "Locked"
 msgstr "Bloqueado"
 
-#: ../rabbitvcs/ui/lock.py:139 ../rabbitvcs/util/contextmenuitems.py:483
+#: ../rabbitvcs/ui/lock.py:139
 msgid "Get Lock"
 msgstr "Bloquear"
 
@@ -720,7 +715,7 @@ msgid "Completed Mark as Resolved"
 msgstr "Resolver Concluído"
 
 #: ../rabbitvcs/ui/merge.py:91
-msgid "Running Merge Test"
+msgid "Running Merge Test..."
 msgstr "Executando Teste de Merge"
 
 #: ../rabbitvcs/ui/merge.py:92
@@ -728,7 +723,7 @@ msgid "Completed Merge Test"
 msgstr "Teste de Merge Concluído"
 
 #: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
-msgid "Running Merge Command"
+msgid "Running Merge Command..."
 msgstr "Executando Merge"
 
 #: ../rabbitvcs/ui/merge.py:95 ../rabbitvcs/ui/merge.py:523
@@ -736,7 +731,6 @@ msgid "Completed Merge"
 msgstr "Merge Concluído"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
-#: ../rabbitvcs/util/contextmenuitems.py:542
 msgid "Merge"
 msgstr "Merge"
 
@@ -812,7 +806,7 @@ msgstr "Incapaz de ajustar um novo valor à propriedade."
 msgid "Repository URL"
 msgstr ""
 
-#: ../rabbitvcs/ui/push.py:98 ../rabbitvcs/util/contextmenuitems.py:662
+#: ../rabbitvcs/ui/push.py:98
 msgid "Push"
 msgstr ""
 
@@ -832,7 +826,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "As URL origem e destino são necessárias"
 
-#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/util/contextmenuitems.py:477
+#: ../rabbitvcs/ui/relocate.py:68
 msgid "Relocate"
 msgstr "Realocar"
 
@@ -873,7 +867,7 @@ msgid "Completed Rename"
 msgstr "Renomear Completado"
 
 #. esh
-#: ../rabbitvcs/ui/reset.py:93 ../rabbitvcs/util/contextmenuitems.py:686
+#: ../rabbitvcs/ui/reset.py:93
 #, fuzzy
 msgid "Reset"
 msgstr "Reservado"
@@ -889,7 +883,6 @@ msgid "Completed Reset"
 msgstr "Reverter Concluído"
 
 #: ../rabbitvcs/ui/revert.py:147 ../rabbitvcs/ui/revert.py:169
-#: ../rabbitvcs/util/contextmenuitems.py:460
 msgid "Revert"
 msgstr "Reverter"
 
@@ -960,7 +953,7 @@ msgstr "Merge Concluído"
 msgid "The repository location is a required field."
 msgstr "O campo repositório local é necessário"
 
-#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/util/contextmenuitems.py:536
+#: ../rabbitvcs/ui/switch.py:67
 msgid "Switch"
 msgstr "Trocar"
 
@@ -1028,7 +1021,6 @@ msgstr "Atualização Completada"
 
 #. esh
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
-#: ../rabbitvcs/util/contextmenuitems.py:333
 msgid "Update"
 msgstr "Atualizar"
 
@@ -1054,7 +1046,7 @@ msgstr ""
 msgid "Completed Rollback"
 msgstr ""
 
-#: ../rabbitvcs/ui/updateto.py:86 ../rabbitvcs/util/contextmenuitems.py:442
+#: ../rabbitvcs/ui/updateto.py:86
 msgid "Update To Revision"
 msgstr "Atualizando para Revisão"
 
@@ -1139,13 +1131,27 @@ msgstr "Adicionar Emblema"
 msgid "Add an emblem"
 msgstr "Adicionar um emblema"
 
+#: ../rabbitvcs/util/contextmenuitems.py:327
+msgid "Checkout..."
+msgstr "Obter..."
+
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
 msgstr "Obter uma cópia de trabalho"
 
+#: ../rabbitvcs/util/contextmenuitems.py:333
+#, fuzzy
+msgid "Update..."
+msgstr "Atualizar"
+
 #: ../rabbitvcs/util/contextmenuitems.py:334
 msgid "Update a working copy"
 msgstr "Atualizar uma cópia de trabalho"
+
+#: ../rabbitvcs/util/contextmenuitems.py:339
+#, fuzzy
+msgid "Commit..."
+msgstr "Enviar"
 
 #: ../rabbitvcs/util/contextmenuitems.py:340
 msgid "Commit modifications to the repository"
@@ -1234,7 +1240,7 @@ msgstr ""
 "Comparar com prévia revisão usando a ferramenta de comparação lado a lado"
 
 #: ../rabbitvcs/util/contextmenuitems.py:419
-msgid "Show Changes"
+msgid "Show Changes..."
 msgstr "Mostrar Alterações..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:420
@@ -1249,6 +1255,10 @@ msgstr "Mostrar Log"
 msgid "Show a file's log information"
 msgstr "Mostrar as informações de um arquivo de log"
 
+#: ../rabbitvcs/util/contextmenuitems.py:431
+msgid "Add..."
+msgstr ""
+
 #: ../rabbitvcs/util/contextmenuitems.py:432
 msgid "Schedule items to be added to the repository"
 msgstr "Programar itens para serem adicionaos ao repositório"
@@ -1257,9 +1267,17 @@ msgstr "Programar itens para serem adicionaos ao repositório"
 msgid "Add to ignore list"
 msgstr "Adicionar à lista de ignorados"
 
+#: ../rabbitvcs/util/contextmenuitems.py:442
+msgid "Update to revision..."
+msgstr "Atualizar para revisão..."
+
 #: ../rabbitvcs/util/contextmenuitems.py:443
 msgid "Update a file to a specific revision"
 msgstr "Atualizar um arquivo para uma revisão específica"
+
+#: ../rabbitvcs/util/contextmenuitems.py:448
+msgid "Rename..."
+msgstr "Renomear..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:449
 msgid "Schedule an item to be renamed on the repository"
@@ -1272,6 +1290,11 @@ msgstr "Apagar"
 #: ../rabbitvcs/util/contextmenuitems.py:455
 msgid "Schedule an item to be deleted from the repository"
 msgstr "Agendar um item para ser deletado do repositório"
+
+#: ../rabbitvcs/util/contextmenuitems.py:460
+#, fuzzy
+msgid "Revert..."
+msgstr "Reverter"
 
 #: ../rabbitvcs/util/contextmenuitems.py:461
 msgid "Revert an item to its unmodified state"
@@ -1289,25 +1312,42 @@ msgstr "Restaurar"
 msgid "Restore a missing item"
 msgstr "Recuperar um item em falta"
 
+#: ../rabbitvcs/util/contextmenuitems.py:477
+msgid "Relocate..."
+msgstr "Realocar..."
+
 #: ../rabbitvcs/util/contextmenuitems.py:478
 msgid "Relocate your working copy"
 msgstr "Realocar sua cópia de trabalho"
+
+#: ../rabbitvcs/util/contextmenuitems.py:483
+msgid "Get Lock..."
+msgstr "Bloquear..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
 msgstr "Itens bloqueados localmente"
 
 #: ../rabbitvcs/util/contextmenuitems.py:489
-msgid "Release Lock"
+msgid "Release Lock..."
 msgstr "Liberar Bloqueio..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:490
 msgid "Release lock on an item"
 msgstr "Liberar bloqueio de um item"
 
+#: ../rabbitvcs/util/contextmenuitems.py:495
+#, fuzzy
+msgid "Clean up..."
+msgstr "Limpando..."
+
 #: ../rabbitvcs/util/contextmenuitems.py:496
 msgid "Clean up working copy"
 msgstr "Limpeza de cópia de trabalho"
+
+#: ../rabbitvcs/util/contextmenuitems.py:501
+msgid "Export..."
+msgstr "Exportar..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1316,40 +1356,65 @@ msgstr ""
 "versionamento"
 
 #: ../rabbitvcs/util/contextmenuitems.py:515
-msgid "Create Repository here"
+msgid "Create Repository here..."
 msgstr "Criar Repositório aqui"
 
 #: ../rabbitvcs/util/contextmenuitems.py:516
 msgid "Create a repository in a folder"
 msgstr "Criar um repositório no diretório"
 
+#: ../rabbitvcs/util/contextmenuitems.py:521
+#, fuzzy
+msgid "Import..."
+msgstr "Importar"
+
 #: ../rabbitvcs/util/contextmenuitems.py:522
 msgid "Import an item into a repository"
 msgstr "Importar um item em um respositório"
+
+#: ../rabbitvcs/util/contextmenuitems.py:530
+msgid "Branch/Tag..."
+msgstr "Branch/tag..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
 msgstr "Copiar um item para outro lugar no repositório"
 
+#: ../rabbitvcs/util/contextmenuitems.py:536
+msgid "Switch..."
+msgstr "Mudar..."
+
 #: ../rabbitvcs/util/contextmenuitems.py:537
 msgid "Change the repository location of a working copy"
 msgstr "Mudar o lugar do repositório de um cópia de trabalho"
+
+#: ../rabbitvcs/util/contextmenuitems.py:542
+msgid "Merge..."
+msgstr "Mesclar..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:543
 msgid "A wizard with steps for merging"
 msgstr "Um assistente com passos para mesclar"
 
 #: ../rabbitvcs/util/contextmenuitems.py:548
-msgid "Annotate"
-msgstr "Comentar"
+msgid "Annotate..."
+msgstr "Comentário..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:549
 msgid "Annotate a file"
 msgstr "Comentar um arquivo"
 
+#: ../rabbitvcs/util/contextmenuitems.py:554
+msgid "Create Patch..."
+msgstr "Criar Remendo..."
+
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
 msgstr "Cria um arquivo diff unificado com todas as mudanças que vocẽ fez"
+
+#: ../rabbitvcs/util/contextmenuitems.py:560
+msgid "Apply Patch..."
+msgstr "Aplicar remendo"
 
 #: ../rabbitvcs/util/contextmenuitems.py:561
 msgid "Applies a unified diff file to the working copy"
@@ -1454,8 +1519,17 @@ msgstr "Editar detalhes"
 msgid "Show and edit property details"
 msgstr "Exibir e editar detalhes da propriedade"
 
+#: ../rabbitvcs/util/contextmenuitems.py:652
+#, fuzzy
+msgid "Clone..."
+msgstr "Clonar"
+
 #: ../rabbitvcs/util/contextmenuitems.py:657
-msgid "Fetch/Pull"
+msgid "Fetch/Pull..."
+msgstr ""
+
+#: ../rabbitvcs/util/contextmenuitems.py:662
+msgid "Push..."
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:667
@@ -1469,6 +1543,16 @@ msgstr "Palavras-chave"
 #: ../rabbitvcs/util/contextmenuitems.py:677
 msgid "Remotes"
 msgstr "Remotos"
+
+#: ../rabbitvcs/util/contextmenuitems.py:682
+#, fuzzy
+msgid "Clean..."
+msgstr "Limpeza"
+
+#: ../rabbitvcs/util/contextmenuitems.py:686
+#, fuzzy
+msgid "Reset..."
+msgstr "Reservado"
 
 #: ../rabbitvcs/util/contextmenuitems.py:701
 msgid "Edit conflicts"
@@ -2019,44 +2103,11 @@ msgstr "<b>\t Criar cópia de</b>"
 msgid "Destination:"
 msgstr "Destino:"
 
-#~ msgid "Checkout..."
-#~ msgstr "Obter..."
-
-#~ msgid "Update to revision..."
-#~ msgstr "Atualizar para revisão..."
-
-#~ msgid "Rename..."
-#~ msgstr "Renomear..."
-
-#~ msgid "Relocate..."
-#~ msgstr "Realocar..."
-
-#~ msgid "Get Lock..."
-#~ msgstr "Bloquear..."
-
-#~ msgid "Export..."
-#~ msgstr "Exportar..."
-
-#~ msgid "Branch/tag..."
-#~ msgstr "Branch/tag..."
-
-#~ msgid "Switch..."
-#~ msgstr "Mudar..."
-
-#~ msgid "Merge..."
-#~ msgstr "Mesclar..."
-
-#~ msgid "Annotate..."
-#~ msgstr "Comentário..."
-
-#~ msgid "Create Patch..."
-#~ msgstr "Criar Remendo..."
-
-#~ msgid "Apply Patch..."
-#~ msgstr "Aplicar remendo"
+#~ msgid "Annotate"
+#~ msgstr "Comentar"
 
 #, fuzzy
-#~ msgid "Running Merge Command..."
+#~ msgid "Running Merge Command"
 #~ msgstr "Executando Merge"
 
 #~ msgid "Resolve"

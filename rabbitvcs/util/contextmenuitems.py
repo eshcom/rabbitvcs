@@ -324,19 +324,19 @@ class MenuDebugAddEmblem(MenuItem):
 
 class MenuCheckout(MenuItem):
 	identifier = "RabbitVCS::Checkout"
-	label = _("Checkout")
+	label = _("Checkout...")
 	tooltip = _("Check out a working copy")
 	icon = "rabbitvcs-checkout"
 
 class MenuUpdate(MenuItem):
 	identifier = "RabbitVCS::Update"
-	label = _("Update")
+	label = _("Update...")
 	tooltip = _("Update a working copy")
 	icon = "rabbitvcs-update"
 
 class MenuCommit(MenuItem):
 	identifier = "RabbitVCS::Commit"
-	label = _("Commit")
+	label = _("Commit...")
 	tooltip = _("Commit modifications to the repository")
 	icon = "rabbitvcs-commit"
 
@@ -416,7 +416,7 @@ class MenuCompareToolPrevRev(MenuItem):
 
 class MenuShowChanges(MenuItem):
 	identifier = "RabbitVCS::Show_Changes"
-	label = _("Show Changes")
+	label = _("Show Changes...")
 	tooltip = _("Show changes between paths and revisions")
 	icon = "rabbitvcs-changes"
 
@@ -428,7 +428,7 @@ class MenuShowLog(MenuItem):
 
 class MenuAdd(MenuItem):
 	identifier = "RabbitVCS::Add"
-	label = _("Add")
+	label = _("Add...")
 	tooltip = _("Schedule items to be added to the repository")
 	icon = "rabbitvcs-add"
 
@@ -439,13 +439,13 @@ class MenuAddToIgnoreList(MenuItem):
 
 class MenuUpdateToRevision(MenuItem):
 	identifier = "RabbitVCS::Update_To_Revision"
-	label = _("Update To Revision")
+	label = _("Update to revision...")
 	tooltip = _("Update a file to a specific revision")
 	icon = "rabbitvcs-update"
 
 class MenuRename(MenuItem):
 	identifier = "RabbitVCS::Rename"
-	label = _("Rename")
+	label = _("Rename...")
 	tooltip = _("Schedule an item to be renamed on the repository")
 	icon = "rabbitvcs-rename"
 
@@ -457,7 +457,7 @@ class MenuDelete(MenuItem):
 
 class MenuRevert(MenuItem):
 	identifier = "RabbitVCS::Revert"
-	label = _("Revert")
+	label = _("Revert...")
 	tooltip = _("Revert an item to its unmodified state")
 	icon = "rabbitvcs-revert"
 
@@ -474,31 +474,31 @@ class MenuRestore(MenuItem):
 
 class MenuRelocate(MenuItem):
 	identifier = "RabbitVCS::Relocate"
-	label = _("Relocate")
+	label = _("Relocate...")
 	tooltip = _("Relocate your working copy")
 	icon = "rabbitvcs-relocate"
 
 class MenuGetLock(MenuItem):
 	identifier = "RabbitVCS::Get_Lock"
-	label = _("Get Lock")
+	label = _("Get Lock...")
 	tooltip = _("Locally lock items")
 	icon = "rabbitvcs-lock"
 
 class MenuUnlock(MenuItem):
 	identifier = "RabbitVCS::Unlock"
-	label = _("Release Lock")
+	label = _("Release Lock...")
 	tooltip = _("Release lock on an item")
 	icon = "rabbitvcs-unlock"
 
 class MenuCleanup(MenuItem):
 	identifier = "RabbitVCS::Cleanup"
-	label = _("Cleanup")
+	label = _("Clean up...")
 	tooltip = _("Clean up working copy")
 	icon = "rabbitvcs-cleanup"
 
 class MenuExport(MenuItem):
 	identifier = "RabbitVCS::Export"
-	label = _("Export")
+	label = _("Export...")
 	tooltip = _("Export a working copy or repository with no versioning information")
 	icon = "rabbitvcs-export"
 
@@ -512,13 +512,13 @@ class MenuGitExport(MenuExport):
 
 class MenuCreateRepository(MenuItem):
 	identifier = "RabbitVCS::Create_Repository"
-	label = _("Create Repository here")
+	label = _("Create Repository here...")
 	tooltip = _("Create a repository in a folder")
 	icon = "rabbitvcs-run"
 
 class MenuImport(MenuItem):
 	identifier = "RabbitVCS::Import"
-	label = _("Import")
+	label = _("Import...")
 	tooltip = _("Import an item into a repository")
 	icon = "rabbitvcs-import"
 	# "import" is reserved
@@ -527,37 +527,37 @@ class MenuImport(MenuItem):
 
 class MenuBranchTag(MenuItem):
 	identifier = "RabbitVCS::Branch_Tag"
-	label = _("Branch/tag")
+	label = _("Branch/Tag...")
 	tooltip = _("Copy an item to another location in the repository")
 	icon = "rabbitvcs-branch"
 
 class MenuSwitch(MenuItem):
 	identifier = "RabbitVCS::Switch"
-	label = _("Switch")
+	label = _("Switch...")
 	tooltip = _("Change the repository location of a working copy")
 	icon = "rabbitvcs-switch"
 
 class MenuMerge(MenuItem):
 	identifier = "RabbitVCS::Merge"
-	label = _("Merge")
+	label = _("Merge...")
 	tooltip = _("A wizard with steps for merging")
 	icon = "rabbitvcs-merge"
 
 class MenuAnnotate(MenuItem):
 	identifier = "RabbitVCS::Annotate"
-	label = _("Annotate")
+	label = _("Annotate...")
 	tooltip = _("Annotate a file")
 	icon = "rabbitvcs-annotate"
 
 class MenuCreatePatch(MenuItem):
 	identifier = "RabbitVCS::Create_Patch"
-	label = _("Create Patch")
+	label = _("Create Patch...")
 	tooltip = _("Creates a unified diff file with all changes you made")
 	icon = "rabbitvcs-createpatch"
 
 class MenuApplyPatch(MenuItem):
 	identifier = "RabbitVCS::Apply_Patch"
-	label = _("Apply Patch")
+	label = _("Apply Patch...")
 	tooltip = _("Applies a unified diff file to the working copy")
 	icon = "rabbitvcs-applypatch"
 
@@ -649,17 +649,17 @@ class MenuInitializeRepository(MenuItem):
 
 class MenuClone(MenuItem):
 	identifier = "RabbitVCS::Clone"
-	label = _("Clone")
+	label = _("Clone...")
 	icon = "rabbitvcs-checkout"
 
 class MenuFetchPull(MenuItem):
 	identifier = "RabbitVCS::Fetch_Pull"
-	label = _("Fetch/Pull")
+	label = _("Fetch/Pull...")
 	icon = "rabbitvcs-update"
 
 class MenuPush(MenuItem):
 	identifier = "RabbitVCS::Push"
-	label = _("Push")
+	label = _("Push...")
 	icon = "rabbitvcs-push"
 
 class MenuBranches(MenuItem):
@@ -679,11 +679,11 @@ class MenuRemotes(MenuItem):
 
 class MenuClean(MenuCleanup):
 	identifier = "RabbitVCS::Clean"
-	label = _("Clean")
+	label = _("Clean...")
 
 class MenuReset(MenuItem):
 	identifier = "RabbitVCS::Reset"
-	label = _("Reset")
+	label = _("Reset...")
 	icon = "rabbitvcs-reset"
 
 class MenuStage(MenuItem):
