@@ -1815,7 +1815,7 @@ msgstr "Загрузить/Обновить"
 
 #: ../rabbitvcs/ui/xml/changes.xml.h:1
 msgid "Changes"
-msgstr "изменения"
+msgstr "Изменения"
 
 #: ../rabbitvcs/ui/xml/changes.xml.h:2
 msgid "<b>First:</b>"
@@ -2472,7 +2472,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/xml/settings.xml.h:23
 msgid "External Programs"
-msgstr "Внешние Программы"
+msgstr "Внешние программы"
 
 #: ../rabbitvcs/ui/xml/settings.xml.h:24
 msgid "<b>URL History</b>"

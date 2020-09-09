@@ -1126,7 +1126,7 @@ class GitRepositorySelector:
 		vbox = gtk.VBox(False, 4)
 		
 		# esh:
-		label_width = 120
+		label_width = 130
 		
 		# Set up the Repository Line
 		label = gtk.Label(_("Repository:"))
@@ -1276,10 +1276,13 @@ class MultiFileTextEditor:
 		
 		vbox = gtk.VBox(False, 6)
 		
+		# esh:
+		label_width = 130
+		
 		hbox = gtk.HBox(False, 3)
 		combo_label = gtk.Label(label)
 		combo_label.set_alignment(0, 0.5)
-		combo_label.set_size_request(130, -1)
+		combo_label.set_size_request(label_width, -1)
 		hbox.pack_start(combo_label, False, False, 0)
 		hbox.pack_start(self.combobox.cb, True, True, 0)
 		vbox.pack_start(hbox, False, False, 0)
@@ -1288,7 +1291,7 @@ class MultiFileTextEditor:
 			hbox = gtk.HBox(False, 3)
 			add_label = gtk.Label(_("Add line:"))
 			add_label.set_alignment(0, 0.5)
-			add_label.set_size_request(130, -1)
+			add_label.set_size_request(label_width, -1)
 			self.add_entry = gtk.Entry()
 			self.add_entry.set_text(line_content)
 			add_button = gtk.Button(_("Add"))

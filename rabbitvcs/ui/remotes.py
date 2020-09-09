@@ -59,8 +59,10 @@ class GitRemotes(InterfaceView):
 		InterfaceView.__init__(self, "manager", "Manager")
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.git = self.vcs.git(path)
+		
 		self.get_widget("Manager").set_title(_("Remote Repository Manager"))
 		self.get_widget("items_label").set_markup(_("<b>Remote Repositories</b>"))
+		self.get_widget("vbox2").set_size_request(600, -1)
 		self.selected_branch = None
 		self.items_treeview = rabbitvcs.ui.widget.Table(
 			self.get_widget("items_treeview"),

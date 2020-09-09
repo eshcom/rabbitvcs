@@ -61,7 +61,8 @@ class GitBranchManager(InterfaceView):
 		InterfaceView.__init__(self, "manager", "Manager")
 		self.path = path
 		self.get_widget("right_side").show()
-		# esh: set from rabbitvcs/ui/xml/manager.xml
+		# esh: not need, width will be set dynamically,
+		# esh: height is set in the rabbitvcs/ui/xml/manager.xml
 		# ~ self.get_widget("Manager").set_size_request(695, -1)
 		self.get_widget("Manager").set_title(_("Branch Manager"))
 		self.get_widget("items_label").set_markup(_("<b>Branches</b>"))
@@ -174,8 +175,8 @@ class GitBranchManager(InterfaceView):
 		self.message_label = gtk.Label("")
 		self.message_label.set_properties(xalign=0,yalign=0,selectable=True)
 		self.message_label.set_line_wrap(True)
-		# esh: set width from 250 to 450
-		self.message_label.set_size_request(450, -1)
+		# esh: not need, width will be set dynamically
+		# ~ self.message_label.set_size_request(250, -1)
 		self.message_container = gtk.HBox(False, 0)
 		self.message_container.pack_start(label, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
@@ -207,7 +208,7 @@ class GitBranchManager(InterfaceView):
 	
 	def on_add_clicked(self, widget):
 		self.show_add()
-
+	
 	def on_delete_clicked(self, widget):
 		items = self.items_treeview.get_selected_row_items(0)
 		selected = []

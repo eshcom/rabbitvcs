@@ -140,12 +140,14 @@ def process_memory(pid):
 	# log.debug("Memory for %i: %i" % (pid, mem_in_kb))
 	return mem_in_kb
 
-def format_long_text(text, cols = None):
+def format_long_text(text, cols = None, replace_linebreak = True):
 	""" Nicely formats text containing linebreaks to display in a single line
 	by replacing newlines with U+23CE. If the param "cols" is given, the text
 	beyond cols is replaced by "...".
 	"""
-	text = text.strip().replace(u"\n", LINE_BREAK_CHAR)
+	text = text.strip()
+	if replace_linebreak:
+		text = text.replace(u"\n", LINE_BREAK_CHAR)
 	if cols and len(text) > cols:
 		text = u"%s..." % text[0:cols]
 	return text
