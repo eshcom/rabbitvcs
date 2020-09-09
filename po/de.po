@@ -19,8 +19,6 @@ msgstr ""
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Basepath: ../\n"
 
-#. All subclasses should override this! This is to be displayed in the
-#. settings dialog
 #: ../rabbitvcs/services/statuschecker.py:38
 msgid "Simple status checker"
 msgstr ""
@@ -175,8 +173,6 @@ msgstr "Erstelle Zweig/Tag..."
 msgid "Completed Branch/Tag"
 msgstr "Zweig/Tag-Erstellung abgeschlossen"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/branches.py:66
 #, fuzzy
 msgid "Branch Manager"
@@ -192,14 +188,11 @@ msgstr "<b>Links</b>"
 msgid "Branch"
 msgstr "Zweig/Tag"
 
-#. Set up the Branch line
-#. Set up the Tag line
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
 #, fuzzy
 msgid "Name:"
 msgstr "Name"
 
-#. Set up the Commit-sha line
 #: ../rabbitvcs/ui/branches.py:111
 msgid "Start Point:"
 msgstr ""
@@ -217,18 +210,12 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#. Set up the Revision line
-#. Set up the Commit-sha line
-#. Set up the Revision line
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
 #, fuzzy
 msgid "Revision:"
 msgstr "Revision"
 
-#. Set up the Log Message line
-#. Set up the Log Message Entry line
-#. Set up the Log Message line
 #: ../rabbitvcs/ui/branches.py:171 ../rabbitvcs/ui/merge.py:480
 #: ../rabbitvcs/ui/tags.py:132 ../rabbitvcs/ui/tags.py:198
 #, fuzzy
@@ -744,7 +731,7 @@ msgstr "Auflösen abgeschlossen"
 
 #: ../rabbitvcs/ui/merge.py:91
 msgid "Running Merge Test..."
-msgstr "Zusammenführen testen"
+msgstr "Zusammenführen testen..."
 
 #: ../rabbitvcs/ui/merge.py:92
 msgid "Completed Merge Test"
@@ -766,13 +753,11 @@ msgstr "Zusammenführen"
 msgid "No active branch"
 msgstr ""
 
-#. Set up the Author line
 #: ../rabbitvcs/ui/merge.py:442
 #, fuzzy
 msgid "Author:"
 msgstr "Autoren:"
 
-#. Set up the Date line
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 #, fuzzy
 msgid "Date:"
@@ -896,7 +881,6 @@ msgstr "Benenne um..."
 msgid "Completed Rename"
 msgstr "Umbenennen abgeschlossen"
 
-#. esh
 #: ../rabbitvcs/ui/reset.py:93
 msgid "Reset"
 msgstr ""
@@ -997,8 +981,6 @@ msgstr "Wechsele Zweig/Tag..."
 msgid "Completed Switch"
 msgstr "Zweig/Tag gewechselt"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/tags.py:70
 msgid "Tag Manager"
 msgstr ""
@@ -1012,7 +994,6 @@ msgstr "<b>Logmeldung</b>"
 msgid "Tag"
 msgstr ""
 
-#. Set up the tagger line
 #: ../rabbitvcs/ui/tags.py:160
 msgid "Tagger:"
 msgstr ""
@@ -1054,7 +1035,6 @@ msgstr "Benenne um..."
 msgid "Completed Unstage"
 msgstr "Aktualisierung abgeschlossen."
 
-#. esh
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
 msgid "Update"
 msgstr "Aktualisieren"
@@ -1109,19 +1089,16 @@ msgstr ""
 msgid "Working Copy"
 msgstr "<b>Arbeitskopie</b>"
 
-#. Set up the Repository Line
 #: ../rabbitvcs/ui/widget.py:1132
 #, fuzzy
 msgid "Repository:"
 msgstr "<b>Projektarchiv</b>"
 
-#. Set up the Branch line
 #: ../rabbitvcs/ui/widget.py:1154
 #, fuzzy
 msgid "Branch:"
 msgstr "Zweig/Tag"
 
-#. Set up the Host line
 #: ../rabbitvcs/ui/widget.py:1182
 msgid "Host:"
 msgstr "Server:"
@@ -1409,7 +1386,7 @@ msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:515
 msgid "Create Repository here..."
-msgstr "Projektarchiv hier erstellen"
+msgstr "Projektarchiv hier erstellen..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:516
 msgid "Create a repository in a folder"
@@ -1459,7 +1436,7 @@ msgstr "Autoren- und Revisionsinformationen zu einer Datei anzeigen"
 #: ../rabbitvcs/util/contextmenuitems.py:554
 #, fuzzy
 msgid "Create Patch..."
-msgstr "Projektarchiv hier erstellen"
+msgstr "Projektarchiv hier erstellen..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
@@ -1604,7 +1581,7 @@ msgstr ""
 #: ../rabbitvcs/util/contextmenuitems.py:682
 #, fuzzy
 msgid "Clean..."
-msgstr "Aufräumen"
+msgstr "Räume auf..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:686
 msgid "Reset..."
@@ -1812,152 +1789,89 @@ msgstr "Zusammengeführt"
 msgid "Conflicted"
 msgstr "Im Konflikt"
 
-msgid "<b>Properties for:</b>"
-msgstr "<b>Eigenschaften für:</b>"
-
-msgid "<i>Selected properties will be applied recursively.</i>"
-msgstr ""
-
-#, fuzzy
-msgid "Delete properties recursively"
-msgstr "Eigenschaft"
-
-#, fuzzy
-msgid "Edit..."
-msgstr "Bearbeiten..."
-
-msgid "New..."
-msgstr "Neu..."
-
-msgid "URL/Path"
-msgstr "URL/Pfad"
-
-msgid "URL:"
-msgstr "URL:"
-
-#, fuzzy
-msgid "<b>Add Message</b>"
-msgstr "<b>Logmeldung hinzufügen</b>"
-
-msgid "<b>Certificate Details</b>"
-msgstr "<b>Zertifikatsdetails</b>"
-
-#, fuzzy
-msgid "<b>Edit Property Details</b>"
-msgstr "<b>Zertifikatsdetails</b>"
-
-#, fuzzy
-msgid "<b>Message</b>"
-msgstr "<b>Logmeldungen</b>"
-
-msgid "<b>Please add your authentication details</b>"
-msgstr "<b>Bitte geben Sie Ihre Authentifizierungsinformationen an</b>"
-
-msgid "<b>Previous Messages</b>"
-msgstr "<b>Frühere Logmeldungen</b>"
-
-msgid ""
-"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-msgstr "<span size=\"large\"><b>Wollen Sie wirklich %item% löschen?</b></span>"
-
-msgid "Accept Forever"
-msgstr "Dauerhaft akzeptieren"
-
-msgid "Accept Once"
-msgstr "Einmal akzeptieren"
-
-msgid "Apply property recursively"
-msgstr ""
-
-msgid "Authentication"
-msgstr "Anmeldung"
-
-#, fuzzy
-msgid "Check Certificate"
-msgstr "Zertifikat prüfen"
-
-msgid "Confirmation"
-msgstr "Bestätigung"
-
-msgid "Delete Confirmation"
-msgstr "Bestätigung zum Löschen"
-
-msgid "Deny"
-msgstr "Verweigern"
-
-msgid "Fingerprint:"
-msgstr "Fingerabdruck:"
-
-msgid "Login:"
-msgstr "Benutzername:"
-
-msgid "Password:"
-msgstr "Passwort:"
-
-msgid "Previous Messages"
-msgstr "Frühere Logmeldungen"
-
-#, fuzzy
-msgid "Property"
-msgstr "Eigenschaft:"
-
-msgid "Property:"
-msgstr "Eigenschaft:"
-
-msgid "Realm:"
-msgstr "Bereich:"
-
-msgid "Save Authentication"
-msgstr "Anmeldeinformationen speichern"
-
-msgid "The item(s) will be sent to the trash can."
-msgstr "Das Objekt/Die Objekte werden in den Mülleimer verschoben."
-
-msgid "Valid:"
-msgstr "Gültig:"
-
-msgid "Value:"
-msgstr "Wert:"
-
-#, fuzzy
-msgid "<b>Links</b>"
-msgstr "<b>Optionen</b>"
-
-msgid "<b>Version Information</b>"
-msgstr "<b>Versionsinformationen</b>"
-
+#: ../rabbitvcs/ui/xml/about.xml.h:2
 msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 
-#, fuzzy
+#: ../rabbitvcs/ui/xml/about.xml.h:3
 msgid "Authors:"
 msgstr "Autoren:"
 
+#: ../rabbitvcs/ui/xml/about.xml.h:4
 msgid "Thanks:"
 msgstr "Danksagungen:"
 
-msgid "100"
-msgstr "100"
+#: ../rabbitvcs/ui/xml/about.xml.h:5
+msgid "<b>Version Information</b>"
+msgstr "<b>Versionsinformationen</b>"
 
-msgid "<b>Revisions Table</b>"
-msgstr "<b>Revisionen</b>"
+#: ../rabbitvcs/ui/xml/about.xml.h:6
+msgid "<b>Links</b>"
+msgstr "<b>Links</b>"
 
-msgid "Limit:"
-msgstr "Limit:"
+#: ../rabbitvcs/ui/xml/add.xml.h:2 ../rabbitvcs/ui/xml/commit.xml.h:6
+#: ../rabbitvcs/ui/xml/lock.xml.h:5 ../rabbitvcs/ui/xml/revert.xml.h:2
+msgid "Select / Deselect all"
+msgstr "Alle aus-/abwählen"
 
-msgid "Log"
-msgstr "Log"
+#: ../rabbitvcs/ui/xml/add.xml.h:3
+#, fuzzy
+msgid "Show ignored files"
+msgstr "Nicht versionierte Dateien anzeigen"
 
-msgid "Refresh"
+#: ../rabbitvcs/ui/xml/annotate.xml.h:1
+msgid "Annotate"
+msgstr "Annotieren"
+
+#: ../rabbitvcs/ui/xml/annotate.xml.h:2
+msgid "<b>From Revision</b>"
+msgstr "<b>Von Revision</b>"
+
+#: ../rabbitvcs/ui/xml/annotate.xml.h:3
+msgid "<b>To Revision</b>"
+msgstr "<b>Bis Revision</b>"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:2
+msgid "URL:"
+msgstr "URL:"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:4
+#, fuzzy
+msgid "Load/Refresh"
 msgstr "Aktualisieren"
 
+#: ../rabbitvcs/ui/xml/clean.xml.h:2
 #, fuzzy
-msgid "Showing Revisions:"
-msgstr "Revision"
+msgid "<b>Clean your Repository</b>"
+msgstr "<b>Projektarchiv</b>"
 
-msgid "Stop on copy"
-msgstr "Bei Kopie anhalten"
+#: ../rabbitvcs/ui/xml/clean.xml.h:3
+msgid "Remove untracked files from the working tree"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/clean.xml.h:4
+msgid "Remove directories"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:5
+#, fuzzy
+msgid "Remove ignored files, too"
+msgstr "Ignorierte Dateien einbeziehen"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:6
+#, fuzzy
+msgid "Remove only ignored files"
+msgstr "Ignorierte Dateien einbeziehen"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:7
+msgid "Dry run"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:8
+msgid "Force"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/cleanup.xml.h:2
 msgid ""
 "Cleanup Requested....\n"
 "\n"
@@ -1967,149 +1881,313 @@ msgstr ""
 "\n"
 "Aufräumen der Arbeitskopie beginnen?"
 
-msgid "<b>Authentication</b>"
-msgstr "<b>Authentifizierung</b>"
-
-msgid "<b>Log Messages</b>"
-msgstr "<b>Logmeldungen</b>"
-
-msgid "<b>Logging Options</b>"
-msgstr "<b>Logging-Optionen</b>"
-
-msgid "<b>Program used to compare files</b>"
-msgstr "<b>Programm zum Dateivergleich</b>"
-
-msgid "<b>RabbitVCS</b>"
-msgstr "<b>RabbitVCS</b>"
-
-msgid "<b>URL History</b>"
-msgstr "<b>URL-Historie</b>"
-
-msgid "Browse..."
-msgstr "Durchsuchen..."
-
-msgid "Clear your authentication information"
-msgstr "Ihre Anmeldeinformationen löschen"
-
-msgid "Enable emblems"
-msgstr "Embleme einschalten"
-
-msgid "Enable file attributes"
-msgstr "Dateiattribute einschalten"
-
-msgid "Enable recursive status checks"
-msgstr "Rekursive Statusüberprüfungen aktivieren"
-
-msgid "External Programs"
-msgstr "Externe Programme"
-
-msgid "General"
-msgstr "Allgemein"
-
-msgid "<b>Language</b>"
-msgstr "<b>Sprache</b>"
-
-msgid "Logging"
-msgstr "Logging"
-
-msgid "Minimum level to log"
-msgstr "Minimaler Loglevel"
-
-msgid "Number of URLs to remember"
-msgstr "Zahl der zu merkenden URLs"
-
-msgid "Number of messages to remember"
-msgstr "Zahl der zu merkenden Logmeldungen"
-
-msgid "Saved Data"
-msgstr "Gespeicherte Daten"
-
-msgid "Show RabbitVCS debugging tools"
-msgstr ""
-
-msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-msgstr ""
-
-msgid "Type:"
-msgstr "Typ:"
-
-msgid "<b>Files to lock</b>"
-msgstr "<b>Zu sperrende Dateien</b>"
-
-msgid "<b>Please describe why you are locking these files</b>"
-msgstr "<b>Bitte beschreiben Sie, warum Sie diese Dateien sperren</b>"
-
-msgid "Lock Files"
-msgstr "Dateien sperren"
-
-msgid "Select / Deselect all"
-msgstr "Alle aus-/abwählen"
-
-msgid "Steal the locks"
-msgstr "Existierende Sperren brechen"
-
-msgid "<b>From Revision</b>"
-msgstr "<b>Von Revision</b>"
-
+#: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>Übernehmen nach:</b>"
 
+#: ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>Logmeldung hinzufügen</b>"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+msgid "Previous Messages"
+msgstr "Frühere Logmeldungen"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:5
+#, fuzzy
+msgid "<b>Changed Files</b> (double-click to compare with base)"
+msgstr "<b>Geänderte Dateien</b> (Doppelklick um Unterschiede anzuzeigen)"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:7
 msgid "Show unversioned files"
 msgstr "Nicht versionierte Dateien anzeigen"
 
-msgid "Notification Messages"
-msgstr "Nachrichten"
+#: ../rabbitvcs/ui/xml/commit.xml.h:8 ../rabbitvcs/ui/xml/log.xml.h:11
+msgid "Refresh"
+msgstr "Aktualisieren"
 
-msgid "<b>Change the repository of your working copy</b>"
-msgstr "<b>Das Projektarchiv der Arbeitskopie ändern</b>"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:1
+msgid "Check Certificate"
+msgstr "Zertifikat prüfen"
 
-msgid "From:"
-msgstr "Von:"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:2
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Zertifikatsdetails</b>"
 
-msgid "To:"
-msgstr "Auf:"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:3
+msgid "Realm:"
+msgstr "Bereich:"
 
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:5
+msgid "Issuer:"
+msgstr "Aussteller:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:6
+msgid "Valid:"
+msgstr "Gültig:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:7
+msgid "Fingerprint:"
+msgstr "Fingerabdruck:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:8
+msgid "Accept Once"
+msgstr "Einmal akzeptieren"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:9
+msgid "Accept Forever"
+msgstr "Dauerhaft akzeptieren"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:10
+msgid "Deny"
+msgstr "Verweigern"
+
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:1
+msgid "Confirmation"
+msgstr "Bestätigung"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:1
+#, fuzzy
+msgid "Edit Conflicts"
+msgstr "Im Konflikt"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:2
+#, fuzzy
+msgid "Cancel"
+msgstr "Abgebrochen"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:3
+#, fuzzy
+msgid "Accept Mine"
+msgstr "Einmal akzeptieren"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:4
+#, fuzzy
+msgid "Accept Theirs"
+msgstr "Dauerhaft akzeptieren"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:5
+msgid "<b>A conflict was found in the following file:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:1
+#, fuzzy
+msgid "Create Folder..."
+msgstr "Projektarchiv hier erstellen"
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:2
+#, fuzzy
+msgid "<b>Folder Name</b>"
+msgstr "<b>Logmeldung</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:1
+msgid "Delete Confirmation"
+msgstr "Bestätigung zum Löschen"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:3
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>Wollen Sie wirklich %item% löschen?</b></span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:4
+msgid "The item(s) will be sent to the trash can."
+msgstr "Das Objekt/Die Objekte werden in den Mülleimer verschoben."
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:1
+#, fuzzy
+msgid "RabbitVCS Error"
+msgstr "RabbitVCS"
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:2
+#, fuzzy
+msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
+msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:1
+#, fuzzy
+msgid "Mark Resolved"
+msgstr "Aufgelöst"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:2
+#, fuzzy
+msgid "Unresolved"
+msgstr "Aufgelöst"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:4
+#, fuzzy
+msgid "<b>Mark Conflict As</b>"
+msgstr "<b>Übernehmen nach:</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:1
+msgid "Name and Email"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:2
+#, fuzzy
+msgid "<b>Enter Name and Email Details</b>"
+msgstr "<b>Zertifikatsdetails</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:4
+msgid "Email:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:2
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Frühere Logmeldungen</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:3
+#: ../rabbitvcs/ui/xml/log.xml.h:8
+msgid "<b>Message</b>"
+msgstr "<b>Logmeldung</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:1
+msgid "Property"
+msgstr "Eigenschaft"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:2
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Eigenschaftsdetails bearbeiten</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:3
+msgid "Property:"
+msgstr "Eigenschaft:"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:4
+msgid "Value:"
+msgstr "Wert:"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:5
+msgid "Apply property recursively"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:1
+#, fuzzy
+msgid "SSL Client Certification"
+msgstr "Zertifikat prüfen"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:2
+#, fuzzy
+msgid "<b>Please provide your ssl certification file</b>"
+msgstr "<b>Bitte geben Sie Ihre Authentifizierungsinformationen an</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:4
+#, fuzzy
+msgid "Path:"
+msgstr "Pfad"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:5
+msgid "Save Authentication"
+msgstr "Anmeldeinformationen speichern"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:1
+#, fuzzy
+msgid "Update Local Repository"
+msgstr "Aktualisiere auf Revision"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
+#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
 msgid "<b>Options</b>"
 msgstr "<b>Optionen</b>"
 
-msgid "<b>Revision</b>"
-msgstr "<b>Revision</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:3
+msgid "Apply remote changes"
+msgstr ""
 
-msgid "Omit Externals"
-msgstr "Ignoriere Externe Links"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:4
+msgid "merge into local branch"
+msgstr ""
 
-msgid "Recursive"
-msgstr "Rekursiv"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:5
+msgid "apply remote changes prior to local changes (rebase)"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/git-update.xml.h:6
+msgid "Fetch from all remotes"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/ignore.xml.h:1
+#, fuzzy
+msgid "Ignore"
+msgstr "Ein Objekt ignorieren"
+
+#: ../rabbitvcs/ui/xml/ignore.xml.h:2
+msgid "<b>Ignore and exclude files from being tracked</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/import.xml.h:2
+msgid "<b>Repository</b>"
+msgstr "<b>Projektarchiv</b>"
+
+#: ../rabbitvcs/ui/xml/import.xml.h:3
 msgid "<b>Import Message</b>"
 msgstr "<b>Import-Logmeldung</b>"
 
-#, fuzzy
-msgid "<b>Repository</b>"
-msgstr "<b>Revision</b>"
-
+#: ../rabbitvcs/ui/xml/import.xml.h:5
 msgid "Include ignored files"
 msgstr "Ignorierte Dateien einbeziehen"
 
-msgid "<b>From URL</b>"
-msgstr "<b>Quell-URL</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:1
+msgid "Lock Files"
+msgstr "Dateien sperren"
 
-msgid "<b>From: (URL and revision to merge)</b>"
-msgstr "<b>Von: (URL und zusammenzuführende Revision)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:2
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Bitte beschreiben Sie, warum Sie diese Dateien sperren</b>"
 
-msgid "<b>Revision Range</b>"
-msgstr "<b>Revisionsbereich</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:4
+msgid "<b>Files to lock</b>"
+msgstr "<b>Zu sperrende Dateien</b>"
 
-msgid "<b>To: (URL and revision to merge)</b>"
-msgstr "<b>Nach: (URL und zusammenzuführende Revision)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:6
+msgid "Steal the locks"
+msgstr "Existierende Sperren brechen"
 
-msgid "<b>URL to merge from</b>"
-msgstr "<b>URL von der zusammengeführt werden soll</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:1
+msgid "Log"
+msgstr "Log"
 
+#: ../rabbitvcs/ui/xml/log.xml.h:2
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revisionen</b>"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:3
+msgid "Stop on copy"
+msgstr "Bei Kopie anhalten"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:4
+msgid "Showing Revisions:"
+msgstr "Zeige Revisionen:"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:7
 #, fuzzy
-msgid "<b>Working Copy</b>"
-msgstr "<b>Arbeitskopie</b>"
+msgid "<b>Affected File(s)</b> (double-click to compare with base)"
+msgstr "<b>Geänderte Dateien</b> (Doppelklick um Unterschiede anzuzeigen)"
 
+#: ../rabbitvcs/ui/xml/log.xml.h:9
+msgid "Limit:"
+msgstr "Limit:"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:10
+msgid "100"
+msgstr "100"
+
+#: ../rabbitvcs/ui/xml/manager.xml.h:1
+msgid "label"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:1
+msgid "Merge Assistant"
+msgstr "Zusammenführassistent"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:2
+msgid "Merge a range of revisions"
+msgstr "Einen Revisionsbereich zusammenführen"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:3
 msgid ""
 "Choose this method if you have made some changes to a branch and wish to "
 "merge your changes with another branch."
@@ -2117,6 +2195,11 @@ msgstr ""
 "Wählen Sie diese Methode, wenn Sie Änderungen an einem Zweig vorgenommen "
 "haben und Ihre Änderungen mit einem anderen Zweig zusammenführen möchten."
 
+#: ../rabbitvcs/ui/xml/merge.xml.h:4
+msgid "Merge two different trees"
+msgstr "Zwei verschiedene Bäume zusammenführen"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:5
 msgid ""
 "Choose this method if you wish to merge two different branches into your "
 "working copy."
@@ -2124,28 +2207,30 @@ msgstr ""
 "Wählen Sie diese Methode, wenn Sie zwei verschiedene Zweige in Ihre "
 "Arbeitskopie zusammenführen möchten."
 
-msgid "Ignore ancestry"
-msgstr "Abstammung ignorieren"
+#: ../rabbitvcs/ui/xml/merge.xml.h:6
+msgid "Reintegrate a branch"
+msgstr ""
 
-msgid "Merge Assistant"
-msgstr "Zusammenführassistent"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:7
 #, fuzzy
-msgid "Merge a range of revisions"
-msgstr "Einen Revisionsbereich zusammenführen"
+msgid "Choose this method if you wish to reintegrate a branch into the trunk."
+msgstr ""
+"Wählen Sie diese Methode, wenn Sie zwei verschiedene Zweige in Ihre "
+"Arbeitskopie zusammenführen möchten."
 
-msgid "Merge two different trees"
-msgstr "Zwei verschiedene Bäume zusammenführen"
+#: ../rabbitvcs/ui/xml/merge.xml.h:8
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL von der zusammengeführt werden soll</b>"
 
-msgid "Only record the merge"
-msgstr "Nur als zusammengeführt markieren"
+#: ../rabbitvcs/ui/xml/merge.xml.h:9
+msgid "<b>Revision Range</b>"
+msgstr "<b>Revisionsbereich</b>"
 
+#: ../rabbitvcs/ui/xml/merge.xml.h:10
 msgid "Show log"
 msgstr "Log anzeigen"
 
-msgid "Test Merge"
-msgstr "Zusammenführen testen"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:11
 msgid ""
 "Use the log dialog to select the revisions that you wish to merge.  Or write "
 "out the revisions manually, each separated by a comma.  You can specify a "
@@ -2163,14 +2248,368 @@ msgstr ""
 "\n"
 "Lassen Sie das Feld leer, um alle Revisionen zusammenzuführen."
 
-msgid "<b>Create copy from</b>"
-msgstr "<b>Kopie erstellen von</b>"
+#: ../rabbitvcs/ui/xml/merge.xml.h:16
+msgid "<b>Working Copy</b>"
+msgstr "<b>Arbeitskopie</b>"
 
-msgid "Destination:"
-msgstr "Zielort:"
+#: ../rabbitvcs/ui/xml/merge.xml.h:17
+msgid "<b>From URL</b>"
+msgstr "<b>Quell-URL</b>"
 
-#~ msgid "Annotate"
-#~ msgstr "Annotieren"
+#: ../rabbitvcs/ui/xml/merge.xml.h:18
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Von: (URL und zusammenzuführende Revision)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:21
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Nach: (URL und zusammenzuführende Revision)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr "Rekursiv"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:24
+msgid "Ignore ancestry"
+msgstr "Abstammung ignorieren"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:25
+msgid "Only record the merge"
+msgstr "Nur als zusammengeführt markieren"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:26
+msgid "Test Merge"
+msgstr "Zusammenführen testen"
+
+#: ../rabbitvcs/ui/xml/notification.xml.h:1
+msgid "Notification Messages"
+msgstr "Nachrichten"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:2
+msgid "<b>Properties for:</b>"
+msgstr "<b>Eigenschaften für:</b>"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:3
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:4
+#, fuzzy
+msgid "Delete properties recursively"
+msgstr "Eigenschaft"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:5
+msgid "New..."
+msgstr "Neu..."
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:6
+msgid "Edit..."
+msgstr "Bearbeiten..."
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:1
+#, fuzzy
+msgid "Property Editor"
+msgstr "Eigenschaft"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:2
+#, fuzzy
+msgid "<b>Working Copy:</b>"
+msgstr "<b>Arbeitskopie</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:3
+#, fuzzy
+msgid "<b>Remote URI:</b>"
+msgstr "<b>Quell-URL</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:4
+msgid "Refresh the list of properties."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:5
+msgid "Add a new property."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:6
+msgid "Close this dialog."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:3
+#, fuzzy
+msgid "Content status:"
+msgstr "Textstatus"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:4
+#, fuzzy
+msgid "Property status:"
+msgstr "Eigenschaftenstatus"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:5
+msgid "VCS:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:1
+msgid "Pull"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:2
+#, fuzzy
+msgid "<b>Pull Information</b>"
+msgstr "<b>Versionsinformationen</b>"
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:3
+msgid "Merge changes into local branch"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:2
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Das Projektarchiv der Arbeitskopie ändern</b>"
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:3
+msgid "From:"
+msgstr "Von:"
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:4
+msgid "To:"
+msgstr "Auf:"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:2
+#, fuzzy
+msgid "<b>Reset your Repository</b>"
+msgstr "<b>Projektarchiv</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:3
+#, fuzzy
+msgid "Reset current HEAD to specified state."
+msgstr "Ein Objekt in seinen unveränderten Zustand rückversetzen"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:4
+#, fuzzy
+msgid "<b>Path</b>"
+msgstr "<b>Aktualisierungstiefe</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>Revision</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:7
+msgid "<i>Mixed</i> - Reset the index but not the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:8
+msgid ""
+"<i>Soft</i> - Does not touch the index file or working tree at all, \n"
+"but requires them to be in good working order"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:10
+msgid ""
+"<i>Hard</i> - Matches the working tree and index to that of the \n"
+"tree being switched to"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:12
+msgid ""
+"<i>Merge</i> - Resets the index to match the tree recorded by the named "
+"commit,\n"
+"and updates the files that are different between the named commit\n"
+"and the current commit in the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:15
+msgid "None"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:2
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:3
+msgid "Enable file attributes"
+msgstr "Dateiattribute einschalten"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:4
+msgid "Enable recursive status checks"
+msgstr "Rekursive Statusüberprüfungen aktivieren"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:5
+msgid "Enable emblems"
+msgstr "Embleme einschalten"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:6
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:7
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:8
+#, fuzzy
+msgid "<b>Version Control Systems</b>"
+msgstr "<b>Versionsinformationen</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:9
+#, fuzzy
+msgid "Enable Subversion"
+msgstr "Embleme einschalten"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:10
+msgid "Enable Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:11
+msgid "<b>Language</b>"
+msgstr "<b>Sprache</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:12
+msgid "General"
+msgstr "Allgemein"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:13
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Programm zum Dateivergleich</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "Durchsuchen..."
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:15
+#, fuzzy
+msgid "Show new version on the left side"
+msgstr "Neue Version auf der rechten Seite zeigen"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:16
+msgid "<b>Configure the program to resolve conflicted files.</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:18
+msgid ""
+"Use the following macros to configure the merge tool:\n"
+"%base       - The common ancestor of the two files to be merged.\n"
+"%mine      - The file you modified in your working copy.\n"
+"%theirs    - The file being merged into your working copy.\n"
+"%merged - The file to store the merged result."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:23
+msgid "External Programs"
+msgstr "Externe Programme"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:24
+msgid "<b>URL History</b>"
+msgstr "<b>URL-Historie</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:25
+msgid "Number of URLs to remember"
+msgstr "Zahl der zu merkenden URLs"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:26
+msgid "<b>Log Messages</b>"
+msgstr "<b>Logmeldungen</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:27
+msgid "Number of messages to remember"
+msgstr "Zahl der zu merkenden Logmeldungen"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:28
+msgid "<b>Authentication</b>"
+msgstr "<b>Authentifizierung</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:29
+msgid "Clear your authentication information"
+msgstr "Ihre Anmeldeinformationen löschen"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:30
+msgid "Saved Data"
+msgstr "Gespeicherte Daten"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:31
+msgid "<b>Logging Options</b>"
+msgstr "<b>Logging-Optionen</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:32
+msgid "Type:"
+msgstr "Typ:"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:33
+msgid "Minimum level to log"
+msgstr "Minimaler Loglevel"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:34
+msgid "Logging"
+msgstr "Logging"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:35
+msgid "<b>Checker type:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:36
+#, fuzzy
+msgid "<b>Memory usage:</b> "
+msgstr "<b>Logmeldung</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:38
+#, fuzzy
+msgid "<b>Process ID:</b>"
+msgstr "<b>Eigenschaften für:</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:39
+#, fuzzy
+msgid "<b>Other Information</b>"
+msgstr "<b>Versionsinformationen</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:40
+#, fuzzy
+msgid "Refresh Information"
+msgstr "Ermittle Logmeldungen..."
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:41
+#, fuzzy
+msgid "Restart Checker"
+msgstr "Start/Restart Service"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:42
+msgid "Stop Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:43
+msgid "Status Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:44
+#, fuzzy
+msgid "<b>Configuration Editor</b>"
+msgstr "<b>Übernehmen nach:</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:45
+msgid "Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/update.xml.h:5
+msgid "Omit Externals"
+msgstr "Ignoriere Externe Links"
+
+#: ../rabbitvcs/ui/xml/update.xml.h:6
+#, fuzzy
+msgid "Rollback to specified revision number"
+msgstr "Aktualisiere auf Revision"
+
+#~ msgid "URL/Path"
+#~ msgstr "URL/Pfad"
+
+#~ msgid "Authentication"
+#~ msgstr "Anmeldung"
+
+#~ msgid "Login:"
+#~ msgstr "Benutzername:"
+
+#~ msgid "Password:"
+#~ msgstr "Passwort:"
+
+#~ msgid "<b>Create copy from</b>"
+#~ msgstr "<b>Kopie erstellen von</b>"
+
+#~ msgid "Destination:"
+#~ msgstr "Zielort:"
 
 #, fuzzy
 #~ msgid "Running Merge Command"
@@ -2201,17 +2640,8 @@ msgstr "Zielort:"
 #~ msgid "Resolve"
 #~ msgstr "Auflösen"
 
-#~ msgid "Cancelled"
-#~ msgstr "Abgebrochen"
-
 #~ msgid "Retrieving Log Information..."
 #~ msgstr "Ermittle Logmeldungen..."
-
-#~ msgid "<b>Changed Files</b> (double-click to see diff)"
-#~ msgstr "<b>Geänderte Dateien</b> (Doppelklick um Unterschiede anzuzeigen)"
-
-#~ msgid "<b>To Revision</b>"
-#~ msgstr "<b>Bis Revision</b>"
 
 #~ msgid "Copy from HEAD"
 #~ msgstr "Kopie von HEAD"
@@ -2225,20 +2655,11 @@ msgstr "Zielort:"
 #~ msgid "<b>Program used to browse repositories</b>"
 #~ msgstr "<b>Programm zum Durchsuchen von Projektarchiven</b>"
 
-#~ msgid "Show new version on the right side"
-#~ msgstr "Neue Version auf der rechten Seite zeigen"
-
-#~ msgid "Issuer:"
-#~ msgstr "Aussteller:"
-
 #~ msgid "<b>Update Depth</b>"
 #~ msgstr "<b>Aktualisierungstiefe</b>"
 
 #~ msgid "DBus"
 #~ msgstr "DBus"
-
-#~ msgid "Start/Restart Service"
-#~ msgstr "Start/Restart Service"
 
 #~ msgid "Exit Service"
 #~ msgstr "Exit Service"

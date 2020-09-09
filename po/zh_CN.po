@@ -19,8 +19,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-12-09 23:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#. All subclasses should override this! This is to be displayed in the
-#. settings dialog
 #: ../rabbitvcs/services/statuschecker.py:38
 msgid "Simple status checker"
 msgstr ""
@@ -164,18 +162,16 @@ msgstr "必须提供目标路径。"
 
 #: ../rabbitvcs/ui/branch.py:97
 msgid "Branch/Tag"
-msgstr "分支/tag"
+msgstr "分支/标签"
 
 #: ../rabbitvcs/ui/branch.py:98
 msgid "Running Branch/Tag Command..."
-msgstr "正运行 Branch/tag 命令..."
+msgstr "正运行 分支/标签 命令..."
 
 #: ../rabbitvcs/ui/branch.py:100
 msgid "Completed Branch/Tag"
-msgstr "完成的 分支/tag"
+msgstr "完成的 分支/标签"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/branches.py:66
 msgid "Branch Manager"
 msgstr ""
@@ -188,13 +184,10 @@ msgstr ""
 msgid "Branch"
 msgstr ""
 
-#. Set up the Branch line
-#. Set up the Tag line
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
 msgid "Name:"
 msgstr ""
 
-#. Set up the Commit-sha line
 #: ../rabbitvcs/ui/branches.py:111
 msgid "Start Point:"
 msgstr ""
@@ -212,17 +205,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#. Set up the Revision line
-#. Set up the Commit-sha line
-#. Set up the Revision line
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
 msgid "Revision:"
 msgstr "版本："
 
-#. Set up the Log Message line
-#. Set up the Log Message Entry line
-#. Set up the Log Message line
 #: ../rabbitvcs/ui/branches.py:171 ../rabbitvcs/ui/merge.py:480
 #: ../rabbitvcs/ui/tags.py:132 ../rabbitvcs/ui/tags.py:198
 msgid "Message:"
@@ -714,7 +701,7 @@ msgstr "Resolve 完成"
 
 #: ../rabbitvcs/ui/merge.py:91
 msgid "Running Merge Test..."
-msgstr "运行合并测试"
+msgstr "运行合并测试..."
 
 #: ../rabbitvcs/ui/merge.py:92
 msgid "Completed Merge Test"
@@ -722,7 +709,7 @@ msgstr "完成合并测试"
 
 #: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command..."
-msgstr "正在运行合并命令"
+msgstr "正在运行合并命令..."
 
 #: ../rabbitvcs/ui/merge.py:95 ../rabbitvcs/ui/merge.py:523
 msgid "Completed Merge"
@@ -736,12 +723,10 @@ msgstr "合并"
 msgid "No active branch"
 msgstr ""
 
-#. Set up the Author line
 #: ../rabbitvcs/ui/merge.py:442
 msgid "Author:"
 msgstr ""
 
-#. Set up the Date line
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
@@ -860,7 +845,6 @@ msgstr "正运行重命名命令"
 msgid "Completed Rename"
 msgstr "重命名完成"
 
-#. esh
 #: ../rabbitvcs/ui/reset.py:93
 #, fuzzy
 msgid "Reset"
@@ -959,8 +943,6 @@ msgstr "正在运行切换命令..."
 msgid "Completed Switch"
 msgstr "切换完成"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/tags.py:70
 msgid "Tag Manager"
 msgstr ""
@@ -973,7 +955,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#. Set up the tagger line
 #: ../rabbitvcs/ui/tags.py:160
 msgid "Tagger:"
 msgstr ""
@@ -1013,7 +994,6 @@ msgstr "正运行重命名命令"
 msgid "Completed Unstage"
 msgstr "完成的更新"
 
-#. esh
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
 msgid "Update"
 msgstr "更新"
@@ -1066,17 +1046,14 @@ msgstr ""
 msgid "Working Copy"
 msgstr "工作副本"
 
-#. Set up the Repository Line
 #: ../rabbitvcs/ui/widget.py:1132
 msgid "Repository:"
 msgstr ""
 
-#. Set up the Branch line
 #: ../rabbitvcs/ui/widget.py:1154
 msgid "Branch:"
 msgstr ""
 
-#. Set up the Host line
 #: ../rabbitvcs/ui/widget.py:1182
 msgid "Host:"
 msgstr "主机："
@@ -1348,7 +1325,7 @@ msgstr "导出工作副本或源码库，而不包含任何版本信息"
 
 #: ../rabbitvcs/util/contextmenuitems.py:515
 msgid "Create Repository here..."
-msgstr "在这里创建源码库"
+msgstr "在这里创建源码库..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:516
 msgid "Create a repository in a folder"
@@ -1536,12 +1513,11 @@ msgstr ""
 #: ../rabbitvcs/util/contextmenuitems.py:682
 #, fuzzy
 msgid "Clean..."
-msgstr "清理"
+msgstr "正清理..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:686
-#, fuzzy
 msgid "Reset..."
-msgstr "保留的"
+msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:701
 msgid "Edit conflicts"
@@ -1754,142 +1730,88 @@ msgstr "合并"
 msgid "Conflicted"
 msgstr ""
 
-msgid "<b>Properties for:</b>"
-msgstr "<b>属性属于：<b>"
-
-msgid "<i>Selected properties will be applied recursively.</i>"
-msgstr "<i>选中的属性将会被递归应用。</i>"
-
-msgid "Delete properties recursively"
-msgstr "递归删除属性"
-
-msgid "Edit..."
-msgstr "编辑..."
-
-msgid "New..."
-msgstr "新建..."
-
-msgid "URL/Path"
-msgstr "URL/路径"
-
-msgid "URL:"
-msgstr "URL："
-
-msgid "<b>Add Message</b>"
-msgstr "<b>添加消息</b>"
-
-msgid "<b>Certificate Details</b>"
-msgstr "<b>认证细节</b>"
-
-msgid "<b>Edit Property Details</b>"
-msgstr "<b>编辑属性细节</b>"
-
-msgid "<b>Message</b>"
-msgstr "<b>消息</b>"
-
-msgid "<b>Please add your authentication details</b>"
-msgstr "<b>请添加您的认证细节</b>"
-
-msgid "<b>Previous Messages</b>"
-msgstr "<b>前一个消息</b>"
-
-msgid ""
-"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-msgstr "<span size=\"large\"><b>您确实要删除 %item% 吗？</b></span>"
-
-msgid "Accept Forever"
-msgstr "总是接受"
-
-msgid "Accept Once"
-msgstr "接受一次"
-
-msgid "Apply property recursively"
-msgstr "递归应用属性"
-
-msgid "Authentication"
-msgstr "认证"
-
-msgid "Check Certificate"
-msgstr "检查证书"
-
-msgid "Confirmation"
-msgstr "确认"
-
-msgid "Delete Confirmation"
-msgstr "删除确认"
-
-msgid "Deny"
-msgstr "拒绝"
-
-msgid "Fingerprint:"
-msgstr "指纹："
-
-msgid "Login:"
-msgstr "登录："
-
-msgid "Password:"
-msgstr "密码："
-
-msgid "Previous Messages"
-msgstr "前一个消息"
-
-msgid "Property"
-msgstr "属性"
-
-msgid "Property:"
-msgstr "属性："
-
-msgid "Realm:"
-msgstr "域："
-
-msgid "Save Authentication"
-msgstr "保存认证"
-
-msgid "The item(s) will be sent to the trash can."
-msgstr "这些会被发送到回收站"
-
-msgid "Valid:"
-msgstr "有效："
-
-msgid "Value:"
-msgstr "值："
-
-msgid "<b>Links</b>"
-msgstr "<b>链接</b>"
-
-msgid "<b>Version Information</b>"
-msgstr "<b>版本信息</b>"
-
+#: ../rabbitvcs/ui/xml/about.xml.h:2
 msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 
+#: ../rabbitvcs/ui/xml/about.xml.h:3
 msgid "Authors:"
 msgstr "作者："
 
+#: ../rabbitvcs/ui/xml/about.xml.h:4
 msgid "Thanks:"
 msgstr "感谢："
 
-msgid "100"
-msgstr "100"
+#: ../rabbitvcs/ui/xml/about.xml.h:5
+msgid "<b>Version Information</b>"
+msgstr "<b>版本信息</b>"
 
-msgid "<b>Revisions Table</b>"
-msgstr "<b>版本表</b>"
+#: ../rabbitvcs/ui/xml/about.xml.h:6
+msgid "<b>Links</b>"
+msgstr "<b>链接</b>"
 
-msgid "Limit:"
-msgstr "限制："
+#: ../rabbitvcs/ui/xml/add.xml.h:2 ../rabbitvcs/ui/xml/commit.xml.h:6
+#: ../rabbitvcs/ui/xml/lock.xml.h:5 ../rabbitvcs/ui/xml/revert.xml.h:2
+msgid "Select / Deselect all"
+msgstr "选择 / 取消选择 全部"
 
-msgid "Log"
-msgstr "日志"
+#: ../rabbitvcs/ui/xml/add.xml.h:3
+#, fuzzy
+msgid "Show ignored files"
+msgstr "显示非版本控制的文件"
 
-msgid "Refresh"
-msgstr "刷新"
+#: ../rabbitvcs/ui/xml/annotate.xml.h:1
+msgid "Annotate"
+msgstr "注释"
 
-msgid "Showing Revisions:"
-msgstr "正在显示版本："
+#: ../rabbitvcs/ui/xml/annotate.xml.h:2
+msgid "<b>From Revision</b>"
+msgstr "<b>从版本</b>"
 
-msgid "Stop on copy"
-msgstr "终止于复制"
+#: ../rabbitvcs/ui/xml/annotate.xml.h:3
+msgid "<b>To Revision</b>"
+msgstr "<b>至版本</b>"
 
+#: ../rabbitvcs/ui/xml/browser.xml.h:2
+msgid "URL:"
+msgstr "URL："
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:4
+msgid "Load/Refresh"
+msgstr "加载/刷新"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:2
+#, fuzzy
+msgid "<b>Clean your Repository</b>"
+msgstr "<b>版本库</b>"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:3
+msgid "Remove untracked files from the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:4
+msgid "Remove directories"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:5
+#, fuzzy
+msgid "Remove ignored files, too"
+msgstr "包括已忽略的文件"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:6
+#, fuzzy
+msgid "Remove only ignored files"
+msgstr "包括已忽略的文件"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:7
+msgid "Dry run"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:8
+msgid "Force"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/cleanup.xml.h:2
 msgid ""
 "Cleanup Requested....\n"
 "\n"
@@ -1899,180 +1821,338 @@ msgstr ""
 "\n"
 "开始工作副本清理么？"
 
-msgid "<b>Authentication</b>"
-msgstr "<b>身份验证</b>"
-
-msgid "<b>Log Messages</b>"
-msgstr "<b>日志信息</b>"
-
-msgid "<b>Logging Options</b>"
-msgstr "<b>日志选项</b>"
-
-msgid "<b>Program used to compare files</b>"
-msgstr "<b>用于比较文件的程序</b>"
-
-msgid "<b>RabbitVCS</b>"
-msgstr "<b>RabbitVCS</b>"
-
-msgid "<b>URL History</b>"
-msgstr "<b>URL 历史</b>"
-
-msgid "Browse..."
-msgstr "浏览..."
-
-msgid "Clear your authentication information"
-msgstr "清除你的认证信息"
-
-msgid "Enable emblems"
-msgstr "启用徽章"
-
-msgid "Enable file attributes"
-msgstr "启用文件属性"
-
-msgid "Enable recursive status checks"
-msgstr "启用递归状态检查"
-
-msgid "External Programs"
-msgstr "外部程序"
-
-msgid "General"
-msgstr "常规"
-
-msgid "<b>Language</b>"
-msgstr "<b>语言</b>"
-
-msgid "Logging"
-msgstr "日志"
-
-msgid "Minimum level to log"
-msgstr "最小日志级别"
-
-msgid "Number of URLs to remember"
-msgstr "记住的 URL 数目"
-
-msgid "Number of messages to remember"
-msgstr "记住的信息数量"
-
-msgid "Saved Data"
-msgstr "已保存的数据"
-
-msgid "Show RabbitVCS debugging tools"
-msgstr "显示 RabbitVCS 调试工具"
-
-msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-msgstr "调试菜单用于诊断 RabbitVCS 自身的问题"
-
-msgid "Type:"
-msgstr "类型："
-
-msgid "<b>Files to lock</b>"
-msgstr "<b>要锁定的文件</b>"
-
-msgid "<b>Please describe why you are locking these files</b>"
-msgstr "<b>请描述您锁定这些文件的原因</b>"
-
-msgid "Lock Files"
-msgstr "锁定文件"
-
-msgid "Select / Deselect all"
-msgstr "选择 / 取消选择 全部"
-
-msgid "Steal the locks"
-msgstr "偷锁"
-
-msgid "<b>From Revision</b>"
-msgstr "<b>从版本</b>"
-
+#: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>提交给：</b>"
 
+#: ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>添加消息</b>"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+msgid "Previous Messages"
+msgstr "前一个消息"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:5
+msgid "<b>Changed Files</b> (double-click to compare with base)"
+msgstr "<b>更改的文件</b> (双击会比较 Base)"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:7
 msgid "Show unversioned files"
 msgstr "显示非版本控制的文件"
 
-msgid "Notification Messages"
-msgstr "通知信息"
+#: ../rabbitvcs/ui/xml/commit.xml.h:8 ../rabbitvcs/ui/xml/log.xml.h:11
+msgid "Refresh"
+msgstr "刷新"
 
-msgid "<b>Change the repository of your working copy</b>"
-msgstr "<b>改变您工作副本的属性</b>"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:1
+msgid "Check Certificate"
+msgstr "检查证书"
 
-msgid "From:"
-msgstr "从："
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:2
+msgid "<b>Certificate Details</b>"
+msgstr "<b>认证细节</b>"
 
-msgid "To:"
-msgstr "至："
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:3
+msgid "Realm:"
+msgstr "域："
 
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:5
+msgid "Issuer:"
+msgstr "颁发者："
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:6
+msgid "Valid:"
+msgstr "有效："
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:7
+msgid "Fingerprint:"
+msgstr "指纹："
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:8
+msgid "Accept Once"
+msgstr "接受一次"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:9
+msgid "Accept Forever"
+msgstr "总是接受"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:10
+msgid "Deny"
+msgstr "拒绝"
+
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:1
+msgid "Confirmation"
+msgstr "确认"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:1
+msgid "Edit Conflicts"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:2
+msgid "Cancel"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:3
+#, fuzzy
+msgid "Accept Mine"
+msgstr "接受一次"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:4
+#, fuzzy
+msgid "Accept Theirs"
+msgstr "总是接受"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:5
+msgid "<b>A conflict was found in the following file:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:1
+msgid "Create Folder..."
+msgstr "创建文件夹..."
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:2
+msgid "<b>Folder Name</b>"
+msgstr "<b>文件夹名称</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:1
+msgid "Delete Confirmation"
+msgstr "删除确认"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:3
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>您确实要删除 %item% 吗？</b></span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:4
+msgid "The item(s) will be sent to the trash can."
+msgstr "这些会被发送到回收站"
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:1
+msgid "RabbitVCS Error"
+msgstr "RabbitVCS 错误"
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:2
+msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS 错误</span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:1
+#, fuzzy
+msgid "Mark Resolved"
+msgstr "解决"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:2
+#, fuzzy
+msgid "Unresolved"
+msgstr "解决"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:4
+#, fuzzy
+msgid "<b>Mark Conflict As</b>"
+msgstr "<b>提交给：</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:1
+msgid "Name and Email"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:2
+msgid "<b>Enter Name and Email Details</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:4
+msgid "Email:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:2
+msgid "<b>Previous Messages</b>"
+msgstr "<b>前一个消息</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:3
+#: ../rabbitvcs/ui/xml/log.xml.h:8
+msgid "<b>Message</b>"
+msgstr "<b>消息</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:1
+msgid "Property"
+msgstr "属性"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:2
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>编辑属性细节</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:3
+msgid "Property:"
+msgstr "属性："
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:4
+msgid "Value:"
+msgstr "值："
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:5
+msgid "Apply property recursively"
+msgstr "递归应用属性"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:1
+msgid "SSL Client Certification"
+msgstr "SSL 客户端证书"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:2
+msgid "<b>Please provide your ssl certification file</b>"
+msgstr "<b>请提供您的 SSL 证书文件</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:4
+msgid "Path:"
+msgstr "路径:"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:5
+msgid "Save Authentication"
+msgstr "保存认证"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:1
+#, fuzzy
+msgid "Update Local Repository"
+msgstr "更新到修订版"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
+#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
 msgid "<b>Options</b>"
 msgstr "<b>选项</b>"
 
-msgid "<b>Revision</b>"
-msgstr "<b>版本</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:3
+msgid "Apply remote changes"
+msgstr ""
 
-#, fuzzy
-msgid "Omit Externals"
-msgstr "省略外部"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:4
+msgid "merge into local branch"
+msgstr ""
 
-msgid "Recursive"
-msgstr "递归"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:5
+msgid "apply remote changes prior to local changes (rebase)"
+msgstr ""
 
-msgid "<b>Import Message</b>"
-msgstr "<b>导入消息</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:6
+msgid "Fetch from all remotes"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/ignore.xml.h:1
+msgid "Ignore"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/ignore.xml.h:2
+msgid "<b>Ignore and exclude files from being tracked</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/import.xml.h:2
 msgid "<b>Repository</b>"
 msgstr "<b>版本库</b>"
 
+#: ../rabbitvcs/ui/xml/import.xml.h:3
+msgid "<b>Import Message</b>"
+msgstr "<b>导入消息</b>"
+
+#: ../rabbitvcs/ui/xml/import.xml.h:5
 msgid "Include ignored files"
 msgstr "包括已忽略的文件"
 
-msgid "<b>From URL</b>"
-msgstr "<b>来自URL</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:1
+msgid "Lock Files"
+msgstr "锁定文件"
 
-msgid "<b>From: (URL and revision to merge)</b>"
-msgstr "<b>来自：(URL 和要合并的版本)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:2
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>请描述您锁定这些文件的原因</b>"
 
-msgid "<b>Revision Range</b>"
-msgstr "<b>版本范围</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:4
+msgid "<b>Files to lock</b>"
+msgstr "<b>要锁定的文件</b>"
 
-msgid "<b>To: (URL and revision to merge)</b>"
-msgstr "<b>至：(URL 和要合并的版本)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:6
+msgid "Steal the locks"
+msgstr "偷锁"
 
-msgid "<b>URL to merge from</b>"
-msgstr "<b>要合并自 URL</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:1
+msgid "Log"
+msgstr "日志"
 
-msgid "<b>Working Copy</b>"
-msgstr "<b>工作副本</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:2
+msgid "<b>Revisions Table</b>"
+msgstr "<b>版本表</b>"
 
+#: ../rabbitvcs/ui/xml/log.xml.h:3
+msgid "Stop on copy"
+msgstr "终止于复制"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:4
+msgid "Showing Revisions:"
+msgstr "正在显示版本："
+
+#: ../rabbitvcs/ui/xml/log.xml.h:7
+msgid "<b>Affected File(s)</b> (double-click to compare with base)"
+msgstr "<b>受影响的文件</b> (双击会比较 Base)"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:9
+msgid "Limit:"
+msgstr "限制："
+
+#: ../rabbitvcs/ui/xml/log.xml.h:10
+msgid "100"
+msgstr "100"
+
+#: ../rabbitvcs/ui/xml/manager.xml.h:1
+msgid "label"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:1
+msgid "Merge Assistant"
+msgstr "合并助手"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:2
+msgid "Merge a range of revisions"
+msgstr "合并一个范围的版本"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:3
 msgid ""
 "Choose this method if you have made some changes to a branch and wish to "
 "merge your changes with another branch."
 msgstr ""
 "如果您对某个分支进行了修改，并且想将这些修改与另一分支合并，选择这种方法。"
 
+#: ../rabbitvcs/ui/xml/merge.xml.h:4
+msgid "Merge two different trees"
+msgstr "合并两个不同的源码树"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:5
 msgid ""
 "Choose this method if you wish to merge two different branches into your "
 "working copy."
 msgstr "如果您想合并两个不同的分支到您的工作副本的话，请选择这个方法。"
 
-msgid "Ignore ancestry"
-msgstr "忽略早期的"
+#: ../rabbitvcs/ui/xml/merge.xml.h:6
+msgid "Reintegrate a branch"
+msgstr ""
 
-msgid "Merge Assistant"
-msgstr "合并助手"
+#: ../rabbitvcs/ui/xml/merge.xml.h:7
+#, fuzzy
+msgid "Choose this method if you wish to reintegrate a branch into the trunk."
+msgstr "如果您想合并两个不同的分支到您的工作副本的话，请选择这个方法。"
 
-msgid "Merge a range of revisions"
-msgstr "合并一个范围的版本"
+#: ../rabbitvcs/ui/xml/merge.xml.h:8
+msgid "<b>URL to merge from</b>"
+msgstr "<b>要合并自 URL</b>"
 
-msgid "Merge two different trees"
-msgstr "合并两个不同的源码树"
+#: ../rabbitvcs/ui/xml/merge.xml.h:9
+msgid "<b>Revision Range</b>"
+msgstr "<b>版本范围</b>"
 
-msgid "Only record the merge"
-msgstr "仅记录合并"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:10
 msgid "Show log"
 msgstr "显示日志"
 
-msgid "Test Merge"
-msgstr "测试合并"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:11
 msgid ""
 "Use the log dialog to select the revisions that you wish to merge.  Or write "
 "out the revisions manually, each separated by a comma.  You can specify a "
@@ -2089,17 +2169,368 @@ msgstr ""
 "\n"
 "要合并所有分支请保持空白。"
 
-#, fuzzy
-msgid "<b>Create copy from</b>"
+#: ../rabbitvcs/ui/xml/merge.xml.h:16
+msgid "<b>Working Copy</b>"
+msgstr "<b>工作副本</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:17
+msgid "<b>From URL</b>"
+msgstr "<b>来自URL</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:18
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>来自：(URL 和要合并的版本)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:21
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>至：(URL 和要合并的版本)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr "递归"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:24
+msgid "Ignore ancestry"
+msgstr "忽略早期的"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:25
+msgid "Only record the merge"
+msgstr "仅记录合并"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:26
+msgid "Test Merge"
+msgstr "测试合并"
+
+#: ../rabbitvcs/ui/xml/notification.xml.h:1
+msgid "Notification Messages"
+msgstr "通知信息"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:2
+msgid "<b>Properties for:</b>"
 msgstr "<b>属性属于：<b>"
 
+#: ../rabbitvcs/ui/xml/properties.xml.h:3
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>选中的属性将会被递归应用。</i>"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:4
+msgid "Delete properties recursively"
+msgstr "递归删除属性"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:5
+msgid "New..."
+msgstr "新建..."
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:6
+msgid "Edit..."
+msgstr "编辑..."
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:1
+msgid "Property Editor"
+msgstr "属性编辑器"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:2
+msgid "<b>Working Copy:</b>"
+msgstr "<b>工作副本：</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:3
+msgid "<b>Remote URI:</b>"
+msgstr "<b>远程 URI：</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:4
+msgid "Refresh the list of properties."
+msgstr "刷新属性列表"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:5
+msgid "Add a new property."
+msgstr "添加一个新的属性。"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:6
+msgid "Close this dialog."
+msgstr "关闭这个对话框。"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:3
 #, fuzzy
-msgid "Destination:"
-msgstr "认证"
+msgid "Content status:"
+msgstr "文本状态"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:4
+#, fuzzy
+msgid "Property status:"
+msgstr "属性状态"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:5
+msgid "VCS:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:1
+msgid "Pull"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:2
+#, fuzzy
+msgid "<b>Pull Information</b>"
+msgstr "<b>版本信息</b>"
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:3
+msgid "Merge changes into local branch"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:2
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>改变您工作副本的属性</b>"
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:3
+msgid "From:"
+msgstr "从："
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:4
+msgid "To:"
+msgstr "至："
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:2
+#, fuzzy
+msgid "<b>Reset your Repository</b>"
+msgstr "<b>版本库</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:3
+#, fuzzy
+msgid "Reset current HEAD to specified state."
+msgstr "还原项目到其未修改的状态"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:4
+#, fuzzy
+msgid "<b>Path</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>版本</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:7
+msgid "<i>Mixed</i> - Reset the index but not the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:8
+msgid ""
+"<i>Soft</i> - Does not touch the index file or working tree at all, \n"
+"but requires them to be in good working order"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:10
+msgid ""
+"<i>Hard</i> - Matches the working tree and index to that of the \n"
+"tree being switched to"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:12
+msgid ""
+"<i>Merge</i> - Resets the index to match the tree recorded by the named "
+"commit,\n"
+"and updates the files that are different between the named commit\n"
+"and the current commit in the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:15
+msgid "None"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:2
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:3
+msgid "Enable file attributes"
+msgstr "启用文件属性"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:4
+msgid "Enable recursive status checks"
+msgstr "启用递归状态检查"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:5
+msgid "Enable emblems"
+msgstr "启用徽章"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:6
+msgid "Show RabbitVCS debugging tools"
+msgstr "显示 RabbitVCS 调试工具"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:7
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr "调试菜单用于诊断 RabbitVCS 自身的问题"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:8
+#, fuzzy
+msgid "<b>Version Control Systems</b>"
+msgstr "<b>版本信息</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:9
+#, fuzzy
+msgid "Enable Subversion"
+msgstr "启用徽章"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:10
+msgid "Enable Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:11
+msgid "<b>Language</b>"
+msgstr "<b>语言</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:12
+msgid "General"
+msgstr "常规"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:13
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>用于比较文件的程序</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "浏览..."
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:15
+#, fuzzy
+msgid "Show new version on the left side"
+msgstr "显示非版本控制的文件"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:16
+msgid "<b>Configure the program to resolve conflicted files.</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:18
+msgid ""
+"Use the following macros to configure the merge tool:\n"
+"%base       - The common ancestor of the two files to be merged.\n"
+"%mine      - The file you modified in your working copy.\n"
+"%theirs    - The file being merged into your working copy.\n"
+"%merged - The file to store the merged result."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:23
+msgid "External Programs"
+msgstr "外部程序"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:24
+msgid "<b>URL History</b>"
+msgstr "<b>URL 历史</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:25
+msgid "Number of URLs to remember"
+msgstr "记住的 URL 数目"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:26
+msgid "<b>Log Messages</b>"
+msgstr "<b>日志信息</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:27
+msgid "Number of messages to remember"
+msgstr "记住的信息数量"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:28
+msgid "<b>Authentication</b>"
+msgstr "<b>身份验证</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:29
+msgid "Clear your authentication information"
+msgstr "清除你的认证信息"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:30
+msgid "Saved Data"
+msgstr "已保存的数据"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:31
+msgid "<b>Logging Options</b>"
+msgstr "<b>日志选项</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:32
+msgid "Type:"
+msgstr "类型："
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:33
+msgid "Minimum level to log"
+msgstr "最小日志级别"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:34
+msgid "Logging"
+msgstr "日志"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:35
+msgid "<b>Checker type:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:36
+#, fuzzy
+msgid "<b>Memory usage:</b> "
+msgstr "<b>消息</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:38
+#, fuzzy
+msgid "<b>Process ID:</b>"
+msgstr "<b>属性属于：<b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:39
+#, fuzzy
+msgid "<b>Other Information</b>"
+msgstr "<b>版本信息</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:40
+#, fuzzy
+msgid "Refresh Information"
+msgstr "<b>版本信息</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:41
+msgid "Restart Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:42
+msgid "Stop Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:43
+msgid "Status Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:44
+#, fuzzy
+msgid "<b>Configuration Editor</b>"
+msgstr "<b>提交给：</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:45
+msgid "Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/update.xml.h:5
+#, fuzzy
+msgid "Omit Externals"
+msgstr "省略外部"
+
+#: ../rabbitvcs/ui/xml/update.xml.h:6
+msgid "Rollback to specified revision number"
+msgstr ""
+
+#~ msgid "URL/Path"
+#~ msgstr "URL/路径"
+
+#~ msgid "<b>Please add your authentication details</b>"
+#~ msgstr "<b>请添加您的认证细节</b>"
+
+#~ msgid "Authentication"
+#~ msgstr "认证"
+
+#~ msgid "Login:"
+#~ msgstr "登录："
+
+#~ msgid "Password:"
+#~ msgstr "密码："
 
 #, fuzzy
-#~ msgid "Annotate"
-#~ msgstr "注释"
+#~ msgid "<b>Create copy from</b>"
+#~ msgstr "<b>属性属于：<b>"
+
+#, fuzzy
+#~ msgid "Destination:"
+#~ msgstr "认证"
 
 #, fuzzy
 #~ msgid "Running Merge Command"
@@ -2108,56 +2539,5 @@ msgstr "认证"
 #~ msgid "English"
 #~ msgstr "英语"
 
-#~ msgid "Load/Refresh"
-#~ msgstr "加载/刷新"
-
-#~ msgid "<b>Folder Name</b>"
-#~ msgstr "<b>文件夹名称</b>"
-
-#~ msgid "<b>Please provide your ssl certification file</b>"
-#~ msgstr "<b>请提供您的 SSL 证书文件</b>"
-
-#~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
-#~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS 错误</span>"
-
-#~ msgid "Create Folder..."
-#~ msgstr "创建文件夹..."
-
-#~ msgid "Issuer:"
-#~ msgstr "颁发者："
-
-#~ msgid "Path:"
-#~ msgstr "路径:"
-
-#~ msgid "SSL Client Certification"
-#~ msgstr "SSL 客户端证书"
-
 #~ msgid "Text Change"
 #~ msgstr "文本更改"
-
-#~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
-#~ msgstr "<b>受影响的文件</b> (双击会比较 Base)"
-
-#~ msgid "<b>To Revision</b>"
-#~ msgstr "<b>至版本</b>"
-
-#~ msgid "<b>Changed Files</b> (double-click to compare with base)"
-#~ msgstr "<b>更改的文件</b> (双击会比较 Base)"
-
-#~ msgid "<b>Remote URI:</b>"
-#~ msgstr "<b>远程 URI：</b>"
-
-#~ msgid "<b>Working Copy:</b>"
-#~ msgstr "<b>工作副本：</b>"
-
-#~ msgid "Add a new property."
-#~ msgstr "添加一个新的属性。"
-
-#~ msgid "Close this dialog."
-#~ msgstr "关闭这个对话框。"
-
-#~ msgid "Property Editor"
-#~ msgstr "属性编辑器"
-
-#~ msgid "Refresh the list of properties."
-#~ msgstr "刷新属性列表"

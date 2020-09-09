@@ -19,8 +19,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-12-09 23:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#. All subclasses should override this! This is to be displayed in the
-#. settings dialog
 #: ../rabbitvcs/services/statuschecker.py:38
 msgid "Simple status checker"
 msgstr ""
@@ -163,19 +161,20 @@ msgid "You must supply a destination path."
 msgstr "Musíte zadať cieľ umiestnenia."
 
 #: ../rabbitvcs/ui/branch.py:97
+#, fuzzy
 msgid "Branch/Tag"
-msgstr ""
+msgstr "Branch/Tag"
 
 #: ../rabbitvcs/ui/branch.py:98
+#, fuzzy
 msgid "Running Branch/Tag Command..."
-msgstr ""
+msgstr "Spúšťam príkaz na premenovanie..."
 
 #: ../rabbitvcs/ui/branch.py:100
+#, fuzzy
 msgid "Completed Branch/Tag"
-msgstr ""
+msgstr "Zlúčenie ukončené"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/branches.py:66
 msgid "Branch Manager"
 msgstr ""
@@ -188,13 +187,10 @@ msgstr ""
 msgid "Branch"
 msgstr ""
 
-#. Set up the Branch line
-#. Set up the Tag line
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
 msgid "Name:"
 msgstr ""
 
-#. Set up the Commit-sha line
 #: ../rabbitvcs/ui/branches.py:111
 msgid "Start Point:"
 msgstr ""
@@ -212,17 +208,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#. Set up the Revision line
-#. Set up the Commit-sha line
-#. Set up the Revision line
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
 msgid "Revision:"
 msgstr ""
 
-#. Set up the Log Message line
-#. Set up the Log Message Entry line
-#. Set up the Log Message line
 #: ../rabbitvcs/ui/branches.py:171 ../rabbitvcs/ui/merge.py:480
 #: ../rabbitvcs/ui/tags.py:132 ../rabbitvcs/ui/tags.py:198
 msgid "Message:"
@@ -711,7 +701,7 @@ msgstr "Riešenie ukončené"
 
 #: ../rabbitvcs/ui/merge.py:91
 msgid "Running Merge Test..."
-msgstr "Spúšťam test zlúčenia"
+msgstr "Spúšťam test zlúčenia..."
 
 #: ../rabbitvcs/ui/merge.py:92
 msgid "Completed Merge Test"
@@ -719,7 +709,7 @@ msgstr "Test zlúčenia ukončený"
 
 #: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command..."
-msgstr "Spúšťam príkaz na zlúčenie"
+msgstr "Spúšťam príkaz na zlúčenie..."
 
 #: ../rabbitvcs/ui/merge.py:95 ../rabbitvcs/ui/merge.py:523
 msgid "Completed Merge"
@@ -733,12 +723,10 @@ msgstr "Zlúčenie"
 msgid "No active branch"
 msgstr ""
 
-#. Set up the Author line
 #: ../rabbitvcs/ui/merge.py:442
 msgid "Author:"
 msgstr ""
 
-#. Set up the Date line
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
@@ -855,7 +843,6 @@ msgstr "Spúšťam príkaz na premenovanie..."
 msgid "Completed Rename"
 msgstr "Premenovanie dokončené"
 
-#. esh
 #: ../rabbitvcs/ui/reset.py:93
 msgid "Reset"
 msgstr ""
@@ -953,8 +940,6 @@ msgstr "Spúšťam príkaz na prepnutie"
 msgid "Completed Switch"
 msgstr "Prepnutie dokončené"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/tags.py:70
 msgid "Tag Manager"
 msgstr ""
@@ -967,7 +952,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#. Set up the tagger line
 #: ../rabbitvcs/ui/tags.py:160
 msgid "Tagger:"
 msgstr ""
@@ -1007,7 +991,6 @@ msgstr "Spúšťam príkaz na premenovanie..."
 msgid "Completed Unstage"
 msgstr "Aktualizácia dokončená"
 
-#. esh
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
 msgid "Update"
 msgstr "Aktualizácia"
@@ -1059,17 +1042,14 @@ msgstr ""
 msgid "Working Copy"
 msgstr ""
 
-#. Set up the Repository Line
 #: ../rabbitvcs/ui/widget.py:1132
 msgid "Repository:"
 msgstr ""
 
-#. Set up the Branch line
 #: ../rabbitvcs/ui/widget.py:1154
 msgid "Branch:"
 msgstr ""
 
-#. Set up the Host line
 #: ../rabbitvcs/ui/widget.py:1182
 msgid "Host:"
 msgstr "Hostiteľ:"
@@ -1121,7 +1101,7 @@ msgstr "Pridať nejaký znak"
 #: ../rabbitvcs/util/contextmenuitems.py:327
 #, fuzzy
 msgid "Checkout..."
-msgstr "Vyskúšanie"
+msgstr "Vyskúšanie..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:328
 msgid "Check out a working copy"
@@ -1310,7 +1290,7 @@ msgstr "Premiestniť vašu pracovnú kópiu"
 #: ../rabbitvcs/util/contextmenuitems.py:483
 #, fuzzy
 msgid "Get Lock..."
-msgstr "Zamknite"
+msgstr "Zamknite..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:484
 msgid "Locally lock items"
@@ -1336,7 +1316,7 @@ msgstr "Vyčistiť pracovnú kópiu"
 #: ../rabbitvcs/util/contextmenuitems.py:501
 #, fuzzy
 msgid "Export..."
-msgstr "Export"
+msgstr "Export..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:502
 msgid "Export a working copy or repository with no versioning information"
@@ -1344,7 +1324,7 @@ msgstr "Exportovať pracovnú kópiu alebo repozitáre bez informácie o verzii"
 
 #: ../rabbitvcs/util/contextmenuitems.py:515
 msgid "Create Repository here..."
-msgstr "Vytvoriť repozitáre tu"
+msgstr "Vytvoriť repozitáre tu..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:516
 msgid "Create a repository in a folder"
@@ -1353,7 +1333,7 @@ msgstr "Vytvoriť repozitáre v priečinku"
 #: ../rabbitvcs/util/contextmenuitems.py:521
 #, fuzzy
 msgid "Import..."
-msgstr "Import"
+msgstr "Import..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:522
 msgid "Import an item into a repository"
@@ -1361,7 +1341,7 @@ msgstr "Importovať položky do repozitára"
 
 #: ../rabbitvcs/util/contextmenuitems.py:530
 msgid "Branch/Tag..."
-msgstr "Branch/tag..."
+msgstr "Branch/Tag..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:531
 msgid "Copy an item to another location in the repository"
@@ -1394,7 +1374,7 @@ msgstr "Komentovať súbor"
 #: ../rabbitvcs/util/contextmenuitems.py:554
 #, fuzzy
 msgid "Create Patch..."
-msgstr "Vytvoriť repozitáre tu"
+msgstr "Vytvoriť repozitáre tu..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:555
 msgid "Creates a unified diff file with all changes you made"
@@ -1533,7 +1513,7 @@ msgstr ""
 #: ../rabbitvcs/util/contextmenuitems.py:682
 #, fuzzy
 msgid "Clean..."
-msgstr "Čistenie"
+msgstr "Vyčistené..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:686
 msgid "Reset..."
@@ -1740,143 +1720,89 @@ msgstr "Zlúčené"
 msgid "Conflicted"
 msgstr "V rozpore"
 
-msgid "<b>Properties for:</b>"
-msgstr "<b>Vlastnosti pre:</b>"
-
-msgid "<i>Selected properties will be applied recursively.</i>"
-msgstr "<i>Vybrané vlastnosti budú použité rekurzívne.</i>"
-
-msgid "Delete properties recursively"
-msgstr "Odstrániť vlastnosti rekurzívne"
-
-msgid "Edit..."
-msgstr "Editovať..."
-
-msgid "New..."
-msgstr "Nový..."
-
-msgid "URL/Path"
-msgstr "URL/Cesta"
-
-msgid "URL:"
-msgstr "URL:"
-
-msgid "<b>Add Message</b>"
-msgstr "<b>Pridať správu</b>"
-
-msgid "<b>Certificate Details</b>"
-msgstr "<b>Podrobnosti certifikátu</b>"
-
-msgid "<b>Edit Property Details</b>"
-msgstr "<b>Upraviť vlastnosť podrobností</b>"
-
-msgid "<b>Message</b>"
-msgstr "<b>Správa</b>"
-
-msgid "<b>Please add your authentication details</b>"
-msgstr "<b>Prosím pridajte vaše podrobnosti o overení</b>"
-
-msgid "<b>Previous Messages</b>"
-msgstr "<b>Predchádzajúce správy</b>"
-
-msgid ""
-"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-msgstr "<span size=\"large\"><b>Naozaj chcete zmazať %položku%?</b></span>"
-
-msgid "Accept Forever"
-msgstr "Prijať navždy"
-
-msgid "Accept Once"
-msgstr "Prijať iba teraz"
-
-#, fuzzy
-msgid "Apply property recursively"
-msgstr "Odstrániť vlastnosti rekurzívne"
-
-msgid "Authentication"
-msgstr "Autentizácia"
-
-msgid "Check Certificate"
-msgstr "Skontrolujte Certifikát"
-
-msgid "Confirmation"
-msgstr "Potvrdenie"
-
-msgid "Delete Confirmation"
-msgstr "Odstráň potvrdenie"
-
-msgid "Deny"
-msgstr "Odmietnuť"
-
-msgid "Fingerprint:"
-msgstr "Odtlačok prsta:"
-
-msgid "Login:"
-msgstr "Prihlasovacie meno:"
-
-msgid "Password:"
-msgstr "Heslo:"
-
-msgid "Previous Messages"
-msgstr "Predchádzajúca správa"
-
-msgid "Property"
-msgstr "Vlastnosť"
-
-msgid "Property:"
-msgstr "Vlastnosť:"
-
-msgid "Realm:"
-msgstr "Oblasť:"
-
-msgid "Save Authentication"
-msgstr "Uložiť overenie"
-
-msgid "The item(s) will be sent to the trash can."
-msgstr "Položka(y) bude zaslaná do koša."
-
-msgid "Valid:"
-msgstr "Platné:"
-
-msgid "Value:"
-msgstr "Hodnota:"
-
-msgid "<b>Links</b>"
-msgstr "<b>Linky</b>"
-
-msgid "<b>Version Information</b>"
-msgstr "<b>Informácie o verzii</b>"
-
+#: ../rabbitvcs/ui/xml/about.xml.h:2
 msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 
+#: ../rabbitvcs/ui/xml/about.xml.h:3
 msgid "Authors:"
 msgstr "Autori:"
 
+#: ../rabbitvcs/ui/xml/about.xml.h:4
 msgid "Thanks:"
 msgstr "Poďakovanie"
 
-msgid "100"
-msgstr "100"
+#: ../rabbitvcs/ui/xml/about.xml.h:5
+msgid "<b>Version Information</b>"
+msgstr "<b>Informácie o verzii</b>"
 
-msgid "<b>Revisions Table</b>"
-msgstr "<b>Revízna tabuľka</b>"
+#: ../rabbitvcs/ui/xml/about.xml.h:6
+msgid "<b>Links</b>"
+msgstr "<b>Linky</b>"
 
-msgid "Limit:"
-msgstr "Limit:"
+#: ../rabbitvcs/ui/xml/add.xml.h:2 ../rabbitvcs/ui/xml/commit.xml.h:6
+#: ../rabbitvcs/ui/xml/lock.xml.h:5 ../rabbitvcs/ui/xml/revert.xml.h:2
+msgid "Select / Deselect all"
+msgstr "Vybrať / Zrušiť všetko"
 
-msgid "Log"
-msgstr "Záznam"
+#: ../rabbitvcs/ui/xml/add.xml.h:3
+#, fuzzy
+msgid "Show ignored files"
+msgstr "Zobraziť neverziované súbory"
 
-msgid "Refresh"
+#: ../rabbitvcs/ui/xml/annotate.xml.h:1
+msgid "Annotate"
+msgstr "Komentovať"
+
+#: ../rabbitvcs/ui/xml/annotate.xml.h:2
+msgid "<b>From Revision</b>"
+msgstr "<b>Z Revízie</b>"
+
+#: ../rabbitvcs/ui/xml/annotate.xml.h:3
+msgid "<b>To Revision</b>"
+msgstr "<b>Do Revízie</b>"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:2
+msgid "URL:"
+msgstr "URL:"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:4
+#, fuzzy
+msgid "Load/Refresh"
 msgstr "Obnoviť"
 
-msgid "Showing Revisions:"
-msgstr "Zobraziť revízie:"
+#: ../rabbitvcs/ui/xml/clean.xml.h:2
+#, fuzzy
+msgid "<b>Clean your Repository</b>"
+msgstr "<b>Repozitáre</b>"
 
-msgid "Stop on copy"
-msgstr "Stop na kópiu"
+#: ../rabbitvcs/ui/xml/clean.xml.h:3
+msgid "Remove untracked files from the working tree"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/clean.xml.h:4
+msgid "Remove directories"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:5
+#, fuzzy
+msgid "Remove ignored files, too"
+msgstr "Zahrnúť ignorované súbory"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:6
+#, fuzzy
+msgid "Remove only ignored files"
+msgstr "Zahrnúť ignorované súbory"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:7
+msgid "Dry run"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:8
+msgid "Force"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/cleanup.xml.h:2
 msgid ""
 "Cleanup Requested....\n"
 "\n"
@@ -1886,148 +1812,307 @@ msgstr ""
 "\n"
 "Otvorenie pracovnej kópie čistenia?"
 
-msgid "<b>Authentication</b>"
-msgstr "<b>Autentizácia</b>"
-
-msgid "<b>Log Messages</b>"
-msgstr "<b>Záznam správ</b>"
-
-msgid "<b>Logging Options</b>"
-msgstr "<b>Možnosti zaznamenávania</b>"
-
-msgid "<b>Program used to compare files</b>"
-msgstr "<b>Program používaný na porovnávanie súborov</b>"
-
-msgid "<b>RabbitVCS</b>"
-msgstr "<b>RabbitVCS</b>"
-
-msgid "<b>URL History</b>"
-msgstr "<b>URL História</b>"
-
-msgid "Browse..."
-msgstr "Prehľadávať..."
-
-msgid "Clear your authentication information"
-msgstr "Vymazať vaše overovacie informácie"
-
-msgid "Enable emblems"
-msgstr "Povoliť emblémy"
-
-msgid "Enable file attributes"
-msgstr "Povoliť atribúty súborov"
-
-msgid "Enable recursive status checks"
-msgstr "Povoliť kontrolu rekurzívneho stavu"
-
-msgid "External Programs"
-msgstr "Externé programy"
-
-msgid "General"
-msgstr "Všeobecné"
-
-msgid "<b>Language</b>"
-msgstr "<b>Jazyk</b>"
-
-msgid "Logging"
-msgstr "Prihlásenie"
-
-msgid "Minimum level to log"
-msgstr ""
-
-msgid "Number of URLs to remember"
-msgstr "Počet adries URL k zapamätaniu"
-
-msgid "Number of messages to remember"
-msgstr "Počet správ k zapamätaniu"
-
-msgid "Saved Data"
-msgstr "Uložené údaje"
-
-msgid "Show RabbitVCS debugging tools"
-msgstr ""
-
-msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-msgstr ""
-
-msgid "Type:"
-msgstr "Typ"
-
-msgid "<b>Files to lock</b>"
-msgstr "<b>Súbory na zamknutie</b>"
-
-msgid "<b>Please describe why you are locking these files</b>"
-msgstr "<b>Opíšte prosím, prečo tieto súbory zamykáte</b>"
-
-msgid "Lock Files"
-msgstr "Zamknúť súbory"
-
-msgid "Select / Deselect all"
-msgstr "Vybrať / Zrušiť všetko"
-
-msgid "Steal the locks"
-msgstr "Prevziať zámky"
-
-msgid "<b>From Revision</b>"
-msgstr "<b>Z Revízie</b>"
-
+#: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>Odovzdať do:</b>"
 
+#: ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>Pridať správu</b>"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+msgid "Previous Messages"
+msgstr "Predchádzajúca správa"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:5
+msgid "<b>Changed Files</b> (double-click to compare with base)"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:7
 msgid "Show unversioned files"
 msgstr "Zobraziť neverziované súbory"
 
-msgid "Notification Messages"
-msgstr "Oznamovacie Správy"
+#: ../rabbitvcs/ui/xml/commit.xml.h:8 ../rabbitvcs/ui/xml/log.xml.h:11
+msgid "Refresh"
+msgstr "Obnoviť"
 
-msgid "<b>Change the repository of your working copy</b>"
-msgstr "<b>Zmeniť repozitár vašej pracovnej kópie</b>"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:1
+msgid "Check Certificate"
+msgstr "Skontrolujte Certifikát"
 
-msgid "From:"
-msgstr "Z..."
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:2
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Podrobnosti certifikátu</b>"
 
-msgid "To:"
-msgstr "Do:"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:3
+msgid "Realm:"
+msgstr "Oblasť:"
 
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:5
+msgid "Issuer:"
+msgstr "Emitent:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:6
+msgid "Valid:"
+msgstr "Platné:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:7
+msgid "Fingerprint:"
+msgstr "Odtlačok prsta:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:8
+msgid "Accept Once"
+msgstr "Prijať iba teraz"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:9
+msgid "Accept Forever"
+msgstr "Prijať navždy"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:10
+msgid "Deny"
+msgstr "Odmietnuť"
+
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:1
+msgid "Confirmation"
+msgstr "Potvrdenie"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:1
+#, fuzzy
+msgid "Edit Conflicts"
+msgstr "V rozpore"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:2
+msgid "Cancel"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:3
+#, fuzzy
+msgid "Accept Mine"
+msgstr "Prijať iba teraz"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:4
+#, fuzzy
+msgid "Accept Theirs"
+msgstr "Prijať navždy"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:5
+msgid "<b>A conflict was found in the following file:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:1
+#, fuzzy
+msgid "Create Folder..."
+msgstr "Vytvoriť repozitáre tu..."
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:2
+#, fuzzy
+msgid "<b>Folder Name</b>"
+msgstr "<b>Správa</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:1
+msgid "Delete Confirmation"
+msgstr "Odstráň potvrdenie"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:3
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr "<span size=\"large\"><b>Naozaj chcete zmazať %položku%?</b></span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:4
+msgid "The item(s) will be sent to the trash can."
+msgstr "Položka(y) bude zaslaná do koša."
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:1
+msgid "RabbitVCS Error"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:2
+msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:1
+#, fuzzy
+msgid "Mark Resolved"
+msgstr "Vyriešené"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:2
+#, fuzzy
+msgid "Unresolved"
+msgstr "Vyriešené"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:4
+#, fuzzy
+msgid "<b>Mark Conflict As</b>"
+msgstr "<b>Odovzdať do:</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:1
+msgid "Name and Email"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:2
+msgid "<b>Enter Name and Email Details</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:4
+msgid "Email:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:2
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Predchádzajúce správy</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:3
+#: ../rabbitvcs/ui/xml/log.xml.h:8
+msgid "<b>Message</b>"
+msgstr "<b>Správa</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:1
+msgid "Property"
+msgstr "Vlastnosť"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:2
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Upraviť vlastnosť podrobností</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:3
+msgid "Property:"
+msgstr "Vlastnosť:"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:4
+msgid "Value:"
+msgstr "Hodnota:"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:5
+#, fuzzy
+msgid "Apply property recursively"
+msgstr "Odstrániť vlastnosti rekurzívne"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:1
+#, fuzzy
+msgid "SSL Client Certification"
+msgstr "Skontrolujte Certifikát"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:2
+#, fuzzy
+msgid "<b>Please provide your ssl certification file</b>"
+msgstr "<b>Prosím pridajte vaše podrobnosti o overení</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:4
+#, fuzzy
+msgid "Path:"
+msgstr "Cesta"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:5
+msgid "Save Authentication"
+msgstr "Uložiť overenie"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:1
+#, fuzzy
+msgid "Update Local Repository"
+msgstr "Aktualizovať revíziu"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
+#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
 msgid "<b>Options</b>"
 msgstr "<b>Voľby</b>"
 
-msgid "<b>Revision</b>"
-msgstr "<b>Revízia</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:3
+msgid "Apply remote changes"
+msgstr ""
 
-#, fuzzy
-msgid "Omit Externals"
-msgstr "Vonkajšie"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:4
+msgid "merge into local branch"
+msgstr ""
 
-msgid "Recursive"
-msgstr "Rekurzívny"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:5
+msgid "apply remote changes prior to local changes (rebase)"
+msgstr ""
 
-msgid "<b>Import Message</b>"
-msgstr "<b>Import správy</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:6
+msgid "Fetch from all remotes"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/ignore.xml.h:1
+msgid "Ignore"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/ignore.xml.h:2
+msgid "<b>Ignore and exclude files from being tracked</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/import.xml.h:2
 msgid "<b>Repository</b>"
 msgstr "<b>Repozitáre</b>"
 
+#: ../rabbitvcs/ui/xml/import.xml.h:3
+msgid "<b>Import Message</b>"
+msgstr "<b>Import správy</b>"
+
+#: ../rabbitvcs/ui/xml/import.xml.h:5
 msgid "Include ignored files"
 msgstr "Zahrnúť ignorované súbory"
 
-msgid "<b>From URL</b>"
-msgstr "<b>z URL</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:1
+msgid "Lock Files"
+msgstr "Zamknúť súbory"
 
-msgid "<b>From: (URL and revision to merge)</b>"
-msgstr "<b>Od: (URL a revíziu zlúčiť)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:2
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Opíšte prosím, prečo tieto súbory zamykáte</b>"
 
-msgid "<b>Revision Range</b>"
-msgstr "<b>Rozsah revízie</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:4
+msgid "<b>Files to lock</b>"
+msgstr "<b>Súbory na zamknutie</b>"
 
-msgid "<b>To: (URL and revision to merge)</b>"
-msgstr "<b>Do: (URL a revíziu zlúčiť)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:6
+msgid "Steal the locks"
+msgstr "Prevziať zámky"
 
-msgid "<b>URL to merge from</b>"
-msgstr "<b>URL zlúčiť od</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:1
+msgid "Log"
+msgstr "Záznam"
 
-msgid "<b>Working Copy</b>"
-msgstr "<b>Pracovná kopia</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:2
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Revízna tabuľka</b>"
 
+#: ../rabbitvcs/ui/xml/log.xml.h:3
+msgid "Stop on copy"
+msgstr "Stop na kópiu"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:4
+msgid "Showing Revisions:"
+msgstr "Zobraziť revízie:"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:7
+msgid "<b>Affected File(s)</b> (double-click to compare with base)"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/log.xml.h:9
+msgid "Limit:"
+msgstr "Limit:"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:10
+msgid "100"
+msgstr "100"
+
+#: ../rabbitvcs/ui/xml/manager.xml.h:1
+msgid "label"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:1
+msgid "Merge Assistant"
+msgstr "Zlúčiť pomocníka"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:2
+msgid "Merge a range of revisions"
+msgstr "Zlúčiť niekoľko revízií"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:3
 msgid ""
 "Choose this method if you have made some changes to a branch and wish to "
 "merge your changes with another branch."
@@ -2035,6 +2120,11 @@ msgstr ""
 "Vyberte túto možnosť, ak ste urobili nejaké zmeny vo vetvách a chcete zlúčiť "
 "vaše zmeny s inou vetvou."
 
+#: ../rabbitvcs/ui/xml/merge.xml.h:4
+msgid "Merge two different trees"
+msgstr "Zlúčenie dvoch rôznych stromov"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:5
 msgid ""
 "Choose this method if you wish to merge two different branches into your "
 "working copy."
@@ -2042,28 +2132,30 @@ msgstr ""
 "Vyberte túto možnosť, ak chcete zlúčiť dve rôzne vetvy do vašej pracovnej "
 "kópie."
 
-msgid "Ignore ancestry"
-msgstr "Ignorovať rod"
+#: ../rabbitvcs/ui/xml/merge.xml.h:6
+msgid "Reintegrate a branch"
+msgstr ""
 
-msgid "Merge Assistant"
-msgstr "Zlúčiť pomocníka"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:7
 #, fuzzy
-msgid "Merge a range of revisions"
-msgstr "Zlúčiť niekoľko revízií"
+msgid "Choose this method if you wish to reintegrate a branch into the trunk."
+msgstr ""
+"Vyberte túto možnosť, ak chcete zlúčiť dve rôzne vetvy do vašej pracovnej "
+"kópie."
 
-msgid "Merge two different trees"
-msgstr "Zlúčenie dvoch rôznych stromov"
+#: ../rabbitvcs/ui/xml/merge.xml.h:8
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL zlúčiť od</b>"
 
-msgid "Only record the merge"
-msgstr "Iba záznam zlúčenia"
+#: ../rabbitvcs/ui/xml/merge.xml.h:9
+msgid "<b>Revision Range</b>"
+msgstr "<b>Rozsah revízie</b>"
 
+#: ../rabbitvcs/ui/xml/merge.xml.h:10
 msgid "Show log"
 msgstr "Ukázať záznam"
 
-msgid "Test Merge"
-msgstr "Test zlúčenia"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:11
 msgid ""
 "Use the log dialog to select the revisions that you wish to merge.  Or write "
 "out the revisions manually, each separated by a comma.  You can specify a "
@@ -2074,14 +2166,366 @@ msgid ""
 "To merge all revisions, leave the box empty."
 msgstr ""
 
-msgid "<b>Create copy from</b>"
-msgstr "<b>Vytvoriť kópiu z</b>"
+#: ../rabbitvcs/ui/xml/merge.xml.h:16
+msgid "<b>Working Copy</b>"
+msgstr "<b>Pracovná kopia</b>"
 
-msgid "Destination:"
-msgstr "Destinácia:"
+#: ../rabbitvcs/ui/xml/merge.xml.h:17
+msgid "<b>From URL</b>"
+msgstr "<b>z URL</b>"
 
-#~ msgid "Annotate"
-#~ msgstr "Komentovať"
+#: ../rabbitvcs/ui/xml/merge.xml.h:18
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Od: (URL a revíziu zlúčiť)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:21
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Do: (URL a revíziu zlúčiť)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr "Rekurzívny"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:24
+msgid "Ignore ancestry"
+msgstr "Ignorovať rod"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:25
+msgid "Only record the merge"
+msgstr "Iba záznam zlúčenia"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:26
+msgid "Test Merge"
+msgstr "Test zlúčenia"
+
+#: ../rabbitvcs/ui/xml/notification.xml.h:1
+msgid "Notification Messages"
+msgstr "Oznamovacie Správy"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:2
+msgid "<b>Properties for:</b>"
+msgstr "<b>Vlastnosti pre:</b>"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:3
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Vybrané vlastnosti budú použité rekurzívne.</i>"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:4
+msgid "Delete properties recursively"
+msgstr "Odstrániť vlastnosti rekurzívne"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:5
+msgid "New..."
+msgstr "Nový..."
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:6
+msgid "Edit..."
+msgstr "Editovať..."
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:1
+#, fuzzy
+msgid "Property Editor"
+msgstr "Vlastnosť"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:2
+#, fuzzy
+msgid "<b>Working Copy:</b>"
+msgstr "<b>Pracovná kopia</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:3
+#, fuzzy
+msgid "<b>Remote URI:</b>"
+msgstr "<b>z URL</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:4
+msgid "Refresh the list of properties."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:5
+msgid "Add a new property."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:6
+msgid "Close this dialog."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:3
+#, fuzzy
+msgid "Content status:"
+msgstr "Stav textu"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:4
+#, fuzzy
+msgid "Property status:"
+msgstr "Stav objektu"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:5
+msgid "VCS:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:1
+msgid "Pull"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:2
+#, fuzzy
+msgid "<b>Pull Information</b>"
+msgstr "<b>Informácie o verzii</b>"
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:3
+msgid "Merge changes into local branch"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:2
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Zmeniť repozitár vašej pracovnej kópie</b>"
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:3
+msgid "From:"
+msgstr "Z..."
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:4
+msgid "To:"
+msgstr "Do:"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:2
+#, fuzzy
+msgid "<b>Reset your Repository</b>"
+msgstr "<b>Repozitáre</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:3
+#, fuzzy
+msgid "Reset current HEAD to specified state."
+msgstr "Vrátiť položku do jej nezmeneného stavu"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:4
+#, fuzzy
+msgid "<b>Path</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>Revízia</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:7
+msgid "<i>Mixed</i> - Reset the index but not the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:8
+msgid ""
+"<i>Soft</i> - Does not touch the index file or working tree at all, \n"
+"but requires them to be in good working order"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:10
+msgid ""
+"<i>Hard</i> - Matches the working tree and index to that of the \n"
+"tree being switched to"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:12
+msgid ""
+"<i>Merge</i> - Resets the index to match the tree recorded by the named "
+"commit,\n"
+"and updates the files that are different between the named commit\n"
+"and the current commit in the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:15
+msgid "None"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:2
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:3
+msgid "Enable file attributes"
+msgstr "Povoliť atribúty súborov"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:4
+msgid "Enable recursive status checks"
+msgstr "Povoliť kontrolu rekurzívneho stavu"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:5
+msgid "Enable emblems"
+msgstr "Povoliť emblémy"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:6
+msgid "Show RabbitVCS debugging tools"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:7
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:8
+#, fuzzy
+msgid "<b>Version Control Systems</b>"
+msgstr "<b>Informácie o verzii</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:9
+#, fuzzy
+msgid "Enable Subversion"
+msgstr "Povoliť emblémy"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:10
+msgid "Enable Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:11
+msgid "<b>Language</b>"
+msgstr "<b>Jazyk</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:12
+msgid "General"
+msgstr "Všeobecné"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:13
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program používaný na porovnávanie súborov</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "Prehľadávať..."
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:15
+#, fuzzy
+msgid "Show new version on the left side"
+msgstr "Zobraziť novú verziu na pravej strane"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:16
+msgid "<b>Configure the program to resolve conflicted files.</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:18
+msgid ""
+"Use the following macros to configure the merge tool:\n"
+"%base       - The common ancestor of the two files to be merged.\n"
+"%mine      - The file you modified in your working copy.\n"
+"%theirs    - The file being merged into your working copy.\n"
+"%merged - The file to store the merged result."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:23
+msgid "External Programs"
+msgstr "Externé programy"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:24
+msgid "<b>URL History</b>"
+msgstr "<b>URL História</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:25
+msgid "Number of URLs to remember"
+msgstr "Počet adries URL k zapamätaniu"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:26
+msgid "<b>Log Messages</b>"
+msgstr "<b>Záznam správ</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:27
+msgid "Number of messages to remember"
+msgstr "Počet správ k zapamätaniu"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:28
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentizácia</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:29
+msgid "Clear your authentication information"
+msgstr "Vymazať vaše overovacie informácie"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:30
+msgid "Saved Data"
+msgstr "Uložené údaje"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:31
+msgid "<b>Logging Options</b>"
+msgstr "<b>Možnosti zaznamenávania</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:32
+msgid "Type:"
+msgstr "Typ"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:33
+msgid "Minimum level to log"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:34
+msgid "Logging"
+msgstr "Prihlásenie"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:35
+msgid "<b>Checker type:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:36
+#, fuzzy
+msgid "<b>Memory usage:</b> "
+msgstr "<b>Správa</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:38
+#, fuzzy
+msgid "<b>Process ID:</b>"
+msgstr "<b>Vlastnosti pre:</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:39
+#, fuzzy
+msgid "<b>Other Information</b>"
+msgstr "<b>Informácie o verzii</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:40
+#, fuzzy
+msgid "Refresh Information"
+msgstr "<b>Informácie o verzii</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:41
+msgid "Restart Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:42
+msgid "Stop Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:43
+msgid "Status Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:44
+#, fuzzy
+msgid "<b>Configuration Editor</b>"
+msgstr "<b>Odovzdať do:</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:45
+msgid "Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/update.xml.h:5
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Vonkajšie"
+
+#: ../rabbitvcs/ui/xml/update.xml.h:6
+msgid "Rollback to specified revision number"
+msgstr ""
+
+#~ msgid "URL/Path"
+#~ msgstr "URL/Cesta"
+
+#~ msgid "Authentication"
+#~ msgstr "Autentizácia"
+
+#~ msgid "Login:"
+#~ msgstr "Prihlasovacie meno:"
+
+#~ msgid "Password:"
+#~ msgstr "Heslo:"
+
+#~ msgid "<b>Create copy from</b>"
+#~ msgstr "<b>Vytvoriť kópiu z</b>"
+
+#~ msgid "Destination:"
+#~ msgstr "Destinácia:"
 
 #, fuzzy
 #~ msgid "Running Merge Command"
@@ -2093,17 +2537,8 @@ msgstr "Destinácia:"
 #~ msgid "English"
 #~ msgstr "Anglicky"
 
-#~ msgid "Issuer:"
-#~ msgstr "Emitent:"
-
-#~ msgid "<b>To Revision</b>"
-#~ msgstr "<b>Do Revízie</b>"
-
 #~ msgid "<b>Switch Details</b>"
 #~ msgstr "<b>Prepnúť detaily</b>"
-
-#~ msgid "Show new version on the right side"
-#~ msgstr "Zobraziť novú verziu na pravej strane"
 
 #~ msgid "<b>Program used to browse repositories</b>"
 #~ msgstr "<b>Program používaný na prezeranie repozitára</b>"

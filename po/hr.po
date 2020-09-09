@@ -20,8 +20,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-12-09 23:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#. All subclasses should override this! This is to be displayed in the
-#. settings dialog
 #: ../rabbitvcs/services/statuschecker.py:38
 msgid "Simple status checker"
 msgstr ""
@@ -169,14 +167,12 @@ msgstr "Grana/oznaka"
 
 #: ../rabbitvcs/ui/branch.py:98
 msgid "Running Branch/Tag Command..."
-msgstr "Izrada grane/oznake"
+msgstr "Izrada grane/oznake..."
 
 #: ../rabbitvcs/ui/branch.py:100
 msgid "Completed Branch/Tag"
 msgstr "Završena izrada grane/oznake"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/branches.py:66
 msgid "Branch Manager"
 msgstr ""
@@ -189,13 +185,10 @@ msgstr ""
 msgid "Branch"
 msgstr ""
 
-#. Set up the Branch line
-#. Set up the Tag line
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
 msgid "Name:"
 msgstr ""
 
-#. Set up the Commit-sha line
 #: ../rabbitvcs/ui/branches.py:111
 msgid "Start Point:"
 msgstr ""
@@ -213,17 +206,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#. Set up the Revision line
-#. Set up the Commit-sha line
-#. Set up the Revision line
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
 msgid "Revision:"
 msgstr "Revizija:"
 
-#. Set up the Log Message line
-#. Set up the Log Message Entry line
-#. Set up the Log Message line
 #: ../rabbitvcs/ui/branches.py:171 ../rabbitvcs/ui/merge.py:480
 #: ../rabbitvcs/ui/tags.py:132 ../rabbitvcs/ui/tags.py:198
 msgid "Message:"
@@ -717,7 +704,7 @@ msgstr "Razriješavanje završeno"
 
 #: ../rabbitvcs/ui/merge.py:91
 msgid "Running Merge Test..."
-msgstr "Testiranje stapanja"
+msgstr "Testiranje stapanja..."
 
 #: ../rabbitvcs/ui/merge.py:92
 msgid "Completed Merge Test"
@@ -725,7 +712,7 @@ msgstr "Završen test stapanja"
 
 #: ../rabbitvcs/ui/merge.py:94 ../rabbitvcs/ui/merge.py:518
 msgid "Running Merge Command..."
-msgstr "Izvršavanje stapanja"
+msgstr "Izvršavanje stapanja..."
 
 #: ../rabbitvcs/ui/merge.py:95 ../rabbitvcs/ui/merge.py:523
 msgid "Completed Merge"
@@ -739,12 +726,10 @@ msgstr "Stopi"
 msgid "No active branch"
 msgstr ""
 
-#. Set up the Author line
 #: ../rabbitvcs/ui/merge.py:442
 msgid "Author:"
 msgstr ""
 
-#. Set up the Date line
 #: ../rabbitvcs/ui/merge.py:455 ../rabbitvcs/ui/tags.py:173
 msgid "Date:"
 msgstr ""
@@ -865,7 +850,6 @@ msgstr "Promjena naziva u tijeku..."
 msgid "Completed Rename"
 msgstr "Promjena naziva završena"
 
-#. esh
 #: ../rabbitvcs/ui/reset.py:93
 #, fuzzy
 msgid "Reset"
@@ -964,8 +948,6 @@ msgstr "Zamijena u tijeku"
 msgid "Completed Switch"
 msgstr "Zamjena izvršena"
 
-#. esh: set from rabbitvcs/ui/xml/manager.xml
-#. ~ self.get_widget("Manager").set_size_request(695, -1)
 #: ../rabbitvcs/ui/tags.py:70
 msgid "Tag Manager"
 msgstr ""
@@ -978,7 +960,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#. Set up the tagger line
 #: ../rabbitvcs/ui/tags.py:160
 msgid "Tagger:"
 msgstr ""
@@ -1018,7 +999,6 @@ msgstr "Promjena naziva u tijeku..."
 msgid "Completed Unstage"
 msgstr "Ažuriranje završeno"
 
-#. esh
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
 msgid "Update"
 msgstr "Ažuriraj"
@@ -1071,17 +1051,14 @@ msgstr "Broj"
 msgid "Working Copy"
 msgstr "Radna verzija"
 
-#. Set up the Repository Line
 #: ../rabbitvcs/ui/widget.py:1132
 msgid "Repository:"
 msgstr ""
 
-#. Set up the Branch line
 #: ../rabbitvcs/ui/widget.py:1154
 msgid "Branch:"
 msgstr ""
 
-#. Set up the Host line
 #: ../rabbitvcs/ui/widget.py:1182
 msgid "Host:"
 msgstr "Poslužitelj"
@@ -1353,7 +1330,7 @@ msgstr "Izvezi radnu kopiju ili skladište bez informacije o verzijama"
 
 #: ../rabbitvcs/util/contextmenuitems.py:515
 msgid "Create Repository here..."
-msgstr "Ovdje napravi skladište"
+msgstr "Ovdje napravi skladište..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:516
 msgid "Create a repository in a folder"
@@ -1541,12 +1518,11 @@ msgstr ""
 #: ../rabbitvcs/util/contextmenuitems.py:682
 #, fuzzy
 msgid "Clean..."
-msgstr "Očisti"
+msgstr "Čišćenje..."
 
 #: ../rabbitvcs/util/contextmenuitems.py:686
-#, fuzzy
 msgid "Reset..."
-msgstr "Rezervirano"
+msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:701
 msgid "Edit conflicts"
@@ -1773,143 +1749,88 @@ msgstr "Stopi"
 msgid "Conflicted"
 msgstr ""
 
-msgid "<b>Properties for:</b>"
-msgstr "<b>Svojstva za:</b>"
-
-msgid "<i>Selected properties will be applied recursively.</i>"
-msgstr "<i>Odabrana svojstva biti će primijenjena ponirući.</i>"
-
-msgid "Delete properties recursively"
-msgstr "Obriši svojstva ponirući"
-
-msgid "Edit..."
-msgstr "Uredi..."
-
-msgid "New..."
-msgstr "Novo..."
-
-msgid "URL/Path"
-msgstr "URL staza"
-
-msgid "URL:"
-msgstr "URL:"
-
-msgid "<b>Add Message</b>"
-msgstr "<b>Dodaj poruku</b>"
-
-msgid "<b>Certificate Details</b>"
-msgstr "<b>Detalji o certifikatu</b>"
-
-msgid "<b>Edit Property Details</b>"
-msgstr "<b>Uredi vrijednost svojstva</b>"
-
-msgid "<b>Message</b>"
-msgstr "<b>Poruka</b>"
-
-msgid "<b>Please add your authentication details</b>"
-msgstr "<b>Molim dopunite svojim autentikacijskim podacima</b>"
-
-msgid "<b>Previous Messages</b>"
-msgstr "<b>Prethodne poruke</b>"
-
-msgid ""
-"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
-msgstr ""
-"<span size=\"large\"><b>Da li sigurno želite obrisati %item%?</b></span>"
-
-msgid "Accept Forever"
-msgstr "Prihvati za stalno"
-
-msgid "Accept Once"
-msgstr "Prihvati za ovaj put"
-
-msgid "Apply property recursively"
-msgstr "Primijeni svojstvo ponirući"
-
-msgid "Authentication"
-msgstr "Prijava"
-
-msgid "Check Certificate"
-msgstr "Provjeri certifikat"
-
-msgid "Confirmation"
-msgstr "Potvrda"
-
-msgid "Delete Confirmation"
-msgstr "Potvrda brisanja"
-
-msgid "Deny"
-msgstr "Uskrati"
-
-msgid "Fingerprint:"
-msgstr "Otisak prsta:"
-
-msgid "Login:"
-msgstr "Login:"
-
-msgid "Password:"
-msgstr "Zaporka:"
-
-msgid "Previous Messages"
-msgstr "Prethodne poruke"
-
-msgid "Property"
-msgstr "Svojstvo"
-
-msgid "Property:"
-msgstr "Svojstvo:"
-
-msgid "Realm:"
-msgstr "Područje:"
-
-msgid "Save Authentication"
-msgstr "Spremi autentikaciju"
-
-msgid "The item(s) will be sent to the trash can."
-msgstr "Stavke će biti biti prebačeni u smeće"
-
-msgid "Valid:"
-msgstr "Ispravno:"
-
-msgid "Value:"
-msgstr "Vrijednost:"
-
-msgid "<b>Links</b>"
-msgstr "<b>Poveznice</b>"
-
-msgid "<b>Version Information</b>"
-msgstr "<b>Informacija o verziji</b>"
-
+#: ../rabbitvcs/ui/xml/about.xml.h:2
 msgid "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 msgstr "<span size=\"xx-large\"><b>RabbitVCS</b></span>"
 
+#: ../rabbitvcs/ui/xml/about.xml.h:3
 msgid "Authors:"
 msgstr "Autori:"
 
+#: ../rabbitvcs/ui/xml/about.xml.h:4
 msgid "Thanks:"
 msgstr "Zahvale:"
 
-msgid "100"
-msgstr "100"
+#: ../rabbitvcs/ui/xml/about.xml.h:5
+msgid "<b>Version Information</b>"
+msgstr "<b>Informacija o verziji</b>"
 
-msgid "<b>Revisions Table</b>"
-msgstr "<b>Tablica inačica</b>"
+#: ../rabbitvcs/ui/xml/about.xml.h:6
+msgid "<b>Links</b>"
+msgstr "<b>Poveznice</b>"
 
-msgid "Limit:"
-msgstr "Ograničenje:"
+#: ../rabbitvcs/ui/xml/add.xml.h:2 ../rabbitvcs/ui/xml/commit.xml.h:6
+#: ../rabbitvcs/ui/xml/lock.xml.h:5 ../rabbitvcs/ui/xml/revert.xml.h:2
+msgid "Select / Deselect all"
+msgstr "Označi  sve / Makni sve oznake"
 
-msgid "Log"
-msgstr "Dnevnik"
+#: ../rabbitvcs/ui/xml/add.xml.h:3
+#, fuzzy
+msgid "Show ignored files"
+msgstr "Prikaži datoteke bez verzije"
 
-msgid "Refresh"
+#: ../rabbitvcs/ui/xml/annotate.xml.h:1
+msgid "Annotate"
+msgstr "Pribilježi"
+
+#: ../rabbitvcs/ui/xml/annotate.xml.h:2
+msgid "<b>From Revision</b>"
+msgstr "<b>Od inančice</b>"
+
+#: ../rabbitvcs/ui/xml/annotate.xml.h:3
+msgid "<b>To Revision</b>"
+msgstr "<b>Do inačice</b>"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:2
+msgid "URL:"
+msgstr "URL:"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:4
+msgid "Load/Refresh"
 msgstr "Osvježi"
 
-msgid "Showing Revisions:"
-msgstr "Prikazuje inačice:"
+#: ../rabbitvcs/ui/xml/clean.xml.h:2
+#, fuzzy
+msgid "<b>Clean your Repository</b>"
+msgstr "<b>Skladište</b>"
 
-msgid "Stop on copy"
-msgstr "Zaustavi se na kopiranju"
+#: ../rabbitvcs/ui/xml/clean.xml.h:3
+msgid "Remove untracked files from the working tree"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/clean.xml.h:4
+msgid "Remove directories"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:5
+#, fuzzy
+msgid "Remove ignored files, too"
+msgstr "Uključi zanemarene datoteke"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:6
+#, fuzzy
+msgid "Remove only ignored files"
+msgstr "Uključi zanemarene datoteke"
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:7
+msgid "Dry run"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/clean.xml.h:8
+msgid "Force"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/cleanup.xml.h:2
 msgid ""
 "Cleanup Requested....\n"
 "\n"
@@ -1919,148 +1840,301 @@ msgstr ""
 "\n"
 "Da li želite pokrenuti čišćenje?"
 
-msgid "<b>Authentication</b>"
-msgstr "<b>Prijava korisnika</b>"
-
-msgid "<b>Log Messages</b>"
-msgstr "<b>Poruke dnevnika</b>"
-
-msgid "<b>Logging Options</b>"
-msgstr "<b>Mogućnosti dnevnika</b>"
-
-msgid "<b>Program used to compare files</b>"
-msgstr "<b>Program za usporedbu datoteka</b>"
-
-msgid "<b>RabbitVCS</b>"
-msgstr "<b>RabbitVCS</b>"
-
-msgid "<b>URL History</b>"
-msgstr "<b>URL Povijest</b>"
-
-msgid "Browse..."
-msgstr "Pregledaj..."
-
-msgid "Clear your authentication information"
-msgstr "Izbriši podatke za prijavu korisnika"
-
-msgid "Enable emblems"
-msgstr "Omogući oznake"
-
-msgid "Enable file attributes"
-msgstr "Omogući svojstva datoteka"
-
-msgid "Enable recursive status checks"
-msgstr "Omogući poniruću provjeru statusa"
-
-msgid "External Programs"
-msgstr "Vanjski programi"
-
-msgid "General"
-msgstr "Općenito"
-
-msgid "<b>Language</b>"
-msgstr "<b>Jezik</b>"
-
-msgid "Logging"
-msgstr "Pisanje dnevnika"
-
-msgid "Minimum level to log"
-msgstr "Najmanja razina logiranja"
-
-msgid "Number of URLs to remember"
-msgstr "Broj zapamćenih URL-ova"
-
-msgid "Number of messages to remember"
-msgstr "Broj spremljenih poruka"
-
-msgid "Saved Data"
-msgstr "Spremljeni podaci"
-
-msgid "Show RabbitVCS debugging tools"
-msgstr "Prikaži RabbitVCS alate za traženje grešaka (debugging)"
-
-msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
-msgstr "Debug izbornik se koristi za traženje grešaka unutar RabbitVCSa"
-
-msgid "Type:"
-msgstr "Tip:"
-
-msgid "<b>Files to lock</b>"
-msgstr "<b>Datoteke za zaključavanje</b>"
-
-msgid "<b>Please describe why you are locking these files</b>"
-msgstr "<b>Molim opišite zašto zaključavate ove datoteke</b>"
-
-msgid "Lock Files"
-msgstr "Zaključaj datoteke"
-
-msgid "Select / Deselect all"
-msgstr "Označi  sve / Makni sve oznake"
-
-msgid "Steal the locks"
-msgstr "Preuzmi lokote"
-
-msgid "<b>From Revision</b>"
-msgstr "<b>Od inančice</b>"
-
+#: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>Pohrani u:</b>"
 
+#: ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>Dodaj poruku</b>"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+msgid "Previous Messages"
+msgstr "Prethodne poruke"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:5
+msgid "<b>Changed Files</b> (double-click to compare with base)"
+msgstr "<b>Promijenjene datoteke</b> (dvoklik za usporedbu s osnovom)"
+
+#: ../rabbitvcs/ui/xml/commit.xml.h:7
 msgid "Show unversioned files"
 msgstr "Prikaži datoteke bez verzije"
 
-msgid "Notification Messages"
-msgstr "Obavijesne poruke"
+#: ../rabbitvcs/ui/xml/commit.xml.h:8 ../rabbitvcs/ui/xml/log.xml.h:11
+msgid "Refresh"
+msgstr "Osvježi"
 
-msgid "<b>Change the repository of your working copy</b>"
-msgstr "<b>Promijeni skladište za radnu kopiju</b>"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:1
+msgid "Check Certificate"
+msgstr "Provjeri certifikat"
 
-msgid "From:"
-msgstr "Od:"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:2
+msgid "<b>Certificate Details</b>"
+msgstr "<b>Detalji o certifikatu</b>"
 
-msgid "To:"
-msgstr "Do:"
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:3
+msgid "Realm:"
+msgstr "Područje:"
 
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:5
+msgid "Issuer:"
+msgstr "Izdavač:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:6
+msgid "Valid:"
+msgstr "Ispravno:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:7
+msgid "Fingerprint:"
+msgstr "Otisak prsta:"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:8
+msgid "Accept Once"
+msgstr "Prihvati za ovaj put"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:9
+msgid "Accept Forever"
+msgstr "Prihvati za stalno"
+
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:10
+msgid "Deny"
+msgstr "Uskrati"
+
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:1
+msgid "Confirmation"
+msgstr "Potvrda"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:1
+msgid "Edit Conflicts"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:2
+msgid "Cancel"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:3
+#, fuzzy
+msgid "Accept Mine"
+msgstr "Prihvati za ovaj put"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:4
+#, fuzzy
+msgid "Accept Theirs"
+msgstr "Prihvati za stalno"
+
+#: ../rabbitvcs/ui/xml/dialogs/conflict_decision.xml.h:5
+msgid "<b>A conflict was found in the following file:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:1
+msgid "Create Folder..."
+msgstr "Izradi mapu..."
+
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:2
+msgid "<b>Folder Name</b>"
+msgstr "<b>Ime mape</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:1
+msgid "Delete Confirmation"
+msgstr "Potvrda brisanja"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:3
+msgid ""
+"<span size=\"large\"><b>Are you sure you want to delete %item%?</b></span>"
+msgstr ""
+"<span size=\"large\"><b>Da li sigurno želite obrisati %item%?</b></span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/delete_confirmation.xml.h:4
+msgid "The item(s) will be sent to the trash can."
+msgstr "Stavke će biti biti prebačeni u smeće"
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:1
+msgid "RabbitVCS Error"
+msgstr "RabbitVCS greška"
+
+#: ../rabbitvcs/ui/xml/dialogs/error_notification.xml.h:2
+msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS greška</span>"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:1
+#, fuzzy
+msgid "Mark Resolved"
+msgstr "Razriješi"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:2
+#, fuzzy
+msgid "Unresolved"
+msgstr "Razriješi"
+
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:4
+#, fuzzy
+msgid "<b>Mark Conflict As</b>"
+msgstr "<b>Pohrani u:</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:1
+msgid "Name and Email"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:2
+msgid "<b>Enter Name and Email Details</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:4
+msgid "Email:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:2
+msgid "<b>Previous Messages</b>"
+msgstr "<b>Prethodne poruke</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:3
+#: ../rabbitvcs/ui/xml/log.xml.h:8
+msgid "<b>Message</b>"
+msgstr "<b>Poruka</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:1
+msgid "Property"
+msgstr "Svojstvo"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:2
+msgid "<b>Edit Property Details</b>"
+msgstr "<b>Uredi vrijednost svojstva</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:3
+msgid "Property:"
+msgstr "Svojstvo:"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:4
+msgid "Value:"
+msgstr "Vrijednost:"
+
+#: ../rabbitvcs/ui/xml/dialogs/property.xml.h:5
+msgid "Apply property recursively"
+msgstr "Primijeni svojstvo ponirući"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:1
+msgid "SSL Client Certification"
+msgstr "SSL Client Certification"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:2
+msgid "<b>Please provide your ssl certification file</b>"
+msgstr "<b>Molimo, postavite dateteku s ssl certifikatom</b>"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:4
+msgid "Path:"
+msgstr "Putanja:"
+
+#: ../rabbitvcs/ui/xml/dialogs/ssl_client_cert_prompt.xml.h:5
+msgid "Save Authentication"
+msgstr "Spremi autentikaciju"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:1
+#, fuzzy
+msgid "Update Local Repository"
+msgstr "Ažuriraj na inačicu"
+
+#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
+#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
 msgid "<b>Options</b>"
 msgstr "<b>Mogućnosti</b>"
 
-msgid "<b>Revision</b>"
-msgstr "<b>Inačica</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:3
+msgid "Apply remote changes"
+msgstr ""
 
-#, fuzzy
-msgid "Omit Externals"
-msgstr "Preskoči vanjska skladišta"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:4
+msgid "merge into local branch"
+msgstr ""
 
-msgid "Recursive"
-msgstr "Ponirući"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:5
+msgid "apply remote changes prior to local changes (rebase)"
+msgstr ""
 
-msgid "<b>Import Message</b>"
-msgstr "<b>Uvoz poruke</b>"
+#: ../rabbitvcs/ui/xml/git-update.xml.h:6
+msgid "Fetch from all remotes"
+msgstr ""
 
+#: ../rabbitvcs/ui/xml/ignore.xml.h:1
+msgid "Ignore"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/ignore.xml.h:2
+msgid "<b>Ignore and exclude files from being tracked</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/import.xml.h:2
 msgid "<b>Repository</b>"
 msgstr "<b>Skladište</b>"
 
+#: ../rabbitvcs/ui/xml/import.xml.h:3
+msgid "<b>Import Message</b>"
+msgstr "<b>Uvoz poruke</b>"
+
+#: ../rabbitvcs/ui/xml/import.xml.h:5
 msgid "Include ignored files"
 msgstr "Uključi zanemarene datoteke"
 
-msgid "<b>From URL</b>"
-msgstr "<b>Od URL-a</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:1
+msgid "Lock Files"
+msgstr "Zaključaj datoteke"
 
-msgid "<b>From: (URL and revision to merge)</b>"
-msgstr "<b>Do: (URL i inačica za stapanje)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:2
+msgid "<b>Please describe why you are locking these files</b>"
+msgstr "<b>Molim opišite zašto zaključavate ove datoteke</b>"
 
-msgid "<b>Revision Range</b>"
-msgstr "<b>Raspon inačica</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:4
+msgid "<b>Files to lock</b>"
+msgstr "<b>Datoteke za zaključavanje</b>"
 
-msgid "<b>To: (URL and revision to merge)</b>"
-msgstr "<b>Do: (URL i inačica za stapanje)</b>"
+#: ../rabbitvcs/ui/xml/lock.xml.h:6
+msgid "Steal the locks"
+msgstr "Preuzmi lokote"
 
-msgid "<b>URL to merge from</b>"
-msgstr "<b>URL od kojeg stapamo</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:1
+msgid "Log"
+msgstr "Dnevnik"
 
-msgid "<b>Working Copy</b>"
-msgstr "<b>Radna kopija</b>"
+#: ../rabbitvcs/ui/xml/log.xml.h:2
+msgid "<b>Revisions Table</b>"
+msgstr "<b>Tablica inačica</b>"
 
+#: ../rabbitvcs/ui/xml/log.xml.h:3
+msgid "Stop on copy"
+msgstr "Zaustavi se na kopiranju"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:4
+msgid "Showing Revisions:"
+msgstr "Prikazuje inačice:"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:7
+msgid "<b>Affected File(s)</b> (double-click to compare with base)"
+msgstr "<b>Datoteka(e) promjene</b> (dvoklik za usporedbu s osnovom)"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:9
+msgid "Limit:"
+msgstr "Ograničenje:"
+
+#: ../rabbitvcs/ui/xml/log.xml.h:10
+msgid "100"
+msgstr "100"
+
+#: ../rabbitvcs/ui/xml/manager.xml.h:1
+msgid "label"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:1
+msgid "Merge Assistant"
+msgstr "Pomoćnik stapanja"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:2
+msgid "Merge a range of revisions"
+msgstr "Stopi raspon inačica"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:3
 msgid ""
 "Choose this method if you have made some changes to a branch and wish to "
 "merge your changes with another branch."
@@ -2068,6 +2142,11 @@ msgstr ""
 "Odaberite ovu metodu ako imate neke promjene u grani i želite stopiti svoje "
 "promjene s drugom granom."
 
+#: ../rabbitvcs/ui/xml/merge.xml.h:4
+msgid "Merge two different trees"
+msgstr "Stopi dva različita stabla"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:5
 msgid ""
 "Choose this method if you wish to merge two different branches into your "
 "working copy."
@@ -2075,27 +2154,30 @@ msgstr ""
 "Odaberite ovu metodu ako želite stopiti dvije različite grane u vašu radnu "
 "kopiju."
 
-msgid "Ignore ancestry"
-msgstr "Zanemari porijeklo"
+#: ../rabbitvcs/ui/xml/merge.xml.h:6
+msgid "Reintegrate a branch"
+msgstr ""
 
-msgid "Merge Assistant"
-msgstr "Pomoćnik stapanja"
+#: ../rabbitvcs/ui/xml/merge.xml.h:7
+#, fuzzy
+msgid "Choose this method if you wish to reintegrate a branch into the trunk."
+msgstr ""
+"Odaberite ovu metodu ako želite stopiti dvije različite grane u vašu radnu "
+"kopiju."
 
-msgid "Merge a range of revisions"
-msgstr "Stopi raspon inačica"
+#: ../rabbitvcs/ui/xml/merge.xml.h:8
+msgid "<b>URL to merge from</b>"
+msgstr "<b>URL od kojeg stapamo</b>"
 
-msgid "Merge two different trees"
-msgstr "Stopi dva različita stabla"
+#: ../rabbitvcs/ui/xml/merge.xml.h:9
+msgid "<b>Revision Range</b>"
+msgstr "<b>Raspon inačica</b>"
 
-msgid "Only record the merge"
-msgstr "Samo zabilježi stapanje"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:10
 msgid "Show log"
 msgstr "Prikaži dnevnik"
 
-msgid "Test Merge"
-msgstr "Test stapanja"
-
+#: ../rabbitvcs/ui/xml/merge.xml.h:11
 msgid ""
 "Use the log dialog to select the revisions that you wish to merge.  Or write "
 "out the revisions manually, each separated by a comma.  You can specify a "
@@ -2113,17 +2195,367 @@ msgstr ""
 "\n"
 "Za stapanje svih revizija, polje ostavite nepopunjeno."
 
-#, fuzzy
-msgid "<b>Create copy from</b>"
+#: ../rabbitvcs/ui/xml/merge.xml.h:16
+msgid "<b>Working Copy</b>"
+msgstr "<b>Radna kopija</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:17
+msgid "<b>From URL</b>"
+msgstr "<b>Od URL-a</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:18
+msgid "<b>From: (URL and revision to merge)</b>"
+msgstr "<b>Do: (URL i inačica za stapanje)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:21
+msgid "<b>To: (URL and revision to merge)</b>"
+msgstr "<b>Do: (URL i inačica za stapanje)</b>"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr "Ponirući"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:24
+msgid "Ignore ancestry"
+msgstr "Zanemari porijeklo"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:25
+msgid "Only record the merge"
+msgstr "Samo zabilježi stapanje"
+
+#: ../rabbitvcs/ui/xml/merge.xml.h:26
+msgid "Test Merge"
+msgstr "Test stapanja"
+
+#: ../rabbitvcs/ui/xml/notification.xml.h:1
+msgid "Notification Messages"
+msgstr "Obavijesne poruke"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:2
+msgid "<b>Properties for:</b>"
 msgstr "<b>Svojstva za:</b>"
 
+#: ../rabbitvcs/ui/xml/properties.xml.h:3
+msgid "<i>Selected properties will be applied recursively.</i>"
+msgstr "<i>Odabrana svojstva biti će primijenjena ponirući.</i>"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:4
+msgid "Delete properties recursively"
+msgstr "Obriši svojstva ponirući"
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:5
+msgid "New..."
+msgstr "Novo..."
+
+#: ../rabbitvcs/ui/xml/properties.xml.h:6
+msgid "Edit..."
+msgstr "Uredi..."
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:1
+msgid "Property Editor"
+msgstr "Editor za svojstva"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:2
+msgid "<b>Working Copy:</b>"
+msgstr "<b>Radna kopija:</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:3
+msgid "<b>Remote URI:</b>"
+msgstr "<b>Udaljeni URI:</b>"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:4
+msgid "Refresh the list of properties."
+msgstr "Osvježi popis svojstava."
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:5
+msgid "Add a new property."
+msgstr "Dodaj novo svojstvo"
+
+#: ../rabbitvcs/ui/xml/property_editor.xml.h:6
+msgid "Close this dialog."
+msgstr "Zatvori dijalog."
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:3
 #, fuzzy
-msgid "Destination:"
-msgstr "Prijava"
+msgid "Content status:"
+msgstr "Status teksta"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:4
+#, fuzzy
+msgid "Property status:"
+msgstr "Status svojstva"
+
+#: ../rabbitvcs/ui/xml/property_page.xml.h:5
+msgid "VCS:"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:1
+msgid "Pull"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:2
+#, fuzzy
+msgid "<b>Pull Information</b>"
+msgstr "<b>Informacija o verziji</b>"
+
+#: ../rabbitvcs/ui/xml/pull.xml.h:3
+msgid "Merge changes into local branch"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:2
+msgid "<b>Change the repository of your working copy</b>"
+msgstr "<b>Promijeni skladište za radnu kopiju</b>"
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:3
+msgid "From:"
+msgstr "Od:"
+
+#: ../rabbitvcs/ui/xml/relocate.xml.h:4
+msgid "To:"
+msgstr "Do:"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:2
+#, fuzzy
+msgid "<b>Reset your Repository</b>"
+msgstr "<b>Skladište</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:3
+#, fuzzy
+msgid "Reset current HEAD to specified state."
+msgstr "Vrati na staro stavku - poništi promjene"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:4
+#, fuzzy
+msgid "<b>Path</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>Inačica</b>"
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:7
+msgid "<i>Mixed</i> - Reset the index but not the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:8
+msgid ""
+"<i>Soft</i> - Does not touch the index file or working tree at all, \n"
+"but requires them to be in good working order"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:10
+msgid ""
+"<i>Hard</i> - Matches the working tree and index to that of the \n"
+"tree being switched to"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:12
+msgid ""
+"<i>Merge</i> - Resets the index to match the tree recorded by the named "
+"commit,\n"
+"and updates the files that are different between the named commit\n"
+"and the current commit in the working tree"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/reset.xml.h:15
+msgid "None"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:2
+msgid "<b>RabbitVCS</b>"
+msgstr "<b>RabbitVCS</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:3
+msgid "Enable file attributes"
+msgstr "Omogući svojstva datoteka"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:4
+msgid "Enable recursive status checks"
+msgstr "Omogući poniruću provjeru statusa"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:5
+msgid "Enable emblems"
+msgstr "Omogući oznake"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:6
+msgid "Show RabbitVCS debugging tools"
+msgstr "Prikaži RabbitVCS alate za traženje grešaka (debugging)"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:7
+msgid "The debug menu is used to diagnose problems with RabbitVCS itself"
+msgstr "Debug izbornik se koristi za traženje grešaka unutar RabbitVCSa"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:8
+#, fuzzy
+msgid "<b>Version Control Systems</b>"
+msgstr "<b>Informacija o verziji</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:9
+#, fuzzy
+msgid "Enable Subversion"
+msgstr "Omogući oznake"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:10
+msgid "Enable Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:11
+msgid "<b>Language</b>"
+msgstr "<b>Jezik</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:12
+msgid "General"
+msgstr "Općenito"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:13
+msgid "<b>Program used to compare files</b>"
+msgstr "<b>Program za usporedbu datoteka</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "Pregledaj..."
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:15
+#, fuzzy
+msgid "Show new version on the left side"
+msgstr "Prikaži datoteke bez verzije"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:16
+msgid "<b>Configure the program to resolve conflicted files.</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:18
+msgid ""
+"Use the following macros to configure the merge tool:\n"
+"%base       - The common ancestor of the two files to be merged.\n"
+"%mine      - The file you modified in your working copy.\n"
+"%theirs    - The file being merged into your working copy.\n"
+"%merged - The file to store the merged result."
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:23
+msgid "External Programs"
+msgstr "Vanjski programi"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:24
+msgid "<b>URL History</b>"
+msgstr "<b>URL Povijest</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:25
+msgid "Number of URLs to remember"
+msgstr "Broj zapamćenih URL-ova"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:26
+msgid "<b>Log Messages</b>"
+msgstr "<b>Poruke dnevnika</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:27
+msgid "Number of messages to remember"
+msgstr "Broj spremljenih poruka"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:28
+msgid "<b>Authentication</b>"
+msgstr "<b>Prijava korisnika</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:29
+msgid "Clear your authentication information"
+msgstr "Izbriši podatke za prijavu korisnika"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:30
+msgid "Saved Data"
+msgstr "Spremljeni podaci"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:31
+msgid "<b>Logging Options</b>"
+msgstr "<b>Mogućnosti dnevnika</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:32
+msgid "Type:"
+msgstr "Tip:"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:33
+msgid "Minimum level to log"
+msgstr "Najmanja razina logiranja"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:34
+msgid "Logging"
+msgstr "Pisanje dnevnika"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:35
+msgid "<b>Checker type:</b>"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:36
+#, fuzzy
+msgid "<b>Memory usage:</b> "
+msgstr "<b>Poruka</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:38
+#, fuzzy
+msgid "<b>Process ID:</b>"
+msgstr "<b>Svojstva za:</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:39
+#, fuzzy
+msgid "<b>Other Information</b>"
+msgstr "<b>Informacija o verziji</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:40
+#, fuzzy
+msgid "Refresh Information"
+msgstr "<b>Informacija o verziji</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:41
+msgid "Restart Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:42
+msgid "Stop Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:43
+msgid "Status Checker"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:44
+#, fuzzy
+msgid "<b>Configuration Editor</b>"
+msgstr "<b>Pohrani u:</b>"
+
+#: ../rabbitvcs/ui/xml/settings.xml.h:45
+msgid "Git"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/update.xml.h:5
+msgid "Omit Externals"
+msgstr "Preskoči vanjska skladišta"
+
+#: ../rabbitvcs/ui/xml/update.xml.h:6
+msgid "Rollback to specified revision number"
+msgstr ""
+
+#~ msgid "URL/Path"
+#~ msgstr "URL staza"
+
+#~ msgid "<b>Please add your authentication details</b>"
+#~ msgstr "<b>Molim dopunite svojim autentikacijskim podacima</b>"
+
+#~ msgid "Authentication"
+#~ msgstr "Prijava"
+
+#~ msgid "Login:"
+#~ msgstr "Login:"
+
+#~ msgid "Password:"
+#~ msgstr "Zaporka:"
 
 #, fuzzy
-#~ msgid "Annotate"
-#~ msgstr "Pribilježi"
+#~ msgid "<b>Create copy from</b>"
+#~ msgstr "<b>Svojstva za:</b>"
+
+#, fuzzy
+#~ msgid "Destination:"
+#~ msgstr "Prijava"
 
 #, fuzzy
 #~ msgid "Running Merge Command"
@@ -2132,56 +2564,5 @@ msgstr "Prijava"
 #~ msgid "English"
 #~ msgstr "Engleski"
 
-#~ msgid "Load/Refresh"
-#~ msgstr "Osvježi"
-
-#~ msgid "<b>Folder Name</b>"
-#~ msgstr "<b>Ime mape</b>"
-
-#~ msgid "<b>Please provide your ssl certification file</b>"
-#~ msgstr "<b>Molimo, postavite dateteku s ssl certifikatom</b>"
-
-#~ msgid "<span weight=\"bold\" size=\"xx-large\">RabbitVCS Error</span>"
-#~ msgstr "<span weight=\"bold\" size=\"xx-large\">RabbitVCS greška</span>"
-
-#~ msgid "Create Folder..."
-#~ msgstr "Izradi mapu..."
-
-#~ msgid "Issuer:"
-#~ msgstr "Izdavač:"
-
-#~ msgid "Path:"
-#~ msgstr "Putanja:"
-
-#~ msgid "SSL Client Certification"
-#~ msgstr "SSL Client Certification"
-
 #~ msgid "Text Change"
 #~ msgstr "Promjena teksta"
-
-#~ msgid "<b>Affected File(s)</b> (double-click to compare with base)"
-#~ msgstr "<b>Datoteka(e) promjene</b> (dvoklik za usporedbu s osnovom)"
-
-#~ msgid "<b>To Revision</b>"
-#~ msgstr "<b>Do inačice</b>"
-
-#~ msgid "<b>Changed Files</b> (double-click to compare with base)"
-#~ msgstr "<b>Promijenjene datoteke</b> (dvoklik za usporedbu s osnovom)"
-
-#~ msgid "<b>Remote URI:</b>"
-#~ msgstr "<b>Udaljeni URI:</b>"
-
-#~ msgid "<b>Working Copy:</b>"
-#~ msgstr "<b>Radna kopija:</b>"
-
-#~ msgid "Add a new property."
-#~ msgstr "Dodaj novo svojstvo"
-
-#~ msgid "Close this dialog."
-#~ msgstr "Zatvori dijalog."
-
-#~ msgid "Property Editor"
-#~ msgstr "Editor za svojstva"
-
-#~ msgid "Refresh the list of properties."
-#~ msgstr "Osvježi popis svojstava."
