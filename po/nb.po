@@ -2413,6 +2413,11 @@ msgstr "<b>Versjonsinformasjon</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Send inn til:</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+#, fuzzy
+msgid "Include tags"
+msgstr "Inkluder ignorerte filer"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Endre arkiv for arbeidskopien</b>"

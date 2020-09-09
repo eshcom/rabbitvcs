@@ -2389,6 +2389,11 @@ msgstr "<b>Versionsinformation</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Skicka till:</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+#, fuzzy
+msgid "Include tags"
+msgstr "Inkludera ignorerade filer"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Ändra arkiv till din arbetskopia</b>"

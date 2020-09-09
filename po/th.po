@@ -2313,6 +2313,10 @@ msgstr ""
 msgid "<b>Commits to Push</b>"
 msgstr ""
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+msgid "Include tags"
+msgstr ""
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr ""

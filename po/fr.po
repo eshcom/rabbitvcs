@@ -2410,6 +2410,11 @@ msgstr "<b>Information complémentaire</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Envoyer vers :</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+#, fuzzy
+msgid "Include tags"
+msgstr "Inclure les fichiers ignorés"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Changer le dépôt de votre copie de travail</b>"

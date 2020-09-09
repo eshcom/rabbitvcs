@@ -2416,6 +2416,11 @@ msgstr "<b>Verzió információ</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Beküldés</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+#, fuzzy
+msgid "Include tags"
+msgstr "Mellőzött fájlokat tartalmaz"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Tároló cseréje az Ön munkapéldányhoz</b>"

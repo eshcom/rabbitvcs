@@ -2400,6 +2400,11 @@ msgstr "<b>Información de versión</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Confirmar a:</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+#, fuzzy
+msgid "Include tags"
+msgstr "Incluir archivos ignorados"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Cambiar el repositorio de su copia de trabajo</b>"

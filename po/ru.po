@@ -2344,6 +2344,10 @@ msgstr "<b>Информация</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Коммиты для заливки</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+msgid "Include tags"
+msgstr "Включить тэги"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Изменить репозиторий вашей рабочей копии</b>"

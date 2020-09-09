@@ -2472,6 +2472,11 @@ msgstr "<b>Versionsinformationen</b>"
 msgid "<b>Commits to Push</b>"
 msgstr "<b>Übernehmen nach:</b>"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:4
+#, fuzzy
+msgid "Include tags"
+msgstr "Ignorierte Dateien einbeziehen"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Das Projektarchiv der Arbeitskopie ändern</b>"
