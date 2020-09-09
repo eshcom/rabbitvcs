@@ -5,7 +5,7 @@
   <object class="GtkWindow" id="Branch">
     <property name="width_request">550</property>
     <property name="visible">True</property>
-    <property name="title" translatable="yes">Branch/tag</property>
+    <property name="title" translatable="yes">Branch/Tag</property>
     <property name="window_position">center</property>
     <property name="icon_name">rabbitvcs-small</property>
     <signal handler="on_destroy" name="destroy"/>

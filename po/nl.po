@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 15:30+0300\n"
+"POT-Creation-Date: 2020-09-09 14:46+0300\n"
 "PO-Revision-Date: 2010-12-09 15:20+0000\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -77,6 +77,7 @@ msgstr "Extensie"
 #: ../rabbitvcs/ui/add.py:100 ../rabbitvcs/ui/commit.py:127
 #: ../rabbitvcs/ui/lock.py:101 ../rabbitvcs/ui/push.py:112
 #: ../rabbitvcs/ui/revert.py:87 ../rabbitvcs/ui/unlock.py:84
+#: ../rabbitvcs/ui/xml/dialogs/loading.xml.h:1
 msgid "Loading..."
 msgstr "Laden..."
 
@@ -88,7 +89,7 @@ msgstr "%d item(s) gevonden"
 
 #: ../rabbitvcs/ui/add.py:190 ../rabbitvcs/ui/add.py:212
 #: ../rabbitvcs/ui/branches.py:278 ../rabbitvcs/ui/tags.py:276
-#: ../rabbitvcs/ui/widget.py:1294
+#: ../rabbitvcs/ui/widget.py:1294 ../rabbitvcs/ui/xml/add.xml.h:1
 msgid "Add"
 msgstr "Toevoegen"
 
@@ -117,6 +118,7 @@ msgstr "Regel"
 #: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/checkmods.py:172
 #: ../rabbitvcs/ui/log.py:58 ../rabbitvcs/ui/log.py:346
 #: ../rabbitvcs/ui/log.py:596 ../rabbitvcs/ui/widget.py:912
+#: ../rabbitvcs/ui/xml/changes.xml.h:4 ../rabbitvcs/ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Revisie"
 
@@ -163,7 +165,7 @@ msgstr "Patchbestand toegepast"
 msgid "You must supply a destination path."
 msgstr "Een doel pad is verplicht."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/ui/xml/branch.xml.h:1
 msgid "Branch/Tag"
 msgstr "Branch/Tag"
 
@@ -188,6 +190,8 @@ msgid "Branch"
 msgstr "Branch"
 
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:3
+#: ../rabbitvcs/ui/xml/property_page.xml.h:2
 msgid "Name:"
 msgstr "Name:"
 
@@ -210,6 +214,7 @@ msgstr "Opslaan"
 
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
+#: ../rabbitvcs/ui/xml/browser.xml.h:3
 msgid "Revision:"
 msgstr "Revisie:"
 
@@ -343,6 +348,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "De repository URL en doel pad velden zijn beide verplicht."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/ui/xml/checkout.xml.h:1
 msgid "Checkout"
 msgstr "Uitchecken"
 
@@ -367,7 +373,7 @@ msgstr ""
 msgid "Completed Cherry Pick"
 msgstr "Uitchecken voltooid"
 
-#: ../rabbitvcs/ui/clean.py:64
+#: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/ui/xml/clean.xml.h:1
 #, fuzzy
 msgid "Clean"
 msgstr "Opruimen"
@@ -386,7 +392,7 @@ msgstr "Opruimen voltooid"
 msgid "Cleanup"
 msgstr "Opruimen"
 
-#: ../rabbitvcs/ui/cleanup.py:55
+#: ../rabbitvcs/ui/cleanup.py:55 ../rabbitvcs/ui/xml/cleanup.xml.h:1
 msgid "Cleaning Up..."
 msgstr "Wordt opgeruimd..."
 
@@ -412,7 +418,7 @@ msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
 msgstr ""
 
 #: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
-#: ../rabbitvcs/ui/commit.py:416
+#: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/ui/xml/commit.xml.h:1
 msgid "Commit"
 msgstr "Commit"
 
@@ -485,6 +491,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/dialog.py:56 ../rabbitvcs/ui/log.py:347
 #: ../rabbitvcs/ui/log.py:597 ../rabbitvcs/ui/push.py:77
+#: ../rabbitvcs/ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Boodschap"
 
@@ -492,7 +499,7 @@ msgstr "Boodschap"
 msgid "Select a Folder"
 msgstr "Selecteer een map"
 
-#: ../rabbitvcs/ui/dialog.py:129
+#: ../rabbitvcs/ui/dialog.py:129 ../rabbitvcs/ui/xml/log.xml.h:6
 msgid "to"
 msgstr "naar"
 
@@ -505,6 +512,7 @@ msgid "Save As..."
 msgstr "Opslaan als…"
 
 #: ../rabbitvcs/ui/dialog.py:289
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:2
 msgid "Are you sure you want to continue?"
 msgstr "Weet je zeker dat je wil verdergaan?"
 
@@ -550,7 +558,7 @@ msgstr "Importeren — %s"
 msgid "The repository URL field is required."
 msgstr "Het repository URL veld is verplicht."
 
-#: ../rabbitvcs/ui/import.py:64
+#: ../rabbitvcs/ui/import.py:64 ../rabbitvcs/ui/xml/import.xml.h:1
 msgid "Import"
 msgstr "Importeren"
 
@@ -584,6 +592,7 @@ msgid "Log - %s"
 msgstr "Logboek — %s"
 
 #: ../rabbitvcs/ui/log.py:284 ../rabbitvcs/ui/log.py:285
+#: ../rabbitvcs/ui/xml/log.xml.h:5
 msgid "N/A"
 msgstr "N.v.t."
 
@@ -723,6 +732,7 @@ msgid "Completed Merge"
 msgstr "Samenvoegen voltooid"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:1
 msgid "Merge"
 msgstr "Samenvoegen"
 
@@ -796,7 +806,7 @@ msgstr "Niet in staat nieuwe waarde voor eigenschap in te stellen."
 msgid "Repository URL"
 msgstr "Repository-URL"
 
-#: ../rabbitvcs/ui/push.py:98
+#: ../rabbitvcs/ui/push.py:98 ../rabbitvcs/ui/xml/push.xml.h:1
 msgid "Push"
 msgstr "Push"
 
@@ -816,7 +826,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "De 'vanaf' en 'tot' url velden zijn beide verplicht."
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/ui/xml/relocate.xml.h:1
 msgid "Relocate"
 msgstr "Verhuizen"
 
@@ -856,7 +866,7 @@ msgstr "Uitvoeren rename-opdracht…"
 msgid "Completed Rename"
 msgstr "Hernoemen voltooid"
 
-#: ../rabbitvcs/ui/reset.py:93
+#: ../rabbitvcs/ui/reset.py:93 ../rabbitvcs/ui/xml/reset.xml.h:1
 #, fuzzy
 msgid "Reset"
 msgstr "Gereserveerd"
@@ -872,6 +882,7 @@ msgid "Completed Reset"
 msgstr "Terugdraaien voltooid"
 
 #: ../rabbitvcs/ui/revert.py:147 ../rabbitvcs/ui/revert.py:169
+#: ../rabbitvcs/ui/xml/revert.xml.h:1
 msgid "Revert"
 msgstr "Terugdraaien"
 
@@ -884,6 +895,7 @@ msgid "Completed Revert"
 msgstr "Terugdraaien voltooid"
 
 #: ../rabbitvcs/ui/settings.py:44 ../rabbitvcs/vcs/svn/__init__.py:219
+#: ../rabbitvcs/ui/xml/settings.xml.h:37
 msgid "Unknown"
 msgstr "Onbekend"
 
@@ -943,7 +955,7 @@ msgstr "Samenvoegen voltooid"
 msgid "The repository location is a required field."
 msgstr "De repository-locatie is een vereist veld."
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/ui/xml/switch.xml.h:1
 msgid "Switch"
 msgstr "Wisselen"
 
@@ -1007,6 +1019,7 @@ msgid "Completed Unstage"
 msgstr "Update is voltooid"
 
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
+#: ../rabbitvcs/ui/xml/update.xml.h:1
 msgid "Update"
 msgstr "Updaten"
 
@@ -1047,6 +1060,7 @@ msgid "Checking out %s..."
 msgstr "Uitchecken van %s…"
 
 #: ../rabbitvcs/ui/widget.py:911 ../rabbitvcs/ui/widget.py:917
+#: ../rabbitvcs/ui/xml/merge.xml.h:19
 msgid "HEAD"
 msgstr "HEAD"
 
@@ -1067,6 +1081,7 @@ msgid "Branch:"
 msgstr "Branch:"
 
 #: ../rabbitvcs/ui/widget.py:1182
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:4
 msgid "Host:"
 msgstr "Hostcomputer:"
 
@@ -1141,6 +1156,7 @@ msgid "Commit modifications to the repository"
 msgstr "Aanpassingen committen in het repository"
 
 #: ../rabbitvcs/util/contextmenuitems.py:345
+#: ../rabbitvcs/ui/xml/property_page.xml.h:1
 msgid "RabbitVCS"
 msgstr "RabbitVCS"
 
@@ -1158,6 +1174,7 @@ msgid "RabbitVCS Hg"
 msgstr "RabbitVCS"
 
 #: ../rabbitvcs/util/contextmenuitems.py:365
+#: ../rabbitvcs/ui/xml/browser.xml.h:1
 msgid "Repository Browser"
 msgstr "Bladeren door repository"
 
@@ -1269,6 +1286,7 @@ msgid "Schedule an item to be renamed on the repository"
 msgstr "Een item klaarzetten om hernoemd te worden in het repository"
 
 #: ../rabbitvcs/util/contextmenuitems.py:454
+#: ../rabbitvcs/ui/xml/properties.xml.h:7
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -1405,6 +1423,7 @@ msgid "Applies a unified diff file to the working copy"
 msgstr "Past een geünificeerd diff-bestand toe op de werkversie"
 
 #: ../rabbitvcs/util/contextmenuitems.py:566
+#: ../rabbitvcs/ui/xml/properties.xml.h:1
 msgid "Properties"
 msgstr "Eigenschappen"
 
@@ -1421,6 +1440,7 @@ msgid "View help"
 msgstr "Hulp weergeven"
 
 #: ../rabbitvcs/util/contextmenuitems.py:578
+#: ../rabbitvcs/ui/xml/settings.xml.h:1
 msgid "Settings"
 msgstr "Instellingen"
 
@@ -1428,7 +1448,7 @@ msgstr "Instellingen"
 msgid "View or change RabbitVCS settings"
 msgstr "RabbitVCS-instellingen bekijken of wijzigen"
 
-#: ../rabbitvcs/util/contextmenuitems.py:584
+#: ../rabbitvcs/util/contextmenuitems.py:584 ../rabbitvcs/ui/xml/about.xml.h:1
 msgid "About"
 msgstr "Over"
 
@@ -1673,6 +1693,7 @@ msgid "Failed Revert"
 msgstr "Terugdraaien voltooid"
 
 #: ../rabbitvcs/vcs/svn/__init__.py:190
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:3
 #, fuzzy
 msgid "Resolved"
 msgstr "Oplossen"
@@ -1796,13 +1817,121 @@ msgstr "<b>Van Revisie</b>"
 msgid "<b>To Revision</b>"
 msgstr "<b>Naar Revisie</b>"
 
-#: ../rabbitvcs/ui/xml/browser.xml.h:2
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:2
+#, fuzzy
+msgid "<b>From</b>"
+msgstr "<b>Van URL</b>"
+
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:3
+#, fuzzy
+msgid "<b>Will be merged into</b>"
+msgstr "<b>URL waarvandaan samen te voegen</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:2 ../rabbitvcs/ui/xml/checkout.xml.h:2
+#: ../rabbitvcs/ui/xml/import.xml.h:2
+msgid "<b>Repository</b>"
+msgstr "<b>Repository</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:3 ../rabbitvcs/ui/xml/relocate.xml.h:3
+#: ../rabbitvcs/ui/xml/switch.xml.h:3
+msgid "From:"
+msgstr "Van:"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:4 ../rabbitvcs/ui/xml/relocate.xml.h:4
+#: ../rabbitvcs/ui/xml/switch.xml.h:4
+msgid "To:"
+msgstr "Naar:"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:5
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Eigenschappen voor:</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:6 ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>Boodschap Toevoegen</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:7 ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+msgid "Previous Messages"
+msgstr "Vorige boodschappen"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:2 ../rabbitvcs/ui/xml/checkout.xml.h:3
 msgid "URL:"
 msgstr "URL:"
 
-#: ../rabbitvcs/ui/xml/browser.xml.h:4
+#: ../rabbitvcs/ui/xml/browser.xml.h:4 ../rabbitvcs/ui/xml/changes.xml.h:7
 msgid "Load/Refresh"
 msgstr "Laden/verversen"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:1
+#, fuzzy
+msgid "Changes"
+msgstr "Verandering"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:2
+#, fuzzy
+msgid "<b>First:</b>"
+msgstr "<b>Koppelingen</b>"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:3
+#, fuzzy
+msgid "URL"
+msgstr "URL:"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:5
+#, fuzzy
+msgid "<b>Second:</b>"
+msgstr "<b>Revisie</b>"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:6
+#, fuzzy
+msgid "<b>Differences</b> (double-click to compare with base)"
+msgstr "<b>Betrokken bestand(en)</b> (dubbelklik om te vergelijken met basis)"
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:1
+#, fuzzy
+msgid "Check for Modifications"
+msgstr "Controleren op aanpassingen…"
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:2
+msgid "Local"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:3
+msgid "Remote"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:4 ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "Bladeren…"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:5
+#, fuzzy
+msgid "Destination:"
+msgstr "Authenticatie"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:6 ../rabbitvcs/ui/xml/git-update.xml.h:2
+#: ../rabbitvcs/ui/xml/merge.xml.h:22 ../rabbitvcs/ui/xml/reset.xml.h:6
+#: ../rabbitvcs/ui/xml/update.xml.h:3
+msgid "<b>Options</b>"
+msgstr "<b>Opties</b>"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:7 ../rabbitvcs/ui/xml/merge.xml.h:23
+#: ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr "Recursief"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:8 ../rabbitvcs/ui/xml/update.xml.h:5
+msgid "Omit Externals"
+msgstr "Externen overslaan"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:9 ../rabbitvcs/ui/xml/reset.xml.h:5
+#: ../rabbitvcs/ui/xml/switch.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>Revisie</b>"
 
 #: ../rabbitvcs/ui/xml/clean.xml.h:2
 #, fuzzy
@@ -1848,17 +1977,6 @@ msgstr ""
 #: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>Committen naar:</b>"
-
-#: ../rabbitvcs/ui/xml/commit.xml.h:3
-#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
-msgid "<b>Add Message</b>"
-msgstr "<b>Boodschap Toevoegen</b>"
-
-#: ../rabbitvcs/ui/xml/commit.xml.h:4
-#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
-#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
-msgid "Previous Messages"
-msgstr "Vorige boodschappen"
 
 #: ../rabbitvcs/ui/xml/commit.xml.h:5
 msgid "<b>Changed Files</b> (double-click to compare with base)"
@@ -2040,11 +2158,6 @@ msgstr "Authenticatie opslaan"
 msgid "Update Local Repository"
 msgstr "Lokale repository updaten"
 
-#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
-#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
-msgid "<b>Options</b>"
-msgstr "<b>Opties</b>"
-
 #: ../rabbitvcs/ui/xml/git-update.xml.h:3
 msgid "Apply remote changes"
 msgstr ""
@@ -2069,10 +2182,6 @@ msgstr "Negeren"
 #: ../rabbitvcs/ui/xml/ignore.xml.h:2
 msgid "<b>Ignore and exclude files from being tracked</b>"
 msgstr "<b>Bestanden negeren en uitsluiten van gevolgd worden</b>"
-
-#: ../rabbitvcs/ui/xml/import.xml.h:2
-msgid "<b>Repository</b>"
-msgstr "<b>Repository</b>"
 
 #: ../rabbitvcs/ui/xml/import.xml.h:3
 msgid "<b>Import Message</b>"
@@ -2209,10 +2318,6 @@ msgstr "<b>Van: (Samen te voegen URL en revisie)</b>"
 msgid "<b>To: (URL and revision to merge)</b>"
 msgstr "<b>Naar: (samen te voegen URL en revisie)</b>"
 
-#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
-msgid "Recursive"
-msgstr "Recursief"
-
 #: ../rabbitvcs/ui/xml/merge.xml.h:24
 msgid "Ignore ancestry"
 msgstr "Voorgeschiedenis negeren"
@@ -2297,17 +2402,19 @@ msgstr "<b>Informatie over pull</b>"
 msgid "Merge changes into local branch"
 msgstr "Wijzigingen samenvoegen in lokale branch"
 
+#: ../rabbitvcs/ui/xml/push.xml.h:2
+#, fuzzy
+msgid "<b>Push Information</b>"
+msgstr "<b>Informatie over pull</b>"
+
+#: ../rabbitvcs/ui/xml/push.xml.h:3
+#, fuzzy
+msgid "<b>Commits to Push</b>"
+msgstr "<b>Committen naar:</b>"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Het repository van uw werkversie veranderen</b>"
-
-#: ../rabbitvcs/ui/xml/relocate.xml.h:3
-msgid "From:"
-msgstr "Van:"
-
-#: ../rabbitvcs/ui/xml/relocate.xml.h:4
-msgid "To:"
-msgstr "Naar:"
 
 #: ../rabbitvcs/ui/xml/reset.xml.h:2
 #, fuzzy
@@ -2323,10 +2430,6 @@ msgstr "Een item terugzetten naar zijn ongemodificeerde staat"
 #, fuzzy
 msgid "<b>Path</b>"
 msgstr "<b>Tags</b>"
-
-#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
-msgid "<b>Revision</b>"
-msgstr "<b>Revisie</b>"
 
 #: ../rabbitvcs/ui/xml/reset.xml.h:7
 msgid "<i>Mixed</i> - Reset the index but not the working tree"
@@ -2406,10 +2509,6 @@ msgstr "Algemeen"
 #: ../rabbitvcs/ui/xml/settings.xml.h:13
 msgid "<b>Program used to compare files</b>"
 msgstr "<b>Programma voor bestandsvergelijking</b>"
-
-#: ../rabbitvcs/ui/xml/settings.xml.h:14
-msgid "Browse..."
-msgstr "Bladeren…"
 
 #: ../rabbitvcs/ui/xml/settings.xml.h:15
 msgid "Show new version on the left side"
@@ -2516,9 +2615,10 @@ msgstr "<b>Configuratie-editor</b>"
 msgid "Git"
 msgstr "Git"
 
-#: ../rabbitvcs/ui/xml/update.xml.h:5
-msgid "Omit Externals"
-msgstr "Externen overslaan"
+#: ../rabbitvcs/ui/xml/switch.xml.h:2
+#, fuzzy
+msgid "<b>Switch Details</b>"
+msgstr "<b>Branchdetail</b>"
 
 #: ../rabbitvcs/ui/xml/update.xml.h:6
 msgid "Rollback to specified revision number"
@@ -2538,14 +2638,6 @@ msgstr "Terugdraaien naar opgegeven revisienummer"
 
 #~ msgid "Password:"
 #~ msgstr "Wachtwoord:"
-
-#, fuzzy
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Eigenschappen voor:</b>"
-
-#, fuzzy
-#~ msgid "Destination:"
-#~ msgstr "Authenticatie"
 
 #, fuzzy
 #~ msgid "Running Merge Command"

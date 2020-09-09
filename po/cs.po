@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 15:30+0300\n"
+"POT-Creation-Date: 2020-09-09 14:46+0300\n"
 "PO-Revision-Date: 2009-03-27 10:34+0000\n"
 "Last-Translator: Ladislav Prskavec <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -74,6 +74,7 @@ msgstr ""
 #: ../rabbitvcs/ui/add.py:100 ../rabbitvcs/ui/commit.py:127
 #: ../rabbitvcs/ui/lock.py:101 ../rabbitvcs/ui/push.py:112
 #: ../rabbitvcs/ui/revert.py:87 ../rabbitvcs/ui/unlock.py:84
+#: ../rabbitvcs/ui/xml/dialogs/loading.xml.h:1
 msgid "Loading..."
 msgstr "Nahrávám..."
 
@@ -85,7 +86,7 @@ msgstr "Našel %d položek"
 
 #: ../rabbitvcs/ui/add.py:190 ../rabbitvcs/ui/add.py:212
 #: ../rabbitvcs/ui/branches.py:278 ../rabbitvcs/ui/tags.py:276
-#: ../rabbitvcs/ui/widget.py:1294
+#: ../rabbitvcs/ui/widget.py:1294 ../rabbitvcs/ui/xml/add.xml.h:1
 msgid "Add"
 msgstr "Přidat"
 
@@ -114,6 +115,7 @@ msgstr "Řádek"
 #: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/checkmods.py:172
 #: ../rabbitvcs/ui/log.py:58 ../rabbitvcs/ui/log.py:346
 #: ../rabbitvcs/ui/log.py:596 ../rabbitvcs/ui/widget.py:912
+#: ../rabbitvcs/ui/xml/changes.xml.h:4 ../rabbitvcs/ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Revize"
 
@@ -160,7 +162,7 @@ msgstr ""
 msgid "You must supply a destination path."
 msgstr ""
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/ui/xml/branch.xml.h:1
 msgid "Branch/Tag"
 msgstr "Branch/Tag"
 
@@ -189,6 +191,8 @@ msgid "Branch"
 msgstr "Branch/tag"
 
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:3
+#: ../rabbitvcs/ui/xml/property_page.xml.h:2
 #, fuzzy
 msgid "Name:"
 msgstr "Jméno"
@@ -212,6 +216,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
+#: ../rabbitvcs/ui/xml/browser.xml.h:3
 #, fuzzy
 msgid "Revision:"
 msgstr "Revize"
@@ -353,6 +358,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr ""
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/ui/xml/checkout.xml.h:1
 msgid "Checkout"
 msgstr ""
 
@@ -377,7 +383,7 @@ msgstr ""
 msgid "Completed Cherry Pick"
 msgstr "Čištění dokončeno"
 
-#: ../rabbitvcs/ui/clean.py:64
+#: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/ui/xml/clean.xml.h:1
 #, fuzzy
 msgid "Clean"
 msgstr "Vyčistit"
@@ -396,7 +402,7 @@ msgstr "Čištění dokončeno"
 msgid "Cleanup"
 msgstr "Vyčistit"
 
-#: ../rabbitvcs/ui/cleanup.py:55
+#: ../rabbitvcs/ui/cleanup.py:55 ../rabbitvcs/ui/xml/cleanup.xml.h:1
 msgid "Cleaning Up..."
 msgstr "Čistím"
 
@@ -424,7 +430,7 @@ msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
 msgstr ""
 
 #: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
-#: ../rabbitvcs/ui/commit.py:416
+#: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/ui/xml/commit.xml.h:1
 msgid "Commit"
 msgstr "Commit"
 
@@ -492,6 +498,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/dialog.py:56 ../rabbitvcs/ui/log.py:347
 #: ../rabbitvcs/ui/log.py:597 ../rabbitvcs/ui/push.py:77
+#: ../rabbitvcs/ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Zpráva"
 
@@ -499,7 +506,7 @@ msgstr "Zpráva"
 msgid "Select a Folder"
 msgstr "Zvolit adresář"
 
-#: ../rabbitvcs/ui/dialog.py:129
+#: ../rabbitvcs/ui/dialog.py:129 ../rabbitvcs/ui/xml/log.xml.h:6
 msgid "to"
 msgstr ""
 
@@ -512,6 +519,7 @@ msgid "Save As..."
 msgstr ""
 
 #: ../rabbitvcs/ui/dialog.py:289
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:2
 msgid "Are you sure you want to continue?"
 msgstr "Opravdu chcete pokračovat?"
 
@@ -558,7 +566,7 @@ msgstr "Importovat - %s"
 msgid "The repository URL field is required."
 msgstr ""
 
-#: ../rabbitvcs/ui/import.py:64
+#: ../rabbitvcs/ui/import.py:64 ../rabbitvcs/ui/xml/import.xml.h:1
 msgid "Import"
 msgstr "Import"
 
@@ -592,6 +600,7 @@ msgid "Log - %s"
 msgstr "Log - %s"
 
 #: ../rabbitvcs/ui/log.py:284 ../rabbitvcs/ui/log.py:285
+#: ../rabbitvcs/ui/xml/log.xml.h:5
 msgid "N/A"
 msgstr "N/A"
 
@@ -736,6 +745,7 @@ msgid "Completed Merge"
 msgstr ""
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:1
 msgid "Merge"
 msgstr ""
 
@@ -806,7 +816,7 @@ msgstr ""
 msgid "Repository URL"
 msgstr "<b>Repozitory</b>"
 
-#: ../rabbitvcs/ui/push.py:98
+#: ../rabbitvcs/ui/push.py:98 ../rabbitvcs/ui/xml/push.xml.h:1
 msgid "Push"
 msgstr ""
 
@@ -828,7 +838,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "Políčka z a url jsou povinná"
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/ui/xml/relocate.xml.h:1
 msgid "Relocate"
 msgstr "Přesunutí"
 
@@ -870,7 +880,7 @@ msgstr "Spouštím příkaz Přejmenovat"
 msgid "Completed Rename"
 msgstr "Přejmenování dokončeno."
 
-#: ../rabbitvcs/ui/reset.py:93
+#: ../rabbitvcs/ui/reset.py:93 ../rabbitvcs/ui/xml/reset.xml.h:1
 msgid "Reset"
 msgstr ""
 
@@ -885,6 +895,7 @@ msgid "Completed Reset"
 msgstr "Přejmenování dokončeno."
 
 #: ../rabbitvcs/ui/revert.py:147 ../rabbitvcs/ui/revert.py:169
+#: ../rabbitvcs/ui/xml/revert.xml.h:1
 msgid "Revert"
 msgstr ""
 
@@ -897,6 +908,7 @@ msgid "Completed Revert"
 msgstr ""
 
 #: ../rabbitvcs/ui/settings.py:44 ../rabbitvcs/vcs/svn/__init__.py:219
+#: ../rabbitvcs/ui/xml/settings.xml.h:37
 msgid "Unknown"
 msgstr "Neznámé"
 
@@ -955,7 +967,7 @@ msgstr "Aktualizace dokončena."
 msgid "The repository location is a required field."
 msgstr ""
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/ui/xml/switch.xml.h:1
 msgid "Switch"
 msgstr "Switch"
 
@@ -1021,6 +1033,7 @@ msgid "Completed Unstage"
 msgstr "Aktualizace dokončena."
 
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
+#: ../rabbitvcs/ui/xml/update.xml.h:1
 msgid "Update"
 msgstr "Update"
 
@@ -1062,6 +1075,7 @@ msgid "Checking out %s..."
 msgstr ""
 
 #: ../rabbitvcs/ui/widget.py:911 ../rabbitvcs/ui/widget.py:917
+#: ../rabbitvcs/ui/xml/merge.xml.h:19
 msgid "HEAD"
 msgstr "HEAD"
 
@@ -1085,6 +1099,7 @@ msgid "Branch:"
 msgstr "Branch/tag"
 
 #: ../rabbitvcs/ui/widget.py:1182
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:4
 msgid "Host:"
 msgstr "Host"
 
@@ -1160,6 +1175,7 @@ msgid "Commit modifications to the repository"
 msgstr "Commit změn do repozitory"
 
 #: ../rabbitvcs/util/contextmenuitems.py:345
+#: ../rabbitvcs/ui/xml/property_page.xml.h:1
 msgid "RabbitVCS"
 msgstr "RabbitVCS"
 
@@ -1179,6 +1195,7 @@ msgid "RabbitVCS Hg"
 msgstr "RabbitVCS"
 
 #: ../rabbitvcs/util/contextmenuitems.py:365
+#: ../rabbitvcs/ui/xml/browser.xml.h:1
 #, fuzzy
 msgid "Repository Browser"
 msgstr "Cesty k repozitory vymazány."
@@ -1290,6 +1307,7 @@ msgid "Schedule an item to be renamed on the repository"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:454
+#: ../rabbitvcs/ui/xml/properties.xml.h:7
 msgid "Delete"
 msgstr "Smazat"
 
@@ -1425,6 +1443,7 @@ msgid "Applies a unified diff file to the working copy"
 msgstr ""
 
 #: ../rabbitvcs/util/contextmenuitems.py:566
+#: ../rabbitvcs/ui/xml/properties.xml.h:1
 msgid "Properties"
 msgstr "Vlastnosti"
 
@@ -1441,6 +1460,7 @@ msgid "View help"
 msgstr "Zobrazit nápovědu"
 
 #: ../rabbitvcs/util/contextmenuitems.py:578
+#: ../rabbitvcs/ui/xml/settings.xml.h:1
 msgid "Settings"
 msgstr "Nastavení"
 
@@ -1448,7 +1468,7 @@ msgstr "Nastavení"
 msgid "View or change RabbitVCS settings"
 msgstr ""
 
-#: ../rabbitvcs/util/contextmenuitems.py:584
+#: ../rabbitvcs/util/contextmenuitems.py:584 ../rabbitvcs/ui/xml/about.xml.h:1
 msgid "About"
 msgstr ""
 
@@ -1689,6 +1709,7 @@ msgid "Failed Revert"
 msgstr ""
 
 #: ../rabbitvcs/vcs/svn/__init__.py:190
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:3
 msgid "Resolved"
 msgstr ""
 
@@ -1804,14 +1825,122 @@ msgstr "<b>Revize</b>"
 msgid "<b>To Revision</b>"
 msgstr "<b>Revize</b>"
 
-#: ../rabbitvcs/ui/xml/browser.xml.h:2
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:2
+#, fuzzy
+msgid "<b>From</b>"
+msgstr "<b>Z URL</b>"
+
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:3
+#, fuzzy
+msgid "<b>Will be merged into</b>"
+msgstr "<b>Vlastnosti pro:</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:2 ../rabbitvcs/ui/xml/checkout.xml.h:2
+#: ../rabbitvcs/ui/xml/import.xml.h:2
+msgid "<b>Repository</b>"
+msgstr "<b>Repozitory</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:3 ../rabbitvcs/ui/xml/relocate.xml.h:3
+#: ../rabbitvcs/ui/xml/switch.xml.h:3
+msgid "From:"
+msgstr "Od:"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:4 ../rabbitvcs/ui/xml/relocate.xml.h:4
+#: ../rabbitvcs/ui/xml/switch.xml.h:4
+msgid "To:"
+msgstr "Do:"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:5
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Vlastnosti pro:</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:6 ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>Přidat zprávu</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:7 ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+msgid "Previous Messages"
+msgstr "Předchozí zprávy"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:2 ../rabbitvcs/ui/xml/checkout.xml.h:3
 msgid "URL:"
 msgstr "URL:"
 
-#: ../rabbitvcs/ui/xml/browser.xml.h:4
+#: ../rabbitvcs/ui/xml/browser.xml.h:4 ../rabbitvcs/ui/xml/changes.xml.h:7
 #, fuzzy
 msgid "Load/Refresh"
 msgstr "Obnovit"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:1
+#, fuzzy
+msgid "Changes"
+msgstr "Změněno"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:2
+#, fuzzy
+msgid "<b>First:</b>"
+msgstr "<b>Odkazy</b>"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:3
+#, fuzzy
+msgid "URL"
+msgstr "URL:"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:5
+#, fuzzy
+msgid "<b>Second:</b>"
+msgstr "<b>Revize</b>"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:6
+msgid "<b>Differences</b> (double-click to compare with base)"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:1
+#, fuzzy
+msgid "Check for Modifications"
+msgstr "Kontrola certifikátu"
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:2
+msgid "Local"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:3
+msgid "Remote"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:4 ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "Procházet..."
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:5
+#, fuzzy
+msgid "Destination:"
+msgstr "Authentikace"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:6 ../rabbitvcs/ui/xml/git-update.xml.h:2
+#: ../rabbitvcs/ui/xml/merge.xml.h:22 ../rabbitvcs/ui/xml/reset.xml.h:6
+#: ../rabbitvcs/ui/xml/update.xml.h:3
+msgid "<b>Options</b>"
+msgstr "<b>Volby</b>"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:7 ../rabbitvcs/ui/xml/merge.xml.h:23
+#: ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:8 ../rabbitvcs/ui/xml/update.xml.h:5
+#, fuzzy
+msgid "Omit Externals"
+msgstr "Externí"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:9 ../rabbitvcs/ui/xml/reset.xml.h:5
+#: ../rabbitvcs/ui/xml/switch.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>Revize</b>"
 
 #: ../rabbitvcs/ui/xml/clean.xml.h:2
 #, fuzzy
@@ -1852,17 +1981,6 @@ msgstr ""
 #: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>Commit do:</b>"
-
-#: ../rabbitvcs/ui/xml/commit.xml.h:3
-#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
-msgid "<b>Add Message</b>"
-msgstr "<b>Přidat zprávu</b>"
-
-#: ../rabbitvcs/ui/xml/commit.xml.h:4
-#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
-#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
-msgid "Previous Messages"
-msgstr "Předchozí zprávy"
 
 #: ../rabbitvcs/ui/xml/commit.xml.h:5
 msgid "<b>Changed Files</b> (double-click to compare with base)"
@@ -2049,11 +2167,6 @@ msgstr "Uložit autentikaci"
 msgid "Update Local Repository"
 msgstr "Aktualizace na revizi"
 
-#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
-#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
-msgid "<b>Options</b>"
-msgstr "<b>Volby</b>"
-
 #: ../rabbitvcs/ui/xml/git-update.xml.h:3
 msgid "Apply remote changes"
 msgstr ""
@@ -2077,10 +2190,6 @@ msgstr ""
 #: ../rabbitvcs/ui/xml/ignore.xml.h:2
 msgid "<b>Ignore and exclude files from being tracked</b>"
 msgstr ""
-
-#: ../rabbitvcs/ui/xml/import.xml.h:2
-msgid "<b>Repository</b>"
-msgstr "<b>Repozitory</b>"
 
 #: ../rabbitvcs/ui/xml/import.xml.h:3
 #, fuzzy
@@ -2217,10 +2326,6 @@ msgstr ""
 msgid "<b>To: (URL and revision to merge)</b>"
 msgstr ""
 
-#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
-msgid "Recursive"
-msgstr ""
-
 #: ../rabbitvcs/ui/xml/merge.xml.h:24
 msgid "Ignore ancestry"
 msgstr ""
@@ -2313,17 +2418,19 @@ msgstr "<b>Informace o verzi</b>"
 msgid "Merge changes into local branch"
 msgstr ""
 
+#: ../rabbitvcs/ui/xml/push.xml.h:2
+#, fuzzy
+msgid "<b>Push Information</b>"
+msgstr "<b>Informace o verzi</b>"
+
+#: ../rabbitvcs/ui/xml/push.xml.h:3
+#, fuzzy
+msgid "<b>Commits to Push</b>"
+msgstr "<b>Commit do:</b>"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr ""
-
-#: ../rabbitvcs/ui/xml/relocate.xml.h:3
-msgid "From:"
-msgstr "Od:"
-
-#: ../rabbitvcs/ui/xml/relocate.xml.h:4
-msgid "To:"
-msgstr "Do:"
 
 #: ../rabbitvcs/ui/xml/reset.xml.h:2
 #, fuzzy
@@ -2338,10 +2445,6 @@ msgstr ""
 #, fuzzy
 msgid "<b>Path</b>"
 msgstr "<b>Volby</b>"
-
-#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
-msgid "<b>Revision</b>"
-msgstr "<b>Revize</b>"
 
 #: ../rabbitvcs/ui/xml/reset.xml.h:7
 msgid "<i>Mixed</i> - Reset the index but not the working tree"
@@ -2419,10 +2522,6 @@ msgstr "Obecné"
 #: ../rabbitvcs/ui/xml/settings.xml.h:13
 msgid "<b>Program used to compare files</b>"
 msgstr ""
-
-#: ../rabbitvcs/ui/xml/settings.xml.h:14
-msgid "Browse..."
-msgstr "Procházet..."
 
 #: ../rabbitvcs/ui/xml/settings.xml.h:15
 msgid "Show new version on the left side"
@@ -2538,10 +2637,10 @@ msgstr "<b>Commit do:</b>"
 msgid "Git"
 msgstr ""
 
-#: ../rabbitvcs/ui/xml/update.xml.h:5
+#: ../rabbitvcs/ui/xml/switch.xml.h:2
 #, fuzzy
-msgid "Omit Externals"
-msgstr "Externí"
+msgid "<b>Switch Details</b>"
+msgstr "<b>Upravit vlastnost</b>"
 
 #: ../rabbitvcs/ui/xml/update.xml.h:6
 #, fuzzy
@@ -2559,14 +2658,6 @@ msgstr "Aktualizace na revizi"
 
 #~ msgid "Password:"
 #~ msgstr "Heslo:"
-
-#, fuzzy
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Vlastnosti pro:</b>"
-
-#, fuzzy
-#~ msgid "Destination:"
-#~ msgstr "Authentikace"
 
 #, fuzzy
 #~ msgid "Running Merge Command"

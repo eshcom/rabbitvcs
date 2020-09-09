@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 15:30+0300\n"
+"POT-Creation-Date: 2020-09-09 14:46+0300\n"
 "PO-Revision-Date: 2010-03-14 08:38+0000\n"
 "Last-Translator: Arne <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -74,6 +74,7 @@ msgstr "Filetternavn"
 #: ../rabbitvcs/ui/add.py:100 ../rabbitvcs/ui/commit.py:127
 #: ../rabbitvcs/ui/lock.py:101 ../rabbitvcs/ui/push.py:112
 #: ../rabbitvcs/ui/revert.py:87 ../rabbitvcs/ui/unlock.py:84
+#: ../rabbitvcs/ui/xml/dialogs/loading.xml.h:1
 msgid "Loading..."
 msgstr "Laster..."
 
@@ -85,7 +86,7 @@ msgstr "Funnet %d element(er)"
 
 #: ../rabbitvcs/ui/add.py:190 ../rabbitvcs/ui/add.py:212
 #: ../rabbitvcs/ui/branches.py:278 ../rabbitvcs/ui/tags.py:276
-#: ../rabbitvcs/ui/widget.py:1294
+#: ../rabbitvcs/ui/widget.py:1294 ../rabbitvcs/ui/xml/add.xml.h:1
 msgid "Add"
 msgstr "Legg til"
 
@@ -114,6 +115,7 @@ msgstr "Linje"
 #: ../rabbitvcs/ui/browser.py:91 ../rabbitvcs/ui/checkmods.py:172
 #: ../rabbitvcs/ui/log.py:58 ../rabbitvcs/ui/log.py:346
 #: ../rabbitvcs/ui/log.py:596 ../rabbitvcs/ui/widget.py:912
+#: ../rabbitvcs/ui/xml/changes.xml.h:4 ../rabbitvcs/ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Revisjon"
 
@@ -160,7 +162,7 @@ msgstr "Lappefil anvendt"
 msgid "You must supply a destination path."
 msgstr "Du må oppgi en målsti."
 
-#: ../rabbitvcs/ui/branch.py:97
+#: ../rabbitvcs/ui/branch.py:97 ../rabbitvcs/ui/xml/branch.xml.h:1
 msgid "Branch/Tag"
 msgstr "Gren/merke"
 
@@ -185,6 +187,8 @@ msgid "Branch"
 msgstr ""
 
 #: ../rabbitvcs/ui/branches.py:100 ../rabbitvcs/ui/tags.py:100
+#: ../rabbitvcs/ui/xml/dialogs/name_email_prompt.xml.h:3
+#: ../rabbitvcs/ui/xml/property_page.xml.h:2
 msgid "Name:"
 msgstr ""
 
@@ -207,6 +211,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/branches.py:158 ../rabbitvcs/ui/merge.py:467
 #: ../rabbitvcs/ui/tags.py:111 ../rabbitvcs/ui/tags.py:185
+#: ../rabbitvcs/ui/xml/browser.xml.h:3
 msgid "Revision:"
 msgstr "Revisjon:"
 
@@ -340,6 +345,7 @@ msgid "The repository URL and destination path are both required fields."
 msgstr "ArkivURL og målsti er begge påkrevde felt."
 
 #: ../rabbitvcs/ui/checkout.py:158 ../rabbitvcs/ui/updateto.py:127
+#: ../rabbitvcs/ui/xml/checkout.xml.h:1
 msgid "Checkout"
 msgstr "Sjekk ut"
 
@@ -364,7 +370,7 @@ msgstr ""
 msgid "Completed Cherry Pick"
 msgstr "Utsjekk fullført"
 
-#: ../rabbitvcs/ui/clean.py:64
+#: ../rabbitvcs/ui/clean.py:64 ../rabbitvcs/ui/xml/clean.xml.h:1
 #, fuzzy
 msgid "Clean"
 msgstr "Rensk opp"
@@ -383,7 +389,7 @@ msgstr "Opprensking fullført"
 msgid "Cleanup"
 msgstr "Rensk opp"
 
-#: ../rabbitvcs/ui/cleanup.py:55
+#: ../rabbitvcs/ui/cleanup.py:55 ../rabbitvcs/ui/xml/cleanup.xml.h:1
 msgid "Cleaning Up..."
 msgstr "Rensker opp..."
 
@@ -409,7 +415,7 @@ msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
 msgstr ""
 
 #: ../rabbitvcs/ui/commit.py:302 ../rabbitvcs/ui/commit.py:362
-#: ../rabbitvcs/ui/commit.py:416
+#: ../rabbitvcs/ui/commit.py:416 ../rabbitvcs/ui/xml/commit.xml.h:1
 msgid "Commit"
 msgstr "RVCS Send inn"
 
@@ -481,6 +487,7 @@ msgstr ""
 
 #: ../rabbitvcs/ui/dialog.py:56 ../rabbitvcs/ui/log.py:347
 #: ../rabbitvcs/ui/log.py:597 ../rabbitvcs/ui/push.py:77
+#: ../rabbitvcs/ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Melding"
 
@@ -488,7 +495,7 @@ msgstr "Melding"
 msgid "Select a Folder"
 msgstr "Velg en mappe"
 
-#: ../rabbitvcs/ui/dialog.py:129
+#: ../rabbitvcs/ui/dialog.py:129 ../rabbitvcs/ui/xml/log.xml.h:6
 msgid "to"
 msgstr "til"
 
@@ -501,6 +508,7 @@ msgid "Save As..."
 msgstr "Lagre som..."
 
 #: ../rabbitvcs/ui/dialog.py:289
+#: ../rabbitvcs/ui/xml/dialogs/confirmation.xml.h:2
 msgid "Are you sure you want to continue?"
 msgstr "Er du sikker på at du vil fortsette?"
 
@@ -546,7 +554,7 @@ msgstr "Importer - %s"
 msgid "The repository URL field is required."
 msgstr "ArkivURLfelt er påkrevet"
 
-#: ../rabbitvcs/ui/import.py:64
+#: ../rabbitvcs/ui/import.py:64 ../rabbitvcs/ui/xml/import.xml.h:1
 msgid "Import"
 msgstr "Import"
 
@@ -580,6 +588,7 @@ msgid "Log - %s"
 msgstr "Logg - %s"
 
 #: ../rabbitvcs/ui/log.py:284 ../rabbitvcs/ui/log.py:285
+#: ../rabbitvcs/ui/xml/log.xml.h:5
 msgid "N/A"
 msgstr "I/T"
 
@@ -718,6 +727,7 @@ msgid "Completed Merge"
 msgstr "Fullført fletting"
 
 #: ../rabbitvcs/ui/merge.py:105 ../rabbitvcs/ui/merge.py:517
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:1
 msgid "Merge"
 msgstr "Flett"
 
@@ -789,7 +799,7 @@ msgstr "Klarer ikke å sette ny verdi for egenskap."
 msgid "Repository URL"
 msgstr ""
 
-#: ../rabbitvcs/ui/push.py:98
+#: ../rabbitvcs/ui/push.py:98 ../rabbitvcs/ui/xml/push.xml.h:1
 msgid "Push"
 msgstr ""
 
@@ -809,7 +819,7 @@ msgstr ""
 msgid "The from and to url fields are both required."
 msgstr "Fra og til -URLfeltene er begge påkrevet."
 
-#: ../rabbitvcs/ui/relocate.py:68
+#: ../rabbitvcs/ui/relocate.py:68 ../rabbitvcs/ui/xml/relocate.xml.h:1
 msgid "Relocate"
 msgstr "Omplasser"
 
@@ -849,7 +859,7 @@ msgstr "Kjører omnavningskommando..."
 msgid "Completed Rename"
 msgstr "Fullført omnavning"
 
-#: ../rabbitvcs/ui/reset.py:93
+#: ../rabbitvcs/ui/reset.py:93 ../rabbitvcs/ui/xml/reset.xml.h:1
 #, fuzzy
 msgid "Reset"
 msgstr "Reservert"
@@ -865,6 +875,7 @@ msgid "Completed Reset"
 msgstr "Fullført tilbakestill"
 
 #: ../rabbitvcs/ui/revert.py:147 ../rabbitvcs/ui/revert.py:169
+#: ../rabbitvcs/ui/xml/revert.xml.h:1
 msgid "Revert"
 msgstr "Tilbakestill"
 
@@ -877,6 +888,7 @@ msgid "Completed Revert"
 msgstr "Fullført tilbakestill"
 
 #: ../rabbitvcs/ui/settings.py:44 ../rabbitvcs/vcs/svn/__init__.py:219
+#: ../rabbitvcs/ui/xml/settings.xml.h:37
 msgid "Unknown"
 msgstr "Ukjent"
 
@@ -935,7 +947,7 @@ msgstr "Fullført fletting"
 msgid "The repository location is a required field."
 msgstr "Arkivplasseringen er et påkrevet felt."
 
-#: ../rabbitvcs/ui/switch.py:67
+#: ../rabbitvcs/ui/switch.py:67 ../rabbitvcs/ui/xml/switch.xml.h:1
 msgid "Switch"
 msgstr "Flytt"
 
@@ -999,6 +1011,7 @@ msgid "Completed Unstage"
 msgstr "Fullført oppdatering"
 
 #: ../rabbitvcs/ui/update.py:56 ../rabbitvcs/ui/update.py:98
+#: ../rabbitvcs/ui/xml/update.xml.h:1
 msgid "Update"
 msgstr "RVCS Oppdater"
 
@@ -1039,6 +1052,7 @@ msgid "Checking out %s..."
 msgstr ""
 
 #: ../rabbitvcs/ui/widget.py:911 ../rabbitvcs/ui/widget.py:917
+#: ../rabbitvcs/ui/xml/merge.xml.h:19
 msgid "HEAD"
 msgstr "HODE"
 
@@ -1059,6 +1073,7 @@ msgid "Branch:"
 msgstr ""
 
 #: ../rabbitvcs/ui/widget.py:1182
+#: ../rabbitvcs/ui/xml/dialogs/certificate.xml.h:4
 msgid "Host:"
 msgstr "Vert:"
 
@@ -1133,6 +1148,7 @@ msgid "Commit modifications to the repository"
 msgstr "Send inn endringer til et arkiv"
 
 #: ../rabbitvcs/util/contextmenuitems.py:345
+#: ../rabbitvcs/ui/xml/property_page.xml.h:1
 msgid "RabbitVCS"
 msgstr "RabbitVCS"
 
@@ -1150,6 +1166,7 @@ msgid "RabbitVCS Hg"
 msgstr "RabbitVCS"
 
 #: ../rabbitvcs/util/contextmenuitems.py:365
+#: ../rabbitvcs/ui/xml/browser.xml.h:1
 msgid "Repository Browser"
 msgstr "Arkivleser"
 
@@ -1262,6 +1279,7 @@ msgid "Schedule an item to be renamed on the repository"
 msgstr "Tidsplanlegg et element for omnavning i arkivet"
 
 #: ../rabbitvcs/util/contextmenuitems.py:454
+#: ../rabbitvcs/ui/xml/properties.xml.h:7
 msgid "Delete"
 msgstr "Slett"
 
@@ -1397,6 +1415,7 @@ msgid "Applies a unified diff file to the working copy"
 msgstr "Anvend en samlet differansefil på arbeidskopien"
 
 #: ../rabbitvcs/util/contextmenuitems.py:566
+#: ../rabbitvcs/ui/xml/properties.xml.h:1
 msgid "Properties"
 msgstr "Egenskaper"
 
@@ -1413,6 +1432,7 @@ msgid "View help"
 msgstr "Vis hjelp"
 
 #: ../rabbitvcs/util/contextmenuitems.py:578
+#: ../rabbitvcs/ui/xml/settings.xml.h:1
 msgid "Settings"
 msgstr "Innstillinger"
 
@@ -1420,7 +1440,7 @@ msgstr "Innstillinger"
 msgid "View or change RabbitVCS settings"
 msgstr "Vis eller endre RabbitVCS innstillinger"
 
-#: ../rabbitvcs/util/contextmenuitems.py:584
+#: ../rabbitvcs/util/contextmenuitems.py:584 ../rabbitvcs/ui/xml/about.xml.h:1
 msgid "About"
 msgstr "Om"
 
@@ -1662,6 +1682,7 @@ msgid "Failed Revert"
 msgstr "Fullført tilbakestill"
 
 #: ../rabbitvcs/vcs/svn/__init__.py:190
+#: ../rabbitvcs/ui/xml/dialogs/mark_resolved_prompt.xml.h:3
 #, fuzzy
 msgid "Resolved"
 msgstr "Løs"
@@ -1786,13 +1807,121 @@ msgstr "<b>Fra revisjon</b>"
 msgid "<b>To Revision</b>"
 msgstr "<b>Til revisjon</b>"
 
-#: ../rabbitvcs/ui/xml/browser.xml.h:2
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:2
+#, fuzzy
+msgid "<b>From</b>"
+msgstr "<b>Fra URL</b>"
+
+#: ../rabbitvcs/ui/xml/branch-merge.xml.h:3
+#, fuzzy
+msgid "<b>Will be merged into</b>"
+msgstr "<b>URL det skal flettes fra</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:2 ../rabbitvcs/ui/xml/checkout.xml.h:2
+#: ../rabbitvcs/ui/xml/import.xml.h:2
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:3 ../rabbitvcs/ui/xml/relocate.xml.h:3
+#: ../rabbitvcs/ui/xml/switch.xml.h:3
+msgid "From:"
+msgstr "Fra:"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:4 ../rabbitvcs/ui/xml/relocate.xml.h:4
+#: ../rabbitvcs/ui/xml/switch.xml.h:4
+msgid "To:"
+msgstr "Til:"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:5
+#, fuzzy
+msgid "<b>Create copy from</b>"
+msgstr "<b>Egenskaper for:</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:6 ../rabbitvcs/ui/xml/commit.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
+msgid "<b>Add Message</b>"
+msgstr "<b>Legg til melding</b>"
+
+#: ../rabbitvcs/ui/xml/branch.xml.h:7 ../rabbitvcs/ui/xml/commit.xml.h:4
+#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
+#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
+msgid "Previous Messages"
+msgstr "Tidligere meldinger"
+
+#: ../rabbitvcs/ui/xml/browser.xml.h:2 ../rabbitvcs/ui/xml/checkout.xml.h:3
 msgid "URL:"
 msgstr "URL:"
 
-#: ../rabbitvcs/ui/xml/browser.xml.h:4
+#: ../rabbitvcs/ui/xml/browser.xml.h:4 ../rabbitvcs/ui/xml/changes.xml.h:7
 msgid "Load/Refresh"
 msgstr "Last/oppdater"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:1
+#, fuzzy
+msgid "Changes"
+msgstr "Endre"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:2
+#, fuzzy
+msgid "<b>First:</b>"
+msgstr "<b>Lenker</b>"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:3
+#, fuzzy
+msgid "URL"
+msgstr "URL:"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:5
+#, fuzzy
+msgid "<b>Second:</b>"
+msgstr "<b>Revisjon</b>"
+
+#: ../rabbitvcs/ui/xml/changes.xml.h:6
+#, fuzzy
+msgid "<b>Differences</b> (double-click to compare with base)"
+msgstr "<b>Berørte fil(er)</b> (dobbeltklikk for å sammenlikne med basen)"
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:1
+#, fuzzy
+msgid "Check for Modifications"
+msgstr "Sjekk for endringer..."
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:2
+msgid "Local"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkmods.xml.h:3
+msgid "Remote"
+msgstr ""
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:4 ../rabbitvcs/ui/xml/settings.xml.h:14
+msgid "Browse..."
+msgstr "Bla gjennom..."
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:5
+#, fuzzy
+msgid "Destination:"
+msgstr "Autentisering"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:6 ../rabbitvcs/ui/xml/git-update.xml.h:2
+#: ../rabbitvcs/ui/xml/merge.xml.h:22 ../rabbitvcs/ui/xml/reset.xml.h:6
+#: ../rabbitvcs/ui/xml/update.xml.h:3
+msgid "<b>Options</b>"
+msgstr "<b>Alternativer</b>"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:7 ../rabbitvcs/ui/xml/merge.xml.h:23
+#: ../rabbitvcs/ui/xml/update.xml.h:4
+msgid "Recursive"
+msgstr "Rekursiv"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:8 ../rabbitvcs/ui/xml/update.xml.h:5
+msgid "Omit Externals"
+msgstr "Utelat eksterne"
+
+#: ../rabbitvcs/ui/xml/checkout.xml.h:9 ../rabbitvcs/ui/xml/reset.xml.h:5
+#: ../rabbitvcs/ui/xml/switch.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
+msgid "<b>Revision</b>"
+msgstr "<b>Revisjon</b>"
 
 #: ../rabbitvcs/ui/xml/clean.xml.h:2
 #, fuzzy
@@ -1838,17 +1967,6 @@ msgstr ""
 #: ../rabbitvcs/ui/xml/commit.xml.h:2
 msgid "<b>Commit to:</b>"
 msgstr "<b>Send inn til:</b>"
-
-#: ../rabbitvcs/ui/xml/commit.xml.h:3
-#: ../rabbitvcs/ui/xml/dialogs/create_folder.xml.h:3
-msgid "<b>Add Message</b>"
-msgstr "<b>Legg til melding</b>"
-
-#: ../rabbitvcs/ui/xml/commit.xml.h:4
-#: ../rabbitvcs/ui/xml/dialogs/previous_messages.xml.h:1
-#: ../rabbitvcs/ui/xml/import.xml.h:4 ../rabbitvcs/ui/xml/lock.xml.h:3
-msgid "Previous Messages"
-msgstr "Tidligere meldinger"
 
 #: ../rabbitvcs/ui/xml/commit.xml.h:5
 msgid "<b>Changed Files</b> (double-click to compare with base)"
@@ -2032,11 +2150,6 @@ msgstr "Lagre autentisering"
 msgid "Update Local Repository"
 msgstr "Oppdater til revisjon"
 
-#: ../rabbitvcs/ui/xml/git-update.xml.h:2 ../rabbitvcs/ui/xml/merge.xml.h:22
-#: ../rabbitvcs/ui/xml/reset.xml.h:6 ../rabbitvcs/ui/xml/update.xml.h:3
-msgid "<b>Options</b>"
-msgstr "<b>Alternativer</b>"
-
 #: ../rabbitvcs/ui/xml/git-update.xml.h:3
 msgid "Apply remote changes"
 msgstr ""
@@ -2060,10 +2173,6 @@ msgstr ""
 #: ../rabbitvcs/ui/xml/ignore.xml.h:2
 msgid "<b>Ignore and exclude files from being tracked</b>"
 msgstr ""
-
-#: ../rabbitvcs/ui/xml/import.xml.h:2
-msgid "<b>Repository</b>"
-msgstr "<b>Arkiv</b>"
 
 #: ../rabbitvcs/ui/xml/import.xml.h:3
 msgid "<b>Import Message</b>"
@@ -2207,10 +2316,6 @@ msgstr "<b>Fra: (URL og revisjon som skal flettes)</b>"
 msgid "<b>To: (URL and revision to merge)</b>"
 msgstr "<b>Til: (URL og revisjon som skal flettes)</b>"
 
-#: ../rabbitvcs/ui/xml/merge.xml.h:23 ../rabbitvcs/ui/xml/update.xml.h:4
-msgid "Recursive"
-msgstr "Rekursiv"
-
 #: ../rabbitvcs/ui/xml/merge.xml.h:24
 msgid "Ignore ancestry"
 msgstr "Ignorer stamfedre"
@@ -2298,17 +2403,19 @@ msgstr "<b>Versjonsinformasjon</b>"
 msgid "Merge changes into local branch"
 msgstr ""
 
+#: ../rabbitvcs/ui/xml/push.xml.h:2
+#, fuzzy
+msgid "<b>Push Information</b>"
+msgstr "<b>Versjonsinformasjon</b>"
+
+#: ../rabbitvcs/ui/xml/push.xml.h:3
+#, fuzzy
+msgid "<b>Commits to Push</b>"
+msgstr "<b>Send inn til:</b>"
+
 #: ../rabbitvcs/ui/xml/relocate.xml.h:2
 msgid "<b>Change the repository of your working copy</b>"
 msgstr "<b>Endre arkiv for arbeidskopien</b>"
-
-#: ../rabbitvcs/ui/xml/relocate.xml.h:3
-msgid "From:"
-msgstr "Fra:"
-
-#: ../rabbitvcs/ui/xml/relocate.xml.h:4
-msgid "To:"
-msgstr "Til:"
 
 #: ../rabbitvcs/ui/xml/reset.xml.h:2
 #, fuzzy
@@ -2324,10 +2431,6 @@ msgstr "Tilbakestill et element til dens uendrere tilstand"
 #, fuzzy
 msgid "<b>Path</b>"
 msgstr "<b>RabbitVCS</b>"
-
-#: ../rabbitvcs/ui/xml/reset.xml.h:5 ../rabbitvcs/ui/xml/update.xml.h:2
-msgid "<b>Revision</b>"
-msgstr "<b>Revisjon</b>"
 
 #: ../rabbitvcs/ui/xml/reset.xml.h:7
 msgid "<i>Mixed</i> - Reset the index but not the working tree"
@@ -2407,10 +2510,6 @@ msgstr "Generelt"
 #: ../rabbitvcs/ui/xml/settings.xml.h:13
 msgid "<b>Program used to compare files</b>"
 msgstr "<b>Program benyttet for å sammenlikne filer</b>"
-
-#: ../rabbitvcs/ui/xml/settings.xml.h:14
-msgid "Browse..."
-msgstr "Bla gjennom..."
 
 #: ../rabbitvcs/ui/xml/settings.xml.h:15
 #, fuzzy
@@ -2523,9 +2622,10 @@ msgstr "<b>Send inn til:</b>"
 msgid "Git"
 msgstr ""
 
-#: ../rabbitvcs/ui/xml/update.xml.h:5
-msgid "Omit Externals"
-msgstr "Utelat eksterne"
+#: ../rabbitvcs/ui/xml/switch.xml.h:2
+#, fuzzy
+msgid "<b>Switch Details</b>"
+msgstr "<b>Sertifikatdetaljer</b>"
 
 #: ../rabbitvcs/ui/xml/update.xml.h:6
 msgid "Rollback to specified revision number"
@@ -2546,14 +2646,6 @@ msgstr ""
 
 #~ msgid "Password:"
 #~ msgstr "Passord:"
-
-#, fuzzy
-#~ msgid "<b>Create copy from</b>"
-#~ msgstr "<b>Egenskaper for:</b>"
-
-#, fuzzy
-#~ msgid "Destination:"
-#~ msgstr "Autentisering"
 
 #, fuzzy
 #~ msgid "Running Merge Command"
