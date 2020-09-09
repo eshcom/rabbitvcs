@@ -2,9 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
-
-
-
   <object class="GtkDialog" id="OneLineTextChange">
     <property name="width_request">500</property>
     <property name="border_width">5</property>

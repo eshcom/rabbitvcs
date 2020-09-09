@@ -2,10 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
-
-
-
-
   <object class="GtkDialog" id="NameEmailPrompt">
     <property name="width_request">400</property>
     <property name="border_width">12</property>

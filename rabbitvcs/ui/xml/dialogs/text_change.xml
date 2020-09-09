@@ -2,10 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
-
-
-
-
   <object class="GtkDialog" id="TextChange">
     <property name="width_request">350</property>
     <property name="height_request">200</property>

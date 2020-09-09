@@ -2,8 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
-
-
   <object class="GtkDialog" id="CreateFolder">
     <property name="width_request">320</property>
     <property name="height_request">240</property>

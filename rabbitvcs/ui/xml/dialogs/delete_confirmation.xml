@@ -2,8 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
-
-
   <object class="GtkDialog" id="DeleteConfirmation">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Delete Confirmation</property>

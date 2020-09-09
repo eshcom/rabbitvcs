@@ -2,9 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy toplevel-contextual -->
-
-
-
   <object class="GtkDialog" id="Property">
     <property name="default_width">600</property>
     <property name="default_height">400</property>
