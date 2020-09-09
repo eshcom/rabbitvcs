@@ -3,11 +3,10 @@
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Checkout">
-    <property name="width_request">550</property>
+    <property name="default_width">800</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Checkout</property>
     <property name="window_position">center</property>
-    <property name="default_width">450</property>
     <property name="icon_name">rabbitvcs-small</property>
     <signal handler="on_destroy" name="destroy"/>
     <signal handler="on_key_pressed" name="key_press_event"/>
@@ -50,7 +49,7 @@
                         <property name="spacing">6</property>
                         <child>
                           <object class="GtkLabel" id="label3">
-                            <property name="width_request">120</property>
+                            <property name="width_request">135</property>
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">URL:</property>
@@ -105,7 +104,7 @@
                         <property name="spacing">6</property>
                         <child>
                           <object class="GtkLabel" id="label4">
-                            <property name="width_request">120</property>
+                            <property name="width_request">135</property>
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">Destination:</property>

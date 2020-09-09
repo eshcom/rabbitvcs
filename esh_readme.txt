@@ -9,3 +9,15 @@ sudo cp clients/cli/rabbitvcs /usr/bin
 #rabbitvcs/rabbitvcs/ui/settings.py
 rabbitvcs/rabbitvcs/ui/widget.py
 #rabbitvcs/rabbitvcs/util/_locale.py
+
+--ui-xml for windows (git commands):
+Обновить:			git-update.xml
+Зафиксировать:		commit.xml
+Залить:				push.xml
+Откатить:			revert.xml
+Очистить:			clean.xml
+Сбросить:			reset.xml
+Извлечь:			update.xml
+Экспорт:			checkout.xml
+Объединить:			branch-merge.xml
+Показать изменения:	changes.xml

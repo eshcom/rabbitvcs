@@ -95,7 +95,7 @@ class GitBranchManager(InterfaceView):
 		vbox = gtk.VBox(False, 6)
 		
 		# esh:
-		label_width = 120
+		label_width = 135
 		
 		# Set up the Branch line
 		label = gtk.Label(_("Name:"))

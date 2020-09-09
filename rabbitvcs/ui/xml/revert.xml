@@ -3,12 +3,13 @@
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Revert">
-    <property name="width_request">450</property>
+    <property name="default_width">800</property>
+    <property name="default_height">600</property>
+    <property name="width_request">650</property>
+    <property name="height_request">400</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Revert</property>
     <property name="window_position">center</property>
-    <property name="default_width">400</property>
-    <property name="default_height">300</property>
     <property name="icon_name">rabbitvcs-small</property>
     <property name="gravity">center</property>
     <signal handler="on_destroy" name="destroy"/>

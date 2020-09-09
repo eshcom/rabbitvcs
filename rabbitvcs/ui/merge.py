@@ -435,7 +435,7 @@ class GitMerge(BranchMerge):
 		from_container = self.get_widget("from_branch_info")
 		
 		# esh:
-		label_width = 120
+		label_width = 135
 		
 		# Set up the Author line
 		author = gtk.Label(_("Author:"))
