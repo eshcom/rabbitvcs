@@ -46,7 +46,7 @@ def start_service(script_file, dbus_service_name, dbus_object_path):
 	glib.idle_add(sys.stdout.write, "Started service\n")
 	glib.idle_add(sys.stdout.flush)
 	mainloop.run()
- 
+	
 	That way a newline will be sent when the mainloop is started.
 	
 	@param script_file: the Python script file to run if the DBUS object does
@@ -56,10 +56,10 @@ def start_service(script_file, dbus_service_name, dbus_object_path):
 					   
 	@param dbus_service_name: the name of the DBUS service to request
 	@type dbus_service_name: string (confirming to the DBUS service format)
-
+	
 	@param dbus_object_path: the DBUS object path to request
 	@type dbus_object_path: string (confirming to the DBUS object path format)
-		
+	
 	@rtype: boolean
 	@return: Whether or not the service was successfully started.
 	"""

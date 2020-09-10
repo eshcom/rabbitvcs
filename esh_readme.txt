@@ -38,3 +38,15 @@ os.system("gsettings get org.gnome.desktop.interface text-scaling-factor")
 --gsettings 3:
 import subprocess
 eval(subprocess.check_output(["gsettings", "get", "org.gnome.desktop.interface", "text-scaling-factor"], universal_newlines=True))
+
+
+--dialog confirm example:
+confirmation = rabbitvcs.ui.dialog.Confirmation(
+	_("Are you sure you want to clear your repository paths?")
+)
+if confirmation.run() == gtk.RESPONSE_OK:
+	path = helper.get_repository_paths_path()
+	fh = open(path, "w")
+	fh.write("")
+	fh.close()
+	rabbitvcs.ui.dialog.MessageBox(_("Repository paths cleared"))

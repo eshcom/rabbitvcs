@@ -55,7 +55,7 @@ if "NAUTILUS_PYTHON_REQUIRE_GTK3" in os.environ and os.environ["NAUTILUS_PYTHON_
 else:
 	import gobject
 	import glib
-	
+
 import dbus
 import dbus.mainloop.glib
 import dbus.service
@@ -118,22 +118,22 @@ def output_and_flush(*args):
 class StatusCheckerService(dbus.service.Object):
 	""" StatusCheckerService objects wrap a StatusCheckerPlus instance,
 	exporting methods that can be called via DBUS.
-
+	
 	There should only be a single such object running in a separate process from
 	the GUI (ie. do not create this in the Nautilus extension code, you should
 	use a StatusCheckerStub there instead).
 	"""
-
+	
 	def __init__(self, connection, mainloop):
 		""" Creates a new status checker wrapper service, with the given DBUS
 		connection.
-
+		
 		The mainloop argument is needed for process management (eg. calling
 		Quit() for graceful exiting).
-
+		
 		@param connection: the DBUS connection (eg. session bus, system bus)
 		@type connection: a DBUS connection object
-
+		
 		@param mainloop: the main loop that DBUS is using
 		@type mainloop: any main loop with a quit() method
 		"""
@@ -143,30 +143,29 @@ class StatusCheckerService(dbus.service.Object):
 											  separators=(',', ':'))
 		
 		self.mainloop = mainloop
-
+		
 		# Start the status checking daemon so we can do requests in the
 		# background
 		self.status_checker = StatusChecker()
-
+	
 	@dbus.service.method(INTERFACE)
 	def ExtraInformation(self):
 		return self.status_checker.extra_info()
-
+	
 	@dbus.service.method(INTERFACE)
 	def MemoryUsage(self):
 		own_mem = helper.process_memory(os.getpid())
 		checker_mem = self.status_checker.get_memory_usage()
-
 		return own_mem + checker_mem
-
+	
 	@dbus.service.method(INTERFACE)
 	def PID(self):
 		return os.getpid()
-
+	
 	@dbus.service.method(INTERFACE)
 	def CheckerType(self):
 		return self.status_checker.CHECKER_NAME
-
+	
 	@dbus.service.method(INTERFACE, in_signature='sbbb', out_signature='s')
 	def CheckStatus(self, path, recurse=False, invalidate=False,
 					  summary=False):
@@ -176,18 +175,17 @@ class StatusCheckerService(dbus.service.Object):
 												  recurse=recurse,
 												  summary=summary,
 												  invalidate=invalidate)
-		
 		return self.encoder.encode(status)
-
+	
 	@dbus.service.method(INTERFACE, in_signature='as', out_signature='s')
 	def GenerateMenuConditions(self, paths):
 		upaths = []
 		for path in paths:
 			upaths.append(six.text_type(path))
-	
+		
 		path_dict = self.status_checker.generate_menu_conditions(upaths)
 		return simplejson.dumps(path_dict)
-
+	
 	@dbus.service.method(INTERFACE)
 	def CheckVersionOrDie(self, version):
 		"""
@@ -201,9 +199,8 @@ class StatusCheckerService(dbus.service.Object):
 						"(service: %s, extension: %s)" \
 						% (SERVICE_VERSION, version))
 			return self.Quit()
-
 		return None
-
+	
 	@dbus.service.method(INTERFACE)
 	def CheckVersion(self, version):
 		"""
@@ -211,18 +208,18 @@ class StatusCheckerService(dbus.service.Object):
 		same as that passed in (ie. used by extension code).
 		"""
 		return version == SERVICE_VERSION
-
+	
 	@dbus.service.method(INTERFACE)
 	def Quit(self):
 		""" Quits the service, performing any necessary cleanup operations.
-
+		
 		You can call this from the command line with:
-
+		
 		dbus-send --print-reply \
 		--dest=org.google.code.rabbitvcs.RabbitVCS.Checker \
 		/org/google/code/rabbitvcs/StatusChecker \
 		org.google.code.rabbitvcs.StatusChecker.Quit
-
+		
 		If calling this programmatically, then you can do "os.waitpid(pid, 0)"
 		on the returned PID to prevent a zombie process.
 		"""
@@ -235,16 +232,16 @@ class StatusCheckerService(dbus.service.Object):
 class StatusCheckerStub:
 	""" StatusCheckerStub objects contain methods that call an actual status
 	checker running in another process.
-
+	
 	These objects should be created by the GUI as needed (eg. the nautilus
 	extension code).
-
+	
 	The inter-process communication is via DBUS.
 	"""
-
+	
 	def __init__(self):
 		""" Creates an object that can call the VCS status checker via DBUS.
-
+		
 		If there is not already a DBUS object with the path "OBJECT_PATH", we
 		create one by starting a new Python process that runs this file.
 		"""
@@ -254,12 +251,11 @@ class StatusCheckerStub:
 		self.decoder = simplejson.JSONDecoder(object_hook=decode_status)
 		self.status_checker = None
 		self._connect_to_checker()
-
+	
 	def _connect_to_checker(self):
 		# Start the status checker, if it's not running this should start it up.
 		# Otherwise it leaves it alone.
 		start()
-
 		# Try to get a new checker
 		try:
 			self.status_checker = self.session_bus.get_object(SERVICE,
@@ -267,7 +263,7 @@ class StatusCheckerStub:
 		except dbus.DBusException as ex:
 			# There is not much we should do about this...
 			log.exception(ex)
-
+	
 	def assert_version(self, version):
 		"""
 		This will use the CheckVersionOrDie method to ensure that either the
@@ -289,7 +285,7 @@ class StatusCheckerStub:
 				except OSError:
 					# Process already gone...
 					pass
-				start()
+				# ~ start() # esh: func start is called inside _connect_to_checker
 				self._connect_to_checker()
 				
 				try:
@@ -298,13 +294,10 @@ class StatusCheckerStub:
 				except dbus.DBusException as ex:
 					log.exception(ex)
 					self._connect_to_checker()
-					
-
-	def check_status_now(self, path, recurse=False, invalidate=False,
-					   summary=False):
-		
+	
+	def check_status_now(self, path, recurse=False,
+						 invalidate=False, summary=False):
 		status = None
-				
 		try:
 			json_status = self.status_checker.CheckStatus(path,
 														  recurse, invalidate,
@@ -320,7 +313,7 @@ class StatusCheckerStub:
 			# Try to reconnect
 			self._connect_to_checker()
 		return status
-		
+	
 	def check_status_later(self, path, callback, recurse=False,
 						   invalidate=False, summary=False):
 		
@@ -356,13 +349,13 @@ class StatusCheckerStub:
 			callback(rabbitvcs.vcs.status.Status.status_error(path))
 			# Try to reconnect
 			self._connect_to_checker()
-
+	
 	# @rabbitvcs.util.decorators.deprecated
 	# Can't decide whether this should be deprecated or not... -JH
 	def check_status(self, path, recurse=False, invalidate=False,
 					 summary=False, callback=None):
 		""" Check the VCS status of the given path.
-
+		
 		This is a pass-through method to the check_status method of the DBUS
 		service (which is, in turn, a wrapper around the real status checker).
 		"""
@@ -372,9 +365,9 @@ class StatusCheckerStub:
 			return rabbitvcs.vcs.status.Status.status_calc(path)
 		else:
 			return self.check_status_now(path, recurse, invalidate, summary)
-
-	def generate_menu_conditions(self, provider, base_dir, paths, callback):
 	
+	def generate_menu_conditions(self, provider, base_dir, paths, callback):
+		
 		def real_reply_handler(json):
 			# Note that this a closure referring to the outer functions callback
 			# parameter
@@ -402,7 +395,7 @@ class StatusCheckerStub:
 			callback(provider, base_dir, paths, {})
 			# Try to reconnect
 			self._connect_to_checker()
-
+	
 	def generate_menu_conditions_async(self, provider, base_dir, paths, callback):
 		gobject.idle_add(self.generate_menu_conditions, provider, base_dir, paths, callback)
 		return {}
@@ -414,26 +407,26 @@ def start():
 
 def Main():
 	""" The main point of entry for the checker service.
-
+	
 	This will set up the DBUS and glib extensions, the gobject/glib main loop,
 	and start the service.
 	"""
 	global log
 	log = Log("rabbitvcs.services.checkerservice:main")
 	log.debug("Checker: starting service: %s (%s)" % (OBJECT_PATH, os.getpid()))
-
+	
 	# We need this to for the client to be able to do asynchronous calls
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
-
+	
 	# The following calls are required to make DBus thread-aware and therefore
 	# support the ability run threads.
 	helper.gobject_threads_init()
 	dbus.mainloop.glib.threads_init()
-
+	
 	# This registers our service name with the bus
 	session_bus = dbus.SessionBus()
 	service_name = dbus.service.BusName(SERVICE, session_bus)
-
+	
 	mainloop = gobject.MainLoop()
 	checker_service = StatusCheckerService(session_bus, mainloop)
 	gobject.idle_add(output_and_flush, "Started status checker service\n")
@@ -442,12 +435,10 @@ def Main():
 
 if __name__ == "__main__":
 	rabbitvcs.util._locale.initialize_locale()
-
 	# import cProfile
 	# import rabbitvcs.util.helper
 	# profile_data_file = os.path.join(
 	#                        rabbitvcs.util.helper.get_home_folder(),
 	#                        "checkerservice.stats")
 	# cProfile.run("Main()", profile_data_file)
-
 	Main()

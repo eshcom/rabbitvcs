@@ -439,7 +439,10 @@ class ContextMenuCallbacks:
 	
 	def settings(self, widget, data1=None, data2=None):
 		proc = helper.launch_ui_window("settings", [self.base_dir])
-		self.caller.reload_settings(proc)
+		# esh: self.caller can be rabbit-vcs.DCSender (if call from double-commander)
+		# esh: this class has no func reload_settings
+		if hasattr(self.caller, "reload_settings"):
+			self.caller.reload_settings(proc)
 	
 	def ignore_by_filename(self, widget, data1=None, data2=None):
 		path = self.paths[0]

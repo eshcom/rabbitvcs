@@ -51,6 +51,8 @@ class Settings(InterfaceView):
 		Provides an interface to the settings library.
 		"""
 		InterfaceView.__init__(self, "settings", "Settings")
+		
+		self.checker_service = None
 		self.settings = rabbitvcs.util.settings.SettingsManager()
 		langs = []
 		language = os.environ.get('LANGUAGE', None)
@@ -122,7 +124,7 @@ class Settings(InterfaceView):
 			if vcs.is_in_a_or_a_working_copy(base_dir) and vcs.guess(base_dir)["vcs"] == rabbitvcs.vcs.VCS_GIT:
 				git = vcs.git(base_dir)
 				git_config_files = git.get_config_files(base_dir)
-		
+				
 				self.file_editor = rabbitvcs.ui.widget.MultiFileTextEditor(
 					self.get_widget("git_config_container"),
 					_("Config file:"),
@@ -138,21 +140,24 @@ class Settings(InterfaceView):
 		self._populate_checker_tab()
 	
 	def _get_checker_service(self, report_failure=True):
-		checker_service = None
-		try:
-			session_bus = dbus.SessionBus()
-			checker_service = session_bus.get_object(
-									rabbitvcs.services.checkerservice.SERVICE,
-									rabbitvcs.services.checkerservice.OBJECT_PATH)
-		except dbus.DBusException as ex:
-			if report_failure:
-				rabbitvcs.ui.dialog.MessageBox(CHECKER_SERVICE_ERROR)
-		return checker_service
+		if not self.checker_service:
+			try:
+				session_bus = dbus.SessionBus()
+				self.checker_service = session_bus.get_object(
+											rabbitvcs.services.checkerservice.SERVICE,
+											rabbitvcs.services.checkerservice.OBJECT_PATH)
+			except dbus.DBusException as ex:
+				if report_failure:
+					rabbitvcs.ui.dialog.MessageBox(CHECKER_SERVICE_ERROR)
+		return self.checker_service
 	
-	def _populate_checker_tab(self, report_failure=True):
+	def _populate_checker_tab(self, report_failure=True, connect=True):
 		# This is a limitation of GLADE, and can be removed when we migrate to
 		# GTK2 Builder
-		checker_service = self._get_checker_service(report_failure)
+		checker_service = self.checker_service
+		if not checker_service and connect:
+			checker_service = self._get_checker_service(report_failure)
+		
 		self.get_widget("restart_checker").set_image(
 										gtk.image_new_from_stock(
 											gtk.STOCK_EXECUTE,
@@ -166,8 +171,8 @@ class Settings(InterfaceView):
 											gtk.STOCK_STOP,
 											gtk.ICON_SIZE_BUTTON))
 		self.get_widget("stop_checker").set_sensitive(bool(checker_service))
-
-		if(checker_service):
+		
+		if checker_service:
 			self.get_widget("checker_type").set_text(checker_service.CheckerType())
 			self.get_widget("pid").set_text(str(checker_service.PID()))
 			memory = checker_service.MemoryUsage()
@@ -198,14 +203,14 @@ class Settings(InterfaceView):
 		self._populate_checker_tab()
 	
 	def _stop_checker(self):
-		checker_service = self._get_checker_service(False)
 		pid = None
-		if(checker_service):
+		if self.checker_service:
 			try:
-				pid = checker_service.Quit()
+				pid = self.checker_service.Quit()
 			except dbus.exceptions.DBusException:
 				# Ignore it, it will necessarily happen when we kill the service
 				pass
+		self.checker_service = None
 		if pid:
 			try:
 				os.waitpid(pid, 0)
@@ -220,7 +225,7 @@ class Settings(InterfaceView):
 	
 	def on_stop_checker_clicked(self, widget):
 		self._stop_checker()
-		self._populate_checker_tab(report_failure=False)
+		self._populate_checker_tab(report_failure=False, connect=False)
 	
 	def on_destroy(self, widget):
 		gtk.main_quit()
@@ -301,8 +306,8 @@ class Settings(InterfaceView):
 			_("Select a program"), "/usr/bin"
 		)
 		path = chooser.run()
-		path = path.replace("file://", "")
 		if path is not None:
+			path = path.replace("file://", "")
 			self.get_widget("diff_tool").set_text(path)
 	
 	def on_cache_clear_repositories_clicked(self, widget):
