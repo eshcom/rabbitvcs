@@ -95,7 +95,7 @@ class GitTagManager(InterfaceView):
 		vbox = gtk.VBox(False, 6)
 		
 		# esh:
-		label_width = 135
+		label_width = int(100 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
 		
 		# Set up the Tag line
 		label = gtk.Label(_("Name:"))

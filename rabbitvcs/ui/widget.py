@@ -1126,7 +1126,7 @@ class GitRepositorySelector:
 		vbox = gtk.VBox(False, 4)
 		
 		# esh:
-		label_width = 150
+		label_width = int(110 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
 		
 		# Set up the Repository Line
 		label = gtk.Label(_("Repository:"))
@@ -1277,7 +1277,7 @@ class MultiFileTextEditor:
 		vbox = gtk.VBox(False, 6)
 		
 		# esh:
-		label_width = 150
+		label_width = int(110 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
 		
 		hbox = gtk.HBox(False, 3)
 		combo_label = gtk.Label(label)

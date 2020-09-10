@@ -69,6 +69,10 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		"""
 		InterfaceView.__init__(self, "commit", "Commit")
 		
+		# esh:
+		label_width = int(142 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
+		self.get_widget("label7").set_size_request(label_width, -1)
+		
 		self.isInitDone = False
 		self.base_dir = base_dir
 		self.vcs = rabbitvcs.vcs.VCS()

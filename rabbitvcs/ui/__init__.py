@@ -72,6 +72,23 @@ STATUS_EMBLEMS = {
 	rabbitvcs.vcs.status.status_unversioned : "rabbitvcs-unversioned"
 }
 
+# esh:
+from rabbitvcs.util.log import Log
+log = Log("rabbitvcs.ui")
+
+TEXT_SCALING_FACTOR = 1
+try:
+	import subprocess
+	TEXT_SCALING_FACTOR = eval(subprocess.check_output(
+								["gsettings",
+								 "get",
+								 "org.gnome.desktop.interface",
+								 "text-scaling-factor"],
+								universal_newlines=True))
+except Exception as e:
+	log.error(e)
+
+
 class GtkBuilderWidgetWrapper:
 	def __init__(self, gtkbuilder_filename = None,
 				 gtkbuilder_id = None, claim_domain=True):
