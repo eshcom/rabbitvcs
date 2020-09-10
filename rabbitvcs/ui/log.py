@@ -1245,11 +1245,15 @@ class LogTopContextMenuCallbacks:
 	
 	# esh: add cherrypick_commits method
 	def cherrypick_commits(self, widget, data=None):
-		commits = []
-		for revision in reversed(self.revisions):
-			commits.append(six.text_type(revision["revision"]))
-		# ~ log.debug("LogTopContextMenuCallbacks.cherrypick_commits: commits = %s" % commits)
-		helper.launch_ui_window("cherrypick", [self.path] + commits)
+		confirm = rabbitvcs.ui.dialog.Confirmation(
+			_("Are you sure you want to apply the selected commits?")
+		)
+		if confirm.run() == gtk.RESPONSE_OK:
+			commits = []
+			for revision in reversed(self.revisions):
+				commits.append(six.text_type(revision["revision"]))
+			# ~ log.debug("LogTopContextMenuCallbacks.cherrypick_commits: commits = %s" % commits)
+			helper.launch_ui_window("cherrypick", [self.path] + commits)
 
 class LogTopContextMenu:
 	"""
