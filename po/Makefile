@@ -44,42 +44,46 @@ update-pot: Makefile
 	rm -f $(GETTEXT_PACKAGE).pot
 	$(MAKE) $(GETTEXT_PACKAGE).pot
 
+update-pot-full: Makefile
+	rm -f $(GETTEXT_PACKAGE).pot
+	./generate_pot_full.sh
+
 update-po: Makefile
 	tmpdir=`pwd`; \
 	linguas="$(USE_LINGUAS)"; \
 	for lang in $$linguas; do \
-	  echo "$$lang:"; \
-	  result="`$(MSGMERGE) -o $$tmpdir/$$lang.new.po $$lang`"; \
-	  if $$result; then \
-	    if cmp $(srcdir)/$$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
-	      rm -f $$tmpdir/$$lang.new.po; \
-	    else \
-	      if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
-	        :; \
-	      else \
-	        echo "msgmerge for $$lang.po failed: cannot move $$tmpdir/$$lang.new.po to $$lang.po" 1>&2; \
-	        rm -f $$tmpdir/$$lang.new.po; \
-	        exit 1; \
-	      fi; \
-	    fi; \
-	  else \
-	    echo "msgmerge for $$lang.gmo failed!"; \
-	    rm -f $$tmpdir/$$lang.new.po; \
-	  fi; \
+		echo "$$lang:"; \
+		result="`$(MSGMERGE) -o $$tmpdir/$$lang.new.po $$lang`"; \
+		if $$result; then \
+			if cmp $(srcdir)/$$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+				rm -f $$tmpdir/$$lang.new.po; \
+			else \
+				if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
+					:; \
+				else \
+					echo "msgmerge for $$lang.po failed: cannot move $$tmpdir/$$lang.new.po to $$lang.po" 1>&2; \
+					rm -f $$tmpdir/$$lang.new.po; \
+					exit 1; \
+				fi; \
+			fi; \
+		else \
+			echo "msgmerge for $$lang.gmo failed!"; \
+			rm -f $$tmpdir/$$lang.new.po; \
+		fi; \
 	done
 
 update-mo: Makefile
 	tmpdir=`pwd`; \
 	linguas="$(USE_LINGUAS)"; \
 	for lang in $$linguas; do \
-	  file_mo="../locale/$$lang/LC_MESSAGES/RabbitVCS.mo"; \
-	  echo "$$file_mo:"; \
-	  result="`$(MSGFMT) --output-file=$$file_mo $$lang.po`"; \
-	  if $$result; then \
-	    :; \
-	  else \
-	    echo "msgfmt for $$file_mo failed!"; \
-	  fi; \
+		file_mo="../locale/$$lang/LC_MESSAGES/RabbitVCS.mo"; \
+		echo "$$file_mo:"; \
+		result="`$(MSGFMT) --output-file=$$file_mo $$lang.po`"; \
+		if $$result; then \
+			:; \
+		else \
+			echo "msgfmt for $$file_mo failed!"; \
+		fi; \
 	done
 
 update-po-mo: Makefile
@@ -87,7 +91,7 @@ update-po-mo: Makefile
 	$(MAKE) update-mo
 
 update-all: Makefile
-	$(MAKE) update-pot
+	$(MAKE) update-pot-full
 	$(MAKE) update-po
 	$(MAKE) update-mo
 
