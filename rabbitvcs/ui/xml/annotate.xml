@@ -3,8 +3,8 @@
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Annotate">
-    <property name="width_request">750</property>
-    <property name="height_request">550</property>
+    <property name="default_width">750</property>
+    <property name="default_height">550</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Annotate</property>
     <property name="window_position">center</property>

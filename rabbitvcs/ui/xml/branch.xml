@@ -3,7 +3,7 @@
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Branch">
-    <property name="width_request">550</property>
+    <property name="default_width">550</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Branch/Tag</property>
     <property name="window_position">center</property>

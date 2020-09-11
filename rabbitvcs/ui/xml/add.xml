@@ -5,7 +5,6 @@
   <object class="GtkWindow" id="Add">
     <property name="default_width">450</property>
     <property name="default_height">300</property>
-    <property name="width_request">450</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Add</property>
     <property name="window_position">center</property>

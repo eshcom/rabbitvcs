@@ -3,7 +3,7 @@
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Switch">
-    <property name="width_request">550</property>
+    <property name="default_width">550</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Switch</property>
     <property name="window_position">center</property>

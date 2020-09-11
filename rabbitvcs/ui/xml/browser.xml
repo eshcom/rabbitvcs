@@ -3,8 +3,8 @@
   <!-- interface-requires gtk+ 2.10 -->
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="Browser">
-    <property name="width_request">640</property>
-    <property name="height_request">480</property>
+    <property name="default_width">640</property>
+    <property name="default_height">480</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Repository Browser</property>
     <property name="window_position">center</property>

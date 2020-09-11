@@ -2,7 +2,7 @@
 <!--Generated with glade3 3.4.5 on Thu Jan 29 16:44:40 2009 -->
 <interface>
   <object class="GtkWindow" id="Import">
-    <property name="width_request">550</property>
+    <property name="default_width">550</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Import</property>
     <property name="window_position">center</property>

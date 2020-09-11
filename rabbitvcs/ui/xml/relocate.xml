@@ -2,7 +2,7 @@
 <!--Generated with glade3 3.4.5 on Thu Feb 12 09:48:19 2009 -->
 <interface>
   <object class="GtkWindow" id="Relocate">
-    <property name="width_request">640</property>
+    <property name="default_width">640</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Relocate</property>
     <property name="window_position">center</property>
