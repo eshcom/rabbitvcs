@@ -216,7 +216,7 @@ def compare_items(model, iter1, iter2, user_data=None):
 
 class TableBase:
 	def __init__(self, treeview, coltypes, colnames, values=[], filters=None,
-				 filter_types=None, callbacks={}, flags={}):
+				 filter_types=None, callbacks={}, flags={}, set_cell_func = False):
 		"""
 		@type   treeview: gtk.Treeview
 		@param  treeview: The treeview widget to use
@@ -329,7 +329,6 @@ class TableBase:
 				cellpb = gtk.CellRendererPixbuf()
 				cellpb.set_property('xalign', 0)
 				cellpb.set_property('yalign', 0)
-				
 				col.pack_start(cellpb, False)
 				data = None
 				col.set_cell_data_func(cellpb, self.status_pixbuf, i)
@@ -369,6 +368,9 @@ class TableBase:
 					col = gtk.TreeViewColumn(name, cell, markup=i)
 				else:
 					col = gtk.TreeViewColumn(name, cell, text=i)
+					# esh: for notify: 0 - action, 1 - path, 2 - mime_type
+					if set_cell_func and i in (0, 1):
+						col.set_cell_data_func(cell, self.cell_data_func, i)
 				coltypes[i] = gobject.TYPE_STRING
 			if flags["sortable"]:
 				col.set_sort_column_id(i)
@@ -689,6 +691,16 @@ class TableBase:
 				stock_id = gtk.STOCK_DIRECTORY
 		if stock_id is not None:
 			cell.set_property("stock_id", stock_id)
+	
+	def cell_data_func(self, column, cell, model, iter, colnum):
+		for item in self.data:
+			text = item[colnum]
+			if text:
+				# ~ log.debug("cell_data_func, text = %s" % text)
+				if text.startswith("Error") or text.startswith("error"):
+					cell.set_property("foreground", "red")
+				elif text.startswith("Warn") or text.startswith("warn"):
+					cell.set_property("foreground", "orange")
 
 class Table(TableBase):
 	"""
@@ -697,9 +709,9 @@ class Table(TableBase):
 	See the TableBase documentation for parameter information
 	"""
 	def __init__(self, treeview, coltypes, colnames, values=[], filters=None,
-			filter_types=None, callbacks={}, flags={}):
+				 filter_types=None, callbacks={}, flags={}, set_cell_func = False):
 		TableBase.__init__(self, treeview, coltypes, colnames, values, filters,
-			filter_types, callbacks, flags)
+						   filter_types, callbacks, flags, set_cell_func)
 	
 	def get_store(self, coltypes):
 		return gtk.ListStore(*coltypes)
@@ -729,9 +741,9 @@ class Tree(TableBase):
 	See the TableBase documentation for parameter information
 	"""
 	def __init__(self, treeview, coltypes, colnames, values=[], filters=None,
-			filter_types=None, callbacks={}, flags={}):
+				 filter_types=None, callbacks={}, flags={}):
 		TableBase.__init__(self, treeview, coltypes, colnames, values, filters,
-			filter_types, callbacks, flags={})
+						   filter_types, callbacks, flags={})
 	
 	def get_store(self, coltypes):
 		return gtk.TreeStore(*coltypes)
@@ -931,7 +943,8 @@ class RevisionSelector:
 		
 		self.branch_selector = None
 		if client.vcs == rabbitvcs.vcs.VCS_GIT:
-			self.branch_selector = GitBranchSelector(hbox, client, self.__branch_selector_changed)
+			self.branch_selector = GitBranchSelector(hbox, client,
+										self.__branch_selector_changed)
 			self.branch_selector.hide()
 		
 		self.revision_browse = gtk.Button()
@@ -1098,11 +1111,11 @@ class KeyValueTable(gtk.Table):
 				label_key.set_properties(xalign=0, use_markup=True)
 				label_value = gtk.Label("%s" % value)
 				if HAS_PANGO:
-					label_value.set_properties(xalign=0,                    \
-											ellipsize=PANGO_ELLIPSIZE_MIDDLE, \
-											selectable=True)
+					label_value.set_properties(xalign=0,
+											   ellipsize=PANGO_ELLIPSIZE_MIDDLE,
+											   selectable=True)
 				else:
-					label_value.set_properties(xalign=0,selectable=True)
+					label_value.set_properties(xalign=0, selectable=True)
 					
 				self.attach(label_key,
 							 0,1,
@@ -1133,7 +1146,7 @@ class GitRepositorySelector:
 		label.set_size_request(label_width, -1)
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
-		label.set_properties(xalign=0,yalign=.5)
+		label.set_properties(xalign=0, yalign=.5)
 		
 		tmp_repos = []
 		for item in self.git.remote_list():
@@ -1155,7 +1168,7 @@ class GitRepositorySelector:
 		label.set_size_request(label_width, -1)
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
-		label.set_properties(xalign=0,yalign=.5)
+		label.set_properties(xalign=0, yalign=.5)
 		
 		tmp_branches = []
 		active_branch_index = 0
@@ -1182,7 +1195,7 @@ class GitRepositorySelector:
 		label = gtk.Label(_("Host:"))
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
-		label.set_properties(xalign=0,yalign=.5)
+		label.set_properties(xalign=0, yalign=.5)
 		label.set_size_request(label_width, -1)
 		self.host = gtk.Label()
 		self.host.set_justify(gtk.JUSTIFY_LEFT)
@@ -1203,12 +1216,14 @@ class GitRepositorySelector:
 	
 	def __repository_changed(self, repository_opt):
 		if self.changed_callback:
-			self.changed_callback(repository_opt.get_active_text(), self.branch_opt.get_active_text())
+			self.changed_callback(repository_opt.get_active_text(),
+								  self.branch_opt.get_active_text())
 		self.__update_host()
 	
 	def __branch_changed(self, branch_opt):
 		if self.changed_callback:
-			self.changed_callback(self.repository_opt.get_active_text(), self.branch_opt.get_active_text())
+			self.changed_callback(self.repository_opt.get_active_text(),
+								  self.branch_opt.get_active_text())
 
 class GitBranchSelector:
 	def __init__(self, container, git, changed_callback=None):
@@ -1254,7 +1269,8 @@ class MultiFileTextEditor:
 	"""
 	Edit a set of text/config/ignore files
 	"""
-	def __init__(self, container, label, combobox_labels, combobox_paths, show_add_line=True, line_content=""):
+	def __init__(self, container, label, combobox_labels, combobox_paths,
+				 show_add_line=True, line_content=""):
 		self.container = container
 		self.label = label
 		self.combobox_labels = combobox_labels

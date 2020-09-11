@@ -111,7 +111,8 @@ class MessageCallbackNotifier(VCSNotifier):
 		self.table = rabbitvcs.ui.widget.Table(
 			self.get_widget("table"),
 			[gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING],
-			[_("Action"), _("Path"), _("Mime Type")]
+			[_("Action"), _("Path"), _("Mime Type")],
+			set_cell_func = True # esh: for highlighting text Error, Warning
 		)
 		self.pbar = rabbitvcs.ui.widget.ProgressBar(
 			self.get_widget("pbar")

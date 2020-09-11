@@ -100,7 +100,7 @@ class GitBranchManager(InterfaceView):
 		# Set up the Branch line
 		label = gtk.Label(_("Name:"))
 		label.set_size_request(label_width, -1)
-		label.set_properties(xalign=0,yalign=.5)
+		label.set_properties(xalign=0, yalign=.5)
 		self.branch_entry = gtk.Entry()
 		self.branch_name_container = gtk.HBox(False, 0)
 		self.branch_name_container.pack_start(label, False, False, 0)
@@ -111,7 +111,7 @@ class GitBranchManager(InterfaceView):
 		# Set up the Commit-sha line
 		label = gtk.Label(_("Start Point:"))
 		label.set_size_request(label_width, -1)
-		label.set_properties(xalign=0,yalign=.5)
+		label.set_properties(xalign=0, yalign=.5)
 		self.start_point_entry = gtk.Entry()
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
 		# ~ self.start_point_entry.set_size_request(300, -1)
@@ -158,9 +158,9 @@ class GitBranchManager(InterfaceView):
 		# Set up the Revision line
 		label = gtk.Label(_("Revision:"))
 		label.set_size_request(label_width, -1)
-		label.set_properties(xalign=0,yalign=0)
+		label.set_properties(xalign=0, yalign=0)
 		self.revision_label = gtk.Label("")
-		self.revision_label.set_properties(xalign=0,selectable=True)
+		self.revision_label.set_properties(xalign=0, selectable=True)
 		self.revision_label.set_line_wrap(True)
 		self.revision_container = gtk.HBox(False, 0)
 		self.revision_container.pack_start(label, False, False, 0)
@@ -171,9 +171,9 @@ class GitBranchManager(InterfaceView):
 		# Set up the Log Message line
 		label = gtk.Label(_("Message:"))
 		label.set_size_request(label_width, -1)
-		label.set_properties(xalign=0,yalign=0)
+		label.set_properties(xalign=0, yalign=0)
 		self.message_label = gtk.Label("")
-		self.message_label.set_properties(xalign=0,yalign=0,selectable=True)
+		self.message_label.set_properties(xalign=0, yalign=0, selectable=True)
 		self.message_label.set_line_wrap(True)
 		# esh: not need, width will be set dynamically
 		# ~ self.message_label.set_size_request(250, -1)

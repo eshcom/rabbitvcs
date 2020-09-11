@@ -440,9 +440,9 @@ class GitMerge(BranchMerge):
 		# Set up the Author line
 		author = gtk.Label(_("Author:"))
 		author.set_size_request(label_width, -1)
-		author.set_properties(xalign=0,yalign=0)
+		author.set_properties(xalign=0, yalign=0)
 		self.info['from']['author'] = gtk.Label("")
-		self.info['from']['author'].set_properties(xalign=0,yalign=0,selectable=True)
+		self.info['from']['author'].set_properties(xalign=0, yalign=0, selectable=True)
 		self.info['from']['author'].set_line_wrap(True)
 		author_container = gtk.HBox(False, 0)
 		author_container.pack_start(author, False, False, 0)
@@ -453,9 +453,9 @@ class GitMerge(BranchMerge):
 		# Set up the Date line
 		date = gtk.Label(_("Date:"))
 		date.set_size_request(label_width, -1)
-		date.set_properties(xalign=0,yalign=0)
+		date.set_properties(xalign=0, yalign=0)
 		self.info['from']['date'] = gtk.Label("")
-		self.info['from']['date'].set_properties(xalign=0,yalign=0,selectable=True)
+		self.info['from']['date'].set_properties(xalign=0, yalign=0, selectable=True)
 		date_container = gtk.HBox(False, 0)
 		date_container.pack_start(date, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
@@ -465,9 +465,9 @@ class GitMerge(BranchMerge):
 		# Set up the Revision line
 		revision = gtk.Label(_("Revision:"))
 		revision.set_size_request(label_width, -1)
-		revision.set_properties(xalign=0,yalign=0)
+		revision.set_properties(xalign=0, yalign=0)
 		self.info['from']['revision'] = gtk.Label("")
-		self.info['from']['revision'].set_properties(xalign=0,selectable=True)
+		self.info['from']['revision'].set_properties(xalign=0, selectable=True)
 		self.info['from']['revision'].set_line_wrap(True)
 		revision_container = gtk.HBox(False, 0)
 		revision_container.pack_start(revision, False, False, 0)
@@ -478,9 +478,9 @@ class GitMerge(BranchMerge):
 		# Set up the Log Message line
 		message = gtk.Label(_("Message:"))
 		message.set_size_request(label_width, -1)
-		message.set_properties(xalign=0,yalign=0)
+		message.set_properties(xalign=0, yalign=0)
 		self.info['from']['message'] = gtk.Label("")
-		self.info['from']['message'].set_properties(xalign=0,yalign=0,selectable=True)
+		self.info['from']['message'].set_properties(xalign=0, yalign=0, selectable=True)
 		self.info['from']['message'].set_line_wrap(True)
 		# esh: not need, width will be set dynamically
 		# ~ self.info['from']['message'].set_size_request(250, -1)
