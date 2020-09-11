@@ -4,7 +4,7 @@
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Revert">
     <property name="default_width">800</property>
-    <property name="default_height">600</property>
+    <property name="default_height">400</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Revert</property>
     <property name="window_position">center</property>
