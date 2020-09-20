@@ -582,7 +582,7 @@ class GittyupClient:
 			if self.is_tracking(old_ref_name):
 				self.track(new_ref_name)
 			del self.repo.refs[old_ref_name]
-
+	
 	def branch_list(self, commit_sha=None):
 		"""
 		List all branches
@@ -599,12 +599,12 @@ class GittyupClient:
 		cmd = ["git", "branch", "-lv", "--no-abbrev", "-a"]
 		if commit_sha:
 			cmd += ["--contains", commit_sha]
-
+		
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-
+		
 		branches = []
 		for line in stdout:
 			if not line:
@@ -622,7 +622,16 @@ class GittyupClient:
 			else:
 			   name = components.pop(0)
 			revision = components.pop(0)
-			message = " ".join(components)
+			
+			# esh: fixed loss of line break
+			cmd = ["git", "show", "-s", "--format=%B", revision]
+			try:
+				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
+														  notify=self.notify,
+														  cancel=self.get_cancel).execute()
+				message = "\n".join(stdout)
+			except GittyupCommandError as e:
+				message = " ".join(components)
 			
 			branches.append({
 				"tracking": tracking,
@@ -631,7 +640,7 @@ class GittyupClient:
 				"message": message
 			})
 		return branches
-
+	
 	def checkout(self, paths=[], revision="HEAD"):
 		"""
 		Checkout a series of paths from a tree or commit.  If no tree or commit
