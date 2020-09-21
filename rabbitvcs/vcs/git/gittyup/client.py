@@ -646,7 +646,7 @@ class GittyupClient:
 			message = "\n".join(stdout)
 		except GittyupCommandError as e:
 			message = default_message
-		return message.strip("\n")
+		return message.strip(" \n")
 	
 	def checkout(self, paths=[], revision="HEAD"):
 		"""
