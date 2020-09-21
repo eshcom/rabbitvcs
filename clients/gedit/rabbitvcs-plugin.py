@@ -149,7 +149,7 @@ ui_str = """<ui>
 </ui>
 """
 class RabbitVCSWindowHelper(GtkContextMenuCaller):
-
+	
 	_menu_paths = [
 #        "/MenuBar/RabbitVCSMenu",
 		"/MenuBar/ExtraMenu_1/RabbitVCSMenu/RabbitVCS::RabbitVCS_Svn",
@@ -228,9 +228,9 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		"/MenuBar/ExtraMenu_1/RabbitVCSMenu/RabbitVCS::Settings",
 		"/MenuBar/ExtraMenu_1/RabbitVCSMenu/RabbitVCS::About"
 	]
-
+	
 	_default_base_dir = os.path.expanduser("~")
-
+	
 	def __init__(self, plugin, window):
 		self._window = window
 		self._plugin = plugin
@@ -240,7 +240,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		self.vcs_client = create_vcs_instance()
 		# Insert menu items
 		self._insert_menu()
-
+	
 	def deactivate(self):
 		# Remove any installed menu items
 		self._remove_menu()
@@ -249,7 +249,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		self._plugin = None
 		self._menubar_menu = None
 		self._action_group = None
-
+	
 	def _insert_menu(self):
 		# Get the GtkUIManager
 		manager = self._window.get_ui_manager()
@@ -262,7 +262,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		manager.insert_action_group(self._action_group, 0)
 		# Merge the UI
 		self._ui_id = manager.add_ui_from_string(ui_str)
-
+	
 	def _remove_menu(self):
 		# Get the GtkUIManager
 		manager = self._window.get_ui_manager()
@@ -272,7 +272,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		manager.remove_action_group(self._action_group)
 		# Make sure the manager updates
 		manager.ensure_update()
-
+	
 	def update_ui(self):
 		self.update_base_dir()
 		document = self._window.get_active_document()
@@ -282,14 +282,14 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 			manager.get_widget("/MenuBar/ExtraMenu_1/RabbitVCSMenu").set_sensitive(True)
 			self._menubar_menu.set_paths([self._get_document_path()])
 			self._determine_menu_sensitivity([self._get_document_path()])
-
+	
 	def connect_view(self, view, id_name):
 		handler_id = view.connect("populate-popup", self.on_view_populate_popup)
 		view.set_data(id_name, [handler_id])
-
+	
 	def disconnect_view(self, view, id_name):
 		view.disconnect(view.get_data(id_name)[0])
-		
+	
 	def on_view_populate_popup(self, view, menu):
 		separator = gtk.SeparatorMenuItem()
 		menu.append(separator)
@@ -297,7 +297,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		context_menu = GeditMainContextMenu(self, self.vcs_client, self.base_dir, [self._get_document_path()]).get_menu()
 		for context_menu_item in context_menu:
 			menu.append(context_menu_item)
-
+	
 	def _get_document_path(self):
 		document = self._window.get_active_document()
 		path = self.base_dir
@@ -306,7 +306,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 			if os.path.exists(tmp_path):
 				path = tmp_path
 		return path
-
+	
 	def update_base_dir(self):
 		document = self._window.get_active_document()
 		if document:
@@ -316,7 +316,7 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 		else:
 			self.base_dir = self._default_base_dir
 		self._menubar_menu.set_base_dir(self.base_dir)
-
+	
 	def _determine_menu_sensitivity(self, paths):
 		self._menubar_menu.update_conditions(paths)
 		manager = self._window.get_ui_manager()
@@ -329,11 +329,11 @@ class RabbitVCSWindowHelper(GtkContextMenuCaller):
 				widget = manager.get_widget(menu_path)
 				action = widget.get_action()
 			self._menubar_menu.update_action(action)
-
+	
 	# Menu activate handlers
 	def reload_settings(self, proc):
 		self.update_ui()
-
+	
 	def on_context_menu_command_finished(self):
 		self.update_ui()
 
@@ -346,7 +346,7 @@ if GTK3:
 			GObject.Object.__init__(self)
 			self._instances = {}
 			self.id_name = "RabbitVCSContextMenuID"
-
+		
 		def do_activate(self):
 			self._instances[self.window] = RabbitVCSWindowHelper(self, self.window)
 			handler_ids = []
@@ -357,7 +357,7 @@ if GTK3:
 			if self.window in self._instances:
 				for view in self.window.get_views():
 					self._instances[self.window].connect_view(view, self.id_name)
-
+		
 		def do_deactivate(self):
 			widgets = [self.window] + self.window.get_views()
 			for widget in widgets:
@@ -366,18 +366,18 @@ if GTK3:
 					for handler_id in handler_ids:
 						widget.disconnect(handler_id)
 					widget.set_data(self.id_name, None)
-
+			
 			if self.window in self._instances:
 				self._instances[self.window].deactivate()
 				del self._instances[self.window]
-
+		
 		def do_update_state(self):
 			self.update_ui()
-
+		
 		def update_ui(self):
 			if self.window in self._instances:
 				self._instances[self.window].update_ui()
-
+		
 		def on_window_tab_added(self, window, tab):
 			if self.window in self._instances:
 				self._instances[self.window].connect_view(tab.get_view(), self.id_name)
@@ -391,7 +391,7 @@ else:
 			gedit.Plugin.__init__(self)
 			self._instances = {}
 			self.id_name = "RabbitVCSContextMenuID"
-
+		
 		def activate(self, window):
 			self._instances[window] = RabbitVCSWindowHelper(self, window)
 			handler_ids = []
@@ -402,7 +402,7 @@ else:
 			if window in self._instances:
 				for view in window.get_views():
 					self._instances[window].connect_view(view, self.id_name)
-
+		
 		def deactivate(self, window):
 			widgets = [window] + window.get_views()
 			for widget in widgets:
@@ -414,11 +414,11 @@ else:
 			if window in self._instances:
 				self._instances[window].deactivate()
 				del self._instances[window]
-
+		
 		def update_ui(self, window):
 			if window in self._instances:
 				self._instances[window].update_ui()
-
+		
 		def on_window_tab_added(self, window, tab):
 			if window in self._instances:
 				self._instances[window].connect_view(tab.get_view(), self.id_name)
@@ -458,7 +458,7 @@ class GeditMenuBuilder(object):
 		"""
 		@param  structure: Menu structure
 		@type   structure: list
-				
+		
 		Note on "structure". The menu structure is defined in a list of tuples
 		of two elements each.  The first element is a class - the MenuItem
 		subclass that defines the menu interface (see below).
@@ -479,7 +479,7 @@ class GeditMenuBuilder(object):
 			]
 		"""
 		self.action_group = action_group
-
+		
 		for item_class in structure:
 			item = item_class(conditions, callbacks)
 			default_name = MenuItem.make_default_name(item.identifier)
@@ -495,7 +495,7 @@ class GeditMenuBuilder(object):
 			action.set_property("visible", item.show())
 			action.set_data("item", item)
 			self.action_group.add_action(action)
-
+	
 	def _get_function(self, object, name):
 		function = None
 		if hasattr(object, name):
@@ -594,17 +594,17 @@ class GeditMenu:
 			MenuIgnoreByFilename,
 			MenuIgnoreByFileExtension
 		]
-
+	
 	def set_paths(self, paths):
 		self.paths = paths
 		self.conditions.paths = paths
 		self.callbacks.paths = paths
-
+	
 	def set_base_dir(self, base_dir):
 		self.base_dir = base_dir
 		self.callbacks.base_dir = base_dir
 		self.conditions.base_dir = base_dir
-
+	
 	def get_action_group(self, action_group):
 		return GeditMenuBuilder(self.structure, self.conditions, self.callbacks, action_group).action_group
 	
@@ -638,7 +638,7 @@ class GeditContextMenu(MenuBuilder):
 
 class GeditMainContextMenu(MainContextMenu):
 	def __init__(self, caller, vcs_client, base_dir, paths=[],
-			conditions=None, callbacks=None):
+				 conditions=None, callbacks=None):
 		"""
 		@param  caller: The calling object
 		@type   caller: RabbitVCS extension

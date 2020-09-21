@@ -600,35 +600,35 @@ class ContextMenuConditions:
 			"length": len(paths)
 		}
 		checks = {
-			"is_svn"                        : lambda path: (self.vcs_client.guess(path)["vcs"] == VCS_SVN),
-			"is_git"                        : lambda path: (self.vcs_client.guess(path)["vcs"] == VCS_GIT),
-			"is_mercurial"                  : lambda path: (self.vcs_client.guess(path)["vcs"] == VCS_MERCURIAL),
-			"is_dir"                        : os.path.isdir,
-			"is_file"                       : os.path.isfile,
-			"exists"                        : os.path.exists,
-			"is_working_copy"               : self.vcs_client.is_working_copy,
-			"is_in_a_or_a_working_copy"     : self.vcs_client.is_in_a_or_a_working_copy,
-			"is_versioned"                  : self.vcs_client.is_versioned,
-			"is_normal"                     : lambda path: self.statuses[path].simple_content_status() == "unchanged" and
+			"is_svn"						: lambda path: (self.vcs_client.guess(path)["vcs"] == VCS_SVN),
+			"is_git"						: lambda path: (self.vcs_client.guess(path)["vcs"] == VCS_GIT),
+			"is_mercurial"					: lambda path: (self.vcs_client.guess(path)["vcs"] == VCS_MERCURIAL),
+			"is_dir"						: os.path.isdir,
+			"is_file"						: os.path.isfile,
+			"exists"						: os.path.exists,
+			"is_working_copy"				: self.vcs_client.is_working_copy,
+			"is_in_a_or_a_working_copy"		: self.vcs_client.is_in_a_or_a_working_copy,
+			"is_versioned"					: self.vcs_client.is_versioned,
+			"is_normal"						: lambda path: self.statuses[path].simple_content_status() == "unchanged" and
 														   self.statuses[path].simple_metadata_status() == "normal",
-			"is_added"                      : lambda path: self.statuses[path].simple_content_status() == "added",
-			"is_modified"                   : lambda path: self.statuses[path].simple_content_status() == "modified" or
+			"is_added"						: lambda path: self.statuses[path].simple_content_status() == "added",
+			"is_modified"					: lambda path: self.statuses[path].simple_content_status() == "modified" or
 														   self.statuses[path].simple_metadata_status() == "modified",
-			"is_deleted"                    : lambda path: self.statuses[path].simple_content_status() == "deleted",
-			"is_ignored"                    : lambda path: self.statuses[path].simple_content_status() == "ignored",
-			"is_locked"                     : self.vcs_client.is_locked,
-			"is_missing"                    : lambda path: self.statuses[path].simple_content_status() == "missing",
-			"is_conflicted"                 : lambda path: self.statuses[path].simple_content_status() == "complicated",
-			"is_obstructed"                 : lambda path: self.statuses[path].simple_content_status() == "obstructed",
-			"has_unversioned"               : lambda path: "unversioned" in self.text_statuses,
-			"has_added"                     : lambda path: "added" in self.text_statuses,
-			"has_modified"                  : lambda path: "modified" in self.text_statuses or
+			"is_deleted"					: lambda path: self.statuses[path].simple_content_status() == "deleted",
+			"is_ignored"					: lambda path: self.statuses[path].simple_content_status() == "ignored",
+			"is_locked"						: self.vcs_client.is_locked,
+			"is_missing"					: lambda path: self.statuses[path].simple_content_status() == "missing",
+			"is_conflicted"					: lambda path: self.statuses[path].simple_content_status() == "complicated",
+			"is_obstructed"					: lambda path: self.statuses[path].simple_content_status() == "obstructed",
+			"has_unversioned"				: lambda path: "unversioned" in self.text_statuses,
+			"has_added"						: lambda path: "added" in self.text_statuses,
+			"has_modified"					: lambda path: "modified" in self.text_statuses or
 														   "modified" in self.prop_statuses,
-			"has_deleted"                   : lambda path: "deleted" in self.text_statuses,
-			"has_ignored"                   : lambda path: "ignored" in self.text_statuses,
-			"has_missing"                   : lambda path: "missing" in self.text_statuses,
-			"has_conflicted"                : lambda path: "complicated" in self.text_statuses,
-			"has_obstructed"                : lambda path: "obstructed" in self.text_statuses
+			"has_deleted"					: lambda path: "deleted" in self.text_statuses,
+			"has_ignored"					: lambda path: "ignored" in self.text_statuses,
+			"has_missing"					: lambda path: "missing" in self.text_statuses,
+			"has_conflicted"				: lambda path: "complicated" in self.text_statuses,
+			"has_obstructed"				: lambda path: "obstructed" in self.text_statuses
 		}
 		for key,func in list(checks.items()):
 			self.path_dict[key] = False
@@ -1184,7 +1184,7 @@ class MainContextMenuConditions(ContextMenuConditions):
 	Allows us to override some generic condition methods with condition logic
 	more suitable to the dialogs.
 	"""
-	def __init__(self, vcs_client, paths=[]):
+	def __init__(self, vcs_client, paths=[], invalidate=False):
 		"""
 		@param  vcs_client: The vcs client to be used
 		@type   vcs_client: rabbitvcs.vcs.create_vcs_instance()
@@ -1195,16 +1195,16 @@ class MainContextMenuConditions(ContextMenuConditions):
 		self.vcs_client = vcs_client
 		self.paths = paths
 		self.statuses = {}
-		self.generate_statuses(paths)
+		self.generate_statuses(paths, invalidate)
 		self.generate_path_dict(paths)
 	
 	# FIXME: major bottleneck
-	def generate_statuses(self, paths):
+	def generate_statuses(self, paths, invalidate=False):
 		self.statuses = {}
 		for path in paths:
 			if not path:
 				continue
-			statuses_tmp = self.vcs_client.statuses(path)
+			statuses_tmp = self.vcs_client.statuses(path, invalidate)
 			for status in statuses_tmp:
 				self.statuses[status.path] = status
 		self.text_statuses = [self.statuses[key].simple_content_status()
@@ -1217,7 +1217,7 @@ class MainContextMenu:
 	Defines and composes the main context menu.
 	"""
 	def __init__(self, caller, base_dir, paths=[],
-			conditions=None, callbacks=None):
+				 conditions=None, callbacks=None):
 		"""
 		@param  caller: The calling object
 		@type   caller: RabbitVCS extension
@@ -1241,7 +1241,7 @@ class MainContextMenu:
 		
 		self.conditions = conditions
 		if self.conditions is None:
-			self.conditions = MainContextMenuConditions(self.vcs_client, paths)
+			self.conditions = MainContextMenuConditions(self.vcs_client, paths, True)
 		
 		self.callbacks = callbacks
 		if self.callbacks is None:
