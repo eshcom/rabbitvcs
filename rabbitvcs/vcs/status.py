@@ -82,15 +82,15 @@ class StatusCache(object):
 	]
 	authors = []
 	revisions = []
-
+	
 	def __init__(self):
 		self.cache = {}
-
+	
 	def __setitem__(self, path, status):
 		try:
 			content_index = self.keys.index(status.simple_content_status())
 			metadata_index = self.keys.index(status.simple_metadata_status())
-
+			
 			try:
 				author_index = self.authors.index(status.author)
 			except ValueError as e:
@@ -111,7 +111,7 @@ class StatusCache(object):
 			)
 		except Exception as e:
 			log.debug(e)
-			
+	
 	def __getitem__(self, path):
 		try:
 			(content_index, metadata_index, revision_index, author_index, date) = self.cache[path]
@@ -123,16 +123,16 @@ class StatusCache(object):
 				author=author, date=date)
 		except Exception as e:
 			log.debug(e)
-
+	
 	def __delitem__(self, path):
 		try:
 			del self.cache[path]
 		except KeyError as e:
 			log.debug(e)
-
+	
 	def __contains__(self, path):
 		return path in self.cache
-
+	
 	def find_path_statuses(self, path):
 		statuses = []
 		if os.path.isdir(path):
@@ -144,7 +144,7 @@ class StatusCache(object):
 		return statuses
 
 class Status(object):
-
+	
 	@staticmethod
 	def status_unknown(path):
 		return Status(path, status_unknown, summary = status_unknown)
@@ -158,7 +158,7 @@ class Status(object):
 		return Status(path, status_calculating, summary = status_calculating)
 	
 	vcs_type = rabbitvcs.vcs.VCS_DUMMY
- 
+	
 	clean_statuses = ['unchanged']
 	
 	content_status_map = None
@@ -177,7 +177,7 @@ class Status(object):
 		
 		@type   metadata: string
 		@param  metadata: The property status
-
+		
 		@type   summary: string
 		@param  summary: The summary status
 		
@@ -200,7 +200,7 @@ class Status(object):
 		self.revision = revision
 		self.author = author
 		self.date = date
-
+	
 	def _make_single_status(self):
 		"""
 		Given our text_status and a prop_status, simplify to a single "simple"
@@ -213,19 +213,19 @@ class Status(object):
 			if self.metadata:
 				single = self.simple_metadata_status() or status_error
 		return single
-
+	
 	def simple_content_status(self):
 		if self.content_status_map:
 			return self.content_status_map.get(self.content)
 		else:
 			return self.content
-		
+	
 	def simple_metadata_status(self):
 		if self.metadata and self.metadata_status_map:
 			return self.metadata_status_map.get(self.metadata)
 		else:
 			return self.metadata
-
+	
 	def make_summary(self, child_statuses = []):
 		""" Summarises statuses for directories.
 		"""
@@ -265,20 +265,19 @@ class Status(object):
 										self.vcs_type,
 										self.simple_content_status(),
 										self.simple_metadata_status())
-
+	
 	def __getstate__(self):
 		attrs = self.__dict__.copy()
 		attrs['__type__'] = type(self).__name__
 		attrs['__module__'] = type(self).__module__
 		return attrs
-		
+	
 	def __setstate__(self, state_dict):
 		del state_dict['__type__']
 		del state_dict['__module__']
 		self.__dict__ = state_dict
 
 class SVNStatus(Status):
-
 	vcs_type = rabbitvcs.vcs.VCS_SVN
 	
 	content_status_map = {
@@ -313,7 +312,7 @@ class SVNStatus(Status):
 			revision = int(pysvn_status.entry.commit_revision.number)
 			author = pysvn_status.entry.commit_author
 			date = int(pysvn_status.entry.commit_time)
-
+		
 		# There is a potential problem here: I'm pretty sure that PySVN statuses
 		# do NOT have translatable representations, so this will always come out
 		# to be 'normal', 'modified' etc
@@ -326,14 +325,13 @@ class SVNStatus(Status):
 			author=author,
 			date=date
 		)
-
+		
 		# self.remote_content = getattr(pysvn_status, "repos_text_status", None)
 		# self.remote_metadata = getattr(pysvn_status, "repos_prop_status", None)
 		self.remote_content = str(pysvn_status.repos_text_status)
 		self.remote_metadata = str(pysvn_status.repos_prop_status)
 
 class GitStatus(Status):
-
 	vcs_type = 'git'
 	
 	content_status_map = {
@@ -351,7 +349,7 @@ class GitStatus(Status):
 		'normal': status_normal,
 		None: status_normal
 	}
-
+	
 	def __init__(self, gittyup_status):
 		super(GitStatus, self).__init__(
 			gittyup_status.path,
@@ -375,7 +373,7 @@ class MercurialStatus(Status):
 		'normal': status_normal,
 		None: status_normal
 	}
-
+	
 	def __init__(self, mercurial_status):
 		super(MercurialStatus, self).__init__(
 			mercurial_status["path"],
@@ -390,32 +388,31 @@ STATUS_TYPES = [
 ]
 
 class TestStatusObjects(unittest.TestCase):
-	
 	base = "/path/to/test"
 	children = [os.path.join(base, chr(x)) for x in range(97,123)]
 	
 	def testsingle_clean(self):
 		status = Status(self.base, status_normal)
 		self.assertEqual(status.single, status_normal)
-		
+	
 	def testsingle_changed(self):
 		status = Status(self.base, status_modified)
 		self.assertEqual(status.single, status_modified)
-		
+	
 	def testsingle_propclean(self):
 		status = Status(self.base, status_normal, status_normal)
 		self.assertEqual(status.single, status_normal)
-
+	
 	def testsingle_propchanged(self):
 		status = Status(self.base, status_normal, status_modified)
 		self.assertEqual(status.single, status_modified)
-		
+	
 	def testsummary_clean(self):
 		top_status = Status(self.base, status_normal)
 		child_sts = [Status(path, status_normal) for path in self.children]
 		top_status.make_summary(child_sts)
 		self.assertEqual(top_status.summary, status_normal)
-
+	
 	def testsummary_changed(self):
 		top_status = Status(self.base, status_normal)
 		child_sts = [Status(path, status_normal) for path in self.children]
@@ -424,7 +421,7 @@ class TestStatusObjects(unittest.TestCase):
 		
 		top_status.make_summary(child_sts)
 		self.assertEqual(top_status.summary, status_modified)
-
+	
 	def testsummary_added(self):
 		top_status = Status(self.base, status_normal)
 		child_sts = [Status(path, status_normal) for path in self.children]
@@ -433,7 +430,7 @@ class TestStatusObjects(unittest.TestCase):
 		
 		top_status.make_summary(child_sts)
 		self.assertEqual(top_status.summary, status_modified)
-
+	
 	def testsummary_complicated(self):
 		top_status = Status(self.base, status_normal)
 		child_sts = [Status(path, status_normal) for path in self.children]
@@ -442,7 +439,7 @@ class TestStatusObjects(unittest.TestCase):
 		
 		top_status.make_summary(child_sts)
 		self.assertEqual(top_status.summary, status_complicated)
-
+	
 	def testsummary_propchange(self):
 		top_status = Status(self.base, status_normal)
 		child_sts = [Status(path, status_normal) for path in self.children]
@@ -453,7 +450,7 @@ class TestStatusObjects(unittest.TestCase):
 		
 		top_status.make_summary(child_sts)
 		self.assertEqual(top_status.summary, status_modified)
-
+	
 	def testsummary_bothchange(self):
 		top_status = Status(self.base, status_normal)
 		child_sts = [Status(path, status_normal) for path in self.children]
@@ -464,7 +461,7 @@ class TestStatusObjects(unittest.TestCase):
 		
 		top_status.make_summary(child_sts)
 		self.assertEqual(top_status.summary, status_complicated)
-
+	
 	def testsummary_topadded(self):
 		top_status = Status(self.base, status_added)
 		child_sts = [Status(path, status_normal) for path in self.children]
