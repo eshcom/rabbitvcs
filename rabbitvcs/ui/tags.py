@@ -288,7 +288,8 @@ class GitTagManager(InterfaceView):
 		if self.selected_tag:
 			self.tag_entry.set_text(self.selected_tag.name)
 			self.revision_label.set_text(self.selected_tag.sha)
-			self.message_label.set_text(self.selected_tag.message.rstrip("\n"))
+			message = helper.format_long_text(self.selected_tag.message.rstrip("\n"), 1000, False)
+			self.message_label.set_text(message)
 			self.tagger_label.set_text(self.selected_tag.tagger)
 			self.date_label.set_text(helper.format_datetime(datetime.fromtimestamp(self.selected_tag.tag_time)))
 			self.show_containers(self.view_containers)

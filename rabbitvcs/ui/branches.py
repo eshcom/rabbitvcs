@@ -288,15 +288,20 @@ class GitBranchManager(InterfaceView):
 		self.state = STATE_EDIT
 		branch_name = saxutils.unescape(branch_name)
 		self.selected_branch = None
-		for item in self.branch_list:
+		for index, item in enumerate(self.branch_list):
 			if item.name == branch_name:
+				if not hasattr(item, "fmt_message"):
+					fmt_message = self.git.branch_message(item.revision, item.message)
+					item.fmt_message = helper.format_long_text(fmt_message, 1000, False)
+					item.message = None
+					self.branch_list[index] = item
 				self.selected_branch = item
 				break
 		self.save_button.set_label(_("Save"))
 		if self.selected_branch:
 			self.branch_entry.set_text(self.selected_branch.name)
 			self.revision_label.set_text(six.text_type(self.selected_branch.revision))
-			self.message_label.set_text(self.selected_branch.message.rstrip("\n"))
+			self.message_label.set_text(self.selected_branch.fmt_message)
 			if self.selected_branch.tracking:
 				self.checkout_checkbox.set_active(True)
 				self.checkout_checkbox.set_sensitive(False)

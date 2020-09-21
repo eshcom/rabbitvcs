@@ -620,17 +620,9 @@ class GittyupClient:
 			elif components[0] == "(HEAD" or components[0].endswith('/HEAD'):
 				continue            # Detached head is not a branch.
 			else:
-			   name = components.pop(0)
+				name = components.pop(0)
 			revision = components.pop(0)
-			
-			# esh: fixed loss of line break
-			cmd = ["git", "show", "-s", "--format=%B", revision]
-			try:
-				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
-														  cancel=self.get_cancel).execute()
-				message = "\n".join(stdout)
-			except GittyupCommandError as e:
-				message = " ".join(components)
+			message = " ".join(components)
 			
 			branches.append({
 				"tracking": tracking,
@@ -639,6 +631,22 @@ class GittyupClient:
 				"message": message
 			})
 		return branches
+	
+	def branch_message(self, revision=None, default_message = None):
+		"""
+		Branch message with line break
+		"""
+		if not revision:
+			return default_message;
+		
+		cmd = ["git", "show", "-s", "--format=%B", revision]
+		try:
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
+			message = "\n".join(stdout)
+		except GittyupCommandError as e:
+			message = default_message
+		return message.strip("\n")
 	
 	def checkout(self, paths=[], revision="HEAD"):
 		"""

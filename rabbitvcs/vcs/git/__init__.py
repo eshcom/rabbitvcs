@@ -404,6 +404,12 @@ class Git:
 			))
 		return branches
 	
+	def branch_message(self, revision=None, default_message = None):
+		"""
+		Branch message with line break
+		"""
+		return self.client.branch_message(revision, default_message)
+	
 	def get_active_branch(self):
 		results = self.client.branch_list()
 		for result in results:
