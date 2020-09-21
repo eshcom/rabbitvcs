@@ -1204,7 +1204,7 @@ class MainContextMenuConditions(ContextMenuConditions):
 		for path in paths:
 			if not path:
 				continue
-			statuses_tmp = self.vcs_client.statuses(path, invalidate)
+			statuses_tmp = self.vcs_client.statuses(path, invalidate=invalidate)
 			for status in statuses_tmp:
 				self.statuses[status.path] = status
 		self.text_statuses = [self.statuses[key].simple_content_status()
@@ -1241,7 +1241,8 @@ class MainContextMenu:
 		
 		self.conditions = conditions
 		if self.conditions is None:
-			self.conditions = MainContextMenuConditions(self.vcs_client, paths, True)
+			self.conditions = MainContextMenuConditions(self.vcs_client, paths,
+														invalidate=True)
 		
 		self.callbacks = callbacks
 		if self.callbacks is None:
