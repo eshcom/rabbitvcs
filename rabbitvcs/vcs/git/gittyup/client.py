@@ -78,12 +78,12 @@ class GittyupClient:
 		self.callback_progress_update = None
 		self.callback_get_user = callback_get_user
 		self.callback_get_cancel = callback_get_cancel
-
+		
 		self.global_ignore_patterns = []
 		self.git_version = None
 		self.numberOfCommandStages = 0
 		self.numberOfCommandStagesExecuted = 0
-
+		
 		if path:
 			try:
 				self.repo = dulwich.repo.Repo(path)
@@ -97,7 +97,7 @@ class GittyupClient:
 					raise NotRepositoryError()
 		else:
 			self.repo = None
-
+	
 	#
 	# Start Private Methods
 	#
@@ -110,7 +110,7 @@ class GittyupClient:
 		except:
 			pass
 		f.close()
-
+	
 	def _get_index(self):
 		if not self.repo.has_index():
 			self._initialize_index()
@@ -122,10 +122,10 @@ class GittyupClient:
 		except KeyError as e:
 			tree = dulwich.objects.Tree()
 		return tree
-
+	
 	def _get_tree_from_sha1(self, sha1):
 		return self.repo[self.repo[sha1].tree]
-
+	
 	def _get_tree_index(self, tree=None):
 		if tree is None:
 			tree = self._get_tree_at_head()
@@ -134,7 +134,7 @@ class GittyupClient:
 			for item in self.repo.object_store.iter_tree_contents(tree.id):
 				tree_index[item[0]] = (item[1], item[2])
 		return tree_index
-
+	
 	def _get_git_version(self):
 		"""
 		Gets the local git version
@@ -151,18 +151,18 @@ class GittyupClient:
 				return self.git_version
 			except Exception as e:
 				return None
-
+	
 	def _version_greater_than(self, version1, version2):
 		len1 = len(version1)
 		len2 = len(version2)
 		max = 5
-
+		
 		# Pad the version lists so they are the same length
 		if max > len1:
 			version1 += [0] * (max-len1)
 		if max > len2:
 			version2 += [0] * (max-len2)
-
+		
 		if version1[0] > version2[0]:
 			return True
 		if (version1[0] == version2[0]
@@ -184,7 +184,7 @@ class GittyupClient:
 				and version1[4] > version2[4]):
 			return True
 		return False
-
+	
 	def _get_global_ignore_patterns(self):
 		"""
 		Get ignore patterns from $GIT_DIR/info/exclude then from
@@ -240,14 +240,14 @@ class GittyupClient:
 				pass
 			file.close()
 		return patterns
-
+	
 	def get_local_config_file(self):
 		try:
 			git_dir = os.environ["GIT_DIR"]
 		except KeyError:
 			git_dir = os.path.join(self.repo.path, ".git")
 		return git_dir + "/config"
-
+	
 	def _ignore_file(self, patterns, filename):
 		"""
 		Determine whether the given file should be ignored
@@ -266,7 +266,7 @@ class GittyupClient:
 				removed_git_dir = True
 			except ValueError:
 				pass
-
+			
 			# Find the relative root path of this folder
 			if root == self.repo.path:
 				rel_root = ""
@@ -281,7 +281,7 @@ class GittyupClient:
 		#Remove duplicates in list
 		directories=list(set(directories))
 		return (sorted(files), directories)
-
+	
 	def _get_blob_from_file(self, path):
 		file = open(path, "rb")
 		try:
@@ -289,7 +289,7 @@ class GittyupClient:
 		finally:
 			file.close()
 		return blob
-
+	
 	def _write_blob_to_file(self, path, blob):
 		dirname = os.path.dirname(path)
 		if not os.path.isdir(dirname):
@@ -299,10 +299,10 @@ class GittyupClient:
 			file.write(blob.data)
 		finally:
 			file.close()
-
+	
 	def _load_config(self):
 		self.config = self.repo.get_config()
-
+	
 	def _config_normalize_section(self, section):
 		# If some old code is using string sections, convert to a tuple
 		if isinstance(section, six.string_types):
@@ -311,15 +311,15 @@ class GittyupClient:
 			s2 = " ".join(parts).replace('"', "")
 			section = (s1, s2)
 		return section
-
+	
 	def _config_set(self, section, key, value):
 		section = self._config_normalize_section(section)
 		return self.config.set(section, key, value)
-
+	
 	def _config_get(self, section, key):
 		section = self._config_normalize_section(section)
 		return self.config.get(section, key)
-
+	
 	def _get_config_user(self):
 		try:
 			config_user_name = self._config_get(("user", ), "name")
@@ -330,24 +330,23 @@ class GittyupClient:
 			(config_user_name, config_user_email) = self.callback_get_user()
 			if config_user_name == None and config_user_email == None:
 				return None
-			
 		self._config_set(("user", ), "name", config_user_name)
 		self._config_set(("user", ), "email", config_user_email)
 		self.config.write_to_path()
 		return "%s <%s>" % (config_user_name, config_user_email)
-
+	
 	#
 	# Start Public Methods
 	#
 	def initialize_repository(self, path, bare=False):
 		mkdir_p(path)
-
+		
 		if bare:
 			dulwich.repo.Repo.init_bare(path)
 		else:
 			dulwich.repo.Repo.init(path)
 		self.set_repository(path)
-
+	
 	def set_repository(self, path):
 		# ~ log.debug("GittyupClient.set_repository.path = %s" % path) # esh
 		try:
@@ -355,19 +354,18 @@ class GittyupClient:
 			self._load_config()
 		except dulwich.errors.NotGitRepository:
 			raise NotRepositoryError()
-
+	
 	def get_repository(self):
 		return self.repo.path
-
+	
 	def find_repository_path(self, path):
 		path_to_check = path
 		while path_to_check != "/" and path_to_check != "":
 			if os.path.isdir(os.path.join(path_to_check, ".git")):
 				return path_to_check
-			
 			path_to_check = os.path.split(path_to_check)[0]
 		return None
-
+	
 	def get_relative_path(self, path):
 		if path == self.repo.path:
 			return ""
@@ -375,19 +373,19 @@ class GittyupClient:
 	
 	def get_absolute_path(self, path):
 		return os.path.join(self.repo.path, path).rstrip("/")
-
+	
 	def track(self, name):
 		self.repo.refs.set_symbolic_ref("HEAD", name)
-
+	
 	def is_tracking(self, name):
 		return (self.repo.refs.read_ref("HEAD")[5:] == name)
-
+	
 	def tracking(self):
 		return self.repo.refs.read_ref("HEAD")[5:]
 	
 	def head(self):
 		return self.repo.refs["HEAD"]
-
+	
 	def stage(self, paths):
 		"""
 		Stage files to be committed or tracked
@@ -397,14 +395,14 @@ class GittyupClient:
 		"""
 		index = self._get_index()
 		to_stage = []
-
+		
 		if type(paths) in (str, six.text_type):
 			paths = [paths]
-
+		
 		for path in paths:
 			relative_path = self.get_relative_path(path)
 			absolute_path = self.get_absolute_path(path)
-
+			
 			self.notify({
 				"action": "Staged",
 				"path": absolute_path,
@@ -427,7 +425,7 @@ class GittyupClient:
 			if status == MissingStatus:
 				del index[status.path]
 				index.write()
-
+	
 	def unstage(self, paths):
 		"""
 		Unstage files so they are not committed or tracked
@@ -437,10 +435,10 @@ class GittyupClient:
 		"""
 		index = self._get_index()
 		tree = self._get_tree_index()
-
+		
 		if type(paths) in (str, six.text_type):
 			paths = [paths]
-
+		
 		for path in paths:
 			relative_path = self.get_relative_path(path)
 			if relative_path in index:
@@ -466,15 +464,16 @@ class GittyupClient:
 					del index[relative_path]
 			else:
 				if relative_path in tree:
-					index[relative_path] = (0, 0, 0, 0, tree[relative_path][0], 0, 0, 0, tree[relative_path][1], 0)
-
+					index[relative_path] = (0, 0, 0, 0, tree[relative_path][0],
+											0, 0, 0, tree[relative_path][1], 0)
+		
 		self.notify({
 			"action": "Unstaged",
 			"path": path,
 			"mime_type": guess_type(path)[0]
 		})
 		index.write()
-			
+	
 	def unstage_all(self):
 		"""
 		Unstage all files so they are not committed or tracked
@@ -495,11 +494,10 @@ class GittyupClient:
 		staged = []
 		tree = self._get_tree_at_head()
 		index = self._get_index()
-
+		
 		if len(tree) > 0:
 			for item in index.changes_from_tree(self.repo.object_store, tree.id):
 				((old_name, new_name), (old_mode, new_mode), (old_sha, new_sha)) = item
-
 				if new_name:
 					staged.append(new_name)
 				if old_name and old_name != new_name:
@@ -508,7 +506,7 @@ class GittyupClient:
 			for path in index:
 				staged.append(path)
 		return staged
-
+	
 	def is_staged(self, path, staged_files=None):
 		"""
 		Determines if the specified path is staged
@@ -541,15 +539,16 @@ class GittyupClient:
 		cmd = ["git", "branch"]
 		if track:
 			cmd.append("-t")
-
+		
 		if commit_sha is None:
 			commit_sha = self.repo.head()
 		cmd += [name, commit_sha]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-
+	
 	def branch_delete(self, name):
 		"""
 		Delete a branch
@@ -563,14 +562,14 @@ class GittyupClient:
 			if self.is_tracking(ref_name):
 				self.track("refs/heads/master")
 			del self.repo.refs[ref_name]
-
+	
 	def branch_rename(self, old_name, new_name):
 		"""
 		Rename a branch
-
+		
 		@type   old_name: string
 		@param  old_name: The name of the branch to be renamed
-
+		
 		@type   new_name: string
 		@param  new_name: The name of the new branch
 		"""
@@ -601,7 +600,8 @@ class GittyupClient:
 			cmd += ["--contains", commit_sha]
 		
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 		
@@ -626,8 +626,7 @@ class GittyupClient:
 			# esh: fixed loss of line break
 			cmd = ["git", "show", "-s", "--format=%B", revision]
 			try:
-				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
-														  notify=self.notify,
+				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
 														  cancel=self.get_cancel).execute()
 				message = "\n".join(stdout)
 			except GittyupCommandError as e:
@@ -657,7 +656,8 @@ class GittyupClient:
 			paths = []
 		cmd = ["git", "checkout", "-m", revision] + paths
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -665,7 +665,8 @@ class GittyupClient:
 	def cherrypick(self, commits=[]):
 		cmd = ["git", "cherry-pick"] + commits
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -686,21 +687,22 @@ class GittyupClient:
 		@param  origin: Specify the origin of the repository
 		"""
 		self.numberOfCommandStages = 3
-
+		
 		more = ["-o", "origin","--progress"]
 		if bare:
 			more.append("--bare")
-	
+		
 		base_dir = os.path.split(path)[0]
-	
+		
 		cmd = ["git", "clone", host, path] + more
 		
 		isUsername = False
 		isPassword = False
 		self.modifiedHost = host
-
+		
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=base_dir, notify=self.notify_and_parse_progress, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=base_dir, notify=self.notify_and_parse_progress,
+													  cancel=self.get_cancel).execute()
 			if stdout[1].find('could not read Username') > -1:
 				# Prompt for username if it does not exist in the url.
 				isUsername, originalRemoteUrl = self.promptUsername(self.modifiedHost)
@@ -709,15 +711,16 @@ class GittyupClient:
 			elif stdout[1].find('could not read Password') > -1:
 				# Prompt for password if a username exists in the remote url without a password.
 				isPassword, originalRemoteUrl = self.promptPassword(self.modifiedHost)
-
+			
 			if isUsername == True or isPassword == True:
 				# Update the cmd with the username and password.
 				cmd = ["git", "clone", self.modifiedHost, path] + more
 				# Try again.
-				(status, stdout, stderr) = GittyupCommand(cmd, cwd=base_dir, notify=self.notify_and_parse_progress, cancel=self.get_cancel).execute()
+				(status, stdout, stderr) = GittyupCommand(cmd, cwd=base_dir, notify=self.notify_and_parse_progress,
+														  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-
+		
 		# If we prompted for a username or password then it will now be written to the config. Remove it now before continuing.
 		if isUsername == True or isPassword == True:
 			# Load new config.
@@ -769,14 +772,14 @@ class GittyupClient:
 		"""
 		if commit_all:
 			self.stage_all()
-
+		
 		initial_commit = False
-
+		
 		if encoding is None:
 			encoding = ENCODING
 		if commit_timezone is None:
 			commit_timezone = helper.utc_offset()
-
+		
 		commit_id = self.repo.do_commit(message = message,
 										committer = committer,
 										commit_timestamp = commit_time,
@@ -786,7 +789,7 @@ class GittyupClient:
 										author_timezone = author_timezone,
 										encoding = encoding,
 										merge_heads = parents)
-
+		
 		branch_full = self.repo.refs.read_ref("HEAD")
 		if branch_full is not None:
 			branch_components = re.search("refs/heads/(.+)", branch_full)
@@ -797,7 +800,7 @@ class GittyupClient:
 		#Print tree changes.
 		#dulwich.patch.write_tree_diff(sys.stdout, self.repo.object_store, commit.tree, commit.id)
 		return commit_id
-
+	
 	def remove(self, paths):
 		"""
 		Remove path from the repository.  Also deletes the local file.
@@ -830,7 +833,7 @@ class GittyupClient:
 		index = self._get_index()
 		relative_source = self.get_relative_path(source)
 		relative_dest = self.get_relative_path(dest)
-
+		
 		# Get a list of affected files so we can update the index
 		source_files = []
 		if os.path.isdir(source):
@@ -839,7 +842,7 @@ class GittyupClient:
 					source_files.append(name)
 		else:
 			source_files.append(self.get_relative_path(source))
-
+		
 		# Rename the affected index entries
 		for source_file in source_files:
 			new_path = source_file.replace(relative_source, relative_dest)
@@ -850,12 +853,12 @@ class GittyupClient:
 		index.write()
 		# Actually move the file/folder
 		shutil.move(source, dest)
-
+	
 	def pull(self, repository="origin", refspec="master", options=None):
 		"""
 		Fetch objects from a remote repository and merge with the local
 			repository
-			
+		
 		@type   repository: string
 		@param  repository: The name of the repository
 		
@@ -863,13 +866,13 @@ class GittyupClient:
 		@param  refspec: The branch name to pull from
 		"""
 		self.numberOfCommandStages = 2
-
+		
 		cmd = ["git", "pull", "--progress"]
-
+		
 		if options != None:
 			if options.count("rebase"):
 				cmd.append("--rebase")
-
+			
 			if options.count("all"):
 				cmd.append("--all")
 			else:
@@ -879,9 +882,10 @@ class GittyupClient:
 		remoteKey = "remote \"" + repository + "\""
 		isUsername = False
 		isPassword = False
-
+		
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push,
+													  cancel=self.get_cancel).execute()
 			if stdout[0].find('could not read Username') > -1:
 				# Prompt for username if it does not exist in the url.
 				isUsername, originalRemoteUrl = self.promptUsername(remoteKey)
@@ -890,69 +894,71 @@ class GittyupClient:
 			elif stdout[0].find('could not read Password') > -1:
 				# Prompt for password if a username exists in the remote url without a password.
 				isPassword, originalRemoteUrl = self.promptPassword(remoteKey)
-
+			
 			if isUsername == True or isPassword == True:
 				# Try again.
-				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push, cancel=self.get_cancel).execute()
+				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push,
+														  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-
+		
 		# If we prompted for a password and write it to the config, remove it now before continuing.
 		if isUsername == True or isPassword == True:
 			# Write original url back to config.
 			self._config_set(remoteKey, "url", originalRemoteUrl)
 			self.config.write_to_path()
-
+	
 	def push(self, repository="origin", refspec="master", tags=True):
 		"""
 		Push objects from the local repository into the remote repository
 			and merge them.
-			
+		
 		@type   repository: string
 		@param  repository: The name of the repository
 		
 		@type   refspec: string
 		@param  refspec: The branch name to pull from
-
+		
 		@type   tags: boolean
 		@param  tags: True to include tags in push, False to omit
 		"""
 		self.numberOfCommandStages = 2
-
+		
 		cmd = ["git", "push", "--progress"]
 		if tags:
 			cmd.extend(["--tags"])
 		cmd.extend([repository, refspec])
-
+		
 		# Setup the section name in the config for the remote target.
 		remoteKey = "remote \"" + repository + "\""
 		isUsername = False
 		isPassword = False
-
+		
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push,
+													  cancel=self.get_cancel).execute()
 			if stdout[0].find('could not read Username') > -1:
 				# Prompt for username if it does not exist in the url.
 				isUsername, originalRemoteUrl = self.promptUsername(remoteKey)
-
 				# Prompt for password if a username exists in the remote url without a password.
 				isPassword, originalRemoteUrl2 = self.promptPassword(remoteKey)
 			elif stdout[0].find('could not read Password') > -1:
 				# Prompt for password if a username exists in the remote url without a password.
 				isPassword, originalRemoteUrl = self.promptPassword(remoteKey)
-
+			
 			if isUsername == True or isPassword == True:
 				# Try again.
-				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push, cancel=self.get_cancel).execute()
+				(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify_and_parse_git_push,
+														  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-
+		
 		# If we prompted for a password and write it to the config, remove it now before continuing.
 		if isUsername == True or isPassword == True:
 			# Write original url back to config.
 			self._config_set(remoteKey, "url", originalRemoteUrl)
 			self.config.write_to_path()
-
+	
 	def onUsername(self, window, username, remoteKey, originalRemoteUrl, isOk):
 		if isOk == True:
 			if username == "":
@@ -961,7 +967,7 @@ class GittyupClient:
 			else:
 				# Insert password into url.
 				newRemoteUrl = originalRemoteUrl.replace("://", "://" + username + "@")
-
+				
 				if remoteKey.find("://") == -1:
 					# Write url temporarily back to config.
 					self._config_set(remoteKey, "url", newRemoteUrl)
@@ -971,7 +977,7 @@ class GittyupClient:
 					self.modifiedHost = newRemoteUrl
 		# Close dialog.
 		window.destroy()
-
+	
 	def onPassword(self, window, password, remoteKey, originalRemoteUrl, isOk):
 		if isOk == True:
 			if password == "":
@@ -980,7 +986,7 @@ class GittyupClient:
 			else:
 				# Insert password into url.
 				newRemoteUrl = originalRemoteUrl.replace("@", ":" + password + "@")
-
+				
 				if remoteKey.find("://") == -1:
 					# Write url temporarily back to config.
 					self._config_set(remoteKey, "url", newRemoteUrl)
@@ -990,7 +996,7 @@ class GittyupClient:
 					self.modifiedHost = newRemoteUrl
 		# Close dialog.
 		window.destroy()
-
+	
 	def promptUsername(self, remoteKey):
 		"""
 		If the github url contains no username, prompt for one and write the url back to the config.
@@ -1000,11 +1006,11 @@ class GittyupClient:
 		isUsername = False
 		originalRemoteUrl = remoteKey
 		self.modifiedHost = originalRemoteUrl
-
+		
 		if remoteKey.find("://") == -1:
 			# Get existing url from config, otherwise just use what was provided (the url from cloning, etc).
 			originalRemoteUrl = self._config_get(remoteKey, "url")
-
+		
 		if originalRemoteUrl.find('@') == -1:
 			# No username or password. Prompt for both. Create dialog.
 			window = six.moves.tkinter.Tk()
@@ -1013,38 +1019,44 @@ class GittyupClient:
 			window["padx"] = 40
 			window["pady"] = 20
 			textFrame = six.moves.tkinter.Frame(window)
-
+			
 			# Create textbox label.
 			entryLabel = six.moves.tkinter.Label(textFrame)
 			entryLabel["text"] = "Username:"
 			entryLabel.pack(side=six.moves.tkinter.LEFT)
-
+			
 			# Create textbox.
 			entryWidget = six.moves.tkinter.Entry(textFrame)
 			entryWidget["width"] = 25
-			entryWidget.bind("<Return>", (lambda event: self.onUsername(window, entryWidget.get(), remoteKey, originalRemoteUrl, True)))
-			entryWidget.bind("<KP_Enter>", (lambda event: self.onUsername(window, entryWidget.get(), remoteKey, originalRemoteUrl, True)))
+			entryWidget.bind("<Return>", (lambda event: self.onUsername(window, entryWidget.get(),
+																		remoteKey, originalRemoteUrl, True)))
+			entryWidget.bind("<KP_Enter>", (lambda event: self.onUsername(window, entryWidget.get(),
+																		  remoteKey, originalRemoteUrl, True)))
 			entryWidget.pack(side=six.moves.tkinter.LEFT)
 			entryWidget.focus();
-
+			
 			textFrame.pack()
 
 			# Create OK button.
-			button = six.moves.tkinter.Button(window, width=5, text="OK", command = (lambda: self.onUsername(window, entryWidget.get(), remoteKey, originalRemoteUrl, True)))
+			button = six.moves.tkinter.Button(window, width=5, text="OK", command =
+												(lambda: self.onUsername(window, entryWidget.get(),
+																		 remoteKey, originalRemoteUrl, True)))
 			button.pack(side=six.moves.tkinter.RIGHT)
-
+			
 			# Create Cancel button.
-			button = six.moves.tkinter.Button(window, width=5, text="Cancel", command = (lambda: self.onUsername(window, entryWidget.get(), remoteKey, originalRemoteUrl, False)))
+			button = six.moves.tkinter.Button(window, width=5, text="Cancel", command =
+												(lambda: self.onUsername(window, entryWidget.get(),
+																		 remoteKey, originalRemoteUrl, False)))
 			button.pack(side=six.moves.tkinter.RIGHT)
-
+			
 			# Position window in center of screen.
 			self.center(window)
-
+			
 			# Show dialog.
 			window.mainloop()
 			isUsername = True
 		return isUsername, originalRemoteUrl
-
+	
 	def promptPassword(self, remoteKey):
 		"""
 		If a username exists in the github url without a password, prompt the user and write the url back to the config.
@@ -1054,53 +1066,59 @@ class GittyupClient:
 		isPassword = False
 		originalRemoteUrl = remoteKey
 		self.modifiedHost = originalRemoteUrl
-
+		
 		if remoteKey.find("://") == -1:
 			# Get existing url from config, otherwise just use what was provided (the url from cloning, etc).
 			originalRemoteUrl = self._config_get(remoteKey, "url")
-
+		
 		# If the url contains a username (@) without a password (:), then prompt for a password.
 		if originalRemoteUrl.find('@') > -1 and originalRemoteUrl.rfind(':') <= 5:
 			# Prompt for password. Create dialog.
 			window = six.moves.tkinter.Tk()
-
+			
 			window.title("Please enter your password")
 			window.resizable(0,0)
 			window["padx"] = 40
 			window["pady"] = 20
 			textFrame = six.moves.tkinter.Frame(window)
-
+			
 			# Create textbox label.
 			entryLabel = six.moves.tkinter.Label(textFrame)
 			entryLabel["text"] = "Password:"
 			entryLabel.pack(side=six.moves.tkinter.LEFT)
-
+			
 			# Create textbox.
 			entryWidget = six.moves.tkinter.Entry(textFrame)
 			entryWidget["show"] = "*"
 			entryWidget["width"] = 25
-			entryWidget.bind("<Return>", (lambda event: self.onPassword(window, entryWidget.get(), remoteKey, originalRemoteUrl, True)))
-			entryWidget.bind("<KP_Enter>", (lambda event: self.onPassword(window, entryWidget.get(), remoteKey, originalRemoteUrl, True)))
+			entryWidget.bind("<Return>", (lambda event: self.onPassword(window, entryWidget.get(),
+																		remoteKey, originalRemoteUrl, True)))
+			entryWidget.bind("<KP_Enter>", (lambda event: self.onPassword(window, entryWidget.get(),
+																		  remoteKey, originalRemoteUrl, True)))
 			entryWidget.pack(side=six.moves.tkinter.LEFT)
 			entryWidget.focus();
-
+			
 			textFrame.pack()
-
+			
 			# Create OK button.
-			button = six.moves.tkinter.Button(window, width=5, text="OK", command = (lambda: self.onPassword(window, entryWidget.get(), remoteKey, originalRemoteUrl, True)))
+			button = six.moves.tkinter.Button(window, width=5, text="OK", command =
+												(lambda: self.onPassword(window, entryWidget.get(),
+																		 remoteKey, originalRemoteUrl, True)))
 			button.pack(side=six.moves.tkinter.RIGHT)
-
+			
 			# Create Cancel button.
-			button = six.moves.tkinter.Button(window, width=5, text="Cancel", command = (lambda: self.onPassword(window, entryWidget.get(), remoteKey, originalRemoteUrl, False)))
+			button = six.moves.tkinter.Button(window, width=5, text="Cancel", command =
+												(lambda: self.onPassword(window, entryWidget.get(),
+																		 remoteKey, originalRemoteUrl, False)))
 			button.pack(side=six.moves.tkinter.RIGHT)
-
+			
 			# Position window in center of screen.
 			self.center(window)
 			# Show dialog.
 			window.mainloop()
 			isPassword = True
 		return isPassword, originalRemoteUrl
-
+	
 	def fetch(self, repository, branch=None):
 		"""
 		Fetch objects from a remote repository.  This will not merge the files
@@ -1116,21 +1134,24 @@ class GittyupClient:
 		if branch:
 			cmd.append(branch)
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
 	def fetch_all(self):
 		cmd = ["git", "fetch", "--all"]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-			
+	
 	def merge(self, branch):
 		cmd = ["git", "merge", branch]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -1146,7 +1167,8 @@ class GittyupClient:
 		"""
 		cmd = ["git", "remote", "add", name, host]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -1162,7 +1184,8 @@ class GittyupClient:
 		"""
 		cmd = ["git", "remote", "rename", current_name, new_name]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -1178,7 +1201,8 @@ class GittyupClient:
 		"""
 		cmd = ["git", "remote", "set-url", name, url]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -1191,7 +1215,8 @@ class GittyupClient:
 		"""
 		cmd = ["git", "remote", "rm", name]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
@@ -1204,7 +1229,8 @@ class GittyupClient:
 		"""
 		cmd = ["git", "remote", "-v"]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			stdout = []
@@ -1237,12 +1263,12 @@ class GittyupClient:
 		
 		@type   message: string
 		@param  message: A log message
-				
+		
 		@type   revision: string
 		@param  revision: The revision to tag.  Defaults to HEAD
 		"""
 		dulwich.porcelain.tag(self.repo, name, objectish=revision, message=message)
-
+	
 	def tag_delete(self, name):
 		"""
 		Delete a tag
@@ -1269,21 +1295,22 @@ class GittyupClient:
 					tag = Tag(tag_sha, self.repo[tag_sha])
 				tags.append(tag)
 		return tags
-
+	
 	def status_porcelain(self, path):
 		if os.path.isdir(path):
 			(files, directories) = self._read_directory_tree(path)
 		else:
 			files = [self.get_relative_path(path)]
 			directories = []
-
+		
 		files_hash = {}
 		for file in files:
 			files_hash[file] = True
-
+		
 		cmd = ["git", "status", "--porcelain", path]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
+													  notify=self.notify).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 		
@@ -1314,14 +1341,15 @@ class GittyupClient:
 					del files_hash[path]
 				except Exception as e:
 					pass
-
+		
 		# Determine untracked directories
 		cmd = ["git", "clean", "-nd", self.repo.path]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
+													  notify=self.notify).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-
+		
 		untracked_directories = []
 		for line in stdout:
 			components = re.match("^(Would remove)\s(.*?)$", line)
@@ -1329,11 +1357,12 @@ class GittyupClient:
 				untracked_path = components.group(2)
 				if untracked_path[-1]=='/':
 					untracked_directories.append(untracked_path[:-1])
-
+		
 		#Determine the ignored files and directories in Repo
 		cmd = ["git", "clean", "-ndX", self.repo.path]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
+													  notify=self.notify).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 		ignored_directories=[]
@@ -1370,11 +1399,11 @@ class GittyupClient:
 				self.ignored_paths.append(file)
 			else:
 				statuses.append(NormalStatus(file))
-
+		
 		# Determine status of folders based on child contents
 		for d in directories:
 			d_status = NormalStatus(d)
-
+			
 			# Check if directory is untracked or a sub-directory of an untracked directory
 			for untracked_path in untracked_directories:
 				if untracked_path in d:
@@ -1395,7 +1424,7 @@ class GittyupClient:
 					break
 			statuses.append(d_status)
 		return statuses
-
+	
 	def status_dulwich(self, path):
 		tree = self._get_tree_index()
 		index = self._get_index()
@@ -1405,7 +1434,7 @@ class GittyupClient:
 		else:
 			files = [self.get_relative_path(path)]
 			directories = []
-
+		
 		files_hash = {}
 		for file in files:
 			files_hash[file] = True
@@ -1419,7 +1448,7 @@ class GittyupClient:
 					inIndex = True
 			except Exception as e:
 				inIndex = False
-
+			
 			if inIndex:
 				absolute_path = self.get_absolute_path(name)
 				if os.path.isfile(absolute_path):
@@ -1436,12 +1465,12 @@ class GittyupClient:
 			else:
 				modified_files.append(name)
 				statuses.append(RemovedStatus(name))
-
+			
 			try:
 				del files_hash[name]
 			except Exception as e:
 				pass
-
+		
 		# Calculate statuses for untracked files
 		for name,data in list(files_hash.items()):
 			try:
@@ -1457,14 +1486,14 @@ class GittyupClient:
 				modified_files.append(name)
 				statuses.append(AddedStatus(name))
 				continue
-
+			
 			# Generate a list of appropriate ignore patterns
 			patterns = []
 			path_to_check = os.path.dirname(self.get_absolute_path(name))
 			while path_to_check != self.repo.path:
 				patterns += self.get_ignore_patterns_from_file(self.get_local_ignore_file(path_to_check))
 				path_to_check = os.path.split(path_to_check)[0]
-
+			
 			patterns += self.get_ignore_patterns_from_file(self.get_local_ignore_file(self.repo.path))
 			patterns += self.global_ignore_patterns
 			
@@ -1482,10 +1511,10 @@ class GittyupClient:
 					break
 			statuses.append(d_status)
 		return statuses
-
+	
 	def get_all_ignore_file_paths(self, path):
 		return self.ignored_paths
-
+	
 	def status(self, path):
 		# TODO - simply get this from the status implementation / avoid global state
 		self.ignored_paths = []
@@ -1494,11 +1523,11 @@ class GittyupClient:
 			return self.status_porcelain(path)
 		else:
 			return self.status_dulwich(path)
-
+	
 	def log(self, path="", skip=0, limit=None, revision="", showtype="all"):
 		cmd = ["git", "--no-pager", "log", "--numstat", "--parents", "--pretty=fuller",
 			   "--date-order", "--date=default", "-m"]
-
+		
 		if showtype == "all":
 			cmd.append("--all")
 		if limit:
@@ -1515,11 +1544,12 @@ class GittyupClient:
 		if path:
 			cmd += ["--", path]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
+													  notify=self.notify).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			return []
-
+		
 		revisions = []
 		revision = {}
 		changed_file = {}
@@ -1589,11 +1619,11 @@ class GittyupClient:
 		if revision:
 			revisions.append(revision)
 		return revisions
-		
+	
 	def annotate(self, path, revision_obj="HEAD"):
 		"""
 		Returns an annotation for a specified file
-			
+		
 		@type   path: string
 		@param  path: The absolute path to a tracked file
 		
@@ -1603,11 +1633,12 @@ class GittyupClient:
 		relative_path = self.get_relative_path(path)
 		cmd = ["git", "annotate", "-l", revision_obj, relative_path]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			stdout = []
-
+		
 		returner = []
 		for line in stdout:
 			components = re.split("\t", line, 3)
@@ -1618,7 +1649,7 @@ class GittyupClient:
 			code = message[1]
 			if len(components) == 5:
 				code = components[4]
-				
+			
 			returner.append({
 				"revision": components[0],
 				"author": components[1][1:],
@@ -1627,14 +1658,14 @@ class GittyupClient:
 				"number": message[0]
 			})
 		return returner
-
+	
 	def show(self, path, revision_obj):
 		"""
 		Returns a particular file at a given revision object.
 		
 		@type   path: string
 		@param  path: The absolute path to a file
-
+		
 		@type   revision_obj: git.Revision()
 		@param  revision_obj: The revision object for path
 		"""
@@ -1643,25 +1674,26 @@ class GittyupClient:
 		relative_path = self.get_relative_path(path)
 		cmd = ["git", "show", "%s:%s" % (revision_obj, relative_path)]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			stdout = []
 		return "\n".join(stdout)
-
+	
 	def diff(self, path1, revision_obj1, path2=None, revision_obj2=None, summarize=False):
 		"""
 		Returns the diff between the path(s)/revision(s)
 		
 		@type   path1: string
 		@param  path1: The absolute path to a file
-
+		
 		@type   revision_obj1: git.Revision()
 		@param  revision_obj1: The revision object for path1
-
+		
 		@type   path2: string
 		@param  path2: The absolute path to a file
-
+		
 		@type   revision_obj2: git.Revision()
 		@param  revision_obj2: The revision object for path2
 		"""
@@ -1683,12 +1715,13 @@ class GittyupClient:
 		if relative_path2 and relative_path2 != relative_path1:
 			cmd += [relative_path2]
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			stdout = []
 		return "\n".join(stdout)
-
+	
 	def diff_summarize(self, path1, revision_obj1, path2=None, revision_obj2=None):
 		results = self.diff(path1, revision_obj1, path2, revision_obj2, True)
 		summary = []
@@ -1701,7 +1734,7 @@ class GittyupClient:
 				"path": path
 			})
 		return summary
-
+	
 	def export(self, path, dest_path, revision):
 		"""
 		Exports a file or directory from a given revision
@@ -1720,8 +1753,10 @@ class GittyupClient:
 		cmd2 = ["tar", "-xf", tmp_file, "-C", dest_path]
 		mkdir_p(dest_path)
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd1, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
-			(status, stdout, stderr) = GittyupCommand(cmd2, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd1, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd2, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			stdout = []
@@ -1745,11 +1780,12 @@ class GittyupClient:
 		cmd.append(relative_path)
 		
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			return
-
+	
 	def reset(self, path, revision, type=None):
 		relative_path = self.get_relative_path(path)
 		
@@ -1760,17 +1796,18 @@ class GittyupClient:
 		if relative_path:
 			cmd.append(relative_path)
 		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify, cancel=self.get_cancel).execute()
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 			return
-
+	
 	def set_callback_notify(self, func):
 		self.callback_notify = func
-
+	
 	def set_callback_progress_update(self, func):
 		self.callback_progress_update = func
-
+	
 	def set_callback_get_user(self, func):
 		self.callback_get_user = func
 	
@@ -1787,15 +1824,15 @@ class GittyupClient:
 		#
 		# When a command has reached 100% the format of this final message assumes the formatt:
 		#  "<Command>: 100% (<num pieces>/<num pieces>), <total size> <unit>, done."
-
+		
 		returnData = {"action":"","path":"","mime_type":""}
 		#print "parsing message: " + str(data)
-
+		
 		# If data is already a dict, we'll assume it's already been parsed, and return.
 		if isinstance (data, dict):
 			self.notify(data);
 			return
-
+		
 		# Is this an error?
 		message_components = re.search("^([eE]rror|[fF]atal): (.+)", data)
 		if message_components != None:
@@ -1803,7 +1840,7 @@ class GittyupClient:
 			returnData["path"] = message_components.group(2)
 			self.notify(returnData)
 			return
-
+		
 		# Check to see if this is a remote command.
 		remote_check = re.search("^(remote: )(.+)$", data)
 		if remote_check != None:
@@ -1811,7 +1848,7 @@ class GittyupClient:
 			message = remote_check.group(2)
 		else:
 			message = data
-
+		
 		# First, we'll test to see if this is a progress notification.
 		if "%" not in message:
 			# No, this is just a regular message.
@@ -1825,23 +1862,23 @@ class GittyupClient:
 				returnData["path"] = message
 			self.notify(returnData)
 			return
-
+		
 		# Extract the percentage, which will be all numerals directly
 		# prior to '%'.
 		message_components = re.search("^(.+): +([0-9]+)%", message)
 		if message_components == None:
 			print("Error: failed to parse git string: " + data)
 			return
-
+		
 		fraction = float(message_components.group(2)) / 100 # Convert percentage to fraction.
 		current_action = message_components.group(1)
-
+		
 		# If we're at 0%, then we want to notify which action we're performing.
 		if fraction == 0:
 				returnData["path"] = current_action
 				self.notify(returnData)
 		#print "stage fraction: " + str (fraction)
-
+		
 		# If we're using a number of stages, adjust the fraction acordingly.
 		if self.numberOfCommandStages > 0:
 			fraction = (self.numberOfCommandStagesExecuted + fraction) / self.numberOfCommandStages
@@ -1857,7 +1894,7 @@ class GittyupClient:
 			# Reset stage variables.
 			self.numberOfCommandStages = 0
 			self.numberOfCommandStagesExecuted = 0
-
+	
 	def notify_and_parse_git_pull (self, data):
 		return_data = {"action":"","path":"","mime_type":""}
 		message_parsed = False
@@ -1873,7 +1910,7 @@ class GittyupClient:
 			return_data["action"] = "Branch"
 			return_data["path"] = message_components.group(1) + " -> " + message_components.group(2)
 			message_parsed = True
-
+		
 		# Look for a file line (e.g. "src/somefile.py       | 5 -++++")
 		message_components = re.search(" +(.+) +\| *([0-9]+) ([+-]+)", data)
 		if message_components != None:
@@ -1881,14 +1918,14 @@ class GittyupClient:
 			return_data["path"] = message_components.group(1)
 			return_data["mime_type"] = message_components.group(2) + " " + message_components.group(3)
 			message_parsed = True
-
+		
 		# Look for a updating line (e.g. "Updating ffffff..ffffff")
 		message_components = re.search("^Updating ([a-f0-9.]+)", data)
 		if message_components != None:
 			return_data["action"] = "Updating"
 			return_data["path"] = message_components.group(1)
 			message_parsed = True
-
+		
 		# Look for a "create mode" line (e.g. "create mode 100755 file.py")
 		message_components = re.search("create mode ([0-9]+) (.+)", data)
 		if message_components != None:
@@ -1896,7 +1933,7 @@ class GittyupClient:
 			return_data["path"] = message_components.group(2)
 			return_data["mime_type"] = "mode: " + message_components.group(1)
 			message_parsed = True
-
+		
 		# Look for a "delete mode" line (e.g. "create mode 100755 file.py")
 		message_components = re.search("delete mode ([0-9]+) (.+)", data)
 		if message_components != None:
@@ -1904,14 +1941,14 @@ class GittyupClient:
 			return_data["path"] = message_components.group(2)
 			return_data["mime_type"] = "mode: " + message_components.group(1)
 			message_parsed = True
-
+		
 		# Look for an "Auto-merging" line (e.g. "Auto-merging src/file.py")
 		message_components = re.search("^Auto-merging (.+)", data)
 		if message_components != None:
 			return_data["action"] = "Merging"
 			return_data["path"] = message_components.group(1)
 			message_parsed = True
-
+		
 		# Look for a "binary" line (e.g. "icons/file.png"    | Bin 0 -> 55555 bytes)
 		message_components = re.search("^[ ](.+) +\| Bin ([0-9]+ -> [0-9]+ bytes)", data)
 		if message_components != None:
@@ -1919,21 +1956,21 @@ class GittyupClient:
 			return_data["path"] = message_components.group(1)
 			return_data["mime_type"] = message_components.group(2)
 			message_parsed = True
-
+		
 		# Look for a "rename" line (e.g. "rename src/{foo.py => bar.py} (50%)")
 		message_components = re.search("rename (.+}) \([0-9]+%\)", data)
 		if message_components != None:
 			return_data["action"] = "Rename"
 			return_data["path"] = message_components.group(1)
 			message_parsed = True
-
+		
 		# Look for a "copy" line (e.g. "copy src/{foo.py => bar.py} (50%)")
 		message_components = re.search("copy (.+}) \([0-9]+%\)", data)
 		if message_components != None:
 			return_data["action"] = "Copy"
 			return_data["path"] = message_components.group(1)
 			message_parsed = True
-
+		
 		# Prepend "Error" to conflict lines. e.g. :
 		# CONFLICT (content): Merge conflict in file.py.
 		# Automatic merge failed; fix conflicts and then commit the result.
@@ -1945,11 +1982,11 @@ class GittyupClient:
 		if message_parsed == False:
 			return_data = data
 		self.notify_and_parse_progress (return_data)
-
+	
 	def notify_and_parse_git_push (self, data):
 		return_data = {"action":"","path":"","mime_type":""}
 		message_parsed = False
-
+		
 		# Look for to line. e.g. "To gitosis@server.org:project.git". Exclude any
 		# lines that include a space (as this could be a message about something else)
 		message_components = re.search("^To ([^ ]+$)", data)
@@ -1975,17 +2012,16 @@ class GittyupClient:
 	
 	def get_cancel(self):
 		return self.callback_get_cancel
-
+	
 	def center(self, window):
 		# Temporarily hide the window to avoid update_idletasks() drawing the window in the wrong position.
 		window.withdraw()
-
 		# Update "requested size" from geometry manager.
 		window.update_idletasks()
-
+		
 		x = (window.winfo_screenwidth() - window.winfo_reqwidth()) / 2
 		y = (window.winfo_screenheight() - window.winfo_reqheight()) / 2
 		window.geometry("+%d+%d" % (x, y))
-
+		
 		# Draw the window frame immediately after setting correct window position.
 		window.deiconify()
