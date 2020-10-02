@@ -699,8 +699,10 @@ class TableBase:
 				# ~ log.debug("cell_data_func, text = %s" % text)
 				if text.startswith("Error") or text.startswith("error"):
 					cell.set_property("foreground", "red")
+					cell.set_property("weight", 700)
 				elif text.startswith("Warn") or text.startswith("warn"):
 					cell.set_property("foreground", "orange")
+					cell.set_property("weight", 700)
 
 class Table(TableBase):
 	"""
