@@ -13,16 +13,16 @@ rabbitvcs/rabbitvcs/ui/widget.py
 
 
 --ui-xml for windows (git commands):
-Обновить:			git-update.xml
-Зафиксировать:		commit.xml
-Залить:				push.xml
-Откатить:			revert.xml
-Очистить:			clean.xml
-Сбросить:			reset.xml
-Извлечь:			update.xml
-Экспорт:			checkout.xml
-Объединить:			branch-merge.xml
-Показать изменения:	changes.xml
+Обновить:			git-update.xml		update.py
+Зафиксировать:		commit.xml			commit.py, createpatch.py
+Залить:				push.xml			push.py
+Откатить:			revert.xml			revert.py
+Очистить:			clean.xml			clean.py
+Сбросить:			reset.xml			reset.py
+Извлечь:			update.xml			updateto.py
+Экспорт:			checkout.xml		checkout.py
+Объединить:			branch-merge.xml	merge.py
+Показать изменения:	changes.xml			changes.py
 
 
 --gsettings 1:

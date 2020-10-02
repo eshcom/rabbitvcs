@@ -80,13 +80,12 @@ class GitBranchManager(InterfaceView):
 			}
 		)
 		self.initialize_detail()
-		self.load()
-		if self.revision:
-			revision_branches = self.git.branch_list(self.revision)
-			if revision_branches:
-				self.show_edit(revision_branches[0].name)
-			else:
-				self.show_add()
+		# esh: changed logic
+		tracking_index = self.load()
+		if tracking_index is not None:
+			self.items_treeview.focus(tracking_index, 0)
+			# esh: inside will be called self.show_edit 
+			self.on_treeview_event(None, None)
 		else:
 			self.show_add()
 	
@@ -200,11 +199,14 @@ class GitBranchManager(InterfaceView):
 	def load(self):
 		self.items_treeview.clear()
 		self.branch_list = self.git.branch_list()
-		for item in self.branch_list:
+		tracking_index = None
+		for index, item in enumerate(self.branch_list):
 			name = saxutils.escape(item.name)
 			if item.tracking:
 				name = "<b>%s</b>" % name
+				tracking_index = index
 			self.items_treeview.append([name])
+		return tracking_index
 	
 	def on_add_clicked(self, widget):
 		self.show_add()
