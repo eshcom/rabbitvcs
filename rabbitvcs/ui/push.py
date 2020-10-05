@@ -156,7 +156,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs push [path]"
 	)
 	
-	log.debug("options = %s, paths = %s" % (options, paths)) # esh
+	log.debug("options = %s, paths = %s" % (options, paths)) # esh: log
 	
 	window = push_factory(paths[0])
 	window.register_gtk_quit()

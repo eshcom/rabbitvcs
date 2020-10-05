@@ -39,7 +39,8 @@ class Function:
 		self.result = None
 	
 	def start(self):
-		# ~ logger.debug("Function.start, self.func = %s, args = %s, kwargs = %s" % (self.func, self.args, self.kwargs)) # esh
+		# ~ logger.debug("Function.start, self.func = %s, args = %s, kwargs = %s" %
+						# ~ (self.func, self.args, self.kwargs)) # esh: log
 		self.result = self.func(*self.args, **self.kwargs)
 	
 	def call(self):

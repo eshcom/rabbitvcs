@@ -58,7 +58,7 @@ if __name__ == "__main__":
 	from rabbitvcs.ui import main
 	(options, args) = main(usage="Usage: rabbitvcs cherrypick path [commit]")
 	
-	log.debug("options = %s, args = %s" % (options, args))
+	log.debug("options = %s, args = %s" % (options, args)) # esh: log
 	
 	window = GitCherrypick(args[0], args[1::])
 	gtk.main()

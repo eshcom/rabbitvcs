@@ -283,7 +283,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs diff [url1@rev1] [url2@rev2]"
 	)
 	
-	log.debug("options = %s, args = %s" % (options, args)) # esh
+	log.debug("options = %s, args = %s" % (options, args)) # esh: log
 	
 	pathrev1 = helper.parse_path_revision_string(args.pop(0))
 	pathrev2 = (None, None)

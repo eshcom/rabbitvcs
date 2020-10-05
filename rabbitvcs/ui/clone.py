@@ -113,7 +113,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs clone --vcs=git [url] [path]"
 	)
 	
-	log.debug("options = %s, args = %s" % (options, args)) # esh
+	log.debug("options = %s, args = %s" % (options, args)) # esh: log
 	
 	# Default to using git
 	vcs = rabbitvcs.vcs.VCS_GIT

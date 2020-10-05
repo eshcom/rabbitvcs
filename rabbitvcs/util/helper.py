@@ -161,7 +161,7 @@ def format_datetime(dt, format=None):
 	now = datetime.datetime.now()
 	delta = now - dt
 	
-	# ~ log.debug("dt = %s, delta = %s" % (dt, delta)) # esh
+	# ~ log.debug("dt = %s, delta = %s" % (dt, delta)) # esh: log
 	returner = ""
 	if dt.year == 1900:
 		returner = _("(no date)")
@@ -646,8 +646,6 @@ def launch_ui_window(filename, args=[], block=False):
 	@rtype:             integer
 	@return:            The pid of the process (if launched)
 	"""
-	# ~ log.debug("launch_ui_window: filename = %s, args = %s" % (filename, args))
-	
 	# Hackish.  Get's the helper module's path, then assumes it is in
 	# the lib folder.  Removes the /lib part of the path.
 	basedir, head = os.path.split(

@@ -44,8 +44,8 @@ _ = gettext.gettext
 class SVNEditConflicts(InterfaceNonView):
 	def __init__(self, path):
 		InterfaceNonView.__init__(self)
-
-		log.debug("incoming path: %s"%path)
+		
+		log.debug("incoming path: %s" % path)
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.svn = self.vcs.svn()
@@ -78,7 +78,8 @@ class SVNEditConflicts(InterfaceNonView):
 			#Merge Manually
 			working = self.get_working_path(path)
 			ancestor, theirs = self.get_revisioned_paths(path)
-			log.debug("launching merge tool with base: %s, mine: %s, theirs: %s, merged: %s"%(ancestor, working, theirs, path))
+			log.debug("launching merge tool with base: %s, mine: %s, theirs: %s, merged: %s" %
+						(ancestor, working, theirs, path))
 			helper.launch_merge_tool(base=ancestor, mine=working, theirs=theirs, merged=path)
 			dialog = rabbitvcs.ui.dialog.MarkResolvedPrompt()
 			mark_resolved = dialog.run()
@@ -86,7 +87,7 @@ class SVNEditConflicts(InterfaceNonView):
 			if mark_resolved == 1:
 				self.svn.resolve(path)
 		self.close()
-
+	
 	def get_working_path(self, path):
 		paths = [
 			"%s.mine" % path,
@@ -96,7 +97,7 @@ class SVNEditConflicts(InterfaceNonView):
 			if os.path.exists(working):
 				return working
 		return path
-
+	
 	def get_revisioned_paths(self, path):
 		""" Will return a tuple where the first element is the common ancestor's
 			path and the second is the path of the the file being merged in."""
@@ -124,7 +125,6 @@ class SVNEditConflicts(InterfaceNonView):
 		else:
 			log.error("Unexpected number (%d) of revision paths found"%len(revisionPaths))
 			return ("", "")
-
 
 class GitEditConflicts(InterfaceNonView):
 	def __init__(self, path):

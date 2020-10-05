@@ -156,7 +156,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs updateto [path]"
 	)
 	
-	log.debug("options = %s, args = %s" % (options, args))
+	log.debug("options = %s, args = %s" % (options, args)) # esh: log
 	
 	window = updateto_factory(options.vcs, args[0], revision=options.revision)
 	window.register_gtk_quit()

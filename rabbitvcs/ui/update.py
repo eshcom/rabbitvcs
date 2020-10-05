@@ -130,7 +130,7 @@ if __name__ == "__main__":
 	# esh: example call from terminal:
 	# rabbitvcs update /home/esh/src/adptransfer
 	
-	log.debug("options = %s, paths = %s" % (options, paths)) # esh
+	log.debug("options = %s, paths = %s" % (options, paths)) # esh: log
 	
 	window = update_factory(paths)
 	window.register_gtk_quit()

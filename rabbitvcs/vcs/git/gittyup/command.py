@@ -41,7 +41,7 @@ class GittyupCommand:
 		return returner
 
 	def execute(self):
-		# ~ log.debug("execute: command = %s, cwd = %s" % (self.command, self.cwd)) # esh
+		# ~ log.debug("execute: command = %s, cwd = %s" % (self.command, self.cwd)) # esh: log
 		env = os.environ.copy()
 		env["LANG"] = "C";
 		env["PYTHONIOENCODING"] = "UTF-8"

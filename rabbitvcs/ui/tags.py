@@ -312,7 +312,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs tag-manager path"
 	)
 	
-	log.debug("options = %s, paths = %s" % (options, paths)) # esh
+	log.debug("options = %s, paths = %s" % (options, paths)) # esh: log
 	
 	window = GitTagManager(paths[0], options.revision)
 	window.register_gtk_quit()

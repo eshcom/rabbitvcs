@@ -452,7 +452,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs commit [path1] [path2] ..."
 	)
 	
-	log.debug("options = %s, paths = %s" % (options, paths)) # esh
+	log.debug("options = %s, paths = %s" % (options, paths)) # esh: log
 	
 	window = commit_factory(paths, options.base_dir, message=options.message)
 	window.register_gtk_quit()

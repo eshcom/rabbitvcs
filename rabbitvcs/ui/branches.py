@@ -237,10 +237,17 @@ class GitBranchManager(InterfaceView):
 				self.git.branch_rename(self.selected_branch.name, branch_name)
 		if self.checkout_checkbox.get_active():
 			# esh: change logic
+			rem_branch_name = None
 			if branch_name.startswith("remotes/"):
+				rem_branch_name = branch_name
 				branch_parts = branch_name.rsplit("/", 1)
 				branch_name = branch_parts[len(branch_parts) - 1]
-			self.git.checkout([], self.git.revision(branch_name))
+			if rem_branch_name and not self.branch_exists(branch_name):
+				# ~ esh: git checkout -m --track remotes/origin/<branch_name>
+				self.git.checkout([], self.git.revision(rem_branch_name), "--track")
+			else:
+				# ~ esh: git checkout -m <branch_name>
+				self.git.checkout([], self.git.revision(branch_name))
 		self.load()
 		self.show_edit(branch_name)
 	
@@ -322,6 +329,14 @@ class GitBranchManager(InterfaceView):
 	def on_log_dialog_closed(self, data):
 		if data:
 			self.start_point_entry.set_text(data)
+	
+	def branch_exists(self, branch_name):
+		if branch_name is None:
+			return False
+		for item in self.branch_list:
+			if item.name == branch_name:
+				return True
+		return False
 
 if __name__ == "__main__":
 	from rabbitvcs.ui import main, REVISION_OPT, VCS_OPT
@@ -330,7 +345,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs branch-manager path [-r revision]"
 	)
 	
-	log.debug("options = %s, paths = %s" % (options, paths)) # esh
+	log.debug("options = %s, paths = %s" % (options, paths)) # esh: log
 	
 	window = GitBranchManager(paths[0], revision=options.revision)
 	window.register_gtk_quit()

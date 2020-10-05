@@ -696,7 +696,7 @@ class TableBase:
 		for item in self.data:
 			text = item[colnum]
 			if text:
-				# ~ log.debug("cell_data_func, text = %s" % text)
+				# ~ log.debug("cell_data_func, text = %s" % text) # esh: log
 				if text.startswith("Error") or text.startswith("error"):
 					cell.set_property("foreground", "red")
 					cell.set_property("weight", 700)

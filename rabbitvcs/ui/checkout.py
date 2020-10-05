@@ -242,7 +242,7 @@ if __name__ == "__main__":
 	# esh: example call from terminal:
 	# rabbitvcs checkout --vcs=git --quiet /home/esh/src/adptransfer/adp1.config
 	
-	log.debug("options = %s, args = %s" % (options, args)) # esh
+	log.debug("options = %s, args = %s" % (options, args)) # esh: log
 	
 	# esh: change logic - make paths
 	url = None

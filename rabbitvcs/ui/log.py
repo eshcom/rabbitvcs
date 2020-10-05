@@ -211,7 +211,8 @@ class Log(InterfaceView):
 				revision2 = self.display_items[rev1_index].parents[0]
 			else:
 				revision2 = six.text_type(self.display_items[rev1_index+1].revision)
-			# ~ log.debug("Log.on_paths_table_row_activated: revision1 = %s, revision2 = %s" % (revision1, revision2)) # esh
+			# ~ log.debug("Log.on_paths_table_row_activated: revision1 = %s, revision2 = %s" %
+						# ~ (revision1, revision2)) # esh: log
 			path_item = self.paths_table.get_row(self.paths_table.get_selected_rows()[0])[1]
 			url = self.root_url + path_item
 			self.view_diff_for_path(url, six.text_type(revision1), six.text_type(revision2), sidebyside=True)
@@ -245,7 +246,6 @@ class Log(InterfaceView):
 		paths = []
 		for row in self.paths_table.get_selected_rows():
 			paths.append(self.paths_table.get_row(row)[1])
-		# ~ log.debug("Log.show_paths_table_popup_menu: revisions = %s" % revisions) # esh
 		LogBottomContextMenu(self, data, paths, revisions).show()
 	
 	#
@@ -1252,7 +1252,6 @@ class LogTopContextMenuCallbacks:
 			commits = []
 			for revision in reversed(self.revisions):
 				commits.append(six.text_type(revision["revision"]))
-			# ~ log.debug("LogTopContextMenuCallbacks.cherrypick_commits: commits = %s" % commits)
 			helper.launch_ui_window("cherrypick", [self.path] + commits)
 
 class LogTopContextMenu:
@@ -1410,7 +1409,6 @@ class LogBottomContextMenuCallbacks:
 	def compare_previous_revision(self, widget, data=None):
 		rev = six.text_type(self.revisions[0]["revision"])
 		parent = self.find_parent(self.revisions[0])
-		# ~ log.debug("LogBottomContextMenuCallbacks.compare_previous_revision: parent = %s" % parent) # esh
 		path_item = self.paths[0]
 		url = self.caller.root_url + path_item
 		self.caller.view_diff_for_path(url, rev, parent, sidebyside=True)
@@ -1566,7 +1564,7 @@ if __name__ == "__main__":
 		usage="Usage: rabbitvcs log [--vcs=svn|git] [url_or_path]"
 	)
 	
-	log.debug("options = %s, paths = %s" % (options, paths)) # esh
+	log.debug("options = %s, paths = %s" % (options, paths)) # esh: log
 	
 	window = log_factory(paths[0], vcs=options.vcs)
 	window.register_gtk_quit()

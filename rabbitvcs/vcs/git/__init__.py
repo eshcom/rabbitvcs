@@ -139,7 +139,6 @@ class Git:
 		self.cache = rabbitvcs.vcs.status.StatusCache()
 	
 	def set_repository(self, path):
-		# ~ log.debug("Git.set_repository.path = %s" % path) # esh
 		self.client.set_repository(path)
 		self.config = self.client.config
 	
@@ -422,7 +421,7 @@ class Git:
 				)
 		return None
 	
-	def checkout(self, paths=[], revision=Revision("HEAD")):
+	def checkout(self, paths=[], revision=Revision("HEAD"), options=None):
 		"""
 		Checkout a series of paths from a tree or commit.  If no tree or commit
 		information is given, it will check out the files from head.  If no
@@ -434,7 +433,7 @@ class Git:
 		@type   revision: git.Revision
 		@param  revision: The revision object or branch to checkout
 		"""
-		return self.client.checkout(paths, revision.primitive())
+		return self.client.checkout(paths, revision.primitive(), options)
 	
 	# esh add cherrypick method
 	def cherrypick(self, commits=[]):

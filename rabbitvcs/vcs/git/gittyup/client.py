@@ -348,7 +348,6 @@ class GittyupClient:
 		self.set_repository(path)
 	
 	def set_repository(self, path):
-		# ~ log.debug("GittyupClient.set_repository.path = %s" % path) # esh
 		try:
 			self.repo = dulwich.repo.Repo(path)
 			self._load_config()
@@ -648,7 +647,7 @@ class GittyupClient:
 			message = default_message
 		return message.strip(" \n")
 	
-	def checkout(self, paths=[], revision="HEAD"):
+	def checkout(self, paths=[], revision="HEAD", options=None):
 		"""
 		Checkout a series of paths from a tree or commit.  If no tree or commit
 		information is given, it will check out the files from head.  If no
@@ -662,7 +661,11 @@ class GittyupClient:
 		"""
 		if len(paths) == 1 and paths[0] == self.repo.path:
 			paths = []
-		cmd = ["git", "checkout", "-m", revision] + paths
+		cmd = ["git", "checkout", "-m"]
+		if options:
+			cmd.append(options)
+		cmd.append(revision)
+		cmd = cmd + paths
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
 													  cancel=self.get_cancel).execute()
