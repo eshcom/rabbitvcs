@@ -836,6 +836,11 @@ class TextView:
 				self.cur_iter = textiter.copy()
 			
 		elif mark_name == "selection_bound":
+			if cur_start.is_start() and cur_end.is_end():
+				return
+			if not hasattr(self, "cur_iter"):
+				return
+			
 			def is_word_char(char, data):
 				return RE_WORD.match(char) is not None
 			def is_word_break(char, data):
