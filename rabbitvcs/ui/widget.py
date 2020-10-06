@@ -99,6 +99,9 @@ PATH_ENTRY = 'PATH_ENTRY'
 SEPARATOR = u'\u2015' * 10
 
 from pprint import pformat
+import re
+
+RE_WORD = re.compile("[\w-]") # esh: \w already contains "_"
 
 def filter_router(model, iter, column, filters):
 	"""
@@ -696,7 +699,7 @@ class TableBase:
 		for item in self.data:
 			text = item[colnum]
 			if text:
-				# ~ log.debug("cell_data_func, text = %s" % text) # esh: log
+				# ~ log.debug("cell_data_func, text = %s" % text)
 				if text.startswith("Error") or text.startswith("error"):
 					cell.set_property("foreground", "red")
 					cell.set_property("weight", 700)
@@ -810,11 +813,76 @@ class TextView:
 		self.buffer = gtk.TextBuffer()
 		self.view.set_buffer(self.buffer)
 		self.buffer.set_text(value)
+		# ~ esh: added callback func
+		self.buffer.connect("mark-set", self.mark_set_event)
 		if HAS_GTKSPELL and spellcheck:
 			try:
 				gtkspell.Spell(self.view)
 			except Exception as e:
 				log.exception(e)
+	
+	# ~ esh: expand selection range with "_"/"-" chars
+	def mark_set_event(self, textbuffer, textiter, textmark):
+		mark_name = textmark.get_name()
+		if not mark_name:
+			return
+		
+		selection_bounds = textbuffer.get_selection_bounds()
+		if selection_bounds:
+			cur_start, cur_end = selection_bounds
+		
+		if mark_name == "insert":
+			if not selection_bounds or cur_start.equal(cur_end):
+				self.cur_iter = textiter.copy()
+			
+		elif mark_name == "selection_bound":
+			def is_word_char(char, data):
+				return RE_WORD.match(char) is not None
+			def is_word_break(char, data):
+				return RE_WORD.match(char) is None
+			
+			pre_iter = self.cur_iter.copy()
+			pre_iter.backward_char()
+			
+			if (self.cur_iter.starts_line() or
+				(RE_WORD.match(self.cur_iter.get_char()) and
+				 not RE_WORD.match(pre_iter.get_char()))):
+				# ~ right word search
+				new_start = self.cur_iter.copy()
+				new_end = new_start.copy()
+				new_end.forward_find_char(is_word_break)
+				
+			elif (self.cur_iter.ends_line() or
+				  (not RE_WORD.match(self.cur_iter.get_char()) and
+				   RE_WORD.match(pre_iter.get_char()))):
+				# ~ left word search
+				new_end = self.cur_iter.copy()
+				new_start = new_end.copy()
+				new_start.backward_find_char(is_word_break)
+				if not RE_WORD.match(new_start.get_char()):
+					new_start.forward_char()
+				
+			elif RE_WORD.match(self.cur_iter.get_char()):
+				# ~ left/right word search
+				new_start = self.cur_iter.copy()
+				new_start.backward_find_char(is_word_break)
+				if not RE_WORD.match(new_start.get_char()):
+					new_start.forward_char()
+				new_end = self.cur_iter.copy()
+				new_end.forward_find_char(is_word_break)
+				
+			else:
+				# ~ left/right non-word search
+				new_start = self.cur_iter.copy()
+				new_start.backward_find_char(is_word_char)
+				if RE_WORD.match(new_start.get_char()):
+					new_start.forward_char()
+				new_end = self.cur_iter.copy()
+				new_end.forward_find_char(is_word_char)
+			
+			if (not cur_start.equal(new_start) or
+				not cur_end.equal(new_end)):
+				textbuffer.select_range(new_start, new_end)
 	
 	def get_text(self):
 		return self.buffer.get_text(
