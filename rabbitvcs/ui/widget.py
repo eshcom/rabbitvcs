@@ -837,9 +837,15 @@ class TextView:
 				self.cur_iter = textiter.copy()
 			
 		elif mark_name == "selection_bound":
+			# ~ if select-all -> return
 			if cur_start.is_start() and cur_end.is_end():
 				return
+			# ~ if no cur_iter -> return (just in case)
 			if not hasattr(self, "cur_iter"):
+				return
+			# ~ if empty string -> unselect and return
+			if self.cur_iter.starts_line() and self.cur_iter.ends_line():
+				textbuffer.select_range(self.cur_iter, self.cur_iter)
 				return
 			
 			def is_word_char(char, data=None):
@@ -850,13 +856,17 @@ class TextView:
 			pre_iter = self.cur_iter.copy()
 			pre_iter.backward_char()
 			
+			left_lim = textbuffer.get_iter_at_line(self.cur_iter.get_line())
+			right_lim = left_lim.copy();
+			right_lim.forward_to_line_end()
+			
 			if (self.cur_iter.starts_line() or
 				(is_word_char(self.cur_iter.get_char()) and
 				 is_word_break(pre_iter.get_char()))):
 				# ~ right word search
 				new_start = self.cur_iter.copy()
 				new_end = new_start.copy()
-				new_end.forward_find_char(is_word_break)
+				new_end.forward_find_char(is_word_break, limit=right_lim)
 				
 			elif (self.cur_iter.ends_line() or
 				  (is_word_break(self.cur_iter.get_char()) and
@@ -864,27 +874,27 @@ class TextView:
 				# ~ left word search
 				new_end = self.cur_iter.copy()
 				new_start = new_end.copy()
-				new_start.backward_find_char(is_word_break)
+				new_start.backward_find_char(is_word_break, limit=left_lim)
 				if is_word_break(new_start.get_char()):
 					new_start.forward_char()
 				
 			elif is_word_char(self.cur_iter.get_char()):
 				# ~ left/right word search
 				new_start = self.cur_iter.copy()
-				new_start.backward_find_char(is_word_break)
+				new_start.backward_find_char(is_word_break, limit=left_lim)
 				if is_word_break(new_start.get_char()):
 					new_start.forward_char()
 				new_end = self.cur_iter.copy()
-				new_end.forward_find_char(is_word_break)
+				new_end.forward_find_char(is_word_break, limit=right_lim)
 				
 			else:
 				# ~ left/right non-word search
 				new_start = self.cur_iter.copy()
-				new_start.backward_find_char(is_word_char)
+				new_start.backward_find_char(is_word_char, limit=left_lim)
 				if is_word_char(new_start.get_char()):
 					new_start.forward_char()
 				new_end = self.cur_iter.copy()
-				new_end.forward_find_char(is_word_char)
+				new_end.forward_find_char(is_word_char, limit=right_lim)
 			
 			if (not cur_start.equal(new_start) or
 				not cur_end.equal(new_end)):
