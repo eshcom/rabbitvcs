@@ -842,37 +842,37 @@ class TextView:
 			if not hasattr(self, "cur_iter"):
 				return
 			
-			def is_word_char(char, data):
+			def is_word_char(char, data=None):
 				return RE_WORD.match(char) is not None
-			def is_word_break(char, data):
+			def is_word_break(char, data=None):
 				return RE_WORD.match(char) is None
 			
 			pre_iter = self.cur_iter.copy()
 			pre_iter.backward_char()
 			
 			if (self.cur_iter.starts_line() or
-				(RE_WORD.match(self.cur_iter.get_char()) and
-				 not RE_WORD.match(pre_iter.get_char()))):
+				(is_word_char(self.cur_iter.get_char()) and
+				 is_word_break(pre_iter.get_char()))):
 				# ~ right word search
 				new_start = self.cur_iter.copy()
 				new_end = new_start.copy()
 				new_end.forward_find_char(is_word_break)
 				
 			elif (self.cur_iter.ends_line() or
-				  (not RE_WORD.match(self.cur_iter.get_char()) and
-				   RE_WORD.match(pre_iter.get_char()))):
+				  (is_word_break(self.cur_iter.get_char()) and
+				   is_word_char(pre_iter.get_char()))):
 				# ~ left word search
 				new_end = self.cur_iter.copy()
 				new_start = new_end.copy()
 				new_start.backward_find_char(is_word_break)
-				if not RE_WORD.match(new_start.get_char()):
+				if is_word_break(new_start.get_char()):
 					new_start.forward_char()
 				
-			elif RE_WORD.match(self.cur_iter.get_char()):
+			elif is_word_char(self.cur_iter.get_char()):
 				# ~ left/right word search
 				new_start = self.cur_iter.copy()
 				new_start.backward_find_char(is_word_break)
-				if not RE_WORD.match(new_start.get_char()):
+				if is_word_break(new_start.get_char()):
 					new_start.forward_char()
 				new_end = self.cur_iter.copy()
 				new_end.forward_find_char(is_word_break)
@@ -881,7 +881,7 @@ class TextView:
 				# ~ left/right non-word search
 				new_start = self.cur_iter.copy()
 				new_start.backward_find_char(is_word_char)
-				if RE_WORD.match(new_start.get_char()):
+				if is_word_char(new_start.get_char()):
 					new_start.forward_char()
 				new_end = self.cur_iter.copy()
 				new_end.forward_find_char(is_word_char)
