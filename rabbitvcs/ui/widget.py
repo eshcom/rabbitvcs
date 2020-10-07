@@ -814,7 +814,7 @@ class TextView:
 		self.view.set_buffer(self.buffer)
 		self.buffer.set_text(value)
 		# ~ esh: added callback func
-		self.buffer.connect("mark-set", self.mark_set_event)
+		self.buffer.connect("mark-set", self.on_mark_set)
 		if HAS_GTKSPELL and spellcheck:
 			try:
 				gtkspell.Spell(self.view)
@@ -822,7 +822,7 @@ class TextView:
 				log.exception(e)
 	
 	# ~ esh: expand selection range with "_"/"-" chars
-	def mark_set_event(self, textbuffer, textiter, textmark):
+	def on_mark_set(self, textbuffer, textiter, textmark):
 		mark_name = textmark.get_name()
 		if not mark_name:
 			return
