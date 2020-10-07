@@ -108,8 +108,10 @@ class SearchType(Enum):
 	NONE_SEARCH = 0,
 	L_WORD_SEARCH = 1,
 	R_WORD_SEARCH = 2,
-	L_NONWORD_SEARCH = 3,
-	R_NONWORD_SEARCH = 4
+	LR_WORD_SEARCH = 3,
+	L_NONWORD_SEARCH = 4,
+	R_NONWORD_SEARCH = 5,
+	LR_NONWORD_SEARCH = 6
 
 def filter_router(model, iter, column, filters):
 	"""
@@ -868,24 +870,34 @@ class TextView:
 			right_lim = left_lim.copy();
 			right_lim.forward_to_line_end()
 			
+			# ~ calc search_type
 			search_type = SearchType.NONE_SEARCH;
 			if self.cur_iter.starts_line():
 				if is_word_char(self.cur_iter.get_char()):
 					search_type = SearchType.R_WORD_SEARCH;
 				else:
 					search_type = SearchType.R_NONWORD_SEARCH;
+				
 			elif self.cur_iter.ends_line():
 				if is_word_char(pre_iter.get_char()):
 					search_type = SearchType.L_WORD_SEARCH;
 				else:
 					search_type = SearchType.L_NONWORD_SEARCH;
+				
 			elif (is_word_char(self.cur_iter.get_char()) and
 				  is_word_break(pre_iter.get_char())):
 				search_type = SearchType.R_WORD_SEARCH;
+				
 			elif (is_word_break(self.cur_iter.get_char()) and
 				  is_word_char(pre_iter.get_char())):
 				search_type = SearchType.L_WORD_SEARCH;
+				
+			elif is_word_char(self.cur_iter.get_char()):
+				search_type = SearchType.LR_WORD_SEARCH;
+			else:
+				search_type = SearchType.LR_NONWORD_SEARCH;
 			
+			# ~ apply search_type
 			if (search_type == SearchType.R_WORD_SEARCH or
 				search_type == SearchType.R_NONWORD_SEARCH):
 				# ~ right search
@@ -893,7 +905,6 @@ class TextView:
 					pred = is_word_break;
 				else:
 					pred = is_word_char;
-				
 				new_start = self.cur_iter.copy()
 				new_end = new_start.copy()
 				new_end.forward_find_char(pred, limit=right_lim)
@@ -905,30 +916,24 @@ class TextView:
 					pred = is_word_break;
 				else:
 					pred = is_word_char;
-				
 				new_end = self.cur_iter.copy()
 				new_start = new_end.copy()
 				new_start.backward_find_char(pred, limit=left_lim)
 				if pred(new_start.get_char()):
 					new_start.forward_char()
 				
-			elif is_word_char(self.cur_iter.get_char()):
-				# ~ left/right word search
-				new_start = self.cur_iter.copy()
-				new_start.backward_find_char(is_word_break, limit=left_lim)
-				if is_word_break(new_start.get_char()):
-					new_start.forward_char()
-				new_end = self.cur_iter.copy()
-				new_end.forward_find_char(is_word_break, limit=right_lim)
-				
 			else:
-				# ~ left/right non-word search
+				# ~ left/right search
+				if search_type == SearchType.LR_WORD_SEARCH:
+					pred = is_word_break;
+				else: # SearchType.LR_NONWORD_SEARCH
+					pred = is_word_char;
 				new_start = self.cur_iter.copy()
-				new_start.backward_find_char(is_word_char, limit=left_lim)
-				if is_word_char(new_start.get_char()):
+				new_start.backward_find_char(pred, limit=left_lim)
+				if pred(new_start.get_char()):
 					new_start.forward_char()
 				new_end = self.cur_iter.copy()
-				new_end.forward_find_char(is_word_char, limit=right_lim)
+				new_end.forward_find_char(pred, limit=right_lim)
 			
 			if (not cur_start.equal(new_start) or
 				not cur_end.equal(new_end)):
