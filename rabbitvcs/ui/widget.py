@@ -813,8 +813,9 @@ class TextView:
 		self.buffer = gtk.TextBuffer()
 		self.view.set_buffer(self.buffer)
 		self.buffer.set_text(value)
-		# ~ esh: added callback func
+		# ~ esh: for custom selection algorithm by double-click
 		self.buffer.connect("mark-set", self.on_mark_set)
+		
 		if HAS_GTKSPELL and spellcheck:
 			try:
 				gtkspell.Spell(self.view)
