@@ -862,6 +862,14 @@ class TextView:
 				return RE_WORD.match(char) is not None
 			def is_word_break(char, data=None):
 				return RE_WORD.match(char) is None
+			def get_pred(stype):
+				if stype in [SearchType.R_WORD_SEARCH,
+							 SearchType.L_WORD_SEARCH,
+							 SearchType.LR_WORD_SEARCH]:
+					pred = is_word_break;
+				else:
+					pred = is_word_char;
+				return pred
 			
 			pre_iter = self.cur_iter.copy()
 			pre_iter.backward_char()
@@ -898,13 +906,10 @@ class TextView:
 				search_type = SearchType.LR_NONWORD_SEARCH;
 			
 			# ~ apply search_type
+			pred = get_pred(search_type)
 			if (search_type == SearchType.R_WORD_SEARCH or
 				search_type == SearchType.R_NONWORD_SEARCH):
 				# ~ right search
-				if search_type == SearchType.R_WORD_SEARCH:
-					pred = is_word_break;
-				else:
-					pred = is_word_char;
 				new_start = self.cur_iter.copy()
 				new_end = new_start.copy()
 				new_end.forward_find_char(pred, limit=right_lim)
@@ -912,10 +917,6 @@ class TextView:
 			elif (search_type == SearchType.L_WORD_SEARCH or
 				  search_type == SearchType.L_NONWORD_SEARCH):
 				# ~ left search
-				if search_type == SearchType.L_WORD_SEARCH:
-					pred = is_word_break;
-				else:
-					pred = is_word_char;
 				new_end = self.cur_iter.copy()
 				new_start = new_end.copy()
 				new_start.backward_find_char(pred, limit=left_lim)
@@ -924,10 +925,6 @@ class TextView:
 				
 			else:
 				# ~ left/right search
-				if search_type == SearchType.LR_WORD_SEARCH:
-					pred = is_word_break;
-				else: # SearchType.LR_NONWORD_SEARCH
-					pred = is_word_char;
 				new_start = self.cur_iter.copy()
 				new_start.backward_find_char(pred, limit=left_lim)
 				if pred(new_start.get_char()):
