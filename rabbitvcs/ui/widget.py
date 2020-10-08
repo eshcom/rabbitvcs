@@ -847,6 +847,9 @@ class TextView:
 				self.cur_iter = textiter.copy()
 			
 		elif mark_name == "selection_bound":
+			# ~ if no selection -> return
+			if not selection_bounds:
+				return
 			# ~ if select-all -> return
 			if cur_start.is_start() and cur_end.is_end():
 				return
