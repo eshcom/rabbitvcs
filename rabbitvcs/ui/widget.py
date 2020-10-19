@@ -101,7 +101,7 @@ SEPARATOR = u'\u2015' * 10
 from pprint import pformat
 
 import re
-RE_WORD = re.compile("(?u)[\w-]") # esh: \w already contains "_"
+RE_WORD = re.compile("(?u)[\w\-\.]") # esh: \w already contains "_"
 
 from enum import Enum
 class SearchType(Enum):
