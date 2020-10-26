@@ -3,8 +3,8 @@
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Commit">
-    <property name="default_width">900</property>
-    <property name="default_height">650</property>
+    <property name="default_width">1000</property>
+    <property name="default_height">800</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Commit</property>
     <property name="window_position">center</property>
