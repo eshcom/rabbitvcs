@@ -59,6 +59,13 @@ REVISION_LABEL = _("Revision")
 DATE_LABEL = _("Date")
 AUTHOR_LABEL = _("Author")
 
+# ~ esh: colors
+BG_CURR_LOCAL_BRANCH = "#730013"	# red
+BG_OTHER_LOCAL_BRANCH = "#007300"	# green
+BG_REMOTE_BRANCH = "#734500"		# brown
+BG_TAG = "#737300"					# yellow
+
+
 def revision_grapher(history):
 	"""
 	Expects a list of revision items like so:
@@ -697,17 +704,26 @@ class GitLog(Log):
 				msg = "<b>%s</b>" % msg
 				author = "<b>%s</b>" % author
 				date = "<b>%s</b>" % date
+				bg_branch = BG_CURR_LOCAL_BRANCH
+			else:
+				bg_branch = BG_OTHER_LOCAL_BRANCH
+				
 			graph_render = ()
 			if not self.filter_text:
 				graph_render = (node, in_lines, out_lines)
 			# Check if a branch is available for this revision, and if so, insert it in the message description.
 			for branch in self.branchItems:
 				if branch['id'] == revision:
-					msg = "<b>[" + branch['name'] + "]</b> " + msg
+					if branch['name'].startswith("origin/"):
+						bg_branch = BG_REMOTE_BRANCH
+					# ~ <span size=\"xx-large\"><b>%s</b></span>
+					msg = "<span background=\"" + bg_branch + "\">" \
+						  "<b>[" + branch['name'] + "]</b></span> " + msg
 			# Check if a tag is available for this revision, and if so, insert it in the message description.
 			for tag in self.tagItems:
 				if tag['id'] == revision:
-					msg = "<i>[" + tag['name'] + "]</i> " + msg
+					msg = "<span background=\"" + BG_TAG + "\">" \
+						  "<i>[" + tag['name'] + "]</i></span> " + msg
 			self.revisions_table.append([
 				graph_render,
 				revision,
