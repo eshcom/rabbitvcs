@@ -64,7 +64,7 @@ BG_CURR_LOCAL_BRANCH = "#730013"	# red
 BG_OTHER_LOCAL_BRANCH = "#007300"	# green
 BG_REMOTE_BRANCH = "#734500"		# brown
 BG_TAG = "#737300"					# yellow
-
+FG_COMMON = "#FBFBBC"				# light yellow
 
 def revision_grapher(history):
 	"""
@@ -712,18 +712,23 @@ class GitLog(Log):
 			if not self.filter_text:
 				graph_render = (node, in_lines, out_lines)
 			# Check if a branch is available for this revision, and if so, insert it in the message description.
+			exists_item = False
 			for branch in self.branchItems:
 				if branch['id'] == revision:
+					exists_item = True
 					if branch['name'].startswith("origin/"):
 						bg_branch = BG_REMOTE_BRANCH
-					# ~ <span size=\"xx-large\"><b>%s</b></span>
-					msg = "<span background=\"" + bg_branch + "\">" \
+					# ~ "<span size=\"xx-large\"><b>%s</b></span>"
+					msg = "<span background=\"" + bg_branch + "\">"		\
 						  "<b>[" + branch['name'] + "]</b></span> " + msg
 			# Check if a tag is available for this revision, and if so, insert it in the message description.
 			for tag in self.tagItems:
 				if tag['id'] == revision:
-					msg = "<span background=\"" + BG_TAG + "\">" \
+					exists_item = True
+					msg = "<span background=\"" + BG_TAG + "\">"	\
 						  "<i>[" + tag['name'] + "]</i></span> " + msg
+			if exists_item:
+				msg = "<span foreground=\"" + FG_COMMON + "\">%s</span>" % msg
 			self.revisions_table.append([
 				graph_render,
 				revision,
