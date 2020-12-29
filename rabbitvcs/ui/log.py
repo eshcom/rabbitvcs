@@ -64,7 +64,7 @@ BG_CURR_LOCAL_BRANCH = "#730013"	# red
 BG_OTHER_LOCAL_BRANCH = "#007300"	# green
 BG_REMOTE_BRANCH = "#734500"		# brown
 BG_TAG = "#737300"					# yellow
-FG_COMMON = "#FBFBBC"				# light yellow
+FG_COMMON = "#F3F3BB"				# light yellow
 
 def revision_grapher(history):
 	"""
