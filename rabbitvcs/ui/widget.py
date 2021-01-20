@@ -296,6 +296,8 @@ class TableBase:
 				cell = gtk.CellRendererToggle()
 				cell.set_property('activatable', True)
 				cell.set_property('xalign', 0)
+				cell.set_property('indicator-size', 15) # esh: added set prop
+				cell.set_property("cell-background", "#3B322E") # esh: added set bg-color
 				cell.connect("toggled", self.toggled_cb, i)
 				colname = ""
 				if name != TOGGLE_BUTTON:
