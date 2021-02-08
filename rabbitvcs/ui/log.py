@@ -571,6 +571,10 @@ class SVNLog(Log):
 				subitem[3]
 			])
 	
+	def on_clear_clicked(self, widget):
+		self.filter_text = None
+		self.get_widget("search_buffer").set_text("")
+	
 	def on_previous_clicked(self, widget):
 		self.rev_start = self.previous_starts.pop()
 		self.load_or_refresh()
@@ -828,6 +832,10 @@ class GitLog(Log):
 				subitem[0],
 				subitem[1]
 			])
+	
+	def on_clear_clicked(self, widget):
+		self.filter_text = None
+		self.get_widget("search_buffer").set_text("")
 	
 	def on_previous_clicked(self, widget):
 		self.start_point -= self.limit

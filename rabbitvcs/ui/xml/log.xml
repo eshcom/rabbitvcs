@@ -63,12 +63,30 @@
                             <property name="indent">4</property>
                             <property name="buffer">search_buffer</property>
                           </object>
-
-
                           <packing>
                             <property name="expand">True</property>
                             <property name="fill">True</property>
                             <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="clear_filter">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip-text" translatable="yes">Clear search filter</property>
+                            <signal handler="on_clear_clicked" name="clicked"/>
+                            <child>
+                              <object class="GtkImage" id="image2">
+                                <property name="visible">True</property>
+                                <property name="stock">gtk-clear</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
