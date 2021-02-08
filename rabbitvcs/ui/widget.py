@@ -596,7 +596,6 @@ class TableBase:
 				self._reassert_selection = True
 				self.update_selection()
 				self.treeview.grab_focus()
-		return
 	
 	def generate_string_from_data(self):
 		lines = []

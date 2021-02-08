@@ -60,11 +60,11 @@ DATE_LABEL = _("Date")
 AUTHOR_LABEL = _("Author")
 
 # ~ esh: colors
-BG_CURR_LOCAL_BRANCH = "#730013"	# red
-BG_OTHER_LOCAL_BRANCH = "#007300"	# green
-BG_REMOTE_BRANCH = "#734500"		# brown
-BG_TAG = "#737300"					# yellow
-FG_COMMON = "#F3F3BB"				# light yellow
+BG_CURR_LOCAL_BRANCH	= "#730013" # red
+BG_OTHER_LOCAL_BRANCH	= "#007300" # green
+BG_REMOTE_BRANCH		= "#734500" # brown
+BG_TAG					= "#737300" # yellow
+FG_COMMON				= "#F3F3BB" # light yellow
 
 def revision_grapher(history):
 	"""
@@ -212,17 +212,17 @@ class Log(InterfaceView):
 		try:
 			# esh: change logic
 			rev1_index = self.revisions_table.get_selected_rows()[0]
-			revision1 = six.text_type(self.display_items[rev1_index].revision)
-			revision2 = None
+			revision1 = self.display_items[rev1_index].revision
 			if len(self.display_items[rev1_index].parents) > 0:
 				revision2 = self.display_items[rev1_index].parents[0]
 			else:
-				revision2 = six.text_type(self.display_items[rev1_index+1].revision)
+				revision2 = self.display_items[rev1_index+1].revision
 			# ~ log.debug("Log.on_paths_table_row_activated: revision1 = %s, revision2 = %s" %
-						# ~ (revision1, revision2)) # esh: log
+						# ~ (six.text_type(revision1), six.text_type(revision2))) # esh: log
 			path_item = self.paths_table.get_row(self.paths_table.get_selected_rows()[0])[1]
 			url = self.root_url + path_item
-			self.view_diff_for_path(url, six.text_type(revision1), six.text_type(revision2), sidebyside=True)
+			self.view_diff_for_path(url, six.text_type(revision1),
+									six.text_type(revision2), sidebyside=True)
 		except IndexError:
 			pass
 	
