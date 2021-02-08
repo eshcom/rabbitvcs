@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 23:05+0300\n"
+"POT-Creation-Date: 2021-02-08 17:11+0300\n"
 "PO-Revision-Date: 2010-11-18 22:00+0000\n"
 "Last-Translator: Mateusz Boś <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -29,13 +29,13 @@ msgid ""
 "You must specify a version control system using the --vcs [svn|git] option"
 msgstr ""
 
-#: ui/action.py:114 ui/log.py:362 ui/log.py:611
+#: ui/action.py:114 ui/log.py:376 ui/log.py:629
 msgid "Action"
 msgstr "Akcja"
 
 #: ui/action.py:114 ui/add.py:80 ui/browser.py:91 ui/changes.py:264
 #: ui/changes.py:359 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:86
-#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:362 ui/log.py:611
+#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:376 ui/log.py:629
 #: ui/markresolved.py:63 ui/revert.py:67 ui/stage.py:65 ui/unlock.py:64
 #: ui/unstage.py:64
 msgid "Path"
@@ -45,16 +45,16 @@ msgstr "Ścieżka"
 msgid "Mime Type"
 msgstr "Typ MIME"
 
-#: ui/action.py:330
+#: ui/action.py:331
 msgid "Finished"
 msgstr "Zakończono"
 
-#: ui/action.py:334
+#: ui/action.py:335
 #, python-format
 msgid "%s - Finished"
 msgstr "%s - Zakończono"
 
-#: ui/action.py:353
+#: ui/action.py:354
 msgid "Log Message"
 msgstr "Wpis dziennika"
 
@@ -74,8 +74,8 @@ msgstr "Ładowanie..."
 msgid "Found %d item(s)"
 msgstr "Znaleziono %d obiekt(y/ów)"
 
-#: ui/add.py:190 ui/add.py:212 ui/branches.py:279 ui/tags.py:277
-#: ui/widget.py:1297 ui/xml/add.xml.h:1
+#: ui/add.py:190 ui/add.py:212 ui/branches.py:288 ui/tags.py:277
+#: ui/widget.py:1444 ui/xml/add.xml.h:1
 msgid "Add"
 msgstr "Dodaj"
 
@@ -101,18 +101,18 @@ msgid "Line"
 msgstr "Linia"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:58 ui/log.py:346 ui/log.py:596 ui/widget.py:912
+#: ui/log.py:58 ui/log.py:360 ui/log.py:614 ui/widget.py:1055
 #: ui/xml/changes.xml.h:4 ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Wersja"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:60 ui/log.py:346 ui/log.py:596
+#: ui/log.py:60 ui/log.py:360 ui/log.py:614
 msgid "Author"
 msgstr "Autor"
 
 #: ui/annotate.py:123 ui/annotate.py:214 ui/browser.py:91 ui/dialog.py:56
-#: ui/log.py:59 ui/log.py:347 ui/log.py:597 ui/push.py:77
+#: ui/log.py:59 ui/log.py:361 ui/log.py:615 ui/push.py:77
 msgid "Date"
 msgstr "Data"
 
@@ -164,50 +164,50 @@ msgstr ""
 msgid "<b>Branches</b>"
 msgstr ""
 
-#: ui/branches.py:76 ui/widget.py:913
+#: ui/branches.py:76 ui/widget.py:1056
 msgid "Branch"
 msgstr ""
 
-#: ui/branches.py:101 ui/tags.py:101 ui/xml/dialogs/name_email_prompt.xml.h:3
+#: ui/branches.py:100 ui/tags.py:101 ui/xml/dialogs/name_email_prompt.xml.h:3
 #: ui/xml/property_page.xml.h:2
 msgid "Name:"
 msgstr ""
 
-#: ui/branches.py:112
+#: ui/branches.py:111
 msgid "Start Point:"
 msgstr ""
 
-#: ui/branches.py:133
+#: ui/branches.py:132
 msgid "Keep old branch's history"
 msgstr ""
 
-#: ui/branches.py:142
+#: ui/branches.py:141
 msgid "Set as active branch"
 msgstr ""
 
-#: ui/branches.py:151 ui/branches.py:295 ui/tags.py:153 ui/tags.py:287
+#: ui/branches.py:150 ui/branches.py:309 ui/tags.py:153 ui/tags.py:287
 msgid "Save"
 msgstr ""
 
-#: ui/branches.py:159 ui/merge.py:466 ui/tags.py:112 ui/tags.py:186
+#: ui/branches.py:158 ui/merge.py:466 ui/tags.py:112 ui/tags.py:186
 #: ui/xml/browser.xml.h:3
 msgid "Revision:"
 msgstr "Wersja:"
 
-#: ui/branches.py:172 ui/merge.py:479 ui/tags.py:133 ui/tags.py:199
+#: ui/branches.py:171 ui/merge.py:479 ui/tags.py:133 ui/tags.py:199
 msgid "Message:"
 msgstr ""
 
-#: ui/branches.py:217 ui/remotes.py:116 ui/tags.py:237
+#: ui/branches.py:219 ui/remotes.py:116 ui/tags.py:237
 #, python-format
 msgid "Are you sure you want to delete %s?"
 msgstr ""
 
-#: ui/branches.py:285
+#: ui/branches.py:294
 msgid "<b>Add Branch</b>"
 msgstr ""
 
-#: ui/branches.py:307
+#: ui/branches.py:321
 msgid "<b>Branch Detail</b>"
 msgstr ""
 
@@ -382,24 +382,24 @@ msgstr ""
 msgid "Completed Clone"
 msgstr ""
 
-#: ui/commit.py:262
+#: ui/commit.py:265
 #, python-format
 msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
 msgstr ""
 
-#: ui/commit.py:306 ui/commit.py:366 ui/commit.py:420 ui/xml/commit.xml.h:1
+#: ui/commit.py:309 ui/commit.py:369 ui/commit.py:423 ui/xml/commit.xml.h:1
 msgid "Commit"
 msgstr "Zatwierdź"
 
-#: ui/commit.py:307 ui/commit.py:367 ui/commit.py:421
+#: ui/commit.py:310 ui/commit.py:370 ui/commit.py:424
 msgid "Running Commit Command..."
 msgstr "Wykonywanie \"zatwierdź\"..."
 
-#: ui/commit.py:319 ui/commit.py:376 ui/commit.py:430
+#: ui/commit.py:322 ui/commit.py:379 ui/commit.py:433
 msgid "Completed Commit"
 msgstr "Zakończono \"zatwierdź\""
 
-#: ui/commit.py:389
+#: ui/commit.py:392
 #, fuzzy
 msgid "Close Branch"
 msgstr "Utworzono gałąź/etykietę"
@@ -455,7 +455,7 @@ msgstr ""
 "Wystąpił błąd w rozszerzeniu RabbitVCS. Proszę skontaktować się z <a href="
 "\"%s\">autorami RabbitVCS</a> podając szczegóły błędu widoczne poniżej:"
 
-#: ui/dialog.py:56 ui/log.py:347 ui/log.py:597 ui/push.py:77
+#: ui/dialog.py:56 ui/log.py:361 ui/log.py:615 ui/push.py:77
 #: ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Wiadomość"
@@ -464,7 +464,7 @@ msgstr "Wiadomość"
 msgid "Select a Folder"
 msgstr "Wybierz katalog"
 
-#: ui/dialog.py:129 ui/xml/log.xml.h:6
+#: ui/dialog.py:129 ui/xml/log.xml.h:7
 msgid "to"
 msgstr "do"
 
@@ -550,118 +550,118 @@ msgstr "Wykonywanie \"zablokuj\""
 msgid "Completed Lock"
 msgstr "Zakończono \"zablokuj\""
 
-#: ui/log.py:119
+#: ui/log.py:126
 #, python-format
 msgid "Log - %s"
 msgstr "Log - %s"
 
-#: ui/log.py:284 ui/log.py:285 ui/xml/log.xml.h:5
+#: ui/log.py:298 ui/log.py:299 ui/xml/log.xml.h:6
 msgid "N/A"
 msgstr "Nie dotyczy"
 
-#: ui/log.py:348
+#: ui/log.py:362
 msgid "Color"
 msgstr ""
 
-#: ui/log.py:363
+#: ui/log.py:377
 msgid "Copy From Path"
 msgstr "Kopiuj ze ścieżki"
 
-#: ui/log.py:363
+#: ui/log.py:377
 msgid "Copy From Revision"
 msgstr "Kopiuj z wersji"
 
-#: ui/log.py:596
+#: ui/log.py:614
 msgid "Graph"
 msgstr ""
 
-#: ui/log.py:878
+#: ui/log.py:925
 msgid "View diff against working copy"
 msgstr "Pokaż różnice względem kopii roboczej"
 
-#: ui/log.py:883 util/contextmenuitems.py:395
+#: ui/log.py:930 util/contextmenuitems.py:395
 msgid "View diff against previous revision"
 msgstr "Pokaż różnice względem poprzedniej wersji"
 
-#: ui/log.py:888
+#: ui/log.py:935
 msgid "View diff between revisions"
 msgstr "Pokaż różnice pomiedzy wersjami"
 
-#: ui/log.py:893
+#: ui/log.py:940
 msgid "Compare with working copy"
 msgstr "Porównaj z kopią roboczą"
 
-#: ui/log.py:898 util/contextmenuitems.py:413
+#: ui/log.py:945 util/contextmenuitems.py:413
 msgid "Compare with previous revision"
 msgstr "Porównaj z poprzednią wersją"
 
-#: ui/log.py:903
+#: ui/log.py:950
 msgid "Compare revisions"
 msgstr "Porównaj wersje"
 
-#: ui/log.py:909
+#: ui/log.py:956
 msgid "Show changes against previous revision"
 msgstr ""
 
-#: ui/log.py:915
+#: ui/log.py:962
 msgid "Show changes between revisions"
 msgstr "Pokaż zmiany pomiędzy wersjami"
 
-#: ui/log.py:920
+#: ui/log.py:967
 msgid "Update to this revision"
 msgstr ""
 
-#: ui/log.py:921
+#: ui/log.py:968
 msgid "Update the selected path to this revision"
 msgstr ""
 
-#: ui/log.py:926
+#: ui/log.py:973
 #, fuzzy
 msgid "Revert changes from this revision"
 msgstr "Otwórz z pierwszej rewizji"
 
-#: ui/log.py:927
+#: ui/log.py:974
 msgid "Update the selected path by reverse merging the changes"
 msgstr ""
 
-#: ui/log.py:932
+#: ui/log.py:979
 #, fuzzy
 msgid "Copy to clipboard"
 msgstr "Skopiuj URL do schowka"
 
-#: ui/log.py:933
+#: ui/log.py:980
 msgid "Copy to clipboard the full data of these revisions"
 msgstr ""
 
-#: ui/log.py:938
+#: ui/log.py:985
 msgid "Edit author..."
 msgstr "Edytuj autora..."
 
-#: ui/log.py:943
+#: ui/log.py:990
 msgid "Edit log message..."
 msgstr "Edytuj opis zmian..."
 
-#: ui/log.py:948
+#: ui/log.py:995
 msgid "Edit revision properties..."
 msgstr "Edytuj właściwości wersji"
 
-#: ui/log.py:957
+#: ui/log.py:1004
 msgid "Cherry Pick this commits..."
 msgstr ""
 
-#: ui/log.py:958
+#: ui/log.py:1005
 msgid "Apply the changes introduced by some existing commits"
 msgstr ""
 
-#: ui/log.py:1224
+#: ui/log.py:1271
 msgid "Edit author"
 msgstr "Edytuj autora"
 
-#: ui/log.py:1234
+#: ui/log.py:1281
 msgid "Edit log message"
 msgstr "Edytuj opis zmian"
 
-#: ui/log.py:1249
+#: ui/log.py:1296
 #, fuzzy
 msgid "Are you sure you want to apply the selected commits?"
 msgstr "Gdzie chcesz skopiować zaznaczenie?"
@@ -944,7 +944,7 @@ msgstr ""
 msgid "<b>Add Tag</b>"
 msgstr ""
 
-#: ui/tags.py:295
+#: ui/tags.py:296
 msgid "<b>Tag Detail</b>"
 msgstr ""
 
@@ -1012,31 +1012,31 @@ msgstr "Gdzie chcesz skopiować zaznaczenie?"
 msgid "Checking out %s..."
 msgstr ""
 
-#: ui/widget.py:911 ui/widget.py:917 ui/xml/merge.xml.h:19
+#: ui/widget.py:1054 ui/widget.py:1060 ui/xml/merge.xml.h:19
 msgid "HEAD"
 msgstr "GŁÓWNA"
 
-#: ui/widget.py:918
+#: ui/widget.py:1061
 msgid "Number"
 msgstr "Numer"
 
-#: ui/widget.py:921
+#: ui/widget.py:1064
 msgid "Working Copy"
 msgstr "Kopia robocza"
 
-#: ui/widget.py:1132
+#: ui/widget.py:1276
 msgid "Repository:"
 msgstr ""
 
-#: ui/widget.py:1154
+#: ui/widget.py:1298
 msgid "Branch:"
 msgstr ""
 
-#: ui/widget.py:1182 ui/xml/dialogs/certificate.xml.h:4
+#: ui/widget.py:1326 ui/xml/dialogs/certificate.xml.h:4
 msgid "Host:"
 msgstr "Host:"
 
-#: ui/widget.py:1292
+#: ui/widget.py:1439
 msgid "Add line:"
 msgstr ""
 
@@ -1530,7 +1530,7 @@ msgstr ""
 msgid "%d minute(s) ago"
 msgstr ""
 
-#: util/helper.py:722
+#: util/helper.py:720
 #, python-format
 msgid "%i second"
 msgid_plural "%i seconds"
@@ -1538,7 +1538,7 @@ msgstr[0] "%i sekundy"
 msgstr[1] "%i sekund"
 msgstr[2] "%i sekund"
 
-#: util/helper.py:725
+#: util/helper.py:723
 #, python-format
 msgid "%i minute"
 msgid_plural "%i minutes"
@@ -1546,7 +1546,7 @@ msgstr[0] "%i minuta"
 msgstr[1] "%i minut"
 msgstr[2] "%i minut"
 
-#: util/helper.py:728
+#: util/helper.py:726
 #, python-format
 msgid "%i hour"
 msgid_plural "%i hours"
@@ -1554,7 +1554,7 @@ msgstr[0] "%i godzina"
 msgstr[1] "%i godzin"
 msgstr[2] "%i godzin"
 
-#: util/helper.py:731
+#: util/helper.py:729
 #, python-format
 msgid "%i day"
 msgid_plural "%i days"
@@ -1562,7 +1562,7 @@ msgstr[0] "%i dzień"
 msgstr[1] "%i dni"
 msgstr[2] "%i dni"
 
-#: util/helper.py:734
+#: util/helper.py:732
 #, python-format
 msgid "%i week"
 msgid_plural "%i weeks"
@@ -1570,7 +1570,7 @@ msgstr[0] "%i tydzień"
 msgstr[1] "%i tygodni"
 msgstr[2] "%i tygodni"
 
-#: util/helper.py:737
+#: util/helper.py:735
 #, python-format
 msgid "%i month"
 msgid_plural "%i months"
@@ -1578,7 +1578,7 @@ msgstr[0] "%i miesiąc"
 msgstr[1] "%i miesięcy"
 msgstr[2] "%i miesięcy"
 
-#: util/helper.py:740
+#: util/helper.py:738
 #, python-format
 msgid "%i year"
 msgid_plural "%i years"
@@ -1593,21 +1593,21 @@ msgid ""
 "%s"
 msgstr ""
 
-#: vcs/git/__init__.py:700 vcs/svn/__init__.py:1092
+#: vcs/git/__init__.py:705 vcs/svn/__init__.py:1092
 #, fuzzy
 msgid "(no author)"
 msgstr "Edytuj autora"
 
-#: vcs/git/__init__.py:825 vcs/svn/__init__.py:1564
+#: vcs/git/__init__.py:830 vcs/svn/__init__.py:1564
 msgid "Patched"
 msgstr ""
 
-#: vcs/git/__init__.py:829 vcs/svn/__init__.py:1568
+#: vcs/git/__init__.py:834 vcs/svn/__init__.py:1568
 #, fuzzy
 msgid "Patch Failed"
 msgstr "Łata została zastosowana"
 
-#: vcs/git/__init__.py:834 vcs/svn/__init__.py:1576
+#: vcs/git/__init__.py:839 vcs/svn/__init__.py:1576
 #, fuzzy
 msgid "Rejected Patch"
 msgstr "Utwórz łatę"
@@ -1934,7 +1934,7 @@ msgstr "<b>Zmienione pliki</b> (kliknij dwukrotnie, by porównać z bazą)"
 msgid "Show unversioned files"
 msgstr "Pokaż pliki niewersjonowane"
 
-#: ui/xml/commit.xml.h:8 ui/xml/log.xml.h:11
+#: ui/xml/commit.xml.h:8 ui/xml/log.xml.h:12
 msgid "Refresh"
 msgstr "Odśwież"
 
@@ -2061,7 +2061,7 @@ msgstr ""
 msgid "<b>Previous Messages</b>"
 msgstr "<b>Poprzednie wiadomości</b>"
 
-#: ui/xml/dialogs/previous_messages.xml.h:3 ui/xml/log.xml.h:8
+#: ui/xml/dialogs/previous_messages.xml.h:3 ui/xml/log.xml.h:9
 msgid "<b>Message</b>"
 msgstr "<b>Wiadomość</b>"
 
@@ -2164,22 +2164,26 @@ msgid "<b>Revisions Table</b>"
 msgstr "<b>Tablica wersji</b>"
 
 #: ui/xml/log.xml.h:3
-msgid "Stop on copy"
+msgid "Clear search filter"
 msgstr ""
 
 #: ui/xml/log.xml.h:4
+msgid "Stop on copy"
+msgstr ""
+
+#: ui/xml/log.xml.h:5
 msgid "Showing Revisions:"
 msgstr "Pokazuję wersje:"
 
-#: ui/xml/log.xml.h:7
+#: ui/xml/log.xml.h:8
 msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 msgstr "<b>Dotknięte pliki</b> (kliknij dwukrotnie by porównać z bazą)"
 
-#: ui/xml/log.xml.h:9
+#: ui/xml/log.xml.h:10
 msgid "Limit:"
 msgstr "Limit:"
 
-#: ui/xml/log.xml.h:10
+#: ui/xml/log.xml.h:11
 msgid "100"
 msgstr "100"
 
