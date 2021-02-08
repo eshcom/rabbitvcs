@@ -747,14 +747,13 @@ class GitLog(Log):
 				date,
 				msg
 			])
-			# esh: added item to selected_rows (if need)
+			# esh: added row-index to selected_rows
 			if revision in selected_revisions:
 				selected_rows.append(index)
 			index += 1
 		
-		# esh: set selected rows (if need)
-		if len(selected_rows) > 0:
-			self.revisions_table.set_selected_rows(selected_rows, False)
+		# esh: set selected rows
+		self.revisions_table.set_selected_rows(selected_rows, focus=False, default=False)
 		
 		self.check_previous_sensitive()
 		self.check_next_sensitive()

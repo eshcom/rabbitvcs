@@ -231,8 +231,9 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		First clears and then populates the files table based on the items
 		retrieved in self.load()
 		"""
-		# esh: get_selected_rows
-		sel_rows = self.files_table.get_selected_rows()
+		# esh: get selected rows
+		selected_rows = self.files_table.get_selected_rows()
+		
 		self.files_table.clear()
 		n = 0
 		m = 0
@@ -257,8 +258,10 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 				item.simple_content_status(),
 				item.simple_metadata_status()
 			])
-		# esh: set_selected_rows
-		self.files_table.set_selected_rows(sel_rows)
+		
+		# esh: set selected rows
+		self.files_table.set_selected_rows(selected_rows, focus=True, default=True)
+		
 		self.get_widget("status").set_text(_("Found %(changed)d changed and %(unversioned)d unversioned item(s)") % {
 				"changed": n,
 				"unversioned": m

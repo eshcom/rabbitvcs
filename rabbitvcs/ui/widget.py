@@ -582,17 +582,21 @@ class TableBase:
 		return self.selected_rows
 	
 	# esh: add set_selected_row func
-	def set_selected_rows(self, selected_rows, focus=True):
+	def set_selected_rows(self, selected_rows, focus=False, default=False):
 		data_len = len(self.data)
 		if data_len > 0:
-			sel_index = None
-			if len(selected_rows) > 0:
-				sel_index = selected_rows[0]
-			if sel_index is not None:
-				if sel_index < data_len:
-					self.selected_rows = [sel_index]
-				else:
-					self.selected_rows = [data_len - 1]
+			new_selected_rows = []
+			for row in selected_rows:
+				if row < data_len:
+					new_selected_rows.append(row)
+			is_set = False
+			if len(new_selected_rows) > 0:
+				self.selected_rows = new_selected_rows
+				is_set = True
+			elif default:
+				self.selected_rows = [data_len - 1]
+				is_set = True
+			if is_set:
 				self._reassert_selection = True
 				self.update_selection()
 				if focus:
