@@ -582,7 +582,7 @@ class TableBase:
 		return self.selected_rows
 	
 	# esh: add set_selected_row func
-	def set_selected_rows(self, selected_rows):
+	def set_selected_rows(self, selected_rows, focus=True):
 		data_len = len(self.data)
 		if data_len > 0:
 			sel_index = None
@@ -595,7 +595,8 @@ class TableBase:
 					self.selected_rows = [data_len - 1]
 				self._reassert_selection = True
 				self.update_selection()
-				self.treeview.grab_focus()
+				if focus:
+					self.treeview.grab_focus()
 	
 	def generate_string_from_data(self):
 		lines = []

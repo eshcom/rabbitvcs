@@ -190,6 +190,13 @@ class Log(InterfaceView):
 			items.append(self.display_items[row][col])
 		return items
 	
+	# esh: added new func
+	def get_selected_revisions(self):
+		revisions = []
+		for row in self.revisions_table.get_selected_rows():
+			revisions.append(six.text_type(self.display_items[row].revision))
+		return revisions
+	
 	def on_revisions_table_row_activated(self, treeview, event, col):
 		paths = self.revisions_table.get_displayed_row_items(1)
 		helper.launch_diff_tool(*paths)
@@ -635,6 +642,10 @@ class GitLog(Log):
 		"""
 		Refresh the items in the main log table that shows Revision/Author/etc.
 		"""
+		# esh: get selected revisions
+		selected_revisions = self.get_selected_revisions()
+		selected_rows = []
+		
 		self.revisions_table.clear()
 		self.message.set_text("")
 		self.paths_table.clear()
@@ -736,7 +747,15 @@ class GitLog(Log):
 				date,
 				msg
 			])
+			# esh: added item to selected_rows (if need)
+			if revision in selected_revisions:
+				selected_rows.append(index)
 			index += 1
+		
+		# esh: set selected rows (if need)
+		if len(selected_rows) > 0:
+			self.revisions_table.set_selected_rows(selected_rows, False)
+		
 		self.check_previous_sensitive()
 		self.check_next_sensitive()
 		self.set_loading(False)
