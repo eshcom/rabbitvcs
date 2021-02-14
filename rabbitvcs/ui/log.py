@@ -117,7 +117,7 @@ class Log(InterfaceView):
 	display_items = []
 	limit = 100
 	
-	def __init__(self, path):
+	def __init__(self, path, rows_lim=limit):
 		"""
 		@type   path: string
 		@param  path: A path for which to get log items
@@ -138,6 +138,7 @@ class Log(InterfaceView):
 		self.initialize_revision_labels()
 		self.revision_number_column = 0
 		self.head_row = 0
+		self.limit = rows_lim
 		self.get_widget("limit").set_text(str(self.limit))
 		self.message = rabbitvcs.ui.widget.TextView(
 			self.get_widget("message")
@@ -600,9 +601,8 @@ class SVNLog(Log):
 
 class GitLog(Log):
 	def __init__(self, path):
-		Log.__init__(self, path)
+		Log.__init__(self, path, rows_lim=500)
 		self.git = self.vcs.git(path)
-		self.limit = 500
 		self.get_widget("stop_on_copy").hide()
 		self.revision_number_column = 1
 		
