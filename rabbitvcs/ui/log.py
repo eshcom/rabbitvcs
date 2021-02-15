@@ -29,6 +29,7 @@ import os.path
 import pygtk
 import gtk
 import cgi
+import math
 
 try:
 	from gi.repository import GObject as gobject
@@ -116,6 +117,7 @@ class Log(InterfaceView):
 	paths_selected_rows = []
 	display_items = []
 	limit = 100
+	page = 1
 	
 	def __init__(self, path, rows_lim=limit):
 		"""
@@ -140,6 +142,7 @@ class Log(InterfaceView):
 		self.head_row = 0
 		self.limit = rows_lim
 		self.get_widget("limit").set_text(str(self.limit))
+		self.get_widget("page").set_text(str(self.page))
 		self.message = rabbitvcs.ui.widget.TextView(
 			self.get_widget("message")
 		)
@@ -172,9 +175,25 @@ class Log(InterfaceView):
 			self.refresh()
 	
 	def on_refresh_clicked(self, widget):
-		self.limit = int(self.get_widget("limit").get_text())
-		self.cache.empty()
-		self.load()
+		new_limit = int(self.get_widget("limit").get_text())
+		if new_limit < 1:
+			new_limit = 1
+			self.get_widget("limit").set_text(str(new_limit))
+		
+		new_page = int(self.get_widget("page").get_text())
+		if new_page < 1:
+			new_page = 1
+			self.get_widget("page").set_text(str(new_page))
+		elif new_page > self.page:
+			self.get_widget("previous").set_sensitive(True)
+			self.get_widget("next").set_sensitive(False)
+		
+		if self.limit != new_limit or self.page != new_page:
+			self.limit = new_limit
+			self.page = new_page
+			self.start_point = int((new_page - 1) * new_limit)
+			self.cache.empty()
+			self.load()
 	
 	def on_search(self, widget):
 		tb = self.get_widget("search_buffer")
@@ -577,10 +596,16 @@ class SVNLog(Log):
 		self.get_widget("search_buffer").set_text("")
 	
 	def on_previous_clicked(self, widget):
+		self.page -= 1
+		self.get_widget("page").set_text(str(self.page))
+		
 		self.rev_start = self.previous_starts.pop()
 		self.load_or_refresh()
 	
 	def on_next_clicked(self, widget):
+		self.page += 1
+		self.get_widget("page").set_text(str(self.page))
+		
 		self.previous_starts.append(self.rev_start)
 		self.rev_start = int(self.rev_end) - 1
 		if self.rev_start < 1:
@@ -838,12 +863,18 @@ class GitLog(Log):
 		self.get_widget("search_buffer").set_text("")
 	
 	def on_previous_clicked(self, widget):
+		self.page -= 1
+		self.get_widget("page").set_text(str(self.page))
+		
 		self.start_point -= self.limit
 		if self.start_point < 0:
 			self.start_point = 0
 		self.load_or_refresh()
 	
 	def on_next_clicked(self, widget):
+		self.page += 1
+		self.get_widget("page").set_text(str(self.page))
+		
 		self.start_point += self.limit
 		self.load()
 	
