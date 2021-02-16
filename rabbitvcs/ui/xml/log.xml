@@ -395,7 +395,7 @@
                         <property name="width_request">75</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="text" translatable="yes">100</property>
+                        <property name="text" translatable="no">100</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -419,7 +419,7 @@
                         <property name="width_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="text" translatable="yes">1</property>
+                        <property name="text" translatable="no">1</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>

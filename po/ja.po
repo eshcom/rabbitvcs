@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-08 17:11+0300\n"
+"POT-Creation-Date: 2021-02-16 13:06+0300\n"
 "PO-Revision-Date: 2010-12-02 16:25+0000\n"
 "Last-Translator: yamafuji mitsugu <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -28,13 +28,13 @@ msgid ""
 "You must specify a version control system using the --vcs [svn|git] option"
 msgstr ""
 
-#: ui/action.py:114 ui/log.py:376 ui/log.py:629
+#: ui/action.py:114 ui/log.py:396 ui/log.py:654
 msgid "Action"
 msgstr "アクション"
 
 #: ui/action.py:114 ui/add.py:80 ui/browser.py:91 ui/changes.py:264
 #: ui/changes.py:359 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:86
-#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:376 ui/log.py:629
+#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:396 ui/log.py:654
 #: ui/markresolved.py:63 ui/revert.py:67 ui/stage.py:65 ui/unlock.py:64
 #: ui/unstage.py:64
 msgid "Path"
@@ -100,18 +100,18 @@ msgid "Line"
 msgstr "行"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:58 ui/log.py:360 ui/log.py:614 ui/widget.py:1055
+#: ui/log.py:59 ui/log.py:380 ui/log.py:639 ui/widget.py:1055
 #: ui/xml/changes.xml.h:4 ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "リビジョン"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:60 ui/log.py:360 ui/log.py:614
+#: ui/log.py:61 ui/log.py:380 ui/log.py:639
 msgid "Author"
 msgstr "作者"
 
 #: ui/annotate.py:123 ui/annotate.py:214 ui/browser.py:91 ui/dialog.py:56
-#: ui/log.py:59 ui/log.py:361 ui/log.py:615 ui/push.py:77
+#: ui/log.py:60 ui/log.py:381 ui/log.py:640 ui/push.py:77
 msgid "Date"
 msgstr "日付"
 
@@ -452,7 +452,7 @@ msgid ""
 "the <a href=\"%s\">RabbitVCS team</a> with the error details listed below:"
 msgstr ""
 
-#: ui/dialog.py:56 ui/log.py:361 ui/log.py:615 ui/push.py:77
+#: ui/dialog.py:56 ui/log.py:381 ui/log.py:640 ui/push.py:77
 #: ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "メッセージ"
@@ -547,117 +547,117 @@ msgstr "ロック中..."
 msgid "Completed Lock"
 msgstr "ロック完了"
 
-#: ui/log.py:126
+#: ui/log.py:128
 #, python-format
 msgid "Log - %s"
 msgstr "ログ - %s"
 
-#: ui/log.py:298 ui/log.py:299 ui/xml/log.xml.h:6
+#: ui/log.py:318 ui/log.py:319 ui/xml/log.xml.h:6
 msgid "N/A"
 msgstr "N/A"
 
-#: ui/log.py:362
+#: ui/log.py:382
 msgid "Color"
 msgstr ""
 
-#: ui/log.py:377
+#: ui/log.py:397
 msgid "Copy From Path"
 msgstr "パスからコピー"
 
-#: ui/log.py:377
+#: ui/log.py:397
 msgid "Copy From Revision"
 msgstr "リビジョンからコピー"
 
-#: ui/log.py:614
+#: ui/log.py:639
 msgid "Graph"
 msgstr ""
 
-#: ui/log.py:925
+#: ui/log.py:956
 msgid "View diff against working copy"
 msgstr ""
 
-#: ui/log.py:930 util/contextmenuitems.py:395
+#: ui/log.py:961 util/contextmenuitems.py:395
 msgid "View diff against previous revision"
 msgstr ""
 
-#: ui/log.py:935
+#: ui/log.py:966
 msgid "View diff between revisions"
 msgstr ""
 
-#: ui/log.py:940
+#: ui/log.py:971
 msgid "Compare with working copy"
 msgstr ""
 
-#: ui/log.py:945 util/contextmenuitems.py:413
+#: ui/log.py:976 util/contextmenuitems.py:413
 msgid "Compare with previous revision"
 msgstr ""
 
-#: ui/log.py:950
+#: ui/log.py:981
 msgid "Compare revisions"
 msgstr ""
 
-#: ui/log.py:956
+#: ui/log.py:987
 msgid "Show changes against previous revision"
 msgstr ""
 
-#: ui/log.py:962
+#: ui/log.py:993
 msgid "Show changes between revisions"
 msgstr ""
 
-#: ui/log.py:967
+#: ui/log.py:998
 msgid "Update to this revision"
 msgstr ""
 
-#: ui/log.py:968
+#: ui/log.py:999
 msgid "Update the selected path to this revision"
 msgstr ""
 
-#: ui/log.py:973
+#: ui/log.py:1004
 #, fuzzy
 msgid "Revert changes from this revision"
 msgstr "リビジョンの範囲をマージ"
 
-#: ui/log.py:974
+#: ui/log.py:1005
 msgid "Update the selected path by reverse merging the changes"
 msgstr ""
 
-#: ui/log.py:979
+#: ui/log.py:1010
 msgid "Copy to clipboard"
 msgstr ""
 
-#: ui/log.py:980
+#: ui/log.py:1011
 msgid "Copy to clipboard the full data of these revisions"
 msgstr ""
 
-#: ui/log.py:985
+#: ui/log.py:1016
 msgid "Edit author..."
 msgstr ""
 
-#: ui/log.py:990
+#: ui/log.py:1021
 msgid "Edit log message..."
 msgstr ""
 
-#: ui/log.py:995
+#: ui/log.py:1026
 msgid "Edit revision properties..."
 msgstr ""
 
-#: ui/log.py:1004
+#: ui/log.py:1035
 msgid "Cherry Pick this commits..."
 msgstr ""
 
-#: ui/log.py:1005
+#: ui/log.py:1036
 msgid "Apply the changes introduced by some existing commits"
 msgstr ""
 
-#: ui/log.py:1271
+#: ui/log.py:1302
 msgid "Edit author"
 msgstr ""
 
-#: ui/log.py:1281
+#: ui/log.py:1312
 msgid "Edit log message"
 msgstr ""
 
-#: ui/log.py:1296
+#: ui/log.py:1327
 #, fuzzy
 msgid "Are you sure you want to apply the selected commits?"
 msgstr "本当に続けますか?"
@@ -2143,8 +2143,8 @@ msgid "Limit:"
 msgstr "期限:"
 
 #: ui/xml/log.xml.h:11
-msgid "100"
-msgstr "100"
+msgid "Page:"
+msgstr ""
 
 #: ui/xml/manager.xml.h:1
 msgid "label"
@@ -2555,6 +2555,9 @@ msgstr "<b>詳細の切り替え</b>"
 #: ui/xml/update.xml.h:6
 msgid "Rollback to specified revision number"
 msgstr ""
+
+#~ msgid "100"
+#~ msgstr "100"
 
 #~ msgid "URL/Path"
 #~ msgstr "URL/パス"

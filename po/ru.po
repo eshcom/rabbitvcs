@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-08 17:11+0300\n"
+"POT-Creation-Date: 2021-02-16 13:06+0300\n"
 "PO-Revision-Date: 2010-12-03 19:19+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -30,13 +30,13 @@ msgid ""
 msgstr ""
 "Вы должны указать систему контроля версий, используя опцию --vcs [svn|git]"
 
-#: ui/action.py:114 ui/log.py:376 ui/log.py:629
+#: ui/action.py:114 ui/log.py:396 ui/log.py:654
 msgid "Action"
 msgstr "Действие"
 
 #: ui/action.py:114 ui/add.py:80 ui/browser.py:91 ui/changes.py:264
 #: ui/changes.py:359 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:86
-#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:376 ui/log.py:629
+#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:396 ui/log.py:654
 #: ui/markresolved.py:63 ui/revert.py:67 ui/stage.py:65 ui/unlock.py:64
 #: ui/unstage.py:64
 msgid "Path"
@@ -102,18 +102,18 @@ msgid "Line"
 msgstr "Строка"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:58 ui/log.py:360 ui/log.py:614 ui/widget.py:1055
+#: ui/log.py:59 ui/log.py:380 ui/log.py:639 ui/widget.py:1055
 #: ui/xml/changes.xml.h:4 ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Ревизия"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:60 ui/log.py:360 ui/log.py:614
+#: ui/log.py:61 ui/log.py:380 ui/log.py:639
 msgid "Author"
 msgstr "Автор"
 
 #: ui/annotate.py:123 ui/annotate.py:214 ui/browser.py:91 ui/dialog.py:56
-#: ui/log.py:59 ui/log.py:361 ui/log.py:615 ui/push.py:77
+#: ui/log.py:60 ui/log.py:381 ui/log.py:640 ui/push.py:77
 msgid "Date"
 msgstr "Дата"
 
@@ -449,7 +449,7 @@ msgstr ""
 "В расширении RabbitVCS для Nautilus произошла ошибка. Свяжитесь с <a href="
 "\"%s\">командой RabbitVCS</a> и передайте детали ошибки ниже"
 
-#: ui/dialog.py:56 ui/log.py:361 ui/log.py:615 ui/push.py:77
+#: ui/dialog.py:56 ui/log.py:381 ui/log.py:640 ui/push.py:77
 #: ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Сообщение"
@@ -544,116 +544,116 @@ msgstr "Блокировка..."
 msgid "Completed Lock"
 msgstr "Заблокировано"
 
-#: ui/log.py:126
+#: ui/log.py:128
 #, python-format
 msgid "Log - %s"
 msgstr "Лог - %s"
 
-#: ui/log.py:298 ui/log.py:299 ui/xml/log.xml.h:6
+#: ui/log.py:318 ui/log.py:319 ui/xml/log.xml.h:6
 msgid "N/A"
 msgstr "Н/Д"
 
-#: ui/log.py:362
+#: ui/log.py:382
 msgid "Color"
 msgstr "Цвет"
 
-#: ui/log.py:377
+#: ui/log.py:397
 msgid "Copy From Path"
 msgstr "Копия из пути"
 
-#: ui/log.py:377
+#: ui/log.py:397
 msgid "Copy From Revision"
 msgstr "Копия из ревизии"
 
-#: ui/log.py:614
+#: ui/log.py:639
 msgid "Graph"
 msgstr "Граф"
 
-#: ui/log.py:925
+#: ui/log.py:956
 msgid "View diff against working copy"
 msgstr "Просмотреть файл различий с рабочей копией"
 
-#: ui/log.py:930 util/contextmenuitems.py:395
+#: ui/log.py:961 util/contextmenuitems.py:395
 msgid "View diff against previous revision"
 msgstr "Просмотреть файл различий с предыдущей ревизией"
 
-#: ui/log.py:935
+#: ui/log.py:966
 msgid "View diff between revisions"
 msgstr "Просмотреть файл различий между ревизиями"
 
-#: ui/log.py:940
+#: ui/log.py:971
 msgid "Compare with working copy"
 msgstr "Сравнить с рабочей копией"
 
-#: ui/log.py:945 util/contextmenuitems.py:413
+#: ui/log.py:976 util/contextmenuitems.py:413
 msgid "Compare with previous revision"
 msgstr "Сравнить с предудыщей ревизией"
 
-#: ui/log.py:950
+#: ui/log.py:981
 msgid "Compare revisions"
 msgstr "Сравнить ревизии"
 
-#: ui/log.py:956
+#: ui/log.py:987
 msgid "Show changes against previous revision"
 msgstr "Показать отличия с предыдущей ревизией"
 
-#: ui/log.py:962
+#: ui/log.py:993
 msgid "Show changes between revisions"
 msgstr "Показать отличия между ревизиями"
 
-#: ui/log.py:967
+#: ui/log.py:998
 msgid "Update to this revision"
 msgstr "Обновить до этой ревизии"
 
-#: ui/log.py:968
+#: ui/log.py:999
 msgid "Update the selected path to this revision"
 msgstr "Обновить выбранный путь до этой ревизии"
 
-#: ui/log.py:973
+#: ui/log.py:1004
 msgid "Revert changes from this revision"
 msgstr "Отменить изменения из этой ревизии"
 
-#: ui/log.py:974
+#: ui/log.py:1005
 msgid "Update the selected path by reverse merging the changes"
 msgstr "Обновить выбранный путь путем обратного объединения изменений"
 
-#: ui/log.py:979
+#: ui/log.py:1010
 msgid "Copy to clipboard"
 msgstr "Скопировать в буфер обмена"
 
-#: ui/log.py:980
+#: ui/log.py:1011
 msgid "Copy to clipboard the full data of these revisions"
 msgstr "Скопировать в буфер обмена полные данные этих ревизий"
 
-#: ui/log.py:985
+#: ui/log.py:1016
 msgid "Edit author..."
 msgstr "Изменить автора..."
 
-#: ui/log.py:990
+#: ui/log.py:1021
 msgid "Edit log message..."
 msgstr "Изменить сообщение ревизии..."
 
-#: ui/log.py:995
+#: ui/log.py:1026
 msgid "Edit revision properties..."
 msgstr "Изменить свойства ревизии..."
 
-#: ui/log.py:1004
+#: ui/log.py:1035
 msgid "Cherry Pick this commits..."
 msgstr "Применить эти коммиты..."
 
-#: ui/log.py:1005
+#: ui/log.py:1036
 msgid "Apply the changes introduced by some existing commits"
 msgstr "Применить изменения существующих коммитов"
 
-#: ui/log.py:1271
+#: ui/log.py:1302
 msgid "Edit author"
 msgstr "Изменение автора"
 
-#: ui/log.py:1281
+#: ui/log.py:1312
 msgid "Edit log message"
 msgstr "Изменение сообщения ревизии"
 
-#: ui/log.py:1296
+#: ui/log.py:1327
 msgid "Are you sure you want to apply the selected commits?"
 msgstr "Вы уверены, что хотите применить выбранные коммиты?"
 
@@ -2112,8 +2112,8 @@ msgid "Limit:"
 msgstr "Ограничение:"
 
 #: ui/xml/log.xml.h:11
-msgid "100"
-msgstr "100"
+msgid "Page:"
+msgstr "Страница:"
 
 #: ui/xml/manager.xml.h:1
 msgid "label"
@@ -2513,6 +2513,9 @@ msgstr "<b>Детали переключения</b>"
 #: ui/xml/update.xml.h:6
 msgid "Rollback to specified revision number"
 msgstr "Откат к заданному номеру ревизии"
+
+#~ msgid "100"
+#~ msgstr "100"
 
 #~ msgid "URL/Path"
 #~ msgstr "URL/Путь"
