@@ -1361,9 +1361,14 @@ class GitBranchSelector:
 		self.git = git
 		self.changed_callback = changed_callback
 		self.vbox = gtk.VBox(False, 4)
+		
 		tmp_branches = []
-		active = 0
 		index = 0
+		if read_only:
+			tmp_branches.append("all")
+			index = 1
+		
+		active = 0
 		for item in self.git.branch_list():
 			tmp_branches.append(item.name)
 			if self.git.is_tracking(item.name):

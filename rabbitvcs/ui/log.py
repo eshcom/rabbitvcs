@@ -671,7 +671,7 @@ class GitLog(Log):
 		self.load_or_refresh()
 	
 	def on_branch_changed(self, branch):
-		log.debug("branch_selector_changed = %s" % branch) # esh: log
+		self.load()
 	
 	#
 	# Log-loading callback methods
@@ -821,12 +821,23 @@ class GitLog(Log):
 			notification=False,
 			run_in_thread=True
 		)
-		self.action.append(
-			self.git.log,
-			path=self.path,
-			skip=self.start_point,
-			limit=self.limit+1
-		)
+		branch_name = self.branch_selector.get_branch()
+		if branch_name == "all":
+			self.action.append(
+				self.git.log,
+				path=self.path,
+				skip=self.start_point,
+				limit=self.limit+1
+			)
+		else:
+			self.action.append(
+				self.git.log,
+				path=self.path,
+				skip=self.start_point,
+				limit=self.limit+1,
+				revision=self.git.revision(branch_name),
+				showtype="branch"
+			)
 		self.action.append(self.refresh)
 		self.action.schedule()
 	
