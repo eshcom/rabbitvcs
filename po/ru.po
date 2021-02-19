@@ -2101,7 +2101,7 @@ msgstr "Остановить при копировании"
 
 #: ui/xml/log.xml.h:5
 msgid "Showing Revisions:"
-msgstr "Отображенные ревизии:"
+msgstr "Показаны ревизии:"
 
 #: ui/xml/log.xml.h:8
 msgid "<b>Affected File(s)</b> (double-click to compare with base)"

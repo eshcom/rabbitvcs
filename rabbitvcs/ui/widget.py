@@ -1357,7 +1357,7 @@ class GitRepositorySelector:
 								  self.branch_opt.get_active_text())
 
 class GitBranchSelector:
-	def __init__(self, container, git, changed_callback=None):
+	def __init__(self, container, git, changed_callback=None, read_only=False):
 		self.git = git
 		self.changed_callback = changed_callback
 		self.vbox = gtk.VBox(False, 4)
@@ -1369,7 +1369,8 @@ class GitBranchSelector:
 			if self.git.is_tracking(item.name):
 				active = index
 			index += 1
-		self.branch_opt = ComboBox(gtk.ComboBoxEntry(), tmp_branches)
+		self.branch_opt = ComboBox(gtk.ComboBox() if read_only else gtk.ComboBoxEntry(),
+								   tmp_branches)
 		self.branch_opt.set_active(active)
 		self.branch_opt.cb.connect("changed", self.__branch_changed)
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
@@ -1388,7 +1389,8 @@ class GitBranchSelector:
 		return self.branch_opt.get_active_text()
 	
 	def __branch_changed(self, branch_opt):
-		pass
+		if self.changed_callback:
+			self.changed_callback(self.branch_opt.get_active_text())
 	
 	def show(self):
 		self.vbox.show_all()

@@ -631,6 +631,12 @@ class GitLog(Log):
 		self.get_widget("stop_on_copy").hide()
 		self.revision_number_column = 1
 		
+		self.branch_selector = rabbitvcs.ui.widget.GitBranchSelector(
+									self.get_widget("branch_container"),
+									self.git,
+									self.on_branch_changed,
+									True)
+		
 		self.revisions_table = rabbitvcs.ui.widget.Table(
 			self.get_widget("revisions_table"),
 			[rabbitvcs.ui.widget.TYPE_GRAPH, gobject.TYPE_STRING,
@@ -663,6 +669,9 @@ class GitLog(Log):
 		self.start_point = 0
 		self.initialize_root_url()
 		self.load_or_refresh()
+	
+	def on_branch_changed(self, branch):
+		log.debug("branch_selector_changed = %s" % branch) # esh: log
 	
 	#
 	# Log-loading callback methods
