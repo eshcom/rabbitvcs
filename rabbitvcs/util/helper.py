@@ -161,7 +161,7 @@ def format_datetime(dt, format=None):
 	now = datetime.datetime.now()
 	delta = now - dt
 	
-	# ~ log.debug("dt = %s, delta = %s" % (dt, delta)) # esh: log
+	# ~ log.info("dt = %s, delta = %s" % (dt, delta)) # esh: log
 	returner = ""
 	if dt.year == 1900:
 		returner = _("(no date)")

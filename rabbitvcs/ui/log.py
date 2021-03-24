@@ -244,8 +244,8 @@ class Log(InterfaceView):
 				revision2 = self.display_items[rev1_index].parents[0]
 			else:
 				revision2 = self.display_items[rev1_index+1].revision
-			# ~ log.debug("Log.on_paths_table_row_activated: revision1 = %s, revision2 = %s" %
-						# ~ (six.text_type(revision1), six.text_type(revision2))) # esh: log
+			# ~ log.info("Log.on_paths_table_row_activated: revision1 = %s, revision2 = %s" %
+					 # ~ (six.text_type(revision1), six.text_type(revision2))) # esh: log
 			path_item = self.paths_table.get_row(self.paths_table.get_selected_rows()[0])[1]
 			url = self.root_url + path_item
 			self.view_diff_for_path(url, six.text_type(revision1),
