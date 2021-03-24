@@ -101,9 +101,12 @@ SEPARATOR = u'\u2015' * 10
 from pprint import pformat
 
 import re
-RE_WORD = re.compile("(?u)[\w\-\.]") # esh: \w already contains "_"
+RE_WORD = re.compile("(?u)[\w\-]") # esh: \w already contains "_"
+RE_WORDEXT = re.compile("(?u)[\w\-\.\*]")
+RE_SPACE = re.compile("(?u)\s")
 
 from enum import Enum
+
 class SearchType(Enum):
 	NONE_SEARCH = 0,
 	L_WORD_SEARCH = 1,
@@ -111,7 +114,18 @@ class SearchType(Enum):
 	LR_WORD_SEARCH = 3,
 	L_NONWORD_SEARCH = 4,
 	R_NONWORD_SEARCH = 5,
-	LR_NONWORD_SEARCH = 6
+	LR_NONWORD_SEARCH = 6,
+	L_NONSPACE_SEARCH = 7,
+	R_NONSPACE_SEARCH = 8,
+	LR_NONSPACE_SEARCH = 9
+
+class ModKeyType(Enum):
+	NONE_KEY = 0,
+	CTRL_KEY = 1,
+	CTRL_ALT_KEY = 2
+
+CTRL_ALT_MASK = (gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
+
 
 def filter_router(model, iter, column, filters):
 	"""
@@ -715,7 +729,7 @@ class TableBase:
 		for item in self.data:
 			text = item[colnum]
 			if text:
-				# ~ log.debug("cell_data_func, text = %s" % text)
+				# ~ log.info("cell_data_func, text = %s" % text) # esh: log
 				if text.startswith("Error") or text.startswith("error"):
 					cell.set_property("foreground", "red")
 					cell.set_property("weight", 700)
@@ -866,18 +880,52 @@ class TextView:
 			if self.cur_iter.starts_line() and self.cur_iter.ends_line():
 				textbuffer.select_range(self.cur_iter, self.cur_iter)
 				return
+			# ~ if _3BUTTON_PRESS -> select full line (default behavior -> so exit)
+			event = gtk.get_current_event()
+			if event and event.type == gtk.gdk._3BUTTON_PRESS:
+				return
 			
-			def is_word_char(char, data=None):
-				return RE_WORD.match(char) is not None
-			def is_word_break(char, data=None):
-				return RE_WORD.match(char) is None
-			def get_pred(stype):
+			mod_key = ModKeyType.NONE_KEY
+			if event:
+				state = event.get_state()
+				if (state & CTRL_ALT_MASK) == gtk.gdk.CONTROL_MASK:
+					mod_key = ModKeyType.CTRL_KEY
+				elif (state & CTRL_ALT_MASK) == CTRL_ALT_MASK:
+					mod_key = ModKeyType.CTRL_ALT_KEY
+			# ~ log.info("on_mark_set, mod_key = %s" % mod_key) # esh: log
+			
+			def is_word_char(char, is_wordext):
+				if is_wordext:
+					return RE_WORDEXT.match(char) is not None
+				else:
+					return RE_WORD.match(char) is not None
+			def is_word_break(char, is_wordext):
+				return not is_word_char(char, is_wordext)
+			def is_space_char(char):
+				return RE_SPACE.match(char) is not None
+			
+			def get_pred(stype, is_wordext):
+				def pred_word_char(char, data=None):
+					return is_word_char(char, False)
+				def pred_word_break(char, data=None):
+					return is_word_break(char, False)
+				def pred_wordext_char(char, data=None):
+					return is_word_char(char, True)
+				def pred_wordext_break(char, data=None):
+					return is_word_break(char, True)
+				def pred_space_char(char, data=None):
+					return is_space_char(char)
+			
 				if stype in [SearchType.R_WORD_SEARCH,
 							 SearchType.L_WORD_SEARCH,
 							 SearchType.LR_WORD_SEARCH]:
-					pred = is_word_break;
+					pred = pred_wordext_break if is_wordext else pred_word_break
+				elif stype in [SearchType.R_NONWORD_SEARCH,
+							   SearchType.L_NONWORD_SEARCH,
+							   SearchType.LR_NONWORD_SEARCH]:
+					pred = pred_wordext_char if is_wordext else pred_word_char
 				else:
-					pred = is_word_char;
+					pred = pred_space_char;
 				return pred
 			
 			pre_iter = self.cur_iter.copy()
@@ -887,35 +935,60 @@ class TextView:
 			right_lim = left_lim.copy();
 			right_lim.forward_to_line_end()
 			
-			# ~ calc search_type
 			search_type = SearchType.NONE_SEARCH;
-			if self.cur_iter.starts_line():
-				if is_word_char(self.cur_iter.get_char()):
-					search_type = SearchType.R_WORD_SEARCH;
+			
+			# ~ calc search_type (with ctrl+alt key pressed)
+			# ~ (select non-space sequence)
+			if mod_key == ModKeyType.CTRL_ALT_KEY:
+				if self.cur_iter.starts_line():
+					search_type = SearchType.R_NONSPACE_SEARCH
+					
+				elif self.cur_iter.ends_line():
+					search_type = SearchType.L_NONSPACE_SEARCH
+					
+				elif (not is_space_char(self.cur_iter.get_char()) and
+					  is_space_char(pre_iter.get_char())):
+					search_type = SearchType.R_NONSPACE_SEARCH
+					
+				elif (is_space_char(self.cur_iter.get_char()) and
+					  not is_space_char(pre_iter.get_char())):
+					search_type = SearchType.L_NONSPACE_SEARCH
+					
+				elif (not is_space_char(self.cur_iter.get_char()) and
+					  not is_space_char(pre_iter.get_char())):
+					search_type = SearchType.LR_NONSPACE_SEARCH
+			
+			is_wordext = (mod_key == ModKeyType.CTRL_KEY) # extended word
+			
+			# ~ calc search_type
+			if search_type == SearchType.NONE_SEARCH:
+				if self.cur_iter.starts_line():
+					search_type = SearchType.R_WORD_SEARCH									\
+									if is_word_char(self.cur_iter.get_char(), is_wordext)	\
+									else SearchType.R_NONWORD_SEARCH
+					
+				elif self.cur_iter.ends_line():
+					search_type = SearchType.L_WORD_SEARCH									\
+									if is_word_char(pre_iter.get_char(), is_wordext)		\
+									else SearchType.L_NONWORD_SEARCH
+					
+				elif (is_word_char(self.cur_iter.get_char(), is_wordext) and
+					  is_word_break(pre_iter.get_char(), is_wordext)):
+					search_type = SearchType.R_WORD_SEARCH
+					
+				elif (is_word_break(self.cur_iter.get_char(), is_wordext) and
+					  is_word_char(pre_iter.get_char(), is_wordext)):
+					search_type = SearchType.L_WORD_SEARCH
+					
+				elif is_word_char(self.cur_iter.get_char(), is_wordext):
+					search_type = SearchType.LR_WORD_SEARCH
 				else:
-					search_type = SearchType.R_NONWORD_SEARCH;
-				
-			elif self.cur_iter.ends_line():
-				if is_word_char(pre_iter.get_char()):
-					search_type = SearchType.L_WORD_SEARCH;
-				else:
-					search_type = SearchType.L_NONWORD_SEARCH;
-				
-			elif (is_word_char(self.cur_iter.get_char()) and
-				  is_word_break(pre_iter.get_char())):
-				search_type = SearchType.R_WORD_SEARCH;
-				
-			elif (is_word_break(self.cur_iter.get_char()) and
-				  is_word_char(pre_iter.get_char())):
-				search_type = SearchType.L_WORD_SEARCH;
-				
-			elif is_word_char(self.cur_iter.get_char()):
-				search_type = SearchType.LR_WORD_SEARCH;
-			else:
-				search_type = SearchType.LR_NONWORD_SEARCH;
+					search_type = SearchType.LR_NONWORD_SEARCH
+			
+			# ~ log.info("on_mark_set, search_type = %s" % search_type) # esh: log
 			
 			# ~ apply search_type
-			pred = get_pred(search_type)
+			pred = get_pred(search_type, is_wordext)
 			if (search_type == SearchType.R_WORD_SEARCH or
 				search_type == SearchType.R_NONWORD_SEARCH):
 				# ~ right search
