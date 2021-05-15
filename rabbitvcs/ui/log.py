@@ -130,13 +130,14 @@ class Log(InterfaceView):
 		log_widget = self.get_widget("Log")
 		log_widget.set_title(_("Log - %s") % path)
 		
+		# esh: autosize log window by screen width
 		screen_width = tk.Tk().winfo_screenwidth()
 		if screen_width > 2500:
-			log_widget.resize(2100, 1275)
+			log_widget.resize(2100, 1274)
 			log_widget.set_position(gtk.WIN_POS_CENTER_ALWAYS)
-		elif screen_width > 1900:
-			log_widget.resize(1880, 1130)
-			log_widget.set_position(gtk.WIN_POS_CENTER_ALWAYS)
+		# ~ elif screen_width > 1900:
+			# ~ log_widget.resize(1880, 1130)
+			# ~ log_widget.set_position(gtk.WIN_POS_CENTER_ALWAYS)
 		else:
 			log_widget.maximize()
 		
