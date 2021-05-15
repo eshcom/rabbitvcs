@@ -39,7 +39,7 @@ class GittyupCommand:
 		for line in lines:
 			returner.append(line.rstrip("\x1b[K\n"))
 		return returner
-
+	
 	def execute(self):
 		log.debug("execute: command = %s, cwd = %s" % (self.command, self.cwd)) # esh: log
 		env = os.environ.copy()
@@ -56,15 +56,22 @@ class GittyupCommand:
 								close_fds=True,
 								preexec_fn=os.setsid,
 								universal_newlines=True)
-
+		
 		stdout = []
 		while True:
 			line = proc.stdout.readline()
-			if line == '':
+			if not line:
 				break
 			line = line.rstrip("\r\n") # Strip trailing newline.
 			self.notify(line)
 			stdout.append(line)
+		
+		try:
+			proc.communicate()
+		except Exception as ex:
+			log.exception("execute: proc communicate error = %s" % ex)
 			if self.cancel():
 				proc.kill()
+				log.warning("execute: proc killed")
+		
 		return (0, stdout, None)
