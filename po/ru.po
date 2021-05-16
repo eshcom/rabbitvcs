@@ -619,11 +619,11 @@ msgstr "Обновить выбранный путь путем обратног
 
 #: ui/log.py:1010
 msgid "Copy to clipboard"
-msgstr "Скопировать в буфер обмена"
+msgstr "Скопировать инфо по ревизии в буфер обмена"
 
 #: ui/log.py:1011
 msgid "Copy to clipboard the full data of these revisions"
-msgstr "Скопировать в буфер обмена полные данные этих ревизий"
+msgstr "Скопировать полные данные этих ревизий в буфер обмена"
 
 #: ui/log.py:1016
 msgid "Edit author..."
