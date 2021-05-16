@@ -36,8 +36,6 @@ try:
 except ImportError:
 	import gobject
 
-import Tkinter as tk
-
 from rabbitvcs.ui import InterfaceView
 from rabbitvcs.ui.action import SVNAction, GitAction, vcs_action_factory
 from rabbitvcs.ui.dialog import MessageBox
@@ -131,13 +129,9 @@ class Log(InterfaceView):
 		log_widget.set_title(_("Log - %s") % path)
 		
 		# esh: autosize log window by screen width
-		screen_width = tk.Tk().winfo_screenwidth()
+		screen_width = rabbitvcs.ui.widget.get_screen_width()
 		if screen_width > 2500:
-			log_widget.resize(2100, 1274)
-			log_widget.set_position(gtk.WIN_POS_CENTER_ALWAYS)
-		# ~ elif screen_width > 1900:
-			# ~ log_widget.resize(1880, 1130)
-			# ~ log_widget.set_position(gtk.WIN_POS_CENTER_ALWAYS)
+			rabbitvcs.ui.widget.set_widget_size(log_widget, 2100, 1270)
 		else:
 			log_widget.maximize()
 		

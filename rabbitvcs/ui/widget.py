@@ -77,6 +77,8 @@ from rabbitvcs.util import helper
 from rabbitvcs.util.decorators import gtk_unsafe
 import rabbitvcs.vcs
 
+import Tkinter as tk
+
 from rabbitvcs import gettext
 _ = gettext.gettext
 
@@ -240,6 +242,14 @@ def compare_items(model, iter1, iter2, user_data=None):
 		return -1
 	else:
 		return 1
+
+def get_screen_width():
+	return tk.Tk().winfo_screenwidth()
+
+def set_widget_size(widget, width, height):
+	widget.resize(width, height)
+	widget.set_position(gtk.WIN_POS_CENTER_ALWAYS)
+
 
 class TableBase:
 	def __init__(self, treeview, coltypes, colnames, values=[], filters=None,

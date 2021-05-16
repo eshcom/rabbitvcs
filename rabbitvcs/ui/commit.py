@@ -68,6 +68,16 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		@param paths:   A list of local paths.
 		"""
 		InterfaceView.__init__(self, "commit", "Commit")
+		commit_widget = self.get_widget("Commit")
+		
+		# esh: autosize log window by screen width
+		screen_width = rabbitvcs.ui.widget.get_screen_width()
+		if screen_width > 2500:
+			rabbitvcs.ui.widget.set_widget_size(commit_widget, 1500, 1200)
+		elif screen_width > 1900:
+			rabbitvcs.ui.widget.set_widget_size(commit_widget, 1400, 1025)
+		else:
+			commit_widget.maximize()
 		
 		# esh:
 		label_width = int(142 * rabbitvcs.ui.TEXT_SCALING_FACTOR)

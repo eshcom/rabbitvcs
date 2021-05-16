@@ -4,7 +4,7 @@
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="Log">
     <property name="default_width">1200</property>
-    <property name="default_height">720</property>
+    <property name="default_height">768</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Log</property>
     <property name="window_position">center</property>
