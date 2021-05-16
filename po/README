@@ -6,6 +6,9 @@ How to create a translation
 Update RabbitVCS.pot:
 $ make update-pot
 
+Update RabbitVCS.pot full (include glade-files):
+$ ./generate_pot_full.sh
+
 Update <lang>.po files:
 $ make update-po
 

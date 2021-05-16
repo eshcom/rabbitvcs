@@ -574,6 +574,14 @@ class SVNLog(Log):
 			text += "\n\n\n"
 		self.text_clipboard.set_text(text)
 	
+	def copy_revision_number(self):
+		text = ""
+		for selected_row in self.revisions_table.get_selected_rows():
+			item = self.display_items[selected_row]
+			if text: text += "\n"
+			text += "%s" % six.text_type(item.revision)
+		self.text_clipboard.set_text(text)
+	
 	def update_revision_message(self):
 		combined_paths = []
 		subitems = []
@@ -866,6 +874,14 @@ class GitLog(Log):
 			text += "%s\n\n" % item.message
 		self.text_clipboard.set_text(text)
 	
+	def copy_revision_number(self):
+		text = ""
+		for selected_row in self.revisions_table.get_selected_rows():
+			item = self.display_items[selected_row]
+			if text: text += "\n"
+			text += "%s" % six.text_type(item.revision.short())
+		self.text_clipboard.set_text(text)
+	
 	def update_revision_message(self):
 		combined_paths = []
 		subitems = []
@@ -1046,6 +1062,12 @@ class MenuCopyClipboard(MenuItem):
 	tooltip = _("Copy to clipboard the full data of these revisions")
 	icon = "rabbitvcs-asynchronous"
 
+class MenuCopyClipboardRevisionNumber(MenuItem):
+	identifier = "RabbitVCS::Copy_Clipboard_Revision_Number"
+	label = _("Copy to clipboard the revision number")
+	tooltip = _("Copy to clipboard the numbers of these revisions")
+	icon = "rabbitvcs-asynchronous"
+
 class MenuEditAuthor(MenuItem):
 	identifier = "RabbitVCS::Edit_Author"
 	label = _("Edit author...")
@@ -1083,6 +1105,9 @@ class LogTopContextMenuConditions:
 		return (self.vcs.is_in_a_or_a_working_copy(self.path) and len(self.revisions) == 1)
 	
 	def copy_clipboard(self, data=None):
+		return (len(self.revisions) > 0)
+	
+	def copy_clipboard_revision_number(self, data=None):
 		return (len(self.revisions) > 0)
 	
 	def view_diff_previous_revision(self, data=None):
@@ -1182,6 +1207,9 @@ class LogTopContextMenuCallbacks:
 	
 	def copy_clipboard(self, widget, data=None):
 		self.caller.copy_revision_text()
+	
+	def copy_clipboard_revision_number(self, widget, data=None):
+		self.caller.copy_revision_number()
 	
 	def view_diff_previous_revision(self, widget, data=None):
 		parent = self.find_parent(self.revisions[0])
@@ -1417,6 +1445,7 @@ class LogTopContextMenu:
 			(MenuShowChangesRevisions, None),
 			(MenuSeparator, None),
 			(MenuCopyClipboard, None),
+			(MenuCopyClipboardRevisionNumber, None),
 			(MenuSeparator, None),
 			(MenuUpdateToThisRevision, None),
 			(MenuRevertChangesFromThisRevision, None),

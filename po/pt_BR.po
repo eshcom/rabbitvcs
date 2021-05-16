@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 13:06+0300\n"
+"POT-Creation-Date: 2021-05-16 15:14+0300\n"
 "PO-Revision-Date: 2010-12-06 05:15+0000\n"
 "Last-Translator: Fernando P Silveira <fernandopsilveira@yahoo.com.br>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
@@ -28,13 +28,13 @@ msgid ""
 "You must specify a version control system using the --vcs [svn|git] option"
 msgstr ""
 
-#: ui/action.py:114 ui/log.py:396 ui/log.py:654
+#: ui/action.py:114 ui/log.py:411 ui/log.py:683
 msgid "Action"
 msgstr "Ação"
 
 #: ui/action.py:114 ui/add.py:80 ui/browser.py:91 ui/changes.py:264
 #: ui/changes.py:359 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:86
-#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:396 ui/log.py:654
+#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:411 ui/log.py:683
 #: ui/markresolved.py:63 ui/revert.py:67 ui/stage.py:65 ui/unlock.py:64
 #: ui/unstage.py:64
 msgid "Path"
@@ -74,7 +74,7 @@ msgid "Found %d item(s)"
 msgstr "Encontrado(s) %d item(ns)"
 
 #: ui/add.py:190 ui/add.py:212 ui/branches.py:288 ui/tags.py:277
-#: ui/widget.py:1444 ui/xml/add.xml.h:1
+#: ui/widget.py:1524 ui/xml/add.xml.h:1
 msgid "Add"
 msgstr "Adicionar"
 
@@ -100,18 +100,18 @@ msgid "Line"
 msgstr "Linha"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:59 ui/log.py:380 ui/log.py:639 ui/widget.py:1055
+#: ui/log.py:61 ui/log.py:395 ui/log.py:668 ui/widget.py:1128
 #: ui/xml/changes.xml.h:4 ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Revisão"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:61 ui/log.py:380 ui/log.py:639
+#: ui/log.py:63 ui/log.py:395 ui/log.py:668
 msgid "Author"
 msgstr "Autor"
 
 #: ui/annotate.py:123 ui/annotate.py:214 ui/browser.py:91 ui/dialog.py:56
-#: ui/log.py:60 ui/log.py:381 ui/log.py:640 ui/push.py:77
+#: ui/log.py:62 ui/log.py:396 ui/log.py:669 ui/push.py:77
 msgid "Date"
 msgstr "Data"
 
@@ -163,7 +163,7 @@ msgstr "Gerenciador de ramificações"
 msgid "<b>Branches</b>"
 msgstr "<b>Ramificações</b>"
 
-#: ui/branches.py:76 ui/widget.py:1056
+#: ui/branches.py:76 ui/widget.py:1129
 msgid "Branch"
 msgstr "Ramificação"
 
@@ -455,7 +455,7 @@ msgstr ""
 "Ocorreu um erro na extensão do RabbitVCS Nautilus.Por favor contate o <a "
 "href=\"%s\">Time RabbitVCS </a> com os detalhes do erro listados abaixo:"
 
-#: ui/dialog.py:56 ui/log.py:381 ui/log.py:640 ui/push.py:77
+#: ui/dialog.py:56 ui/log.py:396 ui/log.py:669 ui/push.py:77
 #: ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Mensagem"
@@ -464,7 +464,7 @@ msgstr "Mensagem"
 msgid "Select a Folder"
 msgstr "Selecionar um diretório"
 
-#: ui/dialog.py:129 ui/xml/log.xml.h:7
+#: ui/dialog.py:129
 msgid "to"
 msgstr "para"
 
@@ -550,118 +550,127 @@ msgstr "Bloqueando..."
 msgid "Completed Lock"
 msgstr "Bloqueado"
 
-#: ui/log.py:128
+#: ui/log.py:131
 #, python-format
 msgid "Log - %s"
 msgstr "Log - %s"
 
-#: ui/log.py:318 ui/log.py:319 ui/xml/log.xml.h:6
+#: ui/log.py:333 ui/log.py:334 ui/xml/log.xml.h:6
 msgid "N/A"
 msgstr "N/D"
 
-#: ui/log.py:382
+#: ui/log.py:397
 msgid "Color"
 msgstr ""
 
-#: ui/log.py:397
+#: ui/log.py:412
 msgid "Copy From Path"
 msgstr "Copiar do Caminho"
 
-#: ui/log.py:397
+#: ui/log.py:412
 msgid "Copy From Revision"
 msgstr "Copiar da versão"
 
-#: ui/log.py:639
+#: ui/log.py:668
 msgid "Graph"
 msgstr ""
 
-#: ui/log.py:956
+#: ui/log.py:1007
 msgid "View diff against working copy"
 msgstr "Veja a diferenciação de encontro com a cópia em uso"
 
-#: ui/log.py:961 util/contextmenuitems.py:395
+#: ui/log.py:1012 util/contextmenuitems.py:395
 msgid "View diff against previous revision"
 msgstr "Veja a diferenciação de encontro com a revisão prévia"
 
-#: ui/log.py:966
+#: ui/log.py:1017
 msgid "View diff between revisions"
 msgstr "Veja a diferenciação entre as revisões"
 
-#: ui/log.py:971
+#: ui/log.py:1022
 msgid "Compare with working copy"
 msgstr "Compare com a versão local"
 
-#: ui/log.py:976 util/contextmenuitems.py:413
+#: ui/log.py:1027 util/contextmenuitems.py:413
 msgid "Compare with previous revision"
 msgstr "Compare com a revisão prévia"
 
-#: ui/log.py:981
+#: ui/log.py:1032
 msgid "Compare revisions"
 msgstr "Compare revisões"
 
-#: ui/log.py:987
+#: ui/log.py:1038
 msgid "Show changes against previous revision"
 msgstr ""
 
-#: ui/log.py:993
+#: ui/log.py:1044
 msgid "Show changes between revisions"
 msgstr "Mostrar mudanças entre as revisões"
 
-#: ui/log.py:998
+#: ui/log.py:1049
 msgid "Update to this revision"
 msgstr ""
 
-#: ui/log.py:999
+#: ui/log.py:1050
 msgid "Update the selected path to this revision"
 msgstr ""
 
-#: ui/log.py:1004
+#: ui/log.py:1055
 #, fuzzy
 msgid "Revert changes from this revision"
 msgstr "Abrir da primeira versão"
 
-#: ui/log.py:1005
+#: ui/log.py:1056
 msgid "Update the selected path by reverse merging the changes"
 msgstr ""
 
-#: ui/log.py:1010
+#: ui/log.py:1061
 #, fuzzy
 msgid "Copy to clipboard"
 msgstr "Copiar a URL para a área de transferência"
 
-#: ui/log.py:1011
+#: ui/log.py:1062
 msgid "Copy to clipboard the full data of these revisions"
 msgstr ""
 
-#: ui/log.py:1016
+#: ui/log.py:1067
+#, fuzzy
+msgid "Copy to clipboard the revision number"
+msgstr "Copiar a URL para a área de transferência"
+
+#: ui/log.py:1068
+msgid "Copy to clipboard the numbers of these revisions"
+msgstr ""
+
+#: ui/log.py:1073
 msgid "Edit author..."
 msgstr "Edite o autor..."
 
-#: ui/log.py:1021
+#: ui/log.py:1078
 msgid "Edit log message..."
 msgstr "Edite a mensagem do relatório..."
 
-#: ui/log.py:1026
+#: ui/log.py:1083
 msgid "Edit revision properties..."
 msgstr "Editar propriedades de revisão"
 
-#: ui/log.py:1035
+#: ui/log.py:1092
 msgid "Cherry Pick this commits..."
 msgstr ""
 
-#: ui/log.py:1036
+#: ui/log.py:1093
 msgid "Apply the changes introduced by some existing commits"
 msgstr ""
 
-#: ui/log.py:1302
+#: ui/log.py:1365
 msgid "Edit author"
 msgstr "Edite o autor"
 
-#: ui/log.py:1312
+#: ui/log.py:1375
 msgid "Edit log message"
 msgstr "Edite a mensagem do relatório"
 
-#: ui/log.py:1327
+#: ui/log.py:1390
 #, fuzzy
 msgid "Are you sure you want to apply the selected commits?"
 msgstr "Tem certeza que quer apagar %s?"
@@ -1014,31 +1023,31 @@ msgstr "Onde você quer copiar a seleção?"
 msgid "Checking out %s..."
 msgstr ""
 
-#: ui/widget.py:1054 ui/widget.py:1060 ui/xml/merge.xml.h:19
+#: ui/widget.py:1127 ui/widget.py:1133 ui/xml/merge.xml.h:19
 msgid "HEAD"
 msgstr "HEAD"
 
-#: ui/widget.py:1061
+#: ui/widget.py:1134
 msgid "Number"
 msgstr "Número"
 
-#: ui/widget.py:1064
+#: ui/widget.py:1137
 msgid "Working Copy"
 msgstr "Cópia em uso."
 
-#: ui/widget.py:1276
+#: ui/widget.py:1349
 msgid "Repository:"
 msgstr ""
 
-#: ui/widget.py:1298
+#: ui/widget.py:1371
 msgid "Branch:"
 msgstr ""
 
-#: ui/widget.py:1326 ui/xml/dialogs/certificate.xml.h:4
+#: ui/widget.py:1399 ui/xml/dialogs/certificate.xml.h:4
 msgid "Host:"
 msgstr "Servidor:"
 
-#: ui/widget.py:1439
+#: ui/widget.py:1519
 msgid "Add line:"
 msgstr ""
 
@@ -1910,7 +1919,7 @@ msgstr "<b>Arquivos alterados</b> (duplo clique para comparar com a base)"
 msgid "Show unversioned files"
 msgstr "Mostrar arquivos não versionados"
 
-#: ui/xml/commit.xml.h:8 ui/xml/log.xml.h:12
+#: ui/xml/commit.xml.h:8 ui/xml/log.xml.h:11
 msgid "Refresh"
 msgstr "Atualizar"
 
@@ -2039,7 +2048,7 @@ msgstr ""
 msgid "<b>Previous Messages</b>"
 msgstr "<b>Mensagem Anterior</b>"
 
-#: ui/xml/dialogs/previous_messages.xml.h:3 ui/xml/log.xml.h:9
+#: ui/xml/dialogs/previous_messages.xml.h:3 ui/xml/log.xml.h:8
 msgid "<b>Message</b>"
 msgstr "<b>Mensagem</b>"
 
@@ -2153,15 +2162,15 @@ msgstr "Parar em cópia"
 msgid "Showing Revisions:"
 msgstr "Mostrando Revisões:"
 
-#: ui/xml/log.xml.h:8
+#: ui/xml/log.xml.h:7
 msgid "<b>Affected File(s)</b> (double-click to compare with base)"
 msgstr "<b>Arquivo(s) afetado(s)</b> (duplo clique para comparar com a base)"
 
-#: ui/xml/log.xml.h:10
+#: ui/xml/log.xml.h:9
 msgid "Limit:"
 msgstr "Limite:"
 
-#: ui/xml/log.xml.h:11
+#: ui/xml/log.xml.h:10
 #, fuzzy
 msgid "Page:"
 msgstr "Mensagem:"
