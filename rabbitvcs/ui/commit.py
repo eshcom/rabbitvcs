@@ -225,6 +225,14 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 	def on_files_table_key_event(self, treeview, data=None):
 		if gtk.gdk.keyval_name(data.keyval) == "Delete":
 			self.delete_items(treeview, data)
+		elif gtk.gdk.keyval_name(data.keyval) == "Return":
+			self.on_files_table_row_activated(treeview, None, None)
+			return True
+		elif gtk.gdk.keyval_name(data.keyval) == "space":
+			row = self.files_table.get_row(self.files_table.get_selected_rows()[0])
+			row[0] = not row[0]
+			self.changes[row[1]] = row[0]
+			return True
 	
 	def on_files_table_mouse_event(self, treeview, data=None):
 		if data is not None and data.button == 3:

@@ -691,7 +691,10 @@ class TableBase:
 	def __key_press_event(self, treeview, data):
 		self.update_selection()
 		if "key-event" in self.callbacks:
-			self.callbacks["key-event"](treeview, data)
+			# esh: added the keyword "return" for the ability
+			#		to stop further processing of the event
+			#		(return True - stop processing)
+			return self.callbacks["key-event"](treeview, data)
 	
 	def __cursor_changed_event(self, treeview):
 		self.update_selection()
