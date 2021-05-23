@@ -222,6 +222,10 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		proc = helper.launch_ui_window("diff", ["-s", pathrev1, pathrev2])
 		self.rescan_after_process_exit(proc, paths)
 	
+	def on_files_table_toggle_event(self, row, col):
+		# Adds path: True/False to the dict
+		self.changes[row[1]] = row[col]
+	
 	def on_files_table_key_event(self, treeview, data=None):
 		if gtk.gdk.keyval_name(data.keyval) == "Delete":
 			self.delete_items(treeview, data)
@@ -338,10 +342,6 @@ class SVNCommit(Commit):
 		# pysvn.Revision
 		revision = self.vcs.svn().commit(items, self.message.get_text(), recurse=recurse)
 		self.action.set_status(_("Completed Commit") + " at Revision: " + str(revision.number))
-	
-	def on_files_table_toggle_event(self, row, col):
-		# Adds path: True/False to the dict
-		self.changes[row[1]] = row[col]
 
 class GitCommit(Commit):
 	def __init__(self, paths, base_dir=None, message=None):
@@ -397,10 +397,6 @@ class GitCommit(Commit):
 		self.action.append(self.action.set_status, _("Completed Commit"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-	
-	def on_files_table_toggle_event(self, row, col):
-		# Adds path: True/False to the dict
-		self.changes[row[1]] = row[col]
 
 class MercurialCommit(Commit):
 	def __init__(self, paths, base_dir=None, message=None):
@@ -451,10 +447,6 @@ class MercurialCommit(Commit):
 		self.action.append(self.action.set_status, _("Completed Commit"))
 		self.action.append(self.action.finish)
 		self.action.start()
-	
-	def on_files_table_toggle_event(self, row, col):
-		# Adds path: True/False to the dict
-		self.changes[row[1]] = row[col]
 
 classes_map = {
 	rabbitvcs.vcs.VCS_SVN: SVNCommit,
