@@ -23,6 +23,8 @@ rabbitvcs/rabbitvcs/ui/widget.py
 Экспорт:			checkout.xml		checkout.py
 Объединить:			branch-merge.xml	merge.py
 Показать изменения:	changes.xml			changes.py
+Менеджер веток:		manager.xml			branches.py
+Менеджер тэгов:		manager.xml			tags.py
 
 
 --gsettings 1:

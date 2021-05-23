@@ -224,8 +224,14 @@ class GitTagManager(InterfaceView):
 	def load(self, callback, *args, **kwargs):
 		self.items_treeview.clear()
 		self.tag_list = self.git.tag_list()
+		max_len = 0
 		for item in self.tag_list:
 			self.items_treeview.append([item.name])
+			if len(item.name) > max_len:
+				max_len = len(item.name)
+		# esh: auto-width for tag-list
+		width = helper.get_width_by_text(max_len)
+		self.get_widget("vbox2").set_size_request(width, -1)
 		if callback:
 			callback(*args, **kwargs)
 	

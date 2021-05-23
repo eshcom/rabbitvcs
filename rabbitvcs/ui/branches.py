@@ -200,12 +200,18 @@ class GitBranchManager(InterfaceView):
 		self.items_treeview.clear()
 		self.branch_list = self.git.branch_list()
 		tracking_index = None
+		max_len = 0
 		for index, item in enumerate(self.branch_list):
 			name = saxutils.escape(item.name)
 			if item.tracking:
 				name = "<b>%s</b>" % name
 				tracking_index = index
 			self.items_treeview.append([name])
+			if len(name) > max_len:
+				max_len = len(name)
+		# esh: auto-width for branch-list
+		width = helper.get_width_by_text(max_len)
+		self.get_widget("vbox2").set_size_request(width, -1)
 		return tracking_index
 	
 	def on_add_clicked(self, widget):

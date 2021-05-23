@@ -999,3 +999,23 @@ def parse_patch_output(patch_file, base_dir, strip=0):
 			# else: we have an unknown error
 	patch_proc.wait() # Don't leave process running...
 	return
+
+def get_width_by_text(text_len):
+	if text_len < 12:
+		return 250
+	elif text_len < 16:
+		return 300
+	elif text_len < 20:
+		return 350
+	elif text_len < 24:
+		return 400
+	elif text_len < 28:
+		return 450
+	elif text_len < 32:
+		return 500
+	elif text_len < 36:		# 35 requires 550px
+		return 550
+	elif text_len < 40:
+		return 600
+	else:
+		return 650
