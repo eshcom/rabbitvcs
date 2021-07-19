@@ -643,7 +643,8 @@ class SVNLog(Log):
 
 class GitLog(Log):
 	def __init__(self, path):
-		Log.__init__(self, path, rows_lim=500)
+		# ~ to increase the rendering speed rows_lim value do not do more 100
+		Log.__init__(self, path, rows_lim=50)
 		self.git = self.vcs.git(path)
 		self.get_widget("stop_on_copy").hide()
 		self.revision_number_column = 1
