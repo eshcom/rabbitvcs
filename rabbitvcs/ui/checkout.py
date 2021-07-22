@@ -96,17 +96,19 @@ class Checkout(InterfaceView):
 			self.get_widget("destination").set_text(path)
 
 	def on_repositories_key_released(self, widget, data, userdata=None):
-		if gtk.gdk.keyval_name(data.keyval) == "Return":
+		if data.keyval == gtk.keysyms.Return:
 			if self.complete:
 				self.on_ok_clicked(widget)
+			return True
 
 	def on_destination_changed(self, widget, data=None):
 		self.check_form()
 
 	def on_destination_key_released(self, widget, data):
-		if gtk.gdk.keyval_name(data.keyval) == "Return":
+		if data.keyval == gtk.keysyms.Return:
 			if self.complete:
 				self.on_ok_clicked(widget)
+			return True
 
 	def on_repo_chooser_clicked(self, widget, data=None):
 		from rabbitvcs.ui.browser import SVNBrowserDialog

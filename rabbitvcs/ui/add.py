@@ -161,8 +161,9 @@ class Add(InterfaceView, GtkContextMenuCaller):
 		helper.launch_diff_tool(*paths)
 	
 	def on_files_table_key_event(self, treeview, data=None):
-		if gtk.gdk.keyval_name(data.keyval) == "Delete":
+		if data.keyval == gtk.keysyms.Delete:
 			self.delete_items(treeview, data)
+			return True
 	
 	def on_files_table_mouse_event(self, treeview, data=None):
 		if data is not None and data.button == 3:

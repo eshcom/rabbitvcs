@@ -179,6 +179,12 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 			proc = helper.launch_ui_window("delete", paths)
 			self.rescan_after_process_exit(proc, paths)
 	
+	def revert_items(self, widget, data=None):
+		paths = self.files_table.get_selected_row_items(1)
+		if len(paths) > 0:
+			proc = helper.launch_ui_window("revert", ["-q"] + paths)
+			self.rescan_after_process_exit(proc, paths)
+	
 	def set_text_clipboard(self, filename):
 		self.text_clipboard.set_text(filename)
 	
@@ -191,9 +197,19 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 	def on_key_pressed(self, widget, data):
 		if InterfaceView.on_key_pressed(self, widget, data):
 			return True
-		if (data.state & (gtk.gdk.CONTROL_MASK) and
-				gtk.gdk.keyval_name(data.keyval) == "Return"):
+		if (data.state & gtk.gdk.CONTROL_MASK and
+				data.keyval == gtk.keysyms.Return):
 			self.on_ok_clicked(widget)
+			return True
+		elif data.keyval == gtk.keysyms.F2:
+			self.get_widget("message").grab_focus()
+			return True
+		elif data.keyval == gtk.keysyms.F4:
+			if len(self.files_table.get_items()) > 0 and \
+			   len(self.files_table.get_selected_rows()) == 0:
+				self.files_table.focus(0, 0)
+			else:
+				self.get_widget("files_table").grab_focus()
 			return True
 	
 	def on_toggle_show_all_toggled(self, widget, data=None):
@@ -227,12 +243,16 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		self.changes[row[1]] = row[col]
 	
 	def on_files_table_key_event(self, treeview, data=None):
-		if gtk.gdk.keyval_name(data.keyval) == "Delete":
+		if data.keyval == gtk.keysyms.Delete:
 			self.delete_items(treeview, data)
-		elif gtk.gdk.keyval_name(data.keyval) == "Return":
+			return True
+		elif data.keyval == gtk.keysyms.F8:
+			self.revert_items(treeview, data)
+			return True
+		elif data.keyval == gtk.keysyms.Return:
 			self.on_files_table_row_activated(treeview, None, None)
 			return True
-		elif gtk.gdk.keyval_name(data.keyval) == "space":
+		elif data.keyval == gtk.keysyms.space:
 			row = self.files_table.get_row(self.files_table.get_selected_rows()[0])
 			row[0] = not row[0]
 			self.changes[row[1]] = row[0]

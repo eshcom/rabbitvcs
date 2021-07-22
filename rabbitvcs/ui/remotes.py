@@ -121,8 +121,10 @@ class GitRemotes(InterfaceView):
 			self.load()
 	
 	def on_treeview_key_event(self, treeview, data=None):
-		if gtk.gdk.keyval_name(data.keyval) in ("Up", "Down", "Return"):
+		if data.keyval in (gtk.keysyms.Up, gtk.keysyms.Down,
+						   gtk.keysyms.Return):
 			self.on_treeview_event(treeview, data)
+			return True
 	
 	def on_treeview_mouse_event(self, treeview, data=None):
 		self.on_treeview_event(treeview, data)

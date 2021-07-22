@@ -179,9 +179,10 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 			self.edit_property(name)
 	
 	def on_table_key_event(self, treeview, data=None):
-		if gtk.gdk.keyval_name(data.keyval) == "Delete":
+		if data.keyval == gtk.keysyms.Delete:
 			names = self.table.get_selected_row_items(0)
 			self.delete_properties(names)
+			return True
 	
 	def on_table_mouse_event(self, treeview, data=None):
 		if data and data.button == 3:

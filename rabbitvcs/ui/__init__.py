@@ -187,19 +187,20 @@ class InterfaceView(GtkBuilderWidgetWrapper):
 		return True
 	
 	def on_key_pressed(self, widget, data):
+		# ~ log.info("on_key_pressed: state = %s, keyval = %s, keyname = %s" %
+				 # ~ (data.state, data.keyval,
+				  # ~ gtk.gdk.keyval_name(data.keyval))) # esh: log
 		if (data.keyval == gtk.keysyms.Escape):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "w"):
+		keyval = gtk.gdk.keyval_name(data.keyval).lower()
+		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "w"):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "q"):
+		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "q"):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "r"):
+		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "r"):
 			self.on_refresh_clicked(widget)
 			return True
 

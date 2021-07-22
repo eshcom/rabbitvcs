@@ -172,11 +172,30 @@ class Log(InterfaceView):
 		self.close()
 	
 	def on_key_pressed(self, widget, data):
-		InterfaceView.on_key_pressed(self, widget, data)
+		if InterfaceView.on_key_pressed(self, widget, data):
+			return True
 		if (data.state & gtk.gdk.CONTROL_MASK and
-			gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
 			if len(self.revisions_table.get_selected_rows()) > 0:
 				self.copy_revision_text()
+			return True
+		elif data.keyval == gtk.keysyms.F2:
+			self.get_widget("revisions_search").grab_focus()
+			return True
+		elif data.keyval == gtk.keysyms.F3:
+			if len(self.revisions_table.get_items()) > 0 and \
+			   len(self.revisions_table.get_selected_rows()) == 0:
+				self.revisions_table.focus(0, 0)
+			else:
+				self.get_widget("revisions_table").grab_focus()
+			return True
+		elif data.keyval == gtk.keysyms.F4:
+			if len(self.paths_table.get_items()) > 0 and \
+			   len(self.paths_table.get_selected_rows()) == 0:
+				self.paths_table.focus(0, 0)
+			else:
+				self.get_widget("paths_table").grab_focus()
+			return True
 	
 	def on_stop_on_copy_toggled(self, widget):
 		self.stop_on_copy = self.get_widget("stop_on_copy").get_active()

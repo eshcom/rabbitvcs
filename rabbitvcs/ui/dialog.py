@@ -353,8 +353,9 @@ class OneLineTextChange(InterfaceView):
 		# The gtk.Dialog.response() method emits the "response" signal,
 		# which tells gtk.Dialog.run() asyncronously to stop.  This allows the
 		# user to press the "Return" button when done writing in the new text
-		if gtk.gdk.keyval_name(data.keyval) == "Return":
+		if data.keyval == gtk.keysyms.Return:
 			self.dialog.response(gtk.RESPONSE_OK)
+			return True
 	
 	def run(self):
 		result = self.dialog.run()
@@ -412,8 +413,9 @@ class NameEmailPrompt(InterfaceView):
 		# The gtk.Dialog.response() method emits the "response" signal,
 		# which tells gtk.Dialog.run() asyncronously to stop.  This allows the
 		# user to press the "Return" button when done writing in the new text
-		if gtk.gdk.keyval_name(data.keyval) == "Return":
+		if data.keyval == gtk.keysyms.Return:
 			self.dialog.response(gtk.RESPONSE_OK)
+			return True
 	
 	def run(self):
 		result = self.dialog.run()
