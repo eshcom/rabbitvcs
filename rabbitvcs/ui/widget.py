@@ -618,7 +618,7 @@ class TableBase:
 				self.selected_rows = new_selected_rows
 				is_set = True
 			elif default:
-				self.selected_rows = [data_len - 1]
+				self.selected_rows = [0]
 				is_set = True
 			if is_set:
 				self._reassert_selection = True
