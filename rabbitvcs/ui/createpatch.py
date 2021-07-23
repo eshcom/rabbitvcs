@@ -88,7 +88,7 @@ class CreatePatch:
 				}
 			}],
 			callbacks={
-				"row-activated":  self.on_files_table_row_activated,
+				"row-activated": self.on_files_table_row_activated,
 				"mouse-event":   self.on_files_table_mouse_event,
 				"key-event":     self.on_files_table_key_event
 			},

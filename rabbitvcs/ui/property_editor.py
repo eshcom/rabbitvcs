@@ -124,7 +124,7 @@ class PropEditor(InterfaceView, GtkContextMenuCaller):
 					}
 				}],
 			callbacks={
-				"row-activated":  self.on_table_row_activated,
+				"row-activated": self.on_table_row_activated,
 				"mouse-event":   self.on_table_mouse_event,
 				"key-event":     self.on_table_key_event
 			}

@@ -197,7 +197,7 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 	def on_key_pressed(self, widget, data):
 		if InterfaceView.on_key_pressed(self, widget, data):
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and
+		elif (data.state & gtk.gdk.CONTROL_MASK and
 				data.keyval == gtk.keysyms.Return):
 			self.on_ok_clicked(widget)
 			return True
@@ -243,7 +243,20 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		self.changes[row[1]] = row[col]
 	
 	def on_files_table_key_event(self, treeview, data=None):
-		if data.keyval == gtk.keysyms.Delete:
+		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
+		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+			if len(self.files_table.get_selected_rows()) > 0:
+				paths = self.files_table.get_selected_row_items(1)
+				self.set_text_clipboard(helper.get_file_name(paths[0]))
+			return True
+		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+			if len(self.files_table.get_selected_rows()) > 0:
+				paths = self.files_table.get_selected_row_items(1)
+				self.set_text_clipboard(paths[0])
+			return True
+		elif data.keyval == gtk.keysyms.Delete:
 			self.delete_items(treeview, data)
 			return True
 		elif data.keyval == gtk.keysyms.F8:
@@ -253,9 +266,11 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 			self.on_files_table_row_activated(treeview, None, None)
 			return True
 		elif data.keyval == gtk.keysyms.space:
-			row = self.files_table.get_row(self.files_table.get_selected_rows()[0])
-			row[0] = not row[0]
-			self.changes[row[1]] = row[0]
+			selected_rows = self.files_table.get_selected_rows()
+			if len(selected_rows) > 0:
+				row = self.files_table.get_row(selected_rows[0])
+				row[0] = not row[0]
+				self.changes[row[1]] = row[0]
 			return True
 	
 	def on_files_table_mouse_event(self, treeview, data=None):

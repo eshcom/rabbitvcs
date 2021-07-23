@@ -174,17 +174,6 @@ class Log(InterfaceView):
 	def on_key_pressed(self, widget, data):
 		if InterfaceView.on_key_pressed(self, widget, data):
 			return True
-		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
-		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
-			if len(self.revisions_table.get_selected_rows()) > 0:
-				self.copy_revision_number()
-			return True
-		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
-			if len(self.revisions_table.get_selected_rows()) > 0:
-				self.copy_revision_text()
-			return True
 		elif data.keyval == gtk.keysyms.F2:
 			self.get_widget("revisions_search").grab_focus()
 			return True
@@ -255,6 +244,19 @@ class Log(InterfaceView):
 		paths = self.revisions_table.get_displayed_row_items(1)
 		helper.launch_diff_tool(*paths)
 	
+	def on_revisions_table_key_event(self, treeview, data=None):
+		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
+		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+			if len(self.revisions_table.get_selected_rows()) > 0:
+				self.copy_revision_number()
+			return True
+		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+			if len(self.revisions_table.get_selected_rows()) > 0:
+				self.copy_revision_text()
+			return True
+	
 	def on_revisions_table_mouse_event(self, treeview, data=None):
 		if len(self.revisions_table.get_selected_rows()) == 0:
 			self.message.set_text("")
@@ -286,6 +288,15 @@ class Log(InterfaceView):
 									six.text_type(revision2), sidebyside=True)
 		except IndexError:
 			pass
+	
+	def on_paths_table_key_event(self, treeview, data=None):
+		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
+		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+			if len(self.paths_table.get_selected_rows()) > 0:
+				paths = self.paths_table.get_selected_row_items(1)
+				self.set_text_clipboard(helper.get_file_name(paths[0]))
+			return True
 	
 	def on_paths_table_mouse_event(self, treeview, data=None):
 		if data is not None and data.button == 3:
@@ -694,6 +705,7 @@ class GitLog(Log):
 				}
 			}],
 			callbacks={
+				"key-event":     self.on_revisions_table_key_event,
 				"mouse-event":   self.on_revisions_table_mouse_event
 			}
 		)
@@ -702,8 +714,9 @@ class GitLog(Log):
 			[gobject.TYPE_STRING, gobject.TYPE_STRING],
 			[_("Action"), _("Path")],
 			callbacks={
-				"mouse-event":      self.on_paths_table_mouse_event,
-				"row-activated":    self.on_paths_table_row_activated
+				"key-event":     self.on_paths_table_key_event,
+				"mouse-event":   self.on_paths_table_mouse_event,
+				"row-activated": self.on_paths_table_row_activated
 			},
 			flags={
 				"sortable": False
