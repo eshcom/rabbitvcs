@@ -174,7 +174,13 @@ class Log(InterfaceView):
 	def on_key_pressed(self, widget, data):
 		if InterfaceView.on_key_pressed(self, widget, data):
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and
+		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
+		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+			if len(self.revisions_table.get_selected_rows()) > 0:
+				self.copy_revision_number()
+			return True
+		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
 				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
 			if len(self.revisions_table.get_selected_rows()) > 0:
 				self.copy_revision_text()
