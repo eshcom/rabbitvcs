@@ -983,6 +983,7 @@ class SVNLogDialog(SVNLog):
 		can get some desired data.
 		"""
 		SVNLog.__init__(self, path, merge_candidate_revisions)
+		self.get_widget("ok").set_label("gtk-ok")
 		self.ok_callback = ok_callback
 		self.multiple = multiple
 	
@@ -1005,6 +1006,7 @@ class GitLogDialog(GitLog):
 		can get some desired data.
 		"""
 		GitLog.__init__(self, path)
+		self.get_widget("ok").set_label("gtk-ok")
 		self.ok_callback = ok_callback
 		self.multiple = multiple
 	

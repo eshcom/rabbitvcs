@@ -64,7 +64,7 @@ class GitReset(InterfaceView):
 		)
 		self.get_widget("none_opt").set_active(True)
 		self.check_path()
-
+	
 	def on_ok_clicked(self, widget):
 		path = self.get_widget("path").get_text()
 		mixed = self.get_widget("mixed_opt").get_active()
@@ -82,7 +82,7 @@ class GitReset(InterfaceView):
 			type = "hard"
 		if merge:
 			type = "merge"
-
+		
 		revision = self.revision_selector.get_revision_object()
 		self.hide()
 		self.action = rabbitvcs.ui.action.GitAction(
@@ -101,16 +101,16 @@ class GitReset(InterfaceView):
 		self.action.append(self.action.set_status, _("Completed Reset"))
 		self.action.append(self.action.finish)
 		self.action.schedule()
-
+	
 	def on_browse_clicked(self, widget, data=None):
 		chooser = rabbitvcs.ui.dialog.FolderChooser()
 		path = chooser.run()
 		if path is not None:
 			self.get_widget("path").set_text(path)
-
+	
 	def on_path_changed(self, widget, data=None):
 		self.check_path()
-
+	
 	def check_path(self):
 		path = self.get_widget("path").get_text()
 		root = self.git.find_repository_path(path)

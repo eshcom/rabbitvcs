@@ -193,6 +193,17 @@ class InterfaceView(GtkBuilderWidgetWrapper):
 		if (data.keyval == gtk.keysyms.Escape):
 			self.on_cancel_clicked(widget)
 			return True
+		elif (data.state & gtk.gdk.CONTROL_MASK and
+				data.keyval == gtk.keysyms.Return):
+			if hasattr(self, "on_ok_clicked"):
+				if hasattr(self, "complete"):
+					if self.complete:
+						self.on_ok_clicked(widget)
+				else:
+					self.on_ok_clicked(widget)
+			else:
+				self.on_close_clicked(widget)
+			return True
 		keyval = gtk.gdk.keyval_name(data.keyval).lower()
 		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "w"):
 			self.on_cancel_clicked(widget)
