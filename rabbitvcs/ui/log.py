@@ -191,6 +191,10 @@ class Log(InterfaceView):
 			else:
 				self.get_widget("paths_table").grab_focus()
 			return True
+		elif data.keyval == gtk.keysyms.Return:
+			if self.get_widget("limit").has_focus() or \
+			   self.get_widget("page").has_focus():
+				self.on_refresh_clicked(widget)
 	
 	def on_stop_on_copy_toggled(self, widget):
 		self.stop_on_copy = self.get_widget("stop_on_copy").get_active()
