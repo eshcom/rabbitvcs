@@ -241,13 +241,14 @@ class GitBranchManager(InterfaceView):
 			branch_track = self.track_checkbox.get_active()
 			if self.selected_branch.name != branch_name:
 				self.git.branch_rename(self.selected_branch.name, branch_name)
+		
 		if self.checkout_checkbox.get_active():
 			# esh: change logic
 			rem_branch_name = None
-			if branch_name.startswith("remotes/"):
+			rem_prefix = "remotes/origin/"
+			if branch_name.startswith(rem_prefix):
 				rem_branch_name = branch_name
-				branch_parts = branch_name.rsplit("/", 1)
-				branch_name = branch_parts[len(branch_parts) - 1]
+				branch_name = rem_branch_name[len(rem_prefix):]
 			if rem_branch_name and not self.branch_exists(branch_name):
 				# ~ esh: git checkout -m --track remotes/origin/<branch_name>
 				self.git.checkout([], self.git.revision(rem_branch_name), "--track")
