@@ -79,10 +79,6 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		else:
 			commit_widget.maximize()
 		
-		# esh:
-		label_width = int(142 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
-		self.get_widget("label7").set_size_request(label_width, -1)
-		
 		self.isInitDone = False
 		self.base_dir = base_dir
 		self.vcs = rabbitvcs.vcs.VCS()

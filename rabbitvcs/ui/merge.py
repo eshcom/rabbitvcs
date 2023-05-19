@@ -434,17 +434,13 @@ class GitMerge(BranchMerge):
 		# FROM BRANCH INFO #
 		from_container = self.get_widget("from_branch_info")
 		
-		# esh:
-		label_width = int(100 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
-		
 		# Set up the Author line
 		author = gtk.Label(_("Author:"))
-		author.set_size_request(label_width, -1)
 		author.set_properties(xalign=0, yalign=0)
 		self.info['from']['author'] = gtk.Label("")
 		self.info['from']['author'].set_properties(xalign=0, yalign=0, selectable=True)
 		self.info['from']['author'].set_line_wrap(True)
-		author_container = gtk.HBox(False, 0)
+		author_container = gtk.HBox(False, 12)
 		author_container.pack_start(author, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		author_container.pack_start(self.info['from']['author'], True, True, 0)
@@ -452,11 +448,10 @@ class GitMerge(BranchMerge):
 		
 		# Set up the Date line
 		date = gtk.Label(_("Date:"))
-		date.set_size_request(label_width, -1)
 		date.set_properties(xalign=0, yalign=0)
 		self.info['from']['date'] = gtk.Label("")
 		self.info['from']['date'].set_properties(xalign=0, yalign=0, selectable=True)
-		date_container = gtk.HBox(False, 0)
+		date_container = gtk.HBox(False, 12)
 		date_container.pack_start(date, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		date_container.pack_start(self.info['from']['date'], True, True, 0)
@@ -464,12 +459,11 @@ class GitMerge(BranchMerge):
 		
 		# Set up the Revision line
 		revision = gtk.Label(_("Revision:"))
-		revision.set_size_request(label_width, -1)
 		revision.set_properties(xalign=0, yalign=0)
 		self.info['from']['revision'] = gtk.Label("")
 		self.info['from']['revision'].set_properties(xalign=0, selectable=True)
 		self.info['from']['revision'].set_line_wrap(True)
-		revision_container = gtk.HBox(False, 0)
+		revision_container = gtk.HBox(False, 12)
 		revision_container.pack_start(revision, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		revision_container.pack_start(self.info['from']['revision'], True, True, 0)
@@ -477,14 +471,13 @@ class GitMerge(BranchMerge):
 		
 		# Set up the Log Message line
 		message = gtk.Label(_("Message:"))
-		message.set_size_request(label_width, -1)
 		message.set_properties(xalign=0, yalign=0)
 		self.info['from']['message'] = gtk.Label("")
 		self.info['from']['message'].set_properties(xalign=0, yalign=0, selectable=True)
 		self.info['from']['message'].set_line_wrap(True)
-		# esh: not need, width will be set dynamically
+		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
 		# ~ self.info['from']['message'].set_size_request(250, -1)
-		message_container = gtk.HBox(False, 0)
+		message_container = gtk.HBox(False, 12)
 		message_container.pack_start(message, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		message_container.pack_start(self.info['from']['message'], True, True, 0)

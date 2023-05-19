@@ -1355,12 +1355,8 @@ class GitRepositorySelector:
 		
 		vbox = gtk.VBox(False, 4)
 		
-		# esh:
-		label_width = int(110 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
-		
 		# Set up the Repository Line
 		label = gtk.Label(_("Repository:"))
-		label.set_size_request(label_width, -1)
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
 		label.set_properties(xalign=0, yalign=.5)
@@ -1374,7 +1370,7 @@ class GitRepositorySelector:
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
 		# ~ self.repository_opt.cb.set_size_request(175, -1)
 		
-		hbox = gtk.HBox(False, 0)
+		hbox = gtk.HBox(False, 12)
 		hbox.pack_start(label, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		hbox.pack_start(self.repository_opt.cb, True, True, 0)
@@ -1382,7 +1378,6 @@ class GitRepositorySelector:
 		
 		# Set up the Branch line
 		label = gtk.Label(_("Branch:"))
-		label.set_size_request(label_width, -1)
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
 		label.set_properties(xalign=0, yalign=.5)
@@ -1402,7 +1397,7 @@ class GitRepositorySelector:
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
 		# ~ self.branch_opt.cb.set_size_request(175, -1)
 		
-		hbox = gtk.HBox(False, 0)
+		hbox = gtk.HBox(False, 12)
 		hbox.pack_start(label, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		hbox.pack_start(self.branch_opt.cb, True, True, 0)
@@ -1413,10 +1408,9 @@ class GitRepositorySelector:
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
 		label.set_properties(xalign=0, yalign=.5)
-		label.set_size_request(label_width, -1)
 		self.host = gtk.Label()
 		self.host.set_justify(gtk.JUSTIFY_LEFT)
-		hbox = gtk.HBox(False, 0)
+		hbox = gtk.HBox(False, 12)
 		hbox.pack_start(label, False, False, 0)
 		hbox.pack_start(self.host, False, False, 0)
 		vbox.pack_start(hbox, False, False, 4)
@@ -1516,22 +1510,17 @@ class MultiFileTextEditor:
 		
 		vbox = gtk.VBox(False, 6)
 		
-		# esh:
-		label_width = int(110 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
-		
-		hbox = gtk.HBox(False, 3)
+		hbox = gtk.HBox(False, 12)
 		combo_label = gtk.Label(label)
 		combo_label.set_alignment(0, 0.5)
-		combo_label.set_size_request(label_width, -1)
 		hbox.pack_start(combo_label, False, False, 0)
 		hbox.pack_start(self.combobox.cb, True, True, 0)
 		vbox.pack_start(hbox, False, False, 0)
 		
 		if show_add_line:
-			hbox = gtk.HBox(False, 3)
+			hbox = gtk.HBox(False, 12)
 			add_label = gtk.Label(_("Add line:"))
 			add_label.set_alignment(0, 0.5)
-			add_label.set_size_request(label_width, -1)
 			self.add_entry = gtk.Entry()
 			self.add_entry.set_text(line_content)
 			add_button = gtk.Button(_("Add"))

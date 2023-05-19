@@ -50,11 +50,6 @@ class Checkout(InterfaceView):
 	def __init__(self, path=None, url=None, revision=None):
 		InterfaceView.__init__(self, "checkout", "Checkout")
 		
-		# esh:
-		label_width = int(100 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
-		self.get_widget("label3").set_size_request(label_width, -1)
-		self.get_widget("label4").set_size_request(label_width, -1)
-		
 		self.path = path
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.repositories = rabbitvcs.ui.widget.ComboBox(

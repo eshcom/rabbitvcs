@@ -93,15 +93,11 @@ class GitBranchManager(InterfaceView):
 		self.detail_container = self.get_widget("detail_container")
 		vbox = gtk.VBox(False, 6)
 		
-		# esh:
-		label_width = int(100 * rabbitvcs.ui.TEXT_SCALING_FACTOR)
-		
 		# Set up the Branch line
 		label = gtk.Label(_("Name:"))
-		label.set_size_request(label_width, -1)
 		label.set_properties(xalign=0, yalign=.5)
 		self.branch_entry = gtk.Entry()
-		self.branch_name_container = gtk.HBox(False, 0)
+		self.branch_name_container = gtk.HBox(False, 12)
 		self.branch_name_container.pack_start(label, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		self.branch_name_container.pack_start(self.branch_entry, True, True, 0)
@@ -109,12 +105,11 @@ class GitBranchManager(InterfaceView):
 		
 		# Set up the Commit-sha line
 		label = gtk.Label(_("Start Point:"))
-		label.set_size_request(label_width, -1)
 		label.set_properties(xalign=0, yalign=.5)
 		self.start_point_entry = gtk.Entry()
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
 		# ~ self.start_point_entry.set_size_request(300, -1)
-		self.start_point_container = gtk.HBox(False, 0)
+		self.start_point_container = gtk.HBox(False, 12)
 		self.log_dialog_button = gtk.Button()
 		self.log_dialog_button.connect("clicked", self.on_log_dialog_button_clicked)
 		image = gtk.Image()
@@ -128,7 +123,6 @@ class GitBranchManager(InterfaceView):
 		
 		# Set up the Track line
 		label = gtk.Label("")
-		label.set_size_request(label_width, -1)
 		self.track_checkbox = gtk.CheckButton(_("Keep old branch's history"))
 		self.track_container = gtk.HBox(False, 0)
 		self.track_container.pack_start(label, False, False, 0)
@@ -137,7 +131,6 @@ class GitBranchManager(InterfaceView):
 		
 		# Set up the checkout line
 		label = gtk.Label("")
-		label.set_size_request(label_width, -1)
 		self.checkout_checkbox = gtk.CheckButton(_("Set as active branch"))
 		self.checkout_container = gtk.HBox(False, 0)
 		self.checkout_container.pack_start(label, False, False, 0)
@@ -146,7 +139,6 @@ class GitBranchManager(InterfaceView):
 		
 		# Set up Save button
 		label = gtk.Label("")
-		label.set_size_request(label_width, -1)
 		self.save_button = gtk.Button(label=_("Save"))
 		self.save_button.connect("clicked", self.on_save_clicked)
 		self.save_container = gtk.HBox(False, 0)
@@ -156,12 +148,11 @@ class GitBranchManager(InterfaceView):
 		
 		# Set up the Revision line
 		label = gtk.Label(_("Revision:"))
-		label.set_size_request(label_width, -1)
 		label.set_properties(xalign=0, yalign=0)
 		self.revision_label = gtk.Label("")
 		self.revision_label.set_properties(xalign=0, selectable=True)
 		self.revision_label.set_line_wrap(True)
-		self.revision_container = gtk.HBox(False, 0)
+		self.revision_container = gtk.HBox(False, 12)
 		self.revision_container.pack_start(label, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		self.revision_container.pack_start(self.revision_label, True, True, 0)
@@ -169,14 +160,13 @@ class GitBranchManager(InterfaceView):
 		
 		# Set up the Log Message line
 		label = gtk.Label(_("Message:"))
-		label.set_size_request(label_width, -1)
 		label.set_properties(xalign=0, yalign=0)
 		self.message_label = gtk.Label("")
 		self.message_label.set_properties(xalign=0, yalign=0, selectable=True)
 		self.message_label.set_line_wrap(True)
-		# esh: not need, width will be set dynamically
+		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
 		# ~ self.message_label.set_size_request(250, -1)
-		self.message_container = gtk.HBox(False, 0)
+		self.message_container = gtk.HBox(False, 12)
 		self.message_container.pack_start(label, False, False, 0)
 		# esh: set pack_start params: expand=True, fill=True
 		self.message_container.pack_start(self.message_label, True, True, 0)
