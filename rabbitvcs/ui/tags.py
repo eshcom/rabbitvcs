@@ -48,6 +48,8 @@ from rabbitvcs import gettext
 import six
 _ = gettext.gettext
 
+from rabbitvcs.ui.wraplabel import LabelInfo
+
 # esh:
 from rabbitvcs.util.log import Log
 log = Log("rabbitvcs.ui.tags")
@@ -153,7 +155,7 @@ class GitTagManager(InterfaceView):
 		# Set up the tagger line
 		label = gtk.Label(_("Tagger:"))
 		label.set_properties(xalign=0, yalign=0)
-		self.tagger_label = gtk.Label("")
+		self.tagger_label = LabelInfo("")
 		self.tagger_label.set_properties(xalign=0, yalign=0, selectable=True)
 		self.tagger_label.set_line_wrap(True)
 		self.tagger_container = gtk.HBox(False, 12)
@@ -165,7 +167,7 @@ class GitTagManager(InterfaceView):
 		# Set up the Date line
 		label = gtk.Label(_("Date:"))
 		label.set_properties(xalign=0, yalign=0)
-		self.date_label = gtk.Label("")
+		self.date_label = LabelInfo("")
 		self.date_label.set_properties(xalign=0, yalign=0, selectable=True)
 		self.date_container = gtk.HBox(False, 12)
 		self.date_container.pack_start(label, False, False, 0)
@@ -176,7 +178,7 @@ class GitTagManager(InterfaceView):
 		# Set up the Revision line
 		label = gtk.Label(_("Revision:"))
 		label.set_properties(xalign=0, yalign=0)
-		self.revision_label = gtk.Label("")
+		self.revision_label = LabelInfo("")
 		self.revision_label.set_properties(xalign=0, selectable=True)
 		self.revision_label.set_line_wrap(True)
 		self.revision_container = gtk.HBox(False, 12)
@@ -188,7 +190,7 @@ class GitTagManager(InterfaceView):
 		# Set up the Log Message line
 		label = gtk.Label(_("Message:"))
 		label.set_properties(xalign=0, yalign=0)
-		self.message_label = gtk.Label("")
+		self.message_label = LabelInfo("")
 		self.message_label.set_properties(xalign=0, yalign=0, selectable=True)
 		self.message_label.set_line_wrap(True)
 		# esh: not need, width will be set dynamically

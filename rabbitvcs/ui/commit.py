@@ -48,6 +48,8 @@ log = Log("rabbitvcs.ui.commit")
 from rabbitvcs import gettext
 _ = gettext.gettext
 
+from rabbitvcs.ui.wraplabel import set_markup, TextColor
+
 helper.gobject_threads_init()
 
 class Commit(InterfaceView, GtkContextMenuCaller):
@@ -325,9 +327,8 @@ class SVNCommit(Commit):
 	def __init__(self, paths, base_dir=None, message=None):
 		Commit.__init__(self, paths, base_dir, message)
 		self.get_widget("commit_to_box").show()
-		self.get_widget("to").set_text(
-			self.vcs.svn().get_repo_url(self.base_dir)
-		)
+		set_markup(self.get_widget("to"), self.vcs.svn().get_repo_url(self.base_dir),
+				   TextColor.INFO)
 		self.items = None
 		if len(self.paths):
 			self.initialize_items()
@@ -381,11 +382,9 @@ class GitCommit(Commit):
 		self.get_widget("commit_to_box").show()
 		active_branch = self.git.get_active_branch()
 		if active_branch:
-			self.get_widget("to").set_text(
-				active_branch.name
-			)
+			set_markup(self.get_widget("to"), active_branch.name, TextColor.INFO)
 		else:
-			self.get_widget("to").set_text("No active branch")
+			set_markup(self.get_widget("to"), _("No active branch"), TextColor.WARN)
 		self.items = None
 		if len(self.paths):
 			self.initialize_items()

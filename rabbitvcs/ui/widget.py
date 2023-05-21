@@ -86,6 +86,7 @@ from rabbitvcs.util.log import Log
 log = Log("rabbitvcs.ui.widget")
 
 from rabbitvcs.ui import STATUS_EMBLEMS
+from rabbitvcs.ui.wraplabel import LabelInfo
 
 TOGGLE_BUTTON = 'TOGGLE_BUTTON'
 TYPE_PATH = 'TYPE_PATH'
@@ -1408,7 +1409,7 @@ class GitRepositorySelector:
 		# esh: set by set_properties
 		# ~ label.set_justify(gtk.JUSTIFY_LEFT)
 		label.set_properties(xalign=0, yalign=.5)
-		self.host = gtk.Label()
+		self.host = LabelInfo()
 		self.host.set_justify(gtk.JUSTIFY_LEFT)
 		hbox = gtk.HBox(False, 12)
 		hbox.pack_start(label, False, False, 0)

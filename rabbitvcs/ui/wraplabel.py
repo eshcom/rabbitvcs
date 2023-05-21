@@ -27,6 +27,18 @@ from __future__ import absolute_import
 
 import gtk
 import pango
+import cgi
+
+from enum import Enum
+
+SPAN_O = "<span foreground=\"%s\">"
+SPAN_C = "</span>"
+
+class TextColor(Enum):
+	INFO = "#F3F3BB",
+	WARN = "#e65c5c",
+	ERR = "#f00"
+
 
 class WrapLabel(gtk.Label):
 	__gtype_name__ = 'WrapLabel'
@@ -66,3 +78,22 @@ class WrapLabel(gtk.Label):
 		if self.__wrap_width != width:
 			self.__wrap_width = width
 			self.queue_resize()
+
+
+class LabelInfo(gtk.Label):
+	__gtype_name__ = 'LabelInfo'
+	
+	def __init__(self, text=None):
+		gtk.Label.__init__(self)
+		if text != None:
+			self.set_markup(SPAN_O%TextColor.INFO.value[0] + cgi.escape(text) + SPAN_C)
+	
+	def set_text(self, text):
+		gtk.Label.set_markup(self, SPAN_O%TextColor.INFO.value[0] + cgi.escape(text) + SPAN_C)
+		
+	def set_markup(self, text):
+		gtk.Label.set_markup(self, SPAN_O%TextColor.INFO.value[0] + cgi.escape(text) + SPAN_C)
+
+
+def set_markup(label, text, color):
+	label.set_markup(SPAN_O%color.value[0] + cgi.escape(text) + SPAN_C)

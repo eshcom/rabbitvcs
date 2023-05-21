@@ -37,6 +37,8 @@ from rabbitvcs import gettext
 import six
 _ = gettext.gettext
 
+from rabbitvcs.ui.wraplabel import LabelInfo, set_markup, TextColor
+
 class SVNMerge(InterfaceView):
 	def __init__(self, path, revision_range = None):
 		InterfaceView.__init__(self, "merge", "Merge")
@@ -424,9 +426,10 @@ class GitMerge(BranchMerge):
 		self.update_branch_info()
 		self.active_branch = self.git.get_active_branch()
 		if self.active_branch:
-			self.get_widget("to_branch").set_text(self.active_branch.name + " (" + self.active_branch.revision[0:7] + ")")
+			branch_text = self.active_branch.name + " (" + self.active_branch.revision[0:7] + ")"
+			set_markup(self.get_widget("to_branch"), branch_text, TextColor.INFO)
 		else:
-			self.get_widget("to_branch").set_text(_("No active branch"))
+			set_markup(self.get_widget("to_branch"), _("No active branch"), TextColor.WARN)
 	
 	def init_branch_widgets(self):
 		self.info = {"from":{}, "to":{}}
@@ -437,7 +440,7 @@ class GitMerge(BranchMerge):
 		# Set up the Author line
 		author = gtk.Label(_("Author:"))
 		author.set_properties(xalign=0, yalign=0)
-		self.info['from']['author'] = gtk.Label("")
+		self.info['from']['author'] = LabelInfo("")
 		self.info['from']['author'].set_properties(xalign=0, yalign=0, selectable=True)
 		self.info['from']['author'].set_line_wrap(True)
 		author_container = gtk.HBox(False, 12)
@@ -449,7 +452,7 @@ class GitMerge(BranchMerge):
 		# Set up the Date line
 		date = gtk.Label(_("Date:"))
 		date.set_properties(xalign=0, yalign=0)
-		self.info['from']['date'] = gtk.Label("")
+		self.info['from']['date'] = LabelInfo("")
 		self.info['from']['date'].set_properties(xalign=0, yalign=0, selectable=True)
 		date_container = gtk.HBox(False, 12)
 		date_container.pack_start(date, False, False, 0)
@@ -460,7 +463,7 @@ class GitMerge(BranchMerge):
 		# Set up the Revision line
 		revision = gtk.Label(_("Revision:"))
 		revision.set_properties(xalign=0, yalign=0)
-		self.info['from']['revision'] = gtk.Label("")
+		self.info['from']['revision'] = LabelInfo("")
 		self.info['from']['revision'].set_properties(xalign=0, selectable=True)
 		self.info['from']['revision'].set_line_wrap(True)
 		revision_container = gtk.HBox(False, 12)
@@ -472,7 +475,7 @@ class GitMerge(BranchMerge):
 		# Set up the Log Message line
 		message = gtk.Label(_("Message:"))
 		message.set_properties(xalign=0, yalign=0)
-		self.info['from']['message'] = gtk.Label("")
+		self.info['from']['message'] = LabelInfo("")
 		self.info['from']['message'].set_properties(xalign=0, yalign=0, selectable=True)
 		self.info['from']['message'].set_line_wrap(True)
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)

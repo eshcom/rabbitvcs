@@ -44,6 +44,8 @@ from rabbitvcs import gettext
 import six
 _ = gettext.gettext
 
+from rabbitvcs.ui.wraplabel import LabelInfo
+
 # esh:
 from rabbitvcs.util.log import Log
 log = Log("rabbitvcs.ui.branches")
@@ -149,7 +151,7 @@ class GitBranchManager(InterfaceView):
 		# Set up the Revision line
 		label = gtk.Label(_("Revision:"))
 		label.set_properties(xalign=0, yalign=0)
-		self.revision_label = gtk.Label("")
+		self.revision_label = LabelInfo("")
 		self.revision_label.set_properties(xalign=0, selectable=True)
 		self.revision_label.set_line_wrap(True)
 		self.revision_container = gtk.HBox(False, 12)
@@ -161,7 +163,7 @@ class GitBranchManager(InterfaceView):
 		# Set up the Log Message line
 		label = gtk.Label(_("Message:"))
 		label.set_properties(xalign=0, yalign=0)
-		self.message_label = gtk.Label("")
+		self.message_label = LabelInfo("")
 		self.message_label.set_properties(xalign=0, yalign=0, selectable=True)
 		self.message_label.set_line_wrap(True)
 		# esh: width will be set dynamically by pack_start(expand=True, fill=True)
