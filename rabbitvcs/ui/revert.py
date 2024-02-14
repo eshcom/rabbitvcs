@@ -187,12 +187,14 @@ class SVNRevertQuiet:
 class GitRevertQuiet:
 	def __init__(self, paths, base_dir=None):
 		self.vcs = rabbitvcs.vcs.VCS()
-		self.git = self.vcs.git(paths[0])
+		self.git = self.vcs.git(paths[0]) # esh: define git repo by first item paths
 		self.action = rabbitvcs.ui.action.GitAction(
 			self.git,
 			run_in_thread=False
 		)
-		self.action.append(self.git.checkout, paths)
+		# esh: fixed for new git version
+		# ~ self.action.append(self.git.checkout, paths)
+		self.action.append(self.git.restore, paths)
 		self.action.schedule()
 
 classes_map = {

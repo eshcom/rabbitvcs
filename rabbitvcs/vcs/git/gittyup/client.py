@@ -1817,6 +1817,20 @@ class GittyupClient:
 			self.callback_notify(e)
 			return
 	
+	def restore(self, paths):
+		relative_paths = []
+		for path in paths:
+			relative_paths.append(self.get_relative_path(path))
+		
+		cmd = ["git", "restore"]
+		cmd.extend(relative_paths)
+		
+		try:
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
+		except GittyupCommandError as e:
+			self.callback_notify(e)
+	
 	def set_callback_notify(self, func):
 		self.callback_notify = func
 	

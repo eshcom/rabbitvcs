@@ -879,6 +879,17 @@ class Git:
 		"""
 		return self.client.reset(path, revision.primitive(), type)
 	
+	def restore(self, paths):
+		"""
+		Restore specified paths in the working tree with some contents
+		from a restore source. If a path is tracked but does not exist
+		in the restore source, it will be removed to match the source.
+		
+		@type   paths: list
+		@param  paths: A list of files to restore
+		"""
+		return self.client.restore(paths)
+	
 	def get_ignore_files(self, path):
 		paths = []
 		paths.append(self.client.get_local_ignore_file(path))
