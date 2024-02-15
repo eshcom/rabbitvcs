@@ -884,15 +884,23 @@ class GittyupClient:
 		
 		cmd = ["git", "pull", "--progress"]
 		
-		if options != None:
+		option_all = False
+		if options:
 			if options.count("rebase"):
 				cmd.append("--rebase")
-			
+			if options.count("prune"):
+				cmd.append("--prune")
 			if options.count("all"):
-				cmd.append("--all")
-			else:
-				cmd.append(repository)
+				option_all = True
+		
+		if option_all:
+			cmd.append("--all")
+		else:
+			cmd.append(repository)
+			# only used in conjunction with the repository option
+			if refspec:
 				cmd.append(refspec)
+		
 		# Setup the section name in the config for the remote target.
 		remoteKey = "remote \"" + repository + "\""
 		isUsername = False
@@ -932,7 +940,7 @@ class GittyupClient:
 		@param  repository: The name of the repository
 		
 		@type   refspec: string
-		@param  refspec: The branch name to pull from
+		@param  refspec: The branch name to push to
 		
 		@type   tags: boolean
 		@param  tags: True to include tags in push, False to omit
@@ -1134,28 +1142,35 @@ class GittyupClient:
 			isPassword = True
 		return isPassword, originalRemoteUrl
 	
-	def fetch(self, repository, branch=None):
+	def fetch(self, repository="origin", refspec="master", options=None):
 		"""
 		Fetch objects from a remote repository.  This will not merge the files
 			into the local working copy, use pull for that.
 		
 		@type   repository: string
-		@param  repository: The git repository from which to fetch
+		@param  repository: The name of the repository
 		
-		@type   branch: string
-		@param  branch: The git branch from which to fetch
+		@type   refspec: string
+		@param  refspec: The branch name to fetch from
 		"""
-		cmd = ["git", "fetch", repository]
-		if branch:
-			cmd.append(branch)
-		try:
-			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
-													  cancel=self.get_cancel).execute()
-		except GittyupCommandError as e:
-			self.callback_notify(e)
-	
-	def fetch_all(self):
-		cmd = ["git", "fetch", "--all"]
+		cmd = ["git", "fetch", "--progress"]
+		
+		option_all = False
+		if options:
+			if options.count("prune"):
+				cmd.append("--prune")
+			if options.count("all"):
+				option_all = True
+		
+		if option_all:
+			cmd.append("--all")
+		else:
+			if repository:
+				cmd.append(repository)
+				# only used in conjunction with the repository option
+				if refspec:
+					cmd.append(refspec)
+		
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
 													  cancel=self.get_cancel).execute()

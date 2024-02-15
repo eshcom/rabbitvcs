@@ -84,12 +84,8 @@ class GitUpdate(InterfaceView):
 	
 	def on_ok_clicked(self, widget, data=None):
 		self.hide()
-		rebase = self.get_widget("rebase").get_active()
-		git_function_params = []
-		apply_changes = self.get_widget("apply_changes").get_active()
 		repository = self.repository_selector.repository_opt.get_active_text()
 		branch = self.repository_selector.branch_opt.get_active_text()
-		fetch_all = self.get_widget("all").get_active()
 		self.action = GitAction(
 			self.git,
 			register_gtk_quit=self.gtk_quit_is_set()
@@ -97,19 +93,20 @@ class GitUpdate(InterfaceView):
 		self.action.hide_cancel_button() # esh
 		self.action.append(self.action.set_header, _("Update"))
 		self.action.append(self.action.set_status, _("Updating..."))
-		if apply_changes:
-			if rebase:
-				git_function_params.append("rebase")
-			if fetch_all:
-				git_function_params.append("all")
-				repository = ""
-				branch = ""
-			self.action.append(self.git.pull, repository, branch, git_function_params)
+		
+		git_options = []
+		if self.get_widget("all").get_active():
+			git_options.append("all")
+			repository = ""
+			branch = ""
+		
+		if self.get_widget("apply_changes").get_active():
+			if self.get_widget("rebase").get_active():
+				git_options.append("rebase")
+			self.action.append(self.git.pull, repository, branch, git_options)
 		else:
-			if fetch_all:
-				self.action.append(self.git.fetch_all)
-			else:
-				self.action.append(self.git.fetch, repository, branch)
+			self.action.append(self.git.fetch, repository, branch, git_options)
+		
 		self.action.append(self.action.set_status, _("Completed Update"))
 		self.action.append(self.action.finish)
 		self.action.schedule()

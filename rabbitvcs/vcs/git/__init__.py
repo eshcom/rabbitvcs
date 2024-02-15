@@ -546,34 +546,25 @@ class Git:
 		@param  repository: The name of the repository
 		
 		@type   refspec: string
-		@param  refspec: The branch name to pull from
+		@param  refspec: The branch name to push to
 		
 		@type   tags: boolean
 		@param  tags: True to include tags in push, False to omit
 		"""
 		return self.client.push(repository, refspec, tags)
 	
-	def fetch_all(self):
-		"""
-		Fetch objects from all remote repositories.  This will not merge the files
-		into the local working copy, use pull for that.
-		"""
-		return self.client.fetch_all()
-	
-	def fetch(self, repository, branch=None):
+	def fetch(self, repository="origin", refspec="master", options=None):
 		"""
 		Fetch objects from a remote repository.  This will not merge the files
 		into the local working copy, use pull for that.
 		
-		If branch if provided, fetch only for that branch.
-		
 		@type   repository: string
-		@param  repository: The git remote from which to fetch
+		@param  repository: The name of the repository
 		
-		@type   branch: string
-		@param  branch: The branch from which to fetch
+		@type   refspec: string
+		@param  refspec: The branch name to fetch from
 		"""
-		return self.client.fetch(repository, branch)
+		return self.client.fetch(repository, refspec, options)
 	
 	def merge(self, branch):
 		return self.client.merge(branch.primitive())
