@@ -81,6 +81,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <property name="tooltip-text" translatable="yes">Add local branch</property>                                
                                 <signal name="clicked" handler="on_add_clicked" swapped="no"/>
                                 <child>
                                   <object class="GtkImage" id="image3">
@@ -102,6 +103,7 @@
                                 <property name="sensitive">False</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <property name="tooltip-text" translatable="yes">Delete local branch</property>                                
                                 <signal name="clicked" handler="on_delete_clicked" swapped="no"/>
                                 <child>
                                   <object class="GtkImage" id="image4">
@@ -115,6 +117,27 @@
                                 <property name="expand">False</property>
                                 <property name="fill">False</property>
                                 <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="prune">
+                                <property name="visible">False</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip-text" translatable="yes">Remove any remote refs that no longer exist on the remote</property>                                
+                                <signal name="clicked" handler="on_prune_clicked" swapped="no"/>
+                                <child>
+                                  <object class="GtkImage" id="image5">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="stock">gtk-refresh</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">2</property>
                               </packing>
                             </child>
                           </object>

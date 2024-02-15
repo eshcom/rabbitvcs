@@ -435,7 +435,7 @@ class Git:
 		"""
 		return self.client.checkout(paths, revision.primitive(), options)
 	
-	# esh add cherrypick method
+	# esh: add cherrypick method
 	def cherrypick(self, commits=[]):
 		return self.client.cherrypick(commits)
 	
@@ -565,6 +565,12 @@ class Git:
 		@param  refspec: The branch name to fetch from
 		"""
 		return self.client.fetch(repository, refspec, options)
+	
+	def prune(self):
+		"""
+		Remove any remote refs that no longer exist on the remote.
+		"""
+		return self.client.prune()
 	
 	def merge(self, branch):
 		return self.client.merge(branch.primitive())

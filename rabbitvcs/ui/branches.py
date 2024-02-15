@@ -81,15 +81,10 @@ class GitBranchManager(InterfaceView):
 				"key-event":     self.on_treeview_key_event
 			}
 		)
+		self.get_widget("prune").set_property("visible", True)
+		
 		self.initialize_detail()
-		# esh: changed logic
-		tracking_index = self.load()
-		if tracking_index is not None:
-			self.items_treeview.focus(tracking_index, 0)
-			# esh: inside will be called self.show_edit 
-			self.on_treeview_event(None, None)
-		else:
-			self.show_add()
+		self.init_show()
 	
 	def initialize_detail(self):
 		self.detail_container = self.get_widget("detail_container")
@@ -188,6 +183,16 @@ class GitBranchManager(InterfaceView):
 		vbox.show()
 		self.detail_container.add(vbox)
 	
+	def init_show(self):
+		# esh: changed logic
+		tracking_index = self.load()
+		if tracking_index is not None:
+			self.items_treeview.focus(tracking_index, 0)
+			# esh: inside will be called self.show_edit
+			self.on_treeview_event(None, None)
+		else:
+			self.show_add()
+	
 	def load(self):
 		self.items_treeview.clear()
 		self.branch_list = self.git.branch_list()
@@ -221,6 +226,10 @@ class GitBranchManager(InterfaceView):
 				self.git.branch_delete(branch)
 			self.load()
 			self.show_add()
+	
+	def on_prune_clicked(self, widget):
+		self.git.prune()
+		self.init_show()
 	
 	def on_save_clicked(self, widget):
 		if self.state == STATE_ADD:

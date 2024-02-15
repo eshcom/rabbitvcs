@@ -672,7 +672,7 @@ class GittyupClient:
 		except GittyupCommandError as e:
 			self.callback_notify(e)
 	
-	# esh add cherrypick method
+	# esh: add cherrypick method
 	def cherrypick(self, commits=[]):
 		cmd = ["git", "cherry-pick"] + commits
 		try:
@@ -1171,6 +1171,14 @@ class GittyupClient:
 				if refspec:
 					cmd.append(refspec)
 		
+		try:
+			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
+													  cancel=self.get_cancel).execute()
+		except GittyupCommandError as e:
+			self.callback_notify(e)
+	
+	def prune(self):
+		cmd = ["git", "prune"]
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
 													  cancel=self.get_cancel).execute()
