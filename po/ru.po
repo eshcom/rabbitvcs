@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rabbitvcs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-16 15:14+0300\n"
+"POT-Creation-Date: 2024-02-15 19:41+0300\n"
 "PO-Revision-Date: 2010-12-03 19:19+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -30,13 +30,13 @@ msgid ""
 msgstr ""
 "Вы должны указать систему контроля версий, используя опцию --vcs [svn|git]"
 
-#: ui/action.py:114 ui/log.py:411 ui/log.py:683
+#: ui/action.py:114 ui/log.py:445 ui/log.py:719
 msgid "Action"
 msgstr "Действие"
 
 #: ui/action.py:114 ui/add.py:80 ui/browser.py:91 ui/changes.py:264
-#: ui/changes.py:359 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:86
-#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:411 ui/log.py:683
+#: ui/changes.py:359 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:94
+#: ui/createpatch.py:81 ui/lock.py:68 ui/log.py:445 ui/log.py:719
 #: ui/markresolved.py:63 ui/revert.py:67 ui/stage.py:65 ui/unlock.py:64
 #: ui/unstage.py:64
 msgid "Path"
@@ -59,13 +59,13 @@ msgstr "%s - Завершено"
 msgid "Log Message"
 msgstr "Сообщение"
 
-#: ui/add.py:80 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:86
+#: ui/add.py:80 ui/checkmods.py:107 ui/checkmods.py:170 ui/commit.py:94
 #: ui/createpatch.py:81 ui/lock.py:68 ui/markresolved.py:63 ui/revert.py:67
 #: ui/stage.py:65 ui/unlock.py:64 ui/unstage.py:64
 msgid "Extension"
 msgstr "Расширение"
 
-#: ui/add.py:100 ui/commit.py:131 ui/lock.py:101 ui/push.py:112 ui/revert.py:87
+#: ui/add.py:100 ui/commit.py:139 ui/lock.py:101 ui/push.py:112 ui/revert.py:87
 #: ui/unlock.py:84 ui/xml/dialogs/loading.xml.h:1
 msgid "Loading..."
 msgstr "Загрузка..."
@@ -75,16 +75,16 @@ msgstr "Загрузка..."
 msgid "Found %d item(s)"
 msgstr "Найдено %d элементов"
 
-#: ui/add.py:190 ui/add.py:212 ui/branches.py:288 ui/tags.py:277
-#: ui/widget.py:1524 ui/xml/add.xml.h:1
+#: ui/add.py:191 ui/add.py:213 ui/branches.py:298 ui/tags.py:276
+#: ui/widget.py:1527 ui/xml/add.xml.h:1
 msgid "Add"
 msgstr "Добавить"
 
-#: ui/add.py:191 ui/add.py:213
+#: ui/add.py:192 ui/add.py:214
 msgid "Running Add Command..."
 msgstr "Добавление..."
 
-#: ui/add.py:193 ui/add.py:215
+#: ui/add.py:194 ui/add.py:216
 msgid "Completed Add"
 msgstr "Добавлено"
 
@@ -102,18 +102,18 @@ msgid "Line"
 msgstr "Строка"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:61 ui/log.py:395 ui/log.py:668 ui/widget.py:1128
+#: ui/log.py:59 ui/log.py:429 ui/log.py:703 ui/widget.py:1142
 #: ui/xml/changes.xml.h:4 ui/xml/merge.xml.h:20
 msgid "Revision"
 msgstr "Ревизия"
 
 #: ui/annotate.py:122 ui/annotate.py:213 ui/browser.py:91 ui/checkmods.py:172
-#: ui/log.py:63 ui/log.py:395 ui/log.py:668
+#: ui/log.py:61 ui/log.py:429 ui/log.py:703
 msgid "Author"
 msgstr "Автор"
 
 #: ui/annotate.py:123 ui/annotate.py:214 ui/browser.py:91 ui/dialog.py:56
-#: ui/log.py:62 ui/log.py:396 ui/log.py:669 ui/push.py:77
+#: ui/log.py:60 ui/log.py:430 ui/log.py:704 ui/push.py:77
 msgid "Date"
 msgstr "Дата"
 
@@ -157,58 +157,58 @@ msgstr "Создание ветки/тэга..."
 msgid "Completed Branch/Tag"
 msgstr "Ветка/тэг создана"
 
-#: ui/branches.py:67
+#: ui/branches.py:69
 msgid "Branch Manager"
 msgstr "Менеджер веток"
 
-#: ui/branches.py:68
+#: ui/branches.py:70
 msgid "<b>Branches</b>"
 msgstr "<b>Ветки</b>"
 
-#: ui/branches.py:76 ui/widget.py:1129
+#: ui/branches.py:78 ui/widget.py:1143
 msgid "Branch"
 msgstr "Ветка"
 
-#: ui/branches.py:100 ui/tags.py:101 ui/xml/dialogs/name_email_prompt.xml.h:3
+#: ui/branches.py:94 ui/tags.py:100 ui/xml/dialogs/name_email_prompt.xml.h:3
 #: ui/xml/property_page.xml.h:2
 msgid "Name:"
 msgstr "Имя:"
 
-#: ui/branches.py:111
+#: ui/branches.py:104
 msgid "Start Point:"
 msgstr "Начать с:"
 
-#: ui/branches.py:132
+#: ui/branches.py:123
 msgid "Keep old branch's history"
 msgstr "Сохранить историю старой ветки"
 
-#: ui/branches.py:141
+#: ui/branches.py:131
 msgid "Set as active branch"
 msgstr "Сделать активной веткой"
 
-#: ui/branches.py:150 ui/branches.py:309 ui/tags.py:153 ui/tags.py:287
+#: ui/branches.py:139 ui/branches.py:319 ui/tags.py:148 ui/tags.py:286
 msgid "Save"
 msgstr "Сохранить"
 
-#: ui/branches.py:158 ui/merge.py:466 ui/tags.py:112 ui/tags.py:186
+#: ui/branches.py:147 ui/merge.py:464 ui/tags.py:110 ui/tags.py:179
 #: ui/xml/browser.xml.h:3
 msgid "Revision:"
 msgstr "Ревизия:"
 
-#: ui/branches.py:171 ui/merge.py:479 ui/tags.py:133 ui/tags.py:199
+#: ui/branches.py:159 ui/merge.py:476 ui/tags.py:130 ui/tags.py:191
 msgid "Message:"
 msgstr "Сообщение:"
 
-#: ui/branches.py:219 ui/remotes.py:116 ui/tags.py:237
+#: ui/branches.py:222 ui/remotes.py:116 ui/tags.py:234
 #, python-format
 msgid "Are you sure you want to delete %s?"
 msgstr "Вы уверены, что хотите удалить %s?"
 
-#: ui/branches.py:294
+#: ui/branches.py:304
 msgid "<b>Add Branch</b>"
 msgstr "<b>Новая ветка</b>"
 
-#: ui/branches.py:321
+#: ui/branches.py:331
 msgid "<b>Branch Detail</b>"
 msgstr "<b>Информация по ветке</b>"
 
@@ -216,43 +216,43 @@ msgstr "<b>Информация по ветке</b>"
 msgid "Size"
 msgstr "Размер"
 
-#: ui/browser.py:305
+#: ui/browser.py:306
 msgid "Select"
 msgstr "Выбрать"
 
-#: ui/browser.py:322
+#: ui/browser.py:323
 msgid "Create folder..."
 msgstr "Создать каталог..."
 
-#: ui/browser.py:327
+#: ui/browser.py:328
 msgid "Copy to..."
 msgstr "Копировать в..."
 
-#: ui/browser.py:332
+#: ui/browser.py:333
 msgid "Copy URL to clipboard"
 msgstr "Скопировать адрес в буфер"
 
-#: ui/browser.py:337
+#: ui/browser.py:338
 msgid "Move to..."
 msgstr "Переместить в..."
 
-#: ui/browser.py:442 ui/rename.py:52 ui/rename.py:76 ui/rename.py:101
+#: ui/browser.py:443 ui/rename.py:52 ui/rename.py:76 ui/rename.py:101
 msgid "Rename"
 msgstr "Переименовать"
 
-#: ui/browser.py:442 ui/rename.py:52
+#: ui/browser.py:443 ui/rename.py:52
 msgid "New Name:"
 msgstr "Новое имя:"
 
-#: ui/browser.py:498
+#: ui/browser.py:499
 msgid "Where do you want to copy the selection?"
 msgstr "Куда вы хотите скопировать выделенное?"
 
-#: ui/browser.py:499 ui/browser.py:526
+#: ui/browser.py:500 ui/browser.py:527
 msgid "New Location:"
 msgstr "Новое место:"
 
-#: ui/browser.py:525
+#: ui/browser.py:526
 msgid "Where do you want to move the selection?"
 msgstr "Куда вы хотите переместить выделенное?"
 
@@ -300,34 +300,34 @@ msgstr "Сравнить рядом"
 msgid "Status"
 msgstr "Состояние"
 
-#: ui/checkmods.py:171 ui/commit.py:87 ui/createpatch.py:82
+#: ui/checkmods.py:171 ui/commit.py:95 ui/createpatch.py:82
 #: ui/markresolved.py:64
 msgid "Text Status"
 msgstr "Состояние текста"
 
-#: ui/checkmods.py:171 ui/commit.py:87 ui/createpatch.py:82
+#: ui/checkmods.py:171 ui/commit.py:95 ui/createpatch.py:82
 #: ui/markresolved.py:64
 msgid "Property Status"
 msgstr "Состояние"
 
-#: ui/checkout.py:132 ui/checkout.py:201
+#: ui/checkout.py:129 ui/checkout.py:198
 #, python-format
 msgid "Checkout - %s"
 msgstr "Извлечь - %s"
 
-#: ui/checkout.py:154 ui/clone.py:57 ui/export.py:69 ui/export.py:129
+#: ui/checkout.py:151 ui/clone.py:57 ui/export.py:69 ui/export.py:129
 msgid "The repository URL and destination path are both required fields."
 msgstr "Поля URL репозитория и путь назначения - обязательны."
 
-#: ui/checkout.py:163 ui/updateto.py:127 ui/xml/checkout.xml.h:1
+#: ui/checkout.py:160 ui/updateto.py:127 ui/xml/checkout.xml.h:1
 msgid "Checkout"
 msgstr "Извлечь"
 
-#: ui/checkout.py:164
+#: ui/checkout.py:161
 msgid "Running Checkout Command..."
 msgstr "Извлечение исходников..."
 
-#: ui/checkout.py:174 ui/updateto.py:134
+#: ui/checkout.py:171 ui/updateto.py:134
 msgid "Completed Checkout"
 msgstr "Извлечение завершено"
 
@@ -379,25 +379,29 @@ msgstr "Клонирование..."
 msgid "Completed Clone"
 msgstr "Клонирование завершено"
 
-#: ui/commit.py:265
+#: ui/commit.py:320
 #, python-format
 msgid "Found %(changed)d changed and %(unversioned)d unversioned item(s)"
 msgstr ""
 "Найдено %(changed)d измененных и %(unversioned)d неверсированных элементов"
 
-#: ui/commit.py:309 ui/commit.py:369 ui/commit.py:423 ui/xml/commit.xml.h:1
+#: ui/commit.py:363 ui/commit.py:417 ui/commit.py:467 ui/xml/commit.xml.h:1
 msgid "Commit"
 msgstr "Зафиксировать"
 
-#: ui/commit.py:310 ui/commit.py:370 ui/commit.py:424
+#: ui/commit.py:364 ui/commit.py:418 ui/commit.py:468
 msgid "Running Commit Command..."
 msgstr "Фиксация..."
 
-#: ui/commit.py:322 ui/commit.py:379 ui/commit.py:433
+#: ui/commit.py:376 ui/commit.py:427 ui/commit.py:477
 msgid "Completed Commit"
 msgstr "Фиксация завершена"
 
-#: ui/commit.py:392
+#: ui/commit.py:387 ui/merge.py:432
+msgid "No active branch"
+msgstr "Нет активной ветки"
+
+#: ui/commit.py:436
 msgid "Close Branch"
 msgstr "Закрыть ветку"
 
@@ -449,7 +453,7 @@ msgstr ""
 "В расширении RabbitVCS для Nautilus произошла ошибка. Свяжитесь с <a href="
 "\"%s\">командой RabbitVCS</a> и передайте детали ошибки ниже"
 
-#: ui/dialog.py:56 ui/log.py:396 ui/log.py:669 ui/push.py:77
+#: ui/dialog.py:56 ui/log.py:430 ui/log.py:704 ui/push.py:77
 #: ui/xml/dialogs/message_box.xml.h:1
 msgid "Message"
 msgstr "Сообщение"
@@ -478,7 +482,7 @@ msgstr "Вы действительно хотите продолжить?"
 msgid "the selected item(s)"
 msgstr "выбранные элементы"
 
-#: ui/dialog.py:371
+#: ui/dialog.py:372
 msgid "Added a folder to the repository"
 msgstr "добавить папку в репозитори"
 
@@ -544,124 +548,124 @@ msgstr "Блокировка..."
 msgid "Completed Lock"
 msgstr "Заблокировано"
 
-#: ui/log.py:131
+#: ui/log.py:129
 #, python-format
 msgid "Log - %s"
 msgstr "Лог - %s"
 
-#: ui/log.py:333 ui/log.py:334 ui/xml/log.xml.h:6
+#: ui/log.py:367 ui/log.py:368 ui/xml/log.xml.h:6
 msgid "N/A"
 msgstr "Н/Д"
 
-#: ui/log.py:397
+#: ui/log.py:431
 msgid "Color"
 msgstr "Цвет"
 
-#: ui/log.py:412
+#: ui/log.py:446
 msgid "Copy From Path"
 msgstr "Копия из пути"
 
-#: ui/log.py:412
+#: ui/log.py:446
 msgid "Copy From Revision"
 msgstr "Копия из ревизии"
 
-#: ui/log.py:668
+#: ui/log.py:703
 msgid "Graph"
 msgstr "Граф"
 
-#: ui/log.py:1007
+#: ui/log.py:1046
 msgid "View diff against working copy"
 msgstr "Просмотреть файл различий с рабочей копией"
 
-#: ui/log.py:1012 util/contextmenuitems.py:395
+#: ui/log.py:1051 util/contextmenuitems.py:395
 msgid "View diff against previous revision"
 msgstr "Просмотреть файл различий с предыдущей ревизией"
 
-#: ui/log.py:1017
+#: ui/log.py:1056
 msgid "View diff between revisions"
 msgstr "Просмотреть файл различий между ревизиями"
 
-#: ui/log.py:1022
+#: ui/log.py:1061
 msgid "Compare with working copy"
 msgstr "Сравнить с рабочей копией"
 
-#: ui/log.py:1027 util/contextmenuitems.py:413
+#: ui/log.py:1066 util/contextmenuitems.py:413
 msgid "Compare with previous revision"
 msgstr "Сравнить с предудыщей ревизией"
 
-#: ui/log.py:1032
+#: ui/log.py:1071
 msgid "Compare revisions"
 msgstr "Сравнить ревизии"
 
-#: ui/log.py:1038
+#: ui/log.py:1077
 msgid "Show changes against previous revision"
 msgstr "Показать отличия с предыдущей ревизией"
 
-#: ui/log.py:1044
+#: ui/log.py:1083
 msgid "Show changes between revisions"
 msgstr "Показать отличия между ревизиями"
 
-#: ui/log.py:1049
+#: ui/log.py:1088
 msgid "Update to this revision"
 msgstr "Обновить до этой ревизии"
 
-#: ui/log.py:1050
+#: ui/log.py:1089
 msgid "Update the selected path to this revision"
 msgstr "Обновить выбранный путь до этой ревизии"
 
-#: ui/log.py:1055
+#: ui/log.py:1094
 msgid "Revert changes from this revision"
 msgstr "Отменить изменения из этой ревизии"
 
-#: ui/log.py:1056
+#: ui/log.py:1095
 msgid "Update the selected path by reverse merging the changes"
 msgstr "Обновить выбранный путь путем обратного объединения изменений"
 
-#: ui/log.py:1061
+#: ui/log.py:1100
 msgid "Copy to clipboard"
 msgstr "Скопировать инфо по ревизии в буфер"
 
-#: ui/log.py:1062
+#: ui/log.py:1101
 msgid "Copy to clipboard the full data of these revisions"
 msgstr "Скопировать полные данные этих ревизий в буфер"
 
-#: ui/log.py:1067
+#: ui/log.py:1106
 msgid "Copy to clipboard the revision number"
 msgstr "Скопировать номер ревизии в буфер"
 
-#: ui/log.py:1068
+#: ui/log.py:1107
 msgid "Copy to clipboard the numbers of these revisions"
 msgstr "Скопировать номера этих ревизий в буфер"
 
-#: ui/log.py:1073
+#: ui/log.py:1112
 msgid "Edit author..."
 msgstr "Изменить автора..."
 
-#: ui/log.py:1078
+#: ui/log.py:1117
 msgid "Edit log message..."
 msgstr "Изменить сообщение ревизии..."
 
-#: ui/log.py:1083
+#: ui/log.py:1122
 msgid "Edit revision properties..."
 msgstr "Изменить свойства ревизии..."
 
-#: ui/log.py:1092
+#: ui/log.py:1131
 msgid "Cherry Pick this commits..."
 msgstr "Применить эти коммиты..."
 
-#: ui/log.py:1093
+#: ui/log.py:1132
 msgid "Apply the changes introduced by some existing commits"
 msgstr "Применить изменения существующих коммитов"
 
-#: ui/log.py:1365
+#: ui/log.py:1404
 msgid "Edit author"
 msgstr "Изменение автора"
 
-#: ui/log.py:1375
+#: ui/log.py:1414
 msgid "Edit log message"
 msgstr "Изменение сообщения ревизии"
 
-#: ui/log.py:1390
+#: ui/log.py:1429
 msgid "Are you sure you want to apply the selected commits?"
 msgstr "Вы уверены, что хотите применить выбранные коммиты?"
 
@@ -677,35 +681,31 @@ msgstr "Разрешение конфликта..."
 msgid "Completed Mark as Resolved"
 msgstr "Конфликт разрешен"
 
-#: ui/merge.py:91
+#: ui/merge.py:93
 msgid "Running Merge Test..."
 msgstr "Выполнение теста на слияние..."
 
-#: ui/merge.py:92
+#: ui/merge.py:94
 msgid "Completed Merge Test"
 msgstr "Тест слияния завершен"
 
-#: ui/merge.py:94 ui/merge.py:518
+#: ui/merge.py:96 ui/merge.py:514
 msgid "Running Merge Command..."
 msgstr "Выполнение слияния..."
 
-#: ui/merge.py:95 ui/merge.py:523
+#: ui/merge.py:97 ui/merge.py:519
 msgid "Completed Merge"
 msgstr "Слияние завершено"
 
-#: ui/merge.py:105 ui/merge.py:517 ui/xml/branch-merge.xml.h:1
+#: ui/merge.py:107 ui/merge.py:513 ui/xml/branch-merge.xml.h:1
 msgid "Merge"
 msgstr "Объединить"
-
-#: ui/merge.py:429
-msgid "No active branch"
-msgstr "Нет активной ветки"
 
 #: ui/merge.py:441
 msgid "Author:"
 msgstr "Автор:"
 
-#: ui/merge.py:454 ui/tags.py:174
+#: ui/merge.py:453 ui/tags.py:168
 msgid "Date:"
 msgstr "Дата:"
 
@@ -836,15 +836,15 @@ msgstr "Восстановление исходного состояния..."
 msgid "Completed Reset"
 msgstr "Исходное состояние восстановлено"
 
-#: ui/revert.py:147 ui/revert.py:169 ui/xml/revert.xml.h:1
+#: ui/revert.py:148 ui/revert.py:170 ui/xml/revert.xml.h:1
 msgid "Revert"
 msgstr "Откатить"
 
-#: ui/revert.py:148 ui/revert.py:170
+#: ui/revert.py:149 ui/revert.py:171
 msgid "Running Revert Command..."
 msgstr "Восстановление исходного состояния..."
 
-#: ui/revert.py:150 ui/revert.py:172
+#: ui/revert.py:151 ui/revert.py:173
 msgid "Completed Revert"
 msgstr "Исходное состояние восстановлено"
 
@@ -916,27 +916,27 @@ msgstr "Переключение"
 msgid "Completed Switch"
 msgstr "Переключение завершено"
 
-#: ui/tags.py:71
+#: ui/tags.py:73
 msgid "Tag Manager"
 msgstr "Менеджер тэгов"
 
-#: ui/tags.py:72
+#: ui/tags.py:74
 msgid "<b>Tags</b>"
 msgstr "<b>Тэги</b>"
 
-#: ui/tags.py:80
+#: ui/tags.py:82
 msgid "Tag"
 msgstr "Тэг"
 
-#: ui/tags.py:161
+#: ui/tags.py:156
 msgid "Tagger:"
 msgstr "Автор:"
 
-#: ui/tags.py:279
+#: ui/tags.py:278
 msgid "<b>Add Tag</b>"
 msgstr "<b>Новый тэг</b>"
 
-#: ui/tags.py:296
+#: ui/tags.py:295
 msgid "<b>Tag Detail</b>"
 msgstr "<b>Информация по тэгу</b>"
 
@@ -964,11 +964,11 @@ msgstr ""
 msgid "Completed Unstage"
 msgstr ""
 
-#: ui/update.py:56 ui/update.py:98 ui/xml/update.xml.h:1
+#: ui/update.py:56 ui/update.py:94 ui/xml/update.xml.h:1
 msgid "Update"
 msgstr "Обновить"
 
-#: ui/update.py:57 ui/update.py:99 ui/updateto.py:87
+#: ui/update.py:57 ui/update.py:95 ui/updateto.py:87
 msgid "Updating..."
 msgstr "Обновление..."
 
@@ -1001,31 +1001,31 @@ msgstr "Какую ревизию/ветку вы хотите извлечь?"
 msgid "Checking out %s..."
 msgstr "Извлечение исходников из %s..."
 
-#: ui/widget.py:1127 ui/widget.py:1133 ui/xml/merge.xml.h:19
+#: ui/widget.py:1141 ui/widget.py:1147 ui/xml/merge.xml.h:19
 msgid "HEAD"
 msgstr "Ведущая"
 
-#: ui/widget.py:1134
+#: ui/widget.py:1148
 msgid "Number"
 msgstr "Номер"
 
-#: ui/widget.py:1137
+#: ui/widget.py:1151
 msgid "Working Copy"
 msgstr "Рабочая копия"
 
-#: ui/widget.py:1349
+#: ui/widget.py:1360
 msgid "Repository:"
 msgstr "Репозиторий:"
 
-#: ui/widget.py:1371
+#: ui/widget.py:1381
 msgid "Branch:"
 msgstr "Ветка:"
 
-#: ui/widget.py:1399 ui/xml/dialogs/certificate.xml.h:4
+#: ui/widget.py:1408 ui/xml/dialogs/certificate.xml.h:4
 msgid "Host:"
 msgstr "Хост:"
 
-#: ui/widget.py:1519
+#: ui/widget.py:1523
 msgid "Add line:"
 msgstr "Добавить линию:"
 
@@ -1568,19 +1568,19 @@ msgstr ""
 "Выход из '%s' не может быть обработан.\n"
 "%s"
 
-#: vcs/git/__init__.py:705 vcs/svn/__init__.py:1092
+#: vcs/git/__init__.py:702 vcs/svn/__init__.py:1092
 msgid "(no author)"
 msgstr "(без автора)"
 
-#: vcs/git/__init__.py:830 vcs/svn/__init__.py:1564
+#: vcs/git/__init__.py:827 vcs/svn/__init__.py:1564
 msgid "Patched"
 msgstr "Патч применен"
 
-#: vcs/git/__init__.py:834 vcs/svn/__init__.py:1568
+#: vcs/git/__init__.py:831 vcs/svn/__init__.py:1568
 msgid "Patch Failed"
 msgstr "Ошибка применения патча"
 
-#: vcs/git/__init__.py:839 vcs/svn/__init__.py:1576
+#: vcs/git/__init__.py:836 vcs/svn/__init__.py:1576
 msgid "Rejected Patch"
 msgstr "Патч отклонен"
 
@@ -2059,6 +2059,10 @@ msgstr "применить удаленные изменения до локал
 msgid "Fetch from all remotes"
 msgstr "Получить из всех удаленных веток"
 
+#: ui/xml/git-update.xml.h:7 ui/xml/manager.xml.h:3
+msgid "Remove any remote refs that no longer exist on the remote"
+msgstr "Удалить все remote-ссылки, которых больше нет в удаленном репо"
+
 #: ui/xml/ignore.xml.h:1
 msgid "Ignore"
 msgstr "Игнорировать"
@@ -2124,6 +2128,14 @@ msgid "Page:"
 msgstr "Страница:"
 
 #: ui/xml/manager.xml.h:1
+msgid "Add local branch"
+msgstr "Добавить локальную ветку"
+
+#: ui/xml/manager.xml.h:2
+msgid "Delete local branch"
+msgstr "Удалить локальную ветку"
+
+#: ui/xml/manager.xml.h:4
 msgid "label"
 msgstr "метка"
 
