@@ -891,8 +891,8 @@ class GittyupClient:
 			if options.count("all"):
 				cmd.append("--all")
 			else:
-				cmd.append (repository)
-				cmd.append (refspec)
+				cmd.append(repository)
+				cmd.append(refspec)
 		# Setup the section name in the config for the remote target.
 		remoteKey = "remote \"" + repository + "\""
 		isUsername = False
@@ -1858,7 +1858,7 @@ class GittyupClient:
 		#print "parsing message: " + str(data)
 		
 		# If data is already a dict, we'll assume it's already been parsed, and return.
-		if isinstance (data, dict):
+		if isinstance(data, dict):
 			self.notify(data);
 			return
 		
@@ -1906,7 +1906,7 @@ class GittyupClient:
 		if fraction == 0:
 				returnData["path"] = current_action
 				self.notify(returnData)
-		#print "stage fraction: " + str (fraction)
+		#print "stage fraction: " + str(fraction)
 		
 		# If we're using a number of stages, adjust the fraction acordingly.
 		if self.numberOfCommandStages > 0:
@@ -1924,7 +1924,7 @@ class GittyupClient:
 			self.numberOfCommandStages = 0
 			self.numberOfCommandStagesExecuted = 0
 	
-	def notify_and_parse_git_pull (self, data):
+	def notify_and_parse_git_pull(self, data):
 		return_data = {"action":"","path":"","mime_type":""}
 		message_parsed = False
 		# Look for "From" line (e.g. "From ssh://server:22/my_project")
@@ -2010,9 +2010,9 @@ class GittyupClient:
 			message_parsed = True
 		if message_parsed == False:
 			return_data = data
-		self.notify_and_parse_progress (return_data)
+		self.notify_and_parse_progress(return_data)
 	
-	def notify_and_parse_git_push (self, data):
+	def notify_and_parse_git_push(self, data):
 		return_data = {"action":"","path":"","mime_type":""}
 		message_parsed = False
 		
@@ -2037,7 +2037,7 @@ class GittyupClient:
 			message_parsed = True
 		if message_parsed == False:
 			return_data = data
-		self.notify_and_parse_progress (return_data)
+		self.notify_and_parse_progress(return_data)
 	
 	def get_cancel(self):
 		return self.callback_get_cancel
