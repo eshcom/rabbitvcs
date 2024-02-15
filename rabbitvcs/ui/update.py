@@ -100,6 +100,9 @@ class GitUpdate(InterfaceView):
 			repository = ""
 			branch = ""
 		
+		if self.get_widget("prune").get_active():
+			git_options.append("prune")
+		
 		if self.get_widget("apply_changes").get_active():
 			if self.get_widget("rebase").get_active():
 				git_options.append("rebase")
