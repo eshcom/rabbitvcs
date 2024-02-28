@@ -826,11 +826,13 @@ class GittyupClient:
 			relative_path = self.get_relative_path(path)
 			if relative_path in index:
 				del index[relative_path]
-				os.remove(path)
+				if os.path.exists(path):
+					os.remove(path)
 				parent_dir = os.path.dirname(path)
-				while not os.listdir(parent_dir): # esh: if parent_dir is empty
-					os.rmdir(parent_dir)
-					parent_dir = os.path.dirname(parent_dir)
+				if os.path.exists(parent_dir):
+					while not os.listdir(parent_dir): # esh: if parent_dir is empty
+						os.rmdir(parent_dir)
+						parent_dir = os.path.dirname(parent_dir)
 		index.write()
 	
 	def move(self, source, dest):
