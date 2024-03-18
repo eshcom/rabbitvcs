@@ -228,7 +228,7 @@ class GitBranchManager(InterfaceView):
 			self.show_add()
 	
 	def on_prune_clicked(self, widget):
-		self.git.prune()
+		self.git.fetch(None, None, ["prune"])
 		self.init_show()
 	
 	def on_save_clicked(self, widget):
