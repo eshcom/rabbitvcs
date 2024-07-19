@@ -47,8 +47,7 @@ _ = gettext.gettext
 helper.gobject_threads_init()
 
 class Diff(InterfaceNonView):
-	def __init__(self, path1, revision1=None, path2=None, revision2=None,
-			sidebyside=False):
+	def __init__(self, path1, revision1=None, path2=None, revision2=None, sidebyside=False):
 		InterfaceNonView.__init__(self)
 		self.vcs = rabbitvcs.vcs.VCS()
 		self.path1 = path1
@@ -82,7 +81,6 @@ class Diff(InterfaceNonView):
 		self.dialog.run()
 	
 	def stop_loading(self):
-		
 		# Sometimes the launching will be too fast, and the dialog we're trusted with
 		# cleaning up, may not even have been created!
 		while self.dialog == None:
@@ -92,15 +90,14 @@ class Diff(InterfaceNonView):
 		self.dialog = None
 
 class SVNDiff(Diff):
-	def __init__(self, path1, revision1=None, path2=None, revision2=None,
-			sidebyside=False):
+	def __init__(self, path1, revision1=None, path2=None, revision2=None, sidebyside=False):
 		Diff.__init__(self, path1, revision1, path2, revision2, sidebyside)
 		self.svn = self.vcs.svn()
 		self.revision1 = self.get_revision_object(revision1, "base")
 		self.revision2 = self.get_revision_object(revision2, "working")
 		gobject.idle_add(self.launch)
 		self.start_loading()
-
+	
 	def get_revision_object(self, value, default):
 		# If value is a rabbitvcs Revision object, return it
 		if hasattr(value, "is_revision_object"):
@@ -116,7 +113,7 @@ class SVNDiff(Diff):
 		except ValueError:
 			# triggered when passed a string
 			return self.svn.revision(value)
-
+	
 	def launch_unified_diff(self):
 		"""
 		Launch diff as a unified diff in a text editor or .diff viewer
@@ -140,7 +137,7 @@ class SVNDiff(Diff):
 		os.write(fh[0], diff_text)
 		os.close(fh[0])
 		helper.open_item(fh[1])
-		
+	
 	def launch_sidebyside_diff(self):
 		"""
 		Launch diff as a side-by-side comparison using our comparison tool
@@ -175,15 +172,14 @@ class SVNDiff(Diff):
 		helper.launch_diff_tool(dest1, dest2)
 
 class GitDiff(Diff):
-	def __init__(self, path1, revision1=None, path2=None, revision2=None,
-			sidebyside=False):
+	def __init__(self, path1, revision1=None, path2=None, revision2=None, sidebyside=False):
 		Diff.__init__(self, path1, revision1, path2, revision2, sidebyside)
 		self.git = self.vcs.git(path1)
 		self.revision1 = self.get_revision_object(revision1, "HEAD")
 		self.revision2 = self.get_revision_object(revision2, "WORKING")
 		gobject.idle_add(self.launch)
 		self.start_loading()
-
+	
 	def get_revision_object(self, value, default):
 		# If value is a rabbitvcs Revision object, return it
 		if hasattr(value, "is_revision_object"):
@@ -193,7 +189,7 @@ class GitDiff(Diff):
 			value_to_pass = default
 		# triggered when passed a string
 		return self.git.revision(value_to_pass)
-
+	
 	def save_diff_to_file(self, path, data):
 		dirname = os.path.dirname(path)
 		if not os.path.isdir(dirname):
@@ -208,7 +204,7 @@ class GitDiff(Diff):
 				log.exception(e)
 		finally:
 			file.close()
-
+	
 	def launch_unified_diff(self):
 		"""
 		Launch diff as a unified diff in a text editor or .diff viewer
@@ -231,7 +227,7 @@ class GitDiff(Diff):
 		os.write(fh[0], diff_text)
 		os.close(fh[0])
 		helper.open_item(fh[1])
-
+	
 	def launch_sidebyside_diff(self):
 		"""
 		Launch diff as a side-by-side comparison using our comparison tool

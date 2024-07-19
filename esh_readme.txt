@@ -87,10 +87,10 @@ def HSLtoRGB(h, s, l):
 		raise ValueError("Saturation should be >= 0.0 and <= 1.0")
 	if not 0.0 <= l <= 1.0:
 		raise ValueError("Luminance should be >= 0.0 and <= 1.0")
-
+	
 	if s == 0.0:
 		return (0, 0, 0)
-
+	
 	sextant = h % 360.0 / 60.0
 	c = (1.0 - abs(2.0 * l - 1.0)) * s
 	x = (1.0 - abs(sextant % 2.0 - 1.0)) * c
@@ -110,3 +110,14 @@ def html_color(r, g, b, a=None):
 	if not a is None:
 		color += fmt % a
 	return "#" + color
+
+
+# пример запуска meld через rabbitvcs diff:
+diffitem=/home/esh/projects/bp/decision-flow-backend/lib/df_web/views/events_view.ex
+prevcommit=$(git log --pretty=format:"%H" -2 $diffitem | tail -1)
+lastcommit=$(git log --pretty=format:"%H" -1 $diffitem) # HEAD
+
+rabbitvcs diff --vcs git -s $diffitem@$prevcommit $diffitem@$lastcommit
+rabbitvcs diff --vcs git -s $diffitem@$prevcommit $diffitem@HEAD
+rabbitvcs diff --vcs git -s $diffitem@$prevcommit $diffitem
+rabbitvcs diff --vcs git -s $diffitem@$prevcommit
