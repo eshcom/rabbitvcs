@@ -204,7 +204,7 @@ class GittyupClient:
 			git_dir = os.environ["GIT_DIR"]
 		except KeyError:
 			git_dir = os.path.join(self.repo.path, ".git")
-
+		
 		files = []
 		excludefile = os.path.join(git_dir, "info", "exclude")
 		files.append(excludefile)
@@ -268,11 +268,8 @@ class GittyupClient:
 				pass
 			
 			# Find the relative root path of this folder
-			if root == self.repo.path:
-				rel_root = ""
-			else:
-				rel_root = self.get_relative_path(root)
-
+			rel_root = self.get_relative_path(root)
+			
 			for filename in filenames:
 				files.append(os.path.join(rel_root, filename))
 			for _d in dirs:
@@ -1061,7 +1058,7 @@ class GittyupClient:
 			entryWidget.focus();
 			
 			textFrame.pack()
-
+			
 			# Create OK button.
 			button = six.moves.tkinter.Button(window, width=5, text="OK", command =
 												(lambda: self.onUsername(window, entryWidget.get(),
@@ -1405,7 +1402,8 @@ class GittyupClient:
 													  notify=self.notify).execute()
 		except GittyupCommandError as e:
 			self.callback_notify(e)
-		ignored_directories=[]
+		
+		ignored_directories = []
 		for line in stdout:
 			components = re.match("^(Would remove)\s(.*?)$", line)
 			if components:
@@ -1575,14 +1573,15 @@ class GittyupClient:
 		if skip:
 			cmd.append("--skip=%s" % skip)
 		if revision:
-			if showtype=="push":
+			if showtype == "push":
 				cmd.append("%s.." % revision)
 			else:
 				cmd.append(revision)
-		if path == self.repo.path:
-			path = ""
+		
+		path = self.get_relative_path(path)
 		if path:
 			cmd += ["--", path]
+		
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
 													  notify=self.notify).execute()
@@ -1607,7 +1606,7 @@ class GittyupClient:
 					fromPath = match.group(1)
 				if revision:
 					if "changed_paths" not in revision:
-						revision["changed_paths"] = {}
+						revision["changed_paths"] = []
 					if last_commitId != commit_line[1]:
 						revisions.append(revision)
 						revision = {}
@@ -1615,7 +1614,7 @@ class GittyupClient:
 						del revision["message"]
 				if len(fromPath) > 0:
 					if "changed_paths" not in revision:
-						revision["changed_paths"] =[]
+						revision["changed_paths"] = []
 					changed_file = {
 						"additions": "-",
 						"removals": "-",
@@ -1658,7 +1657,23 @@ class GittyupClient:
 					revision["changed_paths"].append(changed_file)
 		if revision:
 			revisions.append(revision)
-		return revisions
+		
+		if path:
+			filter_revs = []
+			for revision in revisions:
+				if "changed_paths" in revision:
+					contains = False
+					for changed_path in revision["changed_paths"]:
+						if changed_path["path"].startswith("Diff with parent"):
+							contains = False
+							break
+						elif changed_path["path"].startswith(path):
+							contains = True
+					if contains:
+						filter_revs.append(revision)
+			return filter_revs
+		else:
+			return revisions
 	
 	def annotate(self, path, revision_obj="HEAD"):
 		"""
