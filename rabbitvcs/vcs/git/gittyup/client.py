@@ -1578,9 +1578,10 @@ class GittyupClient:
 			else:
 				cmd.append(revision)
 		
-		path = self.get_relative_path(path)
 		if path:
-			cmd += ["--", path]
+			path = self.get_relative_path(path)
+			if path:
+				cmd += ["--", path]
 		
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path,
