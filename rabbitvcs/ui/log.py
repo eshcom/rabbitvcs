@@ -254,12 +254,12 @@ class Log(InterfaceView):
 	def on_revisions_table_key_event(self, treeview, data=None):
 		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
 		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
 			if len(self.revisions_table.get_selected_rows()) > 0:
 				self.copy_revision_number()
 			return True
 		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
 			if len(self.revisions_table.get_selected_rows()) > 0:
 				self.copy_revision_text()
 			return True
@@ -299,7 +299,7 @@ class Log(InterfaceView):
 	def on_paths_table_key_event(self, treeview, data=None):
 		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
 		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() == "c"):
+				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
 			if len(self.paths_table.get_selected_rows()) > 0:
 				paths = self.paths_table.get_selected_row_items(1)
 				self.set_text_clipboard(helper.get_file_name(paths[0]))

@@ -193,13 +193,13 @@ class InterfaceView(GtkBuilderWidgetWrapper):
 				self.on_close_clicked(widget)
 			return True
 		keyval = gtk.gdk.keyval_name(data.keyval).lower()
-		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "w"):
+		if (data.state & gtk.gdk.CONTROL_MASK and keyval in ("w", "cyrillic_tse")):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "q"):
+		if (data.state & gtk.gdk.CONTROL_MASK and keyval in ("q", "cyrillic_shorti")):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and keyval == "r"):
+		if (data.state & gtk.gdk.CONTROL_MASK and keyval in ("r", "cyrillic_ka")):
 			self.on_refresh_clicked(widget)
 			return True
 
