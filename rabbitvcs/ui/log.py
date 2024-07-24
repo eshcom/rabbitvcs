@@ -195,6 +195,9 @@ class Log(InterfaceView):
 			if self.get_widget("limit").has_focus() or \
 			   self.get_widget("page").has_focus():
 				self.on_refresh_clicked(widget)
+			elif self.get_widget("revisions_table").has_focus():
+				data.keyval = gtk.keysyms.F4
+				return self.on_key_pressed(widget, data)
 	
 	def on_stop_on_copy_toggled(self, widget):
 		self.stop_on_copy = self.get_widget("stop_on_copy").get_active()
