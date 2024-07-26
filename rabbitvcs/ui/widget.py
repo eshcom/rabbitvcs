@@ -127,7 +127,8 @@ class ModKeyType(Enum):
 	CTRL_KEY = 1,
 	CTRL_ALT_KEY = 2
 
-CTRL_ALT_MASK = (gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
+CTRL_ALT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK
+CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
 
 
 def filter_router(model, iter, column, filters):
@@ -596,6 +597,20 @@ class TableBase:
 	
 	def reset_selection(self):
 		self.selected_rows = []
+	
+	# esh: add get_selected_paths func
+	def get_selected_paths(self, is_fullpath=False):
+		text = ""
+		if len(self.get_selected_rows()) > 0:
+			paths = self.get_selected_row_items(1)
+			for path in paths:
+				if not path: continue
+				if len(text) > 0: text = text + "\n"
+				if is_fullpath:
+					text = text + path
+				else:
+					text = text + helper.get_file_name(path)
+		return text
 	
 	def get_selected_row_items(self, col):
 		items = []

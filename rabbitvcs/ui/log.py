@@ -252,16 +252,14 @@ class Log(InterfaceView):
 		helper.launch_diff_tool(*paths)
 	
 	def on_revisions_table_key_event(self, treeview, data=None):
-		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
-		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+		state = data.state & rabbitvcs.ui.widget.CTRL_SHIFT_MASK
+		if (state in (gtk.gdk.CONTROL_MASK, rabbitvcs.ui.widget.CTRL_SHIFT_MASK) and
 				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
 			if len(self.revisions_table.get_selected_rows()) > 0:
-				self.copy_revision_number()
-			return True
-		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
-			if len(self.revisions_table.get_selected_rows()) > 0:
-				self.copy_revision_text()
+				if state == gtk.gdk.CONTROL_MASK:
+					self.copy_revision_number()
+				else:
+					self.copy_revision_text()
 			return True
 	
 	def on_revisions_table_mouse_event(self, treeview, data=None):
@@ -297,12 +295,11 @@ class Log(InterfaceView):
 			pass
 	
 	def on_paths_table_key_event(self, treeview, data=None):
-		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
-		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+		state = data.state & rabbitvcs.ui.widget.CTRL_SHIFT_MASK
+		if (state in (gtk.gdk.CONTROL_MASK, rabbitvcs.ui.widget.CTRL_SHIFT_MASK) and
 				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
-			if len(self.paths_table.get_selected_rows()) > 0:
-				paths = self.paths_table.get_selected_row_items(1)
-				self.set_text_clipboard(helper.get_file_name(paths[0]))
+			text = self.paths_table.get_selected_paths(state != gtk.gdk.CONTROL_MASK)
+			if text: self.set_text_clipboard(text)
 			return True
 	
 	def on_paths_table_mouse_event(self, treeview, data=None):

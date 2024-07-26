@@ -241,18 +241,11 @@ class Commit(InterfaceView, GtkContextMenuCaller):
 		self.changes[row[1]] = row[col]
 	
 	def on_files_table_key_event(self, treeview, data=None):
-		CTRL_SHIFT_MASK = gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK
-		if ((data.state & CTRL_SHIFT_MASK) == gtk.gdk.CONTROL_MASK and
+		state = data.state & rabbitvcs.ui.widget.CTRL_SHIFT_MASK
+		if (state in (gtk.gdk.CONTROL_MASK, rabbitvcs.ui.widget.CTRL_SHIFT_MASK) and
 				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
-			if len(self.files_table.get_selected_rows()) > 0:
-				paths = self.files_table.get_selected_row_items(1)
-				self.set_text_clipboard(helper.get_file_name(paths[0]))
-			return True
-		elif ((data.state & CTRL_SHIFT_MASK) == CTRL_SHIFT_MASK and
-				gtk.gdk.keyval_name(data.keyval).lower() in ("c", "cyrillic_es")):
-			if len(self.files_table.get_selected_rows()) > 0:
-				paths = self.files_table.get_selected_row_items(1)
-				self.set_text_clipboard(paths[0])
+			text = self.files_table.get_selected_paths(state != gtk.gdk.CONTROL_MASK)
+			if text: self.set_text_clipboard(text)
 			return True
 		elif data.keyval == gtk.keysyms.Delete:
 			self.delete_items(treeview, data)

@@ -178,11 +178,11 @@ class InterfaceView(GtkBuilderWidgetWrapper):
 		# ~ log.info("on_key_pressed: state = %s, keyval = %s, keyname = %s" %
 				 # ~ (data.state, data.keyval,
 				  # ~ gtk.gdk.keyval_name(data.keyval))) # esh: log
+		ctrl_state = data.state & gtk.gdk.CONTROL_MASK
 		if (data.keyval == gtk.keysyms.Escape):
 			self.on_cancel_clicked(widget)
 			return True
-		elif (data.state & gtk.gdk.CONTROL_MASK and
-				data.keyval == gtk.keysyms.Return):
+		elif (ctrl_state and data.keyval == gtk.keysyms.Return):
 			if hasattr(self, "on_ok_clicked"):
 				if hasattr(self, "complete"):
 					if self.complete:
@@ -193,13 +193,13 @@ class InterfaceView(GtkBuilderWidgetWrapper):
 				self.on_close_clicked(widget)
 			return True
 		keyval = gtk.gdk.keyval_name(data.keyval).lower()
-		if (data.state & gtk.gdk.CONTROL_MASK and keyval in ("w", "cyrillic_tse")):
+		if (ctrl_state and keyval in ("w", "cyrillic_tse")):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and keyval in ("q", "cyrillic_shorti")):
+		if (ctrl_state and keyval in ("q", "cyrillic_shorti")):
 			self.on_cancel_clicked(widget)
 			return True
-		if (data.state & gtk.gdk.CONTROL_MASK and keyval in ("r", "cyrillic_ka")):
+		if (ctrl_state and keyval in ("r", "cyrillic_ka")):
 			self.on_refresh_clicked(widget)
 			return True
 
