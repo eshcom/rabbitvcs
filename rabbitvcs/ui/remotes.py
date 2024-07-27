@@ -86,6 +86,8 @@ class GitRemotes(InterfaceView):
 		self.remote_list = self.git.remote_list()
 		for remote in self.remote_list:
 			self.items_treeview.append([remote["name"], remote["host"]])
+		if len(self.items_treeview.get_items()) > 0:
+			self.items_treeview.focus(0, 0)
 	
 	def save(self, row, column, data):
 		row = int(row)
@@ -121,9 +123,10 @@ class GitRemotes(InterfaceView):
 			self.load()
 	
 	def on_treeview_key_event(self, treeview, data=None):
-		if data.keyval in (gtk.keysyms.Up, gtk.keysyms.Down,
-						   gtk.keysyms.Return):
+		if data.keyval in (gtk.keysyms.Up, gtk.keysyms.Down):
 			self.on_treeview_event(treeview, data)
+		elif data.keyval == gtk.keysyms.Delete:
+			self.on_delete_clicked(None)
 			return True
 	
 	def on_treeview_mouse_event(self, treeview, data=None):

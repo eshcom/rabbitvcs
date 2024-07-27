@@ -260,9 +260,10 @@ class GitBranchManager(InterfaceView):
 		self.show_edit(branch_name)
 	
 	def on_treeview_key_event(self, treeview, data=None):
-		if data.keyval in (gtk.keysyms.Up, gtk.keysyms.Down,
-						   gtk.keysyms.Return):
+		if data.keyval in (gtk.keysyms.Up, gtk.keysyms.Down):
 			self.on_treeview_event(treeview, data)
+		elif data.keyval == gtk.keysyms.Delete:
+			self.on_delete_clicked(None)
 			return True
 	
 	def on_treeview_mouse_event(self, treeview, data=None):
