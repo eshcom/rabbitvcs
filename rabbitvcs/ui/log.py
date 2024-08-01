@@ -178,18 +178,10 @@ class Log(InterfaceView):
 			self.get_widget("revisions_search").grab_focus()
 			return True
 		elif data.keyval == gtk.keysyms.F3:
-			if len(self.revisions_table.get_items()) > 0 and \
-			   len(self.revisions_table.get_selected_rows()) == 0:
-				self.revisions_table.focus(0, 0)
-			else:
-				self.get_widget("revisions_table").grab_focus()
+			self.focus_revisions_table()
 			return True
 		elif data.keyval == gtk.keysyms.F4:
-			if len(self.paths_table.get_items()) > 0 and \
-			   len(self.paths_table.get_selected_rows()) == 0:
-				self.paths_table.focus(0, 0)
-			else:
-				self.get_widget("paths_table").grab_focus()
+			self.focus_paths_table()
 			return True
 		elif data.keyval == gtk.keysyms.Return:
 			if self.get_widget("limit").has_focus() or \
@@ -233,24 +225,6 @@ class Log(InterfaceView):
 	#
 	# Revisions table callbacks
 	#
-	# In this UI, we have an ability to filter and display only certain items.
-	def get_displayed_row_items(self, col):
-		items = []
-		for row in self.selected_rows:
-			items.append(self.display_items[row][col])
-		return items
-	
-	# esh: added new func
-	def get_selected_revisions(self):
-		revisions = []
-		for row in self.revisions_table.get_selected_rows():
-			revisions.append(six.text_type(self.display_items[row].revision))
-		return revisions
-	
-	def on_revisions_table_row_activated(self, treeview, event, col):
-		paths = self.revisions_table.get_displayed_row_items(1)
-		helper.launch_diff_tool(*paths)
-	
 	def on_revisions_table_key_event(self, treeview, data=None):
 		state = data.state & rabbitvcs.ui.widget.CTRL_SHIFT_MASK
 		if (state in (gtk.gdk.CONTROL_MASK, rabbitvcs.ui.widget.CTRL_SHIFT_MASK) and
@@ -340,18 +314,40 @@ class Log(InterfaceView):
 		else:
 			self.load()
 	
-	def get_selected_revision_numbers(self):
-		if len(self.revisions_table.get_selected_rows()) == 0:
-			return ""
+	def focus_revisions_table(self):
+		if len(self.revisions_table.get_items()) > 0 and \
+		   len(self.revisions_table.get_selected_rows()) == 0:
+			self.revisions_table.focus(0, 0)
+		else:
+			self.get_widget("revisions_table").grab_focus()
+	
+	def focus_paths_table(self):
+		if len(self.paths_table.get_items()) > 0 and \
+		   len(self.paths_table.get_selected_rows()) == 0:
+			self.paths_table.focus(0, 0)
+		else:
+			self.get_widget("paths_table").grab_focus()
+	
+	def get_selected_revisions(self):
 		revisions = []
 		for row in self.revisions_table.get_selected_rows():
+			revisions.append(six.text_type(self.display_items[row].revision))
+		return revisions
+	
+	def get_selected_revision_numbers(self):
+		selected_rows = self.revisions_table.get_selected_rows()
+		if len(selected_rows) == 0:
+			return ""
+		revisions = []
+		for row in selected_rows:
 			revisions.append(int(self.revisions_table.get_row(row)[self.revision_number_column]))
 		revisions.sort()
 		return helper.encode_revisions(revisions)
 	
 	def get_selected_revision_number(self):
-		if len(self.revisions_table.get_selected_rows()):
-			return self.revisions_table.get_row(self.revisions_table.get_selected_rows()[0])[self.revision_number_column]
+		selected_rows = self.revisions_table.get_selected_rows()
+		if len(selected_rows) > 0:
+			return self.revisions_table.get_row(selected_rows[0])[self.revision_number_column]
 		else:
 			return ""
 	
@@ -445,8 +441,8 @@ class SVNLog(Log):
 			[_("Action"), _("Path"),
 				_("Copy From Path"), _("Copy From Revision")],
 			callbacks={
-				"mouse-event":      self.on_paths_table_mouse_event,
-				"row-activated":    self.on_paths_table_row_activated
+				"mouse-event":   self.on_paths_table_mouse_event,
+				"row-activated": self.on_paths_table_row_activated
 			},
 			flags={
 				"sortable": True,
@@ -619,9 +615,10 @@ class SVNLog(Log):
 	def update_revision_message(self):
 		combined_paths = []
 		subitems = []
-		for selected_row in self.revisions_table.get_selected_rows():
+		selected_rows = self.revisions_table.get_selected_rows()
+		for selected_row in selected_rows:
 			item = self.display_items[selected_row]
-			if len(self.revisions_table.get_selected_rows()) == 1:
+			if len(selected_rows) == 1:
 				self.message.set_text(item.message)
 			else:
 				indented_message = item.message.replace("\n","\n\t")
@@ -816,7 +813,7 @@ class GitLog(Log):
 				bg_branch = BG_CURR_LOCAL_BRANCH
 			else:
 				bg_branch = BG_OTHER_LOCAL_BRANCH
-				
+			
 			graph_render = ()
 			if not self.filter_text:
 				graph_render = (node, in_lines, out_lines)
@@ -922,9 +919,10 @@ class GitLog(Log):
 	def update_revision_message(self):
 		combined_paths = []
 		subitems = []
-		for selected_row in self.revisions_table.get_selected_rows():
+		selected_rows = self.revisions_table.get_selected_rows()
+		for selected_row in selected_rows:
 			item = self.display_items[selected_row]
-			if len(self.revisions_table.get_selected_rows()) == 1:
+			if len(selected_rows) == 1:
 				self.message.set_text(item.message)
 			else:
 				indented_message = item.message.replace("\n","\n\t")

@@ -605,11 +605,11 @@ class TableBase:
 			paths = self.get_selected_row_items(1)
 			for path in paths:
 				if not path: continue
-				if len(text) > 0: text = text + "\n"
+				if len(text) > 0: text += "\n"
 				if is_fullpath:
-					text = text + path
+					text += path
 				else:
-					text = text + helper.get_file_name(path)
+					text += helper.get_file_name(path)
 		return text
 	
 	def get_selected_row_items(self, col):
