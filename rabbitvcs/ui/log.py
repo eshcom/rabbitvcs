@@ -308,12 +308,13 @@ class Log(InterfaceView):
 	#
 	# Helper methods
 	#
-	def load_or_refresh(self):
+	def load_or_refresh(self, focus_revisions_table=False):
 		if self.cache.has(self.rev_start):
-			self.refresh()
+			self.refresh(focus_revisions_table)
 		else:
-			self.load()
+			self.load(focus_revisions_table)
 	
+	@gtk_unsafe
 	def focus_revisions_table(self):
 		if len(self.revisions_table.get_items()) > 0 and \
 		   len(self.revisions_table.get_selected_rows()) == 0:
@@ -450,7 +451,7 @@ class SVNLog(Log):
 			}
 		)
 		self.initialize_root_url()
-		self.load_or_refresh()
+		self.load_or_refresh(True)
 	
 	def initialize_root_url(self):
 		action = SVNAction(
@@ -466,7 +467,7 @@ class SVNLog(Log):
 	#
 	# Log-loading callback methods
 	#
-	def refresh(self):
+	def refresh(self, focus_revisions_table=False):
 		"""
 		Refresh the items in the main log table that shows Revision/Author/etc.
 		"""
@@ -538,7 +539,7 @@ class SVNLog(Log):
 			color
 		])
 	
-	def load(self):
+	def load(self, focus_revisions_table=False):
 		self.set_loading(True)
 		self.action = SVNAction(
 			self.svn,
@@ -554,7 +555,7 @@ class SVNLog(Log):
 			limit=self.limit,
 			discover_changed_paths=True
 		)
-		self.action.append(self.refresh)
+		self.action.append(self.refresh, focus_revisions_table)
 		self.action.schedule()
 	
 	def edit_revprop(self, prop_name, prop_value, callback=None):
@@ -725,7 +726,7 @@ class GitLog(Log):
 		)
 		self.start_point = 0
 		self.initialize_root_url()
-		self.load_or_refresh()
+		self.load_or_refresh(True)
 	
 	def on_branch_changed(self, branch):
 		self.load()
@@ -733,7 +734,7 @@ class GitLog(Log):
 	#
 	# Log-loading callback methods
 	#
-	def refresh(self):
+	def refresh(self, focus_revisions_table=False):
 		"""
 		Refresh the items in the main log table that shows Revision/Author/etc.
 		"""
@@ -849,12 +850,14 @@ class GitLog(Log):
 		
 		# esh: set selected rows
 		self.revisions_table.set_selected_rows(selected_rows, focus=False, default=False)
+		if focus_revisions_table:
+			self.focus_revisions_table()
 		
 		self.check_previous_sensitive()
 		self.check_next_sensitive()
 		self.set_loading(False)
 	
-	def load(self):
+	def load(self, focus_revisions_table=False):
 		self.set_loading(True)
 		# Load branches.
 		self.branchAction = GitAction(
@@ -895,7 +898,7 @@ class GitLog(Log):
 				revision=self.git.revision(branch_name),
 				showtype="branch"
 			)
-		self.action.append(self.refresh)
+		self.action.append(self.refresh, focus_revisions_table)
 		self.action.schedule()
 	
 	def copy_revision_text(self):
