@@ -32,9 +32,6 @@ try:
 except ImportError:
 	import gobject
 
-from datetime import datetime
-import time
-
 from rabbitvcs.ui import InterfaceView
 from rabbitvcs.ui.action import GitAction
 import rabbitvcs.ui.widget
@@ -291,7 +288,7 @@ class GitTagManager(InterfaceView):
 			message = helper.format_long_text(self.selected_tag.message.strip(" \n"), 1000, False)
 			self.message_label.set_text(message)
 			self.tagger_label.set_text(self.selected_tag.tagger)
-			self.date_label.set_text(helper.format_datetime(datetime.fromtimestamp(self.selected_tag.tag_time)))
+			self.date_label.set_text(helper.format_datetime_ts(self.selected_tag.tag_time))
 			self.show_containers(self.view_containers)
 			self.get_widget("detail_label").set_markup(_("<b>Tag Detail</b>"))
 	

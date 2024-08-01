@@ -26,13 +26,13 @@ All sorts of helper functions.
 from __future__ import absolute_import
 
 from collections import deque
+from datetime import datetime
 import locale
 import os
 import os.path
 import sys
 import subprocess
 import re
-import datetime
 import time
 import shutil
 import hashlib
@@ -114,7 +114,7 @@ def run_in_main_thread(func, *args, **kwargs):
 	return event.result
 
 def get_tmp_path(filename):
-	day = datetime.datetime.now().day
+	day = datetime.now().day
 	m = hashlib.md5(str(day) + str(os.geteuid())).hexdigest()[0:10]
 	tmpdir = "/tmp/rabbitvcs-%s" %m
 	if not os.path.isdir(tmpdir):
@@ -152,13 +152,16 @@ def format_long_text(text, cols = None, replace_linebreak = True):
 		text = u"%s..." % text[0:cols]
 	return text
 
+def format_datetime_ts(ts, format=None):
+	return format_datetime(datetime.fromtimestamp(ts), format)
+
 def format_datetime(dt, format=None):
 	if format:
 		enc = locale.getpreferredencoding(False)
 		if enc is None or len(enc) == 0:
 			enc = "UTF8"
 		return dt.strftime(format).decode(enc)
-	now = datetime.datetime.now()
+	now = datetime.now()
 	delta = now - dt
 	
 	# ~ log.info("dt = %s, delta = %s" % (dt, delta)) # esh: log
@@ -747,8 +750,8 @@ def utc_offset(timestamp=None):
 	if timestamp is None:
 		timestamp = time.time()
 	timestamp = int(timestamp)
-	utc = datetime.datetime.utcfromtimestamp(timestamp)
-	local = datetime.datetime.fromtimestamp(timestamp)
+	utc = datetime.utcfromtimestamp(timestamp)
+	local = datetime.fromtimestamp(timestamp)
 	return int((local - utc).total_seconds())
 
 def _commonpath(l1, l2, common=[]):

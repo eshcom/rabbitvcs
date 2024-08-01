@@ -143,6 +143,30 @@ class GitBranchManager(InterfaceView):
 		self.save_container.pack_start(self.save_button, False, False, 0)
 		vbox.pack_start(self.save_container, False, False, 0)
 		
+		# Set up the Author line
+		label = gtk.Label(_("Author:"))
+		label.set_properties(xalign=0, yalign=0)
+		self.author_label = LabelInfo("")
+		self.author_label.set_properties(xalign=0, selectable=True)
+		self.author_label.set_line_wrap(True)
+		self.author_container = gtk.HBox(False, 12)
+		self.author_container.pack_start(label, False, False, 0)
+		# esh: set pack_start params: expand=True, fill=True
+		self.author_container.pack_start(self.author_label, True, True, 0)
+		vbox.pack_start(self.author_container, False, False, 0)
+		
+		# Set up the Date line
+		label = gtk.Label(_("Date:"))
+		label.set_properties(xalign=0, yalign=0)
+		self.dattim_label = LabelInfo("")
+		self.dattim_label.set_properties(xalign=0, selectable=True)
+		self.dattim_label.set_line_wrap(True)
+		self.dattim_container = gtk.HBox(False, 12)
+		self.dattim_container.pack_start(label, False, False, 0)
+		# esh: set pack_start params: expand=True, fill=True
+		self.dattim_container.pack_start(self.dattim_label, True, True, 0)
+		vbox.pack_start(self.dattim_container, False, False, 0)
+		
 		# Set up the Revision line
 		label = gtk.Label(_("Revision:"))
 		label.set_properties(xalign=0, yalign=0)
@@ -174,10 +198,13 @@ class GitBranchManager(InterfaceView):
 			self.save_container, self.start_point_container,
 			self.checkout_container]
 		
-		self.view_containers = [self.branch_name_container, self.revision_container,
-			self.message_container, self.save_container,  self.checkout_container]
+		self.view_containers = [self.branch_name_container,
+			self.author_container, self.dattim_container,
+			self.revision_container, self.message_container,
+			self.save_container,  self.checkout_container]
 		
 		self.all_containers = [self.branch_name_container, self.track_container,
+			self.author_container, self.dattim_container,
 			self.revision_container, self.message_container, self.save_container,
 			self.start_point_container, self.checkout_container]
 		vbox.show()
@@ -311,8 +338,10 @@ class GitBranchManager(InterfaceView):
 		for index, item in enumerate(self.branch_list):
 			if item.name == branch_name:
 				if not hasattr(item, "fmt_message"):
-					fmt_message = self.git.branch_message(item.revision, item.message)
-					item.fmt_message = helper.format_long_text(fmt_message, 1000, False)
+					info = self.git.revision_info(item.revision, item.message)
+					item.author = info["author"]
+					item.dattim = helper.format_datetime_ts(info["dattim"])
+					item.fmt_message = helper.format_long_text(info["message"], 1000, False)
 					item.message = None
 					self.branch_list[index] = item
 				self.selected_branch = item
@@ -320,6 +349,8 @@ class GitBranchManager(InterfaceView):
 		self.save_button.set_label(_("Save"))
 		if self.selected_branch:
 			self.branch_entry.set_text(self.selected_branch.name)
+			self.author_label.set_text(six.text_type(self.selected_branch.author))
+			self.dattim_label.set_text(six.text_type(self.selected_branch.dattim))
 			self.revision_label.set_text(six.text_type(self.selected_branch.revision))
 			self.message_label.set_text(self.selected_branch.fmt_message)
 			if self.selected_branch.tracking:

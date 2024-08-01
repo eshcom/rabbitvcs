@@ -403,11 +403,17 @@ class Git:
 			))
 		return branches
 	
-	def branch_message(self, revision=None, default_message = None):
+	def revision_info(self, revision=None, default_message=None):
 		"""
-		Branch message with line break
+		Revision info where message with line break,
+		example:
+		{
+			"author": "esh",
+			"dattim": 1581559383,
+			"message": "first line\nsecond line"
+		}
 		"""
-		return self.client.branch_message(revision, default_message)
+		return self.client.revision_info(revision, default_message)
 	
 	def get_active_branch(self):
 		results = self.client.branch_list()

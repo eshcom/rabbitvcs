@@ -628,21 +628,33 @@ class GittyupClient:
 			})
 		return branches
 	
-	def branch_message(self, revision=None, default_message = None):
+	def revision_info(self, revision=None, default_message=None):
 		"""
-		Branch message with line break
+		Revision info where message with line break
 		"""
 		if not revision:
-			return default_message;
+			return {
+				"author": "",
+				"dattim": "",
+				"message": default_message.strip(" \n")
+			}
 		
-		cmd = ["git", "show", "-s", "--format=%B", revision]
+		cmd = ["git", "show", "-s", "--format=%an%n%at%n%B", revision]
 		try:
 			(status, stdout, stderr) = GittyupCommand(cmd, cwd=self.repo.path, notify=self.notify,
 													  cancel=self.get_cancel).execute()
-			message = "\n".join(stdout)
+			info = {
+				"author": stdout[0],
+				"dattim": int(stdout[1]),
+				"message": "\n".join(stdout[2:]).strip(" \n")
+			}
 		except GittyupCommandError as e:
-			message = default_message
-		return message.strip(" \n")
+			info = {
+				"author": "",
+				"dattim": "",
+				"message": default_message.strip(" \n")
+			}
+		return info
 	
 	def checkout(self, paths=[], revision="HEAD", options=None):
 		"""
