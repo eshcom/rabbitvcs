@@ -108,6 +108,15 @@ def revision_grapher(history):
 		last_lines = lines
 	return items
 
+def find_parent(revision):
+	if ("parents" in revision) and len(revision["parents"]) > 0:
+		parent = six.text_type(revision["parents"][0])
+	elif ("next_revision" in revision):
+		parent = six.text_type(revision["next_revision"])
+	else:
+		parent = six.text_type(int(six.text_type(revision["revision"])) - 1)
+	return parent
+
 class Log(InterfaceView):
 	"""
 	Provides an interface to the Log UI
@@ -261,10 +270,11 @@ class Log(InterfaceView):
 				revision2 = self.display_items[rev1_index+1].revision
 			# ~ log.info("Log.on_paths_table_row_activated: revision1 = %s, revision2 = %s" %
 					 # ~ (six.text_type(revision1), six.text_type(revision2))) # esh: log
-			path_item = self.paths_table.get_row(self.paths_table.get_selected_rows()[0])[1]
-			url = self.root_url + path_item
-			self.view_diff_for_path(url, six.text_type(revision1),
-									six.text_type(revision2), sidebyside=True)
+			item_path = self.paths_table.get_row(self.paths_table.get_selected_rows()[0])[1]
+			(old_path, new_path) = helper.get_paths(self.root_url, item_path)
+			self.view_diff_for_path(new_path, six.text_type(revision1),
+									old_path, six.text_type(revision2),
+									sidebyside=True)
 		except IndexError:
 			pass
 	
@@ -389,12 +399,15 @@ class Log(InterfaceView):
 	#
 	# Other helper methods
 	#
-	def view_diff_for_path(self, url, revision1, revision2=None, sidebyside=False):
+	def view_diff_for_path(self, path1, revision1, path2=None, revision2=None,
+						   sidebyside=False):
+		if path2 == None:
+			path2 = path1
 		if revision2 == None:
 			revision2 = revision1
 		options = [
-			"%s@%s" % (url, revision2),
-			"%s@%s" % (url, revision1),
+			"%s@%s" % (path2, revision2),
+			"%s@%s" % (path1, revision1),
 			"--vcs=%s" % self.get_vcs_name()
 		]
 		if sidebyside:
@@ -1230,15 +1243,6 @@ class LogTopContextMenuCallbacks:
 		self.revisions = revisions
 		self.vcs_name = self.caller.get_vcs_name()
 	
-	def find_parent(self, revision):
-		if ("parents" in revision) and len(revision["parents"]) > 0:
-			parent = six.text_type(revision["parents"][0])
-		elif ("next_revision" in revision):
-			parent = six.text_type(revision["next_revision"])
-		else:
-			parent = six.text_type(int(six.text_type(revision["revision"])) - 1)
-		return parent
-	
 	def view_diff_working_copy(self, widget, data=None):
 		helper.launch_ui_window("diff", [
 			"%s@%s" % (self.path, six.text_type(self.revisions[0]["revision"])),
@@ -1252,9 +1256,8 @@ class LogTopContextMenuCallbacks:
 		self.caller.copy_revision_number()
 	
 	def view_diff_previous_revision(self, widget, data=None):
-		parent = self.find_parent(self.revisions[0])
 		helper.launch_ui_window("diff", [
-			"%s@%s" % (self.path, parent),
+			"%s@%s" % (self.path, find_parent(self.revisions[0])),
 			"%s@%s" % (self.path, six.text_type(self.revisions[0]["revision"])),
 			"--vcs=%s" % self.caller.get_vcs_name()
 		])
@@ -1281,10 +1284,9 @@ class LogTopContextMenuCallbacks:
 		])
 	
 	def compare_previous_revision(self, widget, data=None):
-		parent = self.find_parent(self.revisions[0])
 		helper.launch_ui_window("diff", [
 			"-s",
-			"%s@%s" % (self.path, parent),
+			"%s@%s" % (self.path, find_parent(self.revisions[0])),
 			"%s@%s" % (self.path, six.text_type(self.revisions[0]["revision"])),
 			"--vcs=%s" % self.caller.get_vcs_name()
 		])
@@ -1302,12 +1304,11 @@ class LogTopContextMenuCallbacks:
 	
 	def show_changes_previous_revision(self, widget, data=None):
 		rev_first = six.text_type(self.revisions[0]["revision"])
-		parent = self.find_parent(self.revisions[0])
 		path = self.path
 		if self.vcs_name == rabbitvcs.vcs.VCS_SVN:
 			path = self.vcs.svn().get_repo_url(self.path)
 		helper.launch_ui_window("changes", [
-			"%s@%s" % (path, parent),
+			"%s@%s" % (path, find_parent(self.revisions[0])),
 			"%s@%s" % (path, six.text_type(rev_first)),
 			"--vcs=%s" % self.caller.get_vcs_name()
 		])
@@ -1564,69 +1565,59 @@ class LogBottomContextMenuCallbacks:
 		self.paths = paths
 		self.revisions = revisions
 	
-	def find_parent(self, revision):
-		if ("parents" in revision) and len(revision["parents"]) > 0:
-			parent = six.text_type(revision["parents"][0])
-		elif ("next_revision" in revision):
-			parent = six.text_type(revision["next_revision"])
-		else:
-			parent = six.text_type(int(six.text_type(revision["revision"])) - 1)
-		return parent
-	
 	def view_diff_previous_revision(self, widget, data=None):
 		rev = six.text_type(self.revisions[0]["revision"])
-		parent = self.find_parent(self.revisions[0])
-		path_item = self.paths[0]
-		url = self.caller.root_url + path_item
-		self.caller.view_diff_for_path(url, rev, parent)
+		parent = find_parent(self.revisions[0])
+		(old_path, new_path) = helper.get_paths(self.caller.root_url, self.paths[0])
+		self.caller.view_diff_for_path(new_path, rev, old_path, parent)
 	
 	def view_diff_revisions(self, widget, data=None):
 		rev_first = six.text_type(self.revisions[0]["revision"])
 		rev_last = six.text_type(self.revisions[-1]["revision"])
-		path_item = self.paths[0]
-		url = self.caller.root_url + path_item
-		self.caller.view_diff_for_path(url, latest_revision_number=rev_last,
-									   earliest_revision_number=rev_first)
+		(old_path, new_path) = helper.get_paths(self.caller.root_url, self.paths[0])
+		self.caller.view_diff_for_path(new_path, rev_last, old_path, rev_first)
 	
 	def compare_previous_revision(self, widget, data=None):
 		rev = six.text_type(self.revisions[0]["revision"])
-		parent = self.find_parent(self.revisions[0])
-		path_item = self.paths[0]
-		url = self.caller.root_url + path_item
-		self.caller.view_diff_for_path(url, rev, parent, sidebyside=True)
+		parent = find_parent(self.revisions[0])
+		(old_path, new_path) = helper.get_paths(self.caller.root_url, self.paths[0])
+		self.caller.view_diff_for_path(new_path, rev, old_path, parent,
+									   sidebyside=True)
 	
 	def compare_revisions(self, widget, data=None):
-		earliest_rev = six.text_type(self.revisions[0]["revision"])
-		latest_rev = six.text_type(self.revisions[-1]["revision"])
-		path_item = self.paths[0]
-		url = self.caller.root_url + path_item
-		self.caller.view_diff_for_path(url,
-										latest_rev,
-										sidebyside=True,
-										earliest_revision_number=earliest_rev)
-	
-	def show_changes_previous_revision(self, widget, data=None):
 		rev_first = six.text_type(self.revisions[0]["revision"])
 		rev_last = six.text_type(self.revisions[-1]["revision"])
-		parent = self.find_parent(self.revisions[0])
-		url = self.paths[0]
+		(old_path, new_path) = helper.get_paths(self.caller.root_url, self.paths[0])
+		self.caller.view_diff_for_path(new_path, rev_last, old_path, rev_first,
+									   sidebyside=True)
+	
+	def show_changes_previous_revision(self, widget, data=None):
+		rev = six.text_type(self.revisions[0]["revision"])
+		parent = find_parent(self.revisions[0])
+		
+		root = ""
 		if self.vcs_name == rabbitvcs.vcs.VCS_SVN:
-			url = self.caller.root_url + self.paths[0]
+			root = self.caller.root_url
+		(old_path, new_path) = helper.get_paths(root, self.paths[0])
+		
 		helper.launch_ui_window("changes", [
-			"%s@%s" % (url, parent),
-			"%s@%s" % (url, rev_last),
+			"%s@%s" % (old_path, parent),
+			"%s@%s" % (new_path, rev),
 			"--vcs=%s" % self.caller.get_vcs_name()
 		])
 	
 	def show_changes_revisions(self, widget, data=None):
 		rev_first = six.text_type(self.revisions[0]["revision"])
 		rev_last = six.text_type(self.revisions[-1]["revision"])
-		url = self.paths[0]
+		
+		root = ""
 		if self.vcs_name == rabbitvcs.vcs.VCS_SVN:
-			url = self.caller.root_url + self.paths[0]
+			root = self.caller.root_url
+		(old_path, new_path) = helper.get_paths(root, self.paths[0])
+		
 		helper.launch_ui_window("changes", [
-			"%s@%s" % (url, rev_first),
-			"%s@%s" % (url, rev_last),
+			"%s@%s" % (old_path, rev_first),
+			"%s@%s" % (new_path, rev_last),
 			"--vcs=%s" % self.caller.get_vcs_name()
 		])
 	

@@ -489,7 +489,8 @@ def get_file_extension(path):
 	@rtype:         string
 	@return:        A file extension.
 	"""
-	return os.path.splitext(path)[1]
+	(_, new_path) = parse_diff_path(path)
+	return os.path.splitext(new_path)[1]
 
  # esh: added new func
 def get_file_name(path):
@@ -502,7 +503,8 @@ def get_file_name(path):
 	@rtype:         string
 	@return:        A file name.
 	"""
-	return os.path.basename(path)
+	(_, new_path) = parse_diff_path(path)
+	return os.path.basename(new_path)
 
 def open_item(path):
 	"""
@@ -1011,3 +1013,58 @@ def get_width_by_text(text_len):
 		return 250
 	else:
 		return text_len * koef
+
+def parse_diff_path(path):
+	"""
+	Example:
+	
+	"lib/df/diagram/component.ex"
+		-> ("lib/df/diagram/component.ex", "lib/df/diagram/component.ex")
+	
+	"lib/df/{protocols => common}/reference_call.ex"
+		-> ("lib/df/protocols/reference_call.ex", "lib/df/common/reference_call.ex")
+	
+	"lib/df/{protocols/validator/error.ex => common/validator_error.ex}"
+		-> ("lib/df/protocols/validator/error.ex", "lib/df/common/validator_error.ex")
+	"""
+	old_path = ""
+	new_path = ""
+	prefix = ""
+	suffix = ""
+	
+	state = 0
+	index = 0
+	path_len = len(path)
+	
+	while index < path_len:
+		if state == 0:
+			if path[index] == "{":
+				state = 1
+			else:
+				prefix += path[index]
+		elif state == 1:
+			if path[index:index+4] == " => ":
+				state = 2
+				index += 3
+			else:
+				old_path += path[index]
+		elif state == 2:
+			if path[index] == "}":
+				state = 3
+			else:
+				new_path += path[index]
+		else:
+			suffix += path[index]
+		index += 1
+	
+	if state == 3:
+		old_path = os.path.normpath(prefix + old_path + suffix)
+		new_path = os.path.normpath(prefix + new_path + suffix)
+	else:
+		old_path = path
+		new_path = path
+	return (old_path, new_path)
+
+def get_paths(root, path):
+	(old_path, new_path) = parse_diff_path(path)
+	return (root + old_path, root + new_path)

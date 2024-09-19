@@ -591,7 +591,7 @@ msgstr "Сравнить с рабочей копией"
 
 #: ui/log.py:1066 util/contextmenuitems.py:413
 msgid "Compare with previous revision"
-msgstr "Сравнить с предудыщей ревизией"
+msgstr "Сравнить с предыдущей ревизией"
 
 #: ui/log.py:1071
 msgid "Compare revisions"
