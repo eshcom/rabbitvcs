@@ -75,6 +75,10 @@ class GitUpdate(InterfaceView):
 			self.get_widget("repository_container"),
 			self.git
 		)
+		# esh: set active for this params
+		self.get_widget("all").set_active(1)
+		self.get_widget("prune").set_active(1)
+		self.get_widget("rebase").set_active(1)
 		# esh: set focus on ok button
 		self.get_widget("ok").grab_focus()
 	
