@@ -81,7 +81,7 @@ class GitPush(Push):
 			}
 		)
 		# Set default for Include Tags checkbox.
-		self.get_widget("tags").set_active(True)
+		self.get_widget("tags").set_active(False)
 		# esh: set focus on ok button
 		self.get_widget("ok").grab_focus()
 		self.initialize_logs()
